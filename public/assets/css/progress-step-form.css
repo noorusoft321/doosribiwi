@@ -1,0 +1,182 @@
+#msform {
+    text-align: center;
+    position: relative;
+    margin-top: 20px;
+}
+
+#msform fieldset {
+    background: white;
+    border: 0 none;
+    border-radius: 0.5rem;
+    box-sizing: border-box;
+    width: 100%;
+    margin: 0;
+    padding-bottom: 20px;
+    padding: 10px;
+    position: relative;
+}
+.form-card {
+    text-align: left;
+}
+#msform fieldset:not(:first-of-type) {
+    display: none;
+}
+#msform input, #msform textarea {
+    padding: 8px 15px 8px 15px;
+    border: 1px solid #ccc;
+    border-radius: 0px;
+    margin-bottom: 25px;
+    margin-top: 2px;
+    width: 100%;
+    box-sizing: border-box;
+    color: #2C3E50;
+    background-color: #ECEFF1;
+    font-size: 16px;
+    letter-spacing: 1px;
+}
+#msform input:focus, #msform textarea:focus {
+    -moz-box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    border: 1px solid #040F2E;
+    outline-width: 0;
+}
+#msform .action-button {
+    width: 100px;
+    background: #040F2E;
+    font-weight: bold;
+    color: white;
+    border: 0 none;
+    border-radius: 0px;
+    cursor: pointer;
+    padding: 10px 5px;
+    margin: 10px 0px 10px 5px;
+    float: right;
+}
+.card {
+    z-index: 0;
+    border: none;
+    position: relative;
+}
+.fs-title {
+    font-size: 25px;
+    color: #040F2E;
+    margin-bottom: 15px;
+    font-weight: normal;
+    text-align: left;
+}
+.purple-text {
+    color: #040F2E;
+    font-weight: normal;
+}
+.steps {
+    font-size: 25px;
+    color: gray;
+    margin-bottom: 10px;
+    font-weight: normal;
+    text-align: right;
+}
+.fieldlabels {
+    color: gray;
+    text-align: left;
+}
+#progressbar {
+    margin-bottom: 30px;
+    overflow: hidden;
+    color: lightgrey;
+}
+
+#progressbar .active {
+    color: #040F2E;
+}
+
+#progressbar li {
+    list-style-type: none;
+    font-size: 15px;
+    width: 14%;
+    float: left;
+    position: relative;
+    font-weight: 400;
+}
+#progressbar #account:before {
+    font-family: FontAwesome;
+    content: "\f13e";
+}
+#progressbar #education:before {
+    font-family: FontAwesome;
+    content: "\f02d";
+}
+#progressbar #personal:before {
+    font-family: FontAwesome;
+    content: "\f007";
+}
+#progressbar #religion:before {
+    font-family: FontAwesome;
+    content: "\f66b";
+}
+#progressbar #expectations:before {
+    font-family: FontAwesome;
+    content: "\f21d";
+}
+#progressbar #uploadImage:before {
+    font-family: FontAwesome;
+    content: "\f302";
+}
+#progressbar #confirm:before {
+    font-family: FontAwesome;
+    content: "\f00c";
+}
+#progressbar li:before {
+    width: 50px;
+    height: 50px;
+    line-height: 45px;
+    display: block;
+    font-size: 20px;
+    color: #ffffff;
+    background: lightgray;
+    border-radius: 50%;
+    margin: 0 auto 10px auto;
+    padding: 2px;
+}
+#progressbar li:after {
+    content: '';
+    width: 100%;
+    height: 2px;
+    background: lightgray;
+    position: absolute;
+    left: 0;
+    top: 25px;
+    z-index: -1;
+}
+#progressbar li.active:before, #progressbar li.active:after {
+    background: #040F2E;
+}
+.fit-image{
+    width: 100%;
+    object-fit: cover;
+}
+.fieldlabels {
+    text-align: left !important;
+    font-size: 15px !important;
+    float: left !important;
+    margin: 0 0 5px 5px !important;
+}
+
+@media only screen and (max-width: 458PX) {
+    #progressbar {
+        padding-left: 0 !important;
+    }
+    #progressbar li {
+        font-size: 8px;
+    }
+    #progressbar li:before {
+        width: 30px;
+        height: 30px;
+        line-height: 30px;
+        font-size: 12px;
+    }
+    #progressbar li:after {
+        top: 15px;
+    }
+
+}

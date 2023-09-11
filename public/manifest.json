@@ -1,0 +1,52 @@
+{
+  "name": "Shaadi.org.pk",
+  "short_name": "Shaadi.org.pk",
+  "theme_color": "#fcf9f7",
+  "background_color": "#fcf9f7",
+  "orientation": "portrait-primary",
+  "display": "standalone",
+  "description": "Shaadi Organization Pakistan",
+  "dir": "ltr",
+  "lang": "en-US",
+  "Scope": "https://shaadi.org.pk/",
+  "start_url": "/",
+  "id": "/",
+  "icons": [
+    {
+      "src": "/appIcons/48.png",
+      "type": "image/png",
+      "sizes": "48x48"
+    },
+    {
+      "src": "/appIcons/96.png",
+      "type": "image/png",
+      "sizes": "96x96"
+    },
+    {
+      "src": "/appIcons/144.png",
+      "type": "image/png",
+      "sizes": "144x144"
+    },
+    {
+      "src": "/appIcons/192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/appIcons/256.png",
+      "type": "image/png",
+      "sizes": "256x256"
+    },
+    {
+      "src": "/appIcons/384.png",
+      "type": "image/png",
+      "sizes": "384x384"
+    },
+    {
+      "src": "/appIcons/512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "splash_pages": null
+}
