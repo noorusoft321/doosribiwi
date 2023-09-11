@@ -1,12 +1,10 @@
-/*Main Color : #040F2E;*/
-
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display@1&display=swap@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');/*@import url('http://fonts.cdnfonts.com/css/helvetica-neue-9');*/
 
 *{ 
     margin: 0; 
     padding: 0; 
     border: 0;
-    font-family: 'Poppins', sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     color:#000000;
     line-height: 1.5;
     font-weight: 400;
@@ -16,8 +14,7 @@ body{
     background-repeat: repeat;
     -webkit-text-size-adjust: 100%;
     -webkit-tap-highlight-color: rgba(31, 33, 49, 0);
-    background-color: #fcf2f3;
-    background-size: 300px 300px;
+    background-color: #ffffff;
 }
 header{
     background: #fff;
@@ -71,7 +68,7 @@ main{
     --bs-btn-disabled-bg: transparent;
     --bs-btn-disabled-border-color: #040F2E;
     --bs-gradient: none;
-    border-radius: 5px;
+    border-radius: 50px;
 }
 .navbar-brand img {
     width: 60%;
@@ -100,9 +97,9 @@ main{
 }
 .btn-white{
     text-align: center;
-    border: 1px solid;
+    border: 1px solid #ffffff;
     padding: 12px 38px;
-    border-radius: 5px;
+    border-radius: 50px;
     color:#fff;
     font-weight: 600;
 }
@@ -569,16 +566,6 @@ a{
   left: -40px;
 }
 
-/* Media Queries */
-
-@media (max-width: 768px) {
-  .slick-arrow {
-    width: 41px;
-    height: 14px;
-  }
-
-}
-
 
  
 
@@ -606,15 +593,6 @@ a{
 .navbar-nav .profile-menu {
     position: absolute;
 }
-/*Secondery Header End*/
-/* ============ desktop view ============ */
-@media all and (min-width: 992px) {
-  .navbar .nav-item .dropdown-menu{ display: none; }
-  .navbar .nav-item:hover .nav-link{   }
-  .navbar .nav-item:hover .dropdown-menu{ display: block; }
-  .navbar .nav-item .dropdown-menu{ margin-top:0; }
-} 
-/* ============ desktop view .end// ============ */
 
 /*Header End */
 
@@ -644,7 +622,9 @@ main{
 .gallery img{
     width: 100%;
     box-shadow: 6px 6px 18px 0px rgba(0,0,0,0.4);
-    border-radius: 5px;
+    clip-path: polygon(15% 0%, 85% 0%, 100% 15%, 100% 85%, 85% 100%, 15% 100%, 0% 85%, 0% 15%);
+    background-image: linear-gradient(#F9F295,#E0AA3E,#E0AA3E,#B88A44);
+    padding: 6px;
 }
 
 .blink-soft {
@@ -658,10 +638,17 @@ main{
 .rishta-services-box {
     text-align: center;
     background: #fff;
-    padding: 22px;
+    padding: 6px;
     border-radius: 12px;
     margin: 24px;
     box-shadow: 5px 5px 5px #0000003d;
+    background-image: linear-gradient(#F9F295,#E0AA3E,#E0AA3E,#B88A44);
+}
+
+.rishta-services-inner-box {
+    background: #ffffff;
+    padding: 10px;
+    border-radius: 12px;
 }
 
 .rishta-services-icon {
@@ -719,7 +706,7 @@ main{
     color: #040F2E;
     font-weight: 600;
     /*font-family: 'Montserrat', sans-serif;*/
-    font-family: 'Poppins', sans-serif;
+    /*font-family: 'Playfair Display', serif;*/
     margin-bottom: 5px;
     line-height: 26px;
     font-size: 15px;
@@ -866,55 +853,7 @@ main{
 
 
 /*Mobile View Start*/
-@media only screen and (max-width: 458px) {
 
-  .after-login{
-    position: absolute;
-    right: 5px;
-    top: 120px;
-    z-index: 2;
-  }
-  .username{
-    color:#000000 !important;
-  }
-  .navbar-nav .profile-menu {
-      right: 0 !important;
-  }
-  .after-login .profile-menu{
-    left: -50px;
-  }
-  .pull-right {
-    float: none;
-  }
-  .account .mobile-width-49{
-    width: 49%;
-  }
-  .heading-border{
-        width: 100%;
-    }
-   .careful p{
-        text-align: center;
-        font-size: 24px;
-   } 
-   .matchmaking-event .gallery img{
-        margin-bottom:20px;
-   } 
-   .call-to-action p{
-        text-align: center;
-        font-size: 24px;
-   }
-   .card-g {
-        width: 100%;    
-    }
-
-    .card-g-c {
-        width: 100%;
-    }
-
-    .navbar-brand {
-        text-align: center;
-    }
-}
 
 
 
@@ -1252,6 +1191,7 @@ main{
 }
 .block--style-3 .heading {
     margin-bottom: 10px;
+    font-family: 'Playfair Display', serif;
 }
 
 .heading {
@@ -1259,7 +1199,7 @@ main{
     padding: 0;
     text-transform: none;
     /*font-family: roboto, sans-serif;*/
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Playfair Display', serif;
     font-weight: 600;
     color: #111;
     line-height: 1.46;
@@ -1353,21 +1293,7 @@ ul.inline-links > li, ul.inline-links > li > a {
 }
 
 
-@media only screen and (max-width: 458px) {
-  .block--style-3.list .block-image{
-    display: block;
-    width: 100%;
-  }
-  .listing-image{
-    height:310px !important;
-  }
-  .matchprofile{
-    left:-9px;
-  }
-  .completeprofile{
-    right:-9px;
-  }
-}
+
 /*Search End */
 
 /*View Profile Start*/
@@ -1393,6 +1319,7 @@ ul.inline-links > li, ul.inline-links > li > a {
     font-weight: 500;
     line-height: 2.5;
     padding: 0px 20px;
+    font-family: 'Playfair Display', serif;
 }
 .link-text {
     padding: 6px 35px;
@@ -1411,11 +1338,7 @@ ul.inline-links > li, ul.inline-links > li > a {
     height: 300px;
 }
 
-@media only screen and (max-width: 458px) {
-  .about-height-hero {
-      height: auto !important;
-  }
-}
+
 /*About Us End*/
 
 
@@ -1465,11 +1388,7 @@ ul.inline-links > li, ul.inline-links > li > a {
     display: block;
 }
 
-@media only screen and (max-width: 458px) {
-  .free-rishta-height{
-      height: auto;
-  }
-}
+
 /*Free Rishta Page End*/
 
 /*Elite Matrimonial Page Start*/
@@ -1477,6 +1396,7 @@ ul.inline-links > li, ul.inline-links > li > a {
     font-size: 2rem;
     font-weight: 600;
     line-height: 1.5;
+    font-family: 'Playfair Display', serif;
 }
 .text-dark {
     color: #343a40 !important;
@@ -1511,19 +1431,6 @@ ul.inline-links > li, ul.inline-links > li > a {
   height: 60px;
 }
 
-@media only screen and (max-width: 458px) {
-  .elite-height-hero{
-      height: auto;
-  }
-  .royal-h {
-    height: auto;
-}
-.ideal-icons {
-    width: 40%;
-    margin: 0;
-    margin-bottom:10px;
-}
-}
 /*Elite Matrimonial Page End*/
 
 
@@ -1546,11 +1453,7 @@ display: -ms-grid;
 .card-h ul li{
   font-size:20px;
 }
-@media only screen and (max-width: 458px) {
-  .card-h{
-      height: auto;
-  }
-}
+
 
 
 /*Authentic Profile Page End*/
@@ -1602,11 +1505,7 @@ display: -ms-grid;
     height:500px;
 }
 
-@media only screen and (max-width: 458px) {
-    .aff-h{
-        height:auto;
-    }
-}
+
 
 /*Affiliate Program Page End*/
 
@@ -1616,11 +1515,7 @@ display: -ms-grid;
     height: 330px;
 }
 
-@media only screen and (max-width: 458px) {
-    .ads-h{
-        height:auto;
-    }
-}
+
 
 /*Advertise Page End*/
 
@@ -1628,21 +1523,13 @@ display: -ms-grid;
 .pp-card-hero{
     height: 493px;
 }
-@media only screen and (max-width: 458px) {
-    .pp-card-hero{
-        height:auto;
-    }
-}
+
 
 .pp-card-bottom{
     height: 339px;
 }
 
-@media only screen and (max-width: 458px) {
-    .pp-card-bottom{
-        height:auto;
-    }
-}
+
 
 /*public Notice Page Start*/
 
@@ -1657,11 +1544,7 @@ display: -ms-grid;
 .w-md-50 {
     width: 50% !important;
 }
-@media only screen and (max-width: 458px) {
-    .w-md-50 {
-        width: 100% !important;
-    }
-}
+
 .mg-30 {
     margin-bottom: 30px !important;
 }
@@ -1679,11 +1562,11 @@ display: -ms-grid;
 .about-section{
     /*background: linear-gradient(to bottom, #f32b60, #ff8f1f);*/
 }
-.sec-title{
-    position:relative;
-    z-index: 1;
-    margin-bottom:60px;
-}
+/*.sec-title{*/
+    /*!*position:relative;*!*/
+    /*z-index: 1;*/
+    /*!*margin-bottom:60px;*!*/
+/*}*/
 
 .sec-title .title{
     position: relative;
@@ -1696,27 +1579,15 @@ display: -ms-grid;
 }
 
 .sec-title h2{
-    position: relative;
     display: block;
     font-size:40px;
     line-height: 1.28em;
     color: #000;
     font-weight: 600;
-    padding-bottom:18px;
-}
-
-.sec-title h2:before{
-    position:absolute;
-    content:'';
-    left:0px;
-    bottom:0px;
-    width:50px;
-    height:3px;
-    background-color:#040F2E;
 }
 
 .sec-title .text{
-    position: relative;
+    /*position: relative;*/
     font-size: 16px;
     line-height: 26px;
     color: #848484;
@@ -1734,16 +1605,20 @@ display: -ms-grid;
 }
 
 .list-style-one{
-    position:relative;
+    margin-bottom: 45px;
+    list-style: none;
+    padding: 0;
 }
 
 .list-style-one li{
-    position:relative;
     font-size:16px;
     line-height:26px;
     color: #000;
-    font-weight:400;
+    font-weight:600;
     margin-bottom: 12px;
+    border-bottom: 1px solid grey;
+    border-left: 1px solid grey;
+    padding: 0px 0px 5px 10px;
 }
 .list-style-one li i{
     margin-right:10px;
@@ -1786,13 +1661,13 @@ display: -ms-grid;
 }
 
 .btn-style-one:hover{
-    background-color: #001e5700;
+    background-color: #001e57;
     color: #040F2E;
     border: 2px solid #040F2E;
 }
 .about-section{
     position: relative;
-    background:#ffeff3;
+    /*background:#ffeff3;*/
 }
 .about-section .inner-div{
     padding: 70px 0 70px;
@@ -1815,12 +1690,6 @@ display: -ms-grid;
 .about-section .text{
     margin-bottom: 20px;
     color:#000;
-}
-
-.about-section .list-style-one{
-    margin-bottom: 45px;
-    list-style: none;
-    padding: 0;
 }
 
 .about-section .btn-box{
@@ -1994,6 +1863,7 @@ display: -ms-grid;
     font-size: 20px;
     font-weight: 700;
     line-height: 20px;
+    font-family: 'Playfair Display', serif;
 }
 
 /*Ceo Section End*/
@@ -2050,19 +1920,7 @@ display: -ms-grid;
 }
 
 
-@media only screen and (max-width: 458px) {
-    .title-w {
-        text-align: center;
-    }
-    .paragraph-1 {
-        font-size: 15px;
-    }
-    .chat-list{
-        max-height: 600px;
-        overflow-y: auto;
-        border-bottom: 5px solid #f2dede !important;
-    }
-}
+
 .noti{
     position: relative;
 }
@@ -2142,8 +2000,7 @@ article .shimmer{
 .gallery-container h1 {
     text-align: center;
     margin-top: 50px;
-    /*font-family: 'Droid Sans', sans-serif;*/
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Playfair Display', serif;
     font-weight: bold;
 }
 
@@ -2158,7 +2015,6 @@ article .shimmer{
     padding: 40px;
 }
 
-/* Override bootstrap column paddings */
 .tz-gallery .row > div {
     padding: 2px;
 }
@@ -2210,13 +2066,194 @@ article .shimmer{
 .director-img img {
     border-radius: 4px;
 }
-
-/*Profile Gallery End*/
-
 .alert {
     margin: 0 !important;
     color: #fff !important;
 }
 .alert strong {
     color: #fff !important;
+}
+
+/*.button-theme-light {*/
+    /*padding: 15px 30px;*/
+    /*border: 2px solid #040F2E;*/
+    /*background: #ffffff;*/
+    /*color: #040F2E;*/
+    /*font-size: 16px;*/
+    /*font-weight: 600;*/
+    /*border-radius: 50px;*/
+/*}*/
+
+/*.button-theme-light:hover {*/
+    /*background: #ffffff;*/
+    /*color: #CA9D3B;*/
+/*}*/
+
+.button-theme-dark {
+    padding: 15px 30px;
+    border: 2px solid #040F2E !important;
+    background: #040F2E;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 50px;
+    transition: all .5s ease;
+}
+
+.button-theme-dark:hover {
+    border: 2px solid #D7B260 !important;
+    color: #D7B260;
+}
+
+.button-theme-light {
+    padding: 15px 30px;
+    border: 2px solid #ffffff !important;
+    background: #ffffff;
+    color: #040F2E;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 50px;
+    transition: all .5s ease;
+}
+
+.button-theme-light:hover {
+    border: 2px solid #D7B260 !important;
+    color: #D7B260;
+    font-weight: 700;
+}
+h1,h2,h3,h4,h5,h6 {
+    font-family: 'Playfair Display', serif;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .slick-arrow {
+        width: 41px;
+        height: 14px;
+    }
+}
+
+@media all and (min-width: 992px) {
+    .navbar .nav-item .dropdown-menu{ display: none; }
+    .navbar .nav-item:hover .nav-link{   }
+    .navbar .nav-item:hover .dropdown-menu{ display: block; }
+    .navbar .nav-item .dropdown-menu{ margin-top:0; }
+}
+
+@media only screen and (max-width: 458px) {
+    .after-login{
+        position: absolute;
+        right: 5px;
+        top: 120px;
+        z-index: 2;
+    }
+    .username{
+        color:#000000 !important;
+    }
+    .navbar-nav .profile-menu {
+        right: 0 !important;
+    }
+    .after-login .profile-menu{
+        left: -50px;
+    }
+    .pull-right {
+        float: none;
+    }
+    .account .mobile-width-49{
+        width: 49%;
+    }
+    .heading-border{
+        width: 100%;
+    }
+    .careful p{
+        text-align: center;
+        font-size: 24px;
+    }
+    .matchmaking-event .gallery img{
+        margin-bottom:20px;
+    }
+    .call-to-action p{
+        text-align: center;
+        font-size: 24px;
+    }
+    .card-g {
+        width: 100%;
+    }
+
+    .card-g-c {
+        width: 100%;
+    }
+
+    .navbar-brand {
+        text-align: center;
+    }
+
+    .block--style-3.list .block-image{
+        display: block;
+        width: 100%;
+    }
+    .listing-image{
+        height:310px !important;
+    }
+    .matchprofile{
+        left:-9px;
+    }
+    .completeprofile{
+        right:-9px;
+    }
+    .about-height-hero {
+        height: auto !important;
+    }
+
+    .free-rishta-height{
+        height: auto;
+    }
+
+    .elite-height-hero{
+        height: auto;
+    }
+    .royal-h {
+        height: auto;
+    }
+    .ideal-icons {
+        width: 40%;
+        margin: 0;
+        margin-bottom:10px;
+    }
+
+    .card-h{
+        height: auto;
+    }
+
+    .aff-h{
+        height:auto;
+    }
+
+    .ads-h{
+        height:auto;
+    }
+
+    .pp-card-hero{
+        height:auto;
+    }
+
+    .pp-card-bottom{
+        height:auto;
+    }
+
+    .w-md-50 {
+        width: 100% !important;
+    }
+
+    .title-w {
+        text-align: center;
+    }
+    .paragraph-1 {
+        font-size: 15px;
+    }
+    .chat-list{
+        max-height: 600px;
+        overflow-y: auto;
+        border-bottom: 5px solid #f2dede !important;
+    }
 }

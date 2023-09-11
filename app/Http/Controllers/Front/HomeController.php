@@ -89,28 +89,12 @@ class HomeController extends Controller
 //            }
 //        }
 
-        /*Our Special Guests*/
-        $specialGuests = SpecialGuest::where('deleted', 0)->limit(6)->inRandomOrder()->get();
-
-        /*Grand Matchmaking Events*/
-        $grandMatchmakingEvents = GrandMatchmakingEvent::where('deleted', 0)->limit(6)->inRandomOrder()->get();
-
-        /*Our Offices*/
-        $ourOffices = OurOffice::where('deleted', 0)->limit(6)->inRandomOrder()->get();
-
         /*Government Registered Marriage Bureau*/
-        $govermentRegisteredMarraigeBureau = GovermentRegisteredMarraigeBureau::where('deleted', 0)->limit(6)->inRandomOrder()->get();
-
-        /*Family Meetings*/
-        $familyRishtaMeetings = FamilyRishtaMeeting::where('deleted', 0)->limit(6)->inRandomOrder()->get();
+        $govermentRegisteredMarraigeBureau = GovermentRegisteredMarraigeBureau::where('deleted', 0)->limit(5)->inRandomOrder()->get();
 
         $title = 'Rishta Pakistan, Shaadi Marriage Bureau, Best Muslima Matrimonial in Pakistan Karachi, Lahore, Islamabad, Faisalabad, Rawalpindi, Gujranwala, Peshawar, Multan, Hyderabad, Islamabad, Quetta. Shia Match available.';
         return view('front.index',compact(
             'title',
-            'specialGuests',
-            'grandMatchmakingEvents',
-            'ourOffices',
-            'familyRishtaMeetings',
             'govermentRegisteredMarraigeBureau'
         ));
     }
@@ -133,7 +117,7 @@ class HomeController extends Controller
             $query->where('gender', 2);
         }])->whereHas('customerOtherInfo', function($query) {
             $query->where('gender', 2);
-        })->inRandomOrder()->limit(3)->get();
+        })->inRandomOrder()->limit(5)->get();
 
         $customersSecondMarriageMan = Customer::where([
             'profile_home_page_status' => 1,
@@ -151,7 +135,7 @@ class HomeController extends Controller
             $query->where('gender', 1);
         }])->whereHas('customerOtherInfo', function($query) {
             $query->where('gender', 1);
-        })->inRandomOrder()->limit(3)->get();
+        })->inRandomOrder()->limit(5)->get();
 
         $result = [
             'females_ready'               => view('front.partial_proposal',['customers' => $customersSecondMarriageFemale])->render(),

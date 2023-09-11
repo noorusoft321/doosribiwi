@@ -127,14 +127,18 @@
 		}
 		.btn-view-profile {
 			border: none;
-			background: rgb(64, 168, 230);
-			background: linear-gradient(0deg, rgb(64, 168, 230) 0%, rgb(54, 184, 230) 100%);
+			border-left: 5px solid #E0AA3E;
+			border-right: 5px solid #E0AA3E;
+			/*background: rgb(64, 168, 230);*/
+			/*background: linear-gradient(0deg, rgb(64, 168, 230) 0%, rgb(54, 184, 230) 100%);*/
+			/*background-image: linear-gradient(#F9F295,#E0AA3E,#E0AA3E,#B88A44);*/
 			color: #fff;
 			overflow: hidden;
 		}
 		.custom-btn:hover {
 			text-decoration: none;
 			color: #fff;
+			opacity: .8;
 		}
 		.custom-btn:before {
 			position: absolute;
@@ -146,9 +150,6 @@
 			height: 100%;
 			background-color: #fff;
 			animation: shiny-btn1 3s ease-in-out infinite;
-		}
-		.custom-btn:hover{
-			opacity: .7;
 		}
 		.custom-btn:active{
 			box-shadow:  4px 4px 6px 0 rgba(255,255,255,.3),

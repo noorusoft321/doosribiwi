@@ -1,5 +1,5 @@
-@for($i = 0; $i < 3; $i++)
-    <div class="col-md-4">
+@for($i = 0; $i < 5; $i++)
+    <div class="col">
         <article>
             <div class="line-img"></div>
             <div class="line"></div>
