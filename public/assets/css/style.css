@@ -1947,18 +1947,20 @@ display: -ms-grid;
 /*Shimmar*/
 
 article{
-    background: #ddd;
+    /*background: #ddd;*/
     width: 100%;
     position: relative;
     box-sizing: border-box;
     border-radius: 10px;
+    height: 340px;
 }
 article .line-img {
-    width: 100%;
+    width: 150px;
     height: 150px;
     background: #bbb;
-    margin: 20px 0;
-    border-radius: 5px;
+    /*margin: 20px 0;*/
+    border-radius: 50%;
+    margin: 0 auto;
 }
 article .line{
     width: 100%;
@@ -2124,6 +2126,12 @@ article .shimmer{
 h1,h2,h3,h4,h5,h6 {
     font-family: 'Playfair Display', serif;
 }
+.onlyMobileCenter {
+    text-align: left !important;
+}
+.onlyWebCenter {
+    text-align: center !important;
+}
 
 /* Media Queries */
 @media (max-width: 768px) {
@@ -2169,7 +2177,7 @@ h1,h2,h3,h4,h5,h6 {
         text-align: center;
         font-size: 24px;
     }
-    .matchmaking-event .gallery img{
+    .gallery img{
         margin-bottom:20px;
     }
     .call-to-action p{
@@ -2255,5 +2263,11 @@ h1,h2,h3,h4,h5,h6 {
         max-height: 600px;
         overflow-y: auto;
         border-bottom: 5px solid #f2dede !important;
+    }
+    .onlyMobileCenter {
+        text-align: center !important;
+    }
+    .onlyWebCenter {
+        text-align: left !important;
     }
 }

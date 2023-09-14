@@ -18,7 +18,7 @@
 		<div class="row">
 			<div class="col-md-4">
 				<div class="footer-brand">
-					<img src="{{asset('assets/img/logo-footer.svg')}}" alt="logo">
+					<img src="{{asset('assets/img/logo-footer.png')}}" alt="logo">
 				</div>
 				<p class="white-color">
 					In truth, this precious bond between two individuals is what brings
@@ -169,27 +169,4 @@
 			<div class="fs-14 text-white text-center">Made with ♥ by <a target="_blank" href="https://www.megamarketingnetwork.com/" class="font-weight-700 text-golden">Best Digital Media Marketing Agency</a>.</div>
 		</div>
 	</div>
-	{{--<div style="border-top: 1px dashed #fff;">--}}
-		{{--<div class="container-xxl d-grid d-lg-flex gap-12 gap-xl-0 justify-content-lg-between py-25">--}}
-			{{--<div class="row m-tb-40 mb-0" style="font-size: 14px;">--}}
-				{{--<div class="col-md-3">--}}
-					{{--<div class="white-color align-center">--}}
-						{{--Doosri Biwi - © {{date('Y')}} All Rights Reserved--}}
-					{{--</div>--}}
-				{{--</div>--}}
-				{{--<div class="col-auto">--}}
-					{{--<div class="white-color align-center">--}}
-						{{--Doosri Biwi - Shaadi.org.pk - The Most Trusted Matrimonial Service in Pakistan © {{date('Y')}} All Rights Reserved.--}}
-						{{--<br> Shaadi.org.pk is a registered trademark &amp; protected under the copyright laws of the Government of Pakistan--}}
-						{{--<br><br> <strong class="white-color">"We hereby declare that Shaadi.org.pk website is not a dating website and it is strictly for matrimonial purpose only."</strong>--}}
-					{{--</div>--}}
-				{{--</div>--}}
-				{{--<div class="col-2">--}}
-					{{--<div class="white-color align-center">--}}
-						{{--Made with ♥ by Noorusoft--}}
-					{{--</div>--}}
-				{{--</div>--}}
-			{{--</div>--}}
-		{{--</div>--}}
-	{{--</div>--}}
 </footer>

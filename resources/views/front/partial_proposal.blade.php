@@ -10,7 +10,7 @@
         $citySlug = str_replace('/', '-', $citySlug);
         $uniqueProfileSlug = $val->gender_name.'-proposal-'.$countrySlug.'-'.$citySlug.'-'.$val->faker_id;
     @endphp
-    <div class="col p-10 mx-auto my-auto">
+    <div class="col-lg d-sm-block d-xs-block p-10 mx-auto my-auto">
         <div class="profile-boxes">
             @if($val->email_verified==1 &&
                 $val->mobile_verified==1 &&
@@ -59,41 +59,41 @@
                 <h3 class="text-theme">{{$val->full_name}}</h3>
                 @if($val->age > 0 && $val->age != 'N/A')
                     <div class="row">
-                        <div class="col-4 mx-auto my-auto text-center p-1">
+                        <div class="col-5 mx-auto my-auto text-center p-1">
                             <span class="profile-boxes-icons">
                                 <i class="fa fa-child"></i>
                             </span>
                         </div>
-                        <div class="col-8 mx-auto my-auto p-1" style="padding-left: 0;text-align:start;color: #ffffff;font-weight: 500;font-size: 15px;">
+                        <div class="col-7 mx-auto my-auto p-1" style="padding-left: 0;text-align:start;color: #ffffff;font-weight: 500;font-size: 15px;">
                             {{$val->age}} Years
                         </div>
                     </div>
                 @endif
                 <div class="row">
-                    <div class="col-4 mx-auto my-auto text-center p-1">
+                    <div class="col-5 mx-auto my-auto text-center p-1">
                         <span class="profile-boxes-icons">
                             <i class="fa fa-briefcase"></i>
                         </span>
                     </div>
-                    <div class="col-8 mx-auto my-auto p-1" style="padding-left: 0;text-align:start;color: #ffffff;font-weight: 500;font-size: 15px;">
+                    <div class="col-7 mx-auto my-auto p-1" style="padding-left: 0;text-align:start;color: #ffffff;font-weight: 500;font-size: 15px;">
                         {{(!empty($val->getOccupationName)) ? $val->getOccupationName->name : 'Profession'}}
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-4 mx-auto my-auto text-center p-1">
+                    <div class="col-5 mx-auto my-auto text-center p-1">
                         <span class="profile-boxes-icons">
                             <i class="fa-sharp fa-solid fa-location-dot"></i>
                         </span>
                     </div>
-                    <div class="col-8 mx-auto my-auto p-1" style="padding-left: 0;text-align:start;color: #ffffff;font-weight: 500;font-size: 15px;">
+                    <div class="col-7 mx-auto my-auto p-1" style="padding-left: 0;text-align:start;color: #ffffff;font-weight: 500;font-size: 15px;">
                         {{$cityName.', '.$countryName}}
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-4 mx-auto my-auto text-center p-1">
+                    <div class="col-5 mx-auto my-auto text-center p-1">
                         <div class="image-boxes-icon"><a class="LoginToView" href="{{route('messenger',$val->name)}}"><i class="fa fa-phone"></i></a></div>
                     </div>
-                    <div class="col-8 mx-auto my-auto p-1" style="padding-left: 0;text-align:start;color: #ffffff;font-weight: 500;font-size: 15px;">
+                    <div class="col-7 mx-auto my-auto p-1" style="padding-left: 0;text-align:start;color: #ffffff;font-weight: 500;font-size: 15px;">
                         <button onclick="window.location.href = '{{route('search.by.slug',[$uniqueProfileSlug])}}'" class="custom-btn btn-view-profile" title="View Profile Detail">Profile Detail</button>
                     </div>
                 </div>

@@ -240,9 +240,20 @@
         color: #fdebf0 !important;
     }
     .name-team{
-        color: #040F2E;
+        /*color: #ffffff;*/
+        /*font-weight: bold;*/
+        /*text-align: center;*/
+        font-size: 2.5rem;
+
+        /*font-size: 25px;*/
+        color: #D5AD6D;
+        background: -webkit-linear-gradient(transparent, transparent), -webkit-linear-gradient(top, rgba(213,173,109,1) 0%, rgba(213,173,109,1) 26%, rgba(226,186,120,1) 35%, rgb(202 170 117) 45%, rgb(179 143 86) 61%, rgba(213,173,109,1) 100%);
+        background: -o-linear-gradient(transparent, transparent);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
         font-weight: bold;
         text-align: center;
+        margin-top: 15px;
     }
     .pss-10 img{
         padding:10px;
@@ -252,7 +263,8 @@
         /*width: 100%;*/
         text-align: center;
         /*background: #040F2E;*/
-        padding-bottom: 10px;
+        /*padding-bottom: 10px;*/
+        padding: 20px 0px;
     }
     .contact-number-ceo {
         font-size: .8rem !important;
@@ -266,25 +278,39 @@
         color: #fdebf0 !important;
     }
     .ceoMainDetail {
-        position: relative;
-        border-radius: 10px;
-        box-shadow: 5px 5px 5px #0000003d;
+        width: 60%;
+        border-radius: 50px;
         border: none;
-        height: 370px;
-        margin-top: 220px;
-        padding-top: 220px;
+        text-align: center !important;
+        margin: 0 auto;
+        padding: 15px;
+        border-left: 2px solid goldenrod;
+        border-right: 2px solid goldenrod;
+    }
+    .parent-section {
+        border: 5px solid #E0AA3E !important;
+        width: 50%;
+        height: 100%;
     }
     .ceo-img {
-        position: absolute;
-        width: 500px;
-        padding: 50px;
+        /*position: absolute;*/
+        /*width: 500px;*/
+        /*padding: 50px;*/
+        /*border-radius: 100%;*/
         border-radius: 100%;
         filter: drop-shadow(0px 0px 5px #ECC440);
         -webkit-filter: drop-shadow(0px 0px 5px #ECC440);
-        left: 0;
-        right: 0;
-        margin: 0 auto;
-        top: -250px;
+        /*left: 0;*/
+        /*right: 0;*/
+        /*margin: 0 auto;*/
+        /*top: -250px;*/
+        /*clip-path: polygon(0% 15%, 15% 15%, 15% 0%, 85% 0%, 85% 15%, 100% 15%, 100% 85%, 85% 85%, 85% 100%, 15% 100%, 15% 85%, 0% 85%);*/
+        /*clip-path: polygon(0% 15%, 0 0, 15% 0%, 85% 0%, 85% 15%, 100% 15%, 100% 85%, 85% 85%, 85% 100%, 15% 100%, 0 100%, 0% 85%);*/
+        width: 60%;
+        box-shadow: 6px 6px 18px 0px rgba(0,0,0,0.4);
+        /*clip-path: polygon(15% 0%, 85% 0%, 100% 15%, 100% 85%, 85% 100%, 15% 100%, 0% 85%, 0% 15%);*/
+        background-image: linear-gradient(#F9F295,#E0AA3E,#E0AA3E,#B88A44);
+        padding: 5px 0px 5px 5px;
     }
     .ourTeamMember {
         position: relative;
@@ -303,12 +329,14 @@
     .ceoMainDetail h3 {
         font-size: 15px;
         text-align:center;
-        color: #8D8B8B;
+        color: #ffffff;
+        margin-top: 10px;
     }
     .ceoMainDetail p {
-        font-size:18px;
+        font-size: 18px;
         text-align: center;
-        padding:10px;
+        margin: 10px 0px;
+        /*padding:10px;*/
     }
     .ourGuest {
         position: relative;
@@ -387,8 +415,14 @@
     }
 
     @media only screen and (max-width: 600px) {
-        .trusted_slider {
-            margin-top: 10px;
+        .profile-boxes {
+            width: 80%;
+            margin: 0 auto;
+        }
+        .image-boxes {
+            height: 130px;
+            width: 130px;
+            margin: 0 auto;
         }
         .image-boxes img{
             height: 130px;
@@ -405,21 +439,16 @@
             bottom: 0;
             left: 5px;
         }
-        .image-boxes{
-            margin-left: 10px;
-        }
         .contact-number-ceo {
             font-size: 12px !important;
             padding: 8px 30px;
         }
         .ceo-img {
-            width: 300px;
-            top: -150px;
+            width: 250px;
+            /*top: -150px;*/
         }
         .ceoMainDetail {
-            margin-top: 115px;
-            padding-top: 115px;
-            height: 275px;
+            width: 100%;
         }
         .ceoMainDetail h3 {
             font-size:14px;
@@ -436,6 +465,9 @@
         }
         .ourTeamMember img {
             width: 100%;
+        }
+        .list-style-one {
+            margin-bottom: 0px !important;
         }
     }
 
@@ -549,25 +581,25 @@
                                 <p class="rishta-expert">Doosri Biwi website is 100% Free Rishta Pakistani website based
                                     on self-service basis i.e. Do It Yourself basis or Find Rishta Yourself.</p>
                                 <div class="row">
-                                    <div class="col-md-3">
+                                    <div class="col-6 col-md-3">
                                         <div class="rishta-services-icon bg-mikado-main text-white">
                                             <img src="{{asset('assets/img/rishta_services/free_rishta_website.svg')}}">
                                         </div>
                                         <h6 class="text-dark text-center mb-0">Free Rishta <br>Website</h6>
                                     </div>
-                                    <div class="col-md-3">
+                                    <div class="col-6 col-md-3">
                                         <div class="rishta-services-icon bg-mikado-main text-white">
                                             <img src="{{asset('assets/img/rishta_services/personalized_matchmaking.svg')}}">
                                         </div>
                                         <h6 class="text-dark text-center mb-0">Personalized <br> Matchmaking</h6>
                                     </div>
-                                    <div class="col-md-3">
+                                    <div class="col-6 col-md-3">
                                         <div class="rishta-services-icon bg-mikado-main text-white">
                                             <img src="{{asset('assets/img/rishta_services/live_matchmaking.svg')}}">
                                         </div>
                                         <h6 class="text-dark text-center mb-0">Live <br> Matchmaking</h6>
                                     </div>
-                                    <div class="col-md-3">
+                                    <div class="col-6 col-md-3">
                                         <div class="rishta-services-icon bg-mikado-main text-white">
                                             <img src="{{asset('assets/img/rishta_services/elite_matrimonial.svg')}}">
                                         </div>
@@ -597,23 +629,23 @@
                     hosted 5th grand matchmaking event attended by 200+ families and 500+ candidates. Please visit the
                     link below to see event pictures. </p>
                 <div class="row gallery">
-                    <div class="col">
+                    <div class="col-lg d-sm-block d-xs-block">
                         <img src="{{asset('home_page/shaadi-organization-pakistan-grand-event(1).jpg')}}"
                              alt="Event Image 1"/>
                     </div>
-                    <div class="col">
+                    <div class="col-lg d-sm-block d-xs-block">
                         <img src="{{asset('home_page/shaadi-organization-pakistan-grand-event(2).jpg')}}"
                              alt="Event Image 2"/>
                     </div>
-                    <div class="col">
+                    <div class="col-lg d-sm-block d-xs-block">
                         <img src="{{asset('home_page/shaadi-organization-pakistan-grand-event(3).jpg')}}"
                              alt="Event Image 3"/>
                     </div>
-                    <div class="col">
+                    <div class="col-lg d-sm-block d-xs-block">
                         <img src="{{asset('home_page/shaadi-organization-pakistan-grand-event(4).jpg')}}"
                              alt="Event Image 4"/>
                     </div>
-                    <div class="col">
+                    <div class="col-lg d-sm-block d-xs-block">
                         <img src="{{asset('home_page/shaadi-organization-pakistan-grand-event(5).jpg')}}"
                              alt="Event Image 5"/>
                     </div>
@@ -625,58 +657,27 @@
         </div>
         <!-- Match Making Section End -->
 
-        <!-- Hire Personal Matchmaking Consultant Section Start -->
-        <div class="p-tb-50 consultant">
-            <div class="container">
-
-                <div class="row">
-                    <div class="col-md-8 mx-auto">
-                        <h2 class="align-center font-weight-600">Hire Personal Matchmaking Consultant</h2>
-                        <img class="img-align-center heading-border"
-                             src="{{asset('assets/img/shaadi-organization-pakistan-heading-border.png')}}">
-                        <p class="paragraph-1 align-center font-weight-500 text-theme">We do not hide behind WhatsApp. We are real matchmakers. We have proper offices, where we sit 7 days a week and 12 hours a day to meet people and help in marriage proposals.</p>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-md-5 mx-auto my-auto">
-                        <div class="text-secondary bg-light ceoMainDetail">
-                            <img class="ceo-img" src="{{asset('web_images/mrs-ali.jpg')}}" alt="Mrs. Ali">
-                            <h2 class="name-team"> Mrs. Ali </h2>
-                            <h3>Director, Doosri Biwi</h3>
-                            <p>Sr. Consultant & Matchmaker for Elite & Upper Class</p>
-                            <div class="ceo-mrs-ali">
-                                <a target="_blank" href="{{route('shaadi.matchmakers',['mrs-ali'])}}" class="contact-number-ceo">Contact Her</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-        <!-- Hire Personal Matchmaking Consultant Section End -->
-
         <!-- Celebrity Testimonials Section Start -->
-        <div class="p-tb-50 bg-img">
+        <div class="p-tb-50">
             <div class="container">
-                <h2 class="align-center text-white font-weight-600">Celebrity Testimonials</h2>
+                <h2 class="align-center font-weight-600">Celebrity Testimonials</h2>
                 <img class="img-align-center heading-border"
                      src="{{asset('assets/img/shaadi-organization-pakistan-heading-border.png')}}">
                 <div class="row p-tb-10">
                     <div class="col-md-4">
-                        <iframe width="100%" height="315" src="https://www.youtube.com/embed/_jme1dLM6vw"
+                        <iframe width="100%" src="https://www.youtube.com/embed/_jme1dLM6vw"
                                 title="YouTube video player" frameborder="0"
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                                 allowfullscreen=""></iframe>
                     </div>
                     <div class="col-md-4">
-                        <iframe width="100%" height="315" src="https://www.youtube.com/embed/IFRk_Pek0so"
+                        <iframe width="100%" src="https://www.youtube.com/embed/IFRk_Pek0so"
                                 title="YouTube video player" frameborder="0"
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                                 allowfullscreen=""></iframe>
                     </div>
                     <div class="col-md-4">
-                        <iframe width="100%" height="315" src="https://www.youtube.com/embed/Jh2ur0RI8OU"
+                        <iframe width="100%" src="https://www.youtube.com/embed/Jh2ur0RI8OU"
                                 title="YouTube video player" frameborder="0"
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                                 allowfullscreen=""></iframe>
@@ -685,6 +686,62 @@
             </div>
         </div>
         <!-- Celebrity Testimonials Section End -->
+
+        <!-- Hire Personal Matchmaking Consultant Section Start -->
+        <div class="p-tb-50 bg-img consultant">
+            <div class="container">
+
+                <div class="row">
+                    <div class="col-md-8 mx-auto">
+                        <h2 class="align-center text-white font-weight-600">Hire Personal Matchmaking Consultant</h2>
+                        <img class="img-align-center heading-border"
+                             src="{{asset('assets/img/shaadi-organization-pakistan-heading-border.png')}}">
+                        <p class="paragraph-1 align-center font-weight-500 text-white">We do not hide behind WhatsApp. We have real matchmakers & proper offices, where we sit 7 days a week and 12 hours a day to meet people and help with marriage proposals.</p>
+                        <br>
+                        <div class="ceoMainDetail">
+                            <img class="ceo-img" src="{{asset('web_images/mrs-ali.jpg')}}" alt="Mrs. Ali">
+                            <h2 class="name-team"> Mrs. Ali </h2>
+                            <h3>Director, Doosri Biwi</h3>
+                            <p class=" text-white">Sr. Consultant & Matchmaker for Elite & Upper Class</p>
+                            <div class="ceo-mrs-ali">
+                                <a target="_blank" href="{{route('shaadi.matchmakers',['mrs-ali'])}}" class="button-theme-light">Contact Her</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                {{--<div class="row">--}}
+                    {{--<div class="col-md-4">--}}
+                        {{--<img class="ceo-img" src="{{asset('web_images/mrs-ali.jpg')}}" alt="Mrs. Ali">--}}
+                    {{--</div>--}}
+                    {{--<div class="col-md-6">--}}
+                        {{--<h2 class="name-team"> Mrs. Ali </h2>--}}
+                        {{--<h3 class="text-start">Director, Doosri Biwi</h3>--}}
+                        {{--<p class="text-start text-white">Sr. Consultant & Matchmaker for Elite & Upper Class</p>--}}
+                        {{--<div class="ceo-mrs-ali">--}}
+                            {{--<a target="_blank" href="{{route('shaadi.matchmakers',['mrs-ali'])}}" class="button-theme-light">Contact Her</a>--}}
+                        {{--</div>--}}
+                    {{--</div>--}}
+                {{--</div>--}}
+                {{--<div class="row parent-section">--}}
+                    {{--<div class="col-md-4 mx-auto my-auto">--}}
+                        {{--<img class="ceo-img" src="{{asset('web_images/mrs-ali.jpg')}}" alt="Mrs. Ali">--}}
+                    {{--</div>--}}
+                    {{--<div class="col-md-5 mx-auto my-auto">--}}
+                        {{--<div class="text-white ceoMainDetail">--}}
+                            {{--<h2 class="name-team"> Mrs. Ali </h2>--}}
+                            {{--<h3 class="text-start">Director, Doosri Biwi</h3>--}}
+                            {{--<p class="text-start text-white">Sr. Consultant & Matchmaker for Elite & Upper Class</p>--}}
+                            {{--<div class="ceo-mrs-ali">--}}
+                                {{--<a target="_blank" href="{{route('shaadi.matchmakers',['mrs-ali'])}}" class="button-theme-light">Contact Her</a>--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
+                    {{--</div>--}}
+                {{--</div>--}}
+
+            </div>
+        </div>
+        <!-- Hire Personal Matchmaking Consultant Section End -->
 
         <!-- Females Ready for 2nd Marriage Section Start -->
         <div class="p-tb-30">
@@ -706,7 +763,7 @@
         <div class="p-tb-50 bg-img call-to-action">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-8 my-auto">
+                    <div class="col-md-8 order-2 order-lg-0 my-auto onlyMobileCenter">
                         <p class="font-30 primary-color blink-soft white-color">
                             We work very closely with our clients. We profiles each member, helping them understand
                             themselves and who is compatible to them, which is the foundation to forming a long-lasting
@@ -752,9 +809,9 @@
                     Shaadi Organization® Pakistan is a licensed, registered and recognized marriage bureau from Government of Pakistan. Our name, logo, events' name, taglines are all registered under the Trademark and Copyright Acts of Government of Pakistan. We are also registered and associated with a number of local, provincial and federal departments of Government of Pakistan, media personalities and media channels. You can see certificates, photos and videos on our website and social media pages.
                 </p>
                 <div class="row gallery">
-                    @foreach($govermentRegisteredMarraigeBureau as $val)
-                        <div class="col">
-                            <img src="{{asset('govermentRegisteredMarraigeBureau/'.$val->main_image)}}" alt="{{$val->title}}">
+                    @foreach($govermentRegisteredMarraigeBureau as $key => $val)
+                        <div class="col-lg d-sm-block d-xs-block">
+                            <img src="{{asset('govermentRegisteredMarraigeBureau/'.$val->main_image)}}" alt="Document {{$key+1}}">
                         </div>
                     @endforeach
                 </div>
@@ -769,7 +826,7 @@
                 <img class="img-align-center heading-border"
                      src="{{asset('assets/img/shaadi-organization-pakistan-heading-border.png')}}">
                 <div class="row align-items-center">
-                    <div class="col-md-6">
+                    <div class="col-md-6 order-2 order-lg-0 mx-auto my-auto onlyMobileCenter">
                         <h4 class="heading-4 text-theme font-weight-600">9-Points Verification System</h4>
                         <p class="paragraph-1">Doosri Biwi uses unique 9-Points Trust and Safety
                             features, for the security of our members, called “Verification Badges” that display on
@@ -778,7 +835,7 @@
                             Blue Tick” on their profiles.</p>
                         <a href="{{route('authentic.profile')}}" class="button-theme-dark"> View More</a>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-4 mx-auto my-auto">
                         <img class="points-img" src="{{asset('assets/img/verification_system/rishtay-pakistan-badges-image.png')}}">
                     </div>
                 </div>
@@ -807,81 +864,5 @@
                 // console.log('Something went wrong*')
             });
         });
-
-        $('.mp-carousel')
-            .on('init', () => {
-                $('.slick-slide[data-slick-index="-2"]').addClass('lt2');
-                $('.slick-slide[data-slick-index="-1"]').addClass('lt1');
-                $('.slick-slide[data-slick-index="1"]').addClass('gt1');
-                $('.slick-slide[data-slick-index="2"]').addClass('gt2');
-            })
-            .slick({
-                centerMode: true,
-                centerPadding: 0,
-                slidesToShow: 3,
-                dots:true,
-                focusOnSelect:true,
-            }).on('beforeChange', (event, slick, current, next) => {
-            $('.slick-slide.gt2').removeClass('gt2');
-            $('.slick-slide.gt1').removeClass('gt1');
-            $('.slick-slide.lt1').removeClass('lt1');
-            $('.slick-slide.lt2').removeClass('lt2');
-
-            const lt2 = (current < next && current > 0) ? current - 1 : next - 2;
-            const lt1 = (current < next && current > 0) ? current : next - 1;
-            const gt1 = (current < next || next === 0) ? next + 1 : current;
-            const gt2 = (current < next || next === 0) ? next + 2 : current + 1;
-
-            $(`.slick-slide[data-slick-index="${lt2}"]`).addClass('lt2');
-            $(`.slick-slide[data-slick-index="${lt1}"]`).addClass('lt1');
-            $(`.slick-slide[data-slick-index="${gt1}"]`).addClass('gt1');
-            $(`.slick-slide[data-slick-index="${gt2}"]`).addClass('gt2');
-
-            // Clone processing when moving from 5 to 0
-            if (current === 5 && next === 0) {
-                $(`.slick-slide[data-slick-index="${current - 1}"]`).addClass('lt2');
-                $(`.slick-slide[data-slick-index="${current}"]`).addClass('lt1');
-                $(`.slick-slide[data-slick-index="${current + 2}"]`).addClass('gt1');
-                $(`.slick-slide[data-slick-index="${current + 3}"]`).addClass('gt2');
-            }
-
-            // Clone processing when moving from 0 to 5
-            if (current === 0 && next === 5) {
-                $(`.slick-slide[data-slick-index="${current - 1}"]`).addClass('gt2');
-                $(`.slick-slide[data-slick-index="${current}"]`).addClass('gt1');
-                $(`.slick-slide[data-slick-index="${current - 2}"]`).addClass('lt1');
-                $(`.slick-slide[data-slick-index="${current - 3}"]`).addClass('lt2');
-            }
-
-            console.log('beforeChange', current, ':', lt2, lt1, next, gt1, gt2);
-        });
-
-        // $('.bannerSlider').slick({
-        //     centerMode: true,
-        //     centerPadding: '250px',
-        //     slidesToShow: 1,
-        //     autoplay: false,
-        //     autoplaySpeed: 2000,
-        //     responsive: [
-        //         {
-        //             breakpoint: 768,
-        //             settings: {
-        //                 arrows: false,
-        //                 centerMode: true,
-        //                 centerPadding: '140px',
-        //                 slidesToShow: 1
-        //             }
-        //         },
-        //         {
-        //             breakpoint: 480,
-        //             settings: {
-        //                 arrows: false,
-        //                 centerMode: true,
-        //                 centerPadding: '140px',
-        //                 slidesToShow: 1
-        //             }
-        //         }
-        //     ]
-        // });
     </script>
 @endpush

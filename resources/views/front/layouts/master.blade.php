@@ -179,6 +179,7 @@
 			border: 0;
 			border-radius: 6px;
 			box-shadow: 6px 6px 12px 0px rgba(0,0,0,0.4);
+			height: 270px;
 		}
 		@media only screen and (max-width: 600px) {
 			.mobileShow {
@@ -195,6 +196,10 @@
 			}
 			.nav-item {
 				margin-left: 15px;
+			}
+			iframe {
+				margin-bottom: 10px;
+				height: 200px;
 			}
 		}
 	</style>
