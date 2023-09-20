@@ -492,7 +492,7 @@
         @endif
 
         <div class="video-section">
-            <img src="{{asset('assets/img/banner.png')}}" alt="Doosri Biwi" width="100%">
+            <img src="{{asset('assets/img/banner.jpg')}}" alt="Doosri Biwi" width="100%">
         </div>
 
         <!-- About Section Start-->

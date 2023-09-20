@@ -29,7 +29,7 @@
 
 				<ul class="social-btn-group mt-34">
 					<li class="social-item">
-						<a target="_blank" class="social-link" href="https://www.facebook.com/Shaadi.org.pk">
+						<a target="_blank" class="social-link" href="https://www.facebook.com/Doosri.biwi.com">
 							<i class="fab fa-facebook" aria-hidden="true"></i>
 						</a>
 					</li>
@@ -137,7 +137,7 @@
 								<a class="link" href="https://goo.gl/maps/EYhZ2yywC6X9WYxo9" target="_blank"><i class="fa-sharp fa-solid fa-location-dot" aria-hidden="true"></i> Office A, 1st Floor, JF Business Bay, Block D, North Nazimabad, Karachi, Sindh, Pakistan.</a>
 							</li>
 							<li class="link-item">
-								<a class="link" href="https://api.whatsapp.com/send?phone=923481117861&amp;text=Hi%20Shaadi.org.pk%2C%20I%20need%20more%20information."><i class="fa fa-phone" aria-hidden="true"></i> UAN/WhatsApp: +92-348-1117861</a>
+								<a class="link" href="https://api.whatsapp.com/send?phone=923481117861&amp;text=Hi%20Doosri.biwi.com%2C%20I%20need%20more%20information."><i class="fa fa-phone" aria-hidden="true"></i> UAN/WhatsApp: +92-348-1117861</a>
 							</li>
 							<li class="link-item">
 								<a class="link" href="tel:+9221111786300"><i class="fa fa-phone" aria-hidden="true"></i> UAN: +92-211-11786300</a>
@@ -162,9 +162,9 @@
 		<br>
 		<div class="container-xxl d-grid d-lg-flex gap-12 gap-xl-0 justify-content-lg-between py-25">
 			<div class="fs-14 text-white text-center">Doosri Biwi - © 2023 All Rights Reserved</div>
-			<div class="fs-14 text-white text-center">Doosri Biwi - Shaadi.org.pk - The Most Trusted Matrimonial Service in Pakistan © 2023 All Rights Reserved.
-				<br> Shaadi.org.pk is a registered trademark &amp; protected under the copyright laws of the Government of Pakistan
-				<br><br> <strong class="text-white">"We hereby declare that Shaadi.org.pk website is not a dating website and it is strictly for matrimonial purpose only."</strong>
+			<div class="fs-14 text-white text-center">Doosri Biwi - Doosri.biwi.com - The Most Trusted Matrimonial Service in Pakistan © 2023 All Rights Reserved.
+				<br> Doosri.biwi.com is a registered trademark &amp; protected under the copyright laws of the Government of Pakistan
+				<br><br> <strong class="text-white">"We hereby declare that Doosri.biwi.com website is not a dating website and it is strictly for matrimonial purpose only."</strong>
 			</div>
 			<div class="fs-14 text-white text-center">Made with ♥ by <a target="_blank" href="https://www.megamarketingnetwork.com/" class="font-weight-700 text-golden">Best Digital Media Marketing Agency</a>.</div>
 		</div>

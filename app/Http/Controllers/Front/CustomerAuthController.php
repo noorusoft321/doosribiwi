@@ -220,9 +220,9 @@ class CustomerAuthController extends Controller
             'password'               => 'required|min:6',
             'RegistrationsReasonsID' => 'required|numeric|exists:shaadi_registrations_reasons,id',
             'MaritalStatusID'        => 'required|numeric|exists:shaadi_marital_statuses,id',
-            'second_marraige'        => 'required|numeric|in:1,2,3',
+//            'second_marraige'        => 'required|numeric|in:1,2,3',
             'read_policy'            => 'required',
-            'g-recaptcha-response'   => ['required', new ReCaptcha]
+//            'g-recaptcha-response'   => ['required', new ReCaptcha]
         ],$messages);
 
         if ($validator->fails()) {
@@ -237,6 +237,7 @@ class CustomerAuthController extends Controller
             $request['user_type'] = 3;
             $request['source'] = 'Website';
             $request['image'] = ($request['gender']==1) ? 'default-male.jpg' : 'default-female.jpg';
+            $request['second_marraige'] = ($request['gender']==1) ? 1 : 2;
             $request['password'] = Hash::make($request['password']);
             unset($request['read_policy']);
             $customer = Customer::create($request);

@@ -101,7 +101,7 @@
 										<input type="number" name="childrenQuantity" class="form-control rounded-pill">
 									</div>
 								</div>
-								<div class="col-6">
+								{{--<div class="col-6">
 									<div class="form-group py-xl-10">
 										<label for="test">*Second Marriage</label>
 										<select class="form-control rounded-pill" name="second_marraige">
@@ -111,7 +111,7 @@
 											<option value="3">Looking for Single</option>
 										</select>
 									</div>
-								</div>
+								</div>--}}
 								<div class="col-6">
 									<div class="form-group py-xl-10">
 										<label for="RegistrationsReasonsID">*Reason for Registering</label>
@@ -146,19 +146,12 @@
 									<div class="form-check">
 										<input class="form-check-input" type="checkbox" name="read_policy" id="read_policy">
 										<label class="form-check-label" for="read_policy">
-											I agree with the <a href="{{route('terms.of.services')}}" target="_blank">Terms of Services</a>, <a
-													href="{{route('privacy.policy')}}" target="_blank">Privacy Policy</a> and <a href="{{route('disclaimer')}}" target="_blank">Disclaimer</a>.
+											I agree with the
+											<a href="{{route('terms.of.services')}}" target="_blank"><b>Terms of Services</b></a>,
+											<a href="{{route('privacy.policy')}}" target="_blank"><b>Privacy Policy</b></a> and
+											<a href="{{route('disclaimer')}}" target="_blank"><b>Disclaimer</b></a>
+											.
 										</label>
-									</div>
-								</div>
-
-								<div class="col-12">
-									<div class="form-group m-2">
-										<strong>ReCaptcha:</strong>
-										<div class="g-recaptcha" data-sitekey="{{ env('GOOGLE_RECAPTCHA_KEY') }}"></div>
-										@if ($errors->has('g-recaptcha-response'))
-											<span class="text-danger">{{ $errors->first('g-recaptcha-response') }}</span>
-										@endif
 									</div>
 								</div>
 
