@@ -36,11 +36,11 @@
 									<div id="msform">
 										<ul id="progressbar">
 											<li class="active" id="account"><strong>Verify</strong></li>
-											<li class="active" id="education"><strong>Career Information</strong></li>
-											<li id="personal"><strong>Personal Information</strong></li>
+											<li class="active" id="education"><strong>Career</strong></li>
+											<li id="personal"><strong>Personal</strong></li>
 											<li id="religion"><strong>Religion</strong></li>
 											<li id="expectations"><strong>Expectations</strong></li>
-											<li id="uploadImage"><strong>Upload Image</strong></li>
+											<li id="uploadImage"><strong>Image</strong></li>
 											<li id="confirm"><strong>Finish</strong></li>
 										</ul>
 

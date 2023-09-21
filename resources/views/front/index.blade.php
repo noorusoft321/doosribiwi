@@ -710,35 +710,6 @@
                     </div>
                 </div>
 
-                {{--<div class="row">--}}
-                    {{--<div class="col-md-4">--}}
-                        {{--<img class="ceo-img" src="{{asset('web_images/mrs-ali.jpg')}}" alt="Mrs. Ali">--}}
-                    {{--</div>--}}
-                    {{--<div class="col-md-6">--}}
-                        {{--<h2 class="name-team"> Mrs. Ali </h2>--}}
-                        {{--<h3 class="text-start">Director, Doosri Biwi</h3>--}}
-                        {{--<p class="text-start text-white">Sr. Consultant & Matchmaker for Elite & Upper Class</p>--}}
-                        {{--<div class="ceo-mrs-ali">--}}
-                            {{--<a target="_blank" href="{{route('shaadi.matchmakers',['mrs-ali'])}}" class="button-theme-light">Contact Her</a>--}}
-                        {{--</div>--}}
-                    {{--</div>--}}
-                {{--</div>--}}
-                {{--<div class="row parent-section">--}}
-                    {{--<div class="col-md-4 mx-auto my-auto">--}}
-                        {{--<img class="ceo-img" src="{{asset('web_images/mrs-ali.jpg')}}" alt="Mrs. Ali">--}}
-                    {{--</div>--}}
-                    {{--<div class="col-md-5 mx-auto my-auto">--}}
-                        {{--<div class="text-white ceoMainDetail">--}}
-                            {{--<h2 class="name-team"> Mrs. Ali </h2>--}}
-                            {{--<h3 class="text-start">Director, Doosri Biwi</h3>--}}
-                            {{--<p class="text-start text-white">Sr. Consultant & Matchmaker for Elite & Upper Class</p>--}}
-                            {{--<div class="ceo-mrs-ali">--}}
-                                {{--<a target="_blank" href="{{route('shaadi.matchmakers',['mrs-ali'])}}" class="button-theme-light">Contact Her</a>--}}
-                            {{--</div>--}}
-                        {{--</div>--}}
-                    {{--</div>--}}
-                {{--</div>--}}
-
             </div>
         </div>
         <!-- Hire Personal Matchmaking Consultant Section End -->

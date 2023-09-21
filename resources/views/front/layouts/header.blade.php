@@ -21,19 +21,19 @@
 				<li class="nav-item dropdown">
 					<a class="nav-link dropdown-toggle" href="{{route('about.us')}}" data-bs-toggle="dropdown"> ABOUT US </a>
 					<ul class="dropdown-menu">
-						<li><a class="dropdown-item"  href="{{route('about.us')}}">About Us</a></li>
-						<li><a class="dropdown-item"  href="{{route('our.vision')}}">Our Vision</a></li>
-						<li><a class="dropdown-item"  href="{{route('we.care')}}">We Care</a></li>
-						<li><a class="dropdown-item"  href="{{route('why.us')}}">Why Us</a></li>
-						<li><a class="dropdown-item"  href="{{route('leadership')}}">Leadership</a></li>
-						<li><a class="dropdown-item"  href="{{route('wedding.planning.services')}}">Wedding Planning Services</a></li>
-						<li><a class="dropdown-item"  href="{{route('support.marriage')}}">Support a Marriage</a></li>
-						<li><a class="dropdown-item"  href="{{route('special.cases')}}">Special Cases</a></li>
-						<li><a class="dropdown-item"  href="{{route('safety.security')}}">Safety and Security</a></li>
-						<li><a class="dropdown-item"  href="{{route('brides.guide')}}">Brides Guide</a></li>
-						<li><a class="dropdown-item"  href="{{route('groom.guide')}}">Groom guide</a></li>
-						<li><a class="dropdown-item"  href="{{route('our.affiliates')}}">Our Affiliates</a></li>
-						<li><a class="dropdown-item"  href="{{route('blog')}}">Blog</a></li>
+						<li><a class="dropdown-item" href="{{route('about.us')}}">About Us</a></li>
+						<li><a class="dropdown-item" href="{{route('our.vision')}}">Our Vision</a></li>
+						<li><a class="dropdown-item" href="{{route('we.care')}}">We Care</a></li>
+						<li><a class="dropdown-item" href="{{route('why.us')}}">Why Us</a></li>
+						<li><a class="dropdown-item" href="{{route('leadership')}}">Leadership</a></li>
+						<li><a class="dropdown-item" href="{{route('wedding.planning.services')}}">Wedding Planning Services</a></li>
+						<li><a class="dropdown-item" href="{{route('support.marriage')}}">Support a Marriage</a></li>
+						<li><a class="dropdown-item" href="{{route('special.cases')}}">Special Cases</a></li>
+						<li><a class="dropdown-item" href="{{route('safety.security')}}">Safety and Security</a></li>
+						<li><a class="dropdown-item" href="{{route('brides.guide')}}">Brides Guide</a></li>
+						<li><a class="dropdown-item" href="{{route('groom.guide')}}">Groom guide</a></li>
+						<li><a class="dropdown-item" href="{{route('our.affiliates')}}">Our Affiliates</a></li>
+						<li><a class="dropdown-item" href="{{route('blog')}}">Blog</a></li>
 					</ul>
 				</li>
 				<li class="nav-item">
@@ -49,7 +49,11 @@
 					<a class="nav-link" href="{{route('contact.us')}}"> CONTACT US </a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="{{route('view.login')}}"> Login </a>
+					@if(auth()->guard('customer')->check())
+						<a class="nav-link" href="{{route('logout.process')}}"> Sign Out </a>
+					@else
+						<a class="nav-link" href="{{route('view.login')}}"> Sign In </a>
+					@endif
 				</li>
 			</ul>
 		</div> <!-- navbar-collapse.// -->
