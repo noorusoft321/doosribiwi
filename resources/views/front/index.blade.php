@@ -42,7 +42,6 @@
         background-position: center top;
         margin-top: -23px;
     }
-
     .customerAge {
         height: 30px;
         width: 30px;
@@ -54,7 +53,6 @@
         float: right;
         padding: 6px;
     }
-
     .profile-boxes{
         width: 100%;
         background: #040F2E;
@@ -293,22 +291,11 @@
         height: 100%;
     }
     .ceo-img {
-        /*position: absolute;*/
-        /*width: 500px;*/
-        /*padding: 50px;*/
-        /*border-radius: 100%;*/
         border-radius: 100%;
         filter: drop-shadow(0px 0px 5px #ECC440);
         -webkit-filter: drop-shadow(0px 0px 5px #ECC440);
-        /*left: 0;*/
-        /*right: 0;*/
-        /*margin: 0 auto;*/
-        /*top: -250px;*/
-        /*clip-path: polygon(0% 15%, 15% 15%, 15% 0%, 85% 0%, 85% 15%, 100% 15%, 100% 85%, 85% 85%, 85% 100%, 15% 100%, 15% 85%, 0% 85%);*/
-        /*clip-path: polygon(0% 15%, 0 0, 15% 0%, 85% 0%, 85% 15%, 100% 15%, 100% 85%, 85% 85%, 85% 100%, 15% 100%, 0 100%, 0% 85%);*/
         width: 60%;
         box-shadow: 6px 6px 18px 0px rgba(0,0,0,0.4);
-        /*clip-path: polygon(15% 0%, 85% 0%, 100% 15%, 100% 85%, 85% 100%, 15% 100%, 0% 85%, 0% 15%);*/
         background-image: linear-gradient(#F9F295,#E0AA3E,#E0AA3E,#B88A44);
         padding: 5px 0px 5px 5px;
     }
@@ -366,7 +353,6 @@
         font-size: 14px;
         font-weight: 500;
     }
-
     .ourGuest img {
         box-shadow: 6px 6px 12px 0px rgba(0,0,0,0.4);
         margin-bottom: 20px;
@@ -375,7 +361,6 @@
         padding: 4px;
         background-image: linear-gradient(#F9F295,#E0AA3E,#E0AA3E,#B88A44);
     }
-
     .ourOffices {
         position: relative;
         width: 100%;
@@ -404,7 +389,6 @@
         font-size: 14px;
         font-weight: 500;
     }
-
     .ourOffices img {
         box-shadow: 6px 6px 12px 0px rgba(0,0,0,0.4);
         margin-bottom: 20px;
@@ -413,7 +397,66 @@
         padding: 4px;
         background-image: linear-gradient(#A8496B,#A8425C,#9D344B,#040F2E);
     }
-
+    .banner-image {
+        background-image: url('{{asset('assets/img/banner.jpg')}}');
+        height: 100%;
+        background-size: cover;
+    }
+    .banner-text {
+        height: fit-content;
+        width: 50%;
+        border-radius: 50px;
+        border: none;
+        text-align: center !important;
+        padding: 20px;
+        margin: 20px;
+        border-left: 4px solid goldenrod;
+        border-right: 4px solid goldenrod;
+    }
+    .banner-text p {
+        font-size: 2.5rem;
+        color: #D5AD6D;
+        background: -webkit-linear-gradient(transparent, transparent), -webkit-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(213,173,109,1) 26%, rgba(255,255,255,1) 35%, rgb(202 170 117) 45%, rgb(179 143 86) 61%, rgba(255,255,255,1) 100%);
+        background: -o-linear-gradient(transparent, transparent);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-weight: 600;
+        text-align: center;
+        margin: 10px 0px 15px 0px;
+    }
+    .bannerHeight {
+        height: 100%;
+    }
+    .slick-dots {
+        position: absolute;
+        bottom: -45px;
+        list-style: none;
+        display: block;
+        text-align: center;
+        padding: 0;
+        width: 100%;
+    }
+    .slick-dots li {
+        position: relative;
+        display: inline-block;
+        height: 20px;
+        width: 20px;
+        margin: 0 5px;
+        padding: 0;
+        cursor: pointer;
+    }
+    .slick-dots li button {
+        border: 1px solid goldenrod;
+        height: 10px;
+        width: 10px;
+        border-radius: 25px;
+        color: transparent !important;
+        padding: 5px;
+        cursor: pointer;
+    }
+    .slick-dots li.slick-active button {
+        background: goldenrod !important;
+    }
     @media only screen and (max-width: 600px) {
         .profile-boxes {
             width: 80%;
@@ -469,6 +512,26 @@
         .list-style-one {
             margin-bottom: 0px !important;
         }
+        .banner-image {
+            background-image: url('{{asset('assets/img/banner-mobile.jpg')}}');
+            height: fit-content;
+        }
+        .banner-text {
+            /*width: 100%;*/
+            /*margin: 0px;*/
+            width: 92%;
+            margin: 0 auto;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+        .banner-text p {
+            font-size: 1.5rem;
+            color: #D5AD6D;
+            background: -webkit-linear-gradient(transparent, transparent), -webkit-linear-gradient(top, rgba(213,173,109,1) 0%, rgba(213,173,109,1) 26%, rgba(255,255,255,1) 35%, rgb(202 170 117) 45%, rgb(179 143 86) 61%, rgba(213,173,109,1) 100%);
+            background: -o-linear-gradient(transparent, transparent);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
     }
 
 </style>
@@ -491,9 +554,44 @@
             </div>
         @endif
 
-        <div class="video-section">
-            <img src="{{asset('assets/img/banner.jpg')}}" alt="Doosri Biwi" width="100%">
+        <!-- Background image -->
+        <div class="banner-image">
+            <div class="d-flex align-items-center bannerHeight">
+                <div class="banner-text">
+                    <img class="img-align-center heading-border" src="{{asset('assets/img/shaadi-organization-pakistan-heading-border.png')}}">
+                    <div class="testingSlider">
+                        <div>
+                            <p>Connect Hearts, Finding Matches at Doosri Biwi - Your Path to Happily Ever After</p>
+                            <br>
+                            <p>دلوں کو جوڑیں، دوسری بیوی پر میچز تلاش کریں - آپ کی خوشی کا راستہ</p>
+                        </div>
+                        <div>
+                            <p>Find Your Perfect Match at Doosri Biwi: Where Hearts Find compatibility</p>
+                            <br>
+                            <p>دوسری بیوی پر اپنا پرفیکٹ میچ تلاش کریں: جہاں دلوں کو مطابقت ملتی ہے</p>
+                        </div>
+                        <div>
+                            <p>Find Your Forever Love on Doosri Biwi</p>
+                            <br>
+                            <p>دوسری بیوی پر اپنی ہمیشہ کی محبت تلاش کریں۔</p>
+                        </div>
+                        <div>
+                            <p>Find Your Perfect Match at Doosri Biwi</p>
+                            <br>
+                            <p>دوسری بیوی پر اپنا پرفیکٹ میچ تلاش کریں۔</p>
+                        </div>
+                        <div>
+                            <p>Find Your Forever Partner at Dossri Biwi: Where Love Begins</p>
+                            <br>
+                            <p>دوسری بیوی میں اپنے ہمیشہ کے لیے ساتھی تلاش کریں: جہاں سے محبت شروع ہوتی ہے</p>
+                        </div>
+                    </div>
+                    <br>
+                    {{--<img class="img-align-center heading-border" src="{{asset('assets/img/shaadi-organization-pakistan-heading-border.png')}}" style="transform: rotate(180deg);">--}}
+                </div>
+            </div>
         </div>
+        <!-- Background image -->
 
         <!-- About Section Start-->
         <section class="">
@@ -629,23 +727,23 @@
                     hosted 5th grand matchmaking event attended by 200+ families and 500+ candidates. Please visit the
                     link below to see event pictures. </p>
                 <div class="row gallery">
-                    <div class="col-lg d-sm-block d-xs-block">
+                    <div class="col-6 col-lg mx-auto my-auto">
                         <img src="{{asset('home_page/shaadi-organization-pakistan-grand-event(1).jpg')}}"
                              alt="Event Image 1"/>
                     </div>
-                    <div class="col-lg d-sm-block d-xs-block">
+                    <div class="col-6 col-lg mx-auto my-auto">
                         <img src="{{asset('home_page/shaadi-organization-pakistan-grand-event(2).jpg')}}"
                              alt="Event Image 2"/>
                     </div>
-                    <div class="col-lg d-sm-block d-xs-block">
+                    <div class="col-6 col-lg mx-auto my-auto">
                         <img src="{{asset('home_page/shaadi-organization-pakistan-grand-event(3).jpg')}}"
                              alt="Event Image 3"/>
                     </div>
-                    <div class="col-lg d-sm-block d-xs-block">
+                    <div class="col-6 col-lg mx-auto my-auto">
                         <img src="{{asset('home_page/shaadi-organization-pakistan-grand-event(4).jpg')}}"
                              alt="Event Image 4"/>
                     </div>
-                    <div class="col-lg d-sm-block d-xs-block">
+                    <div class="col-6 col-lg mx-auto my-auto">
                         <img src="{{asset('home_page/shaadi-organization-pakistan-grand-event(5).jpg')}}"
                              alt="Event Image 5"/>
                     </div>
@@ -781,7 +879,7 @@
                 </p>
                 <div class="row gallery">
                     @foreach($govermentRegisteredMarraigeBureau as $key => $val)
-                        <div class="col-lg d-sm-block d-xs-block">
+                        <div class="col-6 col-lg mx-auto my-auto">
                             <img src="{{asset('govermentRegisteredMarraigeBureau/'.$val->main_image)}}" alt="Document {{$key+1}}">
                         </div>
                     @endforeach
@@ -834,6 +932,34 @@
             }).catch(function (error) {
                 // console.log('Something went wrong*')
             });
+        });
+
+        $('.testingSlider').slick({
+            dots: true,
+            infinite: true,
+            speed: 1500,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            autoplay: true,
+            autoplaySpeed: 2000,
+            arrows: false,
+            pauseOnHover:true,
+            responsive: [
+                {
+                    breakpoint: 600,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1
+                    }
+                },
+                {
+                    breakpoint: 400,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1
+                    }
+                }
+            ]
         });
     </script>
 @endpush

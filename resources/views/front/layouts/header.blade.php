@@ -40,7 +40,7 @@
 					<a class="nav-link" href="{{route('customer.search')}}"> SEARCH </a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="{{route('elite.matrimonial.service')}}"> ELITE MATRIMONIAL </a>
+					<a class="nav-link" href="{{route('elite.matrimonial.service')}}"> ELITE PROPOSAL </a>
 				</li>
 				<li class="nav-item">
 					<a class="nav-link" href="{{route('search.by.slug',['foreign-proposals'])}}"> ABROAD PROPOSAL </a>
