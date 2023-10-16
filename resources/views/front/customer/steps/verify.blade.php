@@ -108,7 +108,7 @@
 																	<div class="row">
 																		<div class="col-12">
 																			<p class="verifyEmailSent">
-																				Please check your Email and click on the link we have send you to verify your account and return here to continue.
+																				Please check your email and click on the link we have sent you to verify your account then return here to proceed.
 																			</p>
 																			<button type="button" onclick="sendConfirmationEmail(this)" class="btn action-button"
 																			    role="button">
@@ -131,7 +131,7 @@
 																	<div class="row">
 																		<div class="col-12">
 																			<p>
-																				Thank you for verifying your email, now your account is verified you can proceed further thanks again.
+																				Thank you for verifying your email, now your account is verified, you can proceed further, thanks again.
 																			</p>
 																		</div>
 																	</div>

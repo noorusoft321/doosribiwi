@@ -172,7 +172,7 @@
 								<form id="searchForm">
 									<div class="card mb-0">
 										{{-- Quick Search --}}
-										<div class="card-header collapsed" data-toggle="collapse" href="#quicksearch">
+										<div class="card-header" data-toggle="collapse" href="#quicksearch">
 											<a class="card-title">
 												Quick Search
 											</a>
@@ -199,16 +199,16 @@
 												Only Verified Profiles
 											</label>
 											<br>
-											<input id="secondMarraige" class="checkbox-new" type="checkbox" name="secondMarraige" value="14" {{(!empty($secondMarriage)) ? 'checked' : ''}}>
-											<label class="mb-2" for="secondMarraige">
-												Second Marriage
-											</label>
-											<br>
-											<input id="divorcedMarraige" class="checkbox-new" type="checkbox" name="divorcedMarraige" value="14" {{(!empty($secondMarriage)) ? 'checked' : ''}}>
-											<label class="mb-2" for="divorcedMarraige">
-												Divorced Marriage
-											</label>
-											<br>
+											{{--<input id="secondMarraige" class="checkbox-new" type="checkbox" name="secondMarraige" value="14" {{(!empty($secondMarriage)) ? 'checked' : ''}}>--}}
+											{{--<label class="mb-2" for="secondMarraige">--}}
+												{{--Second Marriage--}}
+											{{--</label>--}}
+											{{--<br>--}}
+											{{--<input id="divorcedMarraige" class="checkbox-new" type="checkbox" name="divorcedMarraige" value="14" {{(!empty($secondMarriage)) ? 'checked' : ''}}>--}}
+											{{--<label class="mb-2" for="divorcedMarraige">--}}
+												{{--Divorced Marriage--}}
+											{{--</label>--}}
+											{{--<br>--}}
 											<div class="row">
 												<div class="col-md-6">
 													<label class="fieldlabels"> Age From </label>
@@ -342,14 +342,14 @@
 														@endforeach
 													</select>
 													<br>
-													<label class="fieldlabels"> Willing To Relocate</label>
-													<select name="WillingToRelocate" class="form-select form-control">
-														<option value="">Select</option>
-														@foreach($willingToRelocate as $val)
-															<option value="{{$val->id}}">{{$val->title}}</option>
-														@endforeach
-													</select>
-													<br>
+													{{--<label class="fieldlabels"> Willing To Relocate</label>--}}
+													{{--<select name="WillingToRelocate" class="form-select form-control">--}}
+														{{--<option value="">Select</option>--}}
+														{{--@foreach($willingToRelocate as $val)--}}
+															{{--<option value="{{$val->id}}">{{$val->title}}</option>--}}
+														{{--@endforeach--}}
+													{{--</select>--}}
+													{{--<br>--}}
 													<label class="fieldlabels"> Builds</label>
 													<select name="MyBuilds" class="form-select form-control ">
 														<option value="">Select</option>
@@ -395,19 +395,19 @@
 										</div>
 
 										{{-- Username --}}
-										<div class="card-header collapsed" data-toggle="collapse" data-parent="#accordion" href="#username">
-											<a class="card-title">
-												Username
-											</a>
-										</div>
-										<div id="username" class="collapse" data-parent="#accordion" >
-											<div class="card-body">
-												<div class="container">
-													<label class="fieldlabels">Username</label>
-													<input type="text" placeholder="UserName" name="name" class="form-control">
-												</div>
-											</div>
-										</div>
+										{{--<div class="card-header collapsed" data-toggle="collapse" data-parent="#accordion" href="#username">--}}
+											{{--<a class="card-title">--}}
+												{{--Username--}}
+											{{--</a>--}}
+										{{--</div>--}}
+										{{--<div id="username" class="collapse" data-parent="#accordion" >--}}
+											{{--<div class="card-body">--}}
+												{{--<div class="container">--}}
+													{{--<label class="fieldlabels">Username</label>--}}
+													{{--<input type="text" placeholder="UserName" name="name" class="form-control">--}}
+												{{--</div>--}}
+											{{--</div>--}}
+										{{--</div>--}}
 
 									</div>
 								</form>

@@ -52,74 +52,6 @@
 														<div class="col-md-6">
 															<div class="row">
 																<div class="col-md-3 my-auto">
-																	<label class="fieldlabels">*Country of Origin</label>
-																</div>
-																<div class="col-md-9 my-auto">
-																	<div class="form-group py-xl-10">
-																		<select onchange="getStates(this,'StateOfOrigin')" class="form-control rounded-pill" name="CountryOfOrigin">
-																			<option value="">Select</option>
-																			@foreach($countries as $val)
-																				<option value="{{$val->id}}" {{$customerPersonalInfo->CountryOfOrigin==$val->id ? 'selected' : ''}}>{{$val->name}}</option>
-																			@endforeach
-																		</select>
-																	</div>
-																</div>
-															</div>
-														</div>
-														<div class="col-md-6">
-															<div class="row">
-																<div class="col-md-3 my-auto">
-																	<label class="fieldlabels">*State of Origin</label>
-																</div>
-																<div class="col-md-9 my-auto">
-																	<div class="form-group py-xl-10">
-																		<select onchange="getCities(this,'CityOfOrigin')" class="form-control rounded-pill" name="StateOfOrigin">
-																			<option value="">Select</option>
-																			@foreach($states as $val)
-																				<option value="{{$val->id}}" {{$customerPersonalInfo->StateOfOrigin==$val->id ? 'selected' : ''}}>{{$val->title}}</option>
-																			@endforeach
-																		</select>
-																	</div>
-																</div>
-															</div>
-														</div>
-														<div class="col-md-6">
-															<div class="row">
-																<div class="col-md-3 my-auto">
-																	<label class="fieldlabels">*City of Origin</label>
-																</div>
-																<div class="col-md-9 my-auto">
-																	<div class="form-group py-xl-10">
-																		<select class="form-control rounded-pill" name="CityOfOrigin">
-																			<option value="">Select</option>
-																			@foreach($cities as $val)
-																				<option value="{{$val->id}}" {{$customerPersonalInfo->CityOfOrigin==$val->id ? 'selected' : ''}}>{{$val->title}}</option>
-																			@endforeach
-																		</select>
-																	</div>
-																</div>
-															</div>
-														</div>
-														<div class="col-md-6">
-															<div class="row">
-																<div class="col-md-3 my-auto">
-																	<label class="fieldlabels">*Willing to Relocate</label>
-																</div>
-																<div class="col-md-9 my-auto">
-																	<div class="form-group py-xl-10">
-																		<select class="form-control rounded-pill" name="WillingToRelocate">
-																			<option value="">Select</option>
-																			@foreach($willingToRelocate as $val)
-																				<option value="{{$val->id}}" {{$customerPersonalInfo->WillingToRelocate==$val->id ? 'selected' : ''}}>{{$val->title}}</option>
-																			@endforeach
-																		</select>
-																	</div>
-																</div>
-															</div>
-														</div>
-														<div class="col-md-6">
-															<div class="row">
-																<div class="col-md-3 my-auto">
 																	<label class="fieldlabels">*I am Looking to Marry</label>
 																</div>
 																<div class="col-md-9 my-auto">
@@ -196,23 +128,6 @@
 																			<option value="">Select</option>
 																			@foreach($complexions as $val)
 																				<option value="{{$val->id}}" {{$customerPersonalInfo->Complexions==$val->id ? 'selected' : ''}}>{{$val->title}}</option>
-																			@endforeach
-																		</select>
-																	</div>
-																</div>
-															</div>
-														</div>
-														<div class="col-md-6">
-															<div class="row">
-																<div class="col-md-3 my-auto">
-																	<label class="fieldlabels">*My Build</label>
-																</div>
-																<div class="col-md-9 my-auto">
-																	<div class="form-group py-xl-10">
-																		<select class="form-control rounded-pill" name="MyBuilds">
-																			<option value="">Select</option>
-																			@foreach($myBuilds as $val)
-																				<option value="{{$val->id}}" {{$customerPersonalInfo->MyBuilds==$val->id ? 'selected' : ''}}>{{$val->title}}</option>
 																			@endforeach
 																		</select>
 																	</div>
@@ -327,74 +242,6 @@
 														<div class="col-md-6">
 															<div class="row">
 																<div class="col-md-3 my-auto">
-																	<label class="fieldlabels">*Country of Origin</label>
-																</div>
-																<div class="col-md-9 my-auto">
-																	<div class="form-group py-xl-10">
-																		<select onchange="getStates(this,'StateOfOrigin')" class="form-control rounded-pill" name="CountryOfOrigin">
-																			<option value="">Select</option>
-																			@foreach($countries as $val)
-																				<option value="{{$val->id}}">{{$val->name}}</option>
-																			@endforeach
-																		</select>
-																	</div>
-																</div>
-															</div>
-														</div>
-														<div class="col-md-6">
-															<div class="row">
-																<div class="col-md-3 my-auto">
-																	<label class="fieldlabels">*State of Origin</label>
-																</div>
-																<div class="col-md-9 my-auto">
-																	<div class="form-group py-xl-10">
-																		<select onchange="getCities(this,'CityOfOrigin')" class="form-control rounded-pill" name="StateOfOrigin">
-																			<option value="">Select</option>
-																			@foreach($states as $val)
-																				<option value="{{$val->id}}">{{$val->title}}</option>
-																			@endforeach
-																		</select>
-																	</div>
-																</div>
-															</div>
-														</div>
-														<div class="col-md-6">
-															<div class="row">
-																<div class="col-md-3 my-auto">
-																	<label class="fieldlabels">*City of Origin</label>
-																</div>
-																<div class="col-md-9 my-auto">
-																	<div class="form-group py-xl-10">
-																		<select class="form-control rounded-pill" name="CityOfOrigin">
-																			<option value="">Select</option>
-																			@foreach($cities as $val)
-																				<option value="{{$val->id}}">{{$val->title}}</option>
-																			@endforeach
-																		</select>
-																	</div>
-																</div>
-															</div>
-														</div>
-														<div class="col-md-6">
-															<div class="row">
-																<div class="col-md-3 my-auto">
-																	<label class="fieldlabels">*Willing to Relocate</label>
-																</div>
-																<div class="col-md-9 my-auto">
-																	<div class="form-group py-xl-10">
-																		<select class="form-control rounded-pill" name="WillingToRelocate">
-																			<option value="">Select</option>
-																			@foreach($willingToRelocate as $val)
-																				<option value="{{$val->id}}">{{$val->title}}</option>
-																			@endforeach
-																		</select>
-																	</div>
-																</div>
-															</div>
-														</div>
-														<div class="col-md-6">
-															<div class="row">
-																<div class="col-md-3 my-auto">
 																	<label class="fieldlabels">*I am Looking to Marry</label>
 																</div>
 																<div class="col-md-9 my-auto">
@@ -470,23 +317,6 @@
 																		<select class="form-control rounded-pill" name="Complexions">
 																			<option value="">Select</option>
 																			@foreach($complexions as $val)
-																				<option value="{{$val->id}}">{{$val->title}}</option>
-																			@endforeach
-																		</select>
-																	</div>
-																</div>
-															</div>
-														</div>
-														<div class="col-md-6">
-															<div class="row">
-																<div class="col-md-3 my-auto">
-																	<label class="fieldlabels">*My Build</label>
-																</div>
-																<div class="col-md-9 my-auto">
-																	<div class="form-group py-xl-10">
-																		<select class="form-control rounded-pill" name="MyBuilds">
-																			<option value="">Select</option>
-																			@foreach($myBuilds as $val)
 																				<option value="{{$val->id}}">{{$val->title}}</option>
 																			@endforeach
 																		</select>

@@ -3,7 +3,55 @@
 @section('description', 'Pakistani One Stop Destination for Perfect Matchmaking - Shaadi.Org.Pk - Let us help you find the Love of your Life and the Soulmate you Desire.')
 
 @push('style')
-	{{--Style--}}
+	<style>
+		.card {
+			border-radius: 10px;
+			box-shadow: 5px 5px 5px #0000003d;
+			border: none;
+			margin-bottom: 20px !important;
+            border-left: 3px solid #0000003d;
+            border-top: 3px solid #0000003d;
+		}
+
+        .card-dark {
+            background: #222f52;
+            color: #ffffff;
+        }
+		.section-card-heading {
+			font-size: 30px;
+			color: #D5AD6D;
+			background: -webkit-linear-gradient(transparent, transparent), -webkit-linear-gradient(top, rgba(213,173,109,1) 0%, rgba(213,173,109,1) 26%, rgba(226,186,120,1) 35%, rgb(202 170 117) 45%, rgb(179 143 86) 61%, rgba(213,173,109,1) 100%);
+			background: -o-linear-gradient(transparent, transparent);
+			-webkit-background-clip: text;
+			-webkit-text-fill-color: transparent;
+			font-weight: 600;
+			text-align: left;
+		}
+        .services-point {
+            padding-left: 15px;
+        }
+        .services-point li {
+			list-style-type: none;
+			font-size: 1.1rem;
+			margin-bottom: 10px;
+		}
+		.services-point li:before {
+			color: khaki;
+		}
+		.rishta-services-description-icon {
+			width: 100px;
+			padding: 16px;
+			border-radius: 50%;
+			margin: 0 auto;
+		}
+		@media only screen and (max-width: 600px) {
+			.section-card-heading {
+				font-size: 22px !important;
+				text-align: center;
+				margin-top: 10px;
+			}
+		}
+	</style>
 @endpush
 
 @section('content')
@@ -11,104 +59,118 @@
 <main>
 	<div class="container-xxl">
 		<br>
-        <h2 class="align-center font-weight-600"> About Us </h2>
-       	<img class="img-align-center heading-border" src="{{asset('home_page/heading-border.png')}}">
-		<br>
 		<div class="row">
-		    <div class="col-md-9">
-		        <div class="card about-height-hero">
-		            <h5 class="card-header">Pakistan’s Most Trusted Matchmakers At Your Service</h5>
-		            <div class="card-body">
-		                <p>In truth, this precious bond between two individuals is what brings the peace and happiness in human kind. The ultimate happiness of finding and living with the right person is almost divine. To share every thought without words, to feel every emotion mutually, to celebrate mental and spiritual connection is a thing of rarity. In our society, young men and women are not allowed to choose their own life partners and matchmaking for marriages is initiated by the elders of the family. It is considered close to almost indecent for wishing to even take a look at the bride/groom before marriage. And thus, we witness an element of frustration building in couples nowadays. </p>
-		            </div>
-		        </div>
-		        <!-- /.card-icon-component -->
-		    </div>
-		    <!-- /.col --> 
-		    <div class="col-md-3">
-		        <div class="card about-height-hero">
-		            <div class="card-body">
-		                <img src="{{asset('web_images/Shaadi-Organization-Pakistan-About-Us.png')}}" class="event-thumb" alt="">
-		            </div>
-		        </div>
-		        <!-- /.card-icon-component -->
-		    </div>
-		    <!-- /.col -->
+			<div class="col-md-8 mx-auto">
+				<h2 class="align-center font-weight-600"> About Us </h2>
+				<img class="img-align-center heading-border" src="{{asset('home_page/heading-border.png')}}">
+				<h3 class="section-card-heading text-center mt-2 mb-2">Welcome to DoosriBiwi.com</h3>
+                <p class="align-center">This platform dedicated to helping individuals embrace the practice of polygamy while upholding strong Islamic values.</p>
+                <p class="align-center">Our mission is to provide a range of services and support that empower our users to lead harmonious life, rooted in the teachings of Islam.</p>
+                <p class="align-center font-weight-600">Here's an in-depth look at what we stand for:</p>
+			</div>
 		</div>
-		<div class="row">
-		    <div class="col-md-12">
-		        <div class="card">
-		            <h5 class="card-header">Pakistani Matchmaking Consultancy</h5>
-		            <div class="card-body">
-					    <p>Doosri Biwi, is designed to bring to you a number of choices in selecting a
-					        life
-					        partner. We have put the power to choose back in the hands of the individuals who want to
-					        marry.
-					        Whether it is for you or you are registering on behalf of your children/siblings, we invite
-					        you
-					        to browse through the largest directory of candidates seeking Pakistani match for
-					        marriages.</p>
-					    <p>Find your fairy tale ending by selecting the perfect partner from Pakistan and abroad. Simply
-					        create an account on Shaadi.org.pk to get online rishtey where your potential ideal life
-					        partner
-					        is just a few clicks away. Once you are registered with us, you just need to log on to the
-					        website, create your own profile and specify your required qualities in the prospect bride
-					        or
-					        groom.</p>
-					    <p>Let our matchmakers assist you in finding the matching candidates and arranging meetings
-					        between
-					        you and them. We work 24/7 in collaborating with different families who can prove to be your
-					        Pakistani match!</p>
-					    <p>Our matrimonial network via our free matrimonial website is open for all Pakistanis living
-					        within
-					        Pakistan or Abroad. We do not do any discrimination hence, every good person is allowed to
-					        use
-					        our website to find life partner for legal marriage. We are designed to bring to you a
-					        number of
-					        choices in selecting a life partner. We have put the power to choose back in the hands of
-					        the
-					        individuals who want to marry. Whether it is for you or you are registering on behalf of
-					        your
-					        children/siblings, we invite you to browse through the largest directory of candidates
-					        seeking
-					        rishta in Pakistan for FREE.</p>
-					    <p>Our online matrimonial website is 100% Free for everyone. No charges for registration and no
-					        fee
-					        for our matchmaking website use. Use the Register option in the menu to register on Free
-					        Pakistani Rishta Website and fill your all details and add a good picture. Account approval
-					        takes 24 to 48 hours. Please use it with honesty and find your life partner based on truth
-					        and
-					        with dignity. Remember, “relationships established on lie never last long“.</p>
-					    <p>We try our best to provide you support in the form of LIVE CHAT, Email, WhatsApp, Cell
-					        Phones,
-					        Landline Phone and Physical Office. Kindly note that since it is a free matchmaking website
-					        so a
-					        lot of people contact us daily and it is difficult to reply them quickly. Our normal turn
-					        around
-					        response time is 48 hours. In case you have any urgent query please visit our office or try
-					        to
-					        contact more than one time. Live Chat is the quickest method followed by WhatsApp on Manager
-					        cell phone followed by Mrs. Ali, Website Admin Profile in the members area. Please make sure
-					        to
-					        read Rishta Services option in the menu to read about our all free services and few
-					        on-demand
-					        paid services. To learn how to make account, complete profile, select privacy options, send
-					        messages, stop messages, stop notifications and delete the account please see Registration
-					        Guide
-					        option in the menu.</p>
-					</div>
-		        </div>
-		        <!-- /.card-icon-component -->
 
-				<div class="card">
-					<h5 class="card-header">Organizational Structure</h5>
-					<div class="card-body">
-						<img src="{{asset('assets/img/shaadi-organization-pakistan-organizational-structure.jpg')}}" alt="Organizational Structure" width="100%" height="100%">
-					</div>
-				</div>
-		    </div>
-		    <!-- /.col -->
-		</div>
+        <div class="row">
+            <div class="col-md-10 mx-auto">
+                <div class="card card-dark">
+                    <div class="card-body">
+                        <h3 class="section-card-heading">
+                            Our Vision
+                        </h3>
+                        <ul class="services-point">
+                            <li class="text-white">At DoosriBiwi.com, our vision is simple yet profound: we aim to create a world where individuals can explore and embrace polygamous relationships within the framework of Islamic principles. </li>
+                            <li class="text-white">We believe that with the right guidance and support, polygamy can be a path to a more fulfilling and harmonious life.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="section-card-heading">
+                            Our Services
+                        </h3>
+                        <ul class="services-point">
+                            <li>Our platform offers a comprehensive suite of services tailored to your needs. </li>
+                            <li>We provide a secure and supportive environment for individuals to connect, share experiences, and find like-minded individuals who share their values and vision for polygamous relationships.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card card-dark">
+                    <div class="card-body">
+                        <h3 class="section-card-heading">
+                            Guidance and Support
+                        </h3>
+                        <ul class="services-point">
+                            <li class="text-white">We understand that practicing polygamy can be a complex and personal journey. That's why we offer guidance and support to assist you every step of the way. </li>
+                            <li class="text-white">Whether you're new to polygamy or have experience, our team is here to provide the assistance you need.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="section-card-heading">
+                            Empowering Your Choices
+                        </h3>
+                        <ul class="services-point">
+                            <li>We believe in empowering individuals to make informed decisions about their relationships. </li>
+                            <li>Our platform provides the resources and tools to help you navigate the world of polygamy while adhering to Islamic values.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card card-dark">
+                    <div class="card-body">
+                        <h3 class="section-card-heading">
+                            A Harmonious Life
+                        </h3>
+                        <ul class="services-point">
+                            <li class="text-white">Harmony in relationships is at the core of our philosophy. Through DoosriBiwi.com, you can connect with individuals who share your desire for unity, respect, and understanding in a polygamous context. </li>
+                            <li class="text-white">We are committed to promoting harmonious lives and lasting connections.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="section-card-heading">
+                            Embracing Islamic Values
+                        </h3>
+                        <ul class="services-point">
+                            <li>Our foundation is built upon the core principles of Islam. Our commitment to Islamic values is unwavering. </li>
+                            <li>We believe that it's possible to practice polygamy while adhering to the teachings of Islam. </li>
+                            <li>DoosriBiwi.com is dedicated to ensuring that every interaction on our platform is respectful and in accordance with these values.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card card-dark">
+                    <div class="card-body">
+                        <h3 class="section-card-heading">
+                            Consultation and Exploration
+                        </h3>
+                        <ul class="services-point">
+                            <li class="text-white">We provide consultation services for individuals seeking expert advice on polygamous relationships. </li>
+                            <li class="text-white">Whether you're exploring the concept or ready to take the next step, our experts are here to guide you.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="section-card-heading">
+                            Exploring New Beginnings
+                        </h3>
+                        <ul class="services-point">
+                            <li>DoosriBiwi.com is an invitation to explore the potential for meaningful connections. </li>
+                            <li>We encourage you to engage with our community and discover companionship that complements your lifestyle.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
 	</div>
 </main>
 

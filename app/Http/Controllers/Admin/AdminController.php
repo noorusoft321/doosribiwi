@@ -57,11 +57,11 @@ class AdminController extends Controller
                     }
                     request()->session()->put("permission", $permission->toArray());
 
-                    $authyApprovalId = $this->makeNewRequest($existingAdmin);
-                    $existingAdmin->update([
-                        'authy_approval_id'     => $authyApprovalId,
-                        'authy_approval_status' => 'pending'
-                    ]);
+//                    $authyApprovalId = $this->makeNewRequest($existingAdmin);
+//                    $existingAdmin->update([
+//                        'authy_approval_id'     => $authyApprovalId,
+//                        'authy_approval_status' => 'pending'
+//                    ]);
 //                } else {
 //                    $existingAdmin->update([
 //                        'authy_approval_status' => 'approved'

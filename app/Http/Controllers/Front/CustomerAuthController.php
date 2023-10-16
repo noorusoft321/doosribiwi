@@ -55,7 +55,7 @@ use App\Models\University;
 use App\Models\Weight;
 use App\Models\WillingToRelocate;
 use App\Rules\Adult;
-use App\Rules\ReCaptcha;
+//use App\Rules\ReCaptcha;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Session;
@@ -76,9 +76,9 @@ class CustomerAuthController extends Controller
         if (!empty($ifEmail)) {
             $rules['email'] = 'required|email|exists:shaadi_customers,email';
         } else {
-            $rules['email'] = 'required|exists:shaadi_customers,name';
+            $rules['email'] = 'required|exists:shaadi_customers,mobile';
         }
-        $messages['email'] = 'The selected Email/Username is invalid';
+        $messages['email'] = 'The selected Email Address/Mobile Number is invalid';
         $validator = Validator::make($request, $rules, $messages);
 
         if ($validator->fails()) {
@@ -86,7 +86,7 @@ class CustomerAuthController extends Controller
         }
         $customer = Customer::where('deleted',0)
             ->where('email',$request['email'])
-            ->orWhere('name',$request['email'])
+            ->orWhere('mobile',$request['email'])
             ->first();
         if (!empty($customer)) {
             if (Hash::check($request['password'], $customer->password)) {
@@ -208,9 +208,7 @@ class CustomerAuthController extends Controller
         $messages['MaritalStatusID'] = 'The marital status field is required.';
         $validator = Validator::make($request, [
             'gender'                 => 'required|numeric|in:1,2',
-            'name'                   => 'required|max:255|unique:shaadi_customers,name',
-            'first_name'             => 'required|max:255|min:3',
-//            'last_name'              => 'max:255||min:3',
+            'first_name'             => 'required|regex:/^[a-zA-Z]+$/u|max:255|min:3',
             'mobile'                 => 'required|max:255|unique:shaadi_customers,mobile',
             'country_id'             => 'required|numeric|exists:shaadi_countries,id',
             'state_id'               => 'required|numeric|exists:shaadi_states,id',
@@ -220,9 +218,7 @@ class CustomerAuthController extends Controller
             'password'               => 'required|min:6',
             'RegistrationsReasonsID' => 'required|numeric|exists:shaadi_registrations_reasons,id',
             'MaritalStatusID'        => 'required|numeric|exists:shaadi_marital_statuses,id',
-//            'second_marraige'        => 'required|numeric|in:1,2,3',
-            'read_policy'            => 'required',
-//            'g-recaptcha-response'   => ['required', new ReCaptcha]
+            'read_policy'            => 'required'
         ],$messages);
 
         if ($validator->fails()) {
@@ -232,7 +228,6 @@ class CustomerAuthController extends Controller
         DB::beginTransaction();
         try {
             $request['profile_status'] = 1;
-            // $request['ip_address'] = gethostbyname(gethostname());
             $request['ip_address'] = $_SERVER['REMOTE_ADDR'];
             $request['user_type'] = 3;
             $request['source'] = 'Website';
@@ -656,12 +651,8 @@ class CustomerAuthController extends Controller
         $request = request()->all();
         $rules = [
             'Qualification'   => 'required|numeric',
-            'major_course_id' => 'required|numeric',
             'Profession'      => 'required|numeric',
             'MonthlyIncome'   => 'required|numeric',
-            'University'      => 'required|numeric',
-            'JobPost'         => 'required|numeric',
-            'FuturePlans'     => 'required|numeric'
         ];
         $validator = Validator::make($request, $rules);
 
@@ -1181,85 +1172,27 @@ class CustomerAuthController extends Controller
             return redirect()->route('auth.verify');
         }
         $title = 'Career Form';
-        $customerOtherInfo = CustomerOtherInfo::where('RegistrationID',auth()->guard('customer')->id())->first();
         $customerCareerInfo = CustomerCareerInfo::where('CustomerID',auth()->guard('customer')->id())->first();
-        $countries = [];
-        $registrationReasons = [];
-        $maritalStatues = [];
-        $majorCourses = [];
-        if (empty($customerOtherInfo)) {
-            $countries = Country::where('deleted',0)->orderBy('order_at','asc')->get();
-            $registrationReasons = RegistrationsReason::where('deleted',0)->orderBy('order_at','asc')->get();
-            $maritalStatues = MaritalStatus::where('deleted',0)->orderBy('order_at','asc')->get();
-        }
-        if (!empty($customerCareerInfo)) {
-            $majorCourses = MajorCourse::where('deleted',0)->where('education_id',$customerCareerInfo->Qualification)->get();
-        }
         $educations = Education::where('deleted',0)->orderBy('order_at','asc')->get();
         $occupations = Occupation::where('deleted',0)->orderBy('order_at','asc')->get();
-        $tongues = MotherTongue::where('deleted',0)->orderBy('order_at','asc')->get();
         $incomes = AnnualInCome::where('deleted',0)->orderBy('order_at','asc')->get();
-        $universities = University::where('deleted',0)->orderBy('order_at','asc')->get();
-        $jobPosts = JobPost::where('deleted',0)->orderBy('order_at','asc')->get();
-        $futurePlans = FuturePlan::where('deleted',0)->orderBy('order_at','asc')->get();
         return view('front.customer.steps.education',compact(
             'title',
-            'customerOtherInfo',
             'customerCareerInfo',
-            'countries',
-            'registrationReasons',
-            'maritalStatues',
             'educations',
             'occupations',
-            'tongues',
-            'incomes',
-            'universities',
-            'jobPosts',
-            'futurePlans',
-            'majorCourses'
+            'incomes'
         ));
     }
 
     public function educationSave()
     {
         $request = request()->all();
-        if (array_key_exists('gender',$request)) {
-            $validator = Validator::make($request, [
-                'Qualification'                   => 'required|numeric',
-                'major_course_id'                 => 'required|numeric',
-                'Profession'                      => 'required|numeric',
-                'MonthlyIncome'                   => 'required|numeric',
-                'University'                      => 'required|numeric',
-                'JobPost'                         => 'required|numeric',
-                'FuturePlans'                     => 'required|numeric',
-                'gender'                          => 'required|numeric',
-                'mobile'                          => 'required|max:255|unique:shaadi_customers,mobile',
-                'country_id'                      => 'required|numeric',
-                'city_id'                         => 'required|numeric',
-                'state_id'                        => 'required|numeric',
-                'DOB'                             => 'required|date_format:Y-m-d',
-                'RegistrationsReasonsID'          => 'required|numeric',
-                'MaritalStatusID'                 => 'required|numeric'
-            ],[
-                'country_id'                      => 'The country field is required.',
-                'city_id'                         => 'The city field is required.',
-                'state_id'                        => 'The state field is required.',
-                'DOB'                             => 'The date of birth field is required.',
-                'RegistrationsReasonsID'          => 'Reason for registering field is required.',
-                'MaritalStatusID'                 => 'Marital status field is required.',
-                'major_course_id'                 => 'Major Course field is required.',
-            ]);
-        } else {
-            $validator = Validator::make($request, [
-                'Qualification'   => 'required|numeric',
-                'major_course_id' => 'required|numeric',
-                'Profession'      => 'required|numeric',
-                'MonthlyIncome'   => 'required|numeric',
-                'University'      => 'required|numeric',
-                'JobPost'         => 'required|numeric',
-                'FuturePlans'     => 'required|numeric'
-            ]);
-        }
+        $validator = Validator::make($request, [
+            'Qualification'   => 'required|numeric',
+            'Profession'      => 'required|numeric',
+            'MonthlyIncome'   => 'required|numeric'
+        ]);
 
         if ($validator->fails()) {
             return response()->json(['errors'=>$validator->errors(), 'status'=>'error'],422);
@@ -1267,22 +1200,8 @@ class CustomerAuthController extends Controller
 
         DB::beginTransaction();
         try {
-            $request['RegistrationID'] = auth()->guard('customer')->id();
-            if (array_key_exists('gender',$request)) {
-                $request['image'] = ($request['gender']==1) ? 'default-male.jpg' : 'default-female.jpg';
-                $request['dob_date'] = date('d',strtotime($request['DOB']));
-                $request['dob_month'] = date('m',strtotime($request['DOB']));
-                $request['dob_year'] = date('Y',strtotime($request['DOB']));
-                $request['age'] = date("Y") - $request['dob_year'];
-            }
             CustomerCareerInfo::updateOrCreate([
                 'CustomerID' => $request['RegistrationID']
-            ],$request);
-
-            $request['EducationID'] = $request['Qualification'];
-            $request['OccupationID'] = $request['Profession'];
-            CustomerOtherInfo::updateOrCreate([
-                'RegistrationID' => $request['RegistrationID']
             ],$request);
             DB::commit();
             return response()->json([
@@ -1315,25 +1234,12 @@ class CustomerAuthController extends Controller
 
         $customerPersonalInfo = CustomerPersonalInfo::where('CustomerID',auth()->guard('customer')->id())->first();
         $customerOtherInfo = CustomerOtherInfo::where('RegistrationID',auth()->guard('customer')->id())->first();
-        $states = [];
-        $cities = [];
         $title = 'Personal Form';
-        $countries = Country::where('deleted',0)->get();
-        if (!empty($customerPersonalInfo)) {
-            if (!empty($customerPersonalInfo->CountryOfOrigin)) {
-                $states = State::where('country_id',$customerPersonalInfo->CountryOfOrigin)->where('deleted',0)->get();
-            }
-            if (!empty($customerPersonalInfo->StateOfOrigin)) {
-                $cities = City::where('state_id',$customerPersonalInfo->StateOfOrigin)->where('deleted',0)->get();
-            }
-        }
-        $willingToRelocate = WillingToRelocate::where('deleted',0)->orderBy('order_at','asc')->get();
         $lookingToMarry = IAmLookingToMarry::where('deleted',0)->orderBy('order_at','asc')->get();
         $livingArrangement = MyLivingArrangement::where('deleted',0)->orderBy('order_at','asc')->get();
         $heights = Height::where('deleted',0)->orderBy('order_at','asc')->get();
         $weights = Weight::where('deleted',0)->orderBy('order_at','asc')->get();
         $complexions = Complexion::where('deleted',0)->orderBy('order_at','asc')->get();
-        $myBuilds = MyBuild::where('deleted',0)->orderBy('order_at','asc')->get();
         $hairColors = HairColor::where('deleted',0)->orderBy('order_at','asc')->get();
         $eyeColors = EyeColor::where('deleted',0)->orderBy('order_at','asc')->get();
         $smokes = Smoke::where('deleted',0)->orderBy('order_at','asc')->get();
@@ -1343,16 +1249,11 @@ class CustomerAuthController extends Controller
         return view('front.customer.steps.personal',compact('title',
             'customerPersonalInfo',
             'customerOtherInfo',
-            'countries',
-            'states',
-            'cities',
-            'willingToRelocate',
             'lookingToMarry',
             'livingArrangement',
             'heights',
             'weights',
             'complexions',
-            'myBuilds',
             'hairColors',
             'eyeColors',
             'smokes',
@@ -1366,14 +1267,9 @@ class CustomerAuthController extends Controller
     {
         $request = request()->all();
         $validator = Validator::make($request, [
-            'CountryOfOrigin'                => 'required|numeric',
-            'StateOfOrigin'                  => 'required|numeric',
-            'CityOfOrigin'                   => 'required|numeric',
-            'WillingToRelocate'              => 'required|numeric',
             'IAmLookingToMarry'              => 'required|numeric',
             'MyLivingArrangements'           => 'required|numeric',
             'Heights'                        => 'required|numeric',
-            'MyBuilds'                       => 'required|numeric',
             'HairColors'                     => 'required|numeric',
             'EyeColors'                      => 'required|numeric',
             'Smokes'                         => 'required|numeric',
@@ -1582,7 +1478,7 @@ class CustomerAuthController extends Controller
         $castes = Caste::where('deleted',0)->orderBy('order_at','asc')->get();
         $religions = Religion::where('deleted',0)->orderBy('order_at','asc')->get();
         $areYouReverts = AreYouRevert::where('deleted',0)->orderBy('order_at','asc')->get();
-        $willingToRelocates = WillingToRelocate::where('deleted',0)->orderBy('order_at','asc')->get();
+//        $willingToRelocates = WillingToRelocate::where('deleted',0)->orderBy('order_at','asc')->get();
         $livingArrangements = MyLivingArrangement::where('deleted',0)->orderBy('order_at','asc')->get();
         $eyeColors = EyeColor::where('deleted',0)->orderBy('order_at','asc')->get();
         $title = 'Life Partner Expectations Form';
@@ -1612,7 +1508,6 @@ class CustomerAuthController extends Controller
             'castes',
             'religions',
             'areYouReverts',
-            'willingToRelocates',
             'livingArrangements',
             'eyeColors'
         ));
@@ -1634,7 +1529,7 @@ class CustomerAuthController extends Controller
             'EducationID'          => 'required|numeric',
             'OccupationID'         => 'required|numeric',
             'MyIncome'             => 'required|numeric',
-            'WillingToRelocate'    => 'required|numeric',
+//            'WillingToRelocate'    => 'required|numeric',
             'MyBuilds'             => 'required|numeric',
             'MaritalStatus'        => 'required|numeric',
             'MyLivingArrangements' => 'required|numeric',
@@ -2058,7 +1953,7 @@ class CustomerAuthController extends Controller
         $educations        = Education::where('deleted',0)->orderBy('order_at','asc')->get();
         $tongues           = MotherTongue::where('deleted',0)->orderBy('order_at','asc')->get();
         $occupations       = Occupation::where('deleted',0)->orderBy('order_at','asc')->get();
-        $willingToRelocate = WillingToRelocate::where('deleted',0)->orderBy('order_at','asc')->get();
+//        $willingToRelocate = WillingToRelocate::where('deleted',0)->orderBy('order_at','asc')->get();
         $incomes           = AnnualInCome::where('deleted',0)->orderBy('order_at','asc')->get();
         $lookingToMarry    = IAmLookingToMarry::where('deleted',0)->orderBy('order_at','asc')->get();
         $maritalStatuses   = MaritalStatus::where('deleted',0)->orderBy('order_at','asc')->get();
@@ -2086,7 +1981,7 @@ class CustomerAuthController extends Controller
             'educations',
             'tongues',
             'occupations',
-            'willingToRelocate',
+//            'willingToRelocate',
             'incomes',
             'lookingToMarry',
             'maritalStatuses',
@@ -2168,9 +2063,9 @@ class CustomerAuthController extends Controller
                     if (!empty($request['Castes'])) {
                         $q->where('Caste', $request['Castes']);
                     }
-                    if (!empty($request['WillingToRelocate'])) {
-                        $q->where('WillingToRelocate', $request['WillingToRelocate']);
-                    }
+//                    if (!empty($request['WillingToRelocate'])) {
+//                        $q->where('WillingToRelocate', $request['WillingToRelocate']);
+//                    }
                     if (!empty($request['MyBuilds'])) {
                         $q->where('MyBuilds', $request['MyBuilds']);
                     }
@@ -2262,7 +2157,7 @@ class CustomerAuthController extends Controller
                 }
 
                 if (!empty($request['Castes']) ||
-                    !empty($request['WillingToRelocate']) ||
+//                    !empty($request['WillingToRelocate']) ||
                     !empty($request['MyBuilds']) ||
                     !empty($request['MyLivingArrangements']) ||
                     !empty($request['Heights']) ||
@@ -2271,9 +2166,9 @@ class CustomerAuthController extends Controller
                         if (!empty($request['Castes'])) {
                             $q->where('Caste', $request['Castes']);
                         }
-                        if (!empty($request['WillingToRelocate'])) {
-                            $q->where('WillingToRelocate', $request['WillingToRelocate']);
-                        }
+//                        if (!empty($request['WillingToRelocate'])) {
+//                            $q->where('WillingToRelocate', $request['WillingToRelocate']);
+//                        }
                         if (!empty($request['MyBuilds'])) {
                             $q->where('MyBuilds', $request['MyBuilds']);
                         }

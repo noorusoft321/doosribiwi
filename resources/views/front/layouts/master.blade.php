@@ -125,16 +125,13 @@
 			color: #fff;
 			overflow: hidden;
 		}
-		.btn-view-profile {
-			border: none;
-			border-left: 5px solid #E0AA3E;
-			border-right: 5px solid #E0AA3E;
-			/*background: rgb(64, 168, 230);*/
-			/*background: linear-gradient(0deg, rgb(64, 168, 230) 0%, rgb(54, 184, 230) 100%);*/
-			/*background-image: linear-gradient(#F9F295,#E0AA3E,#E0AA3E,#B88A44);*/
-			color: #fff;
-			overflow: hidden;
-		}
+        .btn-view-profile {
+            border: none;
+            background: rgb(64, 168, 230);
+            background: linear-gradient(0deg, rgb(64, 168, 230) 0%, rgb(54, 184, 230) 100%);
+            color: #fff;
+            overflow: hidden;
+        }
 		.custom-btn:hover {
 			text-decoration: none;
 			color: #fff;
@@ -180,6 +177,12 @@
 			border-radius: 6px;
 			box-shadow: 6px 6px 12px 0px rgba(0,0,0,0.4);
 			height: 270px;
+		}
+		.alert.alert-success, .alert.alert-success strong {
+			color: #0b0a0f !important;
+		}
+		.alert.alert-success button {
+			float: right;
 		}
 		@media only screen and (max-width: 600px) {
 			.mobileShow {
@@ -251,7 +254,6 @@
     });
 
     $(function () {
-
         $("button.btn-close").click(function() {
             $('div.alert-dismissible').hide('slow');
             $('div.alert-success').hide('slow');
@@ -260,29 +262,19 @@
                 $('div.alert-success').remove();
             },1000)
         });
-
         $('i#togglePassword').click(function() {
             let checkInput = $(this).parent().find('input');
             checkInput.attr('type', (checkInput.attr('type')=='password' ? 'text' : 'password'));
         });
+    });
 
-        // Profile Dropdown Start
-        $(".profile-hover").click(function(){
-            $(".profile-menu").toggle();
-			$(".account .profile-menu.show").removeAttr('style');
-			$(".account .profile-menu.show").css({
-				'right': '0px',
-				'display': 'block',
-				'position': 'absolute',
-				'will-change': 'transform',
-				'top': '0px',
-				'transform': 'translate3d(0px, 56px, 0px)'
-			})
-        });
+    // Profile Dropdown Start
+    $("#navbarDropdownMenuLink").click(function(){
+        $(".profile-menu").toggle();
+    });
 
-        $(document).click(function(){
-            $(".profile-menu").hide();
-        });
+    $(document).click(function(){
+        $(".profile-menu").hide();
     });
 
     function checkAuthLoginMessage() {

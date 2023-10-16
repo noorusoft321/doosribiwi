@@ -4,7 +4,14 @@
 @section('description',"If you're looking for a life partner and don't know where to start, visit our offices today and our professional matchmakers will guide you in accordance with your preferences Join Shaadi.org")
 
 @push('style')
-	{{--Style--}}
+	<style>
+		.divider:after, .divider:before {
+			content: "";
+			flex: 1;
+			height: 1px;
+			background: #eee;
+		}
+	</style>
 @endpush
 
 @section('content')
@@ -40,13 +47,13 @@
 
 							<form method="post" class="row" id="signInForm">
 								@csrf
-								<div class="col-12 py-xl-2">
+								<div class="col-12 my-1">
 									<div class="form-group">
-										<label class="email">* Enter your Email / User name</label>
-										<input type="text" name="email" placeholder="Enter your Email / User name" class="form-control rounded-pill">
+										<label class="email">* Enter your Email Address / Mobile Number</label>
+										<input type="text" name="email" placeholder="Enter your Email Address / Mobile Number" class="form-control rounded-pill">
 									</div>
 								</div>
-								<div class="col-12 py-xl-3">
+								<div class="col-12 my-1">
 									<div class="form-group">
 										<label class="password">* Password</label>
 										<input type="password" name="password" id="password" placeholder="Password" minlength="6" class="form-control rounded-pill">
@@ -54,23 +61,31 @@
 									</div>
 								</div>
 
-								<div class="row">
-									<div class="col-8 mx-auto my-auto">
-										<a class="link" href="{{route('view.forgot.password')}}">Forgot password?</a>
-									</div>
-									<div class="col-4 text-end mx-auto my-auto">
-										<button type="button" onclick="authAct()" class="btn--login btn btn-outline-primary font-weight-600">Sign In</button>
-									</div>
-
-									<div class="col-md-12">
-										<br>
-										<p>Don't have an account? <a class="link font-weight-600" href="{{route('view.register')}}">Register</a></p>
-									</div>
-									{{--<div class="col-md-12 text-center d-none">--}}
-										{{--<a type="button" href="{{route('social.login',['google'])}}" class="btn btn-outline-primary font-weight-600">Login with Google</a>--}}
-										{{--<a type="button" href="{{route('social.login',['facebook'])}}" class="btn btn-outline-primary font-weight-600">Login with Facebook</a>--}}
-									{{--</div>--}}
+								<br>
+								<a class="link font-weight-600 m-2" href="{{route('view.forgot.password')}}">Forgot your password?</a>
+								<div class="col-12 col-lg mx-auto my-auto">
+									<a type="button" onclick="authAct()" class="btn--login btn btn-outline-primary font-weight-600 w-100 heading-5">Sign In</a>
 								</div>
+								<br>
+								<div class="divider d-flex align-items-center my-4">
+									<p class="text-center fw-bold mx-3 mb-0 text-muted">OR</p>
+								</div>
+
+								<div class="col-12">
+									<div class="row center my-auto">
+										<div class="col-12 col-lg mx-auto my-auto">
+											<a type="button" href="{{route('social.login',['google'])}}" class="btn btn-outline-primary font-weight-600 mb-2 w-100 heading-5"> Sign In With Google</a>
+										</div>
+										<div class="col-12 col-lg mx-auto my-auto">
+											<a type="button" href="{{route('social.login',['facebook'])}}" class="btn btn-outline-primary font-weight-600 mb-2 w-100 heading-5"> Sign In With Facebook</a>
+										</div>
+									</div>
+								</div>
+
+								<div class="col-12 text-center mt-2">
+									<p class="m-1">Don't have an account? <a class="link font-weight-600" href="{{route('view.register')}}">Register</a></p>
+								</div>
+
 							</form>
 						</div>
 					</div>

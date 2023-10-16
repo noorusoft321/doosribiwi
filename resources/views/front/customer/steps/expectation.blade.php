@@ -188,17 +188,6 @@
 														</div>
 														<div class="col-md-3">
 															<div class="form-group py-xl-10">
-																<label class="fieldlabels">Willing To Relocate</label>
-																<select class="form-control rounded-pill" name="WillingToRelocate">
-																	<option value="">Select</option>
-																	@foreach($willingToRelocates as $val)
-																		<option value="{{$val->id}}" {{isset($customerSearch->WillingToRelocate) && $customerSearch->WillingToRelocate==$val->id ? 'selected' : ''}}>{{$val->title}}</option>
-																	@endforeach
-																</select>
-															</div>
-														</div>
-														<div class="col-md-3">
-															<div class="form-group py-xl-10">
 																<label class="fieldlabels">Builds</label>
 																<select class="form-control rounded-pill" name="MyBuilds">
 																	<option value="">Select</option>
@@ -396,17 +385,6 @@
 																<select class="form-control rounded-pill" name="MyIncome">
 																	<option value="">Select</option>
 																	@foreach($incomes as $val)
-																		<option value="{{$val->id}}">{{$val->title}}</option>
-																	@endforeach
-																</select>
-															</div>
-														</div>
-														<div class="col-md-3">
-															<div class="form-group py-xl-10">
-																<label class="fieldlabels">Willing To Relocate</label>
-																<select class="form-control rounded-pill" name="WillingToRelocate">
-																	<option value="">Select</option>
-																	@foreach($willingToRelocates as $val)
 																		<option value="{{$val->id}}">{{$val->title}}</option>
 																	@endforeach
 																</select>

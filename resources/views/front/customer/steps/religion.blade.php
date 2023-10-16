@@ -86,23 +86,6 @@
 														<div class="col-md-6">
 															<div class="row">
 																<div class="col-md-3 my-auto">
-																	<label class="fieldlabels">*Do You Prefer Hijab?</label>
-																</div>
-																<div class="col-md-9 my-auto">
-																	<div class="form-group py-xl-10">
-																		<select class="form-control rounded-pill" name="DoYouPreferHijabs">
-																			<option value="">Select</option>
-																			@foreach($preferHijabs as $val)
-																				<option value="{{$val->id}}" {{$customerReligionInfo->DoYouPreferHijabs==$val->id ? 'selected' : ''}}>{{$val->title}}</option>
-																			@endforeach
-																		</select>
-																	</div>
-																</div>
-															</div>
-														</div>
-														<div class="col-md-6">
-															<div class="row">
-																<div class="col-md-3 my-auto">
 																	<label class="fieldlabels">*Do You Prefer Beard?</label>
 																</div>
 																<div class="col-md-9 my-auto">
@@ -151,23 +134,6 @@
 																</div>
 															</div>
 														</div>
-														<div class="col-md-6">
-															<div class="row">
-																<div class="col-md-3 my-auto">
-																	<label class="fieldlabels">*Do You Perform Salaah?</label>
-																</div>
-																<div class="col-md-9 my-auto">
-																	<div class="form-group py-xl-10">
-																		<select class="form-control rounded-pill" name="DoYouPerformSalaah">
-																			<option value="">Select</option>
-																			@foreach($performSalaahs as $val)
-																				<option value="{{$val->id}}" {{$customerReligionInfo->DoYouPerformSalaah==$val->id ? 'selected' : ''}}>{{$val->title}}</option>
-																			@endforeach
-																		</select>
-																	</div>
-																</div>
-															</div>
-														</div>
 													</div>
 												@else
 													<div class="row">
@@ -198,23 +164,6 @@
 																		<select class="form-control rounded-pill" name="Sects">
 																			<option value="">Select</option>
 																			@foreach($sects as $val)
-																				<option value="{{$val->id}}">{{$val->title}}</option>
-																			@endforeach
-																		</select>
-																	</div>
-																</div>
-															</div>
-														</div>
-														<div class="col-md-6">
-															<div class="row">
-																<div class="col-md-3 my-auto">
-																	<label class="fieldlabels">*Do You Prefer Hijab?</label>
-																</div>
-																<div class="col-md-9 my-auto">
-																	<div class="form-group py-xl-10">
-																		<select class="form-control rounded-pill" name="DoYouPreferHijabs">
-																			<option value="">Select</option>
-																			@foreach($preferHijabs as $val)
 																				<option value="{{$val->id}}">{{$val->title}}</option>
 																			@endforeach
 																		</select>
@@ -266,23 +215,6 @@
 																		<select class="form-control rounded-pill" name="DoYouKeepHalal">
 																			<option value="">Select</option>
 																			@foreach($halals as $val)
-																				<option value="{{$val->id}}">{{$val->title}}</option>
-																			@endforeach
-																		</select>
-																	</div>
-																</div>
-															</div>
-														</div>
-														<div class="col-md-6">
-															<div class="row">
-																<div class="col-md-3 my-auto">
-																	<label class="fieldlabels">*Do You Perform Salaah?</label>
-																</div>
-																<div class="col-md-9 my-auto">
-																	<div class="form-group py-xl-10">
-																		<select class="form-control rounded-pill" name="DoYouPerformSalaah">
-																			<option value="">Select</option>
-																			@foreach($performSalaahs as $val)
 																				<option value="{{$val->id}}">{{$val->title}}</option>
 																			@endforeach
 																		</select>
