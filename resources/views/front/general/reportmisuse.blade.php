@@ -24,17 +24,17 @@
 				<div class="card">
 					<div class="card-body">
 						<p>
-							Shaadi.org.pk strongly believes in the safeguard of the members of the site and so it vows to protect their information required to get rishta at the time of registration. Any sort of misuse or misconduct can be reported to the site admin at info@shaadi.org.pk. The admin shall make sure to respond and remove any threats to its members instantly.
+							DoosriBiwi.com strongly believes in the safeguard of the members of the site and so it vows to protect their information required to get rishta at the time of registration. Any sort of misuse or misconduct can be reported to the site admin at info@DoosriBiwi.com. The admin shall make sure to respond and remove any threats to its members instantly.
 						</p>
 
 						<p>
-							The site shaadi.org.pk is not held responsible for any misuse or threat on the information shared by the members themselves. The site only provides a platform to bring together families and individuals for the purpose of marriage and not any obscene activity. Thus, the site cannot be held responsible in such regards.
+							The site DoosriBiwi.com is not held responsible for any misuse or threat on the information shared by the members themselves. The site only provides a platform to bring together families and individuals for the purpose of marriage and not any obscene activity. Thus, the site cannot be held responsible in such regards.
 						</p>
 
 						<p>    <strong>Phone:</strong> 021 348 308 11</p>
 						<p>    <strong>Cell:</strong> 0346 21 41 786</p>
-						<p>    <strong>Email:</strong> info@shaadi.org.pk</p>
-						<p>    <strong>Skype:</strong> shaadi.org.pk</p>
+						<p>    <strong>Email:</strong> info@DoosriBiwi.com</p>
+						<p>    <strong>Skype:</strong> DoosriBiwi.com</p>
 					</div>
 				</div>
 				<!-- /.card-icon-component -->

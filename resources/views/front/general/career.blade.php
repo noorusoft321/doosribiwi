@@ -118,7 +118,7 @@
 				<h5 class="card-header">How to Apply</h5>
 				<div class="card-body">
 					<p class="text-justify">If you are a career oriented person with passion, creativity, and seeking a challenging career then feel free to drop your CV at <strong class="text-theme">HR WhatsApp: "<a
-					href="https://api.whatsapp.com/send?phone=923323050498&amp;text=Hi%20Shaadi.org.pk%2C%20I%20need%20more%20information.">03323050498</a>"</strong>. Mention job post name in WhatsApp message. Please send a voice message explaining
+					href="https://api.whatsapp.com/send?phone=923323050498&amp;text=Hi%20DoosriBiwi.com%2C%20I%20need%20more%20information.">03323050498</a>"</strong>. Mention job post name in WhatsApp message. Please send a voice message explaining
 					why you are the perfect candidate for the position. Make sure your CV is up-to-date, have a recent photo on top, mention percentage and grade of your academic qualification, and mention job details which you have done along with start and end dates. We verify all the details so make sure all the information in your CV is accurate and verifiable.</p>
 
 				</div>

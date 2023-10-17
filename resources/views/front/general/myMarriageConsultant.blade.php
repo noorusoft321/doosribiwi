@@ -13,7 +13,7 @@
 		<br>
         <h2 class="align-center font-weight-600"> My Personal Marriage Consultant </h2>
        	<img class="img-align-center heading-border" src="{{asset('home_page/heading-border.png')}}">
-       	<p class="align-center font-20">Marriage consultants at Shaadi.org.pk completely understand how difficult and painful it is for you and your beloved daughter when the prospect groom’s family does not respond back after they have visited you. Likewise, we also realize how irritating and embarrassing it can be for the groom’s family to look through numerous girls to find a matching bride but unable to find one.</p>
+       	<p class="align-center font-20">Marriage consultants at DoosriBiwi.com completely understand how difficult and painful it is for you and your beloved daughter when the prospect groom’s family does not respond back after they have visited you. Likewise, we also realize how irritating and embarrassing it can be for the groom’s family to look through numerous girls to find a matching bride but unable to find one.</p>
        	<p class="align-center font-20">Hence, we introduce to you the concept of <strong style="color:#993300;"> My Personal Marriage Consultant.</strong></p>
        	<p class="align-center font-20">Now, there will be no more time wasted, no need for embarrassing excuse calls and especially, no more heartbreak. After all, <strong style="color:#993300;">daughters are piece of our heart and sons are apple of our eye and they both deserve the best. </strong></p>
 
@@ -54,7 +54,7 @@
 			                        <li> <strong style="color:#993300;"> Elite Matrimonial:</strong> Up to 10 Consultants work for you in Karachi, Lahore, Islamabad, Rawalpindi, Faisalabad and Abroad to find the best person for you.</li>
 			                    </ul>
 	                        </p>
-	                        <p class="font-weight-600 align-center">Shaadi.org.pk is an exclusive Pakistan Matrimony service. Our personal matchmaking service is specifically for Pakistanis and Muslim only. We deeply appreciate our traditions, customs and family values. And, so we make sure to uphold them while we work towards building a relationship as sacred as marriage.</p>
+	                        <p class="font-weight-600 align-center">DoosriBiwi.com is an exclusive Pakistan Matrimony service. Our personal matchmaking service is specifically for Pakistanis and Muslim only. We deeply appreciate our traditions, customs and family values. And, so we make sure to uphold them while we work towards building a relationship as sacred as marriage.</p>
 	                    </div>
 		            </div>
 		        </div>

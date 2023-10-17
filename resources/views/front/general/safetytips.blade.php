@@ -1,7 +1,7 @@
 @extends('front.layouts.master')
 
 @section('title','Safety Tips')
-@section('description', 'Read Shaadi.org.pk Safety Tips to stay safe from any deception and fraud that might happen in the online as well as offline world.')
+@section('description', 'Read DoosriBiwi.com Safety Tips to stay safe from any deception and fraud that might happen in the online as well as offline world.')
 
 @push('style')
 	<style></style>
@@ -17,7 +17,7 @@
 		<div class="d-grid w-md-50 w-xl-80 mb-60 mx-auto gap-12">
 
 			<p class="text-center">
-				The customer relation team at Shaadi.org.pk is exclusively trained in handling the screening procedure for inappropriate and/or irrelevant content. We follow strict abuse prevention and reporting systems for persons who get through our exclusive screening systems.
+				The customer relation team at DoosriBiwi.com is exclusively trained in handling the screening procedure for inappropriate and/or irrelevant content. We follow strict abuse prevention and reporting systems for persons who get through our exclusive screening systems.
 			</p>
 
 			<p class="text-center">
@@ -36,7 +36,7 @@
 						</p>
 
 						<p>
-							Do not include your personal/private information in the conversation like, your name, home address, contact/telephone numbers, office address or any similar sort of information. Also do not send your contact information to anybody you do not trust. Shaadi.org.pk does not take any responsibility for the misuse of accounts by the members.
+							Do not include your personal/private information in the conversation like, your name, home address, contact/telephone numbers, office address or any similar sort of information. Also do not send your contact information to anybody you do not trust. DoosriBiwi.com does not take any responsibility for the misuse of accounts by the members.
 						</p>
 					</div>
 				</div>
@@ -83,7 +83,7 @@
 						</p>
 
 						<p>
-							With our Photo Request option, you can ask for photos of people you are interested in. Since Shaadi.org.pk offers free services like scanning and uploading of photos to its members, there will be no reason for any individual to not be able to provide you with one.
+							With our Photo Request option, you can ask for photos of people you are interested in. Since DoosriBiwi.com offers free services like scanning and uploading of photos to its members, there will be no reason for any individual to not be able to provide you with one.
 						</p>
 
 						<p>
@@ -236,7 +236,7 @@
 							The best bet is to use your own good judgment and do what your gut tells you to, as at the end of the day, you the one responsible for your experiences. Just have faith on your instincts and it will help choose the right life partner!
 						</p>
 
-						<p style="color:red; font-weight: bold;">Shaadi.org.pk reserves the right to withhold all the information, remove or make changes to your account in case the requirements are not met by the members. The site shall not be held liable for any misconduct or injury or loss in any case while the members interact with each other.</p>
+						<p style="color:red; font-weight: bold;">DoosriBiwi.com reserves the right to withhold all the information, remove or make changes to your account in case the requirements are not met by the members. The site shall not be held liable for any misconduct or injury or loss in any case while the members interact with each other.</p>
 					</div>
 				</div>
 				<!-- /.card-icon-component -->

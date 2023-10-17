@@ -9,7 +9,7 @@
     <meta name="author" content="pixelstrap">
     <link rel="icon" href="{{asset('assets/images/favicon.png')}}" type="image/x-icon">
     <link rel="shortcut icon" href="{{asset('assets/images/favicon.png')}}" type="image/x-icon">
-    <title>Confirm Account - Shaadi.org.pk</title>
+    <title>Confirm Account - DoosriBiwi.com</title>
     <link href="https://fonts.googleapis.com/css?family=Work+Sans:100,200,300,400,500,600,700,800,900" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
@@ -53,7 +53,7 @@
                         <table style="width: 650px; margin: 0 auto; margin-bottom: 30px">
                             <tbody>
                             <tr>
-                                <td><img src="{{asset('assets/img/cuba-logo1.png')}}" alt="Shaadi.org.pk"></td>
+                                <td><img src="{{asset('assets/img/cuba-logo1.png')}}" alt="DoosriBiwi.com"></td>
                             </tr>
                             </tbody>
                         </table>
@@ -65,7 +65,7 @@
                 <tbody>
                 <tr>
                     <td style="padding: 30px">
-                        <h4 style="font-weight: 600">Confirm Account - Shaadi.org.pk</h4>
+                        <h4 style="font-weight: 600">Confirm Account - DoosriBiwi.com</h4>
                         <p><strong>{{$customer->full_name}}</strong> your account create successfully.</p>
                         <p style="text-align: center"><a href="{{route('confirm.customer.account',[$code])}}" style="padding: 10px; background-color: #040F2E; color: #fff; display: inline-block; border-radius: 4px">Confirm Account</a></p>
                         <p>Click confirm to active you account for access it thanks.</p>
@@ -78,7 +78,7 @@
                 <tbody>
                 <tr style="text-align: center">
                     <td>
-                        <p style="color: #999; margin-bottom: 0">Powered By Shaadi.org.pk</p>
+                        <p style="color: #999; margin-bottom: 0">Powered By DoosriBiwi.com</p>
                     </td>
                 </tr>
                 </tbody>

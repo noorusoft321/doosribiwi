@@ -74,7 +74,7 @@
 			<div class="card-body">
 				<div>
 					<p>
-						Doosri Biwi is the first online matchmaking platform in Pakistan that is certified by the government of Pakistan. We, at Doosri Biwi, make sure to bring your way a number of choices to select a partner from. We lend a helping hand to those who are in dire need of a genuine partner to experience their ‘happily ever after’ with. All you have you do is to create your account on Shaadi.org.pk, get yourself registered, and create your profile by specifying your requirements. After you have done that, you can sit back and relax while we take charge of finding you the best.
+						Doosri Biwi is the first online matchmaking platform in Pakistan that is certified by the government of Pakistan. We, at Doosri Biwi, make sure to bring your way a number of choices to select a partner from. We lend a helping hand to those who are in dire need of a genuine partner to experience their ‘happily ever after’ with. All you have you do is to create your account on DoosriBiwi.com, get yourself registered, and create your profile by specifying your requirements. After you have done that, you can sit back and relax while we take charge of finding you the best.
 					</p>
 				</div>
 			</div>

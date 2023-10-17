@@ -1,6 +1,6 @@
 @extends('front.layouts.master')
 @section('title','Authentic Profile - Free Pakistani Rishta | Matrimonial Website | Matrimony Services | Marriage Bureau')
-@section('description', 'Authentic Profile - Free Pakistani Rishta | Matrimonial Website | Matrimony Services | Marriage Bureau | Shaadi.org.pk')
+@section('description', 'Authentic Profile - Free Pakistani Rishta | Matrimonial Website | Matrimony Services | Marriage Bureau | DoosriBiwi.com')
 
 @push('style')
     <style>

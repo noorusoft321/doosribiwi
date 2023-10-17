@@ -1,7 +1,7 @@
 @extends('front.layouts.master')
 
 @section('title','Why Choose Pakistan Matrimonial Sites')
-@section('description', 'Pakistan Matrimonial Sites like Shaadi.org.pk play an active role in facilitating people who are looking to get settled.')
+@section('description', 'Pakistan Matrimonial Sites like DoosriBiwi.com play an active role in facilitating people who are looking to get settled.')
 
 @push('style')
 	<style></style>

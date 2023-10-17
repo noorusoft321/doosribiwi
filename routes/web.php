@@ -30,10 +30,19 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/testing-with-db', function () {
-    dd('Doosri Biwi');
+    $res = null;
+//    $messageData = array(
+//        'code'  => base64_encode('smmwp321@gmail.com'),
+//        'email' => 'smmwp321@gmail.com'
+//    );
+//
+//    $res = sendNewEmail('emails.password_reset',$messageData,'Password Reset - DoosriBiwi.com');
+    dd('Doosri Biwi',$res);
 })->name('testing.with.db');
 
 //Route::get('/change-profiles-blur', [CustomerController::class, 'changeProfilesBlur'])->name('change.profiles.blur');
+
+Route::get('/staging-to-live', [CustomerAuthController::class, 'stagingToLive'])->name('customer.staging.to.live');
 
 /* Start Frontend here */
 Route::get('/', [HomeController::class, 'index'])->name('landing.page')->middleware('customer.profile.complete.decider');

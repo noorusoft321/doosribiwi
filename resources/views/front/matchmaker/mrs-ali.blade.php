@@ -116,7 +116,7 @@
                             <p class="mb-0">Her vision is to build a world in which women are respected, empowered, uplifted and equal partners in society.</p>
                             <p style="visibility: hidden;">society.</p>
                             <div class="matchProfileIcons">
-                                <a href="https://api.whatsapp.com/send?phone=923452444262&text=Hi%20Shaadi.org.pk%2C%20I%20need%20more%20information." style="background: #25D366;">
+                                <a href="https://api.whatsapp.com/send?phone=923452444262&text=Hi%20DoosriBiwi.com%2C%20I%20need%20more%20information." style="background: #25D366;">
                                     <i class="fa fa-whatsapp" aria-hidden="true"></i>
                                 </a>
                                 <a href="tel:+923452444262" style="background: #e0aa3e;">
@@ -145,7 +145,7 @@
                     <li>Before Doosri Biwi she was managing Mega Marketing Network and Talent Agency in Pakistan.</li>
                     <li>She has deep interest in the matchmaking and helped hundreds of Pakistani people around the world find their life partners.</li>
                     <li>At Doosri Biwi she conducts Grand Matchmaking Events every year in which 800+ people participate to find their life partners and do direct family to family meeting.</li>
-                    <li>She also conducts Shaadi Ka Laddu Family Rishta Meeting every month in Shaadi.org.pk office in which 250+ people participate every month to find life partner fast and easy.</li>
+                    <li>She also conducts Shaadi Ka Laddu Family Rishta Meeting every month in DoosriBiwi.com office in which 250+ people participate every month to find life partner fast and easy.</li>
                     <li>She has specialized skills in Local, Abroad and Second Marriage Cases and mostly deal in educated family proposals.</li>
                     <li>She also helps poor girls from under privilege class in finding the right life partner through their Free Rishta Services.</li>
                     <li>She also conducts personal grooming sessions for boys and girls and help them overcome challenges in their personal and social life.</li>

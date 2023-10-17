@@ -65,7 +65,7 @@
                 <tbody>
                 <tr>
                     <td style="padding: 30px">
-                        <h4 style="font-weight: 600">Elite Matrimony Consultant - LEAD - Shaadi.org.pk</h4>
+                        <h4 style="font-weight: 600">Elite Matrimony Consultant - LEAD - DoosriBiwi.com</h4>
                         <p><strong>Name:</strong> {{$your_name}}</p>
                         <p><strong>Number:</strong> {{$your_number}}</p>
                         <p><strong>Email:</strong> {{$your_email}}</p>
@@ -79,7 +79,7 @@
                 <tbody>
                 <tr style="text-align: center">
                     <td>
-                        <p style="color: #999; margin-bottom: 0">Powered By Shaadi.org.pk</p>
+                        <p style="color: #999; margin-bottom: 0">Powered By DoosriBiwi.com</p>
                     </td>
                 </tr>
                 </tbody>

@@ -490,13 +490,13 @@
 					<img class="img-align-center heading-border" src="{{asset('home_page/heading-border.png')}}">
 					<br>
 					<p class="paragraph-1">For payment only use the following bank accounts and always send payment's screenshot on the Senior Consultant WhatsApp:
-						<a class="text-dark font-weight-500" href="https://api.whatsapp.com/send?phone=923452444262&text=Hi%20Shaadi.org.pk%2C%20I%20need%20more%20information.">+923452444262</a>. We will not be responsible if payment is sent on any other account or to any other person. Make sure to communicate only on the official numbers which are mentioned on our website and Facebook page. In case of any issue contact Senior Consultant WhatsApp:
-						<a class="text-dark font-weight-500" href="https://api.whatsapp.com/send?phone=923452444262&text=Hi%20Shaadi.org.pk%2C%20I%20need%20more%20information.">+923452444262</a>.
+						<a class="text-dark font-weight-500" href="https://api.whatsapp.com/send?phone=923452444262&text=Hi%20DoosriBiwi.com%2C%20I%20need%20more%20information.">+923452444262</a>. We will not be responsible if payment is sent on any other account or to any other person. Make sure to communicate only on the official numbers which are mentioned on our website and Facebook page. In case of any issue contact Senior Consultant WhatsApp:
+						<a class="text-dark font-weight-500" href="https://api.whatsapp.com/send?phone=923452444262&text=Hi%20DoosriBiwi.com%2C%20I%20need%20more%20information.">+923452444262</a>.
 					</p>
 					<p class="paragraph-1 text-end text-theme m-0">ادائیگی کے لیے صرف درج ذیل بینک اکاؤنٹس استعمال کریں اور ہمیشہ سینئر کنسلٹنٹ واٹس ایپ پر ادائیگی کا اسکرین شاٹ بھیجیں:
-						<a href="https://api.whatsapp.com/send?phone=923452444262&text=Hi%20Shaadi.org.pk%2C%20I%20need%20more%20information.">923452444262+</a>۔ اگر ادائیگی کسی دوسرے اکاؤنٹ یا کسی دوسرے شخص کو بھیجی جاتی ہے تو ہم ذمہ دار نہیں ہوں گے۔ اس بات کو یقینی بنائیں کہ صرف ان آفیشل نمبرز پر رابطہ کریں جن کا ذکر ہماری ویب سائٹ اور فیس بک پیج پر ہے۔ کسی بھی مسئلے کی صورت میں سینئر کنسلٹنٹ واٹس ایپ سے رابطہ کریں
+						<a href="https://api.whatsapp.com/send?phone=923452444262&text=Hi%20DoosriBiwi.com%2C%20I%20need%20more%20information.">923452444262+</a>۔ اگر ادائیگی کسی دوسرے اکاؤنٹ یا کسی دوسرے شخص کو بھیجی جاتی ہے تو ہم ذمہ دار نہیں ہوں گے۔ اس بات کو یقینی بنائیں کہ صرف ان آفیشل نمبرز پر رابطہ کریں جن کا ذکر ہماری ویب سائٹ اور فیس بک پیج پر ہے۔ کسی بھی مسئلے کی صورت میں سینئر کنسلٹنٹ واٹس ایپ سے رابطہ کریں
 					</p>
-					<p class="paragraph-1 text-end text-theme"><a href="https://api.whatsapp.com/send?phone=923452444262&text=Hi%20Shaadi.org.pk%2C%20I%20need%20more%20information.">+923452444262</a></p>
+					<p class="paragraph-1 text-end text-theme"><a href="https://api.whatsapp.com/send?phone=923452444262&text=Hi%20DoosriBiwi.com%2C%20I%20need%20more%20information.">+923452444262</a></p>
 					<br>
 				</div>
 			</div>

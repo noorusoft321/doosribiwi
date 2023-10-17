@@ -1,73 +1,73 @@
 @if(!empty($customer->customerOtherInfo))
     <form id="personalInfoForm" class="row">
-        <div class="col-md-6">
-            <div class="form-group m-tb-20">
-                <div class="row">
-                    <div class="col-md-4">
-                        <label class="form-label">*Country Of Origin</label>
-                    </div>
-                    <div class="col-md-8">
-                        <select name="CountryOfOrigin" onchange="getStates(this,'StateOfOrigin')" class="form-select select-icon icon-mark form-select select-icon icon-mark form-control rounded-pill" >
-                            <option value="">Select</option>
-                            @foreach($countries as $val)
-                                <option value="{{$val->id}}" {{($customer->customerPersonalInfo->CountryOfOrigin==$val->id) ? 'selected' : ''}}>{{$val->name}}</option>
-                            @endforeach
-                        </select>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-6">
-            <div class="form-group m-tb-20">
-                <div class="row">
-                    <div class="col-md-4">
-                        <label class="fieldlabels">*State Of Origin</label>
-                    </div>
-                    <div class="col-md-8">
-                        <select name="StateOfOrigin" onchange="getCities(this,'CityOfOrigin')" class="form-select select-icon icon-mark form-select select-icon icon-mark form-control rounded-pill" >
-                            <option value=""> Select</option>
-                            @foreach($states as $val)
-                                <option value="{{$val->id}}" {{($customer->customerPersonalInfo->StateOfOrigin==$val->id) ? 'selected' : ''}}>{{$val->title}}</option>
-                            @endforeach
-                        </select>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-6">
-            <div class="form-group m-tb-20">
-                <div class="row">
-                    <div class="col-md-4">
-                        <label class="fieldlabels">*City Of Origin</label>
-                    </div>
-                    <div class="col-md-8">
-                        <select name="CityOfOrigin" class="form-select select-icon icon-mark form-select select-icon icon-mark form-control rounded-pill" >
-                            <option value=""> Select</option>
-                            @foreach($cities as $val)
-                                <option value="{{$val->id}}" {{($customer->customerPersonalInfo->CityOfOrigin==$val->id) ? 'selected' : ''}}>{{$val->title}}</option>
-                            @endforeach
-                        </select>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-6">
-            <div class="form-group m-tb-20">
-                <div class="row">
-                    <div class="col-md-4">
-                        <label class="form-label">*Willing To Relocate</label>
-                    </div>
-                    <div class="col-md-8">
-                        <select name="WillingToRelocate" class="form-select select-icon icon-mark form-select select-icon icon-mark form-control rounded-pill" >
-                            <option value="">Select</option>
-                            @foreach($willingToRelocate as $val)
-                                <option value="{{$val->id}}" {{($customer->customerPersonalInfo->WillingToRelocate==$val->id) ? 'selected' : ''}}>{{$val->title}}</option>
-                            @endforeach
-                        </select>
-                    </div>
-                </div>
-            </div>
-        </div>
+        {{--<div class="col-md-6">--}}
+            {{--<div class="form-group m-tb-20">--}}
+                {{--<div class="row">--}}
+                    {{--<div class="col-md-4">--}}
+                        {{--<label class="form-label">*Country Of Origin</label>--}}
+                    {{--</div>--}}
+                    {{--<div class="col-md-8">--}}
+                        {{--<select name="CountryOfOrigin" onchange="getStates(this,'StateOfOrigin')" class="form-select select-icon icon-mark form-select select-icon icon-mark form-control rounded-pill" >--}}
+                            {{--<option value="">Select</option>--}}
+                            {{--@foreach($countries as $val)--}}
+                                {{--<option value="{{$val->id}}" {{($customer->customerPersonalInfo->CountryOfOrigin==$val->id) ? 'selected' : ''}}>{{$val->name}}</option>--}}
+                            {{--@endforeach--}}
+                        {{--</select>--}}
+                    {{--</div>--}}
+                {{--</div>--}}
+            {{--</div>--}}
+        {{--</div>--}}
+        {{--<div class="col-md-6">--}}
+            {{--<div class="form-group m-tb-20">--}}
+                {{--<div class="row">--}}
+                    {{--<div class="col-md-4">--}}
+                        {{--<label class="fieldlabels">*State Of Origin</label>--}}
+                    {{--</div>--}}
+                    {{--<div class="col-md-8">--}}
+                        {{--<select name="StateOfOrigin" onchange="getCities(this,'CityOfOrigin')" class="form-select select-icon icon-mark form-select select-icon icon-mark form-control rounded-pill" >--}}
+                            {{--<option value=""> Select</option>--}}
+                            {{--@foreach($states as $val)--}}
+                                {{--<option value="{{$val->id}}" {{($customer->customerPersonalInfo->StateOfOrigin==$val->id) ? 'selected' : ''}}>{{$val->title}}</option>--}}
+                            {{--@endforeach--}}
+                        {{--</select>--}}
+                    {{--</div>--}}
+                {{--</div>--}}
+            {{--</div>--}}
+        {{--</div>--}}
+        {{--<div class="col-md-6">--}}
+            {{--<div class="form-group m-tb-20">--}}
+                {{--<div class="row">--}}
+                    {{--<div class="col-md-4">--}}
+                        {{--<label class="fieldlabels">*City Of Origin</label>--}}
+                    {{--</div>--}}
+                    {{--<div class="col-md-8">--}}
+                        {{--<select name="CityOfOrigin" class="form-select select-icon icon-mark form-select select-icon icon-mark form-control rounded-pill" >--}}
+                            {{--<option value=""> Select</option>--}}
+                            {{--@foreach($cities as $val)--}}
+                                {{--<option value="{{$val->id}}" {{($customer->customerPersonalInfo->CityOfOrigin==$val->id) ? 'selected' : ''}}>{{$val->title}}</option>--}}
+                            {{--@endforeach--}}
+                        {{--</select>--}}
+                    {{--</div>--}}
+                {{--</div>--}}
+            {{--</div>--}}
+        {{--</div>--}}
+        {{--<div class="col-md-6">--}}
+            {{--<div class="form-group m-tb-20">--}}
+                {{--<div class="row">--}}
+                    {{--<div class="col-md-4">--}}
+                        {{--<label class="form-label">*Willing To Relocate</label>--}}
+                    {{--</div>--}}
+                    {{--<div class="col-md-8">--}}
+                        {{--<select name="WillingToRelocate" class="form-select select-icon icon-mark form-select select-icon icon-mark form-control rounded-pill" >--}}
+                            {{--<option value="">Select</option>--}}
+                            {{--@foreach($willingToRelocate as $val)--}}
+                                {{--<option value="{{$val->id}}" {{($customer->customerPersonalInfo->WillingToRelocate==$val->id) ? 'selected' : ''}}>{{$val->title}}</option>--}}
+                            {{--@endforeach--}}
+                        {{--</select>--}}
+                    {{--</div>--}}
+                {{--</div>--}}
+            {{--</div>--}}
+        {{--</div>--}}
         <div class="col-md-6">
             <div class="form-group m-tb-20">
                 <div class="row">
@@ -153,23 +153,23 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-6">
-            <div class="form-group m-tb-20">
-                <div class="row">
-                    <div class="col-md-4">
-                        <label class="form-label">*My Build</label>
-                    </div>
-                    <div class="col-md-8">
-                        <select name="MyBuilds" class="form-select select-icon icon-mark form-select select-icon icon-mark form-control rounded-pill" >
-                            <option value="">Select</option>
-                            @foreach($myBuilds as $val)
-                                <option value="{{$val->id}}" {{($customer->customerPersonalInfo->MyBuilds==$val->id) ? 'selected' : ''}}>{{$val->title}}</option>
-                            @endforeach
-                        </select>
-                    </div>
-                </div>
-            </div>
-        </div>
+        {{--<div class="col-md-6">--}}
+            {{--<div class="form-group m-tb-20">--}}
+                {{--<div class="row">--}}
+                    {{--<div class="col-md-4">--}}
+                        {{--<label class="form-label">*My Build</label>--}}
+                    {{--</div>--}}
+                    {{--<div class="col-md-8">--}}
+                        {{--<select name="MyBuilds" class="form-select select-icon icon-mark form-select select-icon icon-mark form-control rounded-pill" >--}}
+                            {{--<option value="">Select</option>--}}
+                            {{--@foreach($myBuilds as $val)--}}
+                                {{--<option value="{{$val->id}}" {{($customer->customerPersonalInfo->MyBuilds==$val->id) ? 'selected' : ''}}>{{$val->title}}</option>--}}
+                            {{--@endforeach--}}
+                        {{--</select>--}}
+                    {{--</div>--}}
+                {{--</div>--}}
+            {{--</div>--}}
+        {{--</div>--}}
         <div class="col-md-6">
             <div class="form-group m-tb-20">
                 <div class="row">
@@ -275,74 +275,74 @@
     </form>
 @else
     <form id="personalInfoForm" class="row">
-        <div class="col-md-6">
-            <div class="form-group m-tb-20">
-                <div class="row">
-                    <div class="col-md-4">
-                        <label class="form-label">*Country Of Origin</label>
-                    </div>
-                    <div class="col-md-8">
-                        <select onchange="getStates(this,'StateOfOrigin')" name="CountryOfOrigin" class="form-select select-icon icon-mark form-select select-icon icon-mark form-control rounded-pill" >
-                            <option value="">Select</option>
-                            @foreach($countries as $val)
-                                <option value="{{$val->id}}">{{$val->name}}</option>
-                            @endforeach
-                        </select>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-6">
-            <div class="form-group m-tb-20">
-                <div class="row">
-                    <div class="col-md-4">
-                        <label class="fieldlabels">*State Of Origin</label>
-                    </div>
-                    <div class="col-md-8">
-                        <select onchange="getCities(this,'CityOfOrigin')" name="StateOfOrigin" class="form-select select-icon icon-mark form-select select-icon icon-mark form-control rounded-pill" >
-                            <option value=""> Select</option>
-                            @foreach($states as $val)
-                                <option value="{{$val->id}}">{{$val->title}}</option>
-                            @endforeach
-                        </select>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-6">
-            <div class="form-group m-tb-20">
-                <div class="row">
-                    <div class="col-md-4">
-                        <label class="fieldlabels">*City Of Origin</label>
-                    </div>
-                    <div class="col-md-8">
-                        <select name="CityOfOrigin" class="form-select select-icon icon-mark form-select select-icon icon-mark form-control rounded-pill" >
-                            <option value=""> Select</option>
-                            @foreach($cities as $val)
-                                <option value="{{$val->id}}">{{$val->title}}</option>
-                            @endforeach
-                        </select>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-6">
-            <div class="form-group m-tb-20">
-                <div class="row">
-                    <div class="col-md-4">
-                        <label class="form-label">*Willing To Relocate</label>
-                    </div>
-                    <div class="col-md-8">
-                        <select name="WillingToRelocate" class="form-select select-icon icon-mark form-select select-icon icon-mark form-control rounded-pill" >
-                            <option value="">Select</option>
-                            @foreach($willingToRelocate as $val)
-                                <option value="{{$val->id}}">{{$val->title}}</option>
-                            @endforeach
-                        </select>
-                    </div>
-                </div>
-            </div>
-        </div>
+        {{--<div class="col-md-6">--}}
+            {{--<div class="form-group m-tb-20">--}}
+                {{--<div class="row">--}}
+                    {{--<div class="col-md-4">--}}
+                        {{--<label class="form-label">*Country Of Origin</label>--}}
+                    {{--</div>--}}
+                    {{--<div class="col-md-8">--}}
+                        {{--<select onchange="getStates(this,'StateOfOrigin')" name="CountryOfOrigin" class="form-select select-icon icon-mark form-select select-icon icon-mark form-control rounded-pill" >--}}
+                            {{--<option value="">Select</option>--}}
+                            {{--@foreach($countries as $val)--}}
+                                {{--<option value="{{$val->id}}">{{$val->name}}</option>--}}
+                            {{--@endforeach--}}
+                        {{--</select>--}}
+                    {{--</div>--}}
+                {{--</div>--}}
+            {{--</div>--}}
+        {{--</div>--}}
+        {{--<div class="col-md-6">--}}
+            {{--<div class="form-group m-tb-20">--}}
+                {{--<div class="row">--}}
+                    {{--<div class="col-md-4">--}}
+                        {{--<label class="fieldlabels">*State Of Origin</label>--}}
+                    {{--</div>--}}
+                    {{--<div class="col-md-8">--}}
+                        {{--<select onchange="getCities(this,'CityOfOrigin')" name="StateOfOrigin" class="form-select select-icon icon-mark form-select select-icon icon-mark form-control rounded-pill" >--}}
+                            {{--<option value=""> Select</option>--}}
+                            {{--@foreach($states as $val)--}}
+                                {{--<option value="{{$val->id}}">{{$val->title}}</option>--}}
+                            {{--@endforeach--}}
+                        {{--</select>--}}
+                    {{--</div>--}}
+                {{--</div>--}}
+            {{--</div>--}}
+        {{--</div>--}}
+        {{--<div class="col-md-6">--}}
+            {{--<div class="form-group m-tb-20">--}}
+                {{--<div class="row">--}}
+                    {{--<div class="col-md-4">--}}
+                        {{--<label class="fieldlabels">*City Of Origin</label>--}}
+                    {{--</div>--}}
+                    {{--<div class="col-md-8">--}}
+                        {{--<select name="CityOfOrigin" class="form-select select-icon icon-mark form-select select-icon icon-mark form-control rounded-pill" >--}}
+                            {{--<option value=""> Select</option>--}}
+                            {{--@foreach($cities as $val)--}}
+                                {{--<option value="{{$val->id}}">{{$val->title}}</option>--}}
+                            {{--@endforeach--}}
+                        {{--</select>--}}
+                    {{--</div>--}}
+                {{--</div>--}}
+            {{--</div>--}}
+        {{--</div>--}}
+        {{--<div class="col-md-6">--}}
+            {{--<div class="form-group m-tb-20">--}}
+                {{--<div class="row">--}}
+                    {{--<div class="col-md-4">--}}
+                        {{--<label class="form-label">*Willing To Relocate</label>--}}
+                    {{--</div>--}}
+                    {{--<div class="col-md-8">--}}
+                        {{--<select name="WillingToRelocate" class="form-select select-icon icon-mark form-select select-icon icon-mark form-control rounded-pill" >--}}
+                            {{--<option value="">Select</option>--}}
+                            {{--@foreach($willingToRelocate as $val)--}}
+                                {{--<option value="{{$val->id}}">{{$val->title}}</option>--}}
+                            {{--@endforeach--}}
+                        {{--</select>--}}
+                    {{--</div>--}}
+                {{--</div>--}}
+            {{--</div>--}}
+        {{--</div>--}}
         <div class="col-md-6">
             <div class="form-group m-tb-20">
                 <div class="row">
@@ -428,23 +428,23 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-6">
-            <div class="form-group m-tb-20">
-                <div class="row">
-                    <div class="col-md-4">
-                        <label class="form-label">*My Build</label>
-                    </div>
-                    <div class="col-md-8">
-                        <select name="MyBuilds" class="form-select select-icon icon-mark form-select select-icon icon-mark form-control rounded-pill" >
-                            <option value="">Select</option>
-                            @foreach($myBuilds as $val)
-                                <option value="{{$val->id}}">{{$val->title}}</option>
-                            @endforeach
-                        </select>
-                    </div>
-                </div>
-            </div>
-        </div>
+        {{--<div class="col-md-6">--}}
+            {{--<div class="form-group m-tb-20">--}}
+                {{--<div class="row">--}}
+                    {{--<div class="col-md-4">--}}
+                        {{--<label class="form-label">*My Build</label>--}}
+                    {{--</div>--}}
+                    {{--<div class="col-md-8">--}}
+                        {{--<select name="MyBuilds" class="form-select select-icon icon-mark form-select select-icon icon-mark form-control rounded-pill" >--}}
+                            {{--<option value="">Select</option>--}}
+                            {{--@foreach($myBuilds as $val)--}}
+                                {{--<option value="{{$val->id}}">{{$val->title}}</option>--}}
+                            {{--@endforeach--}}
+                        {{--</select>--}}
+                    {{--</div>--}}
+                {{--</div>--}}
+            {{--</div>--}}
+        {{--</div>--}}
         <div class="col-md-6">
             <div class="form-group m-tb-20">
                 <div class="row">

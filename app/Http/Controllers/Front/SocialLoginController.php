@@ -42,7 +42,7 @@ class SocialLoginController extends Controller
                         'email'    => $email,
                         'customer' => $customer
                     ];
-                    sendNewEmail('emails.welcome',$data,'Welcome - Shaadi.org.pk');
+                    sendNewEmail('emails.welcome',$data,'Welcome - DoosriBiwi.com');
                 }
             }
 

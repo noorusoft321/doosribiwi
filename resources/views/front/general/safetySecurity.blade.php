@@ -18,7 +18,7 @@
 		    <div class="col-md-9">
 		        <div class="card about-height-hero">
 		            <div class="card-body">
-		                <p>Safety and security don't just happen, they are the result of collective consensus and public investment. We owe our children, the most vulnerable citizens in our society, a life free of violence and fear. Doosri Biwi helps people in finding a perfect match. For this purpose we have a 100% Free Online Matrimonial website Shaadi.org.pk based on purely eastern values. With hundreds of monthly satisfied customers, we are progressing through the heights of success and generating more happiness than anyone else in this industry. We are not a commercial marriage bureau which runs purely on profit. We are an organization and our motive is to help people. To achieve this purpose we are offering many free services to people such as this 100% Free Online Rishta Pakistani Website, free rishta meetings, free place for engagement, free place for nikkah, support for simple nikkah, etc. We only charge fee from those who want to hire us for personalized matchmaking in which our time and energy is spend to find a good match. This personalized matchmaking is a time taking process but it saves time of our client so we only charge fee for this service.</p>
+		                <p>Safety and security don't just happen, they are the result of collective consensus and public investment. We owe our children, the most vulnerable citizens in our society, a life free of violence and fear. Doosri Biwi helps people in finding a perfect match. For this purpose we have a 100% Free Online Matrimonial website DoosriBiwi.com based on purely eastern values. With hundreds of monthly satisfied customers, we are progressing through the heights of success and generating more happiness than anyone else in this industry. We are not a commercial marriage bureau which runs purely on profit. We are an organization and our motive is to help people. To achieve this purpose we are offering many free services to people such as this 100% Free Online Rishta Pakistani Website, free rishta meetings, free place for engagement, free place for nikkah, support for simple nikkah, etc. We only charge fee from those who want to hire us for personalized matchmaking in which our time and energy is spend to find a good match. This personalized matchmaking is a time taking process but it saves time of our client so we only charge fee for this service.</p>
 		            </div>
 		        </div>
 		        <!-- /.card-icon-component -->
@@ -47,9 +47,9 @@
 					    <h3>Verify the Family Background Before Making a Commitment</h3>
 					    <p>Refrain from committing to marriage without having a one-on-one meeting session with the family and relatives of the person you are interested in. Find out the details of their family and background. Visit the place they work. Make sure you do a thorough investigation before making any kind of a commitment. If a person avoids giving you the details of his or her family or workplace, distance yourself from them immediately.</p>
 					    <h2><u><strong>We Care</strong></u></h2>
-					    <p>Shaadi.org.pk&nbsp;is Pakistan’s most trusted and premier&nbsp;<strong>online marriage</strong>&nbsp;services provider.</p>
-					    <p>Shaadi.org.pk’s mission is to connect families and find the perfect life partner for their children.</p>
-					    <p>Shaadi.org.pk&nbsp;is the only<em><strong>&nbsp;Pakistani matrimony</strong></em>&nbsp;services provider that hosts&nbsp;<strong>100% Genuine Profiles</strong>&nbsp;using 3+1 tier system:</p>
+					    <p>DoosriBiwi.com&nbsp;is Pakistan’s most trusted and premier&nbsp;<strong>online marriage</strong>&nbsp;services provider.</p>
+					    <p>DoosriBiwi.com’s mission is to connect families and find the perfect life partner for their children.</p>
+					    <p>DoosriBiwi.com&nbsp;is the only<em><strong>&nbsp;Pakistani matrimony</strong></em>&nbsp;services provider that hosts&nbsp;<strong>100% Genuine Profiles</strong>&nbsp;using 3+1 tier system:</p>
 					    <ol>
 					        <li>Scrutiny</li>
 					        <li>Verification</li>

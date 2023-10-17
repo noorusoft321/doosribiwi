@@ -53,7 +53,7 @@
                         <table style="width: 650px; margin: 0 auto; margin-bottom: 30px">
                             <tbody>
                             <tr>
-                                <td><img src="{{asset('assets/img/cuba-logo1.png')}}" alt="SHAADI.ORG.PK"></td>
+                                <td><img src="{{asset('assets/img/cuba-logo1.png')}}" alt="DoosriBiwi.com"></td>
                             </tr>
                             </tbody>
                         </table>
@@ -78,7 +78,7 @@
                 <tbody>
                 <tr style="text-align: center">
                     <td>
-                        <p style="color: #999; margin-bottom: 0">Powered By Shaadi.org.pk</p>
+                        <p style="color: #999; margin-bottom: 0">Powered By DoosriBiwi.com</p>
                     </td>
                 </tr>
                 </tbody>

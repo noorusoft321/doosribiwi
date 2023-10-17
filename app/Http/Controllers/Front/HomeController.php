@@ -11,12 +11,12 @@ use App\Models\City;
 use App\Models\Country;
 use App\Models\Customer;
 use App\Models\CustomerBlock;
-use App\Models\CustomerCareerInfo;
+//use App\Models\CustomerCareerInfo;
 use App\Models\CustomerImage;
 use App\Models\CustomerLike;
-use App\Models\CustomerPersonalInfo;
+//use App\Models\CustomerPersonalInfo;
 use App\Models\CustomerProfileView;
-use App\Models\CustomerReligionInfo;
+//use App\Models\CustomerReligionInfo;
 use App\Models\CustomerSaved;
 use App\Models\CustomerSearch;
 use App\Models\Disability;
@@ -26,9 +26,9 @@ use App\Models\DoYouPerformSalaah;
 use App\Models\DoYouPreferHijab;
 use App\Models\Education;
 use App\Models\EyeColor;
-use App\Models\FamilyRishtaMeeting;
+//use App\Models\FamilyRishtaMeeting;
 use App\Models\GovermentRegisteredMarraigeBureau;
-use App\Models\GrandMatchmakingEvent;
+//use App\Models\GrandMatchmakingEvent;
 use App\Models\HairColor;
 use App\Models\Height;
 use App\Models\IAmLookingToMarry;
@@ -37,12 +37,12 @@ use App\Models\MotherTongue;
 use App\Models\MyBuild;
 use App\Models\MyLivingArrangement;
 use App\Models\Occupation;
-use App\Models\OurOffice;
+//use App\Models\OurOffice;
 use App\Models\Religion;
-use App\Models\SpecialGuest;
+//use App\Models\SpecialGuest;
 use App\Models\State;
 use App\Models\WillingToRelocate;
-use Illuminate\Support\Facades\Session;
+//use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Str;
 
@@ -120,17 +120,17 @@ class HomeController extends Controller
         })->inRandomOrder()->limit(5)->get();
 
         $customersSecondMarriageMan = Customer::where([
-            'profile_home_page_status' => 1,
+//            'profile_home_page_status' => 1,
             'profile_status'           => 1,
             'second_marraige'          => 1,
             'mobile_verified'          => 1,
             'email_verified'           => 1,
-            'age_verification'         => 1,
-            'education_verification'   => 1,
-            'location_verification'    => 1,
-            'meeting_verification'     => 1,
-            'nationality_verification' => 1,
-            'salary_verification'      => 1,
+//            'age_verification'         => 1,
+//            'education_verification'   => 1,
+//            'location_verification'    => 1,
+//            'meeting_verification'     => 1,
+//            'nationality_verification' => 1,
+//            'salary_verification'      => 1,
         ])->with(['getCountryName','getCitiesName','getOccupationName','customerOtherInfo' => function($query) {
             $query->where('gender', 1);
         }])->whereHas('customerOtherInfo', function($query) {
@@ -138,8 +138,8 @@ class HomeController extends Controller
         })->inRandomOrder()->limit(5)->get();
 
         $result = [
-            'females_ready'               => view('front.partial_proposal',['customers' => $customersSecondMarriageFemale])->render(),
-            'males_looking'               => view('front.partial_proposal',['customers' => $customersSecondMarriageMan])->render()
+            'females_ready' => view('front.partial_proposal',['customers' => $customersSecondMarriageFemale])->render(),
+            'males_looking' => view('front.partial_proposal',['customers' => $customersSecondMarriageMan])->render()
         ];
         return response()->json($result);
     }
@@ -843,9 +843,9 @@ class HomeController extends Controller
         }
 
         $data = $request;
-        $data['email'] = 'admin@shaadi.org.pk';
+        $data['email'] = 'admin@DoosriBiwi.com';
 
-        sendNewEmail('emails.elite_matrimonial_email',$data,'Elite Matrimony Consultant - LEAD - Shaadi.org.pk');
+        sendNewEmail('emails.elite_matrimonial_email',$data,'Elite Matrimony Consultant - LEAD - DoosriBiwi.com');
 
         return response()->json([
             'status' => 'success',

@@ -165,7 +165,7 @@
 					<!--<div class="director-img">-->
 				<!--	<img class="full-width" src="{{asset('assets/img/call_action_images/shaadi-orginzation-pakistan-Shadi-ka-ladu-season-3.jpg')}}" alt="Shaadi Ka Laddu">-->
 					<!--</div>-->
-					<!--<iframe width="100%" height="400px" src="https://www.youtube.com/embed/Y4MRGmUyvio" title="Shaadi Ka Laddu Season II - Sunday, July 16, 2023 | Direct Family to Family Rishta | Shaadi.org.pk" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>-->
+					<!--<iframe width="100%" height="400px" src="https://www.youtube.com/embed/Y4MRGmUyvio" title="Shaadi Ka Laddu Season II - Sunday, July 16, 2023 | Direct Family to Family Rishta | DoosriBiwi.com" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>-->
 					{{--<iframe width="100%" height="400px" src="https://www.youtube.com/embed/VzvsMAErcag" title="Shaadi Ka Laddu - Season 3 | Family to Family Rishta Meeting | Best Marriage Bureau" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>--}}
 					<iframe width="100%" height="400px" src="https://www.youtube.com/embed/IiUjZEfLJwI" title="Shaadi Ka Laddu - Season 3 Highlights | Family to Family Rishta Meeting Event | Best Marriage Bureau" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 				</div>
@@ -276,10 +276,10 @@
 							<iframe width="100%" height="270px" src="https://www.youtube.com/embed/EbFub7qoMMA" title="Shaadi Ka Laddu  Season - 2 Highlights | 300+ Rishtey Done | Family Event | Best Marriage Bureau" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 						</div>
 						<div class="col-md-4 mx-auto">
-							<iframe width="100%" height="270px" src="https://www.youtube.com/embed/Y4MRGmUyvio" title="Shaadi Ka Laddu Season II - Sunday, July 16, 2023 | Direct Family to Family Rishta | Shaadi.org.pk" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+							<iframe width="100%" height="270px" src="https://www.youtube.com/embed/Y4MRGmUyvio" title="Shaadi Ka Laddu Season II - Sunday, July 16, 2023 | Direct Family to Family Rishta | DoosriBiwi.com" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 						</div>
 						<div class="col-md-4 mx-auto">
-							<iframe width="100%" height="270px" src="https://www.youtube.com/embed/CXTPSKy9ok8" title="Shaadi Ka Laddu Season II - Sunday July 16, 2023 | Direct Family to Family Rishta | Shaadi.org.pk" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+							<iframe width="100%" height="270px" src="https://www.youtube.com/embed/CXTPSKy9ok8" title="Shaadi Ka Laddu Season II - Sunday July 16, 2023 | Direct Family to Family Rishta | DoosriBiwi.com" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 						</div>
 					</div>
 				</div>
@@ -365,55 +365,55 @@
 								<div class="col-md-6">
 									<div class="number-list">
 										UAN / WhatsApp
-										<a href="https://api.whatsapp.com/send?phone=923481117861&amp;text=Hi%20Shaadi.org.pk%2C%20I%20need%20more%20information.">+923481117861</a>
+										<a href="https://api.whatsapp.com/send?phone=923481117861&amp;text=Hi%20DoosriBiwi.com%2C%20I%20need%20more%20information.">+923481117861</a>
 									</div>
 								</div>
 								<div class="col-md-6">
 									<div class="number-list">
 										Mrs. Siddiqui
-										<a href="https://api.whatsapp.com/send?phone=923488800022&amp;text=Hi%20Shaadi.org.pk%2C%20I%20need%20more%20information.">+923488800022</a>
+										<a href="https://api.whatsapp.com/send?phone=923488800022&amp;text=Hi%20DoosriBiwi.com%2C%20I%20need%20more%20information.">+923488800022</a>
 									</div>
 								</div>
 								<div class="col-md-6">
 									<div class="number-list">
 										Mrs. Arain
-										<a href="https://api.whatsapp.com/send?phone=923428504242&amp;text=Hi%20Shaadi.org.pk%2C%20I%20need%20more%20information.">+923428504242</a>
+										<a href="https://api.whatsapp.com/send?phone=923428504242&amp;text=Hi%20DoosriBiwi.com%2C%20I%20need%20more%20information.">+923428504242</a>
 									</div>
 								</div>
 								<div class="col-md-6">
 									<div class="number-list">
 										Mrs. Syed
-										<a href="https://api.whatsapp.com/send?phone=923460025624&amp;text=Hi%20Shaadi.org.pk%2C%20I%20need%20more%20information.">+923460025624</a>
+										<a href="https://api.whatsapp.com/send?phone=923460025624&amp;text=Hi%20DoosriBiwi.com%2C%20I%20need%20more%20information.">+923460025624</a>
 									</div>
 								</div>
 								<div class="col-md-6">
 									<div class="number-list">
 										Mrs. Hashmi
-										<a href="https://api.whatsapp.com/send?phone=923102658315&amp;text=Hi%20Shaadi.org.pk%2C%20I%20need%20more%20information.">+923102658315</a>
+										<a href="https://api.whatsapp.com/send?phone=923102658315&amp;text=Hi%20DoosriBiwi.com%2C%20I%20need%20more%20information.">+923102658315</a>
 									</div>
 								</div>
 								<div class="col-md-6">
 									<div class="number-list">
 										Mrs. Fariya
-										<a href="https://api.whatsapp.com/send?phone=923491007310&amp;text=Hi%20Shaadi.org.pk%2C%20I%20need%20more%20information.">+923491007310</a>
+										<a href="https://api.whatsapp.com/send?phone=923491007310&amp;text=Hi%20DoosriBiwi.com%2C%20I%20need%20more%20information.">+923491007310</a>
 									</div>
 								</div>
 								<div class="col-md-6">
 									<div class="number-list">
 										Mrs. Fiza
-										<a href="https://api.whatsapp.com/send?phone=923491007317&amp;text=Hi%20Shaadi.org.pk%2C%20I%20need%20more%20information.">+923491007317</a>
+										<a href="https://api.whatsapp.com/send?phone=923491007317&amp;text=Hi%20DoosriBiwi.com%2C%20I%20need%20more%20information.">+923491007317</a>
 									</div>
 								</div>
 								<div class="col-md-6">
 									<div class="number-list">
 										Mrs. Anila
-										<a href="https://api.whatsapp.com/send?phone=923491007316&amp;text=Hi%20Shaadi.org.pk%2C%20I%20need%20more%20information.">+923491007316</a>
+										<a href="https://api.whatsapp.com/send?phone=923491007316&amp;text=Hi%20DoosriBiwi.com%2C%20I%20need%20more%20information.">+923491007316</a>
 									</div>
 								</div>
 								<div class="col-md-6">
 									<div class="number-list">
 										Mrs. Khan
-										<a href="https://api.whatsapp.com/send?phone=923432435092&amp;text=Hi%20Shaadi.org.pk%2C%20I%20need%20more%20information.">+923432435092</a>
+										<a href="https://api.whatsapp.com/send?phone=923432435092&amp;text=Hi%20DoosriBiwi.com%2C%20I%20need%20more%20information.">+923432435092</a>
 									</div>
 								</div>
 							</div>

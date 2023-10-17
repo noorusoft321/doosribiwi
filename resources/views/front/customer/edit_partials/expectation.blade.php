@@ -214,23 +214,23 @@
             </div>
         </div>
 
-        <div class="col-md-6 m-tb-20">
-            <div class="form-group">
-                <div class="row">
-                    <div class="col-md-4">
-                        <label class="fieldlabels"> Willing To Relocate</label>
-                    </div>
-                    <div class="col-md-8">
-                        <select name="WillingToRelocate" class="form-select select-icon icon-mark form-control from-tab rounded-pill" >
-                            <option value=""> Select</option>
-                            @foreach($willingToRelocate as $val)
-                                <option value="{{$val->id}}" {{(isset($customerSearch->WillingToRelocate) && $customerSearch->WillingToRelocate==$val->id) ? 'selected' : ''}}>{{$val->title}}</option>
-                            @endforeach
-                        </select>
-                    </div>
-                </div>
-            </div>
-        </div>
+        {{--<div class="col-md-6 m-tb-20">--}}
+            {{--<div class="form-group">--}}
+                {{--<div class="row">--}}
+                    {{--<div class="col-md-4">--}}
+                        {{--<label class="fieldlabels"> Willing To Relocate</label>--}}
+                    {{--</div>--}}
+                    {{--<div class="col-md-8">--}}
+                        {{--<select name="WillingToRelocate" class="form-select select-icon icon-mark form-control from-tab rounded-pill" >--}}
+                            {{--<option value=""> Select</option>--}}
+                            {{--@foreach($willingToRelocate as $val)--}}
+                                {{--<option value="{{$val->id}}" {{(isset($customerSearch->WillingToRelocate) && $customerSearch->WillingToRelocate==$val->id) ? 'selected' : ''}}>{{$val->title}}</option>--}}
+                            {{--@endforeach--}}
+                        {{--</select>--}}
+                    {{--</div>--}}
+                {{--</div>--}}
+            {{--</div>--}}
+        {{--</div>--}}
 
         <div class="col-md-6 m-tb-20">
             <div class="form-group">
@@ -304,23 +304,23 @@
             </div>
         </div>
 
-        <div class="col-md-6 m-tb-20">
-            <div class="form-group">
-                <div class="row">
-                    <div class="col-md-4">
-                        <label class="fieldlabels"> Builds</label>
-                    </div>
-                    <div class="col-md-8">
-                        <select name="MyBuilds" class="form-select select-icon icon-mark form-control from-tab rounded-pill" >
-                            <option value="">Select</option>
-                            @foreach($myBuilds as $val)
-                                <option value="{{$val->id}}" {{(isset($customerSearch->MyBuilds) && $customerSearch->MyBuilds==$val->id) ? 'selected' : ''}}>{{$val->title}}</option>
-                            @endforeach
-                        </select>
-                    </div>
-                </div>
-            </div>
-        </div>
+        {{--<div class="col-md-6 m-tb-20">--}}
+            {{--<div class="form-group">--}}
+                {{--<div class="row">--}}
+                    {{--<div class="col-md-4">--}}
+                        {{--<label class="fieldlabels"> Builds</label>--}}
+                    {{--</div>--}}
+                    {{--<div class="col-md-8">--}}
+                        {{--<select name="MyBuilds" class="form-select select-icon icon-mark form-control from-tab rounded-pill" >--}}
+                            {{--<option value="">Select</option>--}}
+                            {{--@foreach($myBuilds as $val)--}}
+                                {{--<option value="{{$val->id}}" {{(isset($customerSearch->MyBuilds) && $customerSearch->MyBuilds==$val->id) ? 'selected' : ''}}>{{$val->title}}</option>--}}
+                            {{--@endforeach--}}
+                        {{--</select>--}}
+                    {{--</div>--}}
+                {{--</div>--}}
+            {{--</div>--}}
+        {{--</div>--}}
 
         <div class="col-md-6 m-tb-20">
             <div class="form-group">
@@ -571,23 +571,23 @@
             </div>
         </div>
 
-        <div class="col-md-6 m-tb-20">
-            <div class="form-group">
-                <div class="row">
-                    <div class="col-md-4">
-                        <label class="fieldlabels"> Willing To Relocate</label>
-                    </div>
-                    <div class="col-md-8">
-                        <select name="WillingToRelocate" class="form-select select-icon icon-mark form-control from-tab rounded-pill" >
-                            <option value=""> Select</option>
-                            @foreach($willingToRelocate as $val)
-                                <option value="{{$val->id}}">{{$val->title}}</option>
-                            @endforeach
-                        </select>
-                    </div>
-                </div>
-            </div>
-        </div>
+        {{--<div class="col-md-6 m-tb-20">--}}
+            {{--<div class="form-group">--}}
+                {{--<div class="row">--}}
+                    {{--<div class="col-md-4">--}}
+                        {{--<label class="fieldlabels"> Willing To Relocate</label>--}}
+                    {{--</div>--}}
+                    {{--<div class="col-md-8">--}}
+                        {{--<select name="WillingToRelocate" class="form-select select-icon icon-mark form-control from-tab rounded-pill" >--}}
+                            {{--<option value=""> Select</option>--}}
+                            {{--@foreach($willingToRelocate as $val)--}}
+                                {{--<option value="{{$val->id}}">{{$val->title}}</option>--}}
+                            {{--@endforeach--}}
+                        {{--</select>--}}
+                    {{--</div>--}}
+                {{--</div>--}}
+            {{--</div>--}}
+        {{--</div>--}}
 
         <div class="col-md-6 m-tb-20">
             <div class="form-group">
@@ -661,23 +661,23 @@
             </div>
         </div>
 
-        <div class="col-md-6 m-tb-20">
-            <div class="form-group">
-                <div class="row">
-                    <div class="col-md-4">
-                        <label class="fieldlabels"> Builds</label>
-                    </div>
-                    <div class="col-md-8">
-                        <select name="MyBuilds" class="form-select select-icon icon-mark form-control from-tab rounded-pill" >
-                            <option value="">Select</option>
-                            @foreach($myBuilds as $val)
-                                <option value="{{$val->id}}">{{$val->title}}</option>
-                            @endforeach
-                        </select>
-                    </div>
-                </div>
-            </div>
-        </div>
+        {{--<div class="col-md-6 m-tb-20">--}}
+            {{--<div class="form-group">--}}
+                {{--<div class="row">--}}
+                    {{--<div class="col-md-4">--}}
+                        {{--<label class="fieldlabels"> Builds</label>--}}
+                    {{--</div>--}}
+                    {{--<div class="col-md-8">--}}
+                        {{--<select name="MyBuilds" class="form-select select-icon icon-mark form-control from-tab rounded-pill" >--}}
+                            {{--<option value="">Select</option>--}}
+                            {{--@foreach($myBuilds as $val)--}}
+                                {{--<option value="{{$val->id}}">{{$val->title}}</option>--}}
+                            {{--@endforeach--}}
+                        {{--</select>--}}
+                    {{--</div>--}}
+                {{--</div>--}}
+            {{--</div>--}}
+        {{--</div>--}}
 
         <div class="col-md-6 m-tb-20">
             <div class="form-group">

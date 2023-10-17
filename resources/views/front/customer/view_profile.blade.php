@@ -1234,7 +1234,7 @@
                                             <p class="bottomInfoMessage">This profile user is taking <strong class="text-theme">Personalized Matchmaking Service.</strong> If you are interested then contact her <strong class="text-theme">Matchmaker</strong></p>
                                             <p class="bottomInfoMessage">یہ پروفائل صارف پرسنلائزڈ <strong class="text-theme"> میچ میکنگ سروس</strong>  لے رہا ہے۔ اگر آپ دلچسپی رکھتے ہیں تو اس کے <strong class="text-theme">میچ میکر</strong> سے رابطہ کریں۔</p>
                                             <div class="text-center pt-2">
-                                                <a href="https://api.whatsapp.com/send?phone={{$customer->agent_mobile}}&text=Hi%20Shaadi.org.pk%2C%20I%20need%20more%20information." class="messengerBottomIconBtn LoginToView" title="Let's Chat"><i class="fa fa-whatsapp"></i> Contact Her </a>
+                                                <a href="https://api.whatsapp.com/send?phone={{$customer->agent_mobile}}&text=Hi%20DoosriBiwi.com%2C%20I%20need%20more%20information." class="messengerBottomIconBtn LoginToView" title="Let's Chat"><i class="fa fa-whatsapp"></i> Contact Her </a>
                                             </div>
                                         </div>
                                     </div>

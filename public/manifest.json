@@ -1,6 +1,6 @@
 {
-  "name": "Shaadi.org.pk",
-  "short_name": "Shaadi.org.pk",
+  "name": "DoosriBiwi.com",
+  "short_name": "DoosriBiwi.com",
   "theme_color": "#fcf9f7",
   "background_color": "#fcf9f7",
   "orientation": "portrait-primary",
@@ -8,7 +8,7 @@
   "description": "Shaadi Organization Pakistan",
   "dir": "ltr",
   "lang": "en-US",
-  "Scope": "https://shaadi.org.pk/",
+  "Scope": "https://DoosriBiwi.com/",
   "start_url": "/",
   "id": "/",
   "icons": [

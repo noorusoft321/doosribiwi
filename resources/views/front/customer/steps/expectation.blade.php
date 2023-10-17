@@ -186,17 +186,17 @@
 																</select>
 															</div>
 														</div>
-														<div class="col-md-3">
-															<div class="form-group py-xl-10">
-																<label class="fieldlabels">Builds</label>
-																<select class="form-control rounded-pill" name="MyBuilds">
-																	<option value="">Select</option>
-																	@foreach($myBuilds as $val)
-																		<option value="{{$val->id}}" {{isset($customerSearch->MyBuilds) && $customerSearch->MyBuilds==$val->id ? 'selected' : ''}}>{{$val->title}}</option>
-																	@endforeach
-																</select>
-															</div>
-														</div>
+														{{--<div class="col-md-3">--}}
+															{{--<div class="form-group py-xl-10">--}}
+																{{--<label class="fieldlabels">Builds</label>--}}
+																{{--<select class="form-control rounded-pill" name="MyBuilds">--}}
+																	{{--<option value="">Select</option>--}}
+																	{{--@foreach($myBuilds as $val)--}}
+																		{{--<option value="{{$val->id}}" {{isset($customerSearch->MyBuilds) && $customerSearch->MyBuilds==$val->id ? 'selected' : ''}}>{{$val->title}}</option>--}}
+																	{{--@endforeach--}}
+																{{--</select>--}}
+															{{--</div>--}}
+														{{--</div>--}}
 														<div class="col-md-3">
 															<div class="form-group py-xl-10">
 																<label class="fieldlabels">Marital Status</label>
@@ -390,17 +390,17 @@
 																</select>
 															</div>
 														</div>
-														<div class="col-md-3">
-															<div class="form-group py-xl-10">
-																<label class="fieldlabels">Builds</label>
-																<select class="form-control rounded-pill" name="MyBuilds">
-																	<option value="">Select</option>
-																	@foreach($myBuilds as $val)
-																		<option value="{{$val->id}}">{{$val->title}}</option>
-																	@endforeach
-																</select>
-															</div>
-														</div>
+														{{--<div class="col-md-3">--}}
+															{{--<div class="form-group py-xl-10">--}}
+																{{--<label class="fieldlabels">Builds</label>--}}
+																{{--<select class="form-control rounded-pill" name="MyBuilds">--}}
+																	{{--<option value="">Select</option>--}}
+																	{{--@foreach($myBuilds as $val)--}}
+																		{{--<option value="{{$val->id}}">{{$val->title}}</option>--}}
+																	{{--@endforeach--}}
+																{{--</select>--}}
+															{{--</div>--}}
+														{{--</div>--}}
 														<div class="col-md-3">
 															<div class="form-group py-xl-10">
 																<label class="fieldlabels">Marital Status</label>

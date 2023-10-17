@@ -1,6 +1,6 @@
 @extends('front.layouts.master')
 @section('title','Special Cases')
-@section('description', 'Special Cases - Free Pakistani Rishta | Matrimonial Website | Matrimony Services | Marriage Bureau | Shaadi.org.pk')
+@section('description', 'Special Cases - Free Pakistani Rishta | Matrimonial Website | Matrimony Services | Marriage Bureau | DoosriBiwi.com')
 
 @push('style')
 	{{--Style--}}
@@ -18,7 +18,7 @@
 		    <div class="col-md-9">
 		        <div class="card about-height-hero">
 		            <div class="card-body">
-		                <p>We, at Doosri Biwi, strongly reject the taboos of society. We believe that no person, irrespective of their circumstances and past, should be deprived of the blessings of marriage, which is why our matrimonial services are catered to everyone. From divorcees to disabled people, and all the beautiful human beings in between, can find their perfect Pakistani match on our platform. Doosri Biwi helps people in finding a perfect match. For this purpose we have a 100% Free Online Matrimonial website Shaadi.org.pk based on purely eastern values. With hundreds of monthly satisfied customers, we are progressing through the heights of success and generating more happiness than anyone else in this industry. We are not a commercial marriage bureau which runs purely on profit. We are an organization and our motive is to help people. To achieve this purpose we are offering many free services to people such as this 100% Free Online Rishta Pakistani Website, free rishta meetings, free place for engagement, free place for nikkah, support for simple nikkah, etc. We only charge fee from those who want to hire us for personalized matchmaking in which our time and energy is spend to find a good match. This personalized matchmaking is a time taking process but it saves time of our client so we only charge fee for this service.</p>
+		                <p>We, at Doosri Biwi, strongly reject the taboos of society. We believe that no person, irrespective of their circumstances and past, should be deprived of the blessings of marriage, which is why our matrimonial services are catered to everyone. From divorcees to disabled people, and all the beautiful human beings in between, can find their perfect Pakistani match on our platform. Doosri Biwi helps people in finding a perfect match. For this purpose we have a 100% Free Online Matrimonial website DoosriBiwi.com based on purely eastern values. With hundreds of monthly satisfied customers, we are progressing through the heights of success and generating more happiness than anyone else in this industry. We are not a commercial marriage bureau which runs purely on profit. We are an organization and our motive is to help people. To achieve this purpose we are offering many free services to people such as this 100% Free Online Rishta Pakistani Website, free rishta meetings, free place for engagement, free place for nikkah, support for simple nikkah, etc. We only charge fee from those who want to hire us for personalized matchmaking in which our time and energy is spend to find a good match. This personalized matchmaking is a time taking process but it saves time of our client so we only charge fee for this service.</p>
 		            </div>
 		        </div>
 		        <!-- /.card-icon-component -->

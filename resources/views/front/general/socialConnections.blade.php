@@ -1,6 +1,6 @@
 @extends('front.layouts.master')
 @section('title','Social Connections')
-@section('description', 'Join us now on our social media pages and interact with Shaadi.org.pk members to find the life partner for marriage.')
+@section('description', 'Join us now on our social media pages and interact with DoosriBiwi.com members to find the life partner for marriage.')
 
 @push('style')
 	{{--Style--}}

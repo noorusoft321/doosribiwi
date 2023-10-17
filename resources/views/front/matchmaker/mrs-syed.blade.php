@@ -112,7 +112,7 @@
 
                             <p style="margin-bottom: 1.3rem;">She is a serial entrepreneur and working for women empowerment since long time.</p>
                             <div class="matchProfileIcons">
-                                <a href="https://api.whatsapp.com/send?phone=923452444262&text=Hi%20Shaadi.org.pk%2C%20I%20need%20more%20information." style="background: #25D366;">
+                                <a href="https://api.whatsapp.com/send?phone=923452444262&text=Hi%20DoosriBiwi.com%2C%20I%20need%20more%20information." style="background: #25D366;">
                                     <i class="fa fa-whatsapp" aria-hidden="true"></i>
                                 </a>
                                 <a href="tel:+923452444262" style="background: #e0aa3e;">

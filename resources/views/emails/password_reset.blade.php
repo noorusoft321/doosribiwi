@@ -76,7 +76,7 @@
                     <td style="padding: 30px">
                         <h4 style="font-weight: 600">Password Reset</h4>
                         <p>
-                            Forgot your password for Shaadi.org.pk? If this is true, click the 'Reset Password' button
+                            Forgot your password for DoosriBiwi.com? If this is true, click the 'Reset Password' button
                             to reset your password.
                         </p>
                         <p>If you have remembered your password now, you can safely ignore this email.</p>
@@ -84,7 +84,7 @@
                                 Password</a></p>
                         <p>Good luck! Hope it works.</p>
                         <p style="margin-bottom: 0">
-                            Regards,<br>Shaadi.org.pk</p>
+                            Regards,<br>DoosriBiwi.com</p>
                     </td>
                 </tr>
                 </tbody>
@@ -93,7 +93,7 @@
                 <tbody>
                 <tr style="text-align: center">
                     <td>
-                        <p style="color: #999; margin-bottom: 0">Powered By Shaadi.org.pk</p>
+                        <p style="color: #999; margin-bottom: 0">Powered By DoosriBiwi.com</p>
                     </td>
                 </tr>
                 </tbody>

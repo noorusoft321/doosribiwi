@@ -1,6 +1,6 @@
 @extends('front.layouts.master')
 @section('title','Media Room - Free Pakistani Rishta | Matrimonial Website | Matrimony Services | Marriage Bureau')
-@section('description', 'Join Shaadi.org.pk government registered marriage Bureau best matchmaking service in pakistan')
+@section('description', 'Join DoosriBiwi.com government registered marriage Bureau best matchmaking service in pakistan')
 
 @push('style')
 	{{--Style--}}

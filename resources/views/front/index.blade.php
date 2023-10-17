@@ -663,9 +663,9 @@
                     <div class="content-column col-md-5 mx-auto my-auto">
                         <div class="inner-column">
                             <div class="sec-title">
-                                <h2>The Most Trusted Marriage Bureau in Pakistan</h2>
+                                <h2>Welcome to DoosriBiwi.com which understands & supports your choices.</h2>
                             </div>
-                            <div class="text">Doosri Biwi was established in 2003 and is a licenced, government compliant marriage bureau that operates by a strict code of conduct.</div>
+                            <div class="text">Doosri Biwi is a licensed, government-compliant marriage bureau that operates by a strict code of conduct within the framework of Islamic values.</div>
                             <br>
                             <ul class="list-style-one">
                                 <li><i class="fa fa-check-circle"></i> Always Speak Truth.</li>
@@ -675,7 +675,7 @@
                                 <li><i class="fa fa-check-circle"></i> Always Search Proposal for the Clients as if They are Our Brothers, Sisters, Sons & Daughters.</li>
                             </ul>
                             <div class="p-tb-30">
-                                <a href="{{route('view.register')}}" class="button-theme-dark"> Register Now </a>
+                                <a href="{{route('view.register')}}" class="button-theme-dark"> Let’s begin </a>
                             </div>
                         </div>
                     </div>
@@ -896,7 +896,7 @@
                 </div>
 
                 <div class="align-center p-tb-30">
-                    <a href="{{route('view.register')}}" class="button-theme-light"> View More </a>
+                    <a href="{{route('view.register')}}" class="button-theme-light"> Let’s begin </a>
                 </div>
 
             </div>
@@ -1005,7 +1005,7 @@
                 <img class="img-align-center heading-border"
                      src="{{asset('assets/img/shaadi-organization-pakistan-heading-border.png')}}">
                 <p class="white-color align-center">
-                    Shaadi Organization® Pakistan is a licensed, registered and recognized marriage bureau from Government of Pakistan. Our name, logo, events' name, taglines are all registered under the Trademark and Copyright Acts of Government of Pakistan. We are also registered and associated with a number of local, provincial and federal departments of Government of Pakistan, media personalities and media channels. You can see certificates, photos and videos on our website and social media pages.
+                    DoosriBiwi.com® is a licensed, registered and recognized marriage bureau from Government of Pakistan. Our name, logo, events' name, taglines are all registered under the Trademark and Copyright Acts of Government of Pakistan. We are also registered and associated with a number of local, provincial and federal departments of Government of Pakistan, media personalities and media channels. You can see certificates, photos and videos on our website and social media pages.
                 </p>
                 <div class="row gallery">
                     @foreach($govermentRegisteredMarraigeBureau as $key => $val)
@@ -1030,13 +1030,13 @@
                     <div class="col-md-4 mx-auto my-auto card-container">
                         <div class="card card-flip container d-flex h-100">
                             <div class="front card-block row justify-content-center align-self-center">
-                                <img src="{{asset('assets/img/partners/Shaadi-Organization-Pakistan-Rishta-Logo.svg')}}" alt="Shaadi.Org.Pk" style="width: 70%;">
-                                <h4>Shaadi.Org.Pk</h4>
+                                <img src="{{asset('assets/img/partners/Shaadi-Organization-Pakistan-Rishta-Logo.svg')}}" alt="DoosriBiwi.com" style="width: 70%;">
+                                <h4>Shaadi.org.pk</h4>
                             </div>
                             <div class="back card-block row justify-content-center align-self-center">
                                 <p>Shaadi Organization Pakistan is designed to bring you a number of choices in selecting a life partner.</p>
                                 <div class="align-center">
-                                    <a href="https://shaadi.org.pk/" class="button-theme-dark"> View More </a>
+                                    <a href="https://DoosriBiwi.com/" class="button-theme-dark"> View More </a>
                                 </div>
                             </div>
                         </div>

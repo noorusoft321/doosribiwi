@@ -1,6 +1,6 @@
 @extends('front.layouts.master')
 @section('title','Wedding Planning Services')
-@section('description', 'Shaadi.org.pk Is Your One Stop Destination For Rishta Online And Perfect Marriage Services, Making Your Wedding Day Unforgettable.')
+@section('description', 'DoosriBiwi.com Is Your One Stop Destination For Rishta Online And Perfect Marriage Services, Making Your Wedding Day Unforgettable.')
 
 @push('style')
 	{{--Style--}}
@@ -38,22 +38,22 @@
 		    <div class="col-md-12">
 		        <div class="card">
 		            <div class="card-body">
-					    <p>Every bride and groom dreams about their&nbsp;<strong>marriage</strong>&nbsp;to be an unforgettable day for them and a mesmerizing event for their family and friends. Shaadi.org.pk is here to make that happen. Planning a&nbsp;<strong>marriage&nbsp;</strong>is in no way an easy task. It involves fatigue and frustrations, debates and confusions about everything from mere fixing of&nbsp;<strong>Shaadi</strong>&nbsp;date to the design of the bride’s shoes. And it becomes more stressful as the big day comes closer. Wedding planning services from www.shaadi.org.pk can help you plan your big day well ahead of time.</p>
+					    <p>Every bride and groom dreams about their&nbsp;<strong>marriage</strong>&nbsp;to be an unforgettable day for them and a mesmerizing event for their family and friends. DoosriBiwi.com is here to make that happen. Planning a&nbsp;<strong>marriage&nbsp;</strong>is in no way an easy task. It involves fatigue and frustrations, debates and confusions about everything from mere fixing of&nbsp;<strong>Shaadi</strong>&nbsp;date to the design of the bride’s shoes. And it becomes more stressful as the big day comes closer. Wedding planning services from www.DoosriBiwi.com can help you plan your big day well ahead of time.</p>
 					    <p><strong>Tell Us your Dream</strong></p>
 					    <p>First of all, before providing you with any wedding planning services, our team of wedding planners will interview the bride and groom and the concerned family members on how they want the wedding day to be like. When the theme of the&nbsp;<strong>marriage</strong>&nbsp;ceremonies is mutually decided upon, the planning procedure begins.</p>
 					    <p><strong>Pre Nuptial Functions</strong></p>
-					    <p>We are not here to plan your big day only. Shaadi.org.pk will help you every step of your&nbsp;<strong>Shaadi</strong>. Whether it is your engagement ceremony, Mehndi ceremony or Dholki or any other pre marital event, we can help you make your function the talk of the town with our excellent wedding planning services.</p>
+					    <p>We are not here to plan your big day only. DoosriBiwi.com will help you every step of your&nbsp;<strong>Shaadi</strong>. Whether it is your engagement ceremony, Mehndi ceremony or Dholki or any other pre marital event, we can help you make your function the talk of the town with our excellent wedding planning services.</p>
 					    <p><strong>Help With Budget Preparation</strong></p>
-					    <p>Since our Pakistani&nbsp;<strong>marriage</strong>&nbsp;is of an extravagant nature, you might need advice from our experienced wedding planners on how big a budget is big enough. With the help of our team of wedding planners from Shaadi.org.pk , you can set a moderate budget for your big day. A big budget is not necessary to make your wedding day memorable. Whatever your budget may be, we shall provide you assistance accordingly.</p>
+					    <p>Since our Pakistani&nbsp;<strong>marriage</strong>&nbsp;is of an extravagant nature, you might need advice from our experienced wedding planners on how big a budget is big enough. With the help of our team of wedding planners from DoosriBiwi.com , you can set a moderate budget for your big day. A big budget is not necessary to make your wedding day memorable. Whatever your budget may be, we shall provide you assistance accordingly.</p>
 					    <p><strong>Event Planning &amp; Styling</strong></p>
-					    <p>The most important service of all that Shaadi.org.pk provides you with its event planning and styling services. You may set a budget on your own and even manage a few things yourself but leave the preparation of your big day to us and our team will not let you down. From photographers to caterers and stage decorators, everything will be taken care of by our experienced wedding planners.</p>
+					    <p>The most important service of all that DoosriBiwi.com provides you with its event planning and styling services. You may set a budget on your own and even manage a few things yourself but leave the preparation of your big day to us and our team will not let you down. From photographers to caterers and stage decorators, everything will be taken care of by our experienced wedding planners.</p>
 					    <p><strong>Preparing the Wedding Checklist</strong></p>
 					    <p>Even though Pakistani&nbsp;<strong>marriage</strong>&nbsp;takes place in a matter of days, it is still better to have a planned wedding so that you have enough time to think about everything necessary for the big event. Making a proper wedding checklist is necessary so that all the necessary ‘Things to Do’ are in one place and there is no chance of missing out on anything. Our wedding planning team will assist you with the wedding checklist as well.</p>
 					    <p><strong>The Guest List</strong></p>
 					    <p>Preparing the guest list can be very time consuming but our wedding planning team will make it all easier for you. Prepare the guest list with our expert professionals so you don’t forget to invite those that matter to you. We can also help you with getting the invitation cards printed at an affordable price.</p>
 					    <p><strong>The Real Deal</strong></p>
 					    <p>The main thing that most couples need help with is making the actual arrangements for the big day like contacting the caterers, bakers, florists, beauticians, photographers, bridal trousseau designers, etc. The major problem is coordinating with them and planning everything to the very last detail. Save yourself from the stress and unload all your worries onto us for our&nbsp;<strong>marriage</strong>&nbsp;planners are here to make your big day special.</p>
-					    <p>Apart from this, Shaadi.org.pk offers the members exclusive exposure to deals in every regards. Our partners offer you amazing discounts on&nbsp;<strong>Shaadi</strong>&nbsp;products and services, which you can benefit from throughout the event. For more membership, registrations and benefits details click here.</p>
+					    <p>Apart from this, DoosriBiwi.com offers the members exclusive exposure to deals in every regards. Our partners offer you amazing discounts on&nbsp;<strong>Shaadi</strong>&nbsp;products and services, which you can benefit from throughout the event. For more membership, registrations and benefits details click here.</p>
 					</div>
 		        </div>
 		        <!-- /.card-icon-component -->

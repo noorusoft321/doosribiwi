@@ -1,7 +1,7 @@
 @extends('front.layouts.master')
 
 @section('title','Advertise with Us - Best Online Marriage Platform')
-@section('description', 'Benefit your business with our online marriage website as Shaadi.org.pk offer you to advertise on our website through banners of your products and services.')
+@section('description', 'Benefit your business with our online marriage website as DoosriBiwi.com offer you to advertise on our website through banners of your products and services.')
 
 @push('style')
 	<style></style>
@@ -13,7 +13,7 @@
 		<br>
 		<h2 class="align-center font-weight-600"> DO YOU WANT TO PROMOTE YOUR BUSINESS ONLINE? </h2>
 		<img class="img-align-center heading-border" src="{{asset('home_page/heading-border.png')}}">
-		<p class="text-center">At Shaadi.org.pk, thousands of new and regular visitors come to view profiles on our online marriage website daily. From bride searching mothers to partner searching young men and women. This here is a platform that caters to the interests of a huge audience from Pakistan, having more than 200 members live online!
+		<p class="text-center">At DoosriBiwi.com, thousands of new and regular visitors come to view profiles on our online marriage website daily. From bride searching mothers to partner searching young men and women. This here is a platform that caters to the interests of a huge audience from Pakistan, having more than 200 members live online!
 		</p>
 		<br>
 		<!-- /.heading-section -->
@@ -40,8 +40,8 @@
 						<p> Feel free to contact our 24Hr Customer Service through any of these mediums at anytime of the day:</p>
 						<p>  <strong>Phone:</strong>  021 348 308 11    </p>
 						<p>  <strong>Cell:</strong>  0346 21 41 786     </p>
-						<p>  <strong>Email:</strong> info@shaadi.org.pk </p>
-						<p>  <strong>Skype:</strong> shaadi.org.pk      </p>
+						<p>  <strong>Email:</strong> info@DoosriBiwi.com </p>
+						<p>  <strong>Skype:</strong> DoosriBiwi.com      </p>
 					</div>
 				</div>
 				<!-- /.card-icon-component -->

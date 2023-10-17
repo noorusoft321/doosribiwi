@@ -81,7 +81,7 @@
 
 			<div class="col-12 col-md-12 col-lg-12 my-12">
 				<div class="card">
-					<h5 class="card-header">Why Franchise with Shaadi.org.pk</h5>
+					<h5 class="card-header">Why Franchise with DoosriBiwi.com</h5>
 					<div class="card-body">
 						<strong>We have everything ready for you to start your business within a month.</strong>
 						<p>- Low risk because of the existing brand image.</p>

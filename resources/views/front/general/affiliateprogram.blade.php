@@ -17,7 +17,7 @@
 		<!-- /.heading-section -->
 		<div class="row">
 			<div class="col-md-9">
-				<p>Doosri Biwi helps people in finding a perfect match. For this purpose we have a 100% Free Online Matrimonial website Shaadi.org.pk based on purely eastern values. With hundreds of monthly satisfied customers, we are progressing through the heights of success and generating more happiness than anyone else in this industry.</p>
+				<p>Doosri Biwi helps people in finding a perfect match. For this purpose we have a 100% Free Online Matrimonial website DoosriBiwi.com based on purely eastern values. With hundreds of monthly satisfied customers, we are progressing through the heights of success and generating more happiness than anyone else in this industry.</p>
 				<p>We are not a commercial marriage bureau which runs purely on profit. We are an organization and our motive is to help people. To achieve this purpose we are offering many free services to people such as this 100% Free Online Rishta Pakistani Website, free rishta meetings, free place for engagement, free place for nikkah, support for simple nikkah, etc.</p>
 				<p>We only charge fee from those who want to hire us for personalized matchmaking in which our time and energy is spend to find a good match. This personalized matchmaking is a time taking process but it saves time of our client so we only charge fee for this service.</p>
 			</div>
@@ -32,7 +32,7 @@
 
 		<br>
 		<h2 class="align-center font-weight-600"> Why Doosri Biwi </h2>
-		<p class="align-center">Shaadi.org.pk is a very well known organization.</p>
+		<p class="align-center">DoosriBiwi.com is a very well known organization.</p>
 		<br>
 		<br>
 
@@ -43,7 +43,7 @@
 				<p class="align-center">
 					People Trust Doosri Biwi. It means becoming our affiliate means people will trust you and it is easy for you to earn by using our affiliate program.
 
-					Shaadi.org.pk is providing you an opportunity to earn through promoting our free marriage website and our brand name with your resources. What we are offering is for you to generate good business through promoting and recommending our name to people looking for matrimonial or matchmaking services like ours.
+					DoosriBiwi.com is providing you an opportunity to earn through promoting our free marriage website and our brand name with your resources. What we are offering is for you to generate good business through promoting and recommending our name to people looking for matrimonial or matchmaking services like ours.
 
 					We offer an amazing affiliate program that you can become a part of.
 

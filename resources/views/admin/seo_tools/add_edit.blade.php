@@ -60,7 +60,7 @@
                                             <option value="view.login" {{($seoTool->page_url=='view.login') ? 'selected' : ''}} data-foo="{{route('view.login')}}">Login</option>
                                             <option value="view.register" {{($seoTool->page_url=='view.register') ? 'selected' : ''}} data-foo="{{route('view.register')}}">Register</option>
                                             <option value="view.forgot.password" {{($seoTool->page_url=='view.forgot.password') ? 'selected' : ''}} data-foo="{{route('view.forgot.password')}}">Forgot Password</option>
-                                            <option value="forget.password.confirm" {{($seoTool->page_url=='forget.password.confirm') ? 'selected' : ''}} data-foo="{{route('forget.password.confirm',['info@shaadi.org.pk'])}}">Reset Password</option>
+                                            <option value="forget.password.confirm" {{($seoTool->page_url=='forget.password.confirm') ? 'selected' : ''}} data-foo="{{route('forget.password.confirm',['info@DoosriBiwi.com'])}}">Reset Password</option>
                                             <option value="customer.search" {{($seoTool->page_url=='customer.search') ? 'selected' : ''}} data-foo="{{route('customer.search')}}">Customer Search</option>
                                             <option value="payment.options" {{($seoTool->page_url=='payment.options') ? 'selected' : ''}} data-foo="{{route('payment.options')}}">Payment Option</option>
                                             <option value="blog" {{($seoTool->page_url=='blog') ? 'selected' : ''}} data-foo="{{route('blog')}}">Blog Main</option>
@@ -131,7 +131,7 @@
                                             <option value="family.rishta.meeting" {{($seoTool->page_url=='family.rishta.meeting') ? 'selected' : ''}} data-foo="{{route('family.rishta.meeting')}}">Family Rishta Meeting</option>
                                             <option value="public.notices" {{($seoTool->page_url=='public.notices') ? 'selected' : ''}} data-foo="{{route('public.notices')}}">Public Notices</option>
                                             <option value="career" {{($seoTool->page_url=='career') ? 'selected' : ''}} data-foo="{{route('career')}}">Career</option>
-                                            <option value="confirm.customer.account" {{($seoTool->page_url=='confirm.customer.account') ? 'selected' : ''}} data-foo="{{route('confirm.customer.account',['info@shaadi.org.pk'])}}">Confirm Customer Account</option>
+                                            <option value="confirm.customer.account" {{($seoTool->page_url=='confirm.customer.account') ? 'selected' : ''}} data-foo="{{route('confirm.customer.account',['info@DoosriBiwi.com'])}}">Confirm Customer Account</option>
                                             <option value="auth.verify" {{($seoTool->page_url=='auth.verify') ? 'selected' : ''}} data-foo="{{route('auth.verify')}}">Auth Verify</option>
                                             <option value="education.form" {{($seoTool->page_url=='education.form') ? 'selected' : ''}} data-foo="{{route('education.form')}}">Education Form</option>
                                             <option value="personal.form" {{($seoTool->page_url=='personal.form') ? 'selected' : ''}} data-foo="{{route('personal.form')}}">Personal Form</option>
@@ -242,7 +242,7 @@
                                             <option value="view.login" data-foo="{{route('view.login')}}">Login</option>
                                             <option value="view.register" data-foo="{{route('view.register')}}">Register</option>
                                             <option value="view.forgot.password" data-foo="{{route('view.forgot.password')}}">Forgot Password</option>
-                                            <option value="forget.password.confirm" data-foo="{{route('forget.password.confirm',['info@shaadi.org.pk'])}}">Reset Password</option>
+                                            <option value="forget.password.confirm" data-foo="{{route('forget.password.confirm',['info@DoosriBiwi.com'])}}">Reset Password</option>
                                             <option value="customer.search" data-foo="{{route('customer.search')}}">Customer Search</option>
                                             <option value="payment.options" data-foo="{{route('payment.options')}}">Payment Option</option>
                                             <option value="blog" data-foo="{{route('blog')}}">Blog Main</option>
@@ -313,7 +313,7 @@
                                             <option value="family.rishta.meeting" data-foo="{{route('family.rishta.meeting')}}">Family Rishta Meeting</option>
                                             <option value="public.notices" data-foo="{{route('public.notices')}}">Public Notices</option>
                                             <option value="career" data-foo="{{route('career')}}">Career</option>
-                                            <option value="confirm.customer.account" data-foo="{{route('confirm.customer.account',['info@shaadi.org.pk'])}}">Confirm Customer Account</option>
+                                            <option value="confirm.customer.account" data-foo="{{route('confirm.customer.account',['info@DoosriBiwi.com'])}}">Confirm Customer Account</option>
                                             <option value="auth.verify" data-foo="{{route('auth.verify')}}">Auth Verify</option>
                                             <option value="education.form" data-foo="{{route('education.form')}}">Education Form</option>
                                             <option value="personal.form" data-foo="{{route('personal.form')}}">Personal Form</option>

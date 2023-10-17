@@ -1,6 +1,6 @@
 @extends('front.layouts.master')
 @section('title','Pakistans Most Trusted Matchmaking Service')
-@section('description', 'Pakistani One Stop Destination for Perfect Matchmaking - Shaadi.Org.Pk - Let us help you find the Love of your Life and the Soulmate you Desire.')
+@section('description', 'Pakistani One Stop Destination for Perfect Matchmaking - DoosriBiwi.com - Let us help you find the Love of your Life and the Soulmate you Desire.')
 
 @push('style')
 	<style>

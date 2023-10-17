@@ -1,7 +1,7 @@
 @extends('front.layouts.master')
 
 @section('title','Privacy Policy')
-@section('description', 'Shaadi.org.pk management goes an extra mile to safeguard the privacy of its members and protect it from any misuse and fraud.')
+@section('description', 'DoosriBiwi.com management goes an extra mile to safeguard the privacy of its members and protect it from any misuse and fraud.')
 
 @push('style')
 	<style></style>
@@ -14,7 +14,7 @@
 			<h2 class="heading-section-3 text-dark text-center mb-0">Privacy Policy</h2>
 			<img src="{{asset('home_page/heading-border.png')}}" class="img-align-center heading-border">
 			<p class="text-center">In order to protect each and every client’s personal information,
-				we at Shaadi.org.pk have set some strict security standards. Our privacy policy statement reveals the entire information collecting process
+				we at DoosriBiwi.com have set some strict security standards. Our privacy policy statement reveals the entire information collecting process
 				and the privacy regulations implemented for our Pakistan matrimony website. Our firm policies for the protection of your identity and privileged
 				information are discussed in detail below.
 			</p>
@@ -41,7 +41,7 @@
 				<div class="card pp-card-hero">
 					<h5 class="card-header">Mandatory Member Information for Recognition Purposes</h5>
 					<div class="card-body">
-						<p>Every time a client becomes a member of Shaadi.org.pk , certain information is asked to be used as identification information and to provide customized services to clients. The client’s contact information, email address, name, age, gender and residential information all fall under the general identification information category. Any general information is never disclosed to any third party without the permission of the client.</p>
+						<p>Every time a client becomes a member of DoosriBiwi.com , certain information is asked to be used as identification information and to provide customized services to clients. The client’s contact information, email address, name, age, gender and residential information all fall under the general identification information category. Any general information is never disclosed to any third party without the permission of the client.</p>
 						<p>If you remove your privacy settings at any time or share any confidential information with other members then the company cannot be held liable for the actions.</p>
 						<p>No general information is sold, rented or shared under any circumstances. For premium membership at our Pakistan matrimony site, we do ask for the client’s credit card information for billing purposes and this critical information is kept private. No third party credit processors are used in order to eliminate the risk of privacy invasion and instead 128 bit encryption is used.</p>
 					</div>
@@ -94,7 +94,7 @@
 				<div class="card pp-card-bottom">
 					<h5 class="card-header">Management and Removal of Private Information</h5>
 					<div class="card-body">
-						<p>As long as you remain a member on our online marriage website, your information is safeguarded by us at our discretion. Your private information will be used by us to verify your account. However, removal of your private as well as public information is possible under the ‘Edit Profile’ option. The ‘Profile Option’ page can be used in order to hide your profile or suspend your account due to unavoidable circumstances. The same option can be used to make changes in the profile too. If the profile is hidden by the client, he or she will no longer be sent any notifications via email or SMS. The profile will no longer exist in the database if the account is hidden or suspended. In any of the case, the altered settings shall not be the responsibility of the company and Shaadi.org.pk will not be liable for any misuse by the user.</p>
+						<p>As long as you remain a member on our online marriage website, your information is safeguarded by us at our discretion. Your private information will be used by us to verify your account. However, removal of your private as well as public information is possible under the ‘Edit Profile’ option. The ‘Profile Option’ page can be used in order to hide your profile or suspend your account due to unavoidable circumstances. The same option can be used to make changes in the profile too. If the profile is hidden by the client, he or she will no longer be sent any notifications via email or SMS. The profile will no longer exist in the database if the account is hidden or suspended. In any of the case, the altered settings shall not be the responsibility of the company and DoosriBiwi.com will not be liable for any misuse by the user.</p>
 					</div>
 				</div>
 				<!-- /.card-icon-component -->

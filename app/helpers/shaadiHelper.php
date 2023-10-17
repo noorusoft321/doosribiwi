@@ -259,7 +259,7 @@ if (!function_exists('sendNewEmail')){
             $message->subject($subject);
             $message->to($email);
 //            $message->to(env('DEFAULT_EMAIL'), env('DEFAULT_NAME'));
-            $message->bcc(env('BCC_EMAIL'), env("BCC_NAME"));
+//            $message->bcc(env('BCC_EMAIL'), env("BCC_NAME"));
         });
         return $sent;
     }

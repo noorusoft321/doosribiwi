@@ -1,7 +1,7 @@
 @extends('front.layouts.master')
 
 @section('title', $title)
-@section('description', 'Payment Options - Free Pakistani Rishta | Matrimonial Website | Matrimony Services | Marriage Bureau | Shaadi.org.pk')
+@section('description', 'Payment Options - Free Pakistani Rishta | Matrimonial Website | Matrimony Services | Marriage Bureau | DoosriBiwi.com')
 
 @push('style')
 	<style></style>

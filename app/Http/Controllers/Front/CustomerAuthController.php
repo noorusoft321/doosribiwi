@@ -255,7 +255,7 @@ class CustomerAuthController extends Controller
                     'customer' => $customer
                 ];
 
-                sendNewEmail('emails.confirmation',$data,'Confirm Account - Shaadi.org.pk');
+                sendNewEmail('emails.confirmation',$data,'Confirm Account - DoosriBiwi.com');
                 auth()->guard('customer')->login($customer);
                 $redirectUrl = route('view.login');
                 if (auth()->guard('customer')->check()) {
@@ -301,7 +301,7 @@ class CustomerAuthController extends Controller
             'email' => $customer->email
         );
 
-        $res = sendNewEmail('emails.password_reset',$messageData,'Password Reset - Shaadi.org.pk');
+        $res = sendNewEmail('emails.password_reset',$messageData,'Password Reset - DoosriBiwi.com');
         if (!empty($res)) {
             return response()->json([
                 'status' => 'success',
@@ -530,7 +530,7 @@ class CustomerAuthController extends Controller
         $countries = Country::where('deleted',0)->get();
         $states = [];
         $cities = [];
-        $majorCourses = [];
+//        $majorCourses = [];
         if (!empty($customer->customerPersonalInfo)) {
             if (!empty($customer->customerPersonalInfo)) {
                 $states = State::where('country_id',$customer->customerPersonalInfo->CountryOfOrigin)->where('deleted',0)->get();
@@ -539,16 +539,16 @@ class CustomerAuthController extends Controller
                 $cities = City::where('state_id',$customer->customerPersonalInfo->StateOfOrigin)->where('deleted',0)->get();
             }
         }
-        if (!empty($customer->customerCareerInfo)) {
-            $majorCourses = MajorCourse::where('deleted',0)->where('education_id',$customer->customerCareerInfo->Qualification)->get();
-        }
-        $willingToRelocate = WillingToRelocate::where('deleted',0)->orderBy('order_at','asc')->get();
+//        if (!empty($customer->customerCareerInfo)) {
+//            $majorCourses = MajorCourse::where('deleted',0)->where('education_id',$customer->customerCareerInfo->Qualification)->get();
+//        }
+//        $willingToRelocate = WillingToRelocate::where('deleted',0)->orderBy('order_at','asc')->get();
         $lookingToMarry = IAmLookingToMarry::where('deleted',0)->orderBy('order_at','asc')->get();
         $livingArrangement = MyLivingArrangement::where('deleted',0)->orderBy('order_at','asc')->get();
         $heights = Height::where('deleted',0)->orderBy('order_at','asc')->get();
         $weights = Weight::where('deleted',0)->orderBy('order_at','asc')->get();
         $complexions = Complexion::where('deleted',0)->orderBy('order_at','asc')->get();
-        $myBuilds = MyBuild::where('deleted',0)->orderBy('order_at','asc')->get();
+//        $myBuilds = MyBuild::where('deleted',0)->orderBy('order_at','asc')->get();
         $hairColors = HairColor::where('deleted',0)->orderBy('order_at','asc')->get();
         $eyeColors = EyeColor::where('deleted',0)->orderBy('order_at','asc')->get();
         $smokes = Smoke::where('deleted',0)->orderBy('order_at','asc')->get();
@@ -561,16 +561,16 @@ class CustomerAuthController extends Controller
 
         /*Career Information*/
 
-        $universities = University::where('deleted',0)->orderBy('order_at','asc')->get();
+//        $universities = University::where('deleted',0)->orderBy('order_at','asc')->get();
         $incomes = AnnualInCome::where('deleted',0)->orderBy('order_at','asc')->get();
-        $jobPosts = JobPost::where('deleted',0)->orderBy('order_at','asc')->get();
-        $futurePlans = FuturePlan::where('deleted',0)->orderBy('order_at','asc')->get();
+//        $jobPosts = JobPost::where('deleted',0)->orderBy('order_at','asc')->get();
+//        $futurePlans = FuturePlan::where('deleted',0)->orderBy('order_at','asc')->get();
 
         /*Religion*/
         $religions = Religion::where('deleted',0)->orderBy('order_at','asc')->get();
-        $preferHijabs = DoYouPreferHijab::where('deleted',0)->orderBy('order_at','asc')->get();
+//        $preferHijabs = DoYouPreferHijab::where('deleted',0)->orderBy('order_at','asc')->get();
         $reverts = AreYouRevert::where('deleted',0)->orderBy('order_at','asc')->get();
-        $performSalaahs = DoYouPerformSalaah::where('deleted',0)->orderBy('order_at','asc')->get();
+//        $performSalaahs = DoYouPerformSalaah::where('deleted',0)->orderBy('order_at','asc')->get();
         if (!empty($customer->customerReligionInfo)) {
             $sects = Sect::where('religions_id',$customer->customerReligionInfo->Religions)->where('deleted',0)->orderBy('order_at','asc')->get();
         } else {
@@ -609,13 +609,13 @@ class CustomerAuthController extends Controller
             'countries',
             'states',
             'cities',
-            'willingToRelocate',
+//            'willingToRelocate',
             'lookingToMarry',
             'livingArrangement',
             'heights',
             'weights',
             'complexions',
-            'myBuilds',
+//            'myBuilds',
             'hairColors',
             'eyeColors',
             'smokes',
@@ -623,14 +623,14 @@ class CustomerAuthController extends Controller
             'educations',
             'occupations',
             'tongues',
-            'universities',
+//            'universities',
             'incomes',
-            'jobPosts',
-            'futurePlans',
+//            'jobPosts',
+//            'futurePlans',
             'religions',
-            'preferHijabs',
+//            'preferHijabs',
             'reverts',
-            'performSalaahs',
+//            'performSalaahs',
             'sects',
             'beards',
             'halals',
@@ -641,8 +641,8 @@ class CustomerAuthController extends Controller
             'maritalStatuses',
             'expStates',
             'expCities',
-            'hobbies',
-            'majorCourses'
+            'hobbies'
+//            'majorCourses'
         ));
     }
 
@@ -1112,7 +1112,7 @@ class CustomerAuthController extends Controller
             'customer' => $customer
         ];
 
-        $isEmailSent = sendNewEmail('emails.confirmation',$data,'Confirm Account - Shaadi.org.pk');
+        $isEmailSent = sendNewEmail('emails.confirmation',$data,'Confirm Account - DoosriBiwi.com');
         if (!empty($isEmailSent)) {
             return response()->json([
                 'status' => 'success',
@@ -1148,7 +1148,7 @@ class CustomerAuthController extends Controller
                 'customer' => $customer
             ];
 
-            sendNewEmail('emails.welcome',$data,'Welcome - Shaadi.org.pk');
+            sendNewEmail('emails.welcome',$data,'Welcome - DoosriBiwi.com');
             if (auth()->guard('customer')->check()) {
                 $message = "Your email has been verified successfully";
                 session::flash('success_message', $message);
@@ -1530,7 +1530,7 @@ class CustomerAuthController extends Controller
             'OccupationID'         => 'required|numeric',
             'MyIncome'             => 'required|numeric',
 //            'WillingToRelocate'    => 'required|numeric',
-            'MyBuilds'             => 'required|numeric',
+//            'MyBuilds'             => 'required|numeric',
             'MaritalStatus'        => 'required|numeric',
             'MyLivingArrangements' => 'required|numeric',
             'Heights'              => 'required|numeric',
@@ -2566,6 +2566,85 @@ class CustomerAuthController extends Controller
                 'error'   => $e
             ]);
         }
+    }
+
+    public function stagingToLive()
+    {
+        $curl = curl_init();
+        curl_setopt_array($curl, array(
+            CURLOPT_URL => 'https://shaadi.org.pk/testing-with-db',
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_ENCODING => '',
+            CURLOPT_MAXREDIRS => 10,
+            CURLOPT_TIMEOUT => 0,
+            CURLOPT_FOLLOWLOCATION => true,
+            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            CURLOPT_CUSTOMREQUEST => 'GET',
+            CURLOPT_HTTPHEADER => array(
+                'Cookie: XSRF-TOKEN=eyJpdiI6Inh0a1hBUFNjY1RsQi9xNy9hSmY4c1E9PSIsInZhbHVlIjoidWFNeWwvcGpKekwvblpJWFdPREYxNDVTUkVGd21zd1YxZnh1blN5alZRUXhpdTBuSmJLcmdZVVpPWVpTeklBOGpsUVNuSnprWk1wallaK2ltL2lsdHRrczNNUWtkdWRHWnhBZzAyMld1ZnBFUlZYOHR1dExITW1aaXdBZkZTMHciLCJtYWMiOiJiYWQ4YWY3YmVkNzMxNTFlMzE1NDU4OGUwMzk4ZDkzZmJkZWY2ODg1NjlhNWFhZjk4OWYyN2NmZTc4YjRjOWRmIiwidGFnIjoiIn0%3D; shaadiorgpk_session=eyJpdiI6Ik9xbCtFMnZvOURKYUdXY1E4RGZ6NVE9PSIsInZhbHVlIjoiYlZDc2l2SG1wVXNIa1d2V251eWtaOVc0TnBGaUM5azdDejR5UjFqZHczb0ZRWmlwWkxYQ09GV2d2SUNzRkFSQ1dVbk1nbWx3WkdpeWkxK3B0UUhJSzBIYU85NzFMU0pvaFhlcGRnajZtYnFPa2hHS3dEdGtJRklDaHlTSEpxQ2IiLCJtYWMiOiJkOTg3ODk4YjBiMTBkMjM1MjY2NzNmZmNkNzFlMDI0OTAyOTNhZjk0NmY2OWNkYjhkZWQwYTUyNmVkZmE2ODU3IiwidGFnIjoiIn0%3D'
+            ),
+        ));
+        $response = curl_exec($curl);
+        curl_close($curl);
+        $resArr = json_decode($response);
+        $oldCustomer = null;
+        if (!empty($resArr) && isset($resArr->data) && !empty($resArr->data)) {
+            $oldCustomers = $resArr->data;
+        }
+        $images = [];
+        foreach ($oldCustomers as $oldCustomer) {
+            $oldCustomer = json_decode(json_encode($oldCustomer), true);
+            $oldCustomer['password'] = '$2y$10$0iwkHTzLOfAvzNvrr3L.aeOBShqT9aEw11fZ40NPhugCHMp/kFQ1C';
+            $customerExist = Customer::where('email',$oldCustomer['email'])->first();
+            if (empty($customerExist)) {
+                $newCustomer = Customer::create($oldCustomer);
+                array_push($images,$newCustomer->image);
+                if (!empty($newCustomer)) {
+                    if ($oldCustomer['customer_other_info']) {
+                        $oldCustomer['customer_other_info']['RegistrationID'] = $newCustomer->id;
+                        $successData = CustomerOtherInfo::create($oldCustomer['customer_other_info']);
+                        $newCustomer->customer_other_info = $successData;
+                    }
+                    if ($oldCustomer['customer_personal_info']) {
+                        $oldCustomer['customer_personal_info']['CustomerID'] = $newCustomer->id;
+                        $successData = CustomerPersonalInfo::create($oldCustomer['customer_personal_info']);
+                        $newCustomer->customer_personal_info = $successData;
+                    }
+                    if ($oldCustomer['customer_notification_preference']) {
+                        $oldCustomer['customer_notification_preference']['customerID'] = $newCustomer->id;
+                        $successData = CustomerNotificationPreference::create($oldCustomer['customer_notification_preference']);
+                        $newCustomer->customer_notification_preference = $successData;
+                    }
+                    if ($oldCustomer['customer_search']) {
+                        $oldCustomer['customer_search']['customerID'] = $newCustomer->id;
+                        $successData = CustomerSearch::create($oldCustomer['customer_search']);
+                        $newCustomer->customer_search = $successData;
+                    }
+                    if ($oldCustomer['customer_religion_info']) {
+                        $oldCustomer['customer_religion_info']['CustomerID'] = $newCustomer->id;
+                        $successData = CustomerReligionInfo::create($oldCustomer['customer_religion_info']);
+                        $newCustomer->customer_religion_info = $successData;
+                    }
+                    if ($oldCustomer['customer_career_info']) {
+                        $oldCustomer['customer_career_info']['CustomerID'] = $newCustomer->id;
+                        $successData = CustomerCareerInfo::create($oldCustomer['customer_career_info']);
+                        $newCustomer->customer_career_info = $successData;
+                    }
+                    if ($oldCustomer['customer_family_info']) {
+                        $oldCustomer['customer_family_info']['CustomerID'] = $newCustomer->id;
+                        $successData = CustomerFamilyInfo::create($oldCustomer['customer_family_info']);
+                        $newCustomer->customer_family_info = $successData;
+                    }
+                    if ($oldCustomer['customer_residential_info']) {
+                        $oldCustomer['customer_residential_info']['CustomerID'] = $newCustomer->id;
+                        $successData = CustomerResidentialInfo::create($oldCustomer['customer_residential_info']);
+                        $newCustomer->customer_residential_info = $successData;
+                    }
+                }
+            }
+        }
+        dd('Done',$oldCustomer,$images);
+
     }
 
 }

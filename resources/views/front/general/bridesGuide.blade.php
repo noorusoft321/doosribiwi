@@ -1,6 +1,6 @@
 @extends('front.layouts.master')
 @section('title','Brides Guide')
-@section('description', 'Shaadi.org.pk Is An Ideal Online Marriage Platform For Pakistanis, Where You Can Find The Prettiest, Lineal And Educated Pakistani Girls For Marriage.')
+@section('description', 'DoosriBiwi.com Is An Ideal Online Marriage Platform For Pakistanis, Where You Can Find The Prettiest, Lineal And Educated Pakistani Girls For Marriage.')
 
 @push('style')
 	{{--Style--}}
@@ -18,7 +18,7 @@
 		    <div class="col-md-9">
 		        <div class="card about-height-hero">
 		            <div class="card-body">
-					    They will simply stop calling brides beautiful after today. You have set the standards too high! Doosri Biwi helps people in finding a perfect match. For this purpose, we have a 100% Free Online Matrimonial website Shaadi.org.pk based on pure eastern values. With hundreds of monthly satisfied customers, we are progressing through the heights of success and generating more happiness than anyone else in this industry.
+					    They will simply stop calling brides beautiful after today. You have set the standards too high! Doosri Biwi helps people in finding a perfect match. For this purpose, we have a 100% Free Online Matrimonial website DoosriBiwi.com based on pure eastern values. With hundreds of monthly satisfied customers, we are progressing through the heights of success and generating more happiness than anyone else in this industry.
 					    <br><br>
 					    We are not a commercial marriage bureau which runs purely on profit; we are an organization and our motive is to help people. To achieve this purpose, we are offering many free services to people, such as this 100% Free Online Rishta Pakistani Website, free rishta meetings, free place for engagement, free place for nikkah, support for simple nikkah, etc.
 					</div>
@@ -52,7 +52,7 @@
 					    <p><strong>Go for the Good Qualities</strong></p>
 					    <p>When looking for a bride, make sure you search for someone with good character and qualities rather than a beautiful face. Always go for someone who is decent, kind and down to earth. Such a woman will prove to be a loving and faithful life partner. However, unless you converse with her live, you will not be able to know her well before you make the decision. Here, we offer our premium membership chat portal where you can get to know each other well. Go for the qualities that can help you build a perfect relationship considering the future years plan for your family.</p>
 					    <p><strong>Approach Her in a Respectable Manner</strong></p>
-					    <p><strong>Shaadi.org.pk</strong>&nbsp;offers to provide its members a chance to chat with the prospect bride to be. This way you get to understand each other and confirm whether you are making the right decision.&nbsp;Whenever you approach a woman with a&nbsp;<strong>marriage</strong>&nbsp;proposal, make sure you approach her in a decent manner and lay your cards on the table. Also, remember never to rush her to make a decision since&nbsp;<strong>shaadi</strong>&nbsp;is not a joke. Spending a lifetime with someone is not easy and many issues need to be taken into consideration.</p>
+					    <p><strong>DoosriBiwi.com</strong>&nbsp;offers to provide its members a chance to chat with the prospect bride to be. This way you get to understand each other and confirm whether you are making the right decision.&nbsp;Whenever you approach a woman with a&nbsp;<strong>marriage</strong>&nbsp;proposal, make sure you approach her in a decent manner and lay your cards on the table. Also, remember never to rush her to make a decision since&nbsp;<strong>shaadi</strong>&nbsp;is not a joke. Spending a lifetime with someone is not easy and many issues need to be taken into consideration.</p>
 					    <p>Today, you can save yourself from all the frustration of the bride search; and embarrassment of going house to house and not returning call when you just don’t find the Right One. Now you can create your profile online and search for the perfect life partner online. Whether you are looking to marry a 16 year old girl or searching for a woman perfect for second marriage, simply look in our profile directory, which is in fact the largest directory of&nbsp;<strong>online marriage</strong>&nbsp;and you will be amazed to find so many options.</p>
 					</div>
 		        </div>

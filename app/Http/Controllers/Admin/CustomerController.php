@@ -512,17 +512,17 @@ class CustomerController extends Controller
         $occupations = Occupation::where('deleted',0)->orderBy('order_at','asc')->get();
         $tongues = MotherTongue::where('deleted',0)->orderBy('order_at','asc')->get();
         $incomes = AnnualInCome::where('deleted',0)->orderBy('order_at','asc')->get();
-        $universities = University::where('deleted',0)->orderBy('order_at','asc')->get();
-        $jobPosts = JobPost::where('deleted',0)->orderBy('order_at','asc')->get();
-        $futurePlans = FuturePlan::where('deleted',0)->orderBy('order_at','asc')->get();
+//        $universities = University::where('deleted',0)->orderBy('order_at','asc')->get();
+//        $jobPosts = JobPost::where('deleted',0)->orderBy('order_at','asc')->get();
+//        $futurePlans = FuturePlan::where('deleted',0)->orderBy('order_at','asc')->get();
 
-        $willingToRelocates = WillingToRelocate::where('deleted',0)->orderBy('order_at','asc')->get();
+//        $willingToRelocates = WillingToRelocate::where('deleted',0)->orderBy('order_at','asc')->get();
         $lookingToMarries = IAmLookingToMarry::where('deleted',0)->orderBy('order_at','asc')->get();
         $livingArrangements = MyLivingArrangement::where('deleted',0)->orderBy('order_at','asc')->get();
         $heights = Height::where('deleted',0)->orderBy('order_at','asc')->get();
         $weights = Weight::where('deleted',0)->orderBy('order_at','asc')->get();
         $complexions = Complexion::where('deleted',0)->orderBy('order_at','asc')->get();
-        $myBuilds = MyBuild::where('deleted',0)->orderBy('order_at','asc')->get();
+//        $myBuilds = MyBuild::where('deleted',0)->orderBy('order_at','asc')->get();
         $hairColors = HairColor::where('deleted',0)->orderBy('order_at','asc')->get();
         $eyeColors = EyeColor::where('deleted',0)->orderBy('order_at','asc')->get();
         $smokes = Smoke::where('deleted',0)->orderBy('order_at','asc')->get();
@@ -530,9 +530,9 @@ class CustomerController extends Controller
         $castes = Caste::where('deleted',0)->orderBy('order_at','asc')->get();
 
         $religions = Religion::where('deleted',0)->orderBy('order_at','asc')->get();
-        $preferHijabs = DoYouPreferHijab::where('deleted',0)->orderBy('order_at','asc')->get();
+//        $preferHijabs = DoYouPreferHijab::where('deleted',0)->orderBy('order_at','asc')->get();
         $reverts = AreYouRevert::where('deleted',0)->orderBy('order_at','asc')->get();
-        $performSalaahs = DoYouPerformSalaah::where('deleted',0)->orderBy('order_at','asc')->get();
+//        $performSalaahs = DoYouPerformSalaah::where('deleted',0)->orderBy('order_at','asc')->get();
         $beards = DoYouHaveBeard::where('deleted',0)->orderBy('order_at','asc')->get();
         $halals = DoYouKeepHalal::where('deleted',0)->orderBy('order_at','asc')->get();
 
@@ -540,12 +540,12 @@ class CustomerController extends Controller
         $states = [];
         $cities = [];
 
-        $statesOfOrigin = [];
-        $citiesOfOrigin = [];
+//        $statesOfOrigin = [];
+//        $citiesOfOrigin = [];
         $statesExpectation = [];
         $citiesExpectation = [];
         $sectsExpectation = [];
-        $majorCourses = [];
+//        $majorCourses = [];
         if (!empty($customerId)) {
             $customer = Customer::with([
                 'customerOtherInfo',
@@ -561,10 +561,10 @@ class CustomerController extends Controller
                 $cities = City::where('state_id',$customer->customerOtherInfo->state_id)->where('deleted',0)->orderBy('order_at','asc')->get();
             }
 
-            if (!empty($customer->customerPersonalInfo)) {
-                $statesOfOrigin = State::where('country_id',$customer->customerPersonalInfo->CountryOfOrigin)->where('deleted',0)->orderBy('order_at','asc')->get();
-                $citiesOfOrigin = City::where('state_id',$customer->customerPersonalInfo->StateOfOrigin)->where('deleted',0)->orderBy('order_at','asc')->get();
-            }
+//            if (!empty($customer->customerPersonalInfo)) {
+//                $statesOfOrigin = State::where('country_id',$customer->customerPersonalInfo->CountryOfOrigin)->where('deleted',0)->orderBy('order_at','asc')->get();
+//                $citiesOfOrigin = City::where('state_id',$customer->customerPersonalInfo->StateOfOrigin)->where('deleted',0)->orderBy('order_at','asc')->get();
+//            }
 
             if (!empty($customer->customerReligionInfo)) {
                 $sects = Sect::where('religions_id',$customer->customerReligionInfo->Religions)->where('deleted',0)->orderBy('order_at','asc')->get();
@@ -577,9 +577,9 @@ class CustomerController extends Controller
                 $sectsExpectation = Sect::where('religions_id',$customerSearch->Religions)->where('deleted',0)->orderBy('order_at','asc')->get();
             }
 
-            if (!empty($customer->customerCareerInfo)) {
-                $majorCourses = MajorCourse::where('education_id',$customer->customerCareerInfo->Qualification)->where('deleted',0)->orderBy('order_at','asc')->get();
-            }
+//            if (!empty($customer->customerCareerInfo)) {
+//                $majorCourses = MajorCourse::where('education_id',$customer->customerCareerInfo->Qualification)->where('deleted',0)->orderBy('order_at','asc')->get();
+//            }
         }
         return view('admin.customers.add_edit',compact(
             'title',
@@ -591,36 +591,36 @@ class CustomerController extends Controller
             'occupations',
             'tongues',
             'incomes',
-            'universities',
-            'jobPosts',
-            'futurePlans',
-            'willingToRelocates',
+//            'universities',
+//            'jobPosts',
+//            'futurePlans',
+//            'willingToRelocates',
             'lookingToMarries',
             'livingArrangements',
             'heights',
             'weights',
             'complexions',
-            'myBuilds',
+//            'myBuilds',
             'hairColors',
             'eyeColors',
             'smokes',
             'disabilities',
             'castes',
             'religions',
-            'preferHijabs',
+//            'preferHijabs',
             'reverts',
-            'performSalaahs',
+//            'performSalaahs',
             'sects',
             'beards',
             'halals',
             'states',
             'cities',
-            'statesOfOrigin',
-            'citiesOfOrigin',
+//            'statesOfOrigin',
+//            'citiesOfOrigin',
             'statesExpectation',
             'citiesExpectation',
-            'sectsExpectation',
-            'majorCourses'
+            'sectsExpectation'
+//            'majorCourses'
         ));
     }
 
@@ -715,7 +715,7 @@ class CustomerController extends Controller
         $request = request()->all();
         $rules = [
             'gender'                         => 'required|numeric',
-            'name'                           => 'required|max:255',
+//            'name'                           => 'required|max:255',
             'first_name'                     => 'required|max:255',
             'last_name'                      => 'required|max:255',
             'MaritalStatusID'                => 'required|numeric',
@@ -725,25 +725,25 @@ class CustomerController extends Controller
             'city_id'                        => 'required|numeric',
             'mobile'                         => 'required|max:255',
             'RegistrationsReasonsID'         => 'required|numeric',
-            'second_marraige'                => 'required|numeric',
+//            'second_marraige'                => 'required|numeric',
             'email'                          => 'required|email|max:255',
             'Qualification'                  => 'required|numeric',
-            'major_course_id'                => 'required|numeric',
-            'University'                     => 'required|numeric',
+//            'major_course_id'                => 'required|numeric',
+//            'University'                     => 'required|numeric',
             'Profession'                     => 'required|numeric',
-            'JobPost'                        => 'required|numeric',
+//            'JobPost'                        => 'required|numeric',
             'MonthlyIncome'                  => 'required|numeric',
-            'FuturePlans'                    => 'required|numeric',
-            'CountryOfOrigin'                => 'required|numeric',
-            'StateOfOrigin'                  => 'required|numeric',
-            'CityOfOrigin'                   => 'required|numeric',
-            'WillingToRelocate'              => 'required|numeric',
+//            'FuturePlans'                    => 'required|numeric',
+//            'CountryOfOrigin'                => 'required|numeric',
+//            'StateOfOrigin'                  => 'required|numeric',
+//            'CityOfOrigin'                   => 'required|numeric',
+//            'WillingToRelocate'              => 'required|numeric',
             'IAmLookingToMarry'              => 'required|numeric',
             'MyLivingArrangements'           => 'required|numeric',
             'Heights'                        => 'required|numeric',
             'Weights'                        => 'required|numeric',
             'Complexions'                    => 'required|numeric',
-            'MyBuilds'                       => 'required|numeric',
+//            'MyBuilds'                       => 'required|numeric',
             'HairColors'                     => 'required|numeric',
             'EyeColors'                      => 'required|numeric',
             'Smokes'                         => 'required|numeric',
@@ -752,14 +752,14 @@ class CustomerController extends Controller
             'MyFirstLanguageMotherTonguesID' => 'required|numeric',
             'Religions'                      => 'required|numeric',
             'Sects'                          => 'required|numeric',
-            'DoYouPreferHijabs'              => 'required|numeric',
+//            'DoYouPreferHijabs'              => 'required|numeric',
             'DoYouHaveBeards'                => 'required|numeric',
             'AreYouReverts'                  => 'required|numeric',
             'DoYouKeepHalal'                 => 'required|numeric',
-            'DoYouPerformSalaah'             => 'required|numeric',
+//            'DoYouPerformSalaah'             => 'required|numeric',
         ];
         if (empty($customerId)) {
-            $rules['name'] = 'required|max:255|unique:shaadi_customers,name';
+//            $rules['name'] = 'required|max:255|unique:shaadi_customers,name';
             $rules['mobile'] = 'required|max:255|unique:shaadi_customers,mobile';
             $rules['email'] = 'required|email|max:255|unique:shaadi_customers,email';
             $rules['password'] = 'required|min:6';

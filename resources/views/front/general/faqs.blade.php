@@ -1,7 +1,7 @@
 @extends('front.layouts.master')
 
 @section('title','FAQs - Free Pakistani Rishta | Matrimonial Website | Matrimony Services | Marriage Bureau')
-@section('description', 'FAQs - Free Pakistani Rishta | Matrimonial Website | Matrimony Services | Marriage Bureau | Shaadi.org.pk')
+@section('description', 'FAQs - Free Pakistani Rishta | Matrimonial Website | Matrimony Services | Marriage Bureau | DoosriBiwi.com')
 
 @push('style')
 	<style></style>
@@ -22,11 +22,11 @@
 							<div class="card-header" data-toggle="collapse" href="#one">
 								<a class="card-title">
 									Q. What is the procedure to
-									create a profile on Shaadi.org.pk?
+									create a profile on DoosriBiwi.com?
 								</a>
 							</div>
 							<div id="one" class="card-body collapse show" data-parent="#accordion" >
-								To post your profile on shaadi.org.pk, you just need to fill out our FREE Registration Form which is easy and completely FREE of cost.
+								To post your profile on DoosriBiwi.com, you just need to fill out our FREE Registration Form which is easy and completely FREE of cost.
 							</div>
 
 
@@ -40,11 +40,11 @@
 
 
 							<div class="card-header collapsed" data-toggle="collapse" href="#third">
-								<a class="card-title">Q. How can I change my email address after getting registered with Shaadi.org.pk?
+								<a class="card-title">Q. How can I change my email address after getting registered with DoosriBiwi.com?
 								</a>
 							</div>
 							<div id="third" class="card-body collapse" data-parent="#accordion" >
-								After getting registered with Shaadi.org.pk, you can change your email at any time by logging into your account and using the Settings option.
+								After getting registered with DoosriBiwi.com, you can change your email at any time by logging into your account and using the Settings option.
 							</div>
 
 
@@ -53,7 +53,7 @@
 								</a>
 							</div>
 							<div id="four" class="card-body collapse" data-parent="#accordion" >
-								Yes, of course. Shaadi.org.pk ensures that your photograph is watermarked. This way, your photo is protected from being tampered with.
+								Yes, of course. DoosriBiwi.com ensures that your photograph is watermarked. This way, your photo is protected from being tampered with.
 							</div>
 
 							<div class="card-header collapsed" data-toggle="collapse" href="#five">
@@ -61,7 +61,7 @@
 								</a>
 							</div>
 							<div id="five" class="card-body collapse" data-parent="#accordion" >
-								Jpg, gif, bmp, tiff, and png are actually the popular image formats which are compatible online, so Shaadi.org.pk only accepts these formats for your profile photo.
+								Jpg, gif, bmp, tiff, and png are actually the popular image formats which are compatible online, so DoosriBiwi.com only accepts these formats for your profile photo.
 							</div>
 
 							<div class="card-header collapsed" data-toggle="collapse" href="#six">
@@ -74,7 +74,7 @@
 
 
 							<div class="card-header collapsed" data-toggle="collapse" href="#seven">
-								<a class="card-title">Q. How can I search for a match on Shaadi.org.pk?
+								<a class="card-title">Q. How can I search for a match on DoosriBiwi.com?
 								</a>
 							</div>
 							<div id="seven" class="card-body collapse" data-parent="#accordion" >

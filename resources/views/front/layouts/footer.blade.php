@@ -49,7 +49,7 @@
 						</a>
 					</li>
 					{{--<li class="social-item">--}}
-						{{--<a target="_blank" class="social-link" href="https://www.linkedin.com/company/shaadi-org-pk">--}}
+						{{--<a target="_blank" class="social-link" href="https://www.linkedin.com/company/DoosriBiwi.com">--}}
 							{{--<i class="fab fa-linkedin-square" aria-hidden="true"></i>--}}
 						{{--</a>--}}
 					{{--</li>--}}

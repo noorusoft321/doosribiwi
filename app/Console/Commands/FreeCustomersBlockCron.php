@@ -39,7 +39,7 @@ class FreeCustomersBlockCron extends Command
      */
     public function handle()
     {
-        $customers = Customer::where('email', 'NOT LIKE', "%shaadi.org.pk%")->whereNotNull('package_id')->where('package_expiry_date','<',date('Y-m-d H:i:s'))->get();
+        $customers = Customer::where('email', 'NOT LIKE', "%DoosriBiwi.com%")->whereNotNull('package_id')->where('package_expiry_date','<',date('Y-m-d H:i:s'))->get();
         foreach ($customers as $customer) {
             $customer->update([
                 'package_id' => NULL,

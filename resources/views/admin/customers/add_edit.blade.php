@@ -44,12 +44,12 @@
                             </div>
 
                             <div class="row">
-                                <div class="col-6">
-                                    <div class="form-group">
-                                        <label for="name">*Username</label>
-                                        <input onchange="checkIfExists(this)" type="text" data-name="name" name="name" value="{{$customer->name}}" class="form-control">
-                                    </div>
-                                </div>
+                                {{--<div class="col-6">--}}
+                                    {{--<div class="form-group">--}}
+                                        {{--<label for="name">*Username</label>--}}
+                                        {{--<input onchange="checkIfExists(this)" type="text" data-name="name" name="name" value="{{$customer->name}}" class="form-control">--}}
+                                    {{--</div>--}}
+                                {{--</div>--}}
                                 <div class="col-6">
                                     <div class="form-group">
                                         <label for="first_name">*First Name</label>
@@ -146,17 +146,17 @@
                                             </select>
                                         </div>
                                     </div>
-                                    <div class="col-6">
-                                        <div class="form-group">
-                                            <label for="test">*Second Marriage</label>
-                                            <select class="multiple-select form-control" name="second_marraige">
-                                                <option value="">Select</option>
-                                                <option value="1" {{($customer->second_marraige==1) ? 'selected' : ''}}>Male looking for 2nd Wife</option>
-                                                <option value="2" {{($customer->second_marraige==2) ? 'selected' : ''}}>Female Ready for 2nd Wife</option>
-                                                <option value="3" {{($customer->second_marraige==3) ? 'selected' : ''}}>Looking for Single</option>
-                                            </select>
-                                        </div>
-                                    </div>
+                                    {{--<div class="col-6">--}}
+                                        {{--<div class="form-group">--}}
+                                            {{--<label for="test">*Second Marriage</label>--}}
+                                            {{--<select class="multiple-select form-control" name="second_marraige">--}}
+                                                {{--<option value="">Select</option>--}}
+                                                {{--<option value="1" {{($customer->second_marraige==1) ? 'selected' : ''}}>Male looking for 2nd Wife</option>--}}
+                                                {{--<option value="2" {{($customer->second_marraige==2) ? 'selected' : ''}}>Female Ready for 2nd Wife</option>--}}
+                                                {{--<option value="3" {{($customer->second_marraige==3) ? 'selected' : ''}}>Looking for Single</option>--}}
+                                            {{--</select>--}}
+                                        {{--</div>--}}
+                                    {{--</div>--}}
                                     <div class="col-6">
                                         <div class="form-group divorceReasonDiv" style="display: none;">
                                             <label for="divorceReason">*Reason</label>
@@ -231,17 +231,17 @@
                                             </select>
                                         </div>
                                     </div>
-                                    <div class="col-6">
-                                        <div class="form-group">
-                                            <label for="test">*Second Marriage</label>
-                                            <select class="multiple-select form-control" name="second_marraige">
-                                                <option value="">Select</option>
-                                                <option value="1">Male looking for 2nd Wife</option>
-                                                <option value="2">Female Ready for 2nd Wife</option>
-                                                <option value="3">Looking for Single</option>
-                                            </select>
-                                        </div>
-                                    </div>
+                                    {{--<div class="col-6">--}}
+                                        {{--<div class="form-group">--}}
+                                            {{--<label for="test">*Second Marriage</label>--}}
+                                            {{--<select class="multiple-select form-control" name="second_marraige">--}}
+                                                {{--<option value="">Select</option>--}}
+                                                {{--<option value="1">Male looking for 2nd Wife</option>--}}
+                                                {{--<option value="2">Female Ready for 2nd Wife</option>--}}
+                                                {{--<option value="3">Looking for Single</option>--}}
+                                            {{--</select>--}}
+                                        {{--</div>--}}
+                                    {{--</div>--}}
                                     <div class="col-6">
                                         <div class="form-group divorceReasonDiv" style="display: none;">
                                             <label for="divorceReason">*Reason</label>
@@ -278,28 +278,28 @@
                                             </select>
                                         </div>
                                     </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group py-xl-10">
-                                            <label for="major_course_id">*Major Course</label>
-                                            <select name="major_course_id" id="major_course_id" class="multiple-select form-control">
-                                                <option value="">Select</option>
-                                                @foreach($majorCourses as $val)
-                                                    <option value="{{$val->id}}" {{($customer->customerCareerInfo->major_course_id==$val->id) ? 'selected' : ''}}>{{$val->title}}</option>
-                                                @endforeach
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group py-xl-10">
-                                            <label for="University">*University</label>
-                                            <select name="University" class="multiple-select form-control">
-                                                <option value="">Select</option>
-                                                @foreach($universities as $val)
-                                                    <option value="{{$val->id}}" {{($customer->customerCareerInfo->University==$val->id) ? 'selected' : ''}}>{{$val->title}}</option>
-                                                @endforeach
-                                            </select>
-                                        </div>
-                                    </div>
+                                    {{--<div class="col-md-6">--}}
+                                        {{--<div class="form-group py-xl-10">--}}
+                                            {{--<label for="major_course_id">*Major Course</label>--}}
+                                            {{--<select name="major_course_id" id="major_course_id" class="multiple-select form-control">--}}
+                                                {{--<option value="">Select</option>--}}
+                                                {{--@foreach($majorCourses as $val)--}}
+                                                    {{--<option value="{{$val->id}}" {{($customer->customerCareerInfo->major_course_id==$val->id) ? 'selected' : ''}}>{{$val->title}}</option>--}}
+                                                {{--@endforeach--}}
+                                            {{--</select>--}}
+                                        {{--</div>--}}
+                                    {{--</div>--}}
+                                    {{--<div class="col-md-6">--}}
+                                        {{--<div class="form-group py-xl-10">--}}
+                                            {{--<label for="University">*University</label>--}}
+                                            {{--<select name="University" class="multiple-select form-control">--}}
+                                                {{--<option value="">Select</option>--}}
+                                                {{--@foreach($universities as $val)--}}
+                                                    {{--<option value="{{$val->id}}" {{($customer->customerCareerInfo->University==$val->id) ? 'selected' : ''}}>{{$val->title}}</option>--}}
+                                                {{--@endforeach--}}
+                                            {{--</select>--}}
+                                        {{--</div>--}}
+                                    {{--</div>--}}
                                     <div class="col-md-6">
                                         <div class="form-group py-xl-10">
                                             <label for="Profession">*Profession</label>
@@ -311,17 +311,17 @@
                                             </select>
                                         </div>
                                     </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group py-xl-10">
-                                            <label for="JobPost">*Job Post</label>
-                                            <select name="JobPost" class="multiple-select form-control">
-                                                <option value="">Select</option>
-                                                @foreach($jobPosts as $val)
-                                                    <option value="{{$val->id}}" {{($customer->customerCareerInfo->JobPost==$val->id) ? 'selected' : ''}}>{{$val->title}}</option>
-                                                @endforeach
-                                            </select>
-                                        </div>
-                                    </div>
+                                    {{--<div class="col-md-6">--}}
+                                        {{--<div class="form-group py-xl-10">--}}
+                                            {{--<label for="JobPost">*Job Post</label>--}}
+                                            {{--<select name="JobPost" class="multiple-select form-control">--}}
+                                                {{--<option value="">Select</option>--}}
+                                                {{--@foreach($jobPosts as $val)--}}
+                                                    {{--<option value="{{$val->id}}" {{($customer->customerCareerInfo->JobPost==$val->id) ? 'selected' : ''}}>{{$val->title}}</option>--}}
+                                                {{--@endforeach--}}
+                                            {{--</select>--}}
+                                        {{--</div>--}}
+                                    {{--</div>--}}
                                     <div class="col-md-6">
                                         <div class="form-group py-xl-10">
                                             <label for="MonthlyIncome">*Monthly Income</label>
@@ -333,17 +333,17 @@
                                             </select>
                                         </div>
                                     </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group py-xl-10">
-                                            <label for="FuturePlans">*Future Plan</label>
-                                            <select name="FuturePlans" class="multiple-select form-control">
-                                                <option value="">Select</option>
-                                                @foreach($futurePlans as $val)
-                                                    <option value="{{$val->id}}" {{($customer->customerCareerInfo->FuturePlans==$val->id) ? 'selected' : ''}}>{{$val->title}}</option>
-                                                @endforeach
-                                            </select>
-                                        </div>
-                                    </div>
+                                    {{--<div class="col-md-6">--}}
+                                        {{--<div class="form-group py-xl-10">--}}
+                                            {{--<label for="FuturePlans">*Future Plan</label>--}}
+                                            {{--<select name="FuturePlans" class="multiple-select form-control">--}}
+                                                {{--<option value="">Select</option>--}}
+                                                {{--@foreach($futurePlans as $val)--}}
+                                                    {{--<option value="{{$val->id}}" {{($customer->customerCareerInfo->FuturePlans==$val->id) ? 'selected' : ''}}>{{$val->title}}</option>--}}
+                                                {{--@endforeach--}}
+                                            {{--</select>--}}
+                                        {{--</div>--}}
+                                    {{--</div>--}}
                                 </div>
                             @else
                                 <div class="row">
@@ -358,28 +358,28 @@
                                             </select>
                                         </div>
                                     </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group py-xl-10">
-                                            <label for="major_course_id">*Major Course</label>
-                                            <select name="major_course_id" id="major_course_id" class="multiple-select form-control">
-                                                <option value="">Select</option>
-                                                @foreach($majorCourses as $val)
-                                                    <option value="{{$val->id}}">{{$val->title}}</option>
-                                                @endforeach
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group py-xl-10">
-                                            <label for="University">*University</label>
-                                            <select name="University" class="multiple-select form-control">
-                                                <option value="">Select</option>
-                                                @foreach($universities as $val)
-                                                    <option value="{{$val->id}}">{{$val->title}}</option>
-                                                @endforeach
-                                            </select>
-                                        </div>
-                                    </div>
+                                    {{--<div class="col-md-6">--}}
+                                        {{--<div class="form-group py-xl-10">--}}
+                                            {{--<label for="major_course_id">*Major Course</label>--}}
+                                            {{--<select name="major_course_id" id="major_course_id" class="multiple-select form-control">--}}
+                                                {{--<option value="">Select</option>--}}
+                                                {{--@foreach($majorCourses as $val)--}}
+                                                    {{--<option value="{{$val->id}}">{{$val->title}}</option>--}}
+                                                {{--@endforeach--}}
+                                            {{--</select>--}}
+                                        {{--</div>--}}
+                                    {{--</div>--}}
+                                    {{--<div class="col-md-6">--}}
+                                        {{--<div class="form-group py-xl-10">--}}
+                                            {{--<label for="University">*University</label>--}}
+                                            {{--<select name="University" class="multiple-select form-control">--}}
+                                                {{--<option value="">Select</option>--}}
+                                                {{--@foreach($universities as $val)--}}
+                                                    {{--<option value="{{$val->id}}">{{$val->title}}</option>--}}
+                                                {{--@endforeach--}}
+                                            {{--</select>--}}
+                                        {{--</div>--}}
+                                    {{--</div>--}}
                                     <div class="col-md-6">
                                         <div class="form-group py-xl-10">
                                             <label for="Profession">*Profession</label>
@@ -391,17 +391,17 @@
                                             </select>
                                         </div>
                                     </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group py-xl-10">
-                                            <label for="JobPost">*Job Post</label>
-                                            <select name="JobPost" class="multiple-select form-control">
-                                                <option value="">Select</option>
-                                                @foreach($jobPosts as $val)
-                                                    <option value="{{$val->id}}">{{$val->title}}</option>
-                                                @endforeach
-                                            </select>
-                                        </div>
-                                    </div>
+                                    {{--<div class="col-md-6">--}}
+                                        {{--<div class="form-group py-xl-10">--}}
+                                            {{--<label for="JobPost">*Job Post</label>--}}
+                                            {{--<select name="JobPost" class="multiple-select form-control">--}}
+                                                {{--<option value="">Select</option>--}}
+                                                {{--@foreach($jobPosts as $val)--}}
+                                                    {{--<option value="{{$val->id}}">{{$val->title}}</option>--}}
+                                                {{--@endforeach--}}
+                                            {{--</select>--}}
+                                        {{--</div>--}}
+                                    {{--</div>--}}
                                     <div class="col-md-6">
                                         <div class="form-group py-xl-10">
                                             <label for="MonthlyIncome">*Monthly Income</label>
@@ -413,17 +413,17 @@
                                             </select>
                                         </div>
                                     </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group py-xl-10">
-                                            <label for="FuturePlans">*Future Plan</label>
-                                            <select name="FuturePlans" class="multiple-select form-control">
-                                                <option value="">Select</option>
-                                                @foreach($futurePlans as $val)
-                                                    <option value="{{$val->id}}">{{$val->title}}</option>
-                                                @endforeach
-                                            </select>
-                                        </div>
-                                    </div>
+                                    {{--<div class="col-md-6">--}}
+                                        {{--<div class="form-group py-xl-10">--}}
+                                            {{--<label for="FuturePlans">*Future Plan</label>--}}
+                                            {{--<select name="FuturePlans" class="multiple-select form-control">--}}
+                                                {{--<option value="">Select</option>--}}
+                                                {{--@foreach($futurePlans as $val)--}}
+                                                    {{--<option value="{{$val->id}}">{{$val->title}}</option>--}}
+                                                {{--@endforeach--}}
+                                            {{--</select>--}}
+                                        {{--</div>--}}
+                                    {{--</div>--}}
                                 </div>
                             @endif
 
@@ -436,50 +436,50 @@
                             </div>
                             @if(!empty($customer->customerPersonalInfo))
                                 <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="form-group py-xl-10">
-                                            <label for="CountryOfOrigin">*Country of Origin</label>
-                                            <select onchange="getStates(this,'StateOfOrigin')" class="multiple-select form-control" name="CountryOfOrigin">
-                                                <option value="">Select</option>
-                                                @foreach($countries as $val)
-                                                    <option value="{{$val->id}}" {{($customer->customerPersonalInfo->CountryOfOrigin==$val->id) ? 'selected' : ''}}>{{$val->name}}</option>
-                                                @endforeach
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group py-xl-10">
-                                            <label for="StateOfOrigin">*State of Origin</label>
-                                            <select onchange="getCities(this,'CityOfOrigin')" class="multiple-select form-control" name="StateOfOrigin">
-                                                <option value="">Select</option>
-                                                @foreach($statesOfOrigin as $val)
-                                                    <option value="{{$val->id}}" {{($customer->customerPersonalInfo->StateOfOrigin==$val->id) ? 'selected' : ''}}>{{$val->title}}</option>
-                                                @endforeach
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group py-xl-10">
-                                            <label for="CityOfOrigin">*City of Origin</label>
-                                            <select class="multiple-select form-control" name="CityOfOrigin">
-                                                <option value="">Select</option>
-                                                @foreach($citiesOfOrigin as $val)
-                                                    <option value="{{$val->id}}" {{($customer->customerPersonalInfo->CityOfOrigin==$val->id) ? 'selected' : ''}}>{{$val->title}}</option>
-                                                @endforeach
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group py-xl-10">
-                                            <label for="WillingToRelocate">*Willing to Relocate</label>
-                                            <select class="multiple-select form-control" name="WillingToRelocate">
-                                                <option value="">Select</option>
-                                                @foreach($willingToRelocates as $val)
-                                                    <option value="{{$val->id}}" {{($customer->customerPersonalInfo->WillingToRelocate==$val->id) ? 'selected' : ''}}>{{$val->title}}</option>
-                                                @endforeach
-                                            </select>
-                                        </div>
-                                    </div>
+                                    {{--<div class="col-md-6">--}}
+                                        {{--<div class="form-group py-xl-10">--}}
+                                            {{--<label for="CountryOfOrigin">*Country of Origin</label>--}}
+                                            {{--<select onchange="getStates(this,'StateOfOrigin')" class="multiple-select form-control" name="CountryOfOrigin">--}}
+                                                {{--<option value="">Select</option>--}}
+                                                {{--@foreach($countries as $val)--}}
+                                                    {{--<option value="{{$val->id}}" {{($customer->customerPersonalInfo->CountryOfOrigin==$val->id) ? 'selected' : ''}}>{{$val->name}}</option>--}}
+                                                {{--@endforeach--}}
+                                            {{--</select>--}}
+                                        {{--</div>--}}
+                                    {{--</div>--}}
+                                    {{--<div class="col-md-6">--}}
+                                        {{--<div class="form-group py-xl-10">--}}
+                                            {{--<label for="StateOfOrigin">*State of Origin</label>--}}
+                                            {{--<select onchange="getCities(this,'CityOfOrigin')" class="multiple-select form-control" name="StateOfOrigin">--}}
+                                                {{--<option value="">Select</option>--}}
+                                                {{--@foreach($statesOfOrigin as $val)--}}
+                                                    {{--<option value="{{$val->id}}" {{($customer->customerPersonalInfo->StateOfOrigin==$val->id) ? 'selected' : ''}}>{{$val->title}}</option>--}}
+                                                {{--@endforeach--}}
+                                            {{--</select>--}}
+                                        {{--</div>--}}
+                                    {{--</div>--}}
+                                    {{--<div class="col-md-6">--}}
+                                        {{--<div class="form-group py-xl-10">--}}
+                                            {{--<label for="CityOfOrigin">*City of Origin</label>--}}
+                                            {{--<select class="multiple-select form-control" name="CityOfOrigin">--}}
+                                                {{--<option value="">Select</option>--}}
+                                                {{--@foreach($citiesOfOrigin as $val)--}}
+                                                    {{--<option value="{{$val->id}}" {{($customer->customerPersonalInfo->CityOfOrigin==$val->id) ? 'selected' : ''}}>{{$val->title}}</option>--}}
+                                                {{--@endforeach--}}
+                                            {{--</select>--}}
+                                        {{--</div>--}}
+                                    {{--</div>--}}
+                                    {{--<div class="col-md-6">--}}
+                                        {{--<div class="form-group py-xl-10">--}}
+                                            {{--<label for="WillingToRelocate">*Willing to Relocate</label>--}}
+                                            {{--<select class="multiple-select form-control" name="WillingToRelocate">--}}
+                                                {{--<option value="">Select</option>--}}
+                                                {{--@foreach($willingToRelocates as $val)--}}
+                                                    {{--<option value="{{$val->id}}" {{($customer->customerPersonalInfo->WillingToRelocate==$val->id) ? 'selected' : ''}}>{{$val->title}}</option>--}}
+                                                {{--@endforeach--}}
+                                            {{--</select>--}}
+                                        {{--</div>--}}
+                                    {{--</div>--}}
                                     <div class="col-md-6">
                                         <div class="form-group py-xl-10">
                                             <label for="IAmLookingToMarry">*I am Looking to Marry</label>
@@ -535,17 +535,17 @@
                                             </select>
                                         </div>
                                     </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group py-xl-10">
-                                            <label for="MyBuilds">*My Build</label>
-                                            <select class="multiple-select form-control" name="MyBuilds">
-                                                <option value="">Select</option>
-                                                @foreach($myBuilds as $val)
-                                                    <option value="{{$val->id}}" {{($customer->customerPersonalInfo->MyBuilds==$val->id) ? 'selected' : ''}}>{{$val->title}}</option>
-                                                @endforeach
-                                            </select>
-                                        </div>
-                                    </div>
+                                    {{--<div class="col-md-6">--}}
+                                        {{--<div class="form-group py-xl-10">--}}
+                                            {{--<label for="MyBuilds">*My Build</label>--}}
+                                            {{--<select class="multiple-select form-control" name="MyBuilds">--}}
+                                                {{--<option value="">Select</option>--}}
+                                                {{--@foreach($myBuilds as $val)--}}
+                                                    {{--<option value="{{$val->id}}" {{($customer->customerPersonalInfo->MyBuilds==$val->id) ? 'selected' : ''}}>{{$val->title}}</option>--}}
+                                                {{--@endforeach--}}
+                                            {{--</select>--}}
+                                        {{--</div>--}}
+                                    {{--</div>--}}
                                     <div class="col-md-6">
                                         <div class="form-group py-xl-10">
                                             <label for="HairColors">*Hair Color</label>
@@ -615,50 +615,50 @@
                                 </div>
                             @else
                                 <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="form-group py-xl-10">
-                                            <label for="CountryOfOrigin">*Country of Origin</label>
-                                            <select onchange="getStates(this,'StateOfOrigin')" class="multiple-select form-control" name="CountryOfOrigin">
-                                                <option value="">Select</option>
-                                                @foreach($countries as $val)
-                                                    <option value="{{$val->id}}">{{$val->name}}</option>
-                                                @endforeach
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group py-xl-10">
-                                            <label for="StateOfOrigin">*State of Origin</label>
-                                            <select onchange="getCities(this,'CityOfOrigin')" class="multiple-select form-control" name="StateOfOrigin">
-                                                <option value="">Select</option>
-                                                @foreach($states as $val)
-                                                    <option value="{{$val->id}}">{{$val->title}}</option>
-                                                @endforeach
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group py-xl-10">
-                                            <label for="CityOfOrigin">*City of Origin</label>
-                                            <select class="multiple-select form-control" name="CityOfOrigin">
-                                                <option value="">Select</option>
-                                                @foreach($cities as $val)
-                                                    <option value="{{$val->id}}">{{$val->title}}</option>
-                                                @endforeach
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group py-xl-10">
-                                            <label for="WillingToRelocate">*Willing to Relocate</label>
-                                            <select class="multiple-select form-control" name="WillingToRelocate">
-                                                <option value="">Select</option>
-                                                @foreach($willingToRelocates as $val)
-                                                    <option value="{{$val->id}}">{{$val->title}}</option>
-                                                @endforeach
-                                            </select>
-                                        </div>
-                                    </div>
+                                    {{--<div class="col-md-6">--}}
+                                        {{--<div class="form-group py-xl-10">--}}
+                                            {{--<label for="CountryOfOrigin">*Country of Origin</label>--}}
+                                            {{--<select onchange="getStates(this,'StateOfOrigin')" class="multiple-select form-control" name="CountryOfOrigin">--}}
+                                                {{--<option value="">Select</option>--}}
+                                                {{--@foreach($countries as $val)--}}
+                                                    {{--<option value="{{$val->id}}">{{$val->name}}</option>--}}
+                                                {{--@endforeach--}}
+                                            {{--</select>--}}
+                                        {{--</div>--}}
+                                    {{--</div>--}}
+                                    {{--<div class="col-md-6">--}}
+                                        {{--<div class="form-group py-xl-10">--}}
+                                            {{--<label for="StateOfOrigin">*State of Origin</label>--}}
+                                            {{--<select onchange="getCities(this,'CityOfOrigin')" class="multiple-select form-control" name="StateOfOrigin">--}}
+                                                {{--<option value="">Select</option>--}}
+                                                {{--@foreach($states as $val)--}}
+                                                    {{--<option value="{{$val->id}}">{{$val->title}}</option>--}}
+                                                {{--@endforeach--}}
+                                            {{--</select>--}}
+                                        {{--</div>--}}
+                                    {{--</div>--}}
+                                    {{--<div class="col-md-6">--}}
+                                        {{--<div class="form-group py-xl-10">--}}
+                                            {{--<label for="CityOfOrigin">*City of Origin</label>--}}
+                                            {{--<select class="multiple-select form-control" name="CityOfOrigin">--}}
+                                                {{--<option value="">Select</option>--}}
+                                                {{--@foreach($cities as $val)--}}
+                                                    {{--<option value="{{$val->id}}">{{$val->title}}</option>--}}
+                                                {{--@endforeach--}}
+                                            {{--</select>--}}
+                                        {{--</div>--}}
+                                    {{--</div>--}}
+                                    {{--<div class="col-md-6">--}}
+                                        {{--<div class="form-group py-xl-10">--}}
+                                            {{--<label for="WillingToRelocate">*Willing to Relocate</label>--}}
+                                            {{--<select class="multiple-select form-control" name="WillingToRelocate">--}}
+                                                {{--<option value="">Select</option>--}}
+                                                {{--@foreach($willingToRelocates as $val)--}}
+                                                    {{--<option value="{{$val->id}}">{{$val->title}}</option>--}}
+                                                {{--@endforeach--}}
+                                            {{--</select>--}}
+                                        {{--</div>--}}
+                                    {{--</div>--}}
                                     <div class="col-md-6">
                                         <div class="form-group py-xl-10">
                                             <label for="IAmLookingToMarry">*I am Looking to Marry</label>
@@ -714,17 +714,17 @@
                                             </select>
                                         </div>
                                     </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group py-xl-10">
-                                            <label for="MyBuilds">*My Build</label>
-                                            <select class="multiple-select form-control" name="MyBuilds">
-                                                <option value="">Select</option>
-                                                @foreach($myBuilds as $val)
-                                                    <option value="{{$val->id}}">{{$val->title}}</option>
-                                                @endforeach
-                                            </select>
-                                        </div>
-                                    </div>
+                                    {{--<div class="col-md-6">--}}
+                                        {{--<div class="form-group py-xl-10">--}}
+                                            {{--<label for="MyBuilds">*My Build</label>--}}
+                                            {{--<select class="multiple-select form-control" name="MyBuilds">--}}
+                                                {{--<option value="">Select</option>--}}
+                                                {{--@foreach($myBuilds as $val)--}}
+                                                    {{--<option value="{{$val->id}}">{{$val->title}}</option>--}}
+                                                {{--@endforeach--}}
+                                            {{--</select>--}}
+                                        {{--</div>--}}
+                                    {{--</div>--}}
                                     <div class="col-md-6">
                                         <div class="form-group py-xl-10">
                                             <label for="HairColors">*Hair Color</label>
@@ -826,17 +826,17 @@
                                             </select>
                                         </div>
                                     </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group py-xl-10">
-                                            <label for="DoYouPreferHijabs">*Do You Prefer Hijab?</label>
-                                            <select class="multiple-select form-control" name="DoYouPreferHijabs">
-                                                <option value="">Select</option>
-                                                @foreach($preferHijabs as $val)
-                                                    <option value="{{$val->id}}" {{($customer->customerReligionInfo->DoYouPreferHijabs==$val->id) ? 'selected' : ''}}>{{$val->title}}</option>
-                                                @endforeach
-                                            </select>
-                                        </div>
-                                    </div>
+                                    {{--<div class="col-md-6">--}}
+                                        {{--<div class="form-group py-xl-10">--}}
+                                            {{--<label for="DoYouPreferHijabs">*Do You Prefer Hijab?</label>--}}
+                                            {{--<select class="multiple-select form-control" name="DoYouPreferHijabs">--}}
+                                                {{--<option value="">Select</option>--}}
+                                                {{--@foreach($preferHijabs as $val)--}}
+                                                    {{--<option value="{{$val->id}}" {{($customer->customerReligionInfo->DoYouPreferHijabs==$val->id) ? 'selected' : ''}}>{{$val->title}}</option>--}}
+                                                {{--@endforeach--}}
+                                            {{--</select>--}}
+                                        {{--</div>--}}
+                                    {{--</div>--}}
                                     <div class="col-md-6">
                                         <div class="form-group py-xl-10">
                                             <label for="DoYouHaveBeards">*Do You Prefer Beard?</label>
@@ -870,17 +870,17 @@
                                             </select>
                                         </div>
                                     </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group py-xl-10">
-                                            <label for="DoYouPerformSalaah">*Do You Perform Salaah?</label>
-                                            <select class="multiple-select form-control" name="DoYouPerformSalaah">
-                                                <option value="">Select</option>
-                                                @foreach($performSalaahs as $val)
-                                                    <option value="{{$val->id}}" {{($customer->customerReligionInfo->DoYouPerformSalaah==$val->id) ? 'selected' : ''}}>{{$val->title}}</option>
-                                                @endforeach
-                                            </select>
-                                        </div>
-                                    </div>
+                                    {{--<div class="col-md-6">--}}
+                                        {{--<div class="form-group py-xl-10">--}}
+                                            {{--<label for="DoYouPerformSalaah">*Do You Perform Salaah?</label>--}}
+                                            {{--<select class="multiple-select form-control" name="DoYouPerformSalaah">--}}
+                                                {{--<option value="">Select</option>--}}
+                                                {{--@foreach($performSalaahs as $val)--}}
+                                                    {{--<option value="{{$val->id}}" {{($customer->customerReligionInfo->DoYouPerformSalaah==$val->id) ? 'selected' : ''}}>{{$val->title}}</option>--}}
+                                                {{--@endforeach--}}
+                                            {{--</select>--}}
+                                        {{--</div>--}}
+                                    {{--</div>--}}
                                 </div>
                             @else
                                 <div class="row">
@@ -906,17 +906,17 @@
                                             </select>
                                         </div>
                                     </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group py-xl-10">
-                                            <label for="DoYouPreferHijabs">*Do You Prefer Hijab?</label>
-                                            <select class="multiple-select form-control" name="DoYouPreferHijabs">
-                                                <option value="">Select</option>
-                                                @foreach($preferHijabs as $val)
-                                                    <option value="{{$val->id}}">{{$val->title}}</option>
-                                                @endforeach
-                                            </select>
-                                        </div>
-                                    </div>
+                                    {{--<div class="col-md-6">--}}
+                                        {{--<div class="form-group py-xl-10">--}}
+                                            {{--<label for="DoYouPreferHijabs">*Do You Prefer Hijab?</label>--}}
+                                            {{--<select class="multiple-select form-control" name="DoYouPreferHijabs">--}}
+                                                {{--<option value="">Select</option>--}}
+                                                {{--@foreach($preferHijabs as $val)--}}
+                                                    {{--<option value="{{$val->id}}">{{$val->title}}</option>--}}
+                                                {{--@endforeach--}}
+                                            {{--</select>--}}
+                                        {{--</div>--}}
+                                    {{--</div>--}}
                                     <div class="col-md-6">
                                         <div class="form-group py-xl-10">
                                             <label for="DoYouHaveBeards">*Do You Prefer Beard?</label>
@@ -950,17 +950,17 @@
                                             </select>
                                         </div>
                                     </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group py-xl-10">
-                                            <label for="DoYouPerformSalaah">*Do You Perform Salaah?</label>
-                                            <select class="multiple-select form-control" name="DoYouPerformSalaah">
-                                                <option value="">Select</option>
-                                                @foreach($performSalaahs as $val)
-                                                    <option value="{{$val->id}}">{{$val->title}}</option>
-                                                @endforeach
-                                            </select>
-                                        </div>
-                                    </div>
+                                    {{--<div class="col-md-6">--}}
+                                        {{--<div class="form-group py-xl-10">--}}
+                                            {{--<label for="DoYouPerformSalaah">*Do You Perform Salaah?</label>--}}
+                                            {{--<select class="multiple-select form-control" name="DoYouPerformSalaah">--}}
+                                                {{--<option value="">Select</option>--}}
+                                                {{--@foreach($performSalaahs as $val)--}}
+                                                    {{--<option value="{{$val->id}}">{{$val->title}}</option>--}}
+                                                {{--@endforeach--}}
+                                            {{--</select>--}}
+                                        {{--</div>--}}
+                                    {{--</div>--}}
                                 </div>
                             @endif
 
@@ -1107,28 +1107,28 @@
                                             </select>
                                         </div>
                                     </div>
-                                    <div class="col-6">
-                                        <div class="form-group py-xl-10">
-                                            <label for="WillingToRelocate">Willing To Relocate</label>
-                                            <select class="multiple-select form-control" required name="expectation[WillingToRelocate]">
-                                                <option value="">Select</option>
-                                                @foreach($willingToRelocates as $val)
-                                                    <option value="{{$val->id}}" {{($customerSearch->WillingToRelocate==$val->id) ? 'selected' : ''}}>{{$val->title}}</option>
-                                                @endforeach
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="col-6">
-                                        <div class="form-group py-xl-10">
-                                            <label for="MyBuilds">Builds</label>
-                                            <select class="multiple-select form-control" required name="expectation[MyBuilds]">
-                                                <option value="">Select</option>
-                                                @foreach($myBuilds as $val)
-                                                    <option value="{{$val->id}}" {{($customerSearch->MyBuilds==$val->id) ? 'selected' : ''}}>{{$val->title}}</option>
-                                                @endforeach
-                                            </select>
-                                        </div>
-                                    </div>
+                                    {{--<div class="col-6">--}}
+                                        {{--<div class="form-group py-xl-10">--}}
+                                            {{--<label for="WillingToRelocate">Willing To Relocate</label>--}}
+                                            {{--<select class="multiple-select form-control" required name="expectation[WillingToRelocate]">--}}
+                                                {{--<option value="">Select</option>--}}
+                                                {{--@foreach($willingToRelocates as $val)--}}
+                                                    {{--<option value="{{$val->id}}" {{($customerSearch->WillingToRelocate==$val->id) ? 'selected' : ''}}>{{$val->title}}</option>--}}
+                                                {{--@endforeach--}}
+                                            {{--</select>--}}
+                                        {{--</div>--}}
+                                    {{--</div>--}}
+                                    {{--<div class="col-6">--}}
+                                        {{--<div class="form-group py-xl-10">--}}
+                                            {{--<label for="MyBuilds">Builds</label>--}}
+                                            {{--<select class="multiple-select form-control" required name="expectation[MyBuilds]">--}}
+                                                {{--<option value="">Select</option>--}}
+                                                {{--@foreach($myBuilds as $val)--}}
+                                                    {{--<option value="{{$val->id}}" {{($customerSearch->MyBuilds==$val->id) ? 'selected' : ''}}>{{$val->title}}</option>--}}
+                                                {{--@endforeach--}}
+                                            {{--</select>--}}
+                                        {{--</div>--}}
+                                    {{--</div>--}}
                                     <div class="col-6">
                                         <div class="form-group py-xl-10">
                                             <label for="MaritalStatus">Marital Status</label>
@@ -1318,28 +1318,28 @@
                                             </select>
                                         </div>
                                     </div>
-                                    <div class="col-6">
-                                        <div class="form-group py-xl-10">
-                                            <label for="WillingToRelocate">Willing To Relocate</label>
-                                            <select class="multiple-select form-control" required name="expectation[WillingToRelocate]">
-                                                <option value="">Select</option>
-                                                @foreach($willingToRelocates as $val)
-                                                    <option value="{{$val->id}}">{{$val->title}}</option>
-                                                @endforeach
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="col-6">
-                                        <div class="form-group py-xl-10">
-                                            <label for="MyBuilds">Builds</label>
-                                            <select class="multiple-select form-control" required name="expectation[MyBuilds]">
-                                                <option value="">Select</option>
-                                                @foreach($myBuilds as $val)
-                                                    <option value="{{$val->id}}">{{$val->title}}</option>
-                                                @endforeach
-                                            </select>
-                                        </div>
-                                    </div>
+                                    {{--<div class="col-6">--}}
+                                        {{--<div class="form-group py-xl-10">--}}
+                                            {{--<label for="WillingToRelocate">Willing To Relocate</label>--}}
+                                            {{--<select class="multiple-select form-control" required name="expectation[WillingToRelocate]">--}}
+                                                {{--<option value="">Select</option>--}}
+                                                {{--@foreach($willingToRelocates as $val)--}}
+                                                    {{--<option value="{{$val->id}}">{{$val->title}}</option>--}}
+                                                {{--@endforeach--}}
+                                            {{--</select>--}}
+                                        {{--</div>--}}
+                                    {{--</div>--}}
+                                    {{--<div class="col-6">--}}
+                                        {{--<div class="form-group py-xl-10">--}}
+                                            {{--<label for="MyBuilds">Builds</label>--}}
+                                            {{--<select class="multiple-select form-control" required name="expectation[MyBuilds]">--}}
+                                                {{--<option value="">Select</option>--}}
+                                                {{--@foreach($myBuilds as $val)--}}
+                                                    {{--<option value="{{$val->id}}">{{$val->title}}</option>--}}
+                                                {{--@endforeach--}}
+                                            {{--</select>--}}
+                                        {{--</div>--}}
+                                    {{--</div>--}}
                                     <div class="col-6">
                                         <div class="form-group py-xl-10">
                                             <label for="MaritalStatus">Marital Status</label>
@@ -1461,12 +1461,12 @@
                                         </select>
                                     </div>
                                 </div>
-                                <div class="col-6">
-                                    <div class="form-group">
-                                        <label for="name">*Username</label>
-                                        <input onchange="checkIfExists(this)" type="text" data-name="name" name="name" class="form-control">
-                                    </div>
-                                </div>
+                                {{--<div class="col-6">--}}
+                                    {{--<div class="form-group">--}}
+                                        {{--<label for="name">*Username</label>--}}
+                                        {{--<input onchange="checkIfExists(this)" type="text" data-name="name" name="name" class="form-control">--}}
+                                    {{--</div>--}}
+                                {{--</div>--}}
                                 <div class="col-6">
                                     <div class="form-group">
                                         <label for="first_name">*First Name</label>
@@ -1546,17 +1546,17 @@
                                         </select>
                                     </div>
                                 </div>
-                                <div class="col-6">
-                                    <div class="form-group">
-                                        <label for="test">*Second Marriage</label>
-                                        <select class="multiple-select form-control" name="second_marraige">
-                                            <option value="">Select</option>
-                                            <option value="1">Male looking for 2nd Wife</option>
-                                            <option value="2">Female Ready for 2nd Wife</option>
-                                            <option value="3">Looking for Single</option>
-                                        </select>
-                                    </div>
-                                </div>
+                                {{--<div class="col-6">--}}
+                                    {{--<div class="form-group">--}}
+                                        {{--<label for="test">*Second Marriage</label>--}}
+                                        {{--<select class="multiple-select form-control" name="second_marraige">--}}
+                                            {{--<option value="">Select</option>--}}
+                                            {{--<option value="1">Male looking for 2nd Wife</option>--}}
+                                            {{--<option value="2">Female Ready for 2nd Wife</option>--}}
+                                            {{--<option value="3">Looking for Single</option>--}}
+                                        {{--</select>--}}
+                                    {{--</div>--}}
+                                {{--</div>--}}
                                 <div class="col-6">
                                     <div class="form-group">
                                         <label for="email">*Email</label>
@@ -1604,29 +1604,29 @@
                                     </div>
                                 </div>
 
-                                <div class="col-md-6">
-                                    <div class="form-group py-xl-10">
-                                        <label for="major_course_id">*Major Course</label>
-                                        <select name="major_course_id" id="major_course_id" class="multiple-select form-control">
-                                            <option value="">Select</option>
-                                            @foreach($majorCourses as $val)
-                                                <option value="{{$val->id}}">{{$val->title}}</option>
-                                            @endforeach
-                                        </select>
-                                    </div>
-                                </div>
+                                {{--<div class="col-md-6">--}}
+                                    {{--<div class="form-group py-xl-10">--}}
+                                        {{--<label for="major_course_id">*Major Course</label>--}}
+                                        {{--<select name="major_course_id" id="major_course_id" class="multiple-select form-control">--}}
+                                            {{--<option value="">Select</option>--}}
+                                            {{--@foreach($majorCourses as $val)--}}
+                                                {{--<option value="{{$val->id}}">{{$val->title}}</option>--}}
+                                            {{--@endforeach--}}
+                                        {{--</select>--}}
+                                    {{--</div>--}}
+                                {{--</div>--}}
 
-                                <div class="col-md-6">
-                                    <div class="form-group py-xl-10">
-                                        <label for="University">*University</label>
-                                        <select name="University" class="multiple-select form-control">
-                                            <option value="">Select</option>
-                                            @foreach($universities as $val)
-                                                <option value="{{$val->id}}">{{$val->title}}</option>
-                                            @endforeach
-                                        </select>
-                                    </div>
-                                </div>
+                                {{--<div class="col-md-6">--}}
+                                    {{--<div class="form-group py-xl-10">--}}
+                                        {{--<label for="University">*University</label>--}}
+                                        {{--<select name="University" class="multiple-select form-control">--}}
+                                            {{--<option value="">Select</option>--}}
+                                            {{--@foreach($universities as $val)--}}
+                                                {{--<option value="{{$val->id}}">{{$val->title}}</option>--}}
+                                            {{--@endforeach--}}
+                                        {{--</select>--}}
+                                    {{--</div>--}}
+                                {{--</div>--}}
                                 <div class="col-md-6">
                                     <div class="form-group py-xl-10">
                                         <label for="Profession">*Profession</label>
@@ -1638,17 +1638,17 @@
                                         </select>
                                     </div>
                                 </div>
-                                <div class="col-md-6">
-                                    <div class="form-group py-xl-10">
-                                        <label for="JobPost">*Job Post</label>
-                                        <select name="JobPost" class="multiple-select form-control">
-                                            <option value="">Select</option>
-                                            @foreach($jobPosts as $val)
-                                                <option value="{{$val->id}}">{{$val->title}}</option>
-                                            @endforeach
-                                        </select>
-                                    </div>
-                                </div>
+                                {{--<div class="col-md-6">--}}
+                                    {{--<div class="form-group py-xl-10">--}}
+                                        {{--<label for="JobPost">*Job Post</label>--}}
+                                        {{--<select name="JobPost" class="multiple-select form-control">--}}
+                                            {{--<option value="">Select</option>--}}
+                                            {{--@foreach($jobPosts as $val)--}}
+                                                {{--<option value="{{$val->id}}">{{$val->title}}</option>--}}
+                                            {{--@endforeach--}}
+                                        {{--</select>--}}
+                                    {{--</div>--}}
+                                {{--</div>--}}
                                 <div class="col-md-6">
                                     <div class="form-group py-xl-10">
                                         <label for="MonthlyIncome">*Monthly Income</label>
@@ -1660,17 +1660,17 @@
                                         </select>
                                     </div>
                                 </div>
-                                <div class="col-md-6">
-                                    <div class="form-group py-xl-10">
-                                        <label for="FuturePlans">*Future Plan</label>
-                                        <select name="FuturePlans" class="multiple-select form-control">
-                                            <option value="">Select</option>
-                                            @foreach($futurePlans as $val)
-                                                <option value="{{$val->id}}">{{$val->title}}</option>
-                                            @endforeach
-                                        </select>
-                                    </div>
-                                </div>
+                                {{--<div class="col-md-6">--}}
+                                    {{--<div class="form-group py-xl-10">--}}
+                                        {{--<label for="FuturePlans">*Future Plan</label>--}}
+                                        {{--<select name="FuturePlans" class="multiple-select form-control">--}}
+                                            {{--<option value="">Select</option>--}}
+                                            {{--@foreach($futurePlans as $val)--}}
+                                                {{--<option value="{{$val->id}}">{{$val->title}}</option>--}}
+                                            {{--@endforeach--}}
+                                        {{--</select>--}}
+                                    {{--</div>--}}
+                                {{--</div>--}}
                             </div>
 
                             <hr>
@@ -1682,61 +1682,61 @@
                             </div>
 
                             <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group py-xl-10">
-                                        <label for="CountryOfOrigin">*Country of Origin</label>
-                                        <select onchange="getStates(this,'StateOfOrigin')" class="multiple-select form-control" name="CountryOfOrigin">
-                                            <option value="">Select</option>
-                                            @foreach($countries as $val)
-                                                <option value="{{$val->id}}">{{$val->name}}</option>
-                                            @endforeach
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-group py-xl-10">
-                                        <label for="StateOfOrigin">*State of Origin</label>
-                                        <select onchange="getCities(this,'CityOfOrigin')" class="multiple-select form-control" name="StateOfOrigin">
-                                            <option value="">Select</option>
-                                            @foreach($states as $val)
-                                                <option value="{{$val->id}}">{{$val->title}}</option>
-                                            @endforeach
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-group py-xl-10">
-                                        <label for="CityOfOrigin">*City of Origin</label>
-                                        <select class="multiple-select form-control" name="CityOfOrigin">
-                                            <option value="">Select</option>
-                                            @foreach($cities as $val)
-                                                <option value="{{$val->id}}">{{$val->title}}</option>
-                                            @endforeach
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-group py-xl-10">
-                                        <label for="WillingToRelocate">*Willing to Relocate</label>
-                                        <select class="multiple-select form-control" name="WillingToRelocate">
-                                            <option value="">Select</option>
-                                            @foreach($willingToRelocates as $val)
-                                                <option value="{{$val->id}}">{{$val->title}}</option>
-                                            @endforeach
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-group py-xl-10">
-                                        <label for="IAmLookingToMarry">*I am Looking to Marry</label>
-                                        <select class="multiple-select form-control" name="IAmLookingToMarry">
-                                            <option value="">Select</option>
-                                            @foreach($lookingToMarries as $val)
-                                                <option value="{{$val->id}}">{{$val->title}}</option>
-                                            @endforeach
-                                        </select>
-                                    </div>
-                                </div>
+                                {{--<div class="col-md-6">--}}
+                                    {{--<div class="form-group py-xl-10">--}}
+                                        {{--<label for="CountryOfOrigin">*Country of Origin</label>--}}
+                                        {{--<select onchange="getStates(this,'StateOfOrigin')" class="multiple-select form-control" name="CountryOfOrigin">--}}
+                                            {{--<option value="">Select</option>--}}
+                                            {{--@foreach($countries as $val)--}}
+                                                {{--<option value="{{$val->id}}">{{$val->name}}</option>--}}
+                                            {{--@endforeach--}}
+                                        {{--</select>--}}
+                                    {{--</div>--}}
+                                {{--</div>--}}
+                                {{--<div class="col-md-6">--}}
+                                    {{--<div class="form-group py-xl-10">--}}
+                                        {{--<label for="StateOfOrigin">*State of Origin</label>--}}
+                                        {{--<select onchange="getCities(this,'CityOfOrigin')" class="multiple-select form-control" name="StateOfOrigin">--}}
+                                            {{--<option value="">Select</option>--}}
+                                            {{--@foreach($states as $val)--}}
+                                                {{--<option value="{{$val->id}}">{{$val->title}}</option>--}}
+                                            {{--@endforeach--}}
+                                        {{--</select>--}}
+                                    {{--</div>--}}
+                                {{--</div>--}}
+                                {{--<div class="col-md-6">--}}
+                                    {{--<div class="form-group py-xl-10">--}}
+                                        {{--<label for="CityOfOrigin">*City of Origin</label>--}}
+                                        {{--<select class="multiple-select form-control" name="CityOfOrigin">--}}
+                                            {{--<option value="">Select</option>--}}
+                                            {{--@foreach($cities as $val)--}}
+                                                {{--<option value="{{$val->id}}">{{$val->title}}</option>--}}
+                                            {{--@endforeach--}}
+                                        {{--</select>--}}
+                                    {{--</div>--}}
+                                {{--</div>--}}
+                                {{--<div class="col-md-6">--}}
+                                    {{--<div class="form-group py-xl-10">--}}
+                                        {{--<label for="WillingToRelocate">*Willing to Relocate</label>--}}
+                                        {{--<select class="multiple-select form-control" name="WillingToRelocate">--}}
+                                            {{--<option value="">Select</option>--}}
+                                            {{--@foreach($willingToRelocates as $val)--}}
+                                                {{--<option value="{{$val->id}}">{{$val->title}}</option>--}}
+                                            {{--@endforeach--}}
+                                        {{--</select>--}}
+                                    {{--</div>--}}
+                                {{--</div>--}}
+                                {{--<div class="col-md-6">--}}
+                                    {{--<div class="form-group py-xl-10">--}}
+                                        {{--<label for="IAmLookingToMarry">*I am Looking to Marry</label>--}}
+                                        {{--<select class="multiple-select form-control" name="IAmLookingToMarry">--}}
+                                            {{--<option value="">Select</option>--}}
+                                            {{--@foreach($lookingToMarries as $val)--}}
+                                                {{--<option value="{{$val->id}}">{{$val->title}}</option>--}}
+                                            {{--@endforeach--}}
+                                        {{--</select>--}}
+                                    {{--</div>--}}
+                                {{--</div>--}}
                                 <div class="col-md-6">
                                     <div class="form-group py-xl-10">
                                         <label for="MyLivingArrangements">*Living Arrangement</label>
@@ -1781,17 +1781,17 @@
                                         </select>
                                     </div>
                                 </div>
-                                <div class="col-md-6">
-                                    <div class="form-group py-xl-10">
-                                        <label for="MyBuilds">*My Build</label>
-                                        <select class="multiple-select form-control" name="MyBuilds">
-                                            <option value="">Select</option>
-                                            @foreach($myBuilds as $val)
-                                                <option value="{{$val->id}}">{{$val->title}}</option>
-                                            @endforeach
-                                        </select>
-                                    </div>
-                                </div>
+                                {{--<div class="col-md-6">--}}
+                                    {{--<div class="form-group py-xl-10">--}}
+                                        {{--<label for="MyBuilds">*My Build</label>--}}
+                                        {{--<select class="multiple-select form-control" name="MyBuilds">--}}
+                                            {{--<option value="">Select</option>--}}
+                                            {{--@foreach($myBuilds as $val)--}}
+                                                {{--<option value="{{$val->id}}">{{$val->title}}</option>--}}
+                                            {{--@endforeach--}}
+                                        {{--</select>--}}
+                                    {{--</div>--}}
+                                {{--</div>--}}
                                 <div class="col-md-6">
                                     <div class="form-group py-xl-10">
                                         <label for="HairColors">*Hair Color</label>
@@ -1891,17 +1891,17 @@
                                         </select>
                                     </div>
                                 </div>
-                                <div class="col-md-6">
-                                    <div class="form-group py-xl-10">
-                                        <label for="DoYouPreferHijabs">*Do You Prefer Hijab?</label>
-                                        <select class="multiple-select form-control" name="DoYouPreferHijabs">
-                                            <option value="">Select</option>
-                                            @foreach($preferHijabs as $val)
-                                                <option value="{{$val->id}}">{{$val->title}}</option>
-                                            @endforeach
-                                        </select>
-                                    </div>
-                                </div>
+                                {{--<div class="col-md-6">--}}
+                                    {{--<div class="form-group py-xl-10">--}}
+                                        {{--<label for="DoYouPreferHijabs">*Do You Prefer Hijab?</label>--}}
+                                        {{--<select class="multiple-select form-control" name="DoYouPreferHijabs">--}}
+                                            {{--<option value="">Select</option>--}}
+                                            {{--@foreach($preferHijabs as $val)--}}
+                                                {{--<option value="{{$val->id}}">{{$val->title}}</option>--}}
+                                            {{--@endforeach--}}
+                                        {{--</select>--}}
+                                    {{--</div>--}}
+                                {{--</div>--}}
                                 <div class="col-md-6">
                                     <div class="form-group py-xl-10">
                                         <label for="DoYouHaveBeards">*Do You Prefer Beard?</label>
@@ -1935,17 +1935,17 @@
                                         </select>
                                     </div>
                                 </div>
-                                <div class="col-md-6">
-                                    <div class="form-group py-xl-10">
-                                        <label for="DoYouPerformSalaah">*Do You Perform Salaah?</label>
-                                        <select class="multiple-select form-control" name="DoYouPerformSalaah">
-                                            <option value="">Select</option>
-                                            @foreach($performSalaahs as $val)
-                                                <option value="{{$val->id}}">{{$val->title}}</option>
-                                            @endforeach
-                                        </select>
-                                    </div>
-                                </div>
+                                {{--<div class="col-md-6">--}}
+                                    {{--<div class="form-group py-xl-10">--}}
+                                        {{--<label for="DoYouPerformSalaah">*Do You Perform Salaah?</label>--}}
+                                        {{--<select class="multiple-select form-control" name="DoYouPerformSalaah">--}}
+                                            {{--<option value="">Select</option>--}}
+                                            {{--@foreach($performSalaahs as $val)--}}
+                                                {{--<option value="{{$val->id}}">{{$val->title}}</option>--}}
+                                            {{--@endforeach--}}
+                                        {{--</select>--}}
+                                    {{--</div>--}}
+                                {{--</div>--}}
                             </div>
 
                             <hr>
@@ -2088,28 +2088,28 @@
                                         </select>
                                     </div>
                                 </div>
-                                <div class="col-6">
-                                    <div class="form-group py-xl-10">
-                                        <label for="WillingToRelocate">Willing To Relocate</label>
-                                        <select class="multiple-select form-control" required name="expectation[WillingToRelocate]">
-                                            <option value="">Select</option>
-                                            @foreach($willingToRelocates as $val)
-                                                <option value="{{$val->id}}">{{$val->title}}</option>
-                                            @endforeach
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="col-6">
-                                    <div class="form-group py-xl-10">
-                                        <label for="MyBuilds">Builds</label>
-                                        <select class="multiple-select form-control" required name="expectation[MyBuilds]">
-                                            <option value="">Select</option>
-                                            @foreach($myBuilds as $val)
-                                                <option value="{{$val->id}}">{{$val->title}}</option>
-                                            @endforeach
-                                        </select>
-                                    </div>
-                                </div>
+                                {{--<div class="col-6">--}}
+                                    {{--<div class="form-group py-xl-10">--}}
+                                        {{--<label for="WillingToRelocate">Willing To Relocate</label>--}}
+                                        {{--<select class="multiple-select form-control" required name="expectation[WillingToRelocate]">--}}
+                                            {{--<option value="">Select</option>--}}
+                                            {{--@foreach($willingToRelocates as $val)--}}
+                                                {{--<option value="{{$val->id}}">{{$val->title}}</option>--}}
+                                            {{--@endforeach--}}
+                                        {{--</select>--}}
+                                    {{--</div>--}}
+                                {{--</div>--}}
+                                {{--<div class="col-6">--}}
+                                    {{--<div class="form-group py-xl-10">--}}
+                                        {{--<label for="MyBuilds">Builds</label>--}}
+                                        {{--<select class="multiple-select form-control" required name="expectation[MyBuilds]">--}}
+                                            {{--<option value="">Select</option>--}}
+                                            {{--@foreach($myBuilds as $val)--}}
+                                                {{--<option value="{{$val->id}}">{{$val->title}}</option>--}}
+                                            {{--@endforeach--}}
+                                        {{--</select>--}}
+                                    {{--</div>--}}
+                                {{--</div>--}}
                                 <div class="col-6">
                                     <div class="form-group py-xl-10">
                                         <label for="MaritalStatus">Marital Status</label>

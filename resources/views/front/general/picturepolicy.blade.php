@@ -1,7 +1,7 @@
 @extends('front.layouts.master')
 
 @section('title','Picture Policy')
-@section('description', 'Read the picture privacy policy of our online marriage website to be aware of the limitations, risks and precautions of uploading pictures on Shaadi.org.pk.')
+@section('description', 'Read the picture privacy policy of our online marriage website to be aware of the limitations, risks and precautions of uploading pictures on DoosriBiwi.com.')
 
 @push('style')
 	<style></style>
@@ -17,7 +17,7 @@
 	{{--<div class="d-grid w-md-50 w-xl-80 mb-60 mx-auto gap-12">--}}
 	{{--<h2 class="heading-section-3 text-dark text-center mb-0">Picture Policy</h2>--}}
 	{{--<div class="heading-text-2 lh-base text-dark text-center">--}}
-	{{--Much similar to social media networks, Shaadi.org.pk also allows its members to upload as many pictures as they like in order to increase their chances of finding a good suitorto get rishta online in Pakistan. The photos uploaded by a member can be seen by other existing members during two occasions. One, whenever the member’s profile is being viewed by another member. Two, the picture will be apparent whenever the member’s name or profile shows up in the search results page of our matrimonial portal.--}}
+	{{--Much similar to social media networks, DoosriBiwi.com also allows its members to upload as many pictures as they like in order to increase their chances of finding a good suitorto get rishta online in Pakistan. The photos uploaded by a member can be seen by other existing members during two occasions. One, whenever the member’s profile is being viewed by another member. Two, the picture will be apparent whenever the member’s name or profile shows up in the search results page of our matrimonial portal.--}}
 	{{--</div>--}}
 
 	{{--</div>--}}
@@ -77,7 +77,7 @@
 				<div class="card">
 					<div class="card-body">
 						<p>
-							Shaadi.org.pk only allows your decent Pictures/Photographs. Certain types of pictures/photographs are not allowed by Shaadi.org.pk. Following is the brief description of such pictures:
+							DoosriBiwi.com only allows your decent Pictures/Photographs. Certain types of pictures/photographs are not allowed by DoosriBiwi.com. Following is the brief description of such pictures:
 						</p>
 						<ul>
 							<li>Pictures/Photographs of any individual, other than yourself.</li>
@@ -86,7 +86,7 @@
 							<li>Copyright Pictures/Photographs</li>
 						</ul>
 						<p>
-							Pictures that do not follow the guidelines highlighted above will be removed by our supervising team at Shaadi.org.pk. The owners of the online Shaadi site hold the right to order the removal of any picture be it obscene or not without any mandatory explanation. The sole purpose of encouraging members to upload their pictures is to give the added benefit of seeing the prospective suitor before expressing your interest. However, we at Shaadi.org.pk will not be held responsible in case of any misuse of any member’s pictures. Consistent misuse of pictures by a member will lead to the termination of his or her account without any prior notice.
+							Pictures that do not follow the guidelines highlighted above will be removed by our supervising team at DoosriBiwi.com. The owners of the online Shaadi site hold the right to order the removal of any picture be it obscene or not without any mandatory explanation. The sole purpose of encouraging members to upload their pictures is to give the added benefit of seeing the prospective suitor before expressing your interest. However, we at DoosriBiwi.com will not be held responsible in case of any misuse of any member’s pictures. Consistent misuse of pictures by a member will lead to the termination of his or her account without any prior notice.
 						</p>
 					</div>
 				</div>
