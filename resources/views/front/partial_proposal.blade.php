@@ -1,4 +1,4 @@
-@foreach($customers as $val)
+@foreach($customers as $k => $val)
     @php
         $countryName = (!empty($val->getCountryName)?$val->getCountryName->name:'NA');
         $countrySlug = strtolower($countryName);
@@ -9,9 +9,16 @@
         $citySlug = str_replace(' ', '-', $citySlug);
         $citySlug = str_replace('/', '-', $citySlug);
         $uniqueProfileSlug = $val->gender_name.'-proposal-'.$countrySlug.'-'.$citySlug.'-'.$val->faker_id;
+        $fadeSpeed = 3000;
+        if($k==0 || $k==4) {
+            $fadeSpeed = 1000;
+        }
+        if($k==1 || $k==3) {
+            $fadeSpeed = 2000;
+        }
     @endphp
     <div class="col-lg d-sm-block d-xs-block p-10 mx-auto my-auto">
-        <div class="profile-boxes">
+        <div class="profile-boxes"  data-aos="fade-up" data-aos-duration="{{($fadeSpeed)}}">
             @if($val->email_verified==1 &&
                 $val->mobile_verified==1 &&
                 $val->profile_pic_status==1 &&
@@ -102,3 +109,7 @@
         </div>
     </div>
 @endforeach
+
+<script>
+    AOS.init();
+</script>

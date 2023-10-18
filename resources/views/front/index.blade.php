@@ -675,7 +675,7 @@
             <div class="container">
                 <div class="row">
                     <div class="content-column col-md-7 mx-auto my-auto">
-                        <div class="inner-column">
+                        <div class="inner-column" data-aos="fade-right" data-aos-duration="1200">
                             <div class="sec-title">
                                 <h2>Welcome to DoosriBiwi.com which understands & supports your choices.</h2>
                             </div>
@@ -696,9 +696,8 @@
 
                     <!-- Image Column -->
                     <div class="image-column col-md-5 mx-auto my-auto">
-                        <div class="about-image">
-                            <img class="mobileHide" src="{{asset('specialGuests/rishtay-pakistan-mrs-ali-dr-arif-alvi.jpg')}}" alt="The Most Trusted Marriage Bureau in Pakistan" width="100%">
-                            <img class="mobileShow" src="{{asset('specialGuests/rishtay-pakistan-mrs-ali-dr-arif-alvi.jpg')}}" alt="The Most Trusted Marriage Bureau in Pakistan" width="100%">
+                        <div class="about-image" data-aos="fade-left" data-aos-duration="1200">
+                            <img src="{{asset('specialGuests/rishtay-pakistan-mrs-ali-dr-arif-alvi.jpg')}}" alt="The Most Trusted Marriage Bureau in Pakistan" width="100%">
                         </div>
                     </div>
                 </div>
@@ -713,7 +712,7 @@
                 <h2 class="align-center font-weight-600 white-color"> Benefits of Becoming a Second Wife? </h2>
                 <img class="img-align-center heading-border"
                      src="{{asset('assets/img/shaadi-organization-pakistan-heading-border.png')}}">
-                <div class="row newInfoStyle">
+                <div class="row newInfoStyle" data-aos="flip-down" data-aos-duration="1200">
                     <div class="col-md-6 mx-auto my-auto">
                         <p class="text-white">
                             Choosing to be a second wife in Islam may provide a loving and stable family environment, while also offering companionship and the opportunity to strengthen faith through shared responsibilities and devotion.
@@ -756,7 +755,7 @@
                 <h2 class="align-center font-weight-600 white-color"> Why Consider a Second Wife? </h2>
                 <img class="img-align-center heading-border"
                      src="{{asset('assets/img/shaadi-organization-pakistan-heading-border.png')}}">
-                <div class="row newInfoStyle">
+                <div class="row newInfoStyle" data-aos="flip-down" data-aos-duration="1200">
                     <div class="col-md-6 mx-auto my-auto">
                         <p class="text-white">
                             In Islam, a second marriage can be a solution to fulfill responsibilities, provide support, and offer love to another deserving woman.
@@ -799,7 +798,7 @@
                 <h2 class="align-center font-weight-600 white-color"> Legal Protection </h2>
                 <img class="img-align-center heading-border"
                      src="{{asset('assets/img/shaadi-organization-pakistan-heading-border.png')}}">
-                <div class="row newInfoStyle">
+                <div class="row newInfoStyle" data-aos="flip-down" data-aos-duration="1200">
                     <div class="col-md-6 mx-auto my-auto">
                         <p class="text-white">
                             Family Legal matters are emotional and complicated. We understand that every family is unique and we provide sympathetic guidance and effective solutions tailored to your needs.
@@ -890,7 +889,7 @@
                 <h2 class="align-center text-white" style="font-size: 18px;">Direct Family to Family Rishta Meeting Event</h2>
                 {{--<p class="align-center text-white font-weight-600">Sunday, 1 October, 2023 | 6 pm to 11 pm</p>--}}
                 <div class="row">
-                    <div class="col-md-6 mx-auto my-auto">
+                    <div class="col-md-6 mx-auto my-auto" data-aos="fade-right" data-aos-duration="1200">
                         <h2 class="title-w">Find Someone Better!</h2>
                         <div class="detail">
                             <p class="text-white">By the grace of Al Mighty Allah, Doosri Biwi successfully hosted an event "Nikah Ka Chuwara" where individuals can explore and embrace polygamous relationships within the framework of Islamic principles.</p>
@@ -902,7 +901,7 @@
                             </ul>
                         </div>
                     </div>
-                    <div class="col-md-4 mx-auto my-auto">
+                    <div class="col-md-4 mx-auto my-auto" data-aos="fade-left" data-aos-duration="1200">
                         <div class="director-img">
                             {{--<iframe width="100%" height="400px" src="https://www.youtube.com/embed/IiUjZEfLJwI" title="Shaadi Ka Laddu - Season 3 Highlights | Family to Family Rishta Meeting Event | Best Marriage Bureau" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>--}}
                             <img class="full-width" src="{{asset('assets/img/call_action_images/shaadi-orginzation-pakistan-Shadi-ka-ladu-season-4.jpg')}}" alt="Shaadi Ka Laddu">
@@ -925,19 +924,19 @@
                 <img class="img-align-center heading-border"
                      src="{{asset('assets/img/shaadi-organization-pakistan-heading-border.png')}}">
                 <div class="row p-tb-10">
-                    <div class="col-md-4">
+                    <div class="col-md-4" data-aos="zoom-in-right" data-aos-duration="1200">
                         <iframe width="100%" src="https://www.youtube.com/embed/_jme1dLM6vw"
                                 title="YouTube video player" frameborder="0"
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                                 allowfullscreen=""></iframe>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-4" data-aos="zoom-in" data-aos-duration="1200">
                         <iframe width="100%" src="https://www.youtube.com/embed/IFRk_Pek0so"
                                 title="YouTube video player" frameborder="0"
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                                 allowfullscreen=""></iframe>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-4" data-aos="zoom-in-left" data-aos-duration="1200">
                         <iframe width="100%" src="https://www.youtube.com/embed/Jh2ur0RI8OU"
                                 title="YouTube video player" frameborder="0"
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -959,7 +958,7 @@
                              src="{{asset('assets/img/shaadi-organization-pakistan-heading-border.png')}}">
                         <p class="paragraph-1 align-center font-weight-500 text-white">We do not hide behind WhatsApp. We have real matchmakers & proper offices, where we sit 7 days a week and 12 hours a day to meet people and help with marriage proposals.</p>
                         <br>
-                        <div class="ceoMainDetail">
+                        <div class="ceoMainDetail" data-aos="zoom-in" data-aos-duration="1200">
                             <img class="ceo-img" src="{{asset('web_images/mrs-ali.jpg')}}" alt="Mrs. Ali">
                             <h2 class="name-team"> Mrs. Ali </h2>
                             <h3>Director, Doosri Biwi</h3>
@@ -1043,7 +1042,7 @@
 
                 <div class="row text-center">
                     <div class="col-md-1 mx-auto my-auto"></div>
-                    <div class="col-md-5 mx-auto my-auto card-container">
+                    <div class="col-md-5 mx-auto my-auto card-container" data-aos="flip-left" data-aos-duration="1200">
                         <div class="card card-flip container d-flex h-100">
                             <div class="front card-block row justify-content-center align-self-center">
                                 <img src="{{asset('assets/img/partners/Shaadi-Organization-Pakistan-Rishta-Logo.svg')}}" alt="DoosriBiwi.com" style="width: 70%;">
@@ -1058,7 +1057,7 @@
                         </div>
                     </div>
 
-                    <div class="col-md-5 mx-auto my-auto card-container">
+                    <div class="col-md-5 mx-auto my-auto card-container" data-aos="flip-right" data-aos-duration="1200">
                         <div class="card card-flip container d-flex h-100">
                             <div class="front card-block row justify-content-center align-self-center">
                                 <img src="{{asset('assets/img/partners/elite-matrimony-logo.svg')}}" alt="EliteMatrimony.Pk" style="width: 70%;">

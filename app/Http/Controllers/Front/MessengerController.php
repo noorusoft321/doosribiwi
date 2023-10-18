@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers\Front;
+use App\Helpers\FakerURL;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\YourRequest;
 use App\Models\Customer;
@@ -10,12 +11,12 @@ use Illuminate\Support\Facades\Auth;
 
 class MessengerController extends Controller {
 
-    public function index($customerUserName='') {
+    public function index($customerFakerId='') {
         $this->makeChatList();
         $newCustomerId='';
         $newCustomerRow = null;
-        if (!empty($customerUserName)) {
-            $newCustomerRow = Customer::where('name',$customerUserName)->first();
+        if (!empty($customerFakerId)) {
+            $newCustomerRow = Customer::where('id',FakerURL::id_d($customerFakerId))->first();
             if(!empty($newCustomerRow)) {
                 $newCustomerId = $newCustomerRow->id;
             }

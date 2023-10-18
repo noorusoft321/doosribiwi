@@ -64,7 +64,8 @@
 			<!-- /.col -->
 			<div class="col-md-8">
 				<div class="row">
-					<div class="col-md-4">
+					<div class="col-md-1"></div>
+					<div class="col-md-3">
 						<h6 class="footer-title">Company</h6>
 						<ul class="footer-link-list">
 							{{--<li class="link-item">--}}

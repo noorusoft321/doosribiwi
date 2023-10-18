@@ -1200,6 +1200,7 @@ class CustomerAuthController extends Controller
 
         DB::beginTransaction();
         try {
+            $request['RegistrationID'] = auth()->guard('customer')->id();
             CustomerCareerInfo::updateOrCreate([
                 'CustomerID' => $request['RegistrationID']
             ],$request);
@@ -1266,6 +1267,7 @@ class CustomerAuthController extends Controller
     public function personalSave()
     {
         $request = request()->all();
+        $message['MyFirstLanguageMotherTonguesID'] = 'The mother tongue field is required.';
         $validator = Validator::make($request, [
             'IAmLookingToMarry'              => 'required|numeric',
             'MyLivingArrangements'           => 'required|numeric',
@@ -1278,7 +1280,7 @@ class CustomerAuthController extends Controller
             'Complexions'                    => 'required|numeric',
             'Caste'                          => 'required|numeric',
             'MyFirstLanguageMotherTonguesID' => 'required|numeric'
-        ]);
+        ],$message);
 
         if ($validator->fails()) {
             return response()->json(['errors'=>$validator->errors(), 'status'=>'error'],422);
@@ -1340,9 +1342,9 @@ class CustomerAuthController extends Controller
             $customerReligionInfo->Caste = $customerPersonalInfo->Caste;
         }
         $religions = Religion::where('deleted',0)->orderBy('order_at','asc')->get();
-        $preferHijabs = DoYouPreferHijab::where('deleted',0)->orderBy('order_at','asc')->get();
+//        $preferHijabs = DoYouPreferHijab::where('deleted',0)->orderBy('order_at','asc')->get();
         $reverts = AreYouRevert::where('deleted',0)->orderBy('order_at','asc')->get();
-        $performSalaahs = DoYouPerformSalaah::where('deleted',0)->orderBy('order_at','asc')->get();
+//        $performSalaahs = DoYouPerformSalaah::where('deleted',0)->orderBy('order_at','asc')->get();
         if (!empty($customerReligionInfo) && !empty($customerReligionInfo->Religions)) {
             $sects = Sect::where('religions_id',$customerReligionInfo->Religions)->where('deleted',0)->orderBy('order_at','asc')->get();
         } else {
@@ -1356,9 +1358,9 @@ class CustomerAuthController extends Controller
             'title',
             'customerReligionInfo',
             'religions',
-            'preferHijabs',
+//            'preferHijabs',
             'reverts',
-            'performSalaahs',
+//            'performSalaahs',
             'sects',
             'beards',
             'halals',
@@ -1372,11 +1374,11 @@ class CustomerAuthController extends Controller
         $validator = Validator::make($request, [
             'Religions'          => 'required',
             'Sects'              => 'required',
-            'DoYouPreferHijabs'  => 'required',
+//            'DoYouPreferHijabs'  => 'required',
             'DoYouHaveBeards'    => 'required',
             'AreYouReverts'      => 'required',
             'DoYouKeepHalal'     => 'required',
-            'DoYouPerformSalaah' => 'required'
+//            'DoYouPerformSalaah' => 'required'
         ]);
 
         if ($validator->fails()) {
@@ -1464,7 +1466,7 @@ class CustomerAuthController extends Controller
         $incomes = AnnualInCome::where('deleted',0)->orderBy('order_at','asc')->get();
         $heights = Height::where('deleted',0)->orderBy('order_at','asc')->get();
         $smokes = Smoke::where('deleted',0)->orderBy('order_at','asc')->get();
-        $perferHijabs = DoYouPreferHijab::where('deleted',0)->orderBy('order_at','asc')->get();
+//        $perferHijabs = DoYouPreferHijab::where('deleted',0)->orderBy('order_at','asc')->get();
         $salaahs = DoYouPerformSalaah::where('deleted',0)->orderBy('order_at','asc')->get();
         $occupations = Occupation::where('deleted',0)->orderBy('order_at','asc')->get();
         $lookingToMarry = IAmLookingToMarry::where('deleted',0)->orderBy('order_at','asc')->get();
@@ -1473,7 +1475,11 @@ class CustomerAuthController extends Controller
         $beards = DoYouHaveBeard::where('deleted',0)->orderBy('order_at','asc')->get();
         $educations = Education::where('deleted',0)->orderBy('order_at','asc')->get();
         $counties = Country::where('deleted',0)->orderBy('order_at','asc')->get();
-        $maritalStatues = MaritalStatus::where('deleted',0)->orderBy('order_at','asc')->get();
+        if ($customer->gender_name=='Male') {
+            $maritalStatues = MaritalStatus::where('deleted',0)->whereNotIn('id',[16,7])->orderBy('order_at','asc')->get();
+        } else {
+            $maritalStatues = MaritalStatus::where('deleted',0)->whereNotIn('id',[1,17])->orderBy('order_at','asc')->get();
+        }
         $hairColors = HairColor::where('deleted',0)->orderBy('order_at','asc')->get();
         $castes = Caste::where('deleted',0)->orderBy('order_at','asc')->get();
         $religions = Religion::where('deleted',0)->orderBy('order_at','asc')->get();
@@ -1494,7 +1500,7 @@ class CustomerAuthController extends Controller
             'heights',
             'smokes',
             'cities',
-            'perferHijabs',
+//            'perferHijabs',
             'salaahs',
             'occupations',
             'lookingToMarry',

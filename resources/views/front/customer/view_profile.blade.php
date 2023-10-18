@@ -338,7 +338,7 @@
                                     <div>
                                         <div class="profile-section">
                                             <img src="{{$customer->imageFullPath}}" alt="{{$customer->full_name}}">
-                                            <a class="messengerIconBtn LoginToView" href="{{route('messenger',[$customer->name])}}"><i class="fa fa-comments"></i></a>
+                                            <a class="messengerIconBtn LoginToView" href="{{route('messenger',[$customer->faker_id])}}"><i class="fa fa-comments"></i></a>
                                         </div>
                                         <h3 class="align-center profile-name" style="line-height: 1;">{{$customer->full_name}}</h3>
                                         <p class="align-center profile-occupation text-theme">
@@ -567,46 +567,46 @@
                                                     </h5>
                                                 </div>
                                             </div>
-                                            <div class="row">
-                                                <div class="col-6">
-                                                    <h5 class="edit-profile-side-heading font-size14"> Country of Origin </h5>
-                                                </div>
-                                                <div class="col-6">
-                                                    <h5 class="edit-profile-side-heading font-size14 text-theme">
-                                                        {{genericQuery($customer->customerPersonalInfo->CountryOfOrigin,'Country','name')}}
-                                                    </h5>
-                                                </div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-6">
-                                                    <h5 class="edit-profile-side-heading font-size14"> State of Origin </h5>
-                                                </div>
-                                                <div class="col-6">
-                                                    <h5 class="edit-profile-side-heading font-size14 text-theme">
-                                                        {{genericQuery($customer->customerPersonalInfo->StateOfOrigin,'State')}}
-                                                    </h5>
-                                                </div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-6">
-                                                    <h5 class="edit-profile-side-heading font-size14"> City of Origin </h5>
-                                                </div>
-                                                <div class="col-6">
-                                                    <h5 class="edit-profile-side-heading font-size14 text-theme">
-                                                        {{genericQuery($customer->customerPersonalInfo->CityOfOrigin,'City')}}
-                                                    </h5>
-                                                </div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-6">
-                                                    <h5 class="edit-profile-side-heading font-size14"> Willing To Relocate </h5>
-                                                </div>
-                                                <div class="col-6">
-                                                    <h5 class="edit-profile-side-heading font-size14 text-theme">
-                                                        {{genericQuery($customer->customerPersonalInfo->WillingToRelocate,'WillingToRelocate')}}
-                                                    </h5>
-                                                </div>
-                                            </div>
+                                            {{--<div class="row">--}}
+                                                {{--<div class="col-6">--}}
+                                                    {{--<h5 class="edit-profile-side-heading font-size14"> Country of Origin </h5>--}}
+                                                {{--</div>--}}
+                                                {{--<div class="col-6">--}}
+                                                    {{--<h5 class="edit-profile-side-heading font-size14 text-theme">--}}
+                                                        {{--{{genericQuery($customer->customerPersonalInfo->CountryOfOrigin,'Country','name')}}--}}
+                                                    {{--</h5>--}}
+                                                {{--</div>--}}
+                                            {{--</div>--}}
+                                            {{--<div class="row">--}}
+                                                {{--<div class="col-6">--}}
+                                                    {{--<h5 class="edit-profile-side-heading font-size14"> State of Origin </h5>--}}
+                                                {{--</div>--}}
+                                                {{--<div class="col-6">--}}
+                                                    {{--<h5 class="edit-profile-side-heading font-size14 text-theme">--}}
+                                                        {{--{{genericQuery($customer->customerPersonalInfo->StateOfOrigin,'State')}}--}}
+                                                    {{--</h5>--}}
+                                                {{--</div>--}}
+                                            {{--</div>--}}
+                                            {{--<div class="row">--}}
+                                                {{--<div class="col-6">--}}
+                                                    {{--<h5 class="edit-profile-side-heading font-size14"> City of Origin </h5>--}}
+                                                {{--</div>--}}
+                                                {{--<div class="col-6">--}}
+                                                    {{--<h5 class="edit-profile-side-heading font-size14 text-theme">--}}
+                                                        {{--{{genericQuery($customer->customerPersonalInfo->CityOfOrigin,'City')}}--}}
+                                                    {{--</h5>--}}
+                                                {{--</div>--}}
+                                            {{--</div>--}}
+                                            {{--<div class="row">--}}
+                                                {{--<div class="col-6">--}}
+                                                    {{--<h5 class="edit-profile-side-heading font-size14"> Willing To Relocate </h5>--}}
+                                                {{--</div>--}}
+                                                {{--<div class="col-6">--}}
+                                                    {{--<h5 class="edit-profile-side-heading font-size14 text-theme">--}}
+                                                        {{--{{genericQuery($customer->customerPersonalInfo->WillingToRelocate,'WillingToRelocate')}}--}}
+                                                    {{--</h5>--}}
+                                                {{--</div>--}}
+                                            {{--</div>--}}
                                             <div class="row">
                                                 <div class="col-6">
                                                     <h5 class="edit-profile-side-heading font-size14"> I Am Looking To Marry </h5>
@@ -669,16 +669,16 @@
                                                     </h5>
                                                 </div>
                                             </div>
-                                            <div class="row">
-                                                <div class="col-6">
-                                                    <h5 class="edit-profile-side-heading font-size14"> University </h5>
-                                                </div>
-                                                <div class="col-6">
-                                                    <h5 class="edit-profile-side-heading font-size14 text-theme">
-                                                        {{genericQuery($customer->customerCareerInfo->University,'University')}}
-                                                    </h5>
-                                                </div>
-                                            </div>
+                                            {{--<div class="row">--}}
+                                                {{--<div class="col-6">--}}
+                                                    {{--<h5 class="edit-profile-side-heading font-size14"> University </h5>--}}
+                                                {{--</div>--}}
+                                                {{--<div class="col-6">--}}
+                                                    {{--<h5 class="edit-profile-side-heading font-size14 text-theme">--}}
+                                                        {{--{{genericQuery($customer->customerCareerInfo->University,'University')}}--}}
+                                                    {{--</h5>--}}
+                                                {{--</div>--}}
+                                            {{--</div>--}}
                                             <div class="row">
                                                 <div class="col-6">
                                                     <h5 class="edit-profile-side-heading font-size14"> Occupation </h5>
@@ -689,16 +689,16 @@
                                                     </h5>
                                                 </div>
                                             </div>
-                                            <div class="row">
-                                                <div class="col-6">
-                                                    <h5 class="edit-profile-side-heading font-size14"> Job Post </h5>
-                                                </div>
-                                                <div class="col-6">
-                                                    <h5 class="edit-profile-side-heading font-size14 text-theme">
-                                                        {{genericQuery($customer->customerCareerInfo->JobPost,'JobPost')}}
-                                                    </h5>
-                                                </div>
-                                            </div>
+                                            {{--<div class="row">--}}
+                                                {{--<div class="col-6">--}}
+                                                    {{--<h5 class="edit-profile-side-heading font-size14"> Job Post </h5>--}}
+                                                {{--</div>--}}
+                                                {{--<div class="col-6">--}}
+                                                    {{--<h5 class="edit-profile-side-heading font-size14 text-theme">--}}
+                                                        {{--{{genericQuery($customer->customerCareerInfo->JobPost,'JobPost')}}--}}
+                                                    {{--</h5>--}}
+                                                {{--</div>--}}
+                                            {{--</div>--}}
                                             <div class="row">
                                                 <div class="col-6">
                                                     <h5 class="edit-profile-side-heading font-size14"> Monthly Income </h5>
@@ -709,16 +709,16 @@
                                                     </h5>
                                                 </div>
                                             </div>
-                                            <div class="row">
-                                                <div class="col-6">
-                                                    <h5 class="edit-profile-side-heading font-size14"> Future Plan </h5>
-                                                </div>
-                                                <div class="col-6">
-                                                    <h5 class="edit-profile-side-heading font-size14 text-theme">
-                                                        {{genericQuery($customer->customerCareerInfo->FuturePlans,'FuturePlan')}}
-                                                    </h5>
-                                                </div>
-                                            </div>
+                                            {{--<div class="row">--}}
+                                                {{--<div class="col-6">--}}
+                                                    {{--<h5 class="edit-profile-side-heading font-size14"> Future Plan </h5>--}}
+                                                {{--</div>--}}
+                                                {{--<div class="col-6">--}}
+                                                    {{--<h5 class="edit-profile-side-heading font-size14 text-theme">--}}
+                                                        {{--{{genericQuery($customer->customerCareerInfo->FuturePlans,'FuturePlan')}}--}}
+                                                    {{--</h5>--}}
+                                                {{--</div>--}}
+                                            {{--</div>--}}
                                         </div>
                                     </div>
                                 @else
@@ -736,16 +736,16 @@
                                                         </h5>
                                                     </div>
                                                 </div>
-                                                <div class="row">
-                                                    <div class="col-6">
-                                                        <h5 class="edit-profile-side-heading font-size14"> University </h5>
-                                                    </div>
-                                                    <div class="col-6">
-                                                        <h5 class="edit-profile-side-heading font-size14 text-theme">
-                                                            N/A
-                                                        </h5>
-                                                    </div>
-                                                </div>
+                                                {{--<div class="row">--}}
+                                                    {{--<div class="col-6">--}}
+                                                        {{--<h5 class="edit-profile-side-heading font-size14"> University </h5>--}}
+                                                    {{--</div>--}}
+                                                    {{--<div class="col-6">--}}
+                                                        {{--<h5 class="edit-profile-side-heading font-size14 text-theme">--}}
+                                                            {{--N/A--}}
+                                                        {{--</h5>--}}
+                                                    {{--</div>--}}
+                                                {{--</div>--}}
                                                 <div class="row">
                                                     <div class="col-6">
                                                         <h5 class="edit-profile-side-heading font-size14"> Occupation </h5>
@@ -756,16 +756,16 @@
                                                         </h5>
                                                     </div>
                                                 </div>
-                                                <div class="row">
-                                                    <div class="col-6">
-                                                        <h5 class="edit-profile-side-heading font-size14"> Job Post </h5>
-                                                    </div>
-                                                    <div class="col-6">
-                                                        <h5 class="edit-profile-side-heading font-size14 text-theme">
-                                                            N/A
-                                                        </h5>
-                                                    </div>
-                                                </div>
+                                                {{--<div class="row">--}}
+                                                    {{--<div class="col-6">--}}
+                                                        {{--<h5 class="edit-profile-side-heading font-size14"> Job Post </h5>--}}
+                                                    {{--</div>--}}
+                                                    {{--<div class="col-6">--}}
+                                                        {{--<h5 class="edit-profile-side-heading font-size14 text-theme">--}}
+                                                            {{--N/A--}}
+                                                        {{--</h5>--}}
+                                                    {{--</div>--}}
+                                                {{--</div>--}}
                                                 <div class="row">
                                                     <div class="col-6">
                                                         <h5 class="edit-profile-side-heading font-size14"> Monthly Income </h5>
@@ -776,16 +776,16 @@
                                                         </h5>
                                                     </div>
                                                 </div>
-                                                <div class="row">
-                                                    <div class="col-6">
-                                                        <h5 class="edit-profile-side-heading font-size14"> Future Plan </h5>
-                                                    </div>
-                                                    <div class="col-6">
-                                                        <h5 class="edit-profile-side-heading font-size14 text-theme">
-                                                            N/A
-                                                        </h5>
-                                                    </div>
-                                                </div>
+                                                {{--<div class="row">--}}
+                                                    {{--<div class="col-6">--}}
+                                                        {{--<h5 class="edit-profile-side-heading font-size14"> Future Plan </h5>--}}
+                                                    {{--</div>--}}
+                                                    {{--<div class="col-6">--}}
+                                                        {{--<h5 class="edit-profile-side-heading font-size14 text-theme">--}}
+                                                            {{--N/A--}}
+                                                        {{--</h5>--}}
+                                                    {{--</div>--}}
+                                                {{--</div>--}}
                                             </div>
                                         </div>
                                     @endif
@@ -826,16 +826,16 @@
                                                     </h5>
                                                 </div>
                                             </div>
-                                            <div class="row">
-                                                <div class="col-6">
-                                                    <h5 class="edit-profile-side-heading font-size14"> My Build </h5>
-                                                </div>
-                                                <div class="col-6">
-                                                    <h5 class="edit-profile-side-heading font-size14 text-theme">
-                                                        {{genericQuery($customer->customerPersonalInfo->MyBuilds,'MyBuild')}}
-                                                    </h5>
-                                                </div>
-                                            </div>
+                                            {{--<div class="row">--}}
+                                                {{--<div class="col-6">--}}
+                                                    {{--<h5 class="edit-profile-side-heading font-size14"> My Build </h5>--}}
+                                                {{--</div>--}}
+                                                {{--<div class="col-6">--}}
+                                                    {{--<h5 class="edit-profile-side-heading font-size14 text-theme">--}}
+                                                        {{--{{genericQuery($customer->customerPersonalInfo->MyBuilds,'MyBuild')}}--}}
+                                                    {{--</h5>--}}
+                                                {{--</div>--}}
+                                            {{--</div>--}}
                                             <div class="row">
                                                 <div class="col-6">
                                                     <h5 class="edit-profile-side-heading font-size14"> Hair Color </h5>
@@ -900,16 +900,16 @@
                                                     </h5>
                                                 </div>
                                             </div>
-                                            <div class="row">
-                                                <div class="col-6">
-                                                    <h5 class="edit-profile-side-heading font-size14"> Do You Prefer Hijaab </h5>
-                                                </div>
-                                                <div class="col-6">
-                                                    <h5 class="edit-profile-side-heading font-size14 text-theme">
-                                                        {{genericQuery($customer->customerReligionInfo->DoYouPreferHijabs,'DoYouPreferHijab')}}
-                                                    </h5>
-                                                </div>
-                                            </div>
+                                            {{--<div class="row">--}}
+                                                {{--<div class="col-6">--}}
+                                                    {{--<h5 class="edit-profile-side-heading font-size14"> Do You Prefer Hijaab </h5>--}}
+                                                {{--</div>--}}
+                                                {{--<div class="col-6">--}}
+                                                    {{--<h5 class="edit-profile-side-heading font-size14 text-theme">--}}
+                                                        {{--{{genericQuery($customer->customerReligionInfo->DoYouPreferHijabs,'DoYouPreferHijab')}}--}}
+                                                    {{--</h5>--}}
+                                                {{--</div>--}}
+                                            {{--</div>--}}
                                             <div class="row">
                                                 <div class="col-6">
                                                     <h5 class="edit-profile-side-heading font-size14"> Do You Prefer Beard </h5>
@@ -940,16 +940,16 @@
                                                     </h5>
                                                 </div>
                                             </div>
-                                            <div class="row">
-                                                <div class="col-6">
-                                                    <h5 class="edit-profile-side-heading font-size14"> Do You Perform Salaah </h5>
-                                                </div>
-                                                <div class="col-6">
-                                                    <h5 class="edit-profile-side-heading font-size14 text-theme">
-                                                        {{genericQuery($customer->customerReligionInfo->DoYouPerformSalaah,'DoYouPerformSalaah')}}
-                                                    </h5>
-                                                </div>
-                                            </div>
+                                            {{--<div class="row">--}}
+                                                {{--<div class="col-6">--}}
+                                                    {{--<h5 class="edit-profile-side-heading font-size14"> Do You Perform Salaah </h5>--}}
+                                                {{--</div>--}}
+                                                {{--<div class="col-6">--}}
+                                                    {{--<h5 class="edit-profile-side-heading font-size14 text-theme">--}}
+                                                        {{--{{genericQuery($customer->customerReligionInfo->DoYouPerformSalaah,'DoYouPerformSalaah')}}--}}
+                                                    {{--</h5>--}}
+                                                {{--</div>--}}
+                                            {{--</div>--}}
                                         </div>
                                     </div>
                                 @endif
@@ -1119,18 +1119,18 @@
                                                     </h5>
                                                 </div>
                                             </div>
-                                            <div class="row">
-                                                <div class="col-6">
-                                                    <h5 class="edit-profile-side-heading font-size14">
-                                                        Willing To Relocate
-                                                    </h5>
-                                                </div>
-                                                <div class="col-6">
-                                                    <h5 class="edit-profile-side-heading font-size14 text-theme">
-                                                        {{(isset($customerSearch->WillingToRelocate)) ? genericQuery($customerSearch->WillingToRelocate,'WillingToRelocate') : 'N/A'}}
-                                                    </h5>
-                                                </div>
-                                            </div>
+                                            {{--<div class="row">--}}
+                                                {{--<div class="col-6">--}}
+                                                    {{--<h5 class="edit-profile-side-heading font-size14">--}}
+                                                        {{--Willing To Relocate--}}
+                                                    {{--</h5>--}}
+                                                {{--</div>--}}
+                                                {{--<div class="col-6">--}}
+                                                    {{--<h5 class="edit-profile-side-heading font-size14 text-theme">--}}
+                                                        {{--{{(isset($customerSearch->WillingToRelocate)) ? genericQuery($customerSearch->WillingToRelocate,'WillingToRelocate') : 'N/A'}}--}}
+                                                    {{--</h5>--}}
+                                                {{--</div>--}}
+                                            {{--</div>--}}
                                             <div class="row">
                                                 <div class="col-6">
                                                     <h5 class="edit-profile-side-heading font-size14">
@@ -1179,18 +1179,18 @@
                                                     </h5>
                                                 </div>
                                             </div>
-                                            <div class="row">
-                                                <div class="col-6">
-                                                    <h5 class="edit-profile-side-heading font-size14">
-                                                        Builds
-                                                    </h5>
-                                                </div>
-                                                <div class="col-6">
-                                                    <h5 class="edit-profile-side-heading font-size14 text-theme">
-                                                        {{(isset($customerSearch->MyBuilds)) ? genericQuery($customerSearch->MyBuilds,'MyBuild') : 'N/A'}}
-                                                    </h5>
-                                                </div>
-                                            </div>
+                                            {{--<div class="row">--}}
+                                                {{--<div class="col-6">--}}
+                                                    {{--<h5 class="edit-profile-side-heading font-size14">--}}
+                                                        {{--Builds--}}
+                                                    {{--</h5>--}}
+                                                {{--</div>--}}
+                                                {{--<div class="col-6">--}}
+                                                    {{--<h5 class="edit-profile-side-heading font-size14 text-theme">--}}
+                                                        {{--{{(isset($customerSearch->MyBuilds)) ? genericQuery($customerSearch->MyBuilds,'MyBuild') : 'N/A'}}--}}
+                                                    {{--</h5>--}}
+                                                {{--</div>--}}
+                                            {{--</div>--}}
                                             <div class="row">
                                                 <div class="col-6">
                                                     <h5 class="edit-profile-side-heading font-size14">

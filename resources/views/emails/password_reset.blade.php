@@ -62,7 +62,7 @@
                         <table style="width: 650px; margin: 0 auto; margin-bottom: 30px">
                             <tbody>
                             <tr>
-                                <td><img src="{{asset('assets/images/cuba-logo1.png')}}" alt=""></td>
+                                <td><img src="{{asset('assets/img/Shaadi-Organization-Pakistan-Rishta-Logo.png')}}" alt="DoosriBiwi.com"></td>
                             </tr>
                             </tbody>
                         </table>
