@@ -67,20 +67,20 @@
 									<a type="button" onclick="authAct()" class="btn--login btn btn-outline-primary font-weight-600 w-100 heading-5">Sign In</a>
 								</div>
 								<br>
-								<div class="divider d-flex align-items-center my-4">
-									<p class="text-center fw-bold mx-3 mb-0 text-muted">OR</p>
-								</div>
+								{{--<div class="divider d-flex align-items-center my-4">--}}
+									{{--<p class="text-center fw-bold mx-3 mb-0 text-muted">OR</p>--}}
+								{{--</div>--}}
 
-								<div class="col-12">
-									<div class="row center my-auto">
-										<div class="col-12 col-lg mx-auto my-auto">
-											<a type="button" href="{{route('social.login',['google'])}}" class="btn btn-outline-primary font-weight-600 mb-2 w-100 heading-5"> Sign In With Google</a>
-										</div>
-										<div class="col-12 col-lg mx-auto my-auto">
-											<a type="button" href="{{route('social.login',['facebook'])}}" class="btn btn-outline-primary font-weight-600 mb-2 w-100 heading-5"> Sign In With Facebook</a>
-										</div>
-									</div>
-								</div>
+								{{--<div class="col-12">--}}
+									{{--<div class="row center my-auto">--}}
+										{{--<div class="col-12 col-lg mx-auto my-auto">--}}
+											{{--<a type="button" href="{{route('social.login',['google'])}}" class="btn btn-outline-primary font-weight-600 mb-2 w-100 heading-5"> Sign In With Google</a>--}}
+										{{--</div>--}}
+										{{--<div class="col-12 col-lg mx-auto my-auto">--}}
+											{{--<a type="button" href="{{route('social.login',['facebook'])}}" class="btn btn-outline-primary font-weight-600 mb-2 w-100 heading-5"> Sign In With Facebook</a>--}}
+										{{--</div>--}}
+									{{--</div>--}}
+								{{--</div>--}}
 
 								<div class="col-12 text-center mt-2">
 									<p class="m-1">Don't have an account? <a class="link font-weight-600" href="{{route('view.register')}}">Register</a></p>

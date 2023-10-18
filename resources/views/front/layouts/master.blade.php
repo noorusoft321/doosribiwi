@@ -184,6 +184,9 @@
 		.alert.alert-success button {
 			float: right;
 		}
+		.toggle-main {
+			display: none !important;
+		}
 		@media only screen and (max-width: 600px) {
 			.mobileShow {
 				display: block !important;
@@ -203,6 +206,9 @@
 			iframe {
 				margin-bottom: 10px;
 				height: 200px;
+			}
+			.toggle-main {
+				display: flex !important;
 			}
 		}
 	</style>

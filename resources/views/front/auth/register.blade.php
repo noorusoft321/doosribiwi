@@ -25,7 +25,7 @@
 			background: #142247;
 		}
 		.section-card-heading {
-			font-size: 30px;
+			font-size: 1.4rem;
 			color: #D5AD6D;
 			background: -webkit-linear-gradient(transparent, transparent), -webkit-linear-gradient(top, rgba(213,173,109,1) 0%, rgba(213,173,109,1) 26%, rgba(226,186,120,1) 35%, rgb(202 170 117) 45%, rgb(179 143 86) 61%, rgba(213,173,109,1) 100%);
 			background: -o-linear-gradient(transparent, transparent);
@@ -239,11 +239,15 @@
                 let gender = $('input[name="gender"]:checked').val();
 				if (gender) {
                     if (gender=="1") {
+                        $('select[name="MaritalStatusID"] option[value="16"]').removeAttr('disabled');
+                        $('select[name="MaritalStatusID"] option[value="7"]').removeAttr('disabled');
                         $('select[name="MaritalStatusID"] option[value="1"]').attr('disabled', true);
                         $('select[name="MaritalStatusID"] option[value="17"]').attr('disabled', true);
                     } else {
                         $('select[name="MaritalStatusID"] option[value="1"]').removeAttr('disabled');
                         $('select[name="MaritalStatusID"] option[value="17"]').removeAttr('disabled');
+                        $('select[name="MaritalStatusID"] option[value="16"]').attr('disabled', true);
+                        $('select[name="MaritalStatusID"] option[value="7"]').attr('disabled', true);
                     }
                     $('.registerOtherPart').show('slow');
 				}

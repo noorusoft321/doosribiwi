@@ -1,35 +1,34 @@
 <footer class="footer bg-red p-tb-50 mb-0">
 	<div class="container">
-		<div class="row m-tb-40">
-			<div class="col-md-6">
-				<h2 class="white-color font-weight-600">
-					Marriages are Made In Heaven But are Celebrated On
-					Earth.
-				</h2>
-				<!-- /.newsletter-heading -->
-			</div>
-			<!-- /.col -->
-			<div class="col-md-6">
-				<!-- /.newsletter-form -->
-			</div>
-			<!-- /.col -->
-		</div>
+		{{--<div class="row m-tb-40">--}}
+			{{--<div class="col-md-6">--}}
+				{{--<h3 class="white-color font-weight-600">--}}
+					{{--Where Love Finds Its Second Chapter.--}}
+				{{--</h3>--}}
+				{{--<!-- /.newsletter-heading -->--}}
+			{{--</div>--}}
+			{{--<!-- /.col -->--}}
+			{{--<div class="col-md-6">--}}
+				{{--<!-- /.newsletter-form -->--}}
+			{{--</div>--}}
+			{{--<!-- /.col -->--}}
+		{{--</div>--}}
 		<!-- /.row -->
 		<div class="row">
 			<div class="col-md-4">
+				<h3 class="white-color font-weight-600">
+					Find Someone Better!
+				</h3>
 				<div class="footer-brand">
 					<img src="{{asset('assets/img/Shaadi-Organization-Pakistan-Rishta-Logo.png')}}" alt="logo" width="100%">
 				</div>
 				<p class="white-color">
-					In truth, this precious bond between two individuals is what brings
-					the peace and happiness in human kind. The ultimate happiness of finding and living with the
-					right
-					person is almost divine.
+					We are the first and the only marriage bureau/matrimonial portal in the history of Pakistan to provide matrimony services for the Doosri Biwi, i.e., 2nd Wife or 2nd Marriage in the presence of the 1st wife.
 				</p>
 
 				<ul class="social-btn-group mt-34">
 					<li class="social-item">
-						<a target="_blank" class="social-link" href="https://www.facebook.com/Doosri.biwi.com">
+						<a target="_blank" class="social-link" href="https://www.facebook.com/Shaadi.org.pk">
 							<i class="fab fa-facebook" aria-hidden="true"></i>
 						</a>
 					</li>

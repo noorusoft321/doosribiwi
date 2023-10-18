@@ -50,9 +50,9 @@ main{
     --bs-bg-opacity: 1;
     background-color: #040F2E!important;
 }
-.container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
-    max-width: 1520px;
-}
+/*.container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {*/
+    /*max-width: 1520px;*/
+/*}*/
 .btn-outline-primary {
     --bs-btn-color: #040F2E;
     --bs-btn-border-color: #040F2E;

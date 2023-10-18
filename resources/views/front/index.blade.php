@@ -155,10 +155,12 @@
             color: white;
         }
         .profile-details-boxes h3{
-            font-size: 1.2rem;
+            font-size: 1rem;
             font-weight: 600;
-            padding-right: 30px;
-            color: #040F2E;
+            /*padding-right: 30px;*/
+            color: #ffffff !important;
+            text-align: center;
+            margin-top: 10px;
         }
         .age-circle{
             width: 50px;
@@ -176,6 +178,7 @@
         }
         .profile-boxes-icons i {
             color: #ccc !important;
+            font-size: 1rem;
         }
         .badge-corner2 {
             position: absolute;
@@ -412,9 +415,9 @@
             border-left: 4px solid goldenrod;
             border-right: 4px solid goldenrod;
         }
-        .banner-text p {
+        .banner-title, .banner-text p {
             font-style: italic;
-            font-size: 2.5rem;
+            font-size: 2rem;
             color: #D5AD6D;
             background: -webkit-linear-gradient(transparent, transparent), -webkit-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(213,173,109,1) 26%, rgba(255,255,255,1) 35%, rgb(202 170 117) 45%, rgb(179 143 86) 61%, rgba(255,255,255,1) 100%);
             background: -o-linear-gradient(transparent, transparent);
@@ -424,6 +427,9 @@
             text-align: center;
             margin: 10px 0px 15px 0px;
             font-family: auto;
+        }
+        .banner-title{
+            font-size: 2.2rem;
         }
         .bannerHeight {
             height: 100vh;
@@ -466,6 +472,13 @@
             transition: background .3s,border .3s,border-radius .3s,box-shadow .3s;
             padding: 30px;
             font-size: 1.3rem;
+        }
+        .fs-card-text {
+            padding-left: 0;
+            text-align:start;
+            color: #ffffff;
+            font-weight: 500;
+            font-size: .7rem;
         }
         @media only screen and (max-width: 600px) {
             .profile-boxes {
@@ -534,8 +547,8 @@
                 margin-top: 10px;
                 margin-bottom: 10px;
             }
-            .banner-text p {
-                font-size: 1.5rem;
+            .banner-title, .banner-text p {
+                font-size: 1.4rem;
                 color: #D5AD6D;
                 background: -webkit-linear-gradient(transparent, transparent), -webkit-linear-gradient(top, rgba(213,173,109,1) 0%, rgba(213,173,109,1) 26%, rgba(255,255,255,1) 35%, rgb(202 170 117) 45%, rgb(179 143 86) 61%, rgba(213,173,109,1) 100%);
                 background: -o-linear-gradient(transparent, transparent);
@@ -620,6 +633,7 @@
         <div class="banner-image">
             <div class="d-flex align-items-center bannerHeight">
                 <div class="banner-text">
+                    <h2 class="banner-title">Find Someone Better!</h2>
                     <img class="img-align-center heading-border" src="{{asset('assets/img/shaadi-organization-pakistan-heading-border.png')}}">
                     <div class="bannerSlider">
                         <div>
@@ -658,9 +672,9 @@
         <!-- About Section Start-->
         <section class="">
             <div class="mt-xl-43"></div>
-            <div class="container-xxl">
+            <div class="container">
                 <div class="row">
-                    <div class="content-column col-md-5 mx-auto my-auto">
+                    <div class="content-column col-md-7 mx-auto my-auto">
                         <div class="inner-column">
                             <div class="sec-title">
                                 <h2>Welcome to DoosriBiwi.com which understands & supports your choices.</h2>
@@ -681,9 +695,9 @@
                     </div>
 
                     <!-- Image Column -->
-                    <div class="image-column col-md-7 order-2">
+                    <div class="image-column col-md-5 mx-auto my-auto">
                         <div class="about-image">
-                            <img class="mobileHide" src="{{asset('specialGuests/rishtay-pakistan-mrs-ali-dr-arif-alvi.png')}}" alt="The Most Trusted Marriage Bureau in Pakistan" width="100%">
+                            <img class="mobileHide" src="{{asset('specialGuests/rishtay-pakistan-mrs-ali-dr-arif-alvi.jpg')}}" alt="The Most Trusted Marriage Bureau in Pakistan" width="100%">
                             <img class="mobileShow" src="{{asset('specialGuests/rishtay-pakistan-mrs-ali-dr-arif-alvi.jpg')}}" alt="The Most Trusted Marriage Bureau in Pakistan" width="100%">
                         </div>
                     </div>
@@ -877,12 +891,13 @@
                 {{--<p class="align-center text-white font-weight-600">Sunday, 1 October, 2023 | 6 pm to 11 pm</p>--}}
                 <div class="row">
                     <div class="col-md-6 mx-auto my-auto">
-                        <h2 class="title-w">Rishta Milna Hua Aasan</h2>
+                        <h2 class="title-w">Find Someone Better!</h2>
                         <div class="detail">
-                            <p class="text-white">We do not hide behind WhatsApp. We are real matchmakers. We have proper offices, where we sit 7 days a week and 12 hours a day to meet people and help in marriage proposals.</p>
+                            <p class="text-white">By the grace of Al Mighty Allah, Doosri Biwi successfully hosted an event "Nikah Ka Chuwara" where individuals can explore and embrace polygamous relationships within the framework of Islamic principles.</p>
+                            <br>
                             <ul class="number-icon">
                                 <li>
-                                    <a href="https://api.whatsapp.com/send?phone=923481117861&amp;text=Hi%20Doosri Biwi%2C%20I%20need%20more%20information."><i class="fa fa-phone"></i> Contact Us </a>
+                                    <a href="https://api.whatsapp.com/send?phone=923452444262&amp;text=Hi%20Doosri Biwi%2C%20I%20need%20more%20information."><i class="fa fa-phone"></i> Contact Us </a>
                                 </li>
                             </ul>
                         </div>
@@ -966,33 +981,34 @@
                 <h2 class="align-center font-weight-600"> Events Highlights </h2>
                 <img class="img-align-center heading-border"
                      src="{{asset('assets/img/shaadi-organization-pakistan-heading-border.png')}}">
-                <p class="align-center text-theme font-weight-500"> By the grace of Al Mighty Allah, Doosri Biwi successfully
-                    hosted 5th grand matchmaking event attended by 200+ families and 500+ candidates. Please visit the
-                    link below to see event pictures. </p>
+                <p class="align-center text-theme font-weight-500">
+                    By the grace of Al Mighty Allah, Doosri Biwi successfully hosted an event where individuals can explore and embrace polygamous relationships within the framework of Islamic principles.
+                </p>
                 <div class="row gallery-light">
                     <div class="col-6 col-lg mx-auto my-auto">
-                        <img src="{{asset('home_page/shaadi-organization-pakistan-grand-event(1).jpg')}}"
+                        <img src="{{asset('ourEvents/rishtay-pakistani-shaadi-ka-laddu-02.jpg')}}"
                              alt="Event Image 1"/>
                     </div>
                     <div class="col-6 col-lg mx-auto my-auto">
-                        <img src="{{asset('home_page/shaadi-organization-pakistan-grand-event(2).jpg')}}"
+                        <img src="{{asset('ourEvents/rishtay-pakistani-shaadi-ka-laddu-3-1.jpg')}}"
                              alt="Event Image 2"/>
                     </div>
                     <div class="col-6 col-lg mx-auto my-auto">
-                        <img src="{{asset('home_page/shaadi-organization-pakistan-grand-event(3).jpg')}}"
+                        <img src="{{asset('ourEvents/rishtay-pakistani-shaadi-ka-laddu-05.jpg')}}"
                              alt="Event Image 3"/>
                     </div>
                     <div class="col-6 col-lg mx-auto my-auto">
-                        <img src="{{asset('home_page/shaadi-organization-pakistan-grand-event(4).jpg')}}"
+                        <img src="{{asset('ourEvents/rishtay-pakistani-shaadi-ka-laddu-08.jpg')}}"
                              alt="Event Image 4"/>
                     </div>
                     <div class="col-6 col-lg mx-auto my-auto">
-                        <img src="{{asset('home_page/shaadi-organization-pakistan-grand-event(5).jpg')}}"
+                        <img src="{{asset('ourEvents/Shaadi-Laddu-06.png')}}"
                              alt="Event Image 5"/>
                     </div>
                 </div>
                 <div class="align-center p-tb-30">
-                    <a href="{{route('our.events')}}" class="button-theme-dark"> View More</a>
+                    {{--<a href="{{route('our.events')}}" class="button-theme-dark"> View More</a>--}}
+                    <a href="{{route('view.register')}}" class="button-theme-dark"> Let’s begin </a>
                 </div>
             </div>
         </div>
@@ -1005,7 +1021,7 @@
                 <img class="img-align-center heading-border"
                      src="{{asset('assets/img/shaadi-organization-pakistan-heading-border.png')}}">
                 <p class="white-color align-center">
-                    DoosriBiwi.com® is a licensed, registered and recognized marriage bureau from Government of Pakistan. Our name, logo, events' name, taglines are all registered under the Trademark and Copyright Acts of Government of Pakistan. We are also registered and associated with a number of local, provincial and federal departments of Government of Pakistan, media personalities and media channels. You can see certificates, photos and videos on our website and social media pages.
+                    <strong class="white-color">DoosriBiwi.com</strong> is a devision of <strong class="white-color">Shaadi Organization Pakistan</strong>. A well-known, registered and recognized marriage bureau since 2003 from the Government of Pakistan having valid license, trademark and copyright certificates from the Government of Pakistan.
                 </p>
                 <div class="row gallery">
                     @foreach($govermentRegisteredMarraigeBureau as $key => $val)
@@ -1026,8 +1042,8 @@
                      src="{{asset('assets/img/shaadi-organization-pakistan-heading-border.png')}}">
 
                 <div class="row text-center">
-                    <div class="col-md-2 mx-auto my-auto"></div>
-                    <div class="col-md-4 mx-auto my-auto card-container">
+                    <div class="col-md-1 mx-auto my-auto"></div>
+                    <div class="col-md-5 mx-auto my-auto card-container">
                         <div class="card card-flip container d-flex h-100">
                             <div class="front card-block row justify-content-center align-self-center">
                                 <img src="{{asset('assets/img/partners/Shaadi-Organization-Pakistan-Rishta-Logo.svg')}}" alt="DoosriBiwi.com" style="width: 70%;">
@@ -1036,13 +1052,13 @@
                             <div class="back card-block row justify-content-center align-self-center">
                                 <p>Shaadi Organization Pakistan is designed to bring you a number of choices in selecting a life partner.</p>
                                 <div class="align-center">
-                                    <a href="https://DoosriBiwi.com/" class="button-theme-dark"> View More </a>
+                                    <a target="_blank" href="http://www.shaadi.org.pk" class="button-theme-dark"> View More </a>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <div class="col-md-4 mx-auto my-auto card-container">
+                    <div class="col-md-5 mx-auto my-auto card-container">
                         <div class="card card-flip container d-flex h-100">
                             <div class="front card-block row justify-content-center align-self-center">
                                 <img src="{{asset('assets/img/partners/elite-matrimony-logo.svg')}}" alt="EliteMatrimony.Pk" style="width: 70%;">
@@ -1051,12 +1067,12 @@
                             <div class="back card-block row justify-content-center align-self-center">
                                 <p>Elite Matrimony Pakistan provides the most exclusive, personalized, and private matchmaking services to the upper class of Pakistan either living in the country or abroad.</p>
                                 <div class="align-center">
-                                    <a href="https://elitematrimony.pk/" class="button-theme-dark"> View More</a>
+                                    <a target="_blank" href="https://elitematrimony.pk" class="button-theme-dark"> View More</a>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-2 mx-auto my-auto"></div>
+                    <div class="col-md-1 mx-auto my-auto"></div>
 
                     {{--<div class="col-md-4 card-container">--}}
                         {{--<div class="card card-flip container d-flex h-100">--}}

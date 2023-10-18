@@ -57,7 +57,7 @@
 @section('content')
 
 <main>
-	<div class="container-xxl">
+	<div class="container">
 		<br>
 		<div class="row">
 			<div class="col-md-8 mx-auto">

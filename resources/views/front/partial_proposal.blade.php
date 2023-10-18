@@ -56,44 +56,44 @@
                 <img loading="lazy" src="{{$val->imageFullPath}}" alt="{{$val->full_name}}" >
             </div>
             <div class="profile-details-boxes">
-                <h3 class="text-theme">{{$val->full_name}}</h3>
+                <h3>{{$val->full_name}}</h3>
                 @if($val->age > 0 && $val->age != 'N/A')
                     <div class="row">
-                        <div class="col-5 mx-auto my-auto text-center p-1">
+                        <div class="col-4 mx-auto my-auto text-center p-1">
                             <span class="profile-boxes-icons">
                                 <i class="fa fa-child"></i>
                             </span>
                         </div>
-                        <div class="col-7 mx-auto my-auto p-1" style="padding-left: 0;text-align:start;color: #ffffff;font-weight: 500;font-size: 15px;">
+                        <div class="col-8 mx-auto my-auto p-1 fs-card-text">
                             {{$val->age}} Years
                         </div>
                     </div>
                 @endif
                 <div class="row">
-                    <div class="col-5 mx-auto my-auto text-center p-1">
+                    <div class="col-4 mx-auto my-auto text-center p-1">
                         <span class="profile-boxes-icons">
                             <i class="fa fa-briefcase"></i>
                         </span>
                     </div>
-                    <div class="col-7 mx-auto my-auto p-1" style="padding-left: 0;text-align:start;color: #ffffff;font-weight: 500;font-size: 15px;">
+                    <div class="col-8 mx-auto my-auto p-1 fs-card-text">
                         {{(!empty($val->getOccupationName)) ? $val->getOccupationName->name : 'Profession'}}
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-5 mx-auto my-auto text-center p-1">
+                    <div class="col-4 mx-auto my-auto text-center p-1">
                         <span class="profile-boxes-icons">
                             <i class="fa-sharp fa-solid fa-location-dot"></i>
                         </span>
                     </div>
-                    <div class="col-7 mx-auto my-auto p-1" style="padding-left: 0;text-align:start;color: #ffffff;font-weight: 500;font-size: 15px;">
+                    <div class="col-8 mx-auto my-auto p-1 fs-card-text">
                         {{$cityName.', '.$countryName}}
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-5 mx-auto my-auto text-center p-1">
+                    <div class="col-4 mx-auto my-auto text-center p-1">
                         <div class="image-boxes-icon"><a class="LoginToView" href="{{route('messenger',$val->name)}}"><i class="fa fa-phone"></i></a></div>
                     </div>
-                    <div class="col-7 mx-auto my-auto p-1" style="padding-left: 0;text-align:start;color: #ffffff;font-weight: 500;font-size: 15px;">
+                    <div class="col-8 mx-auto my-auto p-1 fs-card-text">
                         <button onclick="window.location.href = '{{route('search.by.slug',[$uniqueProfileSlug])}}'" class="custom-btn btn-view-profile" title="View Profile Detail">Profile Detail</button>
                     </div>
                 </div>

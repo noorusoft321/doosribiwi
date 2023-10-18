@@ -31,10 +31,10 @@
 							The site DoosriBiwi.com is not held responsible for any misuse or threat on the information shared by the members themselves. The site only provides a platform to bring together families and individuals for the purpose of marriage and not any obscene activity. Thus, the site cannot be held responsible in such regards.
 						</p>
 
-						<p>    <strong>Phone:</strong> 021 348 308 11</p>
-						<p>    <strong>Cell:</strong> 0346 21 41 786</p>
+						{{--<p>    <strong>Phone:</strong> 021 348 308 11</p>--}}
+						<p>    <strong>WhatsApp:</strong> +92-345-2444262</p>
 						<p>    <strong>Email:</strong> info@DoosriBiwi.com</p>
-						<p>    <strong>Skype:</strong> DoosriBiwi.com</p>
+						{{--<p>    <strong>Skype:</strong> DoosriBiwi.com</p>--}}
 					</div>
 				</div>
 				<!-- /.card-icon-component -->

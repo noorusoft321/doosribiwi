@@ -56,7 +56,7 @@
 @section('content')
 
 <main>
-	<div class="container-xxl">
+	<div class="container">
 		<br>
 
 		<div class="row">

@@ -129,7 +129,7 @@ Route::get('/brides-guide', [GeneralController::class, 'bridesGuide'])->name('br
 Route::get('/groom-guide', [GeneralController::class, 'groomGuide'])->name('groom.guide');
 Route::get('/our-affiliates', [GeneralController::class, 'ourAffiliates'])->name('our.affiliates');
 //Route::get('/blog', [GeneralController::class, 'blog'])->name('blog');
-Route::get('/free-rishta-services', [GeneralController::class, 'freeRishtaServices'])->name('free.rishta.services');
+Route::get('/rishta-services', [GeneralController::class, 'freeRishtaServices'])->name('free.rishta.services');
 Route::get('/elite-matrimonial-service', [GeneralController::class, 'eliteMatrimonialService'])->name('elite.matrimonial.service');
 Route::get('/my-marriage-consultant', [GeneralController::class, 'myMarriageConsultant'])->name('my.marriage.consultant');
 Route::get('/authentic-profile', [GeneralController::class, 'authenticProfile'])->name('authentic.profile');
