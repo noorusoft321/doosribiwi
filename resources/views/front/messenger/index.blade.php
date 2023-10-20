@@ -76,6 +76,9 @@
         .chatter-signle.active span {
             color: #fff!important;
         }
+        .swal2-modal .swal2-title {
+            font-size: 18px;
+        }
     </style>
 @endpush
 

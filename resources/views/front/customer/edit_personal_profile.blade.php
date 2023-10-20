@@ -21,9 +21,9 @@
                         <h5 class="card-header">Edit Personal Info - Office Use Only</h5>
                         <div class="card-body">
                             <div class="row">
-                                <div class="col-lg-3 col-md-3 col-sm-6 py-xl-10">
-                                    <label class="fieldlabels">UserName</label>
-                                </div>
+                                {{--<div class="col-lg-3 col-md-3 col-sm-6 py-xl-10">--}}
+                                    {{--<label class="fieldlabels">UserName</label>--}}
+                                {{--</div>--}}
                                 <div class="col-lg-9 col-md-9 col-sm-6 py-xl-10">
                                     <label class="fieldlabels">{{$customer->name}}</label>
                                 </div>

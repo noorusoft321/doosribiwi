@@ -218,9 +218,9 @@
             box-shadow: 0 calc(-1*var(--f)) 0 inset #0005;
         }
         .badge-corner3 span {
-            color: #fff;
+            color: black;
             font-size: 12px;
-            font-weight: 500;
+            font-weight: 600;
         }
         .contact-number-team {
             position: absolute;

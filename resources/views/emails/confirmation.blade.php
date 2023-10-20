@@ -66,10 +66,10 @@
                 <tr>
                     <td style="padding: 30px">
                         <h4 style="font-weight: 600">Confirm Account - DoosriBiwi.com</h4>
-                        <p><strong>{{$customer->full_name}}</strong> your account create successfully.</p>
-                        <p style="text-align: center"><a href="{{route('confirm.customer.account',[$code])}}" style="padding: 10px; background-color: #040F2E; color: #fff; display: inline-block; border-radius: 4px">Confirm Account</a></p>
-                        <p>Click confirm to active you account for access it thanks.</p>
-                        <p>Good luck! Hope it works.</p>
+                        <p><strong>{{$customer->full_name}}</strong> your account has been created successfully.</p>
+                        <p>To ensure safety & privacy on DoosriBiwi.com, we mandate email ID verification for all users.</p>
+                        <p>Please click verify to activate and access your account. Thank you!</p>
+                        <p style="text-align: center"><a href="{{route('confirm.customer.account',[$code])}}" style="padding: 10px; background-color: #040F2E; color: #fff; display: inline-block; border-radius: 4px">Verify Account</a></p>
                     </td>
                 </tr>
                 </tbody>

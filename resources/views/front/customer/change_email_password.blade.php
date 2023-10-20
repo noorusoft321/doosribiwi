@@ -73,32 +73,32 @@
 					</div>
 
 					{{--Change Username--}}
-					<div class="card">
-						<h5 class="card-header">Change Username</h5>
-						<div class="card-body">
-							<form id="nameUpdateForm">
-								<div class="col-6">
-									<div class="mb-2">
-										<label class="fieldlabels" for="name">* New Username</label>
-										<input onchange="title_to_slug(this)" type="text" name="name" id="name" class="form-control rounded-pill">
-									</div>
+					{{--<div class="card">--}}
+						{{--<h5 class="card-header">Change Username</h5>--}}
+						{{--<div class="card-body">--}}
+							{{--<form id="nameUpdateForm">--}}
+								{{--<div class="col-6">--}}
+									{{--<div class="mb-2">--}}
+										{{--<label class="fieldlabels" for="name">* New Username</label>--}}
+										{{--<input onchange="title_to_slug(this)" type="text" name="name" id="name" class="form-control rounded-pill">--}}
+									{{--</div>--}}
 
-									<div class="mb-2">
-										<label class="fieldlabels" for="confirm_name">* Confirm Username</label>
-										<input onchange="title_to_slug(this)" type="text" name="confirm_name" id="confirm_name" class="form-control rounded-pill">
-									</div>
+									{{--<div class="mb-2">--}}
+										{{--<label class="fieldlabels" for="confirm_name">* Confirm Username</label>--}}
+										{{--<input onchange="title_to_slug(this)" type="text" name="confirm_name" id="confirm_name" class="form-control rounded-pill">--}}
+									{{--</div>--}}
 
-									<div class="mb-2">
-										<label class="fieldlabels" for="current_password">* Current Password</label>
-										<input type="text" name="current_password" id="current_password" class="form-control rounded-pill">
-									</div>
-								</div>
-								<div class="col-12 text-end">
-									<button onclick="changeName(this)" type="button" class="btn btn-outline-primary font-weight-600">Update Username</button>
-								</div>
-							</form>
-						</div>
-					</div>
+									{{--<div class="mb-2">--}}
+										{{--<label class="fieldlabels" for="current_password">* Current Password</label>--}}
+										{{--<input type="text" name="current_password" id="current_password" class="form-control rounded-pill">--}}
+									{{--</div>--}}
+								{{--</div>--}}
+								{{--<div class="col-12 text-end">--}}
+									{{--<button onclick="changeName(this)" type="button" class="btn btn-outline-primary font-weight-600">Update Username</button>--}}
+								{{--</div>--}}
+							{{--</form>--}}
+						{{--</div>--}}
+					{{--</div>--}}
 				</div>		
 			</div>
 		</div>

@@ -117,7 +117,7 @@ class MessengerController extends Controller {
 
     public function sendMessage(YourRequest $request, $receiverId) {
         $sender_id = Auth::guard('customer')->id();
-        $limitResponse = checkMessageLimit($sender_id);
+        $limitResponse = checkMessageLimit($sender_id,false,$receiverId);
         if (!empty($limitResponse)) {
             $request = $request->all();
             $request['receiver_id'] = $receiverId;
@@ -139,13 +139,14 @@ class MessengerController extends Controller {
             if (!empty($messageSuccess)) {
                 $receiverRow = Customer::findOrFail($sender_id);
                 $request['receiver_name'] = $receiverRow->first_name.' '.$receiverRow->last_name;
-                fireDoctorMessage($request);
+//                fireDoctorMessage($request);
                 return response()->json(['status'=>'success'],200);
             } else {
                 return response()->json(['status'=>'warning','msg' => 'Message has not been sent.'],200);
             }
         } else {
-            return response()->json(['status'=>'limit','msg' => "Your monthly message limit ended. Please contact support to increase your limit."],200);
+//            Your monthly message limit ended. Please contact support to increase your limit.
+            return response()->json(['status'=>'limit','msg' => 'Unlock Premium Features, Upgrade Now!'],200);
         }
     }
 

@@ -103,6 +103,23 @@
 														<div class="col-md-6">
 															<div class="row">
 																<div class="col-md-3 my-auto">
+																	<label class="fieldlabels">*Do You Prefer Hijaab?</label>
+																</div>
+																<div class="col-md-9 my-auto">
+																	<div class="form-group py-xl-10">
+																		<select class="form-control rounded-pill" name="DoYouPreferHijabs">
+																			<option value="">Select</option>
+																			@foreach($preferHijabs as $val)
+																				<option value="{{$val->id}}" {{$customerReligionInfo->DoYouPreferHijabs==$val->id ? 'selected' : ''}}>{{$val->title}}</option>
+																			@endforeach
+																		</select>
+																	</div>
+																</div>
+															</div>
+														</div>
+														<div class="col-md-6">
+															<div class="row">
+																<div class="col-md-3 my-auto">
 																	<label class="fieldlabels">*Are You A Revert / Converted Religion?</label>
 																</div>
 																<div class="col-md-9 my-auto">
@@ -181,6 +198,23 @@
 																		<select class="form-control rounded-pill" name="DoYouHaveBeards">
 																			<option value="">Select</option>
 																			@foreach($beards as $val)
+																				<option value="{{$val->id}}">{{$val->title}}</option>
+																			@endforeach
+																		</select>
+																	</div>
+																</div>
+															</div>
+														</div>
+														<div class="col-md-6">
+															<div class="row">
+																<div class="col-md-3 my-auto">
+																	<label class="fieldlabels">*Do You Prefer Hijaab?</label>
+																</div>
+																<div class="col-md-9 my-auto">
+																	<div class="form-group py-xl-10">
+																		<select class="form-control rounded-pill" name="DoYouPreferHijabs">
+																			<option value="">Select</option>
+																			@foreach($preferHijabs as $val)
 																				<option value="{{$val->id}}">{{$val->title}}</option>
 																			@endforeach
 																		</select>

@@ -156,23 +156,23 @@
                 </div>
             </div>
         </div>
-        {{--<div class="col-md-6">--}}
-            {{--<div class="form-group m-tb-20">--}}
-                {{--<div class="row">--}}
-                    {{--<div class="col-md-4">--}}
-                        {{--<label class="fieldlabels">*Do You Prefer Hijab</label>--}}
-                    {{--</div>--}}
-                    {{--<div class="col-md-8">--}}
-                        {{--<select name="DoYouPreferHijabs" class="form-select select-icon icon-mark form-select select-icon icon-mark form-control rounded-pill" >--}}
-                            {{--<option value="">Select</option>--}}
-                            {{--@foreach($preferHijabs as $val)--}}
-                                {{--<option value="{{$val->id}}">{{$val->title}}</option>--}}
-                            {{--@endforeach--}}
-                        {{--</select>--}}
-                    {{--</div>--}}
-                {{--</div>--}}
-            {{--</div>--}}
-        {{--</div>--}}
+        <div class="col-md-6">
+            <div class="form-group m-tb-20">
+                <div class="row">
+                    <div class="col-md-4">
+                        <label class="fieldlabels">*Do You Prefer Hijab</label>
+                    </div>
+                    <div class="col-md-8">
+                        <select name="DoYouPreferHijabs" class="form-select select-icon icon-mark form-select select-icon icon-mark form-control rounded-pill" >
+                            <option value="">Select</option>
+                            @foreach($preferHijabs as $val)
+                                <option value="{{$val->id}}">{{$val->title}}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="col-md-6">
             <div class="form-group m-tb-20">
                 <div class="row">

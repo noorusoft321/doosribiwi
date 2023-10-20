@@ -128,8 +128,8 @@
 		}
 		.radio-inline__label {
 			display: inline-block;
-			padding: 0.5rem 1rem;
-			margin-right: 18px;
+			padding: 0.4rem 0.6rem;
+			margin-right: 5px;
 			border-radius: 3px;
 			transition: all .2s;
 		}
@@ -142,8 +142,8 @@
 			visibility: hidden;
 		}
 		.badge-corner-yellow span {
-			top: -50px;
-			left: 12px;
+			top: -52px;
+			left: 16px;
 		}
 		.progress {
 			height: 15px;
@@ -178,17 +178,19 @@
 											</a>
 										</div>
 										<div id="quicksearch" class="card-body collapse show" data-parent="#accordion" >
-											<fieldset>
-												<input id="email-1" class="radio-inline__input radioBtn" type="radio" name="gender" value="1" {{($gender=='1') ? 'checked' : ''}}>
-												<label class="radio-inline__label" for="email-1" style="cursor:pointer;">
-													Male
-												</label>
-												<input id="email-2" class="radio-inline__input radioBtn" type="radio" name="gender" value="2" {{($gender=='2') ? 'checked' : ''}}>
-												<label class="radio-inline__label" for="email-2" style="cursor:pointer;">
-													Female
-												</label>
-											</fieldset>
-											<br>
+											@if (!auth()->guard('customer')->check())
+												<fieldset>
+													<input id="email-1" class="radio-inline__input radioBtn" type="radio" name="gender" value="1" {{($gender=='1') ? 'checked' : ''}}>
+													<label class="radio-inline__label" for="email-1" style="cursor:pointer;">
+														Male
+													</label>
+													<input id="email-2" class="radio-inline__input radioBtn" type="radio" name="gender" value="2" {{($gender=='2') ? 'checked' : ''}}>
+													<label class="radio-inline__label" for="email-2" style="cursor:pointer;">
+														Female
+													</label>
+												</fieldset>
+												<br>
+											@endif
 											<input id="featuredProfile" class="checkbox-new" type="checkbox" name="featuredProfile" value="1" {{(!empty($featured)) ? 'checked' : ''}}>
 											<label class="mb-2" for="featuredProfile">
 												Only Featured Profiles

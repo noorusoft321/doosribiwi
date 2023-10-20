@@ -568,7 +568,7 @@ class CustomerAuthController extends Controller
 
         /*Religion*/
         $religions = Religion::where('deleted',0)->orderBy('order_at','asc')->get();
-//        $preferHijabs = DoYouPreferHijab::where('deleted',0)->orderBy('order_at','asc')->get();
+        $preferHijabs = DoYouPreferHijab::where('deleted',0)->orderBy('order_at','asc')->get();
         $reverts = AreYouRevert::where('deleted',0)->orderBy('order_at','asc')->get();
 //        $performSalaahs = DoYouPerformSalaah::where('deleted',0)->orderBy('order_at','asc')->get();
         if (!empty($customer->customerReligionInfo)) {
@@ -628,7 +628,7 @@ class CustomerAuthController extends Controller
 //            'jobPosts',
 //            'futurePlans',
             'religions',
-//            'preferHijabs',
+            'preferHijabs',
             'reverts',
 //            'performSalaahs',
             'sects',
@@ -1342,7 +1342,7 @@ class CustomerAuthController extends Controller
             $customerReligionInfo->Caste = $customerPersonalInfo->Caste;
         }
         $religions = Religion::where('deleted',0)->orderBy('order_at','asc')->get();
-//        $preferHijabs = DoYouPreferHijab::where('deleted',0)->orderBy('order_at','asc')->get();
+        $preferHijabs = DoYouPreferHijab::where('deleted',0)->orderBy('order_at','asc')->get();
         $reverts = AreYouRevert::where('deleted',0)->orderBy('order_at','asc')->get();
 //        $performSalaahs = DoYouPerformSalaah::where('deleted',0)->orderBy('order_at','asc')->get();
         if (!empty($customerReligionInfo) && !empty($customerReligionInfo->Religions)) {
@@ -1358,7 +1358,7 @@ class CustomerAuthController extends Controller
             'title',
             'customerReligionInfo',
             'religions',
-//            'preferHijabs',
+            'preferHijabs',
             'reverts',
 //            'performSalaahs',
             'sects',
@@ -1374,7 +1374,7 @@ class CustomerAuthController extends Controller
         $validator = Validator::make($request, [
             'Religions'          => 'required',
             'Sects'              => 'required',
-//            'DoYouPreferHijabs'  => 'required',
+            'DoYouPreferHijabs'  => 'required',
             'DoYouHaveBeards'    => 'required',
             'AreYouReverts'      => 'required',
             'DoYouKeepHalal'     => 'required',

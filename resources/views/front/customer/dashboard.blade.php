@@ -500,11 +500,11 @@
 											</div>
 											<div class="job-info-inner">
 												<h5 class="job-title">
-													<a href="{{route('messenger',[$val->getSenderCustomer->name])}}">{{$val->getSenderCustomer->full_name}}</a>
+													<a href="{{route('messenger',[$val->getSenderCustomer->faker_id])}}">{{$val->getSenderCustomer->full_name}}</a>
 												</h5>
 												<div class="job-author" style="color: #a8a8a8;font-weight: normal;">
 													@if(strlen($val->message) > 20)
-														{{substr($val->message, 0, 20)}}...<a class="font-weight-500" href="{{route('messenger',[$val->getSenderCustomer->name])}}">Read More</a>
+														{{substr($val->message, 0, 20)}}...<a class="font-weight-500" href="{{route('messenger',[$val->getSenderCustomer->faker_id])}}">Read More</a>
 													@else
 														{{$val->message}}
 													@endif

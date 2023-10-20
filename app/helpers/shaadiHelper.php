@@ -108,41 +108,55 @@ if (!function_exists('fireDoctorMessage')){
 //}
 
 if (!function_exists('checkMessageLimit')){
-    function checkMessageLimit($customerId,$fetchCount=false){
-        $startDate = date('Y-m-d 00:00:00');
-        $customer = Customer::with('customerPackage')->findOrFail($customerId);
-        if (!empty($customer->customerPackage)) {
-            $messageLimit = $customer->customerPackage->direct_messages;
-            $duration = $customer->customerPackage->duration;
-        } else {
-            $messageLimit = 10;
-            $duration = 30;
-        }
-        $endDate = date('Y-m-d 23:59:59', strtotime("+$duration days"));
+    function checkMessageLimit($customerId,$fetchCount=false,$receiverId=null) {
+//        $startDate = date('Y-m-d 00:00:00');
+//        $customer = Customer::with('customerPackage')->findOrFail($customerId);
+//        if (!empty($customer->customerPackage)) {
+//            $messageLimit = $customer->customerPackage->direct_messages;
+//            $duration = $customer->customerPackage->duration;
+//        } else {
+//            $messageLimit = 10;
+//            $duration = 30;
+//        }
+//        $endDate = date('Y-m-d 23:59:59', strtotime("+$duration days"));
+//        $customerNotificationPreference = CustomerNotificationPreference::where('customerID',$customerId)->first();
+//        if (empty($customerNotificationPreference)) {
+//            $customerNotificationPreference = CustomerNotificationPreference::create([
+//                'customerID'       => $customerId,
+//                'messagelimits'    => $messageLimit,
+//                'limit_start_date' => $startDate,
+//                'limit_end_date'   => $endDate
+//            ]);
+//        }
+//
+//        if (empty($customerNotificationPreference->limit_end_date) || $customerNotificationPreference->limit_end_date < $startDate) {
+//            $customerNotificationPreference = $customerNotificationPreference->update([
+//                'messagelimits'    => 10,
+//                'limit_start_date' => $startDate,
+//                'limit_end_date'   => date('Y-m-d', strtotime("+30 days"))
+//            ]);
+//            $customer->update([
+//                'package_id' => NULL,
+//                'user_package' => 'Free',
+//                'user_package_color' => NULL,
+//                'package_expiry_date' => NULL
+//            ]);
+//        }
+//
+//        if (!empty($customerNotificationPreference)) {
+//            $messageLimit = $customerNotificationPreference->messagelimits;
+//            $messageCount = CustomerChattingFriend::where("sender_id", $customerId)
+//                ->whereBetween('created_at',[$customerNotificationPreference,$customerNotificationPreference->limit_end_date])
+//                ->count();
+//            if ($messageCount < $messageLimit) {
+//                return (!empty($fetchCount)) ? [$messageLimit,$messageLimit - $messageCount] : true;
+//            }
+//        }
+//        return (!empty($fetchCount)) ? [10,0] : false;
+//        return (!empty($fetchCount)) ? [$messageLimit,$messageLimit - $messageCount] : false;
+
+//        $endDate = date('Y-m-d 23:59:59', strtotime("+$duration days"));
         $customerNotificationPreference = CustomerNotificationPreference::where('customerID',$customerId)->first();
-        if (empty($customerNotificationPreference)) {
-            $customerNotificationPreference = CustomerNotificationPreference::create([
-                'customerID'       => $customerId,
-                'messagelimits'    => $messageLimit,
-                'limit_start_date' => $startDate,
-                'limit_end_date'   => $endDate
-            ]);
-        }
-
-        if (empty($customerNotificationPreference->limit_end_date) || $customerNotificationPreference->limit_end_date < $startDate) {
-            $customerNotificationPreference = $customerNotificationPreference->update([
-                'messagelimits'    => 10,
-                'limit_start_date' => $startDate,
-                'limit_end_date'   => date('Y-m-d', strtotime("+30 days"))
-            ]);
-            $customer->update([
-                'package_id' => NULL,
-                'user_package' => 'Free',
-                'user_package_color' => NULL,
-                'package_expiry_date' => NULL
-            ]);
-        }
-
         if (!empty($customerNotificationPreference)) {
             $messageLimit = $customerNotificationPreference->messagelimits;
             $messageCount = CustomerChattingFriend::where("sender_id", $customerId)
@@ -151,9 +165,22 @@ if (!function_exists('checkMessageLimit')){
             if ($messageCount < $messageLimit) {
                 return (!empty($fetchCount)) ? [$messageLimit,$messageLimit - $messageCount] : true;
             }
+        } else {
+            if (!empty($receiverId)) {
+                $chatterAvailable = CustomerChattingFriend::where('deleted',0)->
+                where([
+                    ['sender_id',$customerId],
+                    ['receiver_id',$receiverId]
+                ])->orWhere([
+                    ['receiver_id',$customerId],
+                    ['sender_id',$receiverId]
+                ])->count();
+                if ($chatterAvailable > 0) {
+                    return (!empty($fetchCount)) ? [0,0] : true;
+                }
+            }
         }
-        return (!empty($fetchCount)) ? [10,0] : false;
-//        return (!empty($fetchCount)) ? [$messageLimit,$messageLimit - $messageCount] : false;
+        return (!empty($fetchCount)) ? [0,0] : false;
     }
 }
 

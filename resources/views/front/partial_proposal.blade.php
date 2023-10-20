@@ -50,13 +50,13 @@
             @endif
 
             @if(!empty($val->package_id))
-                <a class="badge-corner3" style="background: {{$val->user_package_color}};">
-                    <span>{{$val->user_package}}</span>
+                <a class="badge-corner3" style="background:goldenrod;">
+                    <span>Premium</span>
                 </a>
-            @else
-                <a class="badge-corner3" style="background: #040F2E;">
-                    <span>Free</span>
-                </a>
+            {{--@else--}}
+                {{--<a class="badge-corner3" style="background: #040F2E;">--}}
+                    {{--<span>Free</span>--}}
+                {{--</a>--}}
             @endif
 
             <div class="image-boxes">

@@ -1111,7 +1111,7 @@ main{
     display: table-cell;
     width: 220px;
     position: relative;
-    padding: 5px;
+    padding: 2px;
     border-bottom: 1px solid rgba(0, 0, 0, .05);
 }
 .c-base-1 {
@@ -1177,16 +1177,13 @@ main{
 .completeprofile strong{
   color:#fff;
 }
-.badge-corner-yellow {
-    border-top-color: #ffcc00 !important;
-}
 .badge-corner1 {
     position: absolute;
     top: 0;
     left: 0;
     width: 0;
     height: 0;
-    border-top: 66px solid #dbde12;
+    border-top: 66px solid goldenrod;
     border-top-color: rgba(0, 0, 0, 0.3);
     border-right: 66px solid transparent;
     padding: 0;
@@ -1195,16 +1192,35 @@ main{
     cursor: default !important;
     z-index: 2;
 }
+.badge-corner-yellow {
+    border-top-color: #ffcc00 !important;
+}
 .badge-corner-yellow span{
-  position: absolute;
+    position: absolute;
     top: -52px;
-    left: 15px;
+    left: 16px;
     font-size: 13px !important;
+    color: darkblue;
+    -ms-transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    margin-left: -14px;
+    font-weight: 600;
+}
+.badge-corner-gray {
+    border-top-color: #4F6168 !important;
+}
+.badge-corner-gray span {
+    position: absolute;
+    top: -65px;
+    left: 20px;
+    font-size: 12px !important;
     color: #fff;
-  -ms-transform: rotate(-45deg);
-  -webkit-transform: rotate(-45deg);
-  transform: rotate(-45deg);
-  margin-left: -14px;
+    -ms-transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    margin-left: -21px;
+    text-align: center;
 }
 .block--style-3 .heading {
     margin-bottom: 10px;

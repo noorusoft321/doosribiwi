@@ -20,22 +20,34 @@
             ) {
                 $verificationStatus = 'Verified';
                 $verificationStatusColor = 'green';
-            } elseif (
-                $customer->email_verified==1 &&
-                $customer->mobile_verified==1 &&
-                $customer->profile_pic_status==1 &&
-                $customer->meeting_verification==1
-            ) {
-                $verificationStatus = 'Semi Verified';
-                $verificationStatusColor = 'orange';
             }
         $profileComplete = checkProfileCompletePercent($customer);
         @endphp
-        @if($customer->featuredProfile==1)
+        {{--@if($customer->featuredProfile==1)--}}
+            {{--<a class="badge-corner1 badge-corner-yellow">--}}
+                {{--<span>Featured</span>--}}
+            {{--</a>--}}
+        {{--@endif--}}
+
+        @if(
+            $customer->email_verified==1 &&
+            $customer->mobile_verified==1 &&
+            $customer->profile_pic_status==1 &&
+            $customer->meeting_verification==1 &&
+            $customer->age_verification==1 &&
+            $customer->education_verification==1 &&
+            $customer->location_verification==1 &&
+            $customer->nationality_verification==1
+        )
             <a class="badge-corner1 badge-corner-yellow">
-                <span>Featured</span>
+                <span>Verified</span>
+            </a>
+        @else
+            <a class="badge-corner1 badge-corner-gray">
+                <span>Not Verified</span>
             </a>
         @endif
+
         <div class="block block--style-3 list z-depth-1-top" id="block_393" style="margin-bottom: 2rem;">
             <div class="block-image">
                 <a class="LoginToView c-base-1" href="{{route('search.by.slug',[$uniqueProfileSlug])}}" style="cursor:pointer; ">
