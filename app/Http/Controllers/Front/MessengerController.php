@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers\Front;
-use App\Helpers\FakerURL;
+use App\helpers\FakerURL;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\YourRequest;
 use App\Models\Customer;

@@ -274,7 +274,7 @@
 
 <!-- Featured Modal -->
 @php
-$myPackage = '';
+$packageExpiryDate = (auth()->guard('customer')->check()) ? auth()->guard('customer')->user()->package_expiry_date : null;
 @endphp
 <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
 	<div class="modal-dialog">
@@ -298,13 +298,14 @@ $myPackage = '';
 					<p class="m-0 text-center"><strong>Featured</strong> limit will expire with your package</p>
 					<p class="text-center"><strong>نمایاں</strong> کی حد آپ کے پیکیج کے ساتھ ختم ہو جائے گی۔</p>
 
-					<hr class="border-bottom border-white">
-
-					<p class="m-0 text-center fs-6">Your package expires on <strong class="fs-5">29 October 2023</strong></p>
+					@if(!empty($packageExpiryDate))
+						<hr class="border-bottom border-white">
+						<p class="m-0 text-center fs-6">Your package expires on <strong class="fs-5">{{date('d F Y',strtotime($packageExpiryDate))}}</strong></p>
+					@endif
 				</div>
 				<br>
 				<div class="text-center">
-					<a target="_blank" href="" type="button" class="button-theme-dark">Get Featured</a>
+					<a target="_blank" href="https://api.whatsapp.com/send?phone=923452444262&text=Hi%20Doosri.biwi.com%2C%20I%20need%20more%20information." type="button" class="button-theme-dark">Get Featured</a>
 				</div>
 			</div>
 		</div>

@@ -563,3 +563,17 @@ if (!function_exists('getMyPackage')) {
         return Package::findOrFail($packageId);
     }
 }
+
+if (!function_exists('getCurrentPackageExpiryDate')) {
+    function getCurrentPackageExpiryDate(){
+        if (auth()->guard('customer')->check()) {
+            return Customer::where('id',$customerId)->first();
+            $customerId = auth()->guard('customer')->id();
+        }
+        if (empty($customerId)) {
+            $customerId = auth()->guard('customer')->id();
+        }
+        return Customer::where('id',$customerId)->first();
+        return Package::findOrFail($packageId);
+    }
+}

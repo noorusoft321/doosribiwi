@@ -1,6 +1,9 @@
 <style>
     table.table-bordered table tr td {
-        border: 1px solid #fff !important;
+        border: 1px solid #ccc !important;
+    }
+    .search-box b, .search-box strong {
+        color: #ccc !important;
     }
 </style>
 @php $ifCustomerAuth = auth()->guard('customer')->check(); @endphp
@@ -50,7 +53,7 @@
                     <div class="listing-image" style="background-image: url({{$customer->imageFullPath}});background-position: top;"></div>
                 </a>
                 @if(!empty($customer->package_id))
-                    @if(!empty($customer->getCountryName) && in_array($customer->getCountryName->name,[162,0]))
+                    @if(!empty($customer->getCountryName) && in_array($customer->getCountryName->name,['Pakistan','NA']))
                         <div class="premium-button">Premium</div>
                     @else
                         <div class="premium-button">Abroad</div>
@@ -85,41 +88,41 @@
                     <table class="table-striped table-bordered mb-2" style="font-size: 12px;">
                         <tbody>
                         <tr data-auth-user-type="">
-                            <td width="120" height="30" style="padding-left: 5px;"><b class="text-white">Age</b></td>
+                            <td width="120" height="30" style="padding-left: 5px;"><b>Age</b></td>
                             <td width="120" height="30" style="padding-left: 5px;" class="text-white">{{$customer->age}} Years old</td>
-                            <td width="120" height="30" style="padding-left: 5px;"><b class="text-white">Height</b></td>
+                            <td width="120" height="30" style="padding-left: 5px;"><b>Height</b></td>
                             <td width="120" height="30" style="padding-left: 5px;" class="text-white">
                                 {{(!empty($customer->getHeightName)) ? $customer->getHeightName->name : 'N/A'}}
                             </td>
                         </tr>
                         <tr>
-                            <td width="120" height="30" style="padding-left: 5px;"><b class="text-white">Religion</b></td>
+                            <td width="120" height="30" style="padding-left: 5px;"><b>Religion</b></td>
                             <td width="120" height="30" style="padding-left: 5px;" class="text-white">
                                 {{(!empty($customer->getReligionName)) ? $customer->getReligionName->name : 'N/A'}}
                             </td>
-                            <td width="120" height="30" style="padding-left: 5px;"><b class="text-white">Caste / Sect</b></td>
+                            <td width="120" height="30" style="padding-left: 5px;"><b>Caste / Sect</b></td>
                             <td width="120" height="30" data-sect-id="0" style="padding-left: 5px;" class="text-white">
                                 {{(!empty($customer->getCasteName)) ? $customer->getCasteName->name : 'N/A'}} /
                                 {{(!empty($customer->getSectName)) ? $customer->getSectName->name : 'N/A'}}
                             </td>
                         </tr>
                         <tr>
-                            <td width="120" height="30" style="padding-left: 5px;"><b class="text-white">Mother Tongue</b></td>
+                            <td width="120" height="30" style="padding-left: 5px;"><b>Mother Tongue</b></td>
                             <td width="120" height="30" style="padding-left: 5px;" class="text-white">
                                 {{(!empty($customer->getMotherTongueName)) ? $customer->getMotherTongueName->name : 'N/A'}}
                             </td>
-                            <td width="120" height="30" style="padding-left: 5px;"><b class="text-white">Marital Status</b></td>
+                            <td width="120" height="30" style="padding-left: 5px;"><b>Marital Status</b></td>
                             <td width="120" height="30" style="padding-left: 5px;" class="text-white">
                                 {{(!empty($customer->getMaritalStatusName)) ? $customer->getMaritalStatusName->name : 'N/A'}}
                             </td>
                         </tr>
                         <tr>
-                            <td width="120" height="30" style="padding-left: 5px;"><b class="text-white">Location</b></td>
+                            <td width="120" height="30" style="padding-left: 5px;"><b>Location</b></td>
                             <td height="30" style="padding-left: 5px;" class="text-white">
                                 {{(!empty($customer->getCitiesName)) ? $customer->getCitiesName->name : 'N/A'}},
                                 {{(!empty($customer->getCountryName)) ? $customer->getCountryName->name : 'N/A'}}
                             </td>
-                            <td width="120" height="30" style="padding-left: 5px;"><b class="text-white">Verification Status</b></td>
+                            <td width="120" height="30" style="padding-left: 5px;"><b>Verification Status</b></td>
                             <td width="120" height="30" style="padding-left: 5px;" class="text-white">
                                 <strong style="color:{{$verificationStatusColor}};font-weight: 600;font-size: 1rem;">{{$verificationStatus}}</strong>
                             </td>
