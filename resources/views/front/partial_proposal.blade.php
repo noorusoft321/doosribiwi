@@ -32,15 +32,15 @@
                         Verified
                     </span>
                 </a>
-            @elseif($val->email_verified==1 &&
-                $val->mobile_verified==1 &&
-                $val->profile_pic_status==1 &&
-                $val->meeting_verification==1)
-                <a class="badge-corner2 badge-corner-yellow">
-                    <span style="-ms-transform: rotate(313deg);-webkit-transform: rotate(313deg);transform: rotate(313deg);font-size: 10px !important;margin-left: -14px;font-weight: 600;">
-                        Semi Verified
-                    </span>
-                </a>
+            {{--@elseif($val->email_verified==1 &&--}}
+                {{--$val->mobile_verified==1 &&--}}
+                {{--$val->profile_pic_status==1 &&--}}
+                {{--$val->meeting_verification==1)--}}
+                {{--<a class="badge-corner2 badge-corner-yellow">--}}
+                    {{--<span style="-ms-transform: rotate(313deg);-webkit-transform: rotate(313deg);transform: rotate(313deg);font-size: 10px !important;margin-left: -14px;font-weight: 600;">--}}
+                        {{--Semi Verified--}}
+                    {{--</span>--}}
+                {{--</a>--}}
             @else
                 <a class="badge-corner2 badge-corner-default">
                     <span style="-ms-transform: rotate(313deg);-webkit-transform: rotate(313deg);transform: rotate(313deg);font-size: 10px !important;margin-left: -14px;font-weight: 600;">
@@ -49,18 +49,24 @@
                 </a>
             @endif
 
-            @if(!empty($val->package_id))
-                <a class="badge-corner3" style="background:goldenrod;">
-                    <span>Premium</span>
+            @if(!empty($val->featuredProfile==1))
+                <a class="badge-corner3" style="background: linear-gradient(0deg, rgb(64, 168, 230) 0%, rgb(54, 184, 230) 100%);">
+                    <span class="text-white">Featured</span>
                 </a>
-            {{--@else--}}
-                {{--<a class="badge-corner3" style="background: #040F2E;">--}}
-                    {{--<span>Free</span>--}}
-                {{--</a>--}}
             @endif
 
             <div class="image-boxes">
+
                 <img loading="lazy" src="{{$val->imageFullPath}}" alt="{{$val->full_name}}" >
+
+                @if(!empty($val->package_id))
+                    @if(in_array($countryName,['Pakistan','NA']))
+                        <img class="featured-ribbon" src="{{asset('assets/img/premium-ribbon.svg')}}" alt="Premium Account" >
+                    @else
+                        <img class="featured-ribbon" src="{{asset('assets/img/abroad-ribbon.svg')}}" alt="Abroad Account" >
+                    @endif
+                @endif
+
             </div>
             <div class="profile-details-boxes">
                 <h3>{{$val->full_name}}</h3>
@@ -98,7 +104,7 @@
                 </div>
                 <div class="row">
                     <div class="col-4 mx-auto my-auto text-center p-1">
-                        <div class="image-boxes-icon"><a class="LoginToView" href="{{route('messenger',$val->name)}}"><i class="fa fa-phone"></i></a></div>
+                        <div class="image-boxes-icon"><a class="LoginToView" href="{{route('messenger',$val->faker_id)}}"><i class="fa fa-phone"></i></a></div>
                     </div>
                     <div class="col-8 mx-auto my-auto p-1 fs-card-text">
                         <button onclick="window.location.href = '{{route('search.by.slug',[$uniqueProfileSlug])}}'" class="custom-btn btn-view-profile" title="View Profile Detail">Profile Detail</button>

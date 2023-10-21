@@ -42,10 +42,11 @@ class FreeCustomersBlockCron extends Command
         $customers = Customer::where('email', 'NOT LIKE', "%DoosriBiwi.com%")->whereNotNull('package_id')->where('package_expiry_date','<',date('Y-m-d H:i:s'))->get();
         foreach ($customers as $customer) {
             $customer->update([
-                'package_id' => NULL,
-                'user_package' => 'Free',
-                'user_package_color' => NULL,
-                'package_expiry_date' => NULL
+                'package_id'          => NULL,
+                'user_package'        => 'Free',
+                'user_package_color'  => NULL,
+                'package_expiry_date' => NULL,
+                'featuredProfile'     => 0
             ]);
         }
     }

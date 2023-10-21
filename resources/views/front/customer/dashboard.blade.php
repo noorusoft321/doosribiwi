@@ -387,41 +387,6 @@
             height: 50px;
             z-index: 2;
         }
-		.messengerBottomIconBtn {
-			-webkit-border-radius: 60px;
-			border-radius: 35px;
-			color: #eeeeee;
-			cursor: pointer;
-			display: inline-block;
-			font-family: sans-serif;
-			font-size: 16px;
-			padding: 10px 20px;
-			text-align: center;
-			text-decoration: none;
-		}
-		a.messengerBottomIconBtn:hover {
-			color: #fff;
-		}
-		.messengerBottomIconBtn cm, .messengerBottomIconBtn svg {
-			color: #ffffff;
-		}
-		@keyframes glowing {
-			0% {
-				background-color: #DDAC17;
-				box-shadow: 0 0 5px #ECC440;
-			}
-			50% {
-				background-color: #ECC440;
-				box-shadow: 0 0 20px #DDAC17;
-			}
-			100% {
-				background-color: #DDAC17;
-				box-shadow: 0 0 5px #DDAC17;
-			}
-		}
-		.messengerBottomIconBtn {
-			animation: glowing 1300ms infinite;
-		}
 		.packageTable td:first-child {
 			font-weight: 500;
 			color: #ccc;

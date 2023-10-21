@@ -4,14 +4,7 @@
 @section('description',"If you're looking for a life partner and don't know where to start, visit our offices today and our professional matchmakers will guide you in accordance with your preferences Join Shaadi.org")
 
 @push('style')
-	<style>
-		.divider:after, .divider:before {
-			content: "";
-			flex: 1;
-			height: 1px;
-			background: #eee;
-		}
-	</style>
+	{{----}}
 @endpush
 
 @section('content')

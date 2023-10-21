@@ -70,6 +70,7 @@
             background-image: linear-gradient(#F9F295,#E0AA3E,#E0AA3E,#B88A44);
             border-radius: 50%;
             margin-top: 10px;
+            position: relative;
         }
         .image-boxes img{
             width: 150px;
@@ -480,6 +481,62 @@
             font-weight: 500;
             font-size: .7rem;
         }
+        .card-container {
+            perspective: 1400px;
+        }
+        .card-flip {
+            position: relative;
+            width: 100%;
+            transform-style: preserve-3d;
+            height: auto;
+            transition: all 1s ease-out;
+            color: #ffffff;
+            background: #ffffff;
+            border: none;
+        }
+
+        .card-flip div {
+            backface-visibility: hidden;
+            transform-style: preserve-3d;
+            width: 100%;
+            border-radius: 50px;
+        }
+
+        .card-flip .front {
+            position: relative;
+            z-index: 1;
+            padding: 20px;
+            border-left: 10px solid #040F2E;
+            border-right: 10px solid #040F2E;
+            display: flex;
+            align-items: center;
+            height: 250px !important;
+        }
+        .card-flip .front h4 {
+            font-size: 2rem;
+        }
+
+        .card-flip .back {
+            position: relative;
+            z-index: 0;
+            transform: rotateY(-180deg);
+            padding: 20px;
+            border-top: 10px solid #040F2E;
+            border-bottom: 10px solid #040F2E;
+            display: flex;
+            align-items: center;
+            height: 250px !important;
+        }
+
+        .card-container:hover .card-flip {
+            transform: rotateY(180deg);
+        }
+        .featured-ribbon {
+            position: absolute;
+            width: 70%;
+            top: 60px !important;
+            left: 0 !important;
+        }
         @media only screen and (max-width: 600px) {
             .profile-boxes {
                 width: 80%;
@@ -558,56 +615,9 @@
             .bannerHeight {
                 height: 100%;
             }
-        }
-        .card-container {
-            perspective: 1400px;
-        }
-        .card-flip {
-            position: relative;
-            width: 100%;
-            transform-style: preserve-3d;
-            height: auto;
-            transition: all 1s ease-out;
-            color: #ffffff;
-            background: #ffffff;
-            border: none;
-        }
-
-        .card-flip div {
-            backface-visibility: hidden;
-            transform-style: preserve-3d;
-            width: 100%;
-            border-radius: 50px;
-        }
-
-        .card-flip .front {
-            position: relative;
-            z-index: 1;
-            padding: 20px;
-            border-left: 10px solid #040F2E;
-            border-right: 10px solid #040F2E;
-            display: flex;
-            align-items: center;
-            height: 250px !important;
-        }
-        .card-flip .front h4 {
-            font-size: 2rem;
-        }
-
-        .card-flip .back {
-            position: relative;
-            z-index: 0;
-            transform: rotateY(-180deg);
-            padding: 20px;
-            border-top: 10px solid #040F2E;
-            border-bottom: 10px solid #040F2E;
-            display: flex;
-            align-items: center;
-            height: 250px !important;
-        }
-
-        .card-container:hover .card-flip {
-            transform: rotateY(180deg);
+            .featured-ribbon {
+                top: 52px !important;
+            }
         }
     </style>
 @endpush

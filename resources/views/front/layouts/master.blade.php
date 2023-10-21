@@ -188,7 +188,44 @@
 		.toggle-main {
 			display: none !important;
 		}
+		.featured-detail {
+			text-align: center;
+		}
+		.featured-detail p {
+			font-size: 1.1rem;
+			color: #ffffff;
+		}
+		.featured-detail p strong {
+			font-size: 1.2rem;
+			color: goldenrod;
+		}
+		.featured-detail h3 {
+			font-size: 1.5rem;
+			color: #ffffff;
+		}
+		.featured-detail h3 strong {
+			font-size: 2rem;
+			color: goldenrod;
+		}
+		@keyframes glowing {
+			0% {
+				background-color: #DDAC17;
+				box-shadow: 0 0 5px #ECC440;
+			}
+			50% {
+				background-color: #ECC440;
+				box-shadow: 0 0 20px #DDAC17;
+			}
+			100% {
+				background-color: #DDAC17;
+				box-shadow: 0 0 5px #DDAC17;
+			}
+		}
 		@media only screen and (max-width: 600px) {
+			html, body {
+				width: 100% !important;
+				overflow-x: hidden !important;
+			}
 			.mobileShow {
 				display: block !important;
 			}
@@ -230,6 +267,46 @@
 {{-- Start Footer --}}
 @include('front.layouts.footer')
 {{-- End Footer --}}
+
+<!-- Featured Modal -->
+@php
+$myPackage = '';
+@endphp
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content" style="background: rgb(4,15,46);background: linear-gradient(90deg, rgba(4,15,46,1) 0%, rgba(16,78,79,1) 52%, rgba(4,15,46,1) 100%);">
+			<div class="modal-header">
+				<h1 class="modal-title fs-5 text-white" id="staticBackdropLabel" style="margin: 0 auto;">Get Featured your Account</h1>
+			</div>
+			<div class="modal-body">
+				<div class="featured-detail">
+					<svg style="color: rgb(218, 165, 32);width:30%;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M576 136c0 22.09-17.91 40-40 40c-.248 0-.4551-.1266-.7031-.1305l-50.52 277.9C482 468.9 468.8 480 453.3 480H122.7c-15.46 0-28.72-11.06-31.48-26.27L40.71 175.9C40.46 175.9 40.25 176 39.1 176c-22.09 0-40-17.91-40-40S17.91 96 39.1 96s40 17.91 40 40c0 8.998-3.521 16.89-8.537 23.57l89.63 71.7c15.91 12.73 39.5 7.544 48.61-10.68l57.6-115.2C255.1 98.34 247.1 86.34 247.1 72C247.1 49.91 265.9 32 288 32s39.1 17.91 39.1 40c0 14.34-7.963 26.34-19.3 33.4l57.6 115.2c9.111 18.22 32.71 23.4 48.61 10.68l89.63-71.7C499.5 152.9 496 144.1 496 136C496 113.9 513.9 96 536 96S576 113.9 576 136z" fill="#daa520"></path></svg>
+
+					<h3>RS. <strong>10,000</strong></h3>
+
+					<p class="m-0">Being <strong>Featured</strong> boosts your profile's visibility.</p>
+					<p> <strong>نمایاں</strong> ہونے سے آپ کے پروفائل کی مرئیت بڑھ جاتی ہے۔</p>
+
+					<hr class="border-bottom border-white">
+
+					<h3 class="m-1"> NOTE <span style="color:goldenrod;font-weight: 800;">&#33;</span> </h3>
+
+					<p class="m-0 text-center"><strong>Featured</strong> limit will expire with your package</p>
+					<p class="text-center"><strong>نمایاں</strong> کی حد آپ کے پیکیج کے ساتھ ختم ہو جائے گی۔</p>
+
+					<hr class="border-bottom border-white">
+
+					<p class="m-0 text-center fs-6">Your package expires on <strong class="fs-5">29 October 2023</strong></p>
+				</div>
+				<br>
+				<div class="text-center">
+					<a target="_blank" href="" type="button" class="button-theme-dark">Get Featured</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
 
 <script type="text/javascript" src="{{asset('assets/js/jquery.js')}}"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
@@ -500,6 +577,14 @@
                 }
             });
         }
+    }
+
+    function getFeaturedModal(input) {
+		$('#staticBackdrop').modal('show');
+    }
+    
+    function closeFeaturedModal(input) {
+        $('#staticBackdrop').modal('hide');
     }
 
 </script>
