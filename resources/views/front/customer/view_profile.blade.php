@@ -108,7 +108,8 @@
             text-align: center;
             text-decoration: none;
             top: 0;
-            right: 0;
+            /*right: 0;*/
+            left: 0;
             position: absolute;
             margin: 5px;
         }
@@ -136,7 +137,7 @@
         .messengerBottomIconBtn i {
             color: #ffffff;
         }
-        @keyframes glowing {
+        @keyframes glowinged {
             0% {
                 background-color: #11823b;
                 box-shadow: 0 0 5px #004d25;
@@ -151,7 +152,7 @@
             }
         }
         .messengerIconBtn, .messengerBottomIconBtn {
-            animation: glowing 1300ms infinite;
+            animation: glowinged 1300ms infinite;
         }
         span.btn:hover {
             background: #040F2E;
@@ -321,6 +322,58 @@
                 transform: translateY(100%);
             }
         }
+        .featured-label {
+            --f: 10px;
+            --r: 15px;
+            --t: 10px;
+            position: absolute;
+            inset: var(--t) calc(-1*var(--f)) auto auto;
+            padding: 0 10px var(--f) calc(10px + var(--r));
+            clip-path: polygon(0 0,100% 0,100% calc(100% - var(--f)),calc(100% - var(--f)) 100%, calc(100% - var(--f)) calc(100% - var(--f)),0 calc(100% - var(--f)), var(--r) calc(50% - var(--f)/2));
+            box-shadow: 0 calc(-1*var(--f)) 0 inset #0005;
+        }
+        .featured-label span {
+            color: black;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .profile-btn-sm {
+            padding: 10px 15px;
+            border-radius: 20px;
+            font-size: 14px;
+            border: 1px solid #fff;
+            color: #ffffff;
+            transition: all .5s ease;
+        }
+        .profile-btn-sm:hover {
+            border: 2px solid goldenrod;
+            transition: all .5s ease;
+        }
+
+        .profile-btn-sm i {
+            color: #ffffff;
+        }
+
+        .premium-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            line-height: 1;
+            text-decoration: none;
+            color: #ffffff;
+            font-size: 18px;
+            border-radius: 0px;
+            width: 100%;
+            height: 40px;
+            font-weight: bold;
+            background-image: linear-gradient(150deg, #DDAC17 10%, #ECC440 40%, #DDAC17 68%, #ECC440 90%);
+            margin: 0 auto;
+            border-left: 20px solid #ffd400;
+            border-right: 20px solid #ffd400;
+            animation: glowing 1300ms infinite;
+            border-bottom: 10px groove #040F2E;
+        }
 
 	</style>
 @endpush
@@ -334,50 +387,56 @@
 					<div class="col-md-3">
                         <div class="side-bar-dashboard">
                             <div class="card">
-                                <div class="card-body">
+                                <div class="card-body bg-blast">
                                     <div>
                                         <div class="profile-section">
                                             <img src="{{$customer->imageFullPath}}" alt="{{$customer->full_name}}">
                                             <a class="messengerIconBtn LoginToView" href="{{route('messenger',[$customer->faker_id])}}"><i class="fa fa-comments"></i></a>
+                                            @if(!empty($customer->featuredProfile==1))
+                                                <a class="featured-label" style="background: linear-gradient(0deg, rgb(64, 168, 230) 0%, rgb(54, 184, 230) 100%);">
+                                                    <span class="text-white">Featured</span>
+                                                </a>
+                                            @endif
                                         </div>
-                                        <h3 class="align-center profile-name" style="line-height: 1;">{{$customer->full_name}}</h3>
+                                        <h3 class="align-center profile-name text-white" style="line-height: 1;">{{$customer->full_name}}</h3>
                                         <p class="align-center profile-occupation text-theme">
                                             {{(!empty($customer->customerOtherInfo) && $customer->customerOtherInfo->OccupationID > 0 && $customer->customerOtherInfo->OccupationID!=243) ? genericQuery($customer->customerOtherInfo->OccupationID,'Occupation') : ''}}
                                         </p>
                                     </div>
                                     @if(auth()->guard('customer')->check() && auth()->guard('customer')->user()->email_verified==1)
                                         <div class="container text-center">
-                                            <a href="javascript:void(0);" class="btn btn-outline-primary btn-sm" title="Views"> <i class="fa fa-eye"></i> {{$profileViewsCount}}</a>
-                                            <a onclick="likeUnlikeCustomer(this)" href="javascript:void(0);" class="btn btn-outline-primary btn-sm {{(!empty($customerLikedByMe)) ? 'btn-active' : ''}}" title="Like">
-                                                <i class="fa fa-heart"></i>
-                                                {{$profileLikesCount}}
-                                            </a>
-                                            <a onclick="saveUnsavedCustomer(this)" href="javascript:void(0);" class="btn btn-outline-primary btn-sm {{(!empty($customerSaveByMe)) ? 'btn-active' : ''}}" title="Save">
-                                                <i class="fa fa-floppy-o"></i>
-                                                {{$profileSavesCount}}
-                                            </a>
+                                            <a href="javascript:void(0);" class="profile-btn-sm" title="Views"> <i class="fa fa-eye"></i> {{$profileViewsCount}}</a>
+                                            <a onclick="likeUnlikeCustomer(this)" href="javascript:void(0);" class="profile-btn-sm {{(!empty($customerLikedByMe)) ? 'btn-active' : ''}}" title="Like"><i class="fa fa-heart"></i> {{$profileLikesCount}}</a>
+                                            <a onclick="saveUnsavedCustomer(this)" href="javascript:void(0);" class="profile-btn-sm {{(!empty($customerSaveByMe)) ? 'btn-active' : ''}}" title="Save"><i class="fa fa-floppy-o"></i> {{$profileSavesCount}}</a>
                                         </div>
                                     @else
                                         <div class="container text-center">
-                                            <a href="javascript:void(0);" class="btn btn-outline-primary btn-sm" title="Views"> <i class="fa fa-eye"></i> {{$profileViewsCount}}</a>
-                                            <a href="javascript:void(0);" class="btn btn-outline-primary btn-sm {{(!empty($customerLikedByMe)) ? 'btn-active' : ''}}" title="Like">
+                                            <a href="javascript:void(0);" class="profile-btn-sm" title="Views"> <i class="fa fa-eye"></i> {{$profileViewsCount}}</a>
+                                            <a href="javascript:void(0);" class="profile-btn-sm {{(!empty($customerLikedByMe)) ? 'btn-active' : ''}}" title="Like">
                                                 <i class="fa fa-heart"></i>
                                                 {{$profileLikesCount}}
                                             </a>
-                                            <a href="javascript:void(0);" class="btn btn-outline-primary btn-sm {{(!empty($customerSaveByMe)) ? 'btn-active' : ''}}" title="Save">
+                                            <a href="javascript:void(0);" class="profile-btn-sm {{(!empty($customerSaveByMe)) ? 'btn-active' : ''}}" title="Save">
                                                 <i class="fa fa-floppy-o"></i>
                                                 {{$profileSavesCount}}
                                             </a>
                                         </div>
                                     @endif
                                     <br>
+                                    @if(!empty($customer->package_id))
+                                        @if(!empty($customer->customerOtherInfo) && in_array($customer->customerOtherInfo->country_id,[162,0]))
+                                            <div class="premium-button">Premium</div>
+                                        @else
+                                            <div class="premium-button">Abroad</div>
+                                        @endif
+                                    @endif
                                 </div>
                             </div>
                         </div>
 
                         @if($customer->profile_gallery_client_status==1 && $customer->profile_gallery_status==1 && count($customerImages) > 0)
                             <div class="card">
-                                <div class="card-body">
+                                <div class="card-body bg-blast">
                                     <h3 class="section-card-heading">Gallery Photos</h3>
                                     <div class="container gallery-container">
                                         <div class="tz-gallery">
@@ -399,7 +458,7 @@
                         @endif
 
                         <div class="card">
-                            <div class="card-body">
+                            <div class="card-body bg-blast">
                                 <h3 class="section-card-heading">Profile Verification Status</h3>
                                 <ul class="verification-badge">
                                     <li>
@@ -443,9 +502,9 @@
                         </div>
 
                         <div class="card">
-                            <div class="card-body">
+                            <div class="card-body bg-blast">
                                 <div class="col-12" style="padding:20px; position:relative;">
-                                    <h5 class="edit-profile-side-heading font-size14"> Profile Link
+                                    <h5 class="edit-profile-side-heading font-size14 text-white"> Profile Link
                                         <span class="badge badge-primary pull-right" style="float:right; cursor:pointer; background-color:#040F2E; padding:14px; position:absolute; right:20px; top:55px; z-index:2;border-radius: 2px;" onclick="copyToClipBoard(this)">Copy</span>
                                     </h5>
                                     @php $uniqueProfileSlug = $customer->gender_name.'-proposal-'.(!empty($customer->getCitySlug)?$customer->getCitySlug->slug:'NA').'-'.(!empty($customer->getCountrySlug)?$customer->getCountrySlug->slug:'NA').'-'.$customer->faker_id; @endphp
@@ -470,7 +529,7 @@
 
                                 {{--Personal Information--}}
                                 <div class="card">
-                                    <h5 class="card-header">Personal Information</h5>
+                                    <h5 class="card-header bg-blast">Personal Information</h5>
                                     <div class="card-body">
                                         @if(!empty($customer->customerOtherInfo))
                                             <div class="row">
@@ -656,7 +715,7 @@
                                 {{--Career Information--}}
                                 @if(!empty($customer->customerCareerInfo))
                                     <div class="card">
-                                        <h5 class="card-header">Career Information</h5>
+                                        <h5 class="card-header bg-blast">Career Information</h5>
                                         <div class="card-body">
                                             <div class="row">
                                                 <div class="col-6">
@@ -724,7 +783,7 @@
                                 @else
                                     @if(!empty($customer->customerOtherInfo))
                                         <div class="card">
-                                            <h5 class="card-header">Career Information</h5>
+                                            <h5 class="card-header bg-blast">Career Information</h5>
                                             <div class="card-body">
                                                 <div class="row">
                                                     <div class="col-6">
@@ -794,7 +853,7 @@
                                 {{--Appearance--}}
                                 @if(!empty($customer->customerPersonalInfo))
                                     <div class="card">
-                                        <h5 class="card-header">Appearance</h5>
+                                        <h5 class="card-header bg-blast">Appearance</h5>
                                         <div class="card-body">
                                             <div class="row">
                                                 <div class="col-6">
@@ -878,7 +937,7 @@
                                 {{--Religion--}}
                                 @if(!empty($customer->customerReligionInfo))
                                     <div class="card">
-                                        <h5 class="card-header">Religion</h5>
+                                        <h5 class="card-header bg-blast">Religion</h5>
                                         <div class="card-body">
                                             <div class="row">
                                                 <div class="col-6">
@@ -956,7 +1015,7 @@
 
                                 @if(!empty($customer->customerOtherInfo))
                                     <div class="card">
-                                        <h5 class="card-header">Hobbies & Interest</h5>
+                                        <h5 class="card-header bg-blast">Hobbies & Interest</h5>
                                         <div class="card-body">
                                             <div class="row">
                                                 <div class="col-12">
@@ -973,7 +1032,7 @@
                                 @php $customerSearch = (!empty($customer->customerSearch)) ? json_decode($customer->customerSearch->title) : [] @endphp
                                 @if(!empty($customerSearch))
                                     <div class="card">
-                                        <h5 class="card-header">Life Partner Expectations</h5>
+                                        <h5 class="card-header bg-blast">Life Partner Expectations</h5>
                                         <div class="card-body">
                                             <div class="row">
                                                 <div class="col-6">

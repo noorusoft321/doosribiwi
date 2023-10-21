@@ -142,8 +142,27 @@
 			visibility: hidden;
 		}
 		.badge-corner-yellow span {
-			top: -52px;
-			left: 16px;
+			top: -50px;
+			left: 14px;
+		}
+		.premium-button {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			line-height: 1;
+			text-decoration: none;
+			color: #ffffff;
+			font-size: 18px;
+			border-radius: 0px;
+			width: 100%;
+			height: 40px;
+			font-weight: bold;
+			background-image: linear-gradient(150deg, #DDAC17 10%, #ECC440 40%, #DDAC17 68%, #ECC440 90%);
+			margin: 0 auto;
+			border-left: 20px solid #ffd400;
+			border-right: 20px solid #ffd400;
+			animation: glowing 1300ms infinite;
+			border-bottom: 10px groove #040F2E;
 		}
 		.progress {
 			height: 15px;
@@ -157,6 +176,21 @@
 			border-radius: 10px;
 			box-shadow: 5px 5px 5px #0000003d;
 			border: none;
+		}
+		.badge-corner-blue {
+			border-top-color: #40A8E6 !important;
+		}
+		.badge-corner-blue span {
+			position: absolute;
+			top: -50px;
+			left: 12px;
+			font-size: 14px !important;
+			color: white;
+			-ms-transform: rotate(-45deg);
+			-webkit-transform: rotate(-45deg);
+			transform: rotate(-45deg);
+			margin-left: -14px;
+			font-weight: 600;
 		}
 </style>
 @endpush

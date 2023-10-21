@@ -207,6 +207,10 @@
 			font-size: 2rem;
 			color: goldenrod;
 		}
+		.bg-blast {
+			background: rgb(4,15,46);
+			background: linear-gradient(90deg, rgba(4,15,46,1) 0%, rgba(16,78,79,1) 52%, rgba(4,15,46,1) 100%);
+		}
 		@keyframes glowing {
 			0% {
 				background-color: #DDAC17;

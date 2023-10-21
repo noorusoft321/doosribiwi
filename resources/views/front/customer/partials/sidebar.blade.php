@@ -65,6 +65,40 @@
 	.messengerBottomIconBtn {
 		animation: glowing 1300ms infinite;
 	}
+	.featured-label {
+		--f: 10px;
+		--r: 15px;
+		--t: 10px;
+		position: absolute;
+		inset: var(--t) calc(-1*var(--f)) auto auto;
+		padding: 0 10px var(--f) calc(10px + var(--r));
+		clip-path: polygon(0 0,100% 0,100% calc(100% - var(--f)),calc(100% - var(--f)) 100%, calc(100% - var(--f)) calc(100% - var(--f)),0 calc(100% - var(--f)), var(--r) calc(50% - var(--f)/2));
+		box-shadow: 0 calc(-1*var(--f)) 0 inset #0005;
+	}
+	.featured-label span {
+		color: black;
+		font-size: 12px;
+		font-weight: 600;
+	}
+	.premium-button {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		line-height: 1;
+		text-decoration: none;
+		color: #ffffff;
+		font-size: 18px;
+		border-radius: 0px;
+		width: 100%;
+		height: 40px;
+		font-weight: bold;
+		background-image: linear-gradient(150deg, #DDAC17 10%, #ECC440 40%, #DDAC17 68%, #ECC440 90%);
+		margin: 0 auto;
+		border-left: 20px solid #ffd400;
+		border-right: 20px solid #ffd400;
+		animation: glowing 1300ms infinite;
+		border-bottom: 10px groove #040F2E;
+	}
 	@media only screen and (max-width: 600px) {
 		.section-card-heading {
 			font-size: 15px !important;
@@ -72,7 +106,7 @@
 	}
 </style>
 <div class="card">
-	<div class="card-body">
+	<div class="card-body bg-blast">
 		<div>
 			<div class="profile-section">
 				@if(file_exists(public_path('customer_images/'.$customer->image)))
@@ -80,12 +114,27 @@
 				@else
 					<img src="{{$customer->imageFullPath}}" alt="{{$customer->full_name}}">
 				@endif
+
+				@if(!empty($customer->featuredProfile==1))
+					<a class="featured-label" style="background: linear-gradient(0deg, rgb(64, 168, 230) 0%, rgb(54, 184, 230) 100%);">
+						<span class="text-white">Featured</span>
+					</a>
+				@endif
 			</div>
-			<h3 class="align-center profile-name" style="line-height: 1;">{{$customer->full_name}}</h3>
-			<p class="align-center profile-occupation text-theme">
+			<h3 class="align-center profile-name text-white" style="line-height: 1;">{{$customer->full_name}}</h3>
+			<p class="align-center profile-occupation text-white">
 				{{(!empty($customer->getOccupationName)) ? $customer->getOccupationName->name : 'Occupation'}} from
 				{{(!empty($customer->getCountryName)) ? $customer->getCountryName->name : 'Country'}}
 			</p>
+
+			@if(!empty($customer->package_id))
+				@if(!empty($customer->getCountryName) && in_array($customer->getCountryName->name,['Pakistan','NA']))
+					<div class="premium-button">Premium</div>
+				@else
+					<div class="premium-button">Abroad</div>
+				@endif
+			@endif
+
             @php
                 $myPackage = null;
                 if (!empty($customer->package_id) && $customer->package_id > 0) {
@@ -96,7 +145,7 @@
             @endphp
 			<div class="row border-top p-2">
 				<div class="col-auto mx-auto my-auto">
-					<span style="font-size: 14px;font-weight: 500;">Profile Complete</span>
+					<span style="font-size: 14px;font-weight: 500;color: #fff;">Profile Complete</span>
 				</div>
 				<div class="col mx-auto my-auto">
 					<div class="progress">
@@ -119,15 +168,15 @@
 					<tbody>
 					<tr>
 						<td>Package Type</td>
-						<td>{{(!empty($myPackage)) ? ($myPackage->id==3) ? 'Abroad' : 'Premium' : '----'}}</td>
+						<td class="text-white">{{(!empty($myPackage)) ? ($myPackage->id==3) ? 'Abroad' : 'Premium' : '----'}}</td>
 					</tr>
 					<tr>
 						<td>Direct Messages ({{$messageLimit[0]}})</td>
-						<td>{{$messageLimit[1]}} Remains</td>
+						<td class="text-white">{{$messageLimit[1]}} Remains</td>
 					</tr>
                     <tr>
                         <td>Profile Status</td>
-                        <td>
+                        <td class="text-white">
                             @if($customer->email_verified==1 &&
                                 $customer->mobile_verified==1 &&
                                 $customer->profile_pic_status==1 &&
@@ -144,7 +193,7 @@
                     </tr>
                     <tr>
                         <td>Featured Profile</td>
-                        <td>{{($customer->featuredProfile==1) ? 'Yes' : 'No'}}</td>
+                        <td class="text-white">{{($customer->featuredProfile==1) ? 'Yes' : 'No'}}</td>
                     </tr>
 					</tbody>
 				</table>
@@ -183,7 +232,7 @@
 			{{--@endif--}}
 
             <div class="row" style="padding:20px; position:relative;">
-                <h5 class="edit-profile-side-heading font-size14"> My Profile Link
+                <h5 class="edit-profile-side-heading font-size14 text-white"> My Profile Link
                     <span class="badge badge-primary pull-right" style="float:right; cursor:pointer; background-color:#040F2E; padding:14px; position:absolute; right:20px; top:55px; z-index:2;border-radius: 2px;" onclick="copyToClipBoard(this)">Copy</span>
                 </h5>
                 @php $uniqueProfileSlug = $customer->gender_name.'-proposal-'.(!empty($customer->getCitySlug)?$customer->getCitySlug->slug:'NA').'-'.(!empty($customer->getCountrySlug)?$customer->getCountrySlug->slug:'NA').'-'.$customer->faker_id; @endphp
@@ -194,7 +243,7 @@
 </div>
 
 <div class="card">
-	<div class="card-body">
+	<div class="card-body bg-blast">
 		<br>
 		<h3 class="section-card-heading">Profile Verification Status</h3>
 		<ul class="verification-badge">
@@ -239,45 +288,45 @@
 </div>
 
 <div class="card">
-	<div class="card-body">
+	<div class="card-body bg-blast">
 
 		<a href="{{route('edit.personal.profile')}}">
-			<div class="full-width-tabs">
+			<div class="full-width-tabs bg-blast">
 				<i class="fa fa-info-circle"></i>  Edit Personal Profile
 			</div>
 		</a>
 		<a href="{{route('edit.profile')}}">
-			<div class="full-width-tabs">
+			<div class="full-width-tabs bg-blast">
 				<i class="fa fa-pencil-square-o"></i>  Edit Profile
 			</div>
 		</a>
 		<a href="{{route('edit.photo')}}">
-			<div class="full-width-tabs">
+			<div class="full-width-tabs bg-blast">
 				<i class="fa fa-picture-o"></i> Gallery
 			</div>
 		</a>
 		<a href="{{route('customer.like.save')}}">
-			<div class="full-width-tabs">
+			<div class="full-width-tabs bg-blast">
 				<i class="fa fa-heart"></i>  Like / Save
 			</div>
 		</a>
 		<a href="{{route('change.email.password')}}">
-			<div class="full-width-tabs">
+			<div class="full-width-tabs bg-blast">
 				<i class="fa fa-user"></i>  Change Email / Password
 			</div>
 		</a>
 		<a href="{{route('get.customer.block')}}">
-			<div class="full-width-tabs">
+			<div class="full-width-tabs bg-blast">
 				<i class="fa fa-ban"></i>  Blocked Users
 			</div>
 		</a>
 		<a href="{{route('contact.us')}}">
-			<div class="full-width-tabs">
+			<div class="full-width-tabs bg-blast">
 				<i class="fa fa-phone-square"></i>  Contact Us
 			</div>
 		</a>
 		<a onclick="deleteProfile(this,'{{$customer->faker_id}}')" href="javascript:void(0)">
-			<div class="full-width-tabs">
+			<div class="full-width-tabs bg-blast">
 				<i class="fa fa-minus-circle"></i>  Delete Profile
 			</div>
 		</a>
@@ -285,7 +334,7 @@
 </div>
 
 {{--<div class="card">--}}
-	{{--<div class="card-body">--}}
+	{{--<div class="card-body bg-blast">--}}
 		{{--<div class="col-12" style="padding:20px; position:relative;">--}}
 			{{--<h5 class="edit-profile-side-heading font-size14"> My Profile Link--}}
 				{{--<span class="badge badge-primary pull-right" style="float:right; cursor:pointer; background-color:#040F2E; padding:14px; position:absolute; right:20px; top:55px; z-index:2;border-radius: 2px;" onclick="copyToClipBoard(this)">Copy</span>--}}

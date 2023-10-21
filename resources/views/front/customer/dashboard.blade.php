@@ -103,13 +103,6 @@
 			text-align: center
 		}
 
-		@media (min-width: 1200px) {
-			.job-card-grid .job-detail .job-detail-item .job-detail-center {
-				margin-left: 10px;
-				margin-right: 10px
-			}
-		}
-
 		.job-card-grid .job-detail .job-detail-item .job-detail-center .job-detail-text {
 			font-size: 0.9375rem;
 			font-weight: 500;
@@ -200,24 +193,6 @@
 			transition: box-shadow 0.25s ease-in-out, -webkit-box-shadow 0.25s ease-in-out
 		}
 
-		@media (min-width: 768px) {
-			.job-card-harizontal {
-				display: -webkit-box;
-				display: -ms-flexbox;
-				display: flex;
-				-ms-flex-wrap: wrap;
-				flex-wrap: wrap
-			}
-		}
-
-		@media (min-width: 1200px) {
-			.job-card-harizontal {
-				-webkit-box-pack: justify;
-				-ms-flex-pack: justify;
-				justify-content: space-between
-			}
-		}
-
 		.job-card-harizontal:hover {
 			-webkit-box-shadow: 0px 19px 29px rgba(62, 53, 120, 0.14);
 			box-shadow: 0px 19px 29px rgba(62, 53, 120, 0.14)
@@ -230,14 +205,6 @@
 			-webkit-box-align: center;
 			-ms-flex-align: center;
 			align-items: center
-		}
-
-		@media (min-width: 1200px) {
-			.job-card-harizontal .job-info {
-				-webkit-box-flex: 1;
-				-ms-flex: 1 1 30%;
-				flex: 1 1 30%
-			}
 		}
 
 		.job-card-harizontal .job-info .job-image {
@@ -281,48 +248,10 @@
 			text-decoration: none
 		}
 
-		@media (max-width: 1199.98px) {
-			.job-card-harizontal .job-info-card-collapse {
-				width: 100%;
-				-webkit-box-ordinal-group: 4;
-				-ms-flex-order: 3;
-				order: 3
-			}
-		}
-
-		@media (min-width: 1200px) {
-			.job-card-harizontal .job-info-card-collapse {
-				display: -webkit-box;
-				display: -ms-flexbox;
-				display: flex;
-				-ms-flex-preferred-size: auto;
-				flex-basis: auto;
-				-webkit-box-flex: 1;
-				-ms-flex: 1 1 40%;
-				flex: 1 1 40%
-			}
-		}
-
 		.job-card-harizontal .job-info-card-collapse .job-info-card {
 			display: -ms-grid;
 			display: grid;
 			gap: 15px
-		}
-
-		@media (max-width: 1199.98px) {
-			.job-card-harizontal .job-info-card-collapse .job-info-card {
-				margin-top: 20px
-			}
-		}
-
-		@media (min-width: 1200px) {
-			.job-card-harizontal .job-info-card-collapse .job-info-card {
-				display: -webkit-box;
-				display: -ms-flexbox;
-				display: flex;
-				width: 100%;
-				gap: 20px
-			}
 		}
 
 		.job-card-harizontal .job-info-card-collapse .job-info-card .info-card {
@@ -339,6 +268,37 @@
 			-ms-flex-align: center;
 			align-items: center;
 			gap: 15px
+		}
+		.job-card-harizontal .job-action .btn:hover {
+			-webkit-box-shadow: none;
+			box-shadow: none
+		}
+		.profileWrp {
+			position: relative;
+		}
+		.matchprofiles {
+			position: absolute;
+			line-height: 1;
+			border: 2px dotted #fff;
+			padding: 0px;
+			font-size: 10px;
+			border-radius: 78px;
+			color: white;
+			background: #e62e04;
+			text-align: center;
+			margin-top: 0px;
+			padding-top: 12px;
+			width: 50px;
+			height: 50px;
+			z-index: 2;
+		}
+		.packageTable td:first-child {
+			font-weight: 500;
+			color: #ccc;
+		}
+		.progress {
+			height: 15px;
+			border-radius: 10px;
 		}
 
 		@media (max-width: 767.98px) {
@@ -364,36 +324,71 @@
 			}
 		}
 
-		.job-card-harizontal .job-action .btn:hover {
-			-webkit-box-shadow: none;
-			box-shadow: none
+		@media (max-width: 1199.98px) {
+			.job-card-harizontal .job-info-card-collapse .job-info-card {
+				margin-top: 20px
+			}
 		}
-        .profileWrp {
-            position: relative;
-        }
-        .matchprofiles {
-            position: absolute;
-            line-height: 1;
-            border: 2px dotted #fff;
-            padding: 0px;
-            font-size: 10px;
-            border-radius: 78px;
-            color: white;
-            background: #e62e04;
-            text-align: center;
-            margin-top: 0px;
-            padding-top: 12px;
-            width: 50px;
-            height: 50px;
-            z-index: 2;
-        }
-		.packageTable td:first-child {
-			font-weight: 500;
-			color: #ccc;
+
+		@media (min-width: 1200px) {
+			.job-card-harizontal .job-info-card-collapse .job-info-card {
+				display: -webkit-box;
+				display: -ms-flexbox;
+				display: flex;
+				width: 100%;
+				gap: 20px
+			}
 		}
-		.progress {
-			height: 15px;
-			border-radius: 10px;
+		@media (max-width: 1199.98px) {
+			.job-card-harizontal .job-info-card-collapse {
+				width: 100%;
+				-webkit-box-ordinal-group: 4;
+				-ms-flex-order: 3;
+				order: 3
+			}
+		}
+
+		@media (min-width: 1200px) {
+			.job-card-harizontal .job-info-card-collapse {
+				display: -webkit-box;
+				display: -ms-flexbox;
+				display: flex;
+				-ms-flex-preferred-size: auto;
+				flex-basis: auto;
+				-webkit-box-flex: 1;
+				-ms-flex: 1 1 40%;
+				flex: 1 1 40%
+			}
+		}
+		@media (min-width: 1200px) {
+			.job-card-harizontal .job-info {
+				-webkit-box-flex: 1;
+				-ms-flex: 1 1 30%;
+				flex: 1 1 30%
+			}
+		}
+		@media (min-width: 768px) {
+			.job-card-harizontal {
+				display: -webkit-box;
+				display: -ms-flexbox;
+				display: flex;
+				-ms-flex-wrap: wrap;
+				flex-wrap: wrap
+			}
+		}
+
+		@media (min-width: 1200px) {
+			.job-card-harizontal {
+				-webkit-box-pack: justify;
+				-ms-flex-pack: justify;
+				justify-content: space-between
+			}
+		}
+		@media (min-width: 1200px) {
+			.job-card-grid .job-detail .job-detail-item .job-detail-center {
+				margin-left: 10px;
+				margin-right: 10px
+			}
 		}
 	</style>
 @endpush
@@ -425,7 +420,7 @@
 					@endif
 					@if($customer->profile_pic_status==2)
 						<div class="card">
-							<h5 class="card-header">Warning !</h5>
+							<h5 class="card-header bg-blast">Warning !</h5>
 							<div class="card-body">
 								<div class="d-grid gap-34">
 									<div class="job-card-harizontal">
@@ -454,7 +449,7 @@
 					@endif
 
 					<div class="card">
-						<h5 class="card-header">Unread Messages</h5>
+						<h5 class="card-header bg-blast">Unread Messages</h5>
 						<div class="card-body">
 							@forelse($newMessages as $val)
 								<div class="d-grid gap-34 mb-1" style="box-shadow: 0 3px 5px rgba(0,0,0,0.3);border-radius: 10px;">
@@ -492,8 +487,8 @@
 					</div>
 
 					<div class="card">
-						{{--<h5 class="card-header">Latest Proposals</h5>--}}
-						<h5 class="card-header">Recommended for You</h5>
+						{{--<h5 class="card-header bg-blast">Latest Proposals</h5>--}}
+						<h5 class="card-header bg-blast">Recommended for You</h5>
 						<div class="card-body">
 							<div class="row p-tb-10">
 								@foreach($customersVerified as $val)

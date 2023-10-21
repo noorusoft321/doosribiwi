@@ -1,9 +1,14 @@
+<style>
+    table.table-bordered table tr td {
+        border: 1px solid #fff !important;
+    }
+</style>
 @php $ifCustomerAuth = auth()->guard('customer')->check(); @endphp
 
 @foreach($customers as $customer)
     @php $uniqueProfileSlug = $customer->gender_name.'-proposal-'.(!empty($customer->getCitySlug)?$customer->getCitySlug->slug:'NA').'-'.(!empty($customer->getCountrySlug)?$customer->getCountrySlug->slug:'NA').'-'.$customer->faker_id; @endphp
 
-    <strong class="search-box">
+    <strong class="search-box bg-blast">
         @php
             $customerMatchesPercentage = (!empty($ifCustomerAuth)) ? customerMatchesPercentage($customer) : 0;
             $verificationStatus = 'Not Verified';
@@ -29,30 +34,28 @@
             {{--</a>--}}
         {{--@endif--}}
 
-        @if(
-            $customer->email_verified==1 &&
-            $customer->mobile_verified==1 &&
-            $customer->profile_pic_status==1 &&
-            $customer->meeting_verification==1 &&
-            $customer->age_verification==1 &&
-            $customer->education_verification==1 &&
-            $customer->location_verification==1 &&
-            $customer->nationality_verification==1
-        )
-            <a class="badge-corner1 badge-corner-yellow">
-                <span>Verified</span>
-            </a>
-        @else
-            <a class="badge-corner1 badge-corner-gray">
-                <span>Not Verified</span>
+        @if($customer->featuredProfile==1)
+            <a class="badge-corner1 badge-corner-blue">
+                <span>Featured</span>
             </a>
         @endif
 
-        <div class="block block--style-3 list z-depth-1-top" id="block_393" style="margin-bottom: 2rem;">
+        {{--<a class="badge-corner2 badge-corner-yellow">--}}
+            {{--<span>Premium</span>--}}
+        {{--</a>--}}
+
+        <div class="block block--style-3 list z-depth-1-top bg-blast" id="block_393" style="margin-bottom: 2rem;">
             <div class="block-image">
                 <a class="LoginToView c-base-1" href="{{route('search.by.slug',[$uniqueProfileSlug])}}" style="cursor:pointer; ">
                     <div class="listing-image" style="background-image: url({{$customer->imageFullPath}});background-position: top;"></div>
                 </a>
+                @if(!empty($customer->package_id))
+                    @if(!empty($customer->getCountryName) && in_array($customer->getCountryName->name,[162,0]))
+                        <div class="premium-button">Premium</div>
+                    @else
+                        <div class="premium-button">Abroad</div>
+                    @endif
+                @endif
             </div>
             <div class="block-title-wrapper">
                 {{-- Profile Match % --}}
@@ -63,12 +66,12 @@
                 {{--<span class="completeprofile">{{checkProfileCompletePercent($customer)}}%<br><strong>Complete</strong></span>--}}
                 <strong>
                     <h3 class="heading heading-5 strong-500 mt-1">
-                        <a class="LoginToView" href="{{route('search.by.slug',[$uniqueProfileSlug])}}" class="c-base-1" style="cursor:pointer;font-weight: 500;">{{$customer->full_name}}</a>
+                        <a class="LoginToView" href="{{route('search.by.slug',[$uniqueProfileSlug])}}" class="c-base-1 text-white" style="cursor:pointer;font-weight: 600;color: #fff;">{{$customer->full_name}}</a>
                     </h3>
                     {{-- Profile Complete % --}}
                     <div class="row">
                         <div class="col-auto mx-auto my-auto">
-                            <span style="font-size: 14px;font-weight: 500;">Profile Complete</span>
+                            <span class="text-white" style="font-size: 14px;font-weight: 500;">Profile Complete</span>
                         </div>
                         <div class="col mx-auto my-auto">
                             <div class="progress">
@@ -82,43 +85,43 @@
                     <table class="table-striped table-bordered mb-2" style="font-size: 12px;">
                         <tbody>
                         <tr data-auth-user-type="">
-                            <td width="120" height="30" style="padding-left: 5px;" class="font-dark"><b>Age</b></td>
-                            <td width="120" height="30" style="padding-left: 5px;" class="font-dark">{{$customer->age}} Years old</td>
-                            <td width="120" height="30" style="padding-left: 5px;" class="font-dark"><b>Height</b></td>
-                            <td width="120" height="30" style="padding-left: 5px;" class="font-dark">
+                            <td width="120" height="30" style="padding-left: 5px;"><b class="text-white">Age</b></td>
+                            <td width="120" height="30" style="padding-left: 5px;" class="text-white">{{$customer->age}} Years old</td>
+                            <td width="120" height="30" style="padding-left: 5px;"><b class="text-white">Height</b></td>
+                            <td width="120" height="30" style="padding-left: 5px;" class="text-white">
                                 {{(!empty($customer->getHeightName)) ? $customer->getHeightName->name : 'N/A'}}
                             </td>
                         </tr>
                         <tr>
-                            <td width="120" height="30" style="padding-left: 5px;" class="font-dark"><b>Religion</b></td>
-                            <td width="120" height="30" style="padding-left: 5px;" class="font-dark">
+                            <td width="120" height="30" style="padding-left: 5px;"><b class="text-white">Religion</b></td>
+                            <td width="120" height="30" style="padding-left: 5px;" class="text-white">
                                 {{(!empty($customer->getReligionName)) ? $customer->getReligionName->name : 'N/A'}}
                             </td>
-                            <td width="120" height="30" style="padding-left: 5px;"><b>Caste / Sect</b></td>
-                            <td width="120" height="30" data-sect-id="0" style="padding-left: 5px;" class="font-dark">
+                            <td width="120" height="30" style="padding-left: 5px;"><b class="text-white">Caste / Sect</b></td>
+                            <td width="120" height="30" data-sect-id="0" style="padding-left: 5px;" class="text-white">
                                 {{(!empty($customer->getCasteName)) ? $customer->getCasteName->name : 'N/A'}} /
                                 {{(!empty($customer->getSectName)) ? $customer->getSectName->name : 'N/A'}}
                             </td>
                         </tr>
                         <tr>
-                            <td width="120" height="30" style="padding-left: 5px;" class="font-dark"><b>Mother Tongue</b></td>
-                            <td width="120" height="30" style="padding-left: 5px;" class="font-dark">
+                            <td width="120" height="30" style="padding-left: 5px;"><b class="text-white">Mother Tongue</b></td>
+                            <td width="120" height="30" style="padding-left: 5px;" class="text-white">
                                 {{(!empty($customer->getMotherTongueName)) ? $customer->getMotherTongueName->name : 'N/A'}}
                             </td>
-                            <td width="120" height="30" style="padding-left: 5px;"><b>Marital Status</b></td>
-                            <td width="120" height="30" style="padding-left: 5px;" class="font-dark">
+                            <td width="120" height="30" style="padding-left: 5px;"><b class="text-white">Marital Status</b></td>
+                            <td width="120" height="30" style="padding-left: 5px;" class="text-white">
                                 {{(!empty($customer->getMaritalStatusName)) ? $customer->getMaritalStatusName->name : 'N/A'}}
                             </td>
                         </tr>
                         <tr>
-                            <td width="120" height="30" style="padding-left: 5px;" class="font-dark"><b>Location</b></td>
-                            <td height="30" style="padding-left: 5px;" class="font-dark">
+                            <td width="120" height="30" style="padding-left: 5px;"><b class="text-white">Location</b></td>
+                            <td height="30" style="padding-left: 5px;" class="text-white">
                                 {{(!empty($customer->getCitiesName)) ? $customer->getCitiesName->name : 'N/A'}},
                                 {{(!empty($customer->getCountryName)) ? $customer->getCountryName->name : 'N/A'}}
                             </td>
-                            <td width="120" height="30" style="padding-left: 5px;"><b>Verification Status</b></td>
-                            <td width="120" height="30" style="padding-left: 5px;" class="font-dark">
-                                <strong style="color:{{$verificationStatusColor}};font-weight: 500;">{{$verificationStatus}}</strong>
+                            <td width="120" height="30" style="padding-left: 5px;"><b class="text-white">Verification Status</b></td>
+                            <td width="120" height="30" style="padding-left: 5px;" class="text-white">
+                                <strong style="color:{{$verificationStatusColor}};font-weight: 600;font-size: 1rem;">{{$verificationStatus}}</strong>
                             </td>
                         </tr>
                         </tbody>
