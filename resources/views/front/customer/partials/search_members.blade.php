@@ -1,13 +1,14 @@
-<style>
-    table.table-bordered table tr td {
-        border: 1px solid #ccc !important;
-    }
-    .search-box b, .search-box strong {
-        color: #ccc !important;
-    }
-</style>
-@php $ifCustomerAuth = auth()->guard('customer')->check(); @endphp
-
+@if(count($customers) > 0)
+    <style>
+        table.table-bordered table tr td {
+            border: 1px solid #ccc !important;
+        }
+        .search-box b, .search-box strong {
+            color: #ccc !important;
+        }
+    </style>
+    @php $ifCustomerAuth = auth()->guard('customer')->check(); @endphp
+@endif
 @foreach($customers as $customer)
     @php $uniqueProfileSlug = $customer->gender_name.'-proposal-'.(!empty($customer->getCitySlug)?$customer->getCitySlug->slug:'NA').'-'.(!empty($customer->getCountrySlug)?$customer->getCountrySlug->slug:'NA').'-'.$customer->faker_id; @endphp
 

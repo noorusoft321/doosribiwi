@@ -399,7 +399,7 @@
                                             @endif
                                         </div>
                                         <h3 class="align-center profile-name text-white" style="line-height: 1;">{{$customer->full_name}}</h3>
-                                        <p class="align-center profile-occupation text-theme">
+                                        <p class="align-center profile-occupation text-white">
                                             {{(!empty($customer->customerOtherInfo) && $customer->customerOtherInfo->OccupationID > 0 && $customer->customerOtherInfo->OccupationID!=243) ? genericQuery($customer->customerOtherInfo->OccupationID,'Occupation') : ''}}
                                         </p>
                                     </div>

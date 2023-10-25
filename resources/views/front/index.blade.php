@@ -716,91 +716,181 @@
         </section>
         <!--About Section End-->
 
-        <!-- Benefits of Becoming a Second Wife Section Start -->
-        <div class="p-tb-50 bg-img ladu">
-            <div class="container">
-                <h2 class="align-center font-weight-600 white-color"> Benefits of Becoming a Second Wife? </h2>
-                <img class="img-align-center heading-border"
-                     src="{{asset('assets/img/shaadi-organization-pakistan-heading-border.png')}}">
-                <div class="row newInfoStyle" data-aos="flip-down" data-aos-duration="1200">
-                    <div class="col-md-6 mx-auto my-auto">
-                        <p class="text-white">
-                            Choosing to be a second wife in Islam may provide a loving and stable family environment, while also offering companionship and the opportunity to strengthen faith through shared responsibilities and devotion.
-                        </p>
-                    </div>
-                    <div class="col-md-6 mx-auto my-auto">
-                        <p class="text-white text-end">
-                            اسلام میں دوسری بیوی بننے کا انتخاب ایک محبت بھرا اور مستحکم خاندانی ماحول فراہم کر سکتا ہے، جبکہ صحبت اور مشترکہ ذمہ داریوں اور عقیدت کے ذریعے ایمان کو مضبوط کرنے کا موقع بھی فراہم کرتا ہے۔
-                        </p>
-                    </div>
-                </div>
+        @if(!empty($oppositeGender))
+            @if($oppositeGender=='Female')
+                <!-- Benefits of Becoming a Second Wife Section Start -->
+                    <div class="p-tb-50 bg-img ladu">
+                        <div class="container">
+                            <h2 class="align-center font-weight-600 white-color"> Benefits of Becoming a Second Wife? </h2>
+                            <img class="img-align-center heading-border"
+                                 src="{{asset('assets/img/shaadi-organization-pakistan-heading-border.png')}}">
+                            <div class="row newInfoStyle" data-aos="flip-down" data-aos-duration="1200">
+                                <div class="col-md-6 mx-auto my-auto">
+                                    <p class="text-white">
+                                        Choosing to be a second wife in Islam may provide a loving and stable family environment, while also offering companionship and the opportunity to strengthen faith through shared responsibilities and devotion.
+                                    </p>
+                                </div>
+                                <div class="col-md-6 mx-auto my-auto">
+                                    <p class="text-white text-end">
+                                        اسلام میں دوسری بیوی بننے کا انتخاب ایک محبت بھرا اور مستحکم خاندانی ماحول فراہم کر سکتا ہے، جبکہ صحبت اور مشترکہ ذمہ داریوں اور عقیدت کے ذریعے ایمان کو مضبوط کرنے کا موقع بھی فراہم کرتا ہے۔
+                                    </p>
+                                </div>
+                            </div>
 
-                <div class="align-center p-tb-30">
-                    <a href="{{route('view.register')}}" class="button-theme-light"> Let’s begin </a>
-                </div>
+                            <div class="align-center p-tb-30">
+                                <a href="{{route('view.register')}}" class="button-theme-light"> Let’s begin </a>
+                            </div>
 
-            </div>
-        </div>
-        <!-- Benefits of Becoming a Second Wife Section End -->
-
-        <!-- Males Looking for 2nd Wife Section Start -->
-        <div class="p-tb-30">
-            <div class="container">
-                <h2 class="align-center font-weight-600">Males Looking for 2nd Wife</h2>
-                <img class="img-align-center heading-border"
-                     src="{{asset('assets/img/shaadi-organization-pakistan-heading-border.png')}}">
-                <div class="row p-tb-10 justify-content-center data--males_looking">
-                    @include('front.shimmer')
+                        </div>
                 </div>
-                <div class="align-center p-tb-30">
-                    <a href="{{route('search.by.slug',['males-Looking-for-second-Wife'])}}" class="button-theme-dark"> Explore further </a>
-                </div>
-            </div>
-        </div>
-        <!-- Males Looking for 2nd Wife Section End -->
+                <!-- Benefits of Becoming a Second Wife Section End -->
 
-        <!-- Why Consider a Second Wife Section Start -->
-        <div class="p-tb-50 bg-img ladu">
-            <div class="container">
-                <h2 class="align-center font-weight-600 white-color"> Why Consider a Second Wife? </h2>
-                <img class="img-align-center heading-border"
-                     src="{{asset('assets/img/shaadi-organization-pakistan-heading-border.png')}}">
-                <div class="row newInfoStyle" data-aos="flip-down" data-aos-duration="1200">
-                    <div class="col-md-6 mx-auto my-auto">
-                        <p class="text-white">
-                            In Islam, a second marriage can be a solution to fulfill responsibilities, provide support, and offer love to another deserving woman.
-                        </p>
-                    </div>
-                    <div class="col-md-6 mx-auto my-auto">
-                        <p class="text-white text-end">
-                            اسلام میں، دوسری شادی ذمہ داریوں کو پورا کرنے، مدد فراہم کرنے اور دوسری مستحق عورت کو محبت کی پیشکش کرنے کا حل ہو سکتی ہے۔
-                        </p>
+                <!-- Males Looking for 2nd Wife Section Start -->
+                <div class="p-tb-30">
+                    <div class="container">
+                        <h2 class="align-center font-weight-600">Males Looking for 2nd Wife</h2>
+                        <img class="img-align-center heading-border"
+                             src="{{asset('assets/img/shaadi-organization-pakistan-heading-border.png')}}">
+                        <div class="row p-tb-10 justify-content-center data--males_looking">
+                            @include('front.shimmer')
+                        </div>
+                        <div class="align-center p-tb-30">
+                            <a href="{{route('search.by.slug',['males-Looking-for-second-Wife'])}}" class="button-theme-dark"> Explore further </a>
+                        </div>
                     </div>
                 </div>
+                <!-- Males Looking for 2nd Wife Section End -->
+            @else
+                <!-- Why Consider a Second Wife Section Start -->
+                <div class="p-tb-50 bg-img ladu">
+                    <div class="container">
+                        <h2 class="align-center font-weight-600 white-color"> Why Consider a Second Wife? </h2>
+                        <img class="img-align-center heading-border"
+                             src="{{asset('assets/img/shaadi-organization-pakistan-heading-border.png')}}">
+                        <div class="row newInfoStyle" data-aos="flip-down" data-aos-duration="1200">
+                            <div class="col-md-6 mx-auto my-auto">
+                                <p class="text-white">
+                                    In Islam, a second marriage can be a solution to fulfill responsibilities, provide support, and offer love to another deserving woman.
+                                </p>
+                            </div>
+                            <div class="col-md-6 mx-auto my-auto">
+                                <p class="text-white text-end">
+                                    اسلام میں، دوسری شادی ذمہ داریوں کو پورا کرنے، مدد فراہم کرنے اور دوسری مستحق عورت کو محبت کی پیشکش کرنے کا حل ہو سکتی ہے۔
+                                </p>
+                            </div>
+                        </div>
 
-                <div class="align-center p-tb-30">
-                    <a href="{{route('view.register')}}" class="button-theme-light"> Let’s begin </a>
+                        <div class="align-center p-tb-30">
+                            <a href="{{route('view.register')}}" class="button-theme-light"> Let’s begin </a>
+                        </div>
+
+                    </div>
                 </div>
+                <!-- Why Consider a Second Wife Section End -->
 
+                <!-- Females Ready for 2nd Marriage Section Start -->
+                <div class="p-tb-30">
+                    <div class="container">
+                        <h2 class="align-center font-weight-600">Females Ready for 2nd Marriage</h2>
+                        <img class="img-align-center heading-border"
+                             src="{{asset('assets/img/shaadi-organization-pakistan-heading-border.png')}}">
+                        <div class="row p-tb-10 justify-content-center data--females_ready">
+                            @include('front.shimmer')
+                        </div>
+                        <div class="align-center p-tb-30">
+                            <a href="{{route('search.by.slug',['females-Ready-for-second-marriage'])}}" class="button-theme-dark"> View More</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Females Ready for 2nd Marriage Section End -->
+            @endif
+        @else
+            <!-- Benefits of Becoming a Second Wife Section Start -->
+            <div class="p-tb-50 bg-img ladu">
+                <div class="container">
+                    <h2 class="align-center font-weight-600 white-color"> Benefits of Becoming a Second Wife? </h2>
+                    <img class="img-align-center heading-border"
+                         src="{{asset('assets/img/shaadi-organization-pakistan-heading-border.png')}}">
+                    <div class="row newInfoStyle" data-aos="flip-down" data-aos-duration="1200">
+                        <div class="col-md-6 mx-auto my-auto">
+                            <p class="text-white">
+                                Choosing to be a second wife in Islam may provide a loving and stable family environment, while also offering companionship and the opportunity to strengthen faith through shared responsibilities and devotion.
+                            </p>
+                        </div>
+                        <div class="col-md-6 mx-auto my-auto">
+                            <p class="text-white text-end">
+                                اسلام میں دوسری بیوی بننے کا انتخاب ایک محبت بھرا اور مستحکم خاندانی ماحول فراہم کر سکتا ہے، جبکہ صحبت اور مشترکہ ذمہ داریوں اور عقیدت کے ذریعے ایمان کو مضبوط کرنے کا موقع بھی فراہم کرتا ہے۔
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="align-center p-tb-30">
+                        <a href="{{route('view.register')}}" class="button-theme-light"> Let’s begin </a>
+                    </div>
+
+                </div>
             </div>
-        </div>
-        <!-- Why Consider a Second Wife Section End -->
+            <!-- Benefits of Becoming a Second Wife Section End -->
 
-        <!-- Females Ready for 2nd Marriage Section Start -->
-        <div class="p-tb-30">
-            <div class="container">
-                <h2 class="align-center font-weight-600">Females Ready for 2nd Marriage</h2>
-                <img class="img-align-center heading-border"
-                     src="{{asset('assets/img/shaadi-organization-pakistan-heading-border.png')}}">
-                <div class="row p-tb-10 justify-content-center data--females_ready">
-                    @include('front.shimmer')
-                </div>
-                <div class="align-center p-tb-30">
-                    <a href="{{route('search.by.slug',['females-Ready-for-second-marriage'])}}" class="button-theme-dark"> View More</a>
+            <!-- Males Looking for 2nd Wife Section Start -->
+            <div class="p-tb-30">
+                <div class="container">
+                    <h2 class="align-center font-weight-600">Males Looking for 2nd Wife</h2>
+                    <img class="img-align-center heading-border"
+                         src="{{asset('assets/img/shaadi-organization-pakistan-heading-border.png')}}">
+                    <div class="row p-tb-10 justify-content-center data--males_looking">
+                        @include('front.shimmer')
+                    </div>
+                    <div class="align-center p-tb-30">
+                        <a href="{{route('search.by.slug',['males-Looking-for-second-Wife'])}}" class="button-theme-dark"> Explore further </a>
+                    </div>
                 </div>
             </div>
-        </div>
-        <!-- Females Ready for 2nd Marriage Section End -->
+            <!-- Males Looking for 2nd Wife Section End -->
+
+            <!-- Why Consider a Second Wife Section Start -->
+            <div class="p-tb-50 bg-img ladu">
+                <div class="container">
+                    <h2 class="align-center font-weight-600 white-color"> Why Consider a Second Wife? </h2>
+                    <img class="img-align-center heading-border"
+                         src="{{asset('assets/img/shaadi-organization-pakistan-heading-border.png')}}">
+                    <div class="row newInfoStyle" data-aos="flip-down" data-aos-duration="1200">
+                        <div class="col-md-6 mx-auto my-auto">
+                            <p class="text-white">
+                                In Islam, a second marriage can be a solution to fulfill responsibilities, provide support, and offer love to another deserving woman.
+                            </p>
+                        </div>
+                        <div class="col-md-6 mx-auto my-auto">
+                            <p class="text-white text-end">
+                                اسلام میں، دوسری شادی ذمہ داریوں کو پورا کرنے، مدد فراہم کرنے اور دوسری مستحق عورت کو محبت کی پیشکش کرنے کا حل ہو سکتی ہے۔
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="align-center p-tb-30">
+                        <a href="{{route('view.register')}}" class="button-theme-light"> Let’s begin </a>
+                    </div>
+
+                </div>
+            </div>
+            <!-- Why Consider a Second Wife Section End -->
+
+            <!-- Females Ready for 2nd Marriage Section Start -->
+            <div class="p-tb-30">
+                <div class="container">
+                    <h2 class="align-center font-weight-600">Females Ready for 2nd Marriage</h2>
+                    <img class="img-align-center heading-border"
+                         src="{{asset('assets/img/shaadi-organization-pakistan-heading-border.png')}}">
+                    <div class="row p-tb-10 justify-content-center data--females_ready">
+                        @include('front.shimmer')
+                    </div>
+                    <div class="align-center p-tb-30">
+                        <a href="{{route('search.by.slug',['females-Ready-for-second-marriage'])}}" class="button-theme-dark"> View More</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Females Ready for 2nd Marriage Section End -->
+        @endif
 
         <!-- Legal Protection Section Start -->
         <div class="p-tb-50 bg-img ladu">

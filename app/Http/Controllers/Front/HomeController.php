@@ -91,11 +91,12 @@ class HomeController extends Controller
 
         /*Government Registered Marriage Bureau*/
         $govermentRegisteredMarraigeBureau = GovermentRegisteredMarraigeBureau::where('deleted', 0)->limit(5)->inRandomOrder()->get();
-
+        $oppositeGender = (auth()->guard('customer')->check()) ? auth()->guard('customer')->user()->gender_name : null;
         $title = 'Rishta Pakistan, Shaadi Marriage Bureau, Best Muslima Matrimonial in Pakistan Karachi, Lahore, Islamabad, Faisalabad, Rawalpindi, Gujranwala, Peshawar, Multan, Hyderabad, Islamabad, Quetta. Shia Match available.';
         return view('front.index',compact(
             'title',
-            'govermentRegisteredMarraigeBureau'
+            'govermentRegisteredMarraigeBureau',
+            'oppositeGender'
         ));
     }
 

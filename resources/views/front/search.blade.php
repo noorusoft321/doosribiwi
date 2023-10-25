@@ -212,7 +212,9 @@
 											</a>
 										</div>
 										<div id="quicksearch" class="card-body collapse show" data-parent="#accordion" >
-											@if (!auth()->guard('customer')->check())
+											@if (auth()->guard('customer')->check())
+												<input type="hidden" name="gender" value="{{$gender}}">
+											@else
 												<fieldset>
 													<input id="email-1" class="radio-inline__input radioBtn" type="radio" name="gender" value="1" {{($gender=='1') ? 'checked' : ''}}>
 													<label class="radio-inline__label" for="email-1" style="cursor:pointer;">
@@ -386,14 +388,14 @@
 														{{--@endforeach--}}
 													{{--</select>--}}
 													{{--<br>--}}
-													<label class="fieldlabels"> Builds</label>
-													<select name="MyBuilds" class="form-select form-control ">
-														<option value="">Select</option>
-														@foreach($myBuilds as $val)
-															<option value="{{$val->id}}">{{$val->title}}</option>
-														@endforeach
-													</select>
-													<br>
+													{{--<label class="fieldlabels"> Builds</label>--}}
+													{{--<select name="MyBuilds" class="form-select form-control ">--}}
+														{{--<option value="">Select</option>--}}
+														{{--@foreach($myBuilds as $val)--}}
+															{{--<option value="{{$val->id}}">{{$val->title}}</option>--}}
+														{{--@endforeach--}}
+													{{--</select>--}}
+													{{--<br>--}}
 													<label class="fieldlabels"> Marital Status</label>
 													<select name="MaritalStatus" class="form-select form-control">
 														<option value="">Select</option>
@@ -489,6 +491,7 @@
             $('button.search--btn').attr('disabled',true);
             page = (hasLoadMore) ? parseFloat(page) + 1 : 0;
             axios.post("{{route('customer.search.process')}}", `${$('#searchForm').serialize()}&page=${page}&slug=${hasSlug}`).then(function (res) {
+                console.log('check',hasLoadMore,res.data);
                 if (res.data) {
                     if (hasLoadMore==false) {
                         $('.search-list').empty();

@@ -292,10 +292,6 @@
 			height: 50px;
 			z-index: 2;
 		}
-		.packageTable td:first-child {
-			font-weight: 500;
-			color: #ccc;
-		}
 		.progress {
 			height: 15px;
 			border-radius: 10px;

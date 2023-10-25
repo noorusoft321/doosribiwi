@@ -225,6 +225,10 @@
 				box-shadow: 0 0 5px #DDAC17;
 			}
 		}
+		.packageTable td:first-child {
+			font-weight: 500;
+			color: #ccc;
+		}
 		@media only screen and (max-width: 600px) {
 			html, body {
 				width: 100% !important;

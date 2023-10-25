@@ -2072,9 +2072,9 @@ class CustomerAuthController extends Controller
 //                    if (!empty($request['WillingToRelocate'])) {
 //                        $q->where('WillingToRelocate', $request['WillingToRelocate']);
 //                    }
-                    if (!empty($request['MyBuilds'])) {
-                        $q->where('MyBuilds', $request['MyBuilds']);
-                    }
+//                    if (!empty($request['MyBuilds'])) {
+//                        $q->where('MyBuilds', $request['MyBuilds']);
+//                    }
                     if (!empty($request['MyLivingArrangements'])) {
                         $q->where('MyLivingArrangements', $request['MyLivingArrangements']);
                     }
@@ -2164,7 +2164,7 @@ class CustomerAuthController extends Controller
 
                 if (!empty($request['Castes']) ||
 //                    !empty($request['WillingToRelocate']) ||
-                    !empty($request['MyBuilds']) ||
+//                    !empty($request['MyBuilds']) ||
                     !empty($request['MyLivingArrangements']) ||
                     !empty($request['Heights']) ||
                     !empty($request['Disabilities'])) {
@@ -2175,9 +2175,9 @@ class CustomerAuthController extends Controller
 //                        if (!empty($request['WillingToRelocate'])) {
 //                            $q->where('WillingToRelocate', $request['WillingToRelocate']);
 //                        }
-                        if (!empty($request['MyBuilds'])) {
-                            $q->where('MyBuilds', $request['MyBuilds']);
-                        }
+//                        if (!empty($request['MyBuilds'])) {
+//                            $q->where('MyBuilds', $request['MyBuilds']);
+//                        }
                         if (!empty($request['MyLivingArrangements'])) {
                             $q->where('MyLivingArrangements', $request['MyLivingArrangements']);
                         }
