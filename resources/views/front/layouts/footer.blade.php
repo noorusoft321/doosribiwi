@@ -28,7 +28,7 @@
 
 				<ul class="social-btn-group mt-34">
 					<li class="social-item">
-						<a target="_blank" class="social-link" href="https://www.facebook.com/Shaadi.org.pk">
+						<a target="_blank" class="social-link" href="https://www.facebook.com/DoosriBiwi/">
 							<i class="fab fa-facebook" aria-hidden="true"></i>
 						</a>
 					</li>

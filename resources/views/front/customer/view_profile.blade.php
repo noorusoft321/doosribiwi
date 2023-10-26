@@ -959,16 +959,16 @@
                                                     </h5>
                                                 </div>
                                             </div>
-                                            {{--<div class="row">--}}
-                                                {{--<div class="col-6">--}}
-                                                    {{--<h5 class="edit-profile-side-heading font-size14"> Do You Prefer Hijaab </h5>--}}
-                                                {{--</div>--}}
-                                                {{--<div class="col-6">--}}
-                                                    {{--<h5 class="edit-profile-side-heading font-size14 text-theme">--}}
-                                                        {{--{{genericQuery($customer->customerReligionInfo->DoYouPreferHijabs,'DoYouPreferHijab')}}--}}
-                                                    {{--</h5>--}}
-                                                {{--</div>--}}
-                                            {{--</div>--}}
+                                            <div class="row">
+                                                <div class="col-6">
+                                                    <h5 class="edit-profile-side-heading font-size14"> Do You Prefer Hijaab </h5>
+                                                </div>
+                                                <div class="col-6">
+                                                    <h5 class="edit-profile-side-heading font-size14 text-theme">
+                                                        {{genericQuery($customer->customerReligionInfo->DoYouPreferHijabs,'DoYouPreferHijab')}}
+                                                    </h5>
+                                                </div>
+                                            </div>
                                             <div class="row">
                                                 <div class="col-6">
                                                     <h5 class="edit-profile-side-heading font-size14"> Do You Prefer Beard </h5>

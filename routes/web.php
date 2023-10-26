@@ -31,12 +31,12 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/testing-with-db', function () {
     $res = null;
-//    $messageData = array(
-//        'code'  => base64_encode('smmwp321@gmail.com'),
-//        'email' => 'smmwp321@gmail.com'
-//    );
-//
-//    $res = sendNewEmail('emails.password_reset',$messageData,'Password Reset - DoosriBiwi.com');
+    $messageData = array(
+        'code'  => base64_encode('smmwp321@gmail.com'),
+        'email' => 'smmwp321@gmail.com'
+    );
+
+    $res = sendNewEmail('emails.password_reset',$messageData,'Password Reset - DoosriBiwi.com');
     dd('Doosri Biwi',$res);
 })->name('testing.with.db');
 

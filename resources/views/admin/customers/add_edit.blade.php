@@ -1726,17 +1726,17 @@
                                         {{--</select>--}}
                                     {{--</div>--}}
                                 {{--</div>--}}
-                                {{--<div class="col-md-6">--}}
-                                    {{--<div class="form-group py-xl-10">--}}
-                                        {{--<label for="IAmLookingToMarry">*I am Looking to Marry</label>--}}
-                                        {{--<select class="multiple-select form-control" name="IAmLookingToMarry">--}}
-                                            {{--<option value="">Select</option>--}}
-                                            {{--@foreach($lookingToMarries as $val)--}}
-                                                {{--<option value="{{$val->id}}">{{$val->title}}</option>--}}
-                                            {{--@endforeach--}}
-                                        {{--</select>--}}
-                                    {{--</div>--}}
-                                {{--</div>--}}
+                                <div class="col-md-6">
+                                    <div class="form-group py-xl-10">
+                                        <label for="IAmLookingToMarry">*I am Looking to Marry</label>
+                                        <select class="multiple-select form-control" name="IAmLookingToMarry">
+                                            <option value="">Select</option>
+                                            @foreach($lookingToMarries as $val)
+                                                <option value="{{$val->id}}">{{$val->title}}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                </div>
                                 <div class="col-md-6">
                                     <div class="form-group py-xl-10">
                                         <label for="MyLivingArrangements">*Living Arrangement</label>
@@ -1891,17 +1891,17 @@
                                         </select>
                                     </div>
                                 </div>
-                                {{--<div class="col-md-6">--}}
-                                    {{--<div class="form-group py-xl-10">--}}
-                                        {{--<label for="DoYouPreferHijabs">*Do You Prefer Hijab?</label>--}}
-                                        {{--<select class="multiple-select form-control" name="DoYouPreferHijabs">--}}
-                                            {{--<option value="">Select</option>--}}
-                                            {{--@foreach($preferHijabs as $val)--}}
-                                                {{--<option value="{{$val->id}}">{{$val->title}}</option>--}}
-                                            {{--@endforeach--}}
-                                        {{--</select>--}}
-                                    {{--</div>--}}
-                                {{--</div>--}}
+                                <div class="col-md-6">
+                                    <div class="form-group py-xl-10">
+                                        <label for="DoYouPreferHijabs">*Do You Prefer Hijab?</label>
+                                        <select class="multiple-select form-control" name="DoYouPreferHijabs">
+                                            <option value="">Select</option>
+                                            @foreach($preferHijabs as $val)
+                                                <option value="{{$val->id}}">{{$val->title}}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                </div>
                                 <div class="col-md-6">
                                     <div class="form-group py-xl-10">
                                         <label for="DoYouHaveBeards">*Do You Prefer Beard?</label>

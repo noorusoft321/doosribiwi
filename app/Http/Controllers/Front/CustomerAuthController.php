@@ -250,9 +250,9 @@ class CustomerAuthController extends Controller
                 CustomerPersonalInfo::create($request);
                 DB::commit();
                 $data = [
-                    'email'    => $customer->email,
-                    'code'     => base64_encode($customer->email),
-                    'customer' => $customer
+                    'email'     => $customer->email,
+                    'code'      => base64_encode($customer->email),
+                    'fullName' => $customer->full_name
                 ];
 
                 sendNewEmail('emails.confirmation',$data,'Confirm Account - DoosriBiwi.com');
@@ -1109,7 +1109,7 @@ class CustomerAuthController extends Controller
         $data = [
             'email'    => $customer->email,
             'code'     => base64_encode($customer->email),
-            'customer' => $customer
+            'fullName' => $customer->full_name
         ];
 
         $isEmailSent = sendNewEmail('emails.confirmation',$data,'Confirm Account - DoosriBiwi.com');
