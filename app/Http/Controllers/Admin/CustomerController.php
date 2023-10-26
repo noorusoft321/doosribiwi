@@ -530,7 +530,7 @@ class CustomerController extends Controller
         $castes = Caste::where('deleted',0)->orderBy('order_at','asc')->get();
 
         $religions = Religion::where('deleted',0)->orderBy('order_at','asc')->get();
-//        $preferHijabs = DoYouPreferHijab::where('deleted',0)->orderBy('order_at','asc')->get();
+        $preferHijabs = DoYouPreferHijab::where('deleted',0)->orderBy('order_at','asc')->get();
         $reverts = AreYouRevert::where('deleted',0)->orderBy('order_at','asc')->get();
 //        $performSalaahs = DoYouPerformSalaah::where('deleted',0)->orderBy('order_at','asc')->get();
         $beards = DoYouHaveBeard::where('deleted',0)->orderBy('order_at','asc')->get();
@@ -607,7 +607,7 @@ class CustomerController extends Controller
             'disabilities',
             'castes',
             'religions',
-//            'preferHijabs',
+            'preferHijabs',
             'reverts',
 //            'performSalaahs',
             'sects',
@@ -752,7 +752,7 @@ class CustomerController extends Controller
             'MyFirstLanguageMotherTonguesID' => 'required|numeric',
             'Religions'                      => 'required|numeric',
             'Sects'                          => 'required|numeric',
-//            'DoYouPreferHijabs'              => 'required|numeric',
+            'DoYouPreferHijabs'              => 'required|numeric',
             'DoYouHaveBeards'                => 'required|numeric',
             'AreYouReverts'                  => 'required|numeric',
             'DoYouKeepHalal'                 => 'required|numeric',
