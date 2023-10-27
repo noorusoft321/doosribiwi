@@ -776,6 +776,7 @@ class CustomerController extends Controller
             $request['dob_month'] = date('m',strtotime($request['DOB']));
             $request['dob_year'] = date('Y',strtotime($request['DOB']));
             $request['age'] = date("Y") - $request['dob_year'];
+            $request['second_marraige'] = ($request['gender']==1) ? 1 : 2;
 
             $request['EducationID'] = $request['Qualification'];
             $request['OccupationID'] = $request['Profession'];

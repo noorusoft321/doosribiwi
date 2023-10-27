@@ -478,40 +478,25 @@ if (!function_exists('customerMatchesPercentage')) {
             $customerSearchingRow = CustomerSearch::where('customerID', auth()->guard('customer')->id())->first();
             if (!empty($customerSearchingRow)) {
                 $customerSearching = json_decode($customerSearchingRow->title);
-                /* Here start for QA matching fixes % */
                 if (isset($customer->customerOtherInfo) && !empty($customer->customerOtherInfo)) {
                     $customerMatchesPercentage += (isset($customerSearching->ageFrom) && isset($customerSearching->ageTo) && $customer->customerOtherInfo->age >= $customerSearching->ageFrom && $customer->customerOtherInfo->age <= $customerSearching->ageTo) ? 20 : 0;
                     $customerMatchesPercentage += (isset($customerSearching->gender) && $customer->customerOtherInfo->gender == $customerSearching->gender) ? 20 : 0;
                     $customerMatchesPercentage += (isset($customerSearching->MaritalStatus) && $customer->customerOtherInfo->MaritalStatusID == $customerSearching->MaritalStatus) ? 15 : 0;
                     $customerMatchesPercentage += (isset($customerSearching->country_id) && $customer->customerOtherInfo->country_id == $customerSearching->country_id) ? 8 : 0;
-                    $customerMatchesPercentage += (isset($customerSearching->state_id) && $customer->customerOtherInfo->state_id == $customerSearching->state_id) ? 7 : 0;
-//                    $customerMatchesPercentage += (isset($customerSearching->Religions) && $customer->customerOtherInfo->ReligionsID == $customerSearching->Religions) ? 10 : 0;
-//                    $customerMatchesPercentage += (isset($customerSearching->Tongue) && $customer->customerOtherInfo->MyFirstLanguageMotherTonguesID == $customerSearching->Tongue) ? 5 : 0;
-//                    $customerMatchesPercentage += (isset($customerSearching->city_id) && $customer->customerOtherInfo->city_id == $customerSearching->city_id) ? 4 : 0;
-//                    $customerMatchesPercentage += (isset($customerSearching->Sects) && $customer->customerOtherInfo->SectID == $customerSearching->Sects) ? 5 : 0;
-//                    $customerMatchesPercentage += (!empty($customer->customerOtherInfo) && isset($customerSearching->EducationID) && $customer->customerOtherInfo->EducationID == $customerSearching->EducationID) ? 15 : 0;
-//                    $customerMatchesPercentage += (!empty($customer->customerOtherInfo) && isset($customerSearching->OccupationID) && $customer->customerOtherInfo->OccupationID == $customerSearching->OccupationID) ? 15 : 0;
+                    $customerMatchesPercentage += (isset($customerSearching->state_id) ? (empty($customerSearching->state_id) || $customerSearching->state_id==0 ? 7 : ($customer->customerOtherInfo->state_id == $customerSearching->state_id ? 7 : 0) ) : 0);
                 }
 
                 if (isset($customer->customerReligionInfo) && !empty($customer->customerReligionInfo)) {
                     $customerMatchesPercentage += (isset($customerSearching->Religions) && $customer->customerReligionInfo->Religions == $customerSearching->Religions) ? 15 : 0;
-//                    $customerMatchesPercentage += (isset($customerSearching->Sects) && $customer->customerReligionInfo->Sects == $customerSearching->Sects) ? 5 : 0;
                 }
 
                 if (!empty($customerCareerInfo)) {
-                    $customerMatchesPercentage += (isset($customerSearching->EducationID) && $customerCareerInfo->Qualification == $customerSearching->EducationID) ? 15 : 0;
-//                    $customerMatchesPercentage += (isset($customerSearching->OccupationID) && $customerCareerInfo->Profession == $customerSearching->OccupationID) ? 15 : 0;
+                    $customerMatchesPercentage += (isset($customerSearching->EducationID) ? (empty($customerSearching->EducationID) || $customerSearching->EducationID==0 ? 7 : ($customerCareerInfo->Qualification == $customerSearching->EducationID ? 7 : 0) ) : 0);
                 } else {
                     if (isset($customer->customerOtherInfo) && !empty($customer->customerOtherInfo)) {
-                        $customerMatchesPercentage += (isset($customerSearching->EducationID) && $customer->customerOtherInfo->EducationID == $customerSearching->EducationID) ? 15 : 0;
-//                        $customerMatchesPercentage += (isset($customerSearching->OccupationID) && $customer->customerOtherInfo->OccupationID == $customerSearching->OccupationID) ? 15 : 0;
+                        $customerMatchesPercentage += (isset($customerSearching->EducationID) ? (empty($customerSearching->EducationID) || $customerSearching->EducationID==0 ? 7 : ($customer->customerOtherInfo->EducationID == $customerSearching->EducationID ? 7 : 0) ) : 0);
                     }
                 }
-
-//                if (isset($customer->customerPersonalInfo) && !empty($customer->customerPersonalInfo)) {
-//                    $customerMatchesPercentage += (isset($customerSearching->Heights) && $customer->customerPersonalInfo->Heights == $customerSearching->Heights) ? 5 : 0;
-//                    $customerMatchesPercentage += (isset($customerSearching->Castes) && $customer->customerPersonalInfo->Caste == $customerSearching->Castes) ? 5 : 0;
-//                }
                 return $customerMatchesPercentage;
             }
         }

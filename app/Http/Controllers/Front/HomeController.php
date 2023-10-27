@@ -261,181 +261,6 @@ class HomeController extends Controller
             case "featured-proposals":
                 $customers = Customer::where($needStatusWhere)->where('featuredProfile',1);
                 break;
-            case "elite-proposals":
-                $customers = Customer::where($needStatusWhere)->with(['customerCareerInfo' => function($query) {
-                    $query->where('MonthlyIncome','=',833);
-                }])->whereHas('customerCareerInfo', function($query) {
-                    $query->where('MonthlyIncome','=',833);
-                });
-                break;
-            case "usa-proposals":
-                $customers = Customer::where($needStatusWhere2)->with(['customerOtherInfo' => function($query) {
-                    $query->where('country_id','=',226);
-                }])->whereHas('customerOtherInfo', function($query) {
-                    $query->where('country_id','=',226);
-                });
-                break;
-            case "canada-proposals":
-                $customers = Customer::where($needStatusWhere2)->with(['customerOtherInfo' => function($query) {
-                    $query->where('country_id','=',38);
-                }])->whereHas('customerOtherInfo', function($query) {
-                    $query->where('country_id','=',38);
-                });
-                break;
-            case "uk-proposals":
-                $customers = Customer::where($needStatusWhere2)->with(['customerOtherInfo' => function($query) {
-                    $query->where('country_id','=',225);
-                }])->whereHas('customerOtherInfo', function($query) {
-                    $query->where('country_id','=',225);
-                });
-                break;
-            case "france-italy-spain-germany-proposals":
-                $customers = Customer::where($needStatusWhere2)->with(['customerOtherInfo' => function($query) {
-                    $query->whereIn('country_id',[73,105,199,80]);
-                }])->whereHas('customerOtherInfo', function($query) {
-                    $query->whereIn('country_id',[73,105,199,80]);
-                });
-                break;
-            case "australia-proposals":
-                $customers = Customer::where($needStatusWhere2)->with(['customerOtherInfo' => function($query) {
-                    $query->where('country_id','=',13);
-                }])->whereHas('customerOtherInfo', function($query) {
-                    $query->where('country_id','=',13);
-                });
-                break;
-            case "saudia-proposals":
-                $customers = Customer::where($needStatusWhere2)->with(['customerOtherInfo' => function($query) {
-                    $query->where('country_id','=',187);
-                }])->whereHas('customerOtherInfo', function($query) {
-                    $query->where('country_id','=',187);
-                });
-                break;
-            case "uae-proposals":
-                $customers = Customer::where($needStatusWhere2)->with(['customerOtherInfo' => function($query) {
-                    $query->where('country_id','=',224);
-                }])->whereHas('customerOtherInfo', function($query) {
-                    $query->where('country_id','=',224);
-                });
-                break;
-            case "oman-qatar-bahrain-kuwait-malaysia-proposals":
-                $customers = Customer::where($needStatusWhere2)->with(['customerOtherInfo' => function($query) {
-                    $query->whereIn('country_id',[161,174,17,114,129]);
-                }])->whereHas('customerOtherInfo', function($query) {
-                    $query->whereIn('country_id',[161,174,17,114,129]);
-                });
-                break;
-            case "female-proposals-karachi":
-                $customers = Customer::where($needStatusWhere2)->with(['customerOtherInfo' => function($query) {
-                    $query->where([
-                        'gender'          => 2,
-                        'MaritalStatusID' => 1,
-                        'city_id'         => 551
-                    ]);
-                }])->whereHas('customerOtherInfo', function($query) {
-                    $query->where([
-                        'gender'          => 2,
-                        'MaritalStatusID' => 1,
-                        'city_id'         => 551
-                    ]);
-                });
-                break;
-            case "male-proposals-karachi":
-                $customers = Customer::where($needStatusWhere2)->with(['customerOtherInfo' => function($query) {
-                    $query->where([
-                        'gender'          => 1,
-                        'MaritalStatusID' => 1,
-                        'city_id'         => 551
-                    ]);
-                }])->whereHas('customerOtherInfo', function($query) {
-                    $query->where([
-                        'gender'          => 1,
-                        'MaritalStatusID' => 1,
-                        'city_id'         => 551
-                    ]);
-                });
-                break;
-            case "female-proposals-Lahore":
-                $customers = Customer::where($needStatusWhere2)->with(['customerOtherInfo' => function($query) {
-                    $query->where([
-                        'gender'          => 2,
-                        'MaritalStatusID' => 1,
-                        'city_id'         => 1
-                    ]);
-                }])->whereHas('customerOtherInfo', function($query) {
-                    $query->where([
-                        'gender'          => 2,
-                        'MaritalStatusID' => 1,
-                        'city_id'         => 1
-                    ]);
-                });
-                break;
-            case "male-proposals-Lahore":
-                $customers = Customer::where($needStatusWhere2)->with(['customerOtherInfo' => function($query) {
-                    $query->where([
-                        'gender'          => 1,
-                        'MaritalStatusID' => 1,
-                        'city_id'         => 1
-                    ]);
-                }])->whereHas('customerOtherInfo', function($query) {
-                    $query->where([
-                        'gender'          => 1,
-                        'MaritalStatusID' => 1,
-                        'city_id'         => 1
-                    ]);
-                });
-                break;
-            case "female-proposals-faisalabad":
-                $customers = Customer::where($needStatusWhere2)->with(['customerOtherInfo' => function($query) {
-                    $query->where([
-                        'gender'          => 2,
-                        'MaritalStatusID' => 1,
-                        'city_id'         => 591
-                    ]);
-                }])->whereHas('customerOtherInfo', function($query) {
-                    $query->where([
-                        'gender'          => 2,
-                        'MaritalStatusID' => 1,
-                        'city_id'         => 591
-                    ]);
-                });
-                break;
-            case "male-proposals-faisalabad":
-                $customers = Customer::where($needStatusWhere2)->with(['customerOtherInfo' => function($query) {
-                    $query->where([
-                        'gender'          => 1,
-                        'MaritalStatusID' => 1,
-                        'city_id'         => 591
-                    ]);
-                }])->whereHas('customerOtherInfo', function($query) {
-                    $query->where([
-                        'gender'          => 1,
-                        'MaritalStatusID' => 1,
-                        'city_id'         => 591
-                    ]);
-                });
-                break;
-            case "female-proposals-islamabad-Rawalpindi":
-                $customers = Customer::where($needStatusWhere2)->with(['customerOtherInfo' => function($query) {
-                    $query->where('gender',2);
-                    $query->where('MaritalStatusID',1);
-                    $query->whereIn('city_id',[748,592]);
-                }])->whereHas('customerOtherInfo', function($query) {
-                    $query->where('gender',2);
-                    $query->where('MaritalStatusID',1);
-                    $query->whereIn('city_id',[748,592]);
-                });
-                break;
-            case "male-proposals-islamabad-Rawalpindi":
-                $customers = Customer::where($needStatusWhere2)->with(['customerOtherInfo' => function($query) {
-                    $query->where('gender',1);
-                    $query->where('MaritalStatusID',1);
-                    $query->whereIn('city_id',[748,592]);
-                }])->whereHas('customerOtherInfo', function($query) {
-                    $query->where('gender',1);
-                    $query->where('MaritalStatusID',1);
-                    $query->whereIn('city_id',[748,592]);
-                });
-                break;
             case "females-Ready-for-second-marriage":
                 $customers = Customer::where([
                     'profile_status'           => 1,
@@ -452,15 +277,6 @@ class HomeController extends Controller
                     'profile_status'           => 1,
                     'second_marraige'          => 1,
                     'mobile_verified'          => 1
-                ])->with(['customerOtherInfo' => function($query) {
-                    $query->where('gender', 1);
-                }])->whereHas('customerOtherInfo', function($query) {
-                    $query->where('gender', 1);
-                });
-                break;
-            case "male-rishta":
-                $customers = Customer::where([
-                    'profile_status'           => 1
                 ])->with(['customerOtherInfo' => function($query) {
                     $query->where('gender', 1);
                 }])->whereHas('customerOtherInfo', function($query) {
@@ -491,10 +307,10 @@ class HomeController extends Controller
                         if (isset($customerSearch->country_id) && !empty($customerSearch->country_id)) {
                             $query->where('country_id', $customerSearch->country_id);
                         }
-                        if (isset($customerSearch->state_id) && !empty($customerSearch->state_id)) {
+                        if (isset($customerSearch->state_id) && $customerSearch->state_id > 0) {
                             $query->where('state_id', $customerSearch->state_id);
                         }
-                        if (isset($customerSearch->city_id) && !empty($customerSearch->city_id)) {
+                        if (isset($customerSearch->city_id) && $customerSearch->city_id > 0) {
                             $query->where('city_id', $customerSearch->city_id);
                         }
                     }, 'customerReligionInfo' => function($query) use ($customerSearch) {
@@ -525,10 +341,10 @@ class HomeController extends Controller
                         if (isset($customerSearch->country_id) && !empty($customerSearch->country_id)) {
                             $query->where('country_id', $customerSearch->country_id);
                         }
-                        if (isset($customerSearch->state_id) && !empty($customerSearch->state_id)) {
+                        if (isset($customerSearch->state_id) && $customerSearch->state_id > 0) {
                             $query->where('state_id', $customerSearch->state_id);
                         }
-                        if (isset($customerSearch->city_id) && !empty($customerSearch->city_id)) {
+                        if (isset($customerSearch->city_id) && $customerSearch->city_id > 0) {
                             $query->where('city_id', $customerSearch->city_id);
                         }
                     });

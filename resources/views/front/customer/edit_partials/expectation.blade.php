@@ -132,7 +132,7 @@
                     </div>
                     <div class="col-md-8">
                         <select name="Tongue" class="form-select select-icon icon-mark form-control from-tab rounded-pill" >
-                            <option value=""> Select</option>
+                            <option value="0">Any</option>
                             @foreach($tongues as $val)
                                 <option value="{{$val->id}}" {{(isset($customerSearch->Tongue) && $customerSearch->Tongue==$val->id) ? 'selected' : ''}}>{{$val->title}}</option>
                             @endforeach
@@ -168,7 +168,7 @@
                     </div>
                     <div class="col-md-8">
                         <select class="form-select select-icon icon-mark form-control from-tab rounded-pill" name="Sects" >
-                            <option value="">Select</option>
+                            <option value="0">Any</option>
                             @foreach($sects as $val)
                                 <option value="{{$val->id}}" {{(isset($customerSearch->Sects) && $customerSearch->Sects==$val->id) ? 'selected' : ''}}>{{$val->title}}</option>
                             @endforeach
@@ -186,7 +186,7 @@
                     </div>
                     <div class="col-md-8">
                         <select class="form-select select-icon icon-mark form-control from-tab rounded-pill" name="EducationID" >
-                            <option value=""> Select</option>
+                            <option value="0">Any</option>
                             @foreach($educations as $val)
                                 <option value="{{$val->id}}" {{(isset($customerSearch->EducationID) && $customerSearch->EducationID==$val->id) ? 'selected' : ''}}>{{$val->title}}</option>
                             @endforeach
@@ -204,7 +204,7 @@
                     </div>
                     <div class="col-md-8">
                         <select name="OccupationID" class="form-select select-icon icon-mark form-control from-tab rounded-pill" >
-                            <option value=""> Select</option>
+                            <option value="0">Any</option>
                             @foreach($occupations as $val)
                                 <option value="{{$val->id}}" {{(isset($customerSearch->OccupationID) && $customerSearch->OccupationID==$val->id) ? 'selected' : ''}}>{{$val->title}}</option>
                             @endforeach
@@ -240,7 +240,7 @@
                     </div>
                     <div class="col-md-8">
                         <select name="MyIncome" class="form-select select-icon icon-mark form-control from-tab rounded-pill" >
-                            <option value="">  Select</option>
+                            <option value="0">Any</option>
                             @foreach($incomes as $val)
                                 <option value="{{$val->id}}" {{(isset($customerSearch->MyIncome) && $customerSearch->MyIncome==$val->id) ? 'selected' : ''}}>{{$val->title}}</option>
                             @endforeach
@@ -258,7 +258,7 @@
                     </div>
                     <div class="col-md-8">
                         <select name="MaritalStatus" class="form-select select-icon icon-mark form-control from-tab rounded-pill" >
-                            <option value="">Select</option>
+                            <option value="0">Any</option>
                             @foreach($maritalStatuses as $val)
                                 <option value="{{$val->id}}" {{(isset($customerSearch->MaritalStatus) && $customerSearch->MaritalStatus==$val->id) ? 'selected' : ''}}>{{$val->title}}</option>
                             @endforeach
@@ -294,7 +294,7 @@
                     </div>
                     <div class="col-md-8">
                         <select name="Heights" class="form-select select-icon icon-mark form-control from-tab rounded-pill" >
-                            <option value="">Select</option>
+                            <option value="0">Any</option>
                             @foreach($heights as $val)
                                 <option value="{{$val->id}}" {{(isset($customerSearch->Heights) && $customerSearch->Heights==$val->id) ? 'selected' : ''}}>{{$val->title}}</option>
                             @endforeach
@@ -348,7 +348,7 @@
                     </div>
                     <div class="col-md-8">
                         <select name="Castes" class="form-select select-icon icon-mark form-control from-tab rounded-pill" >
-                            <option value=""> Select</option>
+                            <option value="0">Any</option>
                             @foreach($castes as $val)
                                 <option value="{{$val->id}}" {{(isset($customerSearch->Castes) && $customerSearch->Castes==$val->id) ? 'selected' : ''}}>{{$val->title}}</option>
                             @endforeach
@@ -453,7 +453,7 @@
                     </div>
                     <div class="col-md-8">
                         <select onchange="getCities(this,'city_id')" class="form-select select-icon icon-mark form-control from-tab rounded-pill" name="state_id" >
-                            <option value="">Select</option>
+                            <option value="0">Any</option>
                             @foreach($expStates as $val)
                                 <option value="{{$val->id}}">{{$val->title}}</option>
                             @endforeach
@@ -471,7 +471,7 @@
                     </div>
                     <div class="col-md-8">
                         <select class="form-select select-icon icon-mark form-control from-tab rounded-pill" name="city_id" >
-                            <option value="">Select</option>
+                            <option value="0">Any</option>
                             @foreach($expCities as $val)
                                 <option value="{{$val->id}}">{{$val->title}}</option>
                             @endforeach
@@ -489,7 +489,7 @@
                     </div>
                     <div class="col-md-8">
                         <select name="Tongue" class="form-select select-icon icon-mark form-control from-tab rounded-pill" >
-                            <option value=""> Select</option>
+                            <option value="0">Any</option>
                             @foreach($tongues as $val)
                                 <option value="{{$val->id}}">{{$val->title}}</option>
                             @endforeach
@@ -525,7 +525,7 @@
                     </div>
                     <div class="col-md-8">
                         <select class="form-select select-icon icon-mark form-control from-tab rounded-pill" name="Sects" >
-                            <option value="">Select</option>
+                            <option value="0">Any</option>
                             @foreach($sects as $val)
                                 <option value="{{$val->id}}">{{$val->title}}</option>
                             @endforeach
@@ -543,7 +543,7 @@
                     </div>
                     <div class="col-md-8">
                         <select class="form-select select-icon icon-mark form-control from-tab rounded-pill" name="EducationID" >
-                            <option value=""> Select</option>
+                            <option value="0">Any</option>
                             @foreach($educations as $val)
                                 <option value="{{$val->id}}">{{$val->title}}</option>
                             @endforeach
@@ -561,7 +561,7 @@
                     </div>
                     <div class="col-md-8">
                         <select name="OccupationID" class="form-select select-icon icon-mark form-control from-tab rounded-pill" >
-                            <option value=""> Select</option>
+                            <option value="0">Any</option>
                             @foreach($occupations as $val)
                                 <option value="{{$val->id}}">{{$val->title}}</option>
                             @endforeach
@@ -597,7 +597,7 @@
                     </div>
                     <div class="col-md-8">
                         <select name="MyIncome" class="form-select select-icon icon-mark form-control from-tab rounded-pill" >
-                            <option value="">  Select</option>
+                            <option value="0">Any</option>
                             @foreach($incomes as $val)
                                 <option value="{{$val->id}}">{{$val->title}}</option>
                             @endforeach
@@ -615,7 +615,7 @@
                     </div>
                     <div class="col-md-8">
                         <select name="MaritalStatus" class="form-select select-icon icon-mark form-control from-tab rounded-pill" >
-                            <option value="">Select</option>
+                            <option value="0">Any</option>
                             @foreach($maritalStatuses as $val)
                                 <option value="{{$val->id}}">{{$val->title}}</option>
                             @endforeach
@@ -651,7 +651,7 @@
                     </div>
                     <div class="col-md-8">
                         <select name="Heights" class="form-select select-icon icon-mark form-control from-tab rounded-pill" >
-                            <option value="">Select</option>
+                            <option value="0">Any</option>
                             @foreach($heights as $val)
                                 <option value="{{$val->id}}">{{$val->title}}</option>
                             @endforeach
@@ -705,7 +705,7 @@
                     </div>
                     <div class="col-md-8">
                         <select name="Castes" class="form-select select-icon icon-mark form-control from-tab rounded-pill" >
-                            <option value=""> Select</option>
+                            <option value="0">Any</option>
                             @foreach($castes as $val)
                                 <option value="{{$val->id}}">{{$val->title}}</option>
                             @endforeach

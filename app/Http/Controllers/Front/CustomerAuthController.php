@@ -378,10 +378,10 @@ class CustomerAuthController extends Controller
                 if (isset($customerSearch->country_id) && !empty($customerSearch->country_id)) {
                     $query->where('country_id', $customerSearch->country_id);
                 }
-                if (isset($customerSearch->state_id) && !empty($customerSearch->state_id)) {
+                if (isset($customerSearch->state_id) && $customerSearch->state_id > 0) {
                     $query->where('state_id', $customerSearch->state_id);
                 }
-                if (isset($customerSearch->city_id) && !empty($customerSearch->city_id)) {
+                if (isset($customerSearch->city_id) && $customerSearch->city_id > 0) {
                     $query->where('city_id', $customerSearch->city_id);
                 }
             }, 'customerReligionInfo' => function($query) use ($customerSearch) {
@@ -412,10 +412,10 @@ class CustomerAuthController extends Controller
                 if (isset($customerSearch->country_id) && !empty($customerSearch->country_id)) {
                     $query->where('country_id', $customerSearch->country_id);
                 }
-                if (isset($customerSearch->state_id) && !empty($customerSearch->state_id)) {
+                if (isset($customerSearch->state_id) && $customerSearch->state_id > 0) {
                     $query->where('state_id', $customerSearch->state_id);
                 }
-                if (isset($customerSearch->city_id) && !empty($customerSearch->city_id)) {
+                if (isset($customerSearch->city_id) && $customerSearch->city_id > 0) {
                     $query->where('city_id', $customerSearch->city_id);
                 }
             });
@@ -1939,8 +1939,8 @@ class CustomerAuthController extends Controller
         $customers = $customers->where('deleted',0)
             ->where('profile_status',1)
             ->where('email_verified',1)
-            ->where('profile_pic_status',1)
-            ->where('profile_pic_client_status',1)
+//            ->where('profile_pic_status',1)
+//            ->where('profile_pic_client_status',1)
             ->whereNotIn('image',['default-female.jpg','default-male.jpg','default-user.png'])
             ->inRandomOrder()
             ->limit(10)

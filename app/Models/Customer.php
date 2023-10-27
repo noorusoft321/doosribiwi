@@ -98,6 +98,9 @@ class Customer extends Authenticatable
 
     public function getImageFullPathAttribute()
     {
+        if ($this->profile_pic_client_status==0) {
+            return env('APP_URL').'/customer_images/only-me.jpg';
+        }
         if ($this->profile_pic_client_status==1 && $this->profile_pic_status==1 && !empty($this->image)) {
             if (file_exists(public_path('customer_images/'.$this->image))) {
                 return env('APP_URL').'/customer_images/'.$this->image;

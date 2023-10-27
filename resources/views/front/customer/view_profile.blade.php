@@ -1126,7 +1126,13 @@
                                                 </div>
                                                 <div class="col-6">
                                                     <h5 class="edit-profile-side-heading font-size14 text-theme">
-                                                        {{(isset($customerSearch->Tongue)) ? genericQuery($customerSearch->Tongue,'MotherTongue') : 'N/A'}}
+                                                        @php
+                                                            $valNew = 'Any';
+                                                            if (isset($customerSearch->Tongue)) {
+                                                                $valNew = genericQuery($customerSearch->Tongue,'MotherTongue');
+                                                            }
+                                                        @endphp
+                                                        {{($valNew=='N/A') ? 'Any' : $valNew}}
                                                     </h5>
                                                 </div>
                                             </div>
@@ -1150,7 +1156,13 @@
                                                 </div>
                                                 <div class="col-6">
                                                     <h5 class="edit-profile-side-heading font-size14 text-theme">
-                                                        {{(isset($customerSearch->Sects)) ? genericQuery($customerSearch->Sects,'Sect') : 'N/A'}}
+                                                        @php
+                                                            $valNew = 'Any';
+                                                            if (isset($customerSearch->Sects)) {
+                                                                $valNew = genericQuery($customerSearch->Sects,'Sect');
+                                                            }
+                                                        @endphp
+                                                        {{($valNew=='N/A') ? 'Any' : $valNew}}
                                                     </h5>
                                                 </div>
                                             </div>
@@ -1162,7 +1174,13 @@
                                                 </div>
                                                 <div class="col-6">
                                                     <h5 class="edit-profile-side-heading font-size14 text-theme">
-                                                        {{(isset($customerSearch->EducationID)) ? genericQuery($customerSearch->EducationID,'Education') : 'N/A'}}
+                                                        @php
+                                                            $valNew = 'Any';
+                                                            if (isset($customerSearch->EducationID)) {
+                                                                $valNew = genericQuery($customerSearch->EducationID,'Education');
+                                                            }
+                                                        @endphp
+                                                        {{($valNew=='N/A') ? 'Any' : $valNew}}
                                                     </h5>
                                                 </div>
                                             </div>
@@ -1174,7 +1192,13 @@
                                                 </div>
                                                 <div class="col-6">
                                                     <h5 class="edit-profile-side-heading font-size14 text-theme">
-                                                        {{(isset($customerSearch->OccupationID)) ? genericQuery($customerSearch->OccupationID,'Occupation') : 'N/A'}}
+                                                        @php
+                                                            $valNew = 'Any';
+                                                            if (isset($customerSearch->OccupationID)) {
+                                                                $valNew = genericQuery($customerSearch->OccupationID,'Occupation');
+                                                            }
+                                                        @endphp
+                                                        {{($valNew=='N/A') ? 'Any' : $valNew}}
                                                     </h5>
                                                 </div>
                                             </div>
@@ -1198,7 +1222,13 @@
                                                 </div>
                                                 <div class="col-6">
                                                     <h5 class="edit-profile-side-heading font-size14 text-theme">
-                                                        {{(isset($customerSearch->MyIncome)) ? genericQuery($customerSearch->MyIncome,'AnnualInCome') : 'N/A'}}
+                                                        @php
+                                                            $valNew = 'Any';
+                                                            if (isset($customerSearch->MyIncome)) {
+                                                                $valNew = genericQuery($customerSearch->MyIncome,'AnnualInCome');
+                                                            }
+                                                        @endphp
+                                                        {{($valNew=='N/A') ? 'Any' : $valNew}}
                                                     </h5>
                                                 </div>
                                             </div>
@@ -1210,7 +1240,13 @@
                                                 </div>
                                                 <div class="col-6">
                                                     <h5 class="edit-profile-side-heading font-size14 text-theme">
-                                                        {{(isset($customerSearch->MaritalStatus)) ? genericQuery($customerSearch->MaritalStatus,'MaritalStatus') : 'N/A'}}
+                                                        @php
+                                                            $valNew = 'Any';
+                                                            if (isset($customerSearch->MaritalStatus)) {
+                                                                $valNew = genericQuery($customerSearch->MaritalStatus,'MaritalStatus');
+                                                            }
+                                                        @endphp
+                                                        {{($valNew=='N/A') ? 'Any' : $valNew}}
                                                     </h5>
                                                 </div>
                                             </div>
@@ -1234,7 +1270,13 @@
                                                 </div>
                                                 <div class="col-6">
                                                     <h5 class="edit-profile-side-heading font-size14 text-theme">
-                                                        {{(isset($customerSearch->Heights)) ? genericQuery($customerSearch->Heights,'Height') : 'N/A'}}
+                                                        @php
+                                                            $valNew = 'Any';
+                                                            if (isset($customerSearch->Heights)) {
+                                                                $valNew = genericQuery($customerSearch->Heights,'Height');
+                                                            }
+                                                        @endphp
+                                                        {{($valNew=='N/A') ? 'Any' : $valNew}}
                                                     </h5>
                                                 </div>
                                             </div>
@@ -1270,7 +1312,13 @@
                                                 </div>
                                                 <div class="col-6">
                                                     <h5 class="edit-profile-side-heading font-size14 text-theme">
-                                                        {{(isset($customerSearch->Castes)) ? genericQuery($customerSearch->Castes,'Caste') : 'N/A'}}
+                                                        @php
+                                                            $valNew = 'Any';
+                                                            if (isset($customerSearch->Castes)) {
+                                                                $valNew = genericQuery($customerSearch->Castes,'Caste');
+                                                            }
+                                                        @endphp
+                                                        {{($valNew=='N/A') ? 'Any' : $valNew}}
                                                     </h5>
                                                 </div>
                                             </div>

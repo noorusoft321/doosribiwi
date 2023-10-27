@@ -124,7 +124,7 @@
 															<div class="form-group py-xl-10">
 																<label class="fieldlabels">Tongue</label>
 																<select class="form-control rounded-pill" name="Tongue">
-																	<option value="">Select</option>
+																	<option value="0">Any</option>
 																	@foreach($tongues as $val)
 																		<option value="{{$val->id}}" {{isset($customerSearch->Tongue) && $customerSearch->Tongue==$val->id ? 'selected' : ''}}>{{$val->title}}</option>
 																	@endforeach
@@ -146,7 +146,7 @@
 															<div class="form-group py-xl-10">
 																<label class="fieldlabels">Sect</label>
 																<select class="form-control rounded-pill" name="Sects">
-																	<option value="">Select</option>
+																	<option value="0">Any</option>
 																	@foreach($sects as $val)
 																		<option value="{{$val->id}}" {{isset($customerSearch->Sects) && $customerSearch->Sects==$val->id ? 'selected' : ''}}>{{$val->title}}</option>
 																	@endforeach
@@ -157,7 +157,7 @@
 															<div class="form-group py-xl-10">
 																<label class="fieldlabels">Qualification</label>
 																<select class="form-control rounded-pill" name="EducationID">
-																	<option value="">Select</option>
+																	<option value="0">Any</option>
 																	@foreach($educations as $val)
 																		<option value="{{$val->id}}" {{isset($customerSearch->EducationID) && $customerSearch->EducationID==$val->id ? 'selected' : ''}}>{{$val->title}}</option>
 																	@endforeach
@@ -168,7 +168,7 @@
 															<div class="form-group py-xl-10">
 																<label class="fieldlabels">Profession</label>
 																<select class="form-control rounded-pill" name="OccupationID">
-																	<option value="">Select</option>
+																	<option value="0">Any</option>
 																	@foreach($occupations as $val)
 																		<option value="{{$val->id}}" {{isset($customerSearch->OccupationID) && $customerSearch->OccupationID==$val->id ? 'selected' : ''}}>{{$val->title}}</option>
 																	@endforeach
@@ -179,7 +179,7 @@
 															<div class="form-group py-xl-10">
 																<label class="fieldlabels">Income</label>
 																<select class="form-control rounded-pill" name="MyIncome">
-																	<option value="">Select</option>
+																	<option value="0">Any</option>
 																	@foreach($incomes as $val)
 																		<option value="{{$val->id}}" {{isset($customerSearch->MyIncome) && $customerSearch->MyIncome==$val->id ? 'selected' : ''}}>{{$val->title}}</option>
 																	@endforeach
@@ -201,7 +201,7 @@
 															<div class="form-group py-xl-10">
 																<label class="fieldlabels">Marital Status</label>
 																<select class="form-control rounded-pill" name="MaritalStatus">
-																	<option value="">Select</option>
+																	<option value="0">Any</option>
 																	@foreach($maritalStatues as $val)
 																		<option value="{{$val->id}}" {{isset($customerSearch->MaritalStatus) && $customerSearch->MaritalStatus==$val->id ? 'selected' : ''}}>{{$val->title}}</option>
 																	@endforeach
@@ -245,7 +245,7 @@
 															<div class="form-group py-xl-10">
 																<label class="fieldlabels">Caste</label>
 																<select class="form-control rounded-pill" name="Castes">
-																	<option value="">Select</option>
+																	<option value="0">Any</option>
 																	@foreach($castes as $val)
 																		<option value="{{$val->id}}" {{isset($customerSearch->Castes) && $customerSearch->Castes==$val->id ? 'selected' : ''}}>{{$val->title}}</option>
 																	@endforeach
@@ -328,7 +328,7 @@
 															<div class="form-group py-xl-10">
 																<label class="fieldlabels">Tongue</label>
 																<select class="form-control rounded-pill" name="Tongue">
-																	<option value="">Select</option>
+																	<option value="0">Any</option>
 																	@foreach($tongues as $val)
 																		<option value="{{$val->id}}">{{$val->title}}</option>
 																	@endforeach
@@ -350,7 +350,7 @@
 															<div class="form-group py-xl-10">
 																<label class="fieldlabels">Sect</label>
 																<select class="form-control rounded-pill" name="Sects">
-																	<option value="">Select</option>
+																	<option value="0">Any</option>
 																	@foreach($sects as $val)
 																		<option value="{{$val->id}}">{{$val->title}}</option>
 																	@endforeach
@@ -361,7 +361,7 @@
 															<div class="form-group py-xl-10">
 																<label class="fieldlabels">Qualification</label>
 																<select class="form-control rounded-pill" name="EducationID">
-																	<option value="">Select</option>
+																	<option value="0">Any</option>
 																	@foreach($educations as $val)
 																		<option value="{{$val->id}}">{{$val->title}}</option>
 																	@endforeach
@@ -372,7 +372,7 @@
 															<div class="form-group py-xl-10">
 																<label class="fieldlabels">Profession</label>
 																<select class="form-control rounded-pill" name="OccupationID">
-																	<option value="">Select</option>
+																	<option value="0">Any</option>
 																	@foreach($occupations as $val)
 																		<option value="{{$val->id}}">{{$val->title}}</option>
 																	@endforeach
@@ -383,7 +383,7 @@
 															<div class="form-group py-xl-10">
 																<label class="fieldlabels">Income</label>
 																<select class="form-control rounded-pill" name="MyIncome">
-																	<option value="">Select</option>
+																	<option value="0">Any</option>
 																	@foreach($incomes as $val)
 																		<option value="{{$val->id}}">{{$val->title}}</option>
 																	@endforeach
@@ -405,7 +405,7 @@
 															<div class="form-group py-xl-10">
 																<label class="fieldlabels">Marital Status</label>
 																<select class="form-control rounded-pill" name="MaritalStatus">
-																	<option value="">Select</option>
+																	<option value="0">Any</option>
 																	@foreach($maritalStatues as $val)
 																		<option value="{{$val->id}}">{{$val->title}}</option>
 																	@endforeach
@@ -427,7 +427,7 @@
 															<div class="form-group py-xl-10">
 																<label class="fieldlabels">Heights</label>
 																<select class="form-control rounded-pill" name="Heights">
-																	<option value="">Select</option>
+																	<option value="0">Any</option>
 																	@foreach($heights as $val)
 																		<option value="{{$val->id}}">{{$val->title}}</option>
 																	@endforeach
@@ -449,7 +449,7 @@
 															<div class="form-group py-xl-10">
 																<label class="fieldlabels">Caste</label>
 																<select class="form-control rounded-pill" name="Castes">
-																	<option value="">Select</option>
+																	<option value="0">Any</option>
 																	@foreach($castes as $val)
 																		<option value="{{$val->id}}">{{$val->title}}</option>
 																	@endforeach
