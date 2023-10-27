@@ -1941,7 +1941,8 @@ class CustomerAuthController extends Controller
             ->where('email_verified',1)
 //            ->where('profile_pic_status',1)
 //            ->where('profile_pic_client_status',1)
-            ->whereNotIn('image',['default-female.jpg','default-male.jpg','default-user.png'])
+//            ->whereNotIn('image',['default-female.jpg','default-male.jpg','default-user.png'])
+            ->orderBy('profile_pic_client_status','desc')
             ->inRandomOrder()
             ->limit(10)
             ->get();
@@ -2135,13 +2136,13 @@ class CustomerAuthController extends Controller
                         if (!empty($request['country_id'])) {
                             $q->where('country_id', $request['country_id']);
                         }
-                        if (!empty($request['state_id'])) {
+                        if ($request['state_id'] > 0) {
                             $q->where('state_id', $request['state_id']);
                         }
-                        if (!empty($request['city_id'])) {
+                        if ($request['city_id'] > 0) {
                             $q->where('city_id', $request['city_id']);
                         }
-                        if (!empty($request['MyFirstLanguageMotherTonguesID'])) {
+                        if ($request['MyFirstLanguageMotherTonguesID'] > 0) {
                             $q->where('MyFirstLanguageMotherTonguesID', $request['MyFirstLanguageMotherTonguesID']);
                         }
                         if (isset($request['slug']) && $request['slug']=='foreign-proposals') {
@@ -2151,25 +2152,25 @@ class CustomerAuthController extends Controller
                 }
 
                 if (!empty($request['Religions']) ||
-                    !empty($request['Sects'])) {
+                    $request['Sects'] > 0) {
                     $customers = $customers->whereHas('customerReligionInfo', function($q) use ($request) {
                         if (!empty($request['Religions'])) {
                             $q->where('Religions', $request['Religions']);
                         }
-                        if (!empty($request['Sects'])) {
+                        if ($request['Sects'] > 0) {
                             $q->where('Sects', $request['Sects']);
                         }
                     });
                 }
 
-                if (!empty($request['Castes']) ||
+                if ($request['Castes'] > 0 ||
 //                    !empty($request['WillingToRelocate']) ||
 //                    !empty($request['MyBuilds']) ||
                     !empty($request['MyLivingArrangements']) ||
                     !empty($request['Heights']) ||
                     !empty($request['Disabilities'])) {
                     $customers = $customers->whereHas('customerPersonalInfo', function($q) use ($request) {
-                        if (!empty($request['Castes'])) {
+                        if ($request['Castes'] > 0) {
                             $q->where('Caste', $request['Castes']);
                         }
 //                        if (!empty($request['WillingToRelocate'])) {
@@ -2181,7 +2182,7 @@ class CustomerAuthController extends Controller
                         if (!empty($request['MyLivingArrangements'])) {
                             $q->where('MyLivingArrangements', $request['MyLivingArrangements']);
                         }
-                        if (!empty($request['Heights'])) {
+                        if ($request['Heights'] > 0) {
                             $q->where('Heights', $request['Heights']);
                         }
                         if (!empty($request['Disabilities'])) {
@@ -2190,15 +2191,15 @@ class CustomerAuthController extends Controller
                     });
                 }
 
-                if (!empty($request['EducationID']) || !empty($request['OccupationID']) || !empty($request['MyIncome'])) {
+                if ($request['EducationID'] > 0 || $request['OccupationID'] > 0 || $request['MyIncome'] > 0) {
                     $customers = $customers->whereHas('customerCareerInfo', function($q) use ($request) {
-                        if (!empty($request['EducationID'])) {
+                        if ($request['EducationID'] > 0) {
                             $q->where('Qualification', $request['EducationID']);
                         }
-                        if (!empty($request['OccupationID'])) {
+                        if ($request['OccupationID'] > 0) {
                             $q->where('Profession', $request['OccupationID']);
                         }
-                        if (!empty($request['MyIncome'])) {
+                        if ($request['MyIncome'] > 0) {
                             $q->where('MonthlyIncome', $request['MyIncome']);
                         }
                     });
@@ -2221,9 +2222,9 @@ class CustomerAuthController extends Controller
                         ->where('salary_verification',1);
                 }
 
-                if (!empty($request['name'])) {
-                    $customers = $customers->where('name', $request['name']);
-                }
+//                if (!empty($request['name'])) {
+//                    $customers = $customers->where('name', $request['name']);
+//                }
                 $customers = $customers->where('deleted',0)
                     ->where('profile_status',1)
                     ->where('email_verified',1)

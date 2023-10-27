@@ -481,7 +481,7 @@ if (!function_exists('customerMatchesPercentage')) {
                 if (isset($customer->customerOtherInfo) && !empty($customer->customerOtherInfo)) {
                     $customerMatchesPercentage += (isset($customerSearching->ageFrom) && isset($customerSearching->ageTo) && $customer->customerOtherInfo->age >= $customerSearching->ageFrom && $customer->customerOtherInfo->age <= $customerSearching->ageTo) ? 20 : 0;
                     $customerMatchesPercentage += (isset($customerSearching->gender) && $customer->customerOtherInfo->gender == $customerSearching->gender) ? 20 : 0;
-                    $customerMatchesPercentage += (isset($customerSearching->MaritalStatus) && $customer->customerOtherInfo->MaritalStatusID == $customerSearching->MaritalStatus) ? 15 : 0;
+                    $customerMatchesPercentage += (isset($customerSearching->MaritalStatus) ? (empty($customerSearching->MaritalStatus) || $customerSearching->MaritalStatus==0 ? 15 : ($customer->customerOtherInfo->MaritalStatusID == $customerSearching->MaritalStatus ? 15 : 0) ) : 0);
                     $customerMatchesPercentage += (isset($customerSearching->country_id) && $customer->customerOtherInfo->country_id == $customerSearching->country_id) ? 8 : 0;
                     $customerMatchesPercentage += (isset($customerSearching->state_id) ? (empty($customerSearching->state_id) || $customerSearching->state_id==0 ? 7 : ($customer->customerOtherInfo->state_id == $customerSearching->state_id ? 7 : 0) ) : 0);
                 }

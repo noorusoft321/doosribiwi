@@ -229,60 +229,62 @@ class HomeController extends Controller
         $currentCustomerId = '';
         $states            = [];
         $cities            = [];
+        $currentUserGenderExp = '';
         if (auth()->guard('customer')->check()) {
             $currentCustomerId = auth()->guard('customer')->id();
+            $currentUserGenderExp = (auth()->guard('customer')->user()->gender_name=='Male') ? 2 : 1;
         }
-        $needStatusWhere = [
-            'profile_status'           => 1,
-            'email_verified'           => 1,
-            'age_verification'         => 1,
-            'education_verification'   => 1,
-            'location_verification'    => 1,
-            'meeting_verification'     => 1,
-            'nationality_verification' => 1,
-            'salary_verification'      => 1,
-            'profile_pic_status'       => 1
-        ];
-        $needStatusWhere2 = [
-            'profile_status'           => 1,
-            'profile_pic_status'       => 1
-        ];
+//        $needStatusWhere = [
+//            'profile_status'           => 1,
+//            'email_verified'           => 1,
+//            'age_verification'         => 1,
+//            'education_verification'   => 1,
+//            'location_verification'    => 1,
+//            'meeting_verification'     => 1,
+//            'nationality_verification' => 1,
+//            'salary_verification'      => 1,
+//            'profile_pic_status'       => 1
+//        ];
+//        $needStatusWhere2 = [
+//            'profile_status'           => 1,
+//            'profile_pic_status'       => 1
+//        ];
         switch ($slug) {
-            case "foreign-proposals":
-                $customers = Customer::where($needStatusWhere2)->with(['customerOtherInfo' => function($query) {
-                    $query->where('country_id','!=',162);
-                }])->whereHas('customerOtherInfo', function($query) {
-                    $query->where('country_id','!=',162);
-                });
-                break;
-            case "verified-proposals":
-                $customers = Customer::where($needStatusWhere);
-                break;
-            case "featured-proposals":
-                $customers = Customer::where($needStatusWhere)->where('featuredProfile',1);
-                break;
-            case "females-Ready-for-second-marriage":
-                $customers = Customer::where([
-                    'profile_status'           => 1,
-                    'second_marraige'          => 2,
-                    'mobile_verified'          => 1
-                ])->with(['customerOtherInfo' => function($query) {
-                    $query->where('gender', 2);
-                }])->whereHas('customerOtherInfo', function($query) {
-                    $query->where('gender', 2);
-                });
-                break;
-            case "males-Looking-for-second-Wife":
-                $customers = Customer::where([
-                    'profile_status'           => 1,
-                    'second_marraige'          => 1,
-                    'mobile_verified'          => 1
-                ])->with(['customerOtherInfo' => function($query) {
-                    $query->where('gender', 1);
-                }])->whereHas('customerOtherInfo', function($query) {
-                    $query->where('gender', 1);
-                });
-                break;
+//            case "foreign-proposals":
+//                $customers = Customer::where($needStatusWhere2)->with(['customerOtherInfo' => function($query) {
+//                    $query->where('country_id','!=',162);
+//                }])->whereHas('customerOtherInfo', function($query) {
+//                    $query->where('country_id','!=',162);
+//                });
+//                break;
+//            case "verified-proposals":
+//                $customers = Customer::where($needStatusWhere);
+//                break;
+//            case "featured-proposals":
+//                $customers = Customer::where($needStatusWhere)->where('featuredProfile',1);
+//                break;
+//            case "females-Ready-for-second-marriage":
+//                $customers = Customer::where([
+//                    'profile_status'           => 1,
+//                    'second_marraige'          => 2,
+////                    'mobile_verified'          => 1
+//                ])->with(['customerOtherInfo' => function($query) {
+//                    $query->where('gender', 2);
+//                }])->whereHas('customerOtherInfo', function($query) {
+//                    $query->where('gender', 2);
+//                });
+//                break;
+//            case "males-Looking-for-second-Wife":
+//                $customers = Customer::where([
+//                    'profile_status'           => 1,
+//                    'second_marraige'          => 1,
+////                    'mobile_verified'          => 1
+//                ])->with(['customerOtherInfo' => function($query) {
+//                    $query->where('gender', 1);
+//                }])->whereHas('customerOtherInfo', function($query) {
+//                    $query->where('gender', 1);
+//                });
+//                break;
             case "my-matches":
                 if (!empty($currentCustomerId)) {
                     $customerSearchRow = CustomerSearch::where('customerID',$currentCustomerId)->first();
@@ -371,18 +373,34 @@ class HomeController extends Controller
                     'getCasteName',
                     'getMotherTongueName',
                     'getMaritalStatusName',
-                    'getHeightName'
-                ])->where([
-                    'deleted'        => 0,
-                    'profile_status' => 1
+                    'getHeightName',
+                    'getCountrySlug',
+                    'getCitySlug',
+                    'customerOtherInfo' => function($q) use($currentUserGenderExp){
+                        if (!empty($currentUserGenderExp)) {
+                            $q->where('gender', $currentUserGenderExp);
+                        }
+                    }
                 ]);
+
+                if (!empty($currentUserGenderExp)) {
+                    $customers = $customers->whereHas('customerOtherInfo', function($q) use($currentUserGenderExp){
+                        $q->where('gender', $currentUserGenderExp);
+                    });
+                }
         }
 
         if (!empty($currentCustomerId)) {
             $customers = $customers->where('id','!=',$currentCustomerId);
         }
 
-        $customers = $customers->limit(10)->orderBy('id','desc')->get();
+        $customers = $customers->where([
+            'deleted'        => 0,
+            'profile_status' => 1,
+            'email_verified' => 1
+        ])->orderBy('profile_pic_client_status','desc')
+            ->limit(10)
+            ->get();
 
         $countries         = Country::where('deleted',0)->get();
         $religions         = Religion::where('deleted',0)->get();
