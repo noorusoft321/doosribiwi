@@ -263,28 +263,22 @@ class HomeController extends Controller
 //            case "featured-proposals":
 //                $customers = Customer::where($needStatusWhere)->where('featuredProfile',1);
 //                break;
-//            case "females-Ready-for-second-marriage":
-//                $customers = Customer::where([
-//                    'profile_status'           => 1,
-//                    'second_marraige'          => 2,
-////                    'mobile_verified'          => 1
-//                ])->with(['customerOtherInfo' => function($query) {
-//                    $query->where('gender', 2);
-//                }])->whereHas('customerOtherInfo', function($query) {
-//                    $query->where('gender', 2);
-//                });
-//                break;
-//            case "males-Looking-for-second-Wife":
-//                $customers = Customer::where([
-//                    'profile_status'           => 1,
-//                    'second_marraige'          => 1,
-////                    'mobile_verified'          => 1
-//                ])->with(['customerOtherInfo' => function($query) {
-//                    $query->where('gender', 1);
-//                }])->whereHas('customerOtherInfo', function($query) {
-//                    $query->where('gender', 1);
-//                });
-//                break;
+            case "females-Ready-for-second-marriage":
+                $customers = Customer::where('second_marraige',2)
+                    ->with(['customerOtherInfo' => function($query) {
+                    $query->where('gender', 2);
+                }])->whereHas('customerOtherInfo', function($query) {
+                    $query->where('gender', 2);
+                });
+                break;
+            case "males-Looking-for-second-Wife":
+                $customers = Customer::where('second_marraige',1)
+                    ->with(['customerOtherInfo' => function($query) {
+                    $query->where('gender', 1);
+                }])->whereHas('customerOtherInfo', function($query) {
+                    $query->where('gender', 1);
+                });
+                break;
             case "my-matches":
                 if (!empty($currentCustomerId)) {
                     $customerSearchRow = CustomerSearch::where('customerID',$currentCustomerId)->first();

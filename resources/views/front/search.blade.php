@@ -269,7 +269,7 @@
 											</div>
 											<br>
 											<label class="fieldlabels"> Country </label>
-											<select onchange="getStates(this,'state_id')" class="form-select form-control" name="country_id" id="country_id">
+											<select onchange="getStates(this,'state_id','Any')" class="form-select form-control" name="country_id" id="country_id">
 												<option value="">Select</option>
 												@foreach($countries as $val)
 													<option value="{{$val->id}}" {{($country==$val->id) ? 'selected' : ''}}>{{$val->name}}</option>
@@ -277,8 +277,8 @@
 											</select>
 											<br>
 											<label class="fieldlabels"> State </label>
-											<select onchange="getCities(this,'city_id')" class="form-select form-control" id="state_id" name="state_id">
-												<option value="">Select</option>
+											<select onchange="getCities(this,'city_id','Any')" class="form-select form-control" id="state_id" name="state_id">
+												<option value="0">Any</option>
 												@foreach($states as $val)
 													<option value="{{$val->id}}" {{($state==$val->id) ? 'selected' : ''}}>{{$val->title}}</option>
 												@endforeach
@@ -286,7 +286,7 @@
 											<br>
 											<label class="fieldlabels"> City </label>
 											<select class="form-select form-control" id="city_id" name="city_id">
-												<option value="">Select</option>
+												<option value="0">Any</option>
 												@foreach($cities as $val)
 													<option value="{{$val->id}}" {{($city==$val->id) ? 'selected' : ''}}>{{$val->title}}</option>
 												@endforeach
@@ -304,7 +304,7 @@
 												<br>
 												<label class="fieldlabels"> Qualification </label>
 												<select class="form-select select-icon icon-mark form-control from-tab" name="EducationID" id="EducationID">
-													<option value="">Select</option>
+													<option value="0">Any</option>
 													@foreach($educations as $val)
 														<option value="{{$val->id}}">{{$val->title}}</option>
 													@endforeach
@@ -312,7 +312,7 @@
 												<br>
 												<label class="fieldlabels"> Profession </label>
 												<select class="form-select select-icon icon-mark form-control from-tab" name="OccupationID" id="OccupationID">
-													<option value="">Select</option>
+													<option value="0">Any</option>
 													@foreach($occupations as $val)
 														<option value="{{$val->id}}">{{$val->title}}</option>
 													@endforeach
@@ -320,7 +320,7 @@
 												<br>
 												<label class="fieldlabels"> Income </label>
 												<select class="form-select select-icon icon-mark form-control from-tab" name="MyIncome" id="MyIncome">
-													<option value="">Select</option>
+													<option value="0">Any</option>
 													@foreach($incomes as $val)
 														<option value="{{$val->id}}" {{($myIncome==$val->id) ? 'selected' : ''}}>{{$val->title}}</option>
 													@endforeach
@@ -346,7 +346,7 @@
 											<br>
 											<label class="fieldlabels"> Sect </label>
 											<select class="form-select select-icon icon-mark form-control from-tab" name="Sects" id="Sects">
-												<option value="">Select</option>
+												<option value="0">Any</option>
 												@foreach($sects as $val)
 													<option value="{{$val->id}}">{{$val->title}}</option>
 												@endforeach
@@ -365,7 +365,7 @@
 												<div class="container">
 													<label class="fieldlabels"> Caste</label>
 													<select name="Castes" class="form-select form-control">
-														<option value="">Select</option>
+														<option value="0">Any</option>
 														@foreach($castes as $val)
 															<option value="{{$val->id}}">{{$val->title}}</option>
 														@endforeach
@@ -374,7 +374,7 @@
 
 													<label class="fieldlabels"> Tongue</label>
 													<select name="MyFirstLanguageMotherTonguesID" class="form-select form-control">
-														<option value="">Select</option>
+														<option value="0">Any</option>
 														@foreach($tongues as $val)
 															<option value="{{$val->id}}">{{$val->title}}</option>
 														@endforeach
@@ -398,7 +398,7 @@
 													{{--<br>--}}
 													<label class="fieldlabels"> Marital Status</label>
 													<select name="MaritalStatus" class="form-select form-control">
-														<option value="">Select</option>
+														<option value="0">Any</option>
 														@foreach($maritalStatuses as $val)
 															<option value="{{$val->id}}">{{$val->title}}</option>
 														@endforeach
@@ -414,7 +414,7 @@
 													<br>
 													<label class="fieldlabels"> Heights</label>
 													<select name="Heights" class="form-select form-control">
-														<option value="">Select</option>
+														<option value="0">Any</option>
 														@foreach($heights as $val)
 															<option value="{{$val->id}}">{{$val->title}}</option>
 														@endforeach

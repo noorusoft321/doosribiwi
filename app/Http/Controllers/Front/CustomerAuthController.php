@@ -1942,8 +1942,10 @@ class CustomerAuthController extends Controller
 //            ->where('profile_pic_status',1)
 //            ->where('profile_pic_client_status',1)
 //            ->whereNotIn('image',['default-female.jpg','default-male.jpg','default-user.png'])
+            ->orderBy('blur_percent','asc')
+            ->orderBy('profile_pic_status','desc')
             ->orderBy('profile_pic_client_status','desc')
-            ->inRandomOrder()
+//            ->inRandomOrder()
             ->limit(10)
             ->get();
 
@@ -2231,7 +2233,7 @@ class CustomerAuthController extends Controller
                     ->orderBy('blur_percent','asc')
                     ->orderBy('profile_pic_status','desc')
                     ->orderBy('profile_pic_client_status','desc')
-                    ->inRandomOrder()
+//                    ->inRandomOrder()
                     ->skip($request['page'] * 10)
                     ->take(10)
                     ->get();
