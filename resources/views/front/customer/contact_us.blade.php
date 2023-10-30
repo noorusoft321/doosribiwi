@@ -141,7 +141,8 @@
 			</div>
 
 			<div class="align-center p-tb-30">
-				<a target="_blank" href="https://api.whatsapp.com/send?phone=923452444262&text=Hi%20Doosri.biwi.com%2C%20I%20need%20more%20information." class="button-theme-light"> Contact Us </a>
+				{{--<a target="_blank" href="https://api.whatsapp.com/send?phone=923452444262&text=Hi%20Doosri.biwi.com%2C%20I%20need%20more%20information." class="button-theme-light"> Contact Us </a>--}}
+				<a target="_blank" href="https://api.whatsapp.com/send?phone=923410895555&text=Hi%20Doosri.biwi.com%2C%20I%20need%20more%20information." class="button-theme-light"> Contact Us </a>
 			</div>
 
 		</div>
