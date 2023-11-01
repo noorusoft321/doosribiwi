@@ -234,7 +234,7 @@
 		}
 
 		.job-card-harizontal .job-info .job-info-inner .job-title a {
-			color: #000000;
+			color: #082f49;
 			text-decoration: none
 		}
 

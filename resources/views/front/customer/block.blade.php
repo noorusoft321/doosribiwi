@@ -11,7 +11,7 @@
 			-webkit-box-shadow: 0px 7px 22px rgba(143, 134, 196, 0.07);
 			box-shadow: 0px 7px 22px rgba(143, 134, 196, 0.07);
 			overflow: hidden;
-			box-shadow: 5px 5px 15px 2px #0000003d;
+			box-shadow: 5px 5px 15px 2px #082f493d;
 		}
 
 		.event-card .event-thumb {

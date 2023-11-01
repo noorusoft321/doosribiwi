@@ -6,15 +6,16 @@
 	<style>
 		.card {
 			border-radius: 10px;
-			box-shadow: 5px 5px 5px #0000003d;
+			box-shadow: 5px 5px 5px #082f493d;
 			border: none;
 			margin-bottom: 20px !important;
-            border-left: 3px solid #0000003d;
-            border-top: 3px solid #0000003d;
+            border-left: 3px solid #082f493d;
+            border-top: 3px solid #082f493d;
 		}
 
         .card-dark {
-            background: #222f52;
+            /*background: #222f52;*/
+            background-image: linear-gradient(to left, #075385 0%, #0c476e 100%);
             color: #ffffff;
         }
 		.section-card-heading {

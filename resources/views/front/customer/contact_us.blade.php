@@ -17,7 +17,7 @@
 	}
 	.iframe-main {
 		width: 100%;
-		border: 5px solid #3e507c;
+		border: 5px solid #075385;
 		margin: 10px 0 10px 0;
 		box-shadow: 6px 6px 12px 0px rgba(0,0,0,0.4);
 		border-radius: 10px;
@@ -34,7 +34,8 @@
 		-webkit-filter: drop-shadow(0px 0px 5px #081844);
 		width: 100%;
 		box-shadow: 6px 6px 18px 0px rgba(0,0,0,0.4);
-		background-image: linear-gradient(#040F2E,#131f3f,#181e2d,#081844);
+		/*background-image: linear-gradient(#040F2E,#131f3f,#181e2d,#081844);*/
+		background-image: linear-gradient(to left, #075385 0%, #0c476e 100%);
 		padding: 5px 0px 5px 5px;
 	}
 	.questionary-msg {
@@ -49,12 +50,13 @@
 
 	.n-bg-img {
 		/* background: #040F2E; */
-		background-image: url(/assets/img/legal-protection.jpg);
-		background-repeat: repeat;
-		-webkit-text-size-adjust: 100%;
-		-webkit-tap-highlight-color: rgba(31, 33, 49, 0);
-		background-color: #040F2E;
-		background-size: cover;
+		/*background-image: url(/assets/img/legal-protection.jpg);*/
+		/*background-repeat: repeat;*/
+		/*-webkit-text-size-adjust: 100%;*/
+		/*-webkit-tap-highlight-color: rgba(31, 33, 49, 0);*/
+		/*background-color: #040F2E;*/
+		background-image: linear-gradient(to left, #075385 0%, #0c476e 100%);
+		/*background-size: cover;*/
 	}
 	.newInfoStyle p {
 		font-size: 1.2rem;

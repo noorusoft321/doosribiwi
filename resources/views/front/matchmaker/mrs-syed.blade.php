@@ -16,7 +16,7 @@
         }
         .card {
             border-radius: 20px;
-            box-shadow: 5px 5px 5px #0000003d;
+            box-shadow: 5px 5px 5px #082f493d;
             border: none;
         }
         .section-card-heading {

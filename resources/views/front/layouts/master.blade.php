@@ -59,7 +59,8 @@
 		}
 		#goTopButton {
 			display: inline-block;
-			background-color: #040F2E;
+			/*background-color: #040F2E;*/
+			background-image: linear-gradient(to left, #075385 0%, #0c476e 100%);
 			width: 50px;
 			height: 50px;
 			text-align: center;
@@ -84,10 +85,10 @@
 		}
 		#goTopButton:hover {
 			cursor: pointer;
-			background-color: #930224;
+			background-color: #004085;
 		}
 		#goTopButton:active {
-			background-color: #930224;
+			background-color: #004085;
 		}
 		#goTopButton.show {
 			opacity: 1;
@@ -168,7 +169,8 @@
 			display: block !important;
 		}
 		.main-header {
-			background: #040F2E;
+			background-image: linear-gradient(to left, #075385 0%, #0c476e 100%);
+			box-shadow: 0px 5px 5px #082f493d;
 		}
 		.nav-link:hover {
 			color: #fff;
@@ -208,8 +210,9 @@
 			color: goldenrod;
 		}
 		.bg-blast {
-			background: rgb(4,15,46);
-			background: linear-gradient(90deg, rgba(4,15,46,1) 0%, rgba(16,78,79,1) 52%, rgba(4,15,46,1) 100%);
+			background: #075385;
+			background: linear-gradient(90deg, #075385 0%, #0c476e 52%, #075385 100%);
+			/*background-image: linear-gradient(to left, #075385 0%, #0c476e 100%);*/
 		}
 		@keyframes glowing {
 			0% {
@@ -239,9 +242,6 @@
 			}
 			.mobileHide {
 				display: none !important;
-			}
-			.main-header {
-				background: #040F2E;
 			}
 			.nav-link {
 				color: #ffffff;

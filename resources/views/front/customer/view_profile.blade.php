@@ -31,7 +31,7 @@
 		}
 		.card {
 			border-radius: 10px;
-			box-shadow: 5px 5px 5px #0000003d;
+			box-shadow: 5px 5px 5px #082f493d;
 			border: none;
 		}
         .section-card-heading {
@@ -58,10 +58,10 @@
         .blockButton {
             align-items: center;
             background-color: #fee6e3;
-            border: 2px solid #040F2E;
+            border: 2px solid #075385;
             border-radius: 5px;
             box-sizing: border-box;
-            color: #040F2E;
+            color: #094985;
             font-size: 15px;
             height: 48px;
             justify-content: center;
@@ -77,16 +77,17 @@
             font-weight: 500;
         }
         .blockButton i {
-            color: #040F2E;
+            color: #094985;
             font-size: 16px;
         }
 
-        .blockButton:active {
-            background-color: #040F2E;
+        .blockButton:hover, .blockButton:active {
+            /*background-color: #040F2E;*/
+            background-image: linear-gradient(to right, #075385 0%, #0c476e 100%);
             border: 2px solid #fee6e3;
             color: #fee6e3;
         }
-        .blockButton:active i {
+        .blockButton:hover i, .blockButton:active i {
             color: #fee6e3;
         }
         .card-header {
@@ -372,7 +373,7 @@
             border-left: 20px solid #ffd400;
             border-right: 20px solid #ffd400;
             animation: glowing 1300ms infinite;
-            border-bottom: 10px groove #040F2E;
+            border-bottom: 10px groove #075385;
         }
 
 	</style>

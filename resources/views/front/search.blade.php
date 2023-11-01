@@ -162,7 +162,7 @@
 			border-left: 20px solid #ffd400;
 			border-right: 20px solid #ffd400;
 			animation: glowing 1300ms infinite;
-			border-bottom: 10px groove #040F2E;
+			border-bottom: 10px groove #075385;
 		}
 		.progress {
 			height: 15px;
@@ -170,11 +170,11 @@
 		}
 		.z-depth-1-top {
 			border-radius: 10px;
-			box-shadow: 5px 5px 5px #0000003d;
+			box-shadow: 5px 5px 5px #082f493d;
 		}
 		.card {
 			border-radius: 10px;
-			box-shadow: 5px 5px 5px #0000003d;
+			box-shadow: 5px 5px 5px #082f493d;
 			border: none;
 		}
 		.badge-corner-blue {

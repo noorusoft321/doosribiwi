@@ -54,19 +54,19 @@
         }
         .profile-boxes{
             width: 100%;
-            background: #040F2E;
+            background-image: linear-gradient(135deg, #075385 0%, #0c476e 100%);
             transition: all 0.3s cubic-bezier(.25,.8,.25,1);
             padding: 10px;
             position: relative;
             border-radius: 10px;
-            box-shadow: 5px 5px 5px #0000003d;
+            box-shadow: 5px 5px 5px #082f493d;
         }
         .image-boxes{
             text-align: center;
             width: 150px;
             height: 150px;
             margin: 0 auto;
-            box-shadow: 5px 5px 5px #0000003d;
+            box-shadow: 5px 5px 5px #082f493d;
             background-image: linear-gradient(#F9F295,#E0AA3E,#E0AA3E,#B88A44);
             border-radius: 50%;
             margin-top: 10px;
@@ -305,7 +305,7 @@
         .ourTeamMember {
             position: relative;
             border-radius: 10px;
-            box-shadow: 5px 5px 5px #0000003d;
+            box-shadow: 5px 5px 5px #082f493d;
             border: none;
             height: 250px;
             margin-bottom: 25px;
@@ -506,8 +506,8 @@
             position: relative;
             z-index: 1;
             padding: 20px;
-            border-left: 10px solid #040F2E;
-            border-right: 10px solid #040F2E;
+            border-left: 10px solid #0c476e;
+            border-right: 10px solid #075385;
             display: flex;
             align-items: center;
             height: 250px !important;
@@ -521,8 +521,8 @@
             z-index: 0;
             transform: rotateY(-180deg);
             padding: 20px;
-            border-top: 10px solid #040F2E;
-            border-bottom: 10px solid #040F2E;
+            border-top: 10px solid #075385;
+            border-bottom: 10px solid #0c476e;
             display: flex;
             align-items: center;
             height: 250px !important;

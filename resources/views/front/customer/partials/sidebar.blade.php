@@ -13,7 +13,7 @@
 	}
 	.card {
 		border-radius: 10px;
-		box-shadow: 5px 5px 5px #0000003d;
+		box-shadow: 5px 5px 5px #082f493d;
 		border: none;
 	}
 	.section-card-heading {
@@ -233,7 +233,7 @@
 
             <div class="row" style="padding:20px; position:relative;">
                 <h5 class="edit-profile-side-heading font-size14 text-white"> My Profile Link
-                    <span class="badge badge-primary pull-right" style="float:right; cursor:pointer; background-color:#040F2E; padding:14px; position:absolute; right:20px; top:55px; z-index:2;border-radius: 2px;" onclick="copyToClipBoard(this)">Copy</span>
+                    <span class="badge badge-primary pull-right" style="float:right; cursor:pointer; background-color:#040F2E; padding:14px; position:absolute; right:20px; top:55px; z-index:2;" onclick="copyToClipBoard(this)">Copy</span>
                 </h5>
                 @php $uniqueProfileSlug = $customer->gender_name.'-proposal-'.(!empty($customer->getCitySlug)?$customer->getCitySlug->slug:'NA').'-'.(!empty($customer->getCountrySlug)?$customer->getCountrySlug->slug:'NA').'-'.$customer->faker_id; @endphp
                 <input type="text" name="user__name"  value="{{route('search.by.slug',[$uniqueProfileSlug])}}" class="form-control">

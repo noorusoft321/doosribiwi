@@ -32,7 +32,7 @@
         }
         .bg-red {
             box-shadow:inset 0px 1px 0px 0px #171717;
-            background:linear-gradient(to bottom, #171717 5%, #000000 100%);
+            background:linear-gradient(to bottom, #171717 5%, #082f49 100%);
             background-color:#171717;
             border-radius:11px;
             border:none;
