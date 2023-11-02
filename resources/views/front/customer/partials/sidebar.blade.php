@@ -73,10 +73,10 @@
 		inset: var(--t) calc(-1*var(--f)) auto auto;
 		padding: 0 10px var(--f) calc(10px + var(--r));
 		clip-path: polygon(0 0,100% 0,100% calc(100% - var(--f)),calc(100% - var(--f)) 100%, calc(100% - var(--f)) calc(100% - var(--f)),0 calc(100% - var(--f)), var(--r) calc(50% - var(--f)/2));
-		box-shadow: 0 calc(-1*var(--f)) 0 inset #0005;
+		box-shadow: 0 calc(-1*var(--f)) 0 inset #0c476e;
 	}
 	.featured-label span {
-		color: black;
+		color: #082f49;
 		font-size: 12px;
 		font-weight: 600;
 	}
@@ -97,7 +97,7 @@
 		border-left: 20px solid #ffd400;
 		border-right: 20px solid #ffd400;
 		animation: glowing 1300ms infinite;
-		border-bottom: 10px groove #040F2E;
+		border-bottom: 10px groove #075385;
 	}
 	@media only screen and (max-width: 600px) {
 		.section-card-heading {
@@ -233,7 +233,7 @@
 
             <div class="row" style="padding:20px; position:relative;">
                 <h5 class="edit-profile-side-heading font-size14 text-white"> My Profile Link
-                    <span class="badge badge-primary pull-right" style="float:right; cursor:pointer; background-color:#040F2E; padding:14px; position:absolute; right:20px; top:55px; z-index:2;" onclick="copyToClipBoard(this)">Copy</span>
+                    <span class="badge badge-primary pull-right" style="float: right;cursor: pointer;background-image: linear-gradient(135deg, #075385 0%, #0c476e 100%);border-radius: 2px;border: 1px solid #ffffff;padding: 13px;position: absolute;right: 20px;top: 55px;z-index: 2;" onclick="copyToClipBoard(this)">Copy</span>
                 </h5>
                 @php $uniqueProfileSlug = $customer->gender_name.'-proposal-'.(!empty($customer->getCitySlug)?$customer->getCitySlug->slug:'NA').'-'.(!empty($customer->getCountrySlug)?$customer->getCountrySlug->slug:'NA').'-'.$customer->faker_id; @endphp
                 <input type="text" name="user__name"  value="{{route('search.by.slug',[$uniqueProfileSlug])}}" class="form-control">

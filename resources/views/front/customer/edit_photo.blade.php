@@ -44,6 +44,9 @@
             font-size: 16px;
             padding: 16px 32px;
         }
+        .button-theme-dark {
+            padding: 7px 30px;
+        }
 	</style>
 @endpush
 
@@ -119,11 +122,11 @@
                             </div>
                             <hr>
 							<div class="row">
-								<div class="col-md-10 mb-2">
+								<div class="col-lg d-sm-block d-xs-block mb-2 my-auto">
 									<input type="file" name="image" id="image" title="Click to change image" class="form-control rounded-pill">
 								</div>
-								<div class="col-md-2 mb-2 text-center">
-									<button onclick="saveImage(this)" class="btn btn-outline-primary font-weight-600 p-lr-30"> Update </button>
+								<div class="col-lg-auto d-sm-block d-xs-block mb-2 my-auto text-center">
+									<button onclick="saveImage(this)" class="button-theme-dark"> Save </button>
 								</div>
 							</div>
 						</div>
@@ -145,11 +148,11 @@
                             </div>
                             <hr>
 							<div class="row">
-								<div class="col-md-10 mb-2">
+								<div class="col-lg d-sm-block d-xs-block mb-2 my-auto">
 									<input type="file" name="public_gallery[]" id="public_gallery" title="Click to add photos" class="form-control rounded-pill" multiple>
 								</div>
-								<div class="col-md-2 mb-2 text-center">
-									<button onclick="savePhotos(this)" class="btn btn-outline-primary font-weight-600 p-lr-30"> Add Photos </button>
+								<div class="col-lg-auto d-sm-block d-xs-block mb-2 my-auto text-center">
+									<button onclick="savePhotos(this)" class="button-theme-dark"> Save </button>
 								</div>
 							</div>
                             <hr>

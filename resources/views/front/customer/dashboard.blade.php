@@ -386,6 +386,9 @@
 				margin-right: 10px
 			}
 		}
+		/*.button-theme-dark {*/
+			/*padding: 7px 30px;*/
+		/*}*/
 	</style>
 @endpush
 
@@ -433,7 +436,7 @@
 													<p class="text-danger">
 														<strong class="h2" style="color: #040F2E !important;">! </strong>
 														Your profile picture has been rejected, please updated your profile picture.
-														<a href="{{route('edit.photo')}}" class="btn btn-outline-primary float-end">Upload</a>
+														<a href="{{route('edit.photo')}}" class="button-theme-dark float-end">Upload</a>
 													</p>
 												</div>
 											</div>
@@ -478,8 +481,9 @@
 							@endforelse
 						</div>
 						<div class="align-center p-tb-10">
-							<a href="{{route('messenger')}}" class="btn btn-outline-primary font-weight-600 p-lr-30"> View More </a>
+							<a href="{{route('messenger')}}" class="button-theme-dark"> View More </a>
 						</div>
+						<br>
 					</div>
 
 					<div class="card">
@@ -515,8 +519,9 @@
 							</div>
 						</div>
 						<div class="align-center p-tb-10">
-							<a href="{{route('search.by.slug',['my-matches'])}}" class="btn btn-outline-primary font-weight-600 p-lr-30"> View More </a>
+							<a href="{{route('search.by.slug',['my-matches'])}}" class="button-theme-dark"> View More </a>
 						</div>
+						<br>
 					</div>
 				</div>		
 			</div>

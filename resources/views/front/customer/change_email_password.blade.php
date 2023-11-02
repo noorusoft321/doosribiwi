@@ -3,7 +3,11 @@
 @section('description', $title)
 
 @push('style')
-	{{--Style--}}
+    <style>
+        .button-theme-dark {
+            padding: 7px 30px;
+        }
+    </style>
 @endpush
 
 @section('content')
@@ -38,7 +42,7 @@
 									</div>
 								</div>
 								<div class="col-12 text-end">
-									<button onclick="changeEmail(this)" type="button" class="btn btn-outline-primary font-weight-600">Update Email</button>
+									<button onclick="changeEmail(this)" type="button" class="button-theme-dark">Update Email</button>
 								</div>
 							</form>
 						</div>
@@ -66,7 +70,7 @@
 									</div>
 								</div>
 								<div class="col-12 text-end">
-									<button onclick="changePassword(this)" type="button" class="btn btn-outline-primary font-weight-600">Update Password</button>
+									<button onclick="changePassword(this)" type="button" class="button-theme-dark">Update Password</button>
 								</div>
 							</form>
 						</div>
@@ -94,7 +98,7 @@
 									{{--</div>--}}
 								{{--</div>--}}
 								{{--<div class="col-12 text-end">--}}
-									{{--<button onclick="changeName(this)" type="button" class="btn btn-outline-primary font-weight-600">Update Username</button>--}}
+									{{--<button onclick="changeName(this)" type="button" class="button-theme-dark">Update Username</button>--}}
 								{{--</div>--}}
 							{{--</form>--}}
 						{{--</div>--}}

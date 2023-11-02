@@ -506,7 +506,7 @@
                             <div class="card-body bg-blast">
                                 <div class="col-12" style="padding:20px; position:relative;">
                                     <h5 class="edit-profile-side-heading font-size14 text-white"> Profile Link
-                                        <span class="badge badge-primary pull-right" style="float:right; cursor:pointer; background-color:#040F2E; padding:14px; position:absolute; right:20px; top:55px; z-index:2;border-radius: 2px;" onclick="copyToClipBoard(this)">Copy</span>
+                                        <span class="badge badge-primary" style="float: right;cursor: pointer;background-image: linear-gradient(135deg, #075385 0%, #0c476e 100%);border-radius: 2px;border: 1px solid #ffffff;padding: 13px;position: absolute;right: 20px;top: 55px;z-index: 2;" onclick="copyToClipBoard(this)">Copy</span>
                                     </h5>
                                     @php $uniqueProfileSlug = $customer->gender_name.'-proposal-'.(!empty($customer->getCitySlug)?$customer->getCitySlug->slug:'NA').'-'.(!empty($customer->getCountrySlug)?$customer->getCountrySlug->slug:'NA').'-'.$customer->faker_id; @endphp
                                     <input type="text" name="user__name"  value="{{route('search.by.slug',[$uniqueProfileSlug])}}" class="form-control">

@@ -610,7 +610,7 @@ a{
     background-color: #075385;
 }
 a:hover {
-    color: #075385;
+    color: #082f49;
 }
 
 main{
@@ -1433,7 +1433,7 @@ ul.inline-links > li, ul.inline-links > li > a {
     font-family: 'Playfair Display', serif;
 }
 .text-dark {
-    color: #343a40 !important;
+    color: #082f49 !important;
 }
 .ideal-icons {
     width: 75%;

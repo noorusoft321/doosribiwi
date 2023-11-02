@@ -282,7 +282,8 @@ $packageExpiryDate = (auth()->guard('customer')->check()) ? auth()->guard('custo
 @endphp
 <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
 	<div class="modal-dialog">
-		<div class="modal-content" style="background: rgb(4,15,46);background: linear-gradient(90deg, rgba(4,15,46,1) 0%, rgba(16,78,79,1) 52%, rgba(4,15,46,1) 100%);">
+		{{--style="background: rgb(4,15,46);background: linear-gradient(90deg, rgba(4,15,46,1) 0%, rgba(16,78,79,1) 52%, rgba(4,15,46,1) 100%);"--}}
+		<div class="modal-content bg-blast">
 			<div class="modal-header">
 				<h1 class="modal-title fs-5 text-white" id="staticBackdropLabel" style="margin: 0 auto;">Get Featured your Account</h1>
 			</div>

@@ -5,7 +5,7 @@
 @push('style')
     <style>
         .radio-inline__label {
-            border: 1px solid #040F2E;
+            border: 1px solid #075385;
         }
         .radio-inline__label {
             display: inline-block;
@@ -15,9 +15,10 @@
             transition: all .2s;
         }
         .radio-inline__input:checked + .radio-inline__label {
-            background: #040F2E;
+            /*background: #040F2E;*/
+            background-image: linear-gradient(to left, #075385 0%, #0c476e 100%);
             color: #fff;
-            text-shadow: 0 0 1px rgba(0, 0, 0, .7);
+            text-shadow: 0 0 1px #0c476e;
         }
         .radio-inline__input {
             visibility: hidden;
@@ -45,7 +46,7 @@
                                 @include('front.customer.edit_partials.personal')
                                 <div class="row">
                                     <div class="col-12 text-end">
-                                        <button onclick="savePersonalInfo(this)" type="button" class="btn btn-outline-primary font-weight-600">Update</button>
+                                        <button onclick="savePersonalInfo(this)" type="button" class="button-theme-dark">Update</button>
                                     </div>
                                 </div>
                             </div>
@@ -57,7 +58,7 @@
                                 @include('front.customer.edit_partials.qualification')
                                 <div class="row">
                                     <div class="col-12 text-end">
-                                        <button onclick="saveEducation(this)" type="button" class="btn btn-outline-primary font-weight-600">Update</button>
+                                        <button onclick="saveEducation(this)" type="button" class="button-theme-dark">Update</button>
                                     </div>
                                 </div>
                             </div>
@@ -69,7 +70,7 @@
                                 @include('front.customer.edit_partials.career')
                                 <div class="row">
                                     <div class="col-12 text-end">
-                                        <button onclick="saveCareerInfo(this)" type="button" class="btn btn-outline-primary font-weight-600">Update</button>
+                                        <button onclick="saveCareerInfo(this)" type="button" class="button-theme-dark">Update</button>
                                     </div>
                                 </div>
                             </div>
@@ -81,7 +82,7 @@
                                 @include('front.customer.edit_partials.religion')
                                 <div class="row">
                                     <div class="col-12 text-end">
-                                        <button onclick="saveReligionInfo(this)" type="button" class="btn btn-outline-primary font-weight-600">Update</button>
+                                        <button onclick="saveReligionInfo(this)" type="button" class="button-theme-dark">Update</button>
                                     </div>
                                 </div>
                             </div>
@@ -93,7 +94,7 @@
                                 @include('front.customer.edit_partials.family')
                                 <div class="row">
                                     <div class="col-12 text-end">
-                                        <button onclick="saveFamilyInfo(this)" type="button" class="btn btn-outline-primary font-weight-600">Update</button>
+                                        <button onclick="saveFamilyInfo(this)" type="button" class="button-theme-dark">Update</button>
                                     </div>
                                 </div>
                             </div>
@@ -105,7 +106,7 @@
                                 @include('front.customer.edit_partials.residence')
                                 <div class="row">
                                     <div class="col-12 text-end">
-                                        <button onclick="saveResidenceInfo(this)" type="button" class="btn btn-outline-primary font-weight-600">Update</button>
+                                        <button onclick="saveResidenceInfo(this)" type="button" class="button-theme-dark">Update</button>
                                     </div>
                                 </div>
                             </div>
@@ -117,7 +118,7 @@
                                 @include('front.customer.edit_partials.note')
                                 <div class="row">
                                     <div class="col-12 text-end">
-                                        <button onclick="savePersonalNote(this)" type="button" class="btn btn-outline-primary font-weight-600">Update</button>
+                                        <button onclick="savePersonalNote(this)" type="button" class="button-theme-dark">Update</button>
                                     </div>
                                 </div>
                             </div>
@@ -129,7 +130,7 @@
                                 @include('front.customer.edit_partials.interest')
                                 <div class="row">
                                     <div class="col-12 text-end">
-                                        <button onclick="saveInterest(this)" type="button" class="btn btn-outline-primary font-weight-600">Update</button>
+                                        <button onclick="saveInterest(this)" type="button" class="button-theme-dark">Update</button>
                                     </div>
                                 </div>
                             </div>
@@ -141,7 +142,7 @@
                                 @include('front.customer.edit_partials.expectation')
                                 <div class="row">
                                     <div class="col-12 text-end">
-                                        <button onclick="saveExpectation(this)" type="button" class="btn btn-outline-primary font-weight-600">Update</button>
+                                        <button onclick="saveExpectation(this)" type="button" class="button-theme-dark">Update</button>
                                     </div>
                                 </div>
                             </div>

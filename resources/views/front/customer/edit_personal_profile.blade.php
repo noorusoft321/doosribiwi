@@ -3,7 +3,6 @@
 @section('description', $title)
 
 @push('style')
-	{{--Style--}}
 @endpush
 
 @section('content')
@@ -206,7 +205,7 @@
                                         </div>
                                     </div>
                                     <div class="col-12 text-end">
-                                        <button onclick="saveRecord(this)" type="button" class="btn btn-outline-primary font-weight-600">Update</button>
+                                        <button onclick="saveRecord(this)" type="button" class="button-theme-dark">Update</button>
                                     </div>
                                 </div>
                             </form>
