@@ -2251,6 +2251,7 @@ h1,h2,h3,h4,h5,h6 {
     }
     .listing-image{
         height:310px !important;
+        background-size: contain;
     }
     .matchprofile{
         left:-9px;

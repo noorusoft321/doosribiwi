@@ -45,7 +45,7 @@
 		content: "";
 		flex: 1;
 		height: 3px;
-		background: #040F2E;
+		background: #082f49;
 	}
 
 	.n-bg-img {

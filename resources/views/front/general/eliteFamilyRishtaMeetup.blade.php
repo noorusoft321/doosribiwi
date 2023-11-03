@@ -16,7 +16,7 @@
 			padding: 0;
 		}
 		.counter-laddoo{
-			background: #040F2E;
+			background-image: linear-gradient(to left, #075385 0%, #0c476e 100%);
 			text-align: center;
 			padding: 5px;
 			border-radius: 8px;
@@ -61,7 +61,7 @@
 		.special-note p:nth-child(1) {
 			font-size: 20px;
 			font-weight: 600;
-			color: #040F2E;
+			color: #082f49;
 			margin-bottom: 0;
 		}
 		.special-note p:nth-child(2) {

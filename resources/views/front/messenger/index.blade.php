@@ -71,7 +71,7 @@
             margin-left: 40%;
         }
         .chatter-signle.active {
-            background: #040F2E;
+            background: #082f49;
         }
         .chatter-signle.active span {
             color: #fff!important;
@@ -227,9 +227,9 @@
                         showCloseButton: false,
                         showCancelButton: true,
                         focusConfirm: false,
-                        confirmButtonColor: '#040F2E',
+                        confirmButtonColor: '#082f49',
                         confirmButtonText: 'Upgrade',
-                        cancelButtonColor: '#040F2E'
+                        cancelButtonColor: '#082f49'
                     }).then((result) => {
                         if (result.isConfirmed) {
                             location = "{{route('packages')}}";

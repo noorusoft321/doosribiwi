@@ -15,7 +15,7 @@
 			padding: 0;
 		}
 		.counter-laddoo{
-			background: #040F2E;
+			background: #0c476e;
 			text-align: center;
 			padding: 5px;
 			border-radius: 8px;
@@ -159,7 +159,7 @@
 			background: -webkit-linear-gradient(transparent, transparent), -webkit-linear-gradient(top, rgba(213,173,109,1) 0%, rgba(213,173,109,1) 26%, rgba(226,186,120,1) 35%, rgb(202 170 117) 45%, rgb(179 143 86) 61%, rgba(213,173,109,1) 100%) !important;
 		}
 		thead {
-			background: #040F2E;
+			background: #075385;
 		}
 		thead tr th {
 			color: #fff;
@@ -174,7 +174,7 @@
 			font-weight: 500;
 		}
 		.animated-button1 {
-			background: linear-gradient(-30deg, #661d2f 50%, #040F2E 50%);
+			background: linear-gradient(-30deg, #075385 50%, #0c476e 50%);
 			padding: 20px 40px;
 			margin: 12px;
 			display: inline-block;
@@ -670,7 +670,7 @@
 
 			<div class="row text-center">
 				<div class="col-md-8 mx-auto">
-					<div class="card" style="border: 3px solid #040F2E">
+					<div class="card" style="border: 3px solid #075385">
 						<div class="card-body text-center">
 							<p class="bottomInfoMessage">Doosri Biwi is a registered trademark & protected under the copyright laws of the Government of Pakistan.</p>
 							<p class="bottomInfoMessage">شادی آرگنائزیشن پاکستان ایک رجسٹرڈ ٹریڈ مارک ہے اور حکومت پاکستان کے کاپی رائٹ قوانین کے تحت محفوظ ہے۔</p>

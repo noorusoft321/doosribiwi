@@ -39,7 +39,7 @@
         }
 
         .text {
-            background-color: #040F2E;
+            background-color: #082f49;
             color: white;
             font-size: 16px;
             padding: 16px 32px;
@@ -78,7 +78,7 @@
                                             <div class="col-md-10 mx-auto my-auto">
                                                 <div class="alert alert-danger mx-auto">
                                                     <p class="text-danger">
-                                                        <strong class="h2" style="color: #040F2E !important;">! </strong>
+                                                        <strong class="h2" style="color: #082f49 !important;">! </strong>
                                                         Your profile picture has been rejected, please updated your profile.
                                                     </p>
                                                 </div>
@@ -97,7 +97,7 @@
                             <div class="row justify-content-center">
                                 <div class="col my-auto">
                                     You can blur picture:
-                                    <p style="font-size: 12px;color: #040F2E">Blur picture reduces number of proposals.</p>
+                                    <p style="font-size: 12px;color: #082f49">Blur picture reduces number of proposals.</p>
                                 </div>
                                 <div class="col-md-7">
                                     <select name="blur_percent" class="form-control">

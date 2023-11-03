@@ -44,7 +44,7 @@
         .customerAge {
             height: 30px;
             width: 30px;
-            background: #040F2E;
+            background-image: linear-gradient(to left, #075385 0%, #0c476e 100%);
             border-radius: 50%;
             font-size: 15px;
             color: #fff;
@@ -166,7 +166,7 @@
         .age-circle{
             width: 50px;
             height: 50px;
-            background: #040F2E;
+            background-image: linear-gradient(to left, #075385 0%, #0c476e 100%);
             border-radius: 50%;
             padding: 10px;
             color: #fff;
@@ -225,7 +225,7 @@
         }
         .contact-number-team {
             position: absolute;
-            background: #040F2E;
+            background-image: linear-gradient(to left, #075385 0%, #0c476e 100%);
             color: #fff;
             padding: 4px 16px;
             font-weight: 500;
@@ -269,7 +269,7 @@
         }
         .contact-number-ceo {
             font-size: .8rem !important;
-            background: #040F2E;
+            background-image: linear-gradient(to left, #075385 0%, #0c476e 100%);
             border-radius: 5px;
             padding: 8px 24px;
             font-weight: 500;

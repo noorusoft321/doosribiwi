@@ -22,7 +22,7 @@
             padding-right: 5px;
             margin-top: -28px;
             cursor: pointer;
-            color: #040F2E;
+            color: #082f49;
             font-size: 15px;
             transition-delay: 250ms;
         }
@@ -56,7 +56,7 @@
         }
         #goTopButton {
             display: inline-block;
-            background-color: #040F2E;
+            background-image: linear-gradient(to left, #075385 0%, #0c476e 100%);
             width: 50px;
             height: 50px;
             text-align: center;

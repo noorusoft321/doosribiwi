@@ -80,7 +80,7 @@
                             to reset your password.
                         </p>
                         <p>If you have remembered your password now, you can safely ignore this email.</p>
-                        <p style="text-align: center"><a href="{{Route('forget.password.confirm',[$code])}}" style="padding: 10px; background-color: #040F2E; color: #fff; display: inline-block; border-radius: 4px">Reset
+                        <p style="text-align: center"><a href="{{Route('forget.password.confirm',[$code])}}" style="padding: 10px; background-color: #0c476e; color: #fff; display: inline-block; border-radius: 4px">Reset
                                 Password</a></p>
                         <p>Good luck! Hope it works.</p>
                         <p style="margin-bottom: 0">

@@ -25,7 +25,7 @@
 			padding-right: 5px;
 			margin-top: -28px;
 			cursor: pointer;
-			color: #040F2E;
+			color: #0c476e;
 			font-size: 15px;
 			transition-delay: 250ms;
 		}
@@ -379,7 +379,7 @@ $packageExpiryDate = (auth()->guard('customer')->check()) ? auth()->guard('custo
             icon: 'info',
             showCancelButton: true,
             showDenyButton: true,
-            confirmButtonColor: '#040F2E',
+            confirmButtonColor: '#075385',
             confirmButtonText: 'Login',
             denyButtonText: `Register`,
         }).then((result) => {

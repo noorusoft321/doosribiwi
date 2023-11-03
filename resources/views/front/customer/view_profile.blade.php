@@ -5,13 +5,14 @@
 @push('style')
 	<style>
 		.btn-outline-primary i {
-			color: #040F2E!important;
+			color: #082f49!important;
 		}
 		.btn-outline-primary:hover i {
 			color: #ffffff!important;
 		}
 		.btn-outline-primary.btn-active, .btn-outline-primary.btn-active:hover, .btn-outline-primary.btn-active i {
-			background: #040F2E!important;
+			/*background: #040F2E!important;*/
+            background-image: linear-gradient(to left, #075385 0%, #0c476e 100%) !important;
 			color: #ffffff!important;
 		}
 		.card-header {
@@ -156,7 +157,8 @@
             animation: glowinged 1300ms infinite;
         }
         span.btn:hover {
-            background: #040F2E;
+            /*background: #040F2E;*/
+            background-image: linear-gradient(to left, #075385 0%, #0c476e 100%);
             color: #ffffff;
         }
         .bottomInfoMessage {
@@ -166,7 +168,7 @@
         }
         .bottomInfoMessage i {
             font-weight: 600;
-            color: #040F2E;
+            color: #082f49;
         }
 
         .custom-btn {
@@ -1351,7 +1353,7 @@
                         @else
                             <div class="row">
                                 <div class="col-md-12">
-                                    <div class="card" style="border: 3px solid #040F2E">
+                                    <div class="card" style="border: 3px solid #0c476e">
                                         <div class="card-body">
                                             <p class="bottomInfoMessage">If you are interested in this profile, let's chat <a href="{{route('messenger',[$customer->name])}}" class="text-theme font-weight-600 LoginToView"> <i class="fa fa-comments"></i> </a></p>
                                             <p class="bottomInfoMessage"><a href="{{route('messenger',[$customer->name])}}" class="text-theme font-weight-600 LoginToView"> <i class="fa fa-comments"></i> </a>اگر آپ اس پروفائل میں دلچسپی رکھتے ہیں تو آئیے چیٹ کریں </p>

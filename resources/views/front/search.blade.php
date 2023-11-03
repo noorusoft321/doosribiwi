@@ -124,7 +124,7 @@
 @push('style')
 	<style>
 		.radio-inline__label {
-			border: 1px solid #040F2E;
+			border: 1px solid #0c476e;
 		}
 		.radio-inline__label {
 			display: inline-block;
@@ -134,7 +134,8 @@
 			transition: all .2s;
 		}
 		.radio-inline__input:checked + .radio-inline__label {
-			background: #040F2E;
+			/*background: #040F2E;*/
+			background-image: linear-gradient(to left, #075385 0%, #0c476e 100%);
 			color: #fff;
 			text-shadow: 0 0 1px rgba(0, 0, 0, .7);
 		}
@@ -451,8 +452,8 @@
 								</form>
 							</div>
 							<div class="align-center">
-								<button onclick="searchMembers(this)" type="button" class="btn btn-outline-primary font-weight-600 p-lr-30 full-width search--btn mb-2">Search</button>
-								<a type="button" href="{{route('customer.search')}}" class="btn btn-outline-primary font-weight-600 p-lr-30 full-width">Reset</a>
+								<button onclick="searchMembers(this)" type="button" class="button-theme-dark search--btn mb-2 full-width">Search</button>
+								<a type="button" href="{{route('customer.search')}}" class="button-theme-dark full-width">Reset</a>
 							</div>
 						</div>
 					</div>

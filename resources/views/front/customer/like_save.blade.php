@@ -27,7 +27,7 @@
 			width: 120px;
 			opacity: 0;
 			transition: .5s ease;
-			background-color: #040F2E;
+			background-image: linear-gradient(to left, #075385 0%, #0c476e 100%);
 			border-radius: 50%;
 		}
 		.container-image:hover .overlay {

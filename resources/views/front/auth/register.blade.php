@@ -18,11 +18,11 @@
 			cursor: pointer;
 		}
 		.card-input-element + .card-input {
-			box-shadow: 0 0 3px 0 #040F2E;
+			box-shadow: 0 0 3px 0 #0c476e;
 		}
 		.card-input-element:checked + .card-input {
-			box-shadow: 0 0 5px 4px #040F2E;
-			background: #142247;
+			box-shadow: 0 0 5px 4px #0c476e;
+			background: #075385;
 		}
 		.section-card-heading {
 			font-size: 1.4rem;
@@ -40,7 +40,7 @@
 		.gender-icon img {
 			width: 120px;
 			border-radius: 50%;
-			border-bottom: 2px solid #040F2E;
+			border-bottom: 2px solid #082f49;
 			margin: 0 auto !important;
 		}
 		@media only screen and (max-width: 600px) {

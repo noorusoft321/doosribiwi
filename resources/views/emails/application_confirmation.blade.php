@@ -67,7 +67,7 @@
                     <td style="padding: 30px">
                         <h4 style="font-weight: 600">Confirm Account - DoosriBiwi.com</h4>
                         <p><strong>{{$customer->full_name}}</strong> your account created successfully.</p>
-                        <p style="text-align: center"><a href="{{route('confirm.customer.account',[$code])}}" style="padding: 10px; background-color: #040F2E; color: #fff; display: inline-block; border-radius: 4px">Confirm Account</a></p>
+                        <p style="text-align: center"><a href="{{route('confirm.customer.account',[$code])}}" style="padding: 10px; background-color: #0c476e; color: #fff; display: inline-block; border-radius: 4px">Confirm Account</a></p>
                         <p>Click confirm to active you account for access it thanks.</p>
                         <p>Good luck! Hope it works.</p>
                     </td>

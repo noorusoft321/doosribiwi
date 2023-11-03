@@ -38,12 +38,12 @@
     -moz-box-shadow: none !important;
     -webkit-box-shadow: none !important;
     box-shadow: none !important;
-    border: 1px solid #040F2E;
+    border: 1px solid #0c476e;
     outline-width: 0;
 }
 #msform .action-button {
     width: 100px;
-    background: #040F2E;
+    background: #0c476e;
     font-weight: bold;
     color: white;
     border: 0 none;
@@ -60,13 +60,13 @@
 }
 .fs-title {
     font-size: 25px;
-    color: #040F2E;
+    color: #082f49;
     margin-bottom: 15px;
     font-weight: normal;
     text-align: left;
 }
 .purple-text {
-    color: #040F2E;
+    color: #082f49;
     font-weight: normal;
 }
 .steps {
@@ -87,7 +87,7 @@
 }
 
 #progressbar .active {
-    color: #040F2E;
+    color: #082f49;
 }
 
 #progressbar li {
@@ -149,7 +149,7 @@
     z-index: -1;
 }
 #progressbar li.active:before, #progressbar li.active:after {
-    background: #040F2E;
+    background: #082f49;
 }
 .fit-image{
     width: 100%;

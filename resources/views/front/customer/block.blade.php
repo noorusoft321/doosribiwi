@@ -123,7 +123,7 @@
 		}
 
 		.event-card .event-content .event-content-header .event-content-info .event-categories .event-categories-link {
-			color: #040F2E;
+			color: #082f49;
 			text-decoration: none
 		}
 

@@ -5,13 +5,13 @@
 @push('style')
 	<style>
 		.btn-outline-primary i {
-			color: #040F2E!important;
+			color: #082f49!important;
 		}
 		.btn-outline-primary:hover i {
 			color: #ffffff!important;
 		}
 		.btn-outline-primary.btn-active, .btn-outline-primary.btn-active:hover, .btn-outline-primary.btn-active i {
-			background: #040F2E!important;
+            background-image: linear-gradient(to left, #075385 0%, #0c476e 100%) !important;
 			color: #ffffff!important;
 		}
 		.card-header {
@@ -124,19 +124,19 @@
 										<div class="row">
 											<div class="col-6">
 												<a onclick="reportBlockModal(this,'report')" class="link-text" href="javascript:void(0)">
-													<i class="fas fa-solid fa-house-user" aria-hidden="true" style="color: #040F2E;"></i> Report
+													<i class="fas fa-solid fa-house-user" aria-hidden="true" style="color: #082f49;"></i> Report
 												</a>
 											</div>
 											<div class="col-6">
 												<a onclick="reportBlockModal(this,'block')" class="link-text" href="javascript:void(0)">
-													<i class="fas fa-solid fa-house-user" aria-hidden="true" style="color: #040F2E;"></i> {{(!empty($customerBlockByMe)) ? 'Unblock' : 'Block'}}
+													<i class="fas fa-solid fa-house-user" aria-hidden="true" style="color: #082f49;"></i> {{(!empty($customerBlockByMe)) ? 'Unblock' : 'Block'}}
 												</a>
 											</div>
 											<hr class="edit-profile-hr2">
 
 											<div class="col-12" style="padding:20px; position:relative;">
 												<h5 class="edit-profile-side-heading font-size14"> Profile Link
-													<span class="badge badge-primary pull-right" style="float: right;cursor: pointer;background-color: #040F2E;padding: 10px;     position: absolute; right: 24px;top: 59px;z-index: 2;" onclick="copyToClipBoard(this)">Copy</span>
+													<span class="badge badge-primary pull-right" style="float: right;cursor: pointer;background-image: linear-gradient(to left, #075385 0%, #0c476e 100%);padding: 10px;     position: absolute; right: 24px;top: 59px;z-index: 2;" onclick="copyToClipBoard(this)">Copy</span>
 												</h5>
 												@php $uniqueProfileSlug = $customer->gender_name.'-proposal-'.(!empty($customer->getCitySlug)?$customer->getCitySlug->slug:'NA').'-'.(!empty($customer->getCountrySlug)?$customer->getCountrySlug->slug:'NA').'-'.$customer->faker_id; @endphp
 												<input type="text" name="user__name"  value="{{route('search.by.slug',[$uniqueProfileSlug])}}" class="form-control">

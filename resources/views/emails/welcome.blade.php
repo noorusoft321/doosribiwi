@@ -67,7 +67,7 @@
                     <td style="padding: 30px">
                         <h4 style="font-weight: 600">Account Verified</h4>
                         <p><strong>{{$customer->full_name}}</strong> Your account Verified successfully.</p>
-                        <p style="text-align: center"><a href="{{Route('view.login')}}" style="padding: 10px; background-color: #040F2E; color: #fff; display: inline-block; border-radius: 4px">Log In</a></p>
+                        <p style="text-align: center"><a href="{{Route('view.login')}}" style="padding: 10px; background-color: #0c476e; color: #fff; display: inline-block; border-radius: 4px">Log In</a></p>
                         <p>Click Log in to your account for access it thanks.</p>
                         <p>Good luck! Hope it works.</p>
                     </td>

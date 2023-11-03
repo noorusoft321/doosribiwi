@@ -5,7 +5,7 @@
 @push('style')
 	<style>
 		.radio-inline__label {
-			border: 1px solid #040F2E;
+			border: 1px solid #0c476e;
 		}
 		.radio-inline__label {
 			display: inline-block;
@@ -15,7 +15,7 @@
 			transition: all .2s;
 		}
 		.radio-inline__input:checked + .radio-inline__label {
-			background: #040F2E;
+			background-image: linear-gradient(to left, #075385 0%, #0c476e 100%);
 			color: #fff;
 			text-shadow: 0 0 1px rgba(0, 0, 0, .7);
 		}

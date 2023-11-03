@@ -6,7 +6,7 @@
 	<link rel="stylesheet" href="{{asset('assets/css/progress-step-form.css')}}">
 	<style>
 		.button {
-			background-color: #040F2E;
+			background-image: linear-gradient(to left, #075385 0%, #0c476e 100%);
 			border: none;
 			color: white;
 			padding: 15px 32px;
@@ -89,7 +89,7 @@
 			text-align: center;
 		}
 		.radio-inline__label {
-			border: 1px solid #040F2E;
+			border: 1px solid #082f49;
 		}
 		.radio-inline__label {
 			display: inline-block;
@@ -99,7 +99,8 @@
 			transition: all .2s;
 		}
 		.radio-inline__input:checked + .radio-inline__label {
-			background: #040F2E;
+			/*background: #040F2E;*/
+			background-image: linear-gradient(to left, #075385 0%, #0c476e 100%);
 			color: #fff;
 			text-shadow: 0 0 1px rgba(0, 0, 0, .7);
 		}
@@ -191,7 +192,7 @@
 														<div class="row">
 															<div class="col-md-6 my-auto">
 																You can blur picture:
-																<p style="font-size: 12px;color: #040F2E">Blur picture reduces number of proposals.</p>
+																<p style="font-size: 12px;color: #082f49">Blur picture reduces number of proposals.</p>
 															</div>
 															<div class="col-md-6 my-auto">
 																<div class="form-group">
@@ -308,8 +309,8 @@
                     text: "It will decreases your profile visibility",
                     icon: 'warning',
                     showCancelButton: true,
-                    confirmButtonColor: '#040F2E',
-                    cancelButtonColor: '#040F2E',
+                    confirmButtonColor: '#0c476e',
+                    cancelButtonColor: '#075385',
                     confirmButtonText: 'Agree'
                 }).then((result) => {
                     if (result.isConfirmed) {

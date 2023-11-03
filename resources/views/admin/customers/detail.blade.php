@@ -79,7 +79,7 @@
         }
 
         .text {
-            background-color: #040F2E;
+            background-image: linear-gradient(to left, #075385 0%, #0c476e 100%);
             color: white;
             font-size: 14px;
             padding: 8px 16px;

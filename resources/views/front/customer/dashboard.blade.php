@@ -63,7 +63,7 @@
 		}
 
 		.job-card-grid .job-info .job-author a {
-			color: #040F2E;
+			color: #082f49;
 			text-decoration: none
 		}
 
@@ -175,7 +175,7 @@
 
 		.job-card-grid .job-dropdown .dropdown-menu .dropdown-item:hover {
 			background-color: #F0EEFF;
-			color: #040F2E
+			color: #082f49
 		}
 
 		.job-card-harizontal {
@@ -244,7 +244,7 @@
 		}
 
 		.job-card-harizontal .job-info .job-info-inner .job-author a {
-			color: #040F2E;
+			color: #082f49;
 			text-decoration: none
 		}
 
@@ -434,7 +434,7 @@
 											<div class="col-md-10 mx-auto my-auto">
 												<div class="alert alert-danger">
 													<p class="text-danger">
-														<strong class="h2" style="color: #040F2E !important;">! </strong>
+														<strong class="h2" style="color: #082f49 !important;">! </strong>
 														Your profile picture has been rejected, please updated your profile picture.
 														<a href="{{route('edit.photo')}}" class="button-theme-dark float-end">Upload</a>
 													</p>
