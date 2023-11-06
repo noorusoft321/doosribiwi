@@ -55,12 +55,12 @@
 																<select class="form-control rounded-pill" name="gender">
 																	<option value="">Select</option>
 																	<option value="1"
-																			{{isset($customerSearch->gender) && $customerSearch->gender==1 ? 'selected' : ''}}
-																			{{($customer->gender_name=='Male') ? 'disabled' : ''}}
+																		{{isset($customerSearch->gender) && $customerSearch->gender==1 ? 'selected' : ''}}
+																		{{($customer->gender_name=='Male') ? 'disabled' : ''}}
 																	>Male</option>
 																	<option value="2"
-																			{{isset($customerSearch->gender) && $customerSearch->gender==2 ? 'selected' : ''}}
-																			{{($customer->gender_name=='Female') ? 'disabled' : ''}}
+																		{{isset($customerSearch->gender) && $customerSearch->gender==2 ? 'selected' : ''}}
+																		{{($customer->gender_name=='Female') ? 'disabled' : ''}}
 																	>Female</option>
 																</select>
 															</div>
@@ -134,7 +134,7 @@
 														<div class="col-md-3">
 															<div class="form-group py-xl-10">
 																<label class="fieldlabels">Religiousness</label>
-																<select onchange="getSects(this,'Sects')" class="form-control rounded-pill" name="Religions">
+																<select onchange="getSects(this,'Sects','Any')" class="form-control rounded-pill" name="Religions">
 																	<option value="">Select</option>
 																	@foreach($religions as $val)
 																		<option value="{{$val->id}}" {{isset($customerSearch->Religions) && $customerSearch->Religions==$val->id ? 'selected' : ''}}>{{$val->title}}</option>
@@ -223,7 +223,7 @@
 															<div class="form-group py-xl-10">
 																<label class="fieldlabels">Heights</label>
 																<select class="form-control rounded-pill" name="Heights">
-																	<option value="">Select</option>
+																	<option value="0">Any</option>
 																	@foreach($heights as $val)
 																		<option value="{{$val->id}}" {{isset($customerSearch->Heights) && $customerSearch->Heights==$val->id ? 'selected' : ''}}>{{$val->title}}</option>
 																	@endforeach
@@ -294,8 +294,8 @@
 														<div class="col-md-3">
 															<div class="form-group py-xl-10">
 																<label class="fieldlabels">Country</label>
-																<select onchange="getStates(this,'state_id')" class="form-control rounded-pill" name="country_id">
-																	<option value="">Select</option>
+																<select onchange="getStates(this,'state_id','Any')" class="form-control rounded-pill" name="country_id">
+																	<option value="0">Any</option>
 																	@foreach($counties as $val)
 																		<option value="{{$val->id}}">{{$val->name}}</option>
 																	@endforeach
@@ -305,8 +305,8 @@
 														<div class="col-md-3">
 															<div class="form-group py-xl-10">
 																<label class="fieldlabels">State</label>
-																<select onchange="getCities(this,'city_id')" class="form-control rounded-pill" name="state_id">
-																	<option value="">Select</option>
+																<select onchange="getCities(this,'city_id','Any')" class="form-control rounded-pill" name="state_id">
+																	<option value="0">Any</option>
 																	@foreach($states as $val)
 																		<option value="{{$val->id}}">{{$val->title}}</option>
 																	@endforeach
@@ -317,7 +317,7 @@
 															<div class="form-group py-xl-10">
 																<label class="fieldlabels">City</label>
 																<select class="form-control rounded-pill" name="city_id">
-																	<option value="">Select</option>
+																	<option value="0">Any</option>
 																	@foreach($cities as $val)
 																		<option value="{{$val->id}}">{{$val->title}}</option>
 																	@endforeach
@@ -338,7 +338,7 @@
 														<div class="col-md-3">
 															<div class="form-group py-xl-10">
 																<label class="fieldlabels">Religiousness</label>
-																<select onchange="getSects(this,'Sects')" class="form-control rounded-pill" name="Religions">
+																<select onchange="getSects(this,'Sects','Any')" class="form-control rounded-pill" name="Religions">
 																	<option value="">Select</option>
 																	@foreach($religions as $val)
 																		<option value="{{$val->id}}">{{$val->title}}</option>

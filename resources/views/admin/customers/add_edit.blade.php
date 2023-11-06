@@ -1011,8 +1011,8 @@
                                     <div class="col-6">
                                         <div class="form-group py-xl-10">
                                             <label for="country_id">Country</label>
-                                            <select onchange="getStates(this,'expectation[state_id]')" class="multiple-select form-control" required name="expectation[country_id]">
-                                                <option value="">Select</option>
+                                            <select onchange="getStates(this,'expectation[state_id]','Any')" class="multiple-select form-control" required name="expectation[country_id]">
+                                                <option value="0">Any</option>
                                                 @foreach($countries as $val)
                                                     <option value="{{$val->id}}" {{($customerSearch->country_id==$val->id) ? 'selected' : ''}}>{{$val->name}}</option>
                                                 @endforeach
@@ -1022,8 +1022,8 @@
                                     <div class="col-6">
                                         <div class="form-group py-xl-10">
                                             <label for="state_id">State</label>
-                                            <select onchange="getCities(this,'expectation[city_id]')" class="multiple-select form-control" required name="expectation[state_id]">
-                                                <option value="">Select</option>
+                                            <select onchange="getCities(this,'expectation[city_id]','Any')" class="multiple-select form-control" required name="expectation[state_id]">
+                                                <option value="0">Any</option>
                                                 @foreach($statesExpectation as $val)
                                                     <option value="{{$val->id}}" {{($customerSearch->state_id==$val->id) ? 'selected' : ''}}>{{$val->title}}</option>
                                                 @endforeach
@@ -1034,7 +1034,7 @@
                                         <div class="form-group py-xl-10">
                                             <label for="city_id">City</label>
                                             <select class="multiple-select form-control" required name="expectation[city_id]">
-                                                <option value="">Select</option>
+                                                <option value="0">Any</option>
                                                 @foreach($citiesExpectation as $val)
                                                     <option value="{{$val->id}}" {{($customerSearch->city_id==$val->id) ? 'selected' : ''}}>{{$val->title}}</option>
                                                 @endforeach
@@ -1045,7 +1045,7 @@
                                         <div class="form-group py-xl-10">
                                             <label for="Tongue">Tongue</label>
                                             <select class="multiple-select form-control" required name="expectation[Tongue]">
-                                                <option value="">Select</option>
+                                                <option value="0">Any</option>
                                                 @foreach($tongues as $val)
                                                     <option value="{{$val->id}}" {{($customerSearch->Tongue==$val->id) ? 'selected' : ''}}>{{$val->title}}</option>
                                                 @endforeach
@@ -1067,7 +1067,7 @@
                                         <div class="form-group py-xl-10">
                                             <label for="Sects">Sect</label>
                                             <select class="multiple-select form-control" required name="expectation[Sects]">
-                                                <option value="">Select</option>
+                                                <option value="0">Any</option>
                                                 @foreach($sectsExpectation as $val)
                                                     <option value="{{$val->id}}" {{($customerSearch->Sects==$val->id) ? 'selected' : ''}}>{{$val->title}}</option>
                                                 @endforeach
@@ -1078,7 +1078,7 @@
                                         <div class="form-group py-xl-10">
                                             <label for="EducationID">Qualification</label>
                                             <select class="multiple-select form-control" required name="expectation[EducationID]">
-                                                <option value="">Select</option>
+                                                <option value="0">Any</option>
                                                 @foreach($educations as $val)
                                                     <option value="{{$val->id}}" {{($customerSearch->EducationID==$val->id) ? 'selected' : ''}}>{{$val->title}}</option>
                                                 @endforeach
@@ -1089,7 +1089,7 @@
                                         <div class="form-group py-xl-10">
                                             <label for="OccupationID">Profession</label>
                                             <select class="multiple-select form-control" required name="expectation[OccupationID]">
-                                                <option value="">Select</option>
+                                                <option value="0">Any</option>
                                                 @foreach($occupations as $val)
                                                     <option value="{{$val->id}}" {{($customerSearch->OccupationID==$val->id) ? 'selected' : ''}}>{{$val->title}}</option>
                                                 @endforeach
@@ -1100,7 +1100,7 @@
                                         <div class="form-group py-xl-10">
                                             <label for="MyIncome">Income</label>
                                             <select class="multiple-select form-control" required name="expectation[MyIncome]">
-                                                <option value="">Select</option>
+                                                <option value="0">Any</option>
                                                 @foreach($incomes as $val)
                                                     <option value="{{$val->id}}" {{($customerSearch->MyIncome==$val->id) ? 'selected' : ''}}>{{$val->title}}</option>
                                                 @endforeach
@@ -1133,7 +1133,7 @@
                                         <div class="form-group py-xl-10">
                                             <label for="MaritalStatus">Marital Status</label>
                                             <select class="multiple-select form-control" required name="expectation[MaritalStatus]">
-                                                <option value="">Select</option>
+                                                <option value="0">Any</option>
                                                 @foreach($maritalStatuses as $val)
                                                     <option value="{{$val->id}}" {{($customerSearch->MaritalStatus==$val->id) ? 'selected' : ''}}>{{$val->title}}</option>
                                                 @endforeach
@@ -1155,7 +1155,7 @@
                                         <div class="form-group py-xl-10">
                                             <label for="Heights">Heights</label>
                                             <select class="multiple-select form-control" required name="expectation[Heights]">
-                                                <option value="">Select</option>
+                                                <option value="0">Any</option>
                                                 @foreach($heights as $val)
                                                     <option value="{{$val->id}}" {{($customerSearch->Heights==$val->id) ? 'selected' : ''}}>{{$val->title}}</option>
                                                 @endforeach
@@ -1177,7 +1177,7 @@
                                         <div class="form-group py-xl-10">
                                             <label for="Castes">Caste</label>
                                             <select class="multiple-select form-control" required name="expectation[Castes]">
-                                                <option value="">Select</option>
+                                                <option value="0">Any</option>
                                                 @foreach($castes as $val)
                                                     <option value="{{$val->id}}" {{($customerSearch->Castes==$val->id) ? 'selected' : ''}}>{{$val->title}}</option>
                                                 @endforeach
@@ -1222,8 +1222,8 @@
                                     <div class="col-6">
                                         <div class="form-group py-xl-10">
                                             <label for="country_id">Country</label>
-                                            <select onchange="getStates(this,'expectation[state_id]')" class="multiple-select form-control" required name="expectation[country_id]">
-                                                <option value="">Select</option>
+                                            <select onchange="getStates(this,'expectation[state_id]','Any')" class="multiple-select form-control" required name="expectation[country_id]">
+                                                <option value="0">Any</option>
                                                 @foreach($countries as $val)
                                                     <option value="{{$val->id}}">{{$val->name}}</option>
                                                 @endforeach
@@ -1233,8 +1233,8 @@
                                     <div class="col-6">
                                         <div class="form-group py-xl-10">
                                             <label for="state_id">State</label>
-                                            <select onchange="getCities(this,'expectation[city_id]')" class="multiple-select form-control" required name="expectation[state_id]">
-                                                <option value="">Select</option>
+                                            <select onchange="getCities(this,'expectation[city_id]','Any')" class="multiple-select form-control" required name="expectation[state_id]">
+                                                <option value="0">Any</option>
                                                 @foreach($statesExpectation as $val)
                                                     <option value="{{$val->id}}">{{$val->title}}</option>
                                                 @endforeach
@@ -1245,7 +1245,7 @@
                                         <div class="form-group py-xl-10">
                                             <label for="city_id">City</label>
                                             <select class="multiple-select form-control" required name="expectation[city_id]">
-                                                <option value="">Select</option>
+                                                <option value="0">Any</option>
                                                 @foreach($citiesExpectation as $val)
                                                     <option value="{{$val->id}}">{{$val->title}}</option>
                                                 @endforeach
@@ -1256,7 +1256,7 @@
                                         <div class="form-group py-xl-10">
                                             <label for="Tongue">Tongue</label>
                                             <select class="multiple-select form-control" required name="expectation[Tongue]">
-                                                <option value="">Select</option>
+                                                <option value="0">Any</option>
                                                 @foreach($tongues as $val)
                                                     <option value="{{$val->id}}">{{$val->title}}</option>
                                                 @endforeach
@@ -1278,7 +1278,7 @@
                                         <div class="form-group py-xl-10">
                                             <label for="Sects">Sect</label>
                                             <select class="multiple-select form-control" required name="expectation[Sects]">
-                                                <option value="">Select</option>
+                                                <option value="0">Any</option>
                                                 @foreach($sectsExpectation as $val)
                                                     <option value="{{$val->id}}">{{$val->title}}</option>
                                                 @endforeach
@@ -1289,7 +1289,7 @@
                                         <div class="form-group py-xl-10">
                                             <label for="EducationID">Qualification</label>
                                             <select class="multiple-select form-control" required name="expectation[EducationID]">
-                                                <option value="">Select</option>
+                                                <option value="0">Any</option>
                                                 @foreach($educations as $val)
                                                     <option value="{{$val->id}}">{{$val->title}}</option>
                                                 @endforeach
@@ -1300,7 +1300,7 @@
                                         <div class="form-group py-xl-10">
                                             <label for="OccupationID">Profession</label>
                                             <select class="multiple-select form-control" required name="expectation[OccupationID]">
-                                                <option value="">Select</option>
+                                                <option value="0">Any</option>
                                                 @foreach($occupations as $val)
                                                     <option value="{{$val->id}}">{{$val->title}}</option>
                                                 @endforeach
@@ -1311,7 +1311,7 @@
                                         <div class="form-group py-xl-10">
                                             <label for="MyIncome">Income</label>
                                             <select class="multiple-select form-control" required name="expectation[MyIncome]">
-                                                <option value="">Select</option>
+                                                <option value="0">Any</option>
                                                 @foreach($incomes as $val)
                                                     <option value="{{$val->id}}">{{$val->title}}</option>
                                                 @endforeach
@@ -1344,7 +1344,7 @@
                                         <div class="form-group py-xl-10">
                                             <label for="MaritalStatus">Marital Status</label>
                                             <select class="multiple-select form-control" required name="expectation[MaritalStatus]">
-                                                <option value="">Select</option>
+                                                <option value="0">Any</option>
                                                 @foreach($maritalStatuses as $val)
                                                     <option value="{{$val->id}}">{{$val->title}}</option>
                                                 @endforeach
@@ -1366,7 +1366,7 @@
                                         <div class="form-group py-xl-10">
                                             <label for="Heights">Heights</label>
                                             <select class="multiple-select form-control" required name="expectation[Heights]">
-                                                <option value="">Select</option>
+                                                <option value="0">Any</option>
                                                 @foreach($heights as $val)
                                                     <option value="{{$val->id}}">{{$val->title}}</option>
                                                 @endforeach
@@ -1388,7 +1388,7 @@
                                         <div class="form-group py-xl-10">
                                             <label for="Castes">Caste</label>
                                             <select class="multiple-select form-control" required name="expectation[Castes]">
-                                                <option value="">Select</option>
+                                                <option value="0">Any</option>
                                                 @foreach($castes as $val)
                                                     <option value="{{$val->id}}">{{$val->title}}</option>
                                                 @endforeach
@@ -1992,8 +1992,8 @@
                                 <div class="col-6">
                                     <div class="form-group py-xl-10">
                                         <label for="country_id">Country</label>
-                                        <select onchange="getStates(this,'expectation[state_id]')" class="multiple-select form-control" required name="expectation[country_id]">
-                                            <option value="">Select</option>
+                                        <select onchange="getStates(this,'expectation[state_id]','Any')" class="multiple-select form-control" required name="expectation[country_id]">
+                                            <option value="0">Any</option>
                                             @foreach($countries as $val)
                                                 <option value="{{$val->id}}">{{$val->name}}</option>
                                             @endforeach
@@ -2003,8 +2003,8 @@
                                 <div class="col-6">
                                     <div class="form-group py-xl-10">
                                         <label for="state_id">State</label>
-                                        <select onchange="getCities(this,'expectation[city_id]')" class="multiple-select form-control" required name="expectation[state_id]">
-                                            <option value="">Select</option>
+                                        <select onchange="getCities(this,'expectation[city_id]','Any')" class="multiple-select form-control" required name="expectation[state_id]">
+                                            <option value="0">Any</option>
                                             @foreach($states as $val)
                                                 <option value="{{$val->id}}">{{$val->title}}</option>
                                             @endforeach
@@ -2015,7 +2015,7 @@
                                     <div class="form-group py-xl-10">
                                         <label for="city_id">City</label>
                                         <select class="multiple-select form-control" required name="expectation[city_id]">
-                                            <option value="">Select</option>
+                                            <option value="0">Any</option>
                                             @foreach($cities as $val)
                                                 <option value="{{$val->id}}">{{$val->title}}</option>
                                             @endforeach
@@ -2026,7 +2026,7 @@
                                     <div class="form-group py-xl-10">
                                         <label for="Tongue">Tongue</label>
                                         <select class="multiple-select form-control" required name="expectation[Tongue]">
-                                            <option value="">Select</option>
+                                            <option value="0">Any</option>
                                             @foreach($tongues as $val)
                                                 <option value="{{$val->id}}">{{$val->title}}</option>
                                             @endforeach
@@ -2036,7 +2036,7 @@
                                 <div class="col-6">
                                     <div class="form-group py-xl-10">
                                         <label for="Religions">Religiousness</label>
-                                        <select onchange="getSects(this,'expectation[Sects]')" class="multiple-select form-control" required name="expectation[Religions]">
+                                        <select onchange="getSects(this,'expectation[Sects]','Any')" class="multiple-select form-control" required name="expectation[Religions]">
                                             <option value="">Select</option>
                                             @foreach($religions as $val)
                                                 <option value="{{$val->id}}">{{$val->title}}</option>
@@ -2048,7 +2048,7 @@
                                     <div class="form-group py-xl-10">
                                         <label for="Sects">Sect</label>
                                         <select class="multiple-select form-control" required name="expectation[Sects]">
-                                            <option value="">Select</option>
+                                            <option value="0">Any</option>
                                             @foreach($sects as $val)
                                                 <option value="{{$val->id}}">{{$val->title}}</option>
                                             @endforeach
@@ -2059,7 +2059,7 @@
                                     <div class="form-group py-xl-10">
                                         <label for="EducationID">Qualification</label>
                                         <select class="multiple-select form-control" required name="expectation[EducationID]">
-                                            <option value="">Select</option>
+                                            <option value="0">Any</option>
                                             @foreach($educations as $val)
                                                 <option value="{{$val->id}}">{{$val->title}}</option>
                                             @endforeach
@@ -2070,7 +2070,7 @@
                                     <div class="form-group py-xl-10">
                                         <label for="OccupationID">Profession</label>
                                         <select class="multiple-select form-control" required name="expectation[OccupationID]">
-                                            <option value="">Select</option>
+                                            <option value="0">Any</option>
                                             @foreach($occupations as $val)
                                                 <option value="{{$val->id}}">{{$val->title}}</option>
                                             @endforeach
@@ -2081,7 +2081,7 @@
                                     <div class="form-group py-xl-10">
                                         <label for="MyIncome">Income</label>
                                         <select class="multiple-select form-control" required name="expectation[MyIncome]">
-                                            <option value="">Select</option>
+                                            <option value="0">Any</option>
                                             @foreach($incomes as $val)
                                                 <option value="{{$val->id}}">{{$val->title}}</option>
                                             @endforeach
@@ -2114,7 +2114,7 @@
                                     <div class="form-group py-xl-10">
                                         <label for="MaritalStatus">Marital Status</label>
                                         <select class="multiple-select form-control" required name="expectation[MaritalStatus]">
-                                            <option value="">Select</option>
+                                            <option value="0">Any</option>
                                             @foreach($maritalStatuses as $val)
                                                 <option value="{{$val->id}}">{{$val->title}}</option>
                                             @endforeach
@@ -2136,7 +2136,7 @@
                                     <div class="form-group py-xl-10">
                                         <label for="Heights">Heights</label>
                                         <select class="multiple-select form-control" required name="expectation[Heights]">
-                                            <option value="">Select</option>
+                                            <option value="0">Any</option>
                                             @foreach($heights as $val)
                                                 <option value="{{$val->id}}">{{$val->title}}</option>
                                             @endforeach
@@ -2158,7 +2158,7 @@
                                     <div class="form-group py-xl-10">
                                         <label for="Castes">Caste</label>
                                         <select class="multiple-select form-control" required name="expectation[Castes]">
-                                            <option value="">Select</option>
+                                            <option value="0">Any</option>
                                             @foreach($castes as $val)
                                                 <option value="{{$val->id}}">{{$val->title}}</option>
                                             @endforeach
@@ -2169,7 +2169,7 @@
 
                             <hr>
 
-                            {{-- Expectation Form --}}
+                            {{-- Image Upload Form --}}
                             <div class="card-title d-flex align-items-center">
                                 <div><i class="bx bxl-blogger me-1 font-22 text-primary"></i></div>
                                 <h5 class="mb-0 text-primary">Profile Image Form</h5>

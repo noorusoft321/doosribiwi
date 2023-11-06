@@ -123,8 +123,9 @@
 			</div>
 			<h3 class="align-center profile-name text-white" style="line-height: 1;">{{$customer->full_name}}</h3>
 			<p class="align-center profile-occupation text-white">
-				{{(!empty($customer->getOccupationName)) ? $customer->getOccupationName->name : 'Occupation'}} from
-				{{(!empty($customer->getCountryName)) ? $customer->getCountryName->name : 'Country'}}
+				{{(!empty($customer->getOccupationName)) ? $customer->getOccupationName->name : 'Occupation'}}
+				{{--from--}}
+				{{--{{(!empty($customer->getCountryName)) ? $customer->getCountryName->name : 'Country'}}--}}
 			</p>
 
 			@if(!empty($customer->package_id))

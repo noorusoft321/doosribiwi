@@ -86,7 +86,7 @@
 @section('content')
     <div class="container-xxl p-tb-20">
         <div class="row">
-            <div class="col-md-4 mx-auto my-auto">
+            <div class="col-md-4 mx-auto d-flex align-items-stretch">
                 <div class="card">
                     <div class="card-body">
                         <div class="matchProfileImage text-center">
@@ -95,7 +95,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-4 mx-auto my-auto">
+            <div class="col-md-4 mx-auto d-flex align-items-stretch">
                 <div class="card">
                     <div class="card-body">
                         <div class="matchProfileDetail">
@@ -111,7 +111,7 @@
 
                             {{--<p>Hi,</p>--}}
                             {{--<p>Mrs. Ali is the Director of Doosri Biwi.</p>--}}
-                            <p>Mrs. Ali deals in Celebrities, Politicians, Industrialists, Elite Class and Upper Class proposals.</p>
+                            {{--<p>Mrs. Ali deals in Celebrities, Politicians, Industrialists, Elite Class and Upper Class proposals.</p>--}}
                             <p>She is a serial entrepreneur and working for women empowerment since long time.</p>
                             <p class="mb-0">Her vision is to build a world in which women are respected, empowered, uplifted and equal partners in society.</p>
                             <p style="visibility: hidden;">society.</p>
@@ -127,7 +127,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-4 mx-auto my-auto">
+            <div class="col-md-4 mx-auto d-flex align-items-stretch">
                 <div class="card">
                     <div class="card-body">
                         <h4 class="section-card-heading">Director's Message</h4>
@@ -142,6 +142,7 @@
             <div class="card-body">
                 <h3 class="section-card-heading">Profile: </h3>
                 <ul class="authentic-detail">
+                    <li>Mrs. Ali deals in Celebrities, Politicians, Industrialists, Elite Class and Upper Class proposals.</li>
                     <li>Before Doosri Biwi she was managing Mega Marketing Network and Talent Agency in Pakistan.</li>
                     <li>She has deep interest in the matchmaking and helped hundreds of Pakistani people around the world find their life partners.</li>
                     <li>At Doosri Biwi she conducts Grand Matchmaking Events every year in which 800+ people participate to find their life partners and do direct family to family meeting.</li>
