@@ -797,7 +797,9 @@ class CustomerController extends Controller
                 $image_tmp = request()->file('image');
                 if ($image_tmp->isValid()) {
                     $extension = $image_tmp->getClientOriginalExtension();
-                    $imageName = rand(111, 99999) .time(). '.' . $extension;
+//                    $imageName = rand(111, 99999) .time(). '.' . $extension;
+                    $uniqueKeyword = getUniqueKeyword();
+                    $imageName = $uniqueKeyword.'-'.date('YmdHis').'.'.$extension;
 
                     if ($request['blur_percent'] > 0) {
                         $main_image = public_path('customer_images/original_images/' . $imageName);
@@ -907,8 +909,9 @@ class CustomerController extends Controller
                 foreach ($image_tmp as $key => $image) {
                     if ($image->isValid()) {
                         $extension = $image->getClientOriginalExtension();
-                        $imageName = rand(111, 99999).time(). '.' . $extension;
-
+//                        $imageName = rand(111, 99999).time(). '.' . $extension;
+                        $uniqueKeyword = getUniqueKeyword();
+                        $imageName = $uniqueKeyword.'-'.date('YmdHis').'.'.$extension;
                         $main_image = public_path('customer_images/' . $imageName);
 
                         Image::make($image)->save($main_image);

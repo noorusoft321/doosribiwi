@@ -149,7 +149,7 @@
                         <label class="fieldlabels"> Religiousness </label>
                     </div>
                     <div class="col-md-8">
-                        <select class="form-select select-icon icon-mark form-control from-tab rounded-pill" name="Religions" >
+                        <select onchange="getSects(this,'Sects','Any')" class="form-select select-icon icon-mark form-control from-tab rounded-pill" name="Religions" >
                             <option value=""> Select</option>
                             @foreach($religions as $val)
                                 <option value="{{$val->id}}" {{(isset($customerSearch->Religions) && $customerSearch->Religions==$val->id) ? 'selected' : ''}}>{{$val->title}}</option>
@@ -506,7 +506,7 @@
                         <label class="fieldlabels"> Religiousness </label>
                     </div>
                     <div class="col-md-8">
-                        <select class="form-select select-icon icon-mark form-control from-tab rounded-pill" name="Religions" >
+                        <select onchange="getSects(this,'Sects','Any')" class="form-select select-icon icon-mark form-control from-tab rounded-pill" name="Religions" >
                             <option value=""> Select</option>
                             @foreach($religions as $val)
                                 <option value="{{$val->id}}">{{$val->title}}</option>

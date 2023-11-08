@@ -55,6 +55,19 @@ return [
         'Mrs. Motiwala' => '923420005556',
         'Ms. Farah'     => '923491007313',
         'Mrs. Farooqui' => '923344444962',
+    ],
+    'keywords' => [
+        'second-marriage-pakistan',
+        'rishta-pakistan',
+        'doosri-shaadi',
+        'doosri-biwi',
+        'pakistan-matrimony',
+        'second-wife',
+        'second-nikah',
+        'second-rishta',
+        'rishta-for-second-marriage',
+        'second-chance-love',
+        'find-your-second-soulmate'
     ]
 
 ];

@@ -452,7 +452,11 @@ class CustomerAuthController extends Controller
                 $cities = City::where('state_id',$customer->customerOtherInfo->state_id)->where('deleted',0)->orderBy('order_at','asc')->get();
             }
         }
-        $maritalStatuses = MaritalStatus::where('deleted',0)->orderBy('order_at','asc')->get();
+        if ($customer->gender_name=='Male') {
+            $maritalStatuses = MaritalStatus::where('deleted',0)->whereNotIn('id',[1,17])->orderBy('order_at','asc')->get();
+        } else {
+            $maritalStatuses = MaritalStatus::where('deleted',0)->whereNotIn('id',[16,7])->orderBy('order_at','asc')->get();
+        }
         return view('front.customer.edit_personal_profile',compact('title','customer','countries','states','cities','maritalStatuses'));
     }
 
@@ -586,7 +590,11 @@ class CustomerAuthController extends Controller
         $familyValues = FamilyValue::where('deleted',0)->orderBy('order_at','asc')->get();
 
         /*Expectations*/
-        $maritalStatuses = MaritalStatus::where('deleted',0)->orderBy('order_at','asc')->get();
+        if ($customer->gender_name=='Male') {
+            $maritalStatuses = MaritalStatus::where('deleted',0)->whereNotIn('id',[16,7])->orderBy('order_at','asc')->get();
+        } else {
+            $maritalStatuses = MaritalStatus::where('deleted',0)->whereNotIn('id',[1,17])->orderBy('order_at','asc')->get();
+        }
 
         /*Customer Searches / Expectation*/
         $expStates = [];
@@ -870,8 +878,9 @@ class CustomerAuthController extends Controller
                 foreach ($image_tmp as $key => $image) {
                     if ($image->isValid()) {
                         $extension = $image->getClientOriginalExtension();
-                        $imageName = rand(111, 99999).time(). '.' . $extension;
-
+//                        $imageName = rand(111, 99999).time(). '.' . $extension;
+                        $uniqueKeyword = getUniqueKeyword();
+                        $imageName = $uniqueKeyword.'-'.date('YmdHis').'.'.$extension;
                         $main_image = public_path('customer_images/' . $imageName);
 
                         Image::make($image)->save($main_image);
@@ -1715,7 +1724,9 @@ class CustomerAuthController extends Controller
                 $image_tmp = $request->file('image');
                 if ($image_tmp->isValid()) {
                     $extension = $image_tmp->getClientOriginalExtension();
-                    $imageName = rand(111, 99999) .time(). '.' . $extension;
+//                    $imageName = rand(111, 99999) .time(). '.' . $extension;
+                    $uniqueKeyword = getUniqueKeyword();
+                    $imageName = $uniqueKeyword.'-'.date('YmdHis').'.'.$extension;
                     $blur_percent = (isset($request->blur_percent) && $request->blur_percent > 0 ? $request->blur_percent : 0);
                     $profile_pic_client_status = (isset($request->profile_pic_client_status) && $request->profile_pic_client_status > 0 ? $request->profile_pic_client_status : 0);
                     if ($blur_percent > 0) {

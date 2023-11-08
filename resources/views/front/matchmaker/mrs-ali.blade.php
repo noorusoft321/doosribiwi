@@ -128,7 +128,7 @@
                 </div>
             </div>
             <div class="col-md-4 mx-auto d-flex align-items-stretch">
-                <div class="card">
+                <div class="card" style="width: 100%;">
                     <div class="card-body">
                         <h4 class="section-card-heading">Director's Message</h4>
                         <br>

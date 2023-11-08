@@ -270,7 +270,7 @@
                                     <div class="col-md-6">
                                         <div class="form-group py-xl-10">
                                             <label for="Qualification">*Qualification</label>
-                                            <select onchange="getMajorCourses(this,'major_course_id')" name="Qualification" id="Qualification" class="multiple-select form-control">
+                                            <select name="Qualification" id="Qualification" class="multiple-select form-control">
                                                 <option value="">Select</option>
                                                 @foreach($educations as $val)
                                                     <option value="{{$val->id}}" {{($customer->customerCareerInfo->Qualification==$val->id) ? 'selected' : ''}}>{{$val->title}}</option>
@@ -350,7 +350,7 @@
                                     <div class="col-md-6">
                                         <div class="form-group py-xl-10">
                                             <label for="Qualification">*Qualification</label>
-                                            <select onchange="getMajorCourses(this,'major_course_id')" name="Qualification" id="Qualification" class="multiple-select form-control">
+                                            <select name="Qualification" id="Qualification" class="multiple-select form-control">
                                                 <option value="">Select</option>
                                                 @foreach($educations as $val)
                                                     <option value="{{$val->id}}">{{$val->title}}</option>
@@ -1595,7 +1595,7 @@
                                 <div class="col-md-6">
                                     <div class="form-group py-xl-10">
                                         <label for="Qualification">*Qualification</label>
-                                        <select onchange="getMajorCourses(this,'major_course_id')" name="Qualification" id="Qualification" class="multiple-select form-control">
+                                        <select name="Qualification" id="Qualification" class="multiple-select form-control">
                                             <option value="">Select</option>
                                             @foreach($educations as $val)
                                                 <option value="{{$val->id}}">{{$val->title}}</option>

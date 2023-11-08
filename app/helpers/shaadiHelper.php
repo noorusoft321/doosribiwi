@@ -491,10 +491,10 @@ if (!function_exists('customerMatchesPercentage')) {
                 }
 
                 if (!empty($customerCareerInfo)) {
-                    $customerMatchesPercentage += (isset($customerSearching->EducationID) ? (empty($customerSearching->EducationID) || $customerSearching->EducationID==0 ? 7 : ($customerCareerInfo->Qualification == $customerSearching->EducationID ? 7 : 0) ) : 0);
+                    $customerMatchesPercentage += (isset($customerSearching->EducationID) ? (empty($customerSearching->EducationID) || $customerSearching->EducationID==0 ? 15 : ($customerCareerInfo->Qualification == $customerSearching->EducationID ? 15 : 0) ) : 0);
                 } else {
                     if (isset($customer->customerOtherInfo) && !empty($customer->customerOtherInfo)) {
-                        $customerMatchesPercentage += (isset($customerSearching->EducationID) ? (empty($customerSearching->EducationID) || $customerSearching->EducationID==0 ? 7 : ($customer->customerOtherInfo->EducationID == $customerSearching->EducationID ? 7 : 0) ) : 0);
+                        $customerMatchesPercentage += (isset($customerSearching->EducationID) ? (empty($customerSearching->EducationID) || $customerSearching->EducationID==0 ? 15 : ($customer->customerOtherInfo->EducationID == $customerSearching->EducationID ? 15 : 0) ) : 0);
                     }
                 }
                 return $customerMatchesPercentage;
@@ -567,5 +567,13 @@ if (!function_exists('getCurrentPackageExpiryDate')) {
         }
         return Customer::where('id',$customerId)->first();
         return Package::findOrFail($packageId);
+    }
+}
+
+if (!function_exists('getUniqueKeyword')) {
+    function getUniqueKeyword(){
+        $uniqueKeywords = config('services.keywords');
+        $uniqueKey = array_rand($uniqueKeywords, 1);
+        return $uniqueKeywords[$uniqueKey];
     }
 }

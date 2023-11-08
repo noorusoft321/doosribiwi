@@ -461,14 +461,15 @@ $packageExpiryDate = (auth()->guard('customer')->check()) ? auth()->guard('custo
         return;
     }
 
-    function getSects(input,putInField) {
+    function getSects(input,putInField,selectName='Select') {
+        let selectValue = selectName=='Select' ? '' : '0';
         let refrenceId = $(input).val();
         let fieldShortCode = $(`select[name="${putInField}"]`);
         if (refrenceId) {
             axios.get(`{{route('get.sects')}}/${refrenceId}`).then(function (res) {
                 if (res.data.data.length > 0) {
                     fieldShortCode.empty();
-                    fieldShortCode.append(new Option('Select', ''));
+                    fieldShortCode.append(new Option(selectName, selectValue));
                     $.each(res.data.data, function (k, v) {
                         fieldShortCode.append(new Option(v.title, v.id));
                     });
@@ -476,38 +477,38 @@ $packageExpiryDate = (auth()->guard('customer')->check()) ? auth()->guard('custo
                 }
             }).catch(function (error) {
                 fieldShortCode.empty();
-                fieldShortCode.html('<option value="">Select</option>');
+                fieldShortCode.html(`<option value="${selectValue}">${selectName}</option>`);
                 return;
             });
         }
         fieldShortCode.empty();
-        fieldShortCode.html('<option value="">Select</option>');
+        fieldShortCode.html(`<option value="${selectValue}">${selectName}</option>`);
         return;
     }
 
-    function getMajorCourses(input,putInField) {
-        let refrenceId = $(input).val();
-        let fieldShortCode = $(`select[name="${putInField}"]`);
-        if (refrenceId) {
-            axios.get(`{{route('get.major.courses')}}/${refrenceId}`).then(function (res) {
-                if (res.data.data.length > 0) {
-                    fieldShortCode.empty();
-                    fieldShortCode.append(new Option('Select', ''));
-                    $.each(res.data.data, function (k, v) {
-                        fieldShortCode.append(new Option(v.title, v.id));
-                    });
-                    return;
-                }
-            }).catch(function (error) {
-                fieldShortCode.empty();
-                fieldShortCode.html('<option value="">Select</option>');
-                return;
-            });
-        }
-        fieldShortCode.empty();
-        fieldShortCode.html('<option value="">Select</option>');
-        return;
-    }
+    {{--function getMajorCourses(input,putInField) {--}}
+        {{--let refrenceId = $(input).val();--}}
+        {{--let fieldShortCode = $(`select[name="${putInField}"]`);--}}
+        {{--if (refrenceId) {--}}
+            {{--axios.get(`{{route('get.major.courses')}}/${refrenceId}`).then(function (res) {--}}
+                {{--if (res.data.data.length > 0) {--}}
+                    {{--fieldShortCode.empty();--}}
+                    {{--fieldShortCode.append(new Option('Select', ''));--}}
+                    {{--$.each(res.data.data, function (k, v) {--}}
+                        {{--fieldShortCode.append(new Option(v.title, v.id));--}}
+                    {{--});--}}
+                    {{--return;--}}
+                {{--}--}}
+            {{--}).catch(function (error) {--}}
+                {{--fieldShortCode.empty();--}}
+                {{--fieldShortCode.html('<option value="">Select</option>');--}}
+                {{--return;--}}
+            {{--});--}}
+        {{--}--}}
+        {{--fieldShortCode.empty();--}}
+        {{--fieldShortCode.html('<option value="">Select</option>');--}}
+        {{--return;--}}
+    {{--}--}}
 
     function copyToClipBoard(input) {
         $(input).attr('disabled',false);
