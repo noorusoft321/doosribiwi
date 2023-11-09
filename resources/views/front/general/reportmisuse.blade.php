@@ -16,7 +16,7 @@
 		{{--</div>--}}
 		<div class="d-grid w-md-50 w-xl-80 mb-60 mx-auto gap-12">
 			<h2 class="heading-section-3 text-dark text-center mb-0">Report Misuse</h2>
-			<img src="{{asset('home_page/heading-border.png')}}" class="img-align-center heading-border">
+			<img src="{{asset('images/doosri-biwi-thin-border.png')}}" class="img-align-center heading-border">
 		</div>
 		<!-- /.heading-section -->
 		<div class="row w-xl-85 mx-auto">

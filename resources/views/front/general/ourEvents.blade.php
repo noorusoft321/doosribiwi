@@ -46,7 +46,7 @@
 	<div class="container-xxl p-tb-20">
 		<div class="d-grid mx-auto gap-12">
 			<h1 class="heading-section-3 text-dark text-center mb-0">Our Events</h1>
-			<img src="{{asset('home_page/heading-border.png')}}" class="img-align-center heading-border">
+			<img src="{{asset('images/doosri-biwi-thin-border.png')}}" class="img-align-center heading-border">
 		</div>
 	</div>
 

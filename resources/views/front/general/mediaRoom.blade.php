@@ -12,7 +12,7 @@
 	<div class="container-xxl">
 		<br>
         <h2 class="align-center font-weight-600"> Media Room </h2>
-       	<img class="img-align-center heading-border" src="{{asset('home_page/heading-border.png')}}">
+       	<img class="img-align-center heading-border" src="{{asset('images/doosri-biwi-thin-border.png')}}">
        	<br>
 		<div class="row justify-content-center">
 			@foreach($mediaVideos as $val)

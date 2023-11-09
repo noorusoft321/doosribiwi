@@ -63,7 +63,7 @@
 		<div class="row">
 			<div class="col-md-8 mx-auto">
 				<h2 class="align-center font-weight-600"> About Us </h2>
-				<img class="img-align-center heading-border" src="{{asset('home_page/heading-border.png')}}">
+				<img class="img-align-center heading-border" src="{{asset('images/doosri-biwi-thin-border.png')}}">
 				<h3 class="section-card-heading text-center mt-2 mb-2">Welcome to DoosriBiwi.com</h3>
                 <p class="align-center">This platform dedicated to helping individuals embrace the practice of polygamy while upholding strong Islamic values.</p>
                 <p class="align-center">Our mission is to provide a range of services and support that empower our users to lead harmonious life, rooted in the teachings of Islam.</p>

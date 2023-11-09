@@ -58,10 +58,10 @@
 												<h4 class="align-center text-theme">Gallery Photos</h4>
 												<div class="row justify-content-center">
 													@foreach($customerImages as $key => $val)
-														@if(file_exists(public_path('customer_images/'.$val->image)))
+														@if(file_exists(public_path('customer-images/'.$val->image)))
 															<div class="col-sm-6 col-md-4">
-																<a class="lightbox" href="{{asset('customer_images/'.$val->image)}}">
-																	<img src="{{asset('customer_images/'.$val->image)}}" alt="Gallery {{$key + 1}}" width="100" height="100">
+																<a class="lightbox" href="{{asset('customer-images/'.$val->image)}}">
+																	<img src="{{asset('customer-images/'.$val->image)}}" alt="Gallery {{$key + 1}}" width="100" height="100">
 																</a>
 															</div>
 														@endif
@@ -92,31 +92,31 @@
 
 									<ul class="verification-badge">
 										<li>
-											<img src="{{asset('customer_verification/age-'.($customer->age_verification==1 ? 'on' : 'off').'.png')}}" title="Age Verification">
+											<img src="{{asset('customer-verification/age-'.($customer->age_verification==1 ? 'on' : 'off').'.png')}}" title="Age Verification">
 										</li>
 										<li>
-											<img src="{{asset('customer_verification/edu-'.($customer->education_verification==1 ? 'on' : 'off').'.png')}}" title="Education Verification">
+											<img src="{{asset('customer-verification/edu-'.($customer->education_verification==1 ? 'on' : 'off').'.png')}}" title="Education Verification">
 										</li>
 										<li>
-											<img src="{{asset('customer_verification/email-'.($customer->email_verified==1 ? 'on' : 'off').'.png')}}" title="Email Verification">
+											<img src="{{asset('customer-verification/email-'.($customer->email_verified==1 ? 'on' : 'off').'.png')}}" title="Email Verification">
 										</li>
 										<li>
-											<img src="{{asset('customer_verification/location-'.($customer->location_verification==1 ? 'on' : 'off').'.png')}}" title="Location Verification">
+											<img src="{{asset('customer-verification/location-'.($customer->location_verification==1 ? 'on' : 'off').'.png')}}" title="Location Verification">
 										</li>
 										<li>
-											<img src="{{asset('customer_verification/meeting-'.($customer->meeting_verification==1 ? 'on' : 'off').'.png')}}" title="Meeting Verification">
+											<img src="{{asset('customer-verification/meeting-'.($customer->meeting_verification==1 ? 'on' : 'off').'.png')}}" title="Meeting Verification">
 										</li>
 										<li>
-											<img src="{{asset('customer_verification/nationality-'.($customer->nationality_verification==1 ? 'on' : 'off').'.png')}}" title="Nationality Verification">
+											<img src="{{asset('customer-verification/nationality-'.($customer->nationality_verification==1 ? 'on' : 'off').'.png')}}" title="Nationality Verification">
 										</li>
 										<li>
-											<img src="{{asset('customer_verification/phone-'.($customer->mobile_verified==1 ? 'on' : 'off').'.png')}}" title="Phone Verification">
+											<img src="{{asset('customer-verification/phone-'.($customer->mobile_verified==1 ? 'on' : 'off').'.png')}}" title="Phone Verification">
 										</li>
 										<li>
-											<img src="{{asset('customer_verification/pic-'.($customer->profile_pic_status==1 ? 'on' : 'off').'.png')}}" title="Picture Verification">
+											<img src="{{asset('customer-verification/pic-'.($customer->profile_pic_status==1 ? 'on' : 'off').'.png')}}" title="Picture Verification">
 										</li>
 										<li>
-											<img src="{{asset('customer_verification/salary-'.($customer->salary_verification==1 ? 'on' : 'off').'.png')}}" title="Salary Verification">
+											<img src="{{asset('customer-verification/salary-'.($customer->salary_verification==1 ? 'on' : 'off').'.png')}}" title="Salary Verification">
 										</li>
 									</ul>
 

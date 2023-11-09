@@ -881,7 +881,7 @@ class CustomerAuthController extends Controller
 //                        $imageName = rand(111, 99999).time(). '.' . $extension;
                         $uniqueKeyword = getUniqueKeyword();
                         $imageName = $uniqueKeyword.'-'.date('YmdHis').'.'.$extension;
-                        $main_image = public_path('customer_images/' . $imageName);
+                        $main_image = public_path('customer-images/' . $imageName);
 
                         Image::make($image)->save($main_image);
 
@@ -917,8 +917,8 @@ class CustomerAuthController extends Controller
         $photoId = request()->photo_id;
         $imageRow = CustomerImage::findOrFail(FakerURL::id_d($photoId));
         if (!in_array($imageRow->image,['default-female.jpg','default-male.jpg','default-user.png'])) {
-            if (file_exists(public_path('customer_images/'.$imageRow->image))) {
-                unlink(public_path('customer_images/'.$imageRow->image));
+            if (file_exists(public_path('customer-images/'.$imageRow->image))) {
+                unlink(public_path('customer-images/'.$imageRow->image));
             }
         }
         $imageRow->delete();
@@ -1636,12 +1636,12 @@ class CustomerAuthController extends Controller
                 $blur_percent = 15;
                 break;
         }
-        $file = public_path('customer_images/original_images/'.$imageName);
-        $fileUrl = asset('/customer_images/original_images/'.$imageName);
+        $file = public_path('customer-images/original_images/'.$imageName);
+        $fileUrl = asset('/customer-images/original_images/'.$imageName);
         if (env('APP_ENV')=='local') {
             $fileUrl = str_replace("https","http",$fileUrl);
         }
-        $imageNewPath = public_path('customer_images/' . $imageName);
+        $imageNewPath = public_path('customer-images/' . $imageName);
         $headers = get_headers($fileUrl, 1);
         $contentType = (isset($headers['Content-Type'])) ? $headers['Content-Type'] : $headers['content-type'];
         switch ($contentType)
@@ -1730,24 +1730,24 @@ class CustomerAuthController extends Controller
                     $blur_percent = (isset($request->blur_percent) && $request->blur_percent > 0 ? $request->blur_percent : 0);
                     $profile_pic_client_status = (isset($request->profile_pic_client_status) && $request->profile_pic_client_status > 0 ? $request->profile_pic_client_status : 0);
                     if ($blur_percent > 0) {
-                        $main_image = public_path('customer_images/original_images/' . $imageName);
+                        $main_image = public_path('customer-images/original_images/' . $imageName);
                         Image::make($image_tmp)->resize(500, 500, function ($constraint) {
                             $constraint->aspectRatio();
                         })->save($main_image,60);
 
                         $this->makeBlurImage($imageName,$blur_percent);
                     } else {
-                        $main_image = public_path('customer_images/' . $imageName);
+                        $main_image = public_path('customer-images/' . $imageName);
                         Image::make($image_tmp)->resize(500, 500, function ($constraint) {
                             $constraint->aspectRatio();
                         })->save($main_image,60);
                     }
 
-                    if (!in_array($customer->image,['default-female.jpg','default-male.jpg','default-user.png']) && file_exists(public_path('customer_images/'.$customer->image))) {
-                        unlink(public_path('customer_images/'.$customer->image));
+                    if (!in_array($customer->image,['default-female.jpg','default-male.jpg','default-user.png']) && file_exists(public_path('customer-images/'.$customer->image))) {
+                        unlink(public_path('customer-images/'.$customer->image));
                     }
-                    if (!in_array($customer->image,['default-female.jpg','default-male.jpg','default-user.png']) && file_exists(public_path('customer_images/original_images/'.$customer->image))) {
-                        unlink(public_path('customer_images/original_images/'.$customer->image));
+                    if (!in_array($customer->image,['default-female.jpg','default-male.jpg','default-user.png']) && file_exists(public_path('customer-images/original_images/'.$customer->image))) {
+                        unlink(public_path('customer-images/original_images/'.$customer->image));
                     }
 
                     $customer->update([

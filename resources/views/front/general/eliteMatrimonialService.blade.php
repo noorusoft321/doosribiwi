@@ -12,7 +12,7 @@
 		<div class="container-xxl">
 			<br>
 			<h2 class="align-center font-weight-600"> Elite Matrimonial </h2>
-			<img class="img-align-center heading-border" src="{{asset('home_page/heading-border.png')}}">
+			<img class="img-align-center heading-border" src="{{asset('images/doosri-biwi-thin-border.png')}}">
 			<p class="align-center">A Special Matrimonial Service Just for The Elite Class.</p>
 
 			<div class="row">
@@ -75,7 +75,7 @@
 
 			<br>
 			<h2 class="align-center font-weight-600"> Doosri Biwi </h2>
-			<img class="img-align-center heading-border" src="{{asset('home_page/heading-border.png')}}">
+			<img class="img-align-center heading-border" src="{{asset('images/doosri-biwi-thin-border.png')}}">
 			<p class="align-center">The Most Trusted Matrimonial Service in Pakistan</p>
 
 			<div class="row">
@@ -106,7 +106,7 @@
 
 			<br>
 			<h2 class="align-center font-weight-600"> Royal </h2>
-			<img class="img-align-center heading-border" src="{{asset('home_page/heading-border.png')}}">
+			<img class="img-align-center heading-border" src="{{asset('images/doosri-biwi-thin-border.png')}}">
 
 			<div class="row">
 				<div class="col-md-6">
@@ -138,7 +138,7 @@
 
 			<br>
 			<h2 class="align-center font-weight-600"> Overseas </h2>
-			<img class="img-align-center heading-border" src="{{asset('home_page/heading-border.png')}}">
+			<img class="img-align-center heading-border" src="{{asset('images/doosri-biwi-thin-border.png')}}">
 
 			<div class="row">
 				<div class="col-md-6">
@@ -173,7 +173,7 @@
 
 			<br>
 			<h2 class="align-center font-weight-600"> Celebrities </h2>
-			<img class="img-align-center heading-border" src="{{asset('home_page/heading-border.png')}}">
+			<img class="img-align-center heading-border" src="{{asset('images/doosri-biwi-thin-border.png')}}">
 
 			<div class="row">
 				<div class="col-md-6">
@@ -207,7 +207,7 @@
 
 			<br>
 			<h2 class="align-center font-weight-600"> High officials </h2>
-			<img class="img-align-center heading-border" src="{{asset('home_page/heading-border.png')}}">
+			<img class="img-align-center heading-border" src="{{asset('images/doosri-biwi-thin-border.png')}}">
 			<div class="row">
 				<div class="col-md-6">
 					<div class="card royal-h p-33" style="gap:21px;">
@@ -238,7 +238,7 @@
 
 			<br>
 			<h2 class="align-center font-weight-600"> Billionaire </h2>
-			<img class="img-align-center heading-border" src="{{asset('home_page/heading-border.png')}}">
+			<img class="img-align-center heading-border" src="{{asset('images/doosri-biwi-thin-border.png')}}">
 			<div class="row">
 				<div class="col-md-6">
 					<div class="card elite-text-content royal-h p-40">
@@ -270,7 +270,7 @@
 
 			<br>
 			<h2 class="align-center font-weight-600"> Elite Matrimony Benefits </h2>
-			<img class="img-align-center heading-border" src="{{asset('home_page/heading-border.png')}}">
+			<img class="img-align-center heading-border" src="{{asset('images/doosri-biwi-thin-border.png')}}">
 			<div class="row">
 				<div class="col-md-12">
 					<div class="card p-40">
@@ -292,13 +292,13 @@
 
 			<br>
 			<h2 class="align-center font-weight-600"> Contact Us </h2>
-			<img class="img-align-center heading-border" src="{{asset('home_page/heading-border.png')}}">
+			<img class="img-align-center heading-border" src="{{asset('images/doosri-biwi-thin-border.png')}}">
 			<br>
 			<div class="row justify-content-center">
 				<div class="col-md-6">
 					<div class="card p-40">
 						<h5 class="text-dark text-center mb-0">Please fill the form and our Matrimony Consultant will contact you.</h5>
-						<img class="img-align-center heading-border" src="{{asset('home_page/heading-border.png')}}">
+						<img class="img-align-center heading-border" src="{{asset('images/doosri-biwi-thin-border.png')}}">
 						<form id="matrimonialForm">
 							<div class="col-12 m-tb-30">
 								<div class="form-group">

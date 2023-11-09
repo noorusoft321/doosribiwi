@@ -13,7 +13,7 @@
 		<div class="container-xxl">
 			<br>
 			<h2 class="align-center font-weight-600"> FAQ'S </h2>
-			<img class="img-align-center heading-border" src="{{asset('home_page/heading-border.png')}}">
+			<img class="img-align-center heading-border" src="{{asset('images/doosri-biwi-thin-border.png')}}">
 			<!-- /.heading-section -->
 			<div class="row">
 				<div class="col-md-12">

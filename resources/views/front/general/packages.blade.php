@@ -342,7 +342,7 @@
 		<div class="container-xxl">
 			<br>
 			<h1 class="align-center font-weight-600"> {{$title}} (رشتہ پیکجز)</h1>
-			<img class="img-align-center heading-border" src="{{asset('home_page/heading-border.png')}}">
+			<img class="img-align-center heading-border" src="{{asset('images/doosri-biwi-thin-border.png')}}">
 			<br>
 			<div class="row">
 				<div class="col-md-8 mx-auto">
@@ -360,7 +360,7 @@
 				Which Type of Rishta Service Do You Need? <br>
 				<span class="headingUrdu">آپ کو کس قسم کی رشتہ سروس کی ضرورت ہے؟</span>
 			</h2>
-			<img class="img-align-center heading-border" src="{{asset('home_page/heading-border.png')}}">
+			<img class="img-align-center heading-border" src="{{asset('images/doosri-biwi-thin-border.png')}}">
 			<br>
 
 			<div class="text-center">
@@ -431,7 +431,7 @@
 						Personalized Matchmaking <br>
 						<span class="headingUrdu">ذاتی نوعیت کی میچ میکنگ</span>
 					</h2>
-					<img class="img-align-center heading-border" src="{{asset('home_page/heading-border.png')}}">
+					<img class="img-align-center heading-border" src="{{asset('images/doosri-biwi-thin-border.png')}}">
 					<br>
 
 					<div class="card">
@@ -461,7 +461,7 @@
 						Payment Options <br>
 						<span class="headingUrdu">آدائیگی کے طریقے</span>
 					</h2>
-					<img class="img-align-center heading-border" src="{{asset('home_page/heading-border.png')}}">
+					<img class="img-align-center heading-border" src="{{asset('images/doosri-biwi-thin-border.png')}}">
 					<br>
 					<p class="paragraph-1">For payment only use the following bank accounts and always send payment's screenshot on the Senior Consultant WhatsApp:
 						<a class="text-dark font-weight-500" href="https://api.whatsapp.com/send?phone=923452444262&text=Hi%20DoosriBiwi.com%2C%20I%20need%20more%20information.">+923452444262</a>. We will not be responsible if payment is sent on any other account or to any other person. Make sure to communicate only on the official numbers which are mentioned on our website and Facebook page. In case of any issue contact Senior Consultant WhatsApp:

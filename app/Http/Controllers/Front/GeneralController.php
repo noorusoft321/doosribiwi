@@ -97,7 +97,7 @@ class GeneralController extends Controller
 
     public function freeRishtaServices()
     {
-        $title = 'Free Rishta Services';
+        $title = 'Rishta Services';
         return view('front.general.freeRishtaServices',compact('title'));
     }
 

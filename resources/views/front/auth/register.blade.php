@@ -63,7 +63,7 @@
 			<div class="row justify-content-md-center">
 				<div class="col-md-9">
 					<h2 class="align-center font-weight-600"> Create an account </h2>
-					<img class="img-align-center heading-border" src="{{asset('home_page/heading-border.png')}}">
+					<img class="img-align-center heading-border" src="{{asset('images/doosri-biwi-thin-border.png')}}">
 					{{--<br>--}}
 					<h3 class="section-card-heading text-center mb-2">Welcome to a community that understands and supports your choices.</h3>
 					<form method="post" id="shadiForm">

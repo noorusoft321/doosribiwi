@@ -425,8 +425,8 @@
 									<div class="job-card-harizontal">
 										<div class="row">
 											<div class="col-md-2 mx-auto my-auto">
-												@if(file_exists(public_path('customer_images/'.$customer->image)))
-													<a target="_blank" href="{{asset('customer_images/'.$customer->image)}}"><img src="{{asset('customer_images/'.$customer->image)}}" class="rounded-circle" alt="{{$customer->full_name}}" width="100%"></a>
+												@if(file_exists(public_path('customer-images/'.$customer->image)))
+													<a target="_blank" href="{{asset('customer-images/'.$customer->image)}}"><img src="{{asset('customer-images/'.$customer->image)}}" class="rounded-circle" alt="{{$customer->full_name}}" width="100%"></a>
 												@else
 													<a target="_blank" href="{{$customer->imageFullPath}}"><img src="{{$customer->imageFullPath}}" class="rounded-circle" alt="{{$customer->full_name}}" width="100%"></a>
 												@endif

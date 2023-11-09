@@ -13,7 +13,7 @@
 	<div class="container-xxl">
 		<div class="d-grid w-md-80 w-xl-54 mb-10 mx-auto gap-12">
 			<h1 class="heading-section-3 text-center mb-0">Our Offices</h1>
-			<img src="{{asset('home_page/heading-border.png')}}" class="img-align-center heading-border">
+			<img src="{{asset('images/doosri-biwi-thin-border.png')}}" class="img-align-center heading-border">
 			<div class="heading-text-2 lh-base text-center">
 				@if(!empty($ourOfficeDescription) && !empty($ourOfficeDescription['ourOfficeDescription']))
 

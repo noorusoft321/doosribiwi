@@ -20,7 +20,7 @@
 					Find Someone Better!
 				</h3>
 				<div class="footer-brand">
-					<img src="{{asset('assets/img/Shaadi-Organization-Pakistan-Rishta-Logo.png')}}" alt="logo" width="100%">
+					<img src="{{asset('images/doosri-biwi-logo.png')}}" alt="logo" width="100%">
 				</div>
 				<p class="white-color">
 					We are the first and the only marriage bureau/matrimonial portal in the history of Pakistan to provide matrimony services for the Doosri Biwi, i.e., 2nd Wife or 2nd Marriage in the presence of the 1st wife.

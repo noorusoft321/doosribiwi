@@ -121,11 +121,11 @@
                         </div>
                         <div class="card-body">
                             <div class="circle--image">
-                                @if(file_exists(public_path('customer_images/original_images/'.$customer->image)))
-                                    <a href="{{asset('customer_images/original_images/'.$customer->image)}}" target="_blank"><img src="{{asset('customer_images/original_images/'.$customer->image)}}" class="rounded-circle" alt="{{$customer->full_name}}"></a>
-                                    <a href="{{asset('customer_images/'.$customer->image)}}" target="_blank"><img src="{{asset('customer_images/'.$customer->image)}}" class="rounded-circle" alt="{{$customer->full_name}}"></a>
-                                @elseif(file_exists(public_path('customer_images/'.$customer->image)))
-                                    <a href="{{asset('customer_images/'.$customer->image)}}" target="_blank"><img src="{{asset('customer_images/'.$customer->image)}}" class="rounded-circle" alt="{{$customer->full_name}}"></a>
+                                @if(file_exists(public_path('customer-images/original_images/'.$customer->image)))
+                                    <a href="{{asset('customer-images/original_images/'.$customer->image)}}" target="_blank"><img src="{{asset('customer-images/original_images/'.$customer->image)}}" class="rounded-circle" alt="{{$customer->full_name}}"></a>
+                                    <a href="{{asset('customer-images/'.$customer->image)}}" target="_blank"><img src="{{asset('customer-images/'.$customer->image)}}" class="rounded-circle" alt="{{$customer->full_name}}"></a>
+                                @elseif(file_exists(public_path('customer-images/'.$customer->image)))
+                                    <a href="{{asset('customer-images/'.$customer->image)}}" target="_blank"><img src="{{asset('customer-images/'.$customer->image)}}" class="rounded-circle" alt="{{$customer->full_name}}"></a>
                                 @else
                                     <a href="{{$customer->imageFullPath}}" target="_blank"><img src="{{$customer->imageFullPath}}" class="rounded-circle" alt="{{$customer->full_name}}"></a>
                                 @endif
@@ -1287,12 +1287,12 @@
                             @forelse($photos as $key => $val)
                                 <div class="col">
                                     <div class="img-container">
-                                        <img src="{{asset('customer_images/'.$val->image)}}" alt="Photo {{$key}}" class="image" style="width:100%;height: 100%">
+                                        <img src="{{asset('customer-images/'.$val->image)}}" alt="Photo {{$key}}" class="image" style="width:100%;height: 100%">
                                         <div class="middle">
                                             <a onclick="deletePhoto(this)" href="javascript:void(0);" data-image-id="{{$val->faker_id}}" type="button" class="text">
                                                 <i class="fa fa-trash fa-md text-white"></i>
                                             </a>
-                                            <a href="{{asset('customer_images/'.$val->image)}}" target="_blank" class="text">
+                                            <a href="{{asset('customer-images/'.$val->image)}}" target="_blank" class="text">
                                                 <i class="fa fa-eye fa-md text-white"></i>
                                             </a>
                                         </div>

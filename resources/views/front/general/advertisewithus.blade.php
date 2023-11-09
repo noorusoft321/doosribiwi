@@ -12,7 +12,7 @@
 	<div class="container-xxl py-60">
 		<br>
 		<h2 class="align-center font-weight-600"> DO YOU WANT TO PROMOTE YOUR BUSINESS ONLINE? </h2>
-		<img class="img-align-center heading-border" src="{{asset('home_page/heading-border.png')}}">
+		<img class="img-align-center heading-border" src="{{asset('images/doosri-biwi-thin-border.png')}}">
 		<p class="text-center">At DoosriBiwi.com, thousands of new and regular visitors come to view profiles on our online marriage website daily. From bride searching mothers to partner searching young men and women. This here is a platform that caters to the interests of a huge audience from Pakistan, having more than 200 members live online!
 		</p>
 		<br>

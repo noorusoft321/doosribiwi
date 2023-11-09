@@ -82,7 +82,7 @@
 
 			<div class="col-md-8 mx-auto">
 				<h2 class="align-center font-weight-600"> Contact Us </h2>
-				<img class="img-align-center heading-border" src="{{asset('home_page/heading-border.png')}}">
+				<img class="img-align-center heading-border" src="{{asset('images/doosri-biwi-thin-border.png')}}">
 				<h3 class="section-card-heading text-center mt-2 mb-2">Welcome to DoosriBiwi.com</h3>
 				<p class="align-center">DoosriBiwi.com is the only destination for people looking for a second female life partner or looking for a better male life partner who can give them all the happiness in the world.</p>
 			</div>
@@ -127,7 +127,7 @@
 	<div class="p-tb-50 n-bg-img">
 		<div class="container">
 			<h2 class="align-center font-weight-600 white-color"> Legal Protection </h2>
-			<img class="img-align-center heading-border" src="{{asset('home_page/heading-border.png')}}">
+			<img class="img-align-center heading-border" src="{{asset('images/doosri-biwi-thin-border.png')}}">
 			<br>
 			<div class="row newInfoStyle">
 				<div class="col-md-6 mx-auto my-auto">

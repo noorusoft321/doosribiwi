@@ -462,7 +462,7 @@
 			<div class="col-md-9">
 				<div class="d-grid mx-auto gap-12 mt-2">
 					<h2 class="heading-section-3 text-dark text-center mb-0">{{ $pageTitle }}</h2>
-					<img src="{{asset('home_page/heading-border.png')}}" class="img-align-center heading-border">
+					<img src="{{asset('images/doosri-biwi-thin-border.png')}}" class="img-align-center heading-border">
 				</div>
 				<div class="search-list">
 					@include('front.customer.partials.search_members')

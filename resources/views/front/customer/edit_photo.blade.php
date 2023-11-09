@@ -69,8 +69,8 @@
                                     <div class="job-card-harizontal">
                                         <div class="row">
                                             <div class="col-md-2 mx-auto my-auto">
-                                                @if(file_exists(public_path('customer_images/'.$customer->image)))
-                                                    <a target="_blank" href="{{asset('customer_images/'.$customer->image)}}"><img src="{{asset('customer_images/'.$customer->image)}}" class="rounded-circle" alt="{{$customer->full_name}}" width="100%"></a>
+                                                @if(file_exists(public_path('customer-images/'.$customer->image)))
+                                                    <a target="_blank" href="{{asset('customer-images/'.$customer->image)}}"><img src="{{asset('customer-images/'.$customer->image)}}" class="rounded-circle" alt="{{$customer->full_name}}" width="100%"></a>
                                                 @else
                                                     <a target="_blank" href="{{$customer->imageFullPath}}"><img src="{{$customer->imageFullPath}}" class="rounded-circle" alt="{{$customer->full_name}}" width="100%"></a>
                                                 @endif
@@ -160,7 +160,7 @@
                                 @forelse($photos as $key => $val)
                                     <div class="col-md-3">
                                         <div class="img-container">
-                                            <img src="{{asset('customer_images/'.$val->image)}}" alt="Photo {{$key}}" class="image" style="width:100%;height: 100%">
+                                            <img src="{{asset('customer-images/'.$val->image)}}" alt="Photo {{$key}}" class="image" style="width:100%;height: 100%">
                                             <div class="middle">
                                                 <button onclick="deletePhoto(this)" data-image-id="{{$val->faker_id}}" type="button" class="text">
                                                     <i class="fa fa-trash fa-lg text-white"></i>

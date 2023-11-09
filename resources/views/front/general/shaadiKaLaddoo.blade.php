@@ -146,7 +146,7 @@
 		<div class="container-xxl">
 			<br>
 			<h1 class="align-center font-weight-600">Shaadi Ka Laddu</h1>
-			<img class="img-align-center heading-border" src="{{asset('home_page/heading-border.png')}}">
+			<img class="img-align-center heading-border" src="{{asset('images/doosri-biwi-thin-border.png')}}">
 			{{--<h2 class="align-center text-theme font-weight-600" style="font-size: 22px;">Season-3, Coming Soon ...</h2>--}}
 			<h2 class="align-center" style="font-size: 18px;">Direct Family to Family Rishta Meeting Event</h2>
 			{{--<p class="align-center text-theme font-weight-600">Sunday, 27 August, 2023 | 6 pm to 11 pm</p>--}}
@@ -231,7 +231,7 @@
 		<div class="container-xxl">
 			<br>
 			<h2 class="align-center font-weight-600">Shaadi Ka Laddu (Season 3) </h2>
-			<img class="img-align-center heading-border" src="{{asset('home_page/heading-border.png')}}">
+			<img class="img-align-center heading-border" src="{{asset('images/doosri-biwi-thin-border.png')}}">
 			<h4 class="align-center font-weight-500 mt-1">Sunday, 27 August, 2023</h4>
 			<br>
 			<div class="card">
@@ -264,7 +264,7 @@
 
 			<br>
 			<h2 class="align-center font-weight-600">Shaadi Ka Laddu (Season 2) </h2>
-			<img class="img-align-center heading-border" src="{{asset('home_page/heading-border.png')}}">
+			<img class="img-align-center heading-border" src="{{asset('images/doosri-biwi-thin-border.png')}}">
 			<h4 class="align-center font-weight-500 mt-1">Sunday, 16 July, 2023</h4>
 			<br>
 			<div class="card">
@@ -298,7 +298,7 @@
 
 			<br>
 			<h2 class="align-center font-weight-600">Shaadi Ka Laddu (Season 1) </h2>
-			<img class="img-align-center heading-border" src="{{asset('home_page/heading-border.png')}}">
+			<img class="img-align-center heading-border" src="{{asset('images/doosri-biwi-thin-border.png')}}">
 			<h4 class="align-center font-weight-500 mt-1">Sunday, 14 May, 2023</h4>
 			<br>
 			<div class="card">
@@ -332,7 +332,7 @@
 			<br>
 
 			<h2 class="align-center font-weight-600"> Benefits </h2>
-			<img class="img-align-center heading-border" src="{{asset('home_page/heading-border.png')}}">
+			<img class="img-align-center heading-border" src="{{asset('images/doosri-biwi-thin-border.png')}}">
 			<br>
 			<div class="row">
 				<div class="col-md-12">
@@ -353,7 +353,7 @@
 
 			<br>
 			<h2 class="align-center font-weight-600"> WhatsApp Us </h2>
-			<img class="img-align-center heading-border" src="{{asset('home_page/heading-border.png')}}">
+			<img class="img-align-center heading-border" src="{{asset('images/doosri-biwi-thin-border.png')}}">
 			<p class="align-center">
 				نوٹ  : برائےمہربانی صرف ان ہی نمبرز پر رابطہ کریں جو ہماری ویب سائٹ اور فیس بک پیج پر درج ہیں۔
 			</p>

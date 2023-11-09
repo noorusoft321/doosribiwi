@@ -12,7 +12,7 @@
 	<div class="container-xxl py-60">
 		<div class="d-grid w-md-50 w-xl-80 mb-60 mx-auto gap-12">
 			<h2 class="heading-section-3 text-dark text-center mb-0">Terms of Services</h2>
-			<img src="{{asset('home_page/heading-border.png')}}" class="img-align-center heading-border">
+			<img src="{{asset('images/doosri-biwi-thin-border.png')}}" class="img-align-center heading-border">
 			<p class="text-center">We at DoosriBiwi.com along with our associates strive to provide our users with the best Pakistan matrimony services. Once you sign up on our website, you have to agree to all our terms and conditions of service along with our privacy policy and disclosure agreement. Please read our terms and conditions of service before you become a member of our website. Our terms and conditions of service touch upon the various prerequisites that you must meet in order to become a member on our online marriage bureau in Pakistan.
 			</p>
 

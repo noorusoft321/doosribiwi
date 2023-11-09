@@ -146,7 +146,7 @@
 		<div class="container-xxl">
 			<br>
 			<h1 class="align-center font-weight-600">{{$title}}</h1>
-			<img class="img-align-center heading-border" src="{{asset('home_page/heading-border.png')}}">
+			<img class="img-align-center heading-border" src="{{asset('images/doosri-biwi-thin-border.png')}}">
 			<h2 class="align-center text-theme font-weight-600" style="font-size: 22px;">Doosri Biwi is presenting</h2>
 			<h2 class="align-center" style="font-size: 18px;">Direct Family to Family Rishta Meeting Event. Find Life Partner, Fast & Easy</h2>
 			<p class="align-center text-theme font-weight-600">Sunday, 29 October, 2023</p>

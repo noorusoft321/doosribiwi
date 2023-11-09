@@ -20,7 +20,7 @@
 		<br>
 		<div class="d-grid w-md-50 w-xl-34 mb-60 mx-auto gap-12">
 			<h2 class="heading-section-3 text-dark text-center mb-0">Start Your Matrimonial Matchmaking Business</h2>
-			<img src="{{asset('home_page/heading-border.png')}}" class="img-align-center heading-border">
+			<img src="{{asset('images/doosri-biwi-thin-border.png')}}" class="img-align-center heading-border">
 			<div class="heading-text-2 lh-base text-dark text-center">Shaadi organization is expanding its matrimonial network and invites financially solid, honest and God fearing entrepreneurs to become franchise partners of Doosri Biwi.
 			</div>
 			<img src="{{asset('web_images/Shaadi-Franchise-1-300x300.jpg')}}" alt="" class="img-shadow img-align-center" id="myImg">

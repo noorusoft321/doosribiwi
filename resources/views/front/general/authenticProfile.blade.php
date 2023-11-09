@@ -16,7 +16,7 @@
 	<div class="container-xxl">
 		<br>
         <h2 class="align-center font-weight-600"> 9-Points Verification Badges </h2>
-       	<img class="img-align-center heading-border" src="{{asset('home_page/heading-border.png')}}">
+       	<img class="img-align-center heading-border" src="{{asset('images/doosri-biwi-thin-border.png')}}">
        	<p class="align-center font-20">9-Points Verification Badges is the highest level of trust & protection system for safety of members. It display 9 badges on the member profiles after they pass the verification process. Fully verified members also get “The Famous Blue Tick” on their profile. These badges separate serious members from time pass people.</p>
        	<p class="align-center font-20">9-Point verification include: Photo, Phone, Email Address, Location/Home Address, Education, Age, Salary, Nationality, and Meeting.</p>
        	<p class="align-center font-20">Authentication is not a character certificate. All the communication with authentic and normal profile must be done with due care and under parents’ supervision.</p>

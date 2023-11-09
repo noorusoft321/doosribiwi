@@ -13,7 +13,7 @@
     <div class="container-xxl">
         <div class="d-grid w-md-80 w-xl-54 mb-10 mx-auto gap-12 mg-30">
             <h1 class="heading-section-3 text-center mb-0">Public Notices</h1>
-            <img src="{{asset('home_page/heading-border.png')}}" class="img-align-center heading-border">
+            <img src="{{asset('images/doosri-biwi-thin-border.png')}}" class="img-align-center heading-border">
         </div>
     </div>
     <!-- /.heading-section -->
@@ -56,7 +56,7 @@
     <div class="container-xxl w-md-50 w-xl-54 py-60 overflow-hidden overflow-xxl-visible" id="Urdu">
         <div class="d-grid w-md-80 w-xl-54 mb-10 mx-auto gap-12">
             <h1 class="heading-section-3 text-center mb-0">Guide in Urdu</h1>
-            <img src="{{asset('home_page/heading-border.png')}}" class="img-align-center heading-border">
+            <img src="{{asset('images/doosri-biwi-thin-border.png')}}" class="img-align-center heading-border">
         </div>
         <div class="row">
             <div class="col-md-12">
@@ -90,7 +90,7 @@
     <div class="container-xxl w-md-50 w-xl-54 py-60 overflow-hidden overflow-xxl-visible" id="English">
         <div class="d-grid w-md-80 w-xl-54 mb-10 mx-auto gap-12">
             <h1 class="heading-section-3 text-center mb-0">Guide in English</h1>
-            <img src="{{asset('home_page/heading-border.png')}}" class="img-align-center heading-border">
+            <img src="{{asset('images/doosri-biwi-thin-border.png')}}" class="img-align-center heading-border">
         </div>
         <div class="row">
 
@@ -138,7 +138,7 @@
     <div class="container-xxl w-md-50 w-xl-54 py-60 overflow-hidden overflow-xxl-visible" id="Careful">
         <div class="d-grid w-md-80 w-xl-54 mb-10 mx-auto gap-12">
             <h1 class="heading-section-3 text-center mb-0">Be Careful Such a Peoples</h1>
-            <img src="{{asset('home_page/heading-border.png')}}" class="img-align-center heading-border">
+            <img src="{{asset('images/doosri-biwi-thin-border.png')}}" class="img-align-center heading-border">
         </div>
         <div class="row">
             <div class="col-md-12">

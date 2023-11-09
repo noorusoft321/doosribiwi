@@ -57,17 +57,22 @@ return [
         'Mrs. Farooqui' => '923344444962',
     ],
     'keywords' => [
-        'second-marriage-pakistan',
-        'rishta-pakistan',
-        'doosri-shaadi',
-        'doosri-biwi',
-        'pakistan-matrimony',
-        'second-wife',
-        'second-nikah',
-        'second-rishta',
-        'rishta-for-second-marriage',
-        'second-chance-love',
-        'find-your-second-soulmate'
+        'islamic-second-marriage',
+        '2nd-marriage-in-islam',
+        'islam-and-second-marriage',
+        'second-wife-islam',
+        'muslim-second-wife',
+        'muslim-second-marriage',
+        'muslim-2nd-marriage',
+        'muslim-second-wife-website',
+        '2nd-marriage-islam',
+        'being-a-second-wife-in-islam',
+        'being-a-second-wife-islam',
+        'being-second-wife-in-islam',
+        'having-a-second-wife-in-islam',
+        'islamic-second-marriage-website',
+        'looking-for-second-marriage-muslim',
+        'marrying-a-second-wife-in-islam',
     ]
 
 ];

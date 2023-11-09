@@ -12,7 +12,7 @@
 	<div class="container-xxl py-60">
 		<div class="d-grid w-md-50 w-xl-80 mb-60 mx-auto gap-12">
 			<h2 class="heading-section-3 text-dark text-center mb-0">Privacy Policy</h2>
-			<img src="{{asset('home_page/heading-border.png')}}" class="img-align-center heading-border">
+			<img src="{{asset('images/doosri-biwi-thin-border.png')}}" class="img-align-center heading-border">
 			<p class="text-center">In order to protect each and every client’s personal information,
 				we at DoosriBiwi.com have set some strict security standards. Our privacy policy statement reveals the entire information collecting process
 				and the privacy regulations implemented for our Pakistan matrimony website. Our firm policies for the protection of your identity and privileged

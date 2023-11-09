@@ -99,17 +99,17 @@ class Customer extends Authenticatable
     public function getImageFullPathAttribute()
     {
         if ($this->profile_pic_client_status==0) {
-            return env('APP_URL').'/customer_images/only-me.jpg';
+            return env('APP_URL').'/customer-images/only-me.jpg';
         }
         if ($this->profile_pic_client_status==1 && $this->profile_pic_status==1 && !empty($this->image)) {
-            if (file_exists(public_path('customer_images/'.$this->image))) {
-                return env('APP_URL').'/customer_images/'.$this->image;
+            if (file_exists(public_path('customer-images/'.$this->image))) {
+                return env('APP_URL').'/customer-images/'.$this->image;
             }
         }
         if (!empty($this->customerOtherInfo()->first())) {
-            return ($this->customerOtherInfo()->first()->gender==1) ? env('APP_URL').'/customer_images/default-male.jpg' : env('APP_URL').'/customer_images/default-female.jpg';
+            return ($this->customerOtherInfo()->first()->gender==1) ? env('APP_URL').'/customer-images/default-male.jpg' : env('APP_URL').'/customer-images/default-female.jpg';
         }
-        return env('APP_URL').'/customer_images/default-user.png';
+        return env('APP_URL').'/customer-images/default-user.png';
     }
 
     public function getUnSeenMessagesCountAttribute()

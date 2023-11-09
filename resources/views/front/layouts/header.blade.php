@@ -9,7 +9,7 @@
 				</div>
 				<div class="navbar-nav col-4 align-items-end">
 					<a href="{{route('landing.page')}}">
-						<img src="{{asset('assets/img/Shaadi-Organization-Pakistan-Rishta-Logo.png')}}" width="100%">
+						<img src="{{asset('images/doosri-biwi-logo.png')}}" width="100%">
 					</a>
 				</div>
 			</div>
@@ -43,8 +43,8 @@
 								<ul class="navbar-nav after-login">
 									<li class="nav-item dropdown">
 										<a class="nav-link dropdown-toggle" href="javascript:void(0)" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-											@if(file_exists(public_path('customer_images/'.auth()->guard('customer')->user()->image)))
-												<img src="{{asset('customer_images/'.auth()->guard('customer')->user()->image)}}" width="40" height="40" class="rounded-circle">
+											@if(file_exists(public_path('customer-images/'.auth()->guard('customer')->user()->image)))
+												<img src="{{asset('customer-images/'.auth()->guard('customer')->user()->image)}}" width="40" height="40" class="rounded-circle">
 											@endif
 											<span></span>
 										</a>

@@ -13,7 +13,7 @@
 		<div class="mt-xl-43"></div>
 		<div class="d-grid w-md-50 w-xl-80 mx-auto gap-12">
 			<h2 class="heading-section-3 text-dark text-center mb-0">Careers Opportunities</h2>
-			<img class="img-align-center heading-border" src="{{asset('home_page/heading-border.png')}}">
+			<img class="img-align-center heading-border" src="{{asset('images/doosri-biwi-thin-border.png')}}">
 		</div>
 		<br>
 

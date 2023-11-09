@@ -61,9 +61,9 @@
 
                 @if(!empty($val->package_id))
                     @if(in_array($countryName,['Pakistan','NA']))
-                        <img class="featured-ribbon" src="{{asset('assets/img/premium-ribbon.svg')}}" alt="Premium Account" >
+                        <img class="featured-ribbon" src="{{asset('images/premium-ribbon.svg')}}" alt="Premium Account" >
                     @else
-                        <img class="featured-ribbon" src="{{asset('assets/img/abroad-ribbon.svg')}}" alt="Abroad Account" >
+                        <img class="featured-ribbon" src="{{asset('images/abroad-ribbon.svg')}}" alt="Abroad Account" >
                     @endif
                 @endif
 

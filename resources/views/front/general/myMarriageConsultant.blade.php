@@ -12,7 +12,7 @@
 	<div class="container-xxl">
 		<br>
         <h2 class="align-center font-weight-600"> My Personal Marriage Consultant </h2>
-       	<img class="img-align-center heading-border" src="{{asset('home_page/heading-border.png')}}">
+       	<img class="img-align-center heading-border" src="{{asset('images/doosri-biwi-thin-border.png')}}">
        	<p class="align-center font-20">Marriage consultants at DoosriBiwi.com completely understand how difficult and painful it is for you and your beloved daughter when the prospect groom’s family does not respond back after they have visited you. Likewise, we also realize how irritating and embarrassing it can be for the groom’s family to look through numerous girls to find a matching bride but unable to find one.</p>
        	<p class="align-center font-20">Hence, we introduce to you the concept of <strong style="color:#993300;"> My Personal Marriage Consultant.</strong></p>
        	<p class="align-center font-20">Now, there will be no more time wasted, no need for embarrassing excuse calls and especially, no more heartbreak. After all, <strong style="color:#993300;">daughters are piece of our heart and sons are apple of our eye and they both deserve the best. </strong></p>
@@ -93,7 +93,7 @@
 
 		<br>
         <h2 class="align-center font-weight-600"> How To Hire Personal Matchmaker </h2>
-       	<img class="img-align-center heading-border" src="{{asset('home_page/heading-border.png')}}">
+       	<img class="img-align-center heading-border" src="{{asset('images/doosri-biwi-thin-border.png')}}">
        	<p class="align-center font-20">This paid service is available on demand. To hire personal consultant WhatsApp: +923452444262</p>
        	<p class="align-center font-20">If you cannot afford hiring a good personal matchmaker for your daughter or son you can always use our free rishta website which is on self-service basis. Please read Free Rishta Service pages to find more about our free matrimonial services.</strong></p>
 

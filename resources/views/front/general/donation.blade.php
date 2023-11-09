@@ -12,7 +12,7 @@
 		<div class="container-xx py-20">
 			<br>
 			<h1 class="align-center font-weight-600">Donation</h1>
-			<img src="{{asset('home_page/heading-border.png')}}" class="img-align-center heading-border">
+			<img src="{{asset('images/doosri-biwi-thin-border.png')}}" class="img-align-center heading-border">
 		</div>
 		<!-- = /. Gap Section = -->
 		<div class="container-xxl">
