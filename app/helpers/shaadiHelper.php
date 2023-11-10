@@ -282,13 +282,12 @@ if (!function_exists('checkProfileComplete')) {
 if (!function_exists('sendNewEmail')){
     function sendNewEmail($view,$data,$subject){
         $email = $data['email'];
-        $sent = Mail::send($view, $data, function ($message) use ($email,$subject) {
+        return Mail::send($view, $data, function ($message) use ($email,$subject) {
             $message->subject($subject);
             $message->to($email);
 //            $message->to(env('DEFAULT_EMAIL'), env('DEFAULT_NAME'));
 //            $message->bcc(env('BCC_EMAIL'), env("BCC_NAME"));
         });
-        return $sent;
     }
 }
 

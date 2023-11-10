@@ -1,4 +1,4 @@
-@php $uniqueProfileSlug = $customerRow->gender_name.'-proposal-'.(!empty($customerRow->getCitySlug)?$customerRow->getCitySlug->slug:'NA').'-'.(!empty($customerRow->getCountrySlug)?$customerRow->getCountrySlug->slug:'NA').'-'.$customerRow->faker_id; @endphp
+@php $uniqueProfileSlug = $customerRow->gender_name.'-proposal-'.(!empty($customerRow->getCitySlug)?$customerRow->getCitySlug->slug:'na').'-'.(!empty($customerRow->getCountrySlug)?$customerRow->getCountrySlug->slug:'na').'-'.$customerRow->id; @endphp
 <div class="py-2 px-4 border-bottom">
     <div class="d-flex align-items-center py-1">
         <div class="position-relative">

@@ -138,7 +138,7 @@
 												<h5 class="edit-profile-side-heading font-size14"> Profile Link
 													<span class="badge badge-primary pull-right" style="float: right;cursor: pointer;background-image: linear-gradient(to left, #075385 0%, #0c476e 100%);padding: 10px;     position: absolute; right: 24px;top: 59px;z-index: 2;" onclick="copyToClipBoard(this)">Copy</span>
 												</h5>
-												@php $uniqueProfileSlug = $customer->gender_name.'-proposal-'.(!empty($customer->getCitySlug)?$customer->getCitySlug->slug:'NA').'-'.(!empty($customer->getCountrySlug)?$customer->getCountrySlug->slug:'NA').'-'.$customer->faker_id; @endphp
+												@php $uniqueProfileSlug = $customer->gender_name.'-proposal-'.(!empty($customer->getCitySlug)?$customer->getCitySlug->slug:'na').'-'.(!empty($customer->getCountrySlug)?$customer->getCountrySlug->slug:'na').'-'.$customer->id; @endphp
 												<input type="text" name="user__name"  value="{{route('search.by.slug',[$uniqueProfileSlug])}}" class="form-control">
 											</div>
 										</div>

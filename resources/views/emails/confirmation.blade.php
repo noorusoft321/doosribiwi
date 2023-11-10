@@ -4,15 +4,8 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Cuba admin is super flexible, powerful, clean &amp; modern responsive bootstrap 4 admin template with unlimited possibilities.">
-    <meta name="keywords" content="admin template, Cuba admin template, dashboard template, flat admin template, responsive admin template, web app">
-    <meta name="author" content="pixelstrap">
     <link rel="icon" href="{{asset('assets/images/favicon.png')}}" type="image/x-icon">
-    <link rel="shortcut icon" href="{{asset('assets/images/favicon.png')}}" type="image/x-icon">
-    <title>Confirm Account - DoosriBiwi.com</title>
-    <link href="https://fonts.googleapis.com/css?family=Work+Sans:100,200,300,400,500,600,700,800,900" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+    <title>Confirm Account | Doosri Biwi</title>
     <style type="text/css">
         body{
             width: 650px;
@@ -53,7 +46,7 @@
                         <table style="width: 650px; margin: 0 auto; margin-bottom: 30px">
                             <tbody>
                             <tr>
-                                <td><img src="{{asset('images/doosri-biwi-logo.png')}}" alt="DoosriBiwi.com"></td>
+                                <td><img src="{{asset('images/doosri-biwi-logo.png')}}" alt="Doosri Biwi Logo"></td>
                             </tr>
                             </tbody>
                         </table>
@@ -70,15 +63,6 @@
                         <p>To ensure safety & privacy on DoosriBiwi.com, we mandate email ID verification for all users.</p>
                         <p>Please click verify to activate and access your account. Thank you!</p>
                         <p style="text-align: center"><a href="{{route('confirm.customer.account',[$code])}}" style="padding: 10px; background-color: #0c476e; color: #fff; display: inline-block; border-radius: 4px">Verify Account</a></p>
-                    </td>
-                </tr>
-                </tbody>
-            </table>
-            <table style="width: 650px; margin: 0 auto; margin-top: 30px">
-                <tbody>
-                <tr style="text-align: center">
-                    <td>
-                        <p style="color: #999; margin-bottom: 0">Powered By DoosriBiwi.com</p>
                     </td>
                 </tr>
                 </tbody>

@@ -145,9 +145,9 @@ class Customer extends Authenticatable
     public function getGenderNameAttribute()
     {
         if (!empty($this->customerOtherInfo()->first())) {
-            return ($this->customerOtherInfo()->first()->gender==1) ? 'Male' : 'Female';
+            return ($this->customerOtherInfo()->first()->gender==1) ? 'male' : 'female';
         }
-        return 'NA';
+        return 'na';
     }
 
     public function getAssignUserNameAttribute()

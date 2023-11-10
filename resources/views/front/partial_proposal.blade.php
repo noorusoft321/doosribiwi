@@ -8,7 +8,7 @@
         $citySlug = strtolower($cityName);
         $citySlug = str_replace(' ', '-', $citySlug);
         $citySlug = str_replace('/', '-', $citySlug);
-        $uniqueProfileSlug = $val->gender_name.'-proposal-'.$countrySlug.'-'.$citySlug.'-'.$val->faker_id;
+        $uniqueProfileSlug = $val->gender_name.'-proposal-'.$countrySlug.'-'.$citySlug.'-'.$val->id;
         $fadeSpeed = 3000;
         if($k==0 || $k==4) {
             $fadeSpeed = 1000;
@@ -107,7 +107,8 @@
                         <div class="image-boxes-icon"><a class="LoginToView" href="{{route('messenger',$val->faker_id)}}"><i class="fa fa-phone"></i></a></div>
                     </div>
                     <div class="col-8 mx-auto my-auto p-1 fs-card-text">
-                        <button onclick="window.location.href = '{{route('search.by.slug',[$uniqueProfileSlug])}}'" class="custom-btn btn-view-profile" title="View Profile Detail">Profile Detail</button>
+                        {{--<button onclick="window.location.href = '{{route('search.by.slug',[$uniqueProfileSlug])}}'" class="custom-btn btn-view-profile" title="View Profile Detail">Profile Detail</button>--}}
+                        <a href="{{route('search.by.slug',[$uniqueProfileSlug])}}" class="custom-btn btn-view-profile" title="View Profile Detail">Profile Detail</a>
                     </div>
                 </div>
                 <div class="pb-1"></div>

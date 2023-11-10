@@ -251,8 +251,7 @@ class CustomerAuthController extends Controller
                 DB::commit();
                 $data = [
                     'email'     => $customer->email,
-                    'code'      => base64_encode($customer->email),
-                    'fullName' => $customer->full_name
+                    'code'      => base64_encode($customer->email)
                 ];
 
                 sendNewEmail('emails.confirmation',$data,'Confirm Account - DoosriBiwi.com');
@@ -296,10 +295,10 @@ class CustomerAuthController extends Controller
                 'msg'    => 'Email address does not exists.'
             ]);
         }
-        $messageData = array(
+        $messageData = [
             'code'  => base64_encode($customer->email),
             'email' => $customer->email
-        );
+        ];
 
         $res = sendNewEmail('emails.password_reset',$messageData,'Password Reset - DoosriBiwi.com');
         if (!empty($res)) {
@@ -1117,8 +1116,7 @@ class CustomerAuthController extends Controller
 
         $data = [
             'email'    => $customer->email,
-            'code'     => base64_encode($customer->email),
-            'fullName' => $customer->full_name
+            'code'     => base64_encode($customer->email)
         ];
 
         $isEmailSent = sendNewEmail('emails.confirmation',$data,'Confirm Account - DoosriBiwi.com');
@@ -1154,7 +1152,7 @@ class CustomerAuthController extends Controller
             ]);
             $data = [
                 'email'    => $email,
-                'customer' => $customer
+                'fullName' => $customer->full_name
             ];
 
             sendNewEmail('emails.welcome',$data,'Welcome - DoosriBiwi.com');

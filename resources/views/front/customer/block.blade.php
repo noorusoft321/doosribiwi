@@ -190,7 +190,7 @@
 						<div class="card-body">
 							<div class="row mt-60">
 								@forelse($blockCustomers as $val)
-									@php $uniqueProfileSlug = $val->gender_name.'-proposal-'.(!empty($val->getCitySlug)?$val->getCitySlug->slug:'NA').'-'.(!empty($val->getCountrySlug)?$val->getCountrySlug->slug:'NA').'-'.$val->faker_id; @endphp
+									@php $uniqueProfileSlug = $val->gender_name.'-proposal-'.(!empty($val->getCitySlug)?$val->getCitySlug->slug:'na').'-'.(!empty($val->getCountrySlug)?$val->getCountrySlug->slug:'na').'-'.$val->id; @endphp
 									<div class="col-md-4 mtb-20">
 										<div class="event-card complete">
 											<div class="event-thumb">

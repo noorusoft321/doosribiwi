@@ -1,7 +1,7 @@
 @extends('front.layouts.master')
 
-@section('title','Rishta Pakistan, Shaadi Marriage Bureau, Best Muslima Matrimonial in Pakistan Karachi, Lahore, Islamabad, Faisalabad, Rawalpindi, Gujranwala, Peshawar, Multan, Hyderabad, Islamabad, Quetta. Shia Match available.')
-@section('description', 'Doosri Biwi, Government Registered Marriage Bureau Best Rishta in Pakistan Contact for Zaroorat Rishta Pakistan Matrimony for Pakistanis in USA, Canada, UK, Australia, KSA, UAE Single Muslim Matrimony, personalized matchmakers, Sunni, Shia match, Ahle Hadees Rishtay, Doosri Shaadi, Late Marriage, Divorce Rishta, Widow, Separated, Abroad, 2nd Marriage Proposals')
+@section('title','Rishta Pakistan, Second Marriage Bureau, Best 2nd marriage Matrimonial in Pakistan')
+@section('description', 'Doosri Biwi Marriage Bureau: Your Premier Choice for Second Marriages and Rishtas in Pakistan. 2nd Marriage Proposals for a Meaningful Connection.')
 @push('style')
     <style>
         .about-section:after{

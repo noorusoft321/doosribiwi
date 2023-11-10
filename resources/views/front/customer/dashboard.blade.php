@@ -493,7 +493,7 @@
 							<div class="row p-tb-10">
 								@foreach($customersVerified as $val)
 									@php
-                                        $uniqueProfileSlug = $val->gender_name.'-proposal-'.(!empty($val->getCitySlug)?$val->getCitySlug->slug:'NA').'-'.(!empty($val->getCountrySlug)?$val->getCountrySlug->slug:'NA').'-'.$val->faker_id;
+                                        $uniqueProfileSlug = $val->gender_name.'-proposal-'.(!empty($val->getCitySlug)?$val->getCitySlug->slug:'na').'-'.(!empty($val->getCountrySlug)?$val->getCountrySlug->slug:'na').'-'.$val->id;
                                         $customerMatchesPercentage = customerMatchesPercentage($val);
                                     @endphp
 									<div class="col-md-3">

@@ -40,7 +40,7 @@ class SocialLoginController extends Controller
                 if (!empty($customer)) {
                     $data = [
                         'email'    => $email,
-                        'customer' => $customer
+                        'fullName' => $customer->full_name
                     ];
                     sendNewEmail('emails.welcome',$data,'Welcome - DoosriBiwi.com');
                 }
