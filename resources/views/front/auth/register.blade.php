@@ -102,25 +102,25 @@
 						<div class="card registerOtherPart" style="display: none;">
 							<div class="card-body">
 								<div class="row">
-									<div class="col-6">
+									<div class="col-md-6">
 										<div class="form-group py-xl-10">
 											<label for="first_name">*First Name</label>
 											<input type="text" name="first_name" class="form-control rounded-pill">
 										</div>
 									</div>
-									<div class="col-6">
+									<div class="col-md-6">
 										<div class="form-group py-xl-10">
 											<label for="last_name">*Last Name</label>
 											<input type="text" name="last_name" class="form-control rounded-pill">
 										</div>
 									</div>
-									<div class="col-6">
+									<div class="col-md-6">
 										<div class="form-group py-xl-10">
 											<label for="DOB">*Date of Birth</label>
 											<input type="date" name="DOB" class="form-control rounded-pill">
 										</div>
 									</div>
-									<div class="col-6">
+									<div class="col-md-6">
 										<div class="form-group py-xl-10">
 											<label for="country_id">*Country</label>
 											<select onchange="getStates(this,'state_id')" class="form-control rounded-pill" name="country_id">
@@ -131,7 +131,7 @@
 											</select>
 										</div>
 									</div>
-									<div class="col-6">
+									<div class="col-md-6">
 										<div class="form-group py-xl-10">
 											<label for="state_id">*State</label>
 											<select onchange="getCities(this,'city_id')" class="form-control rounded-pill" name="state_id">
@@ -139,7 +139,7 @@
 											</select>
 										</div>
 									</div>
-									<div class="col-6">
+									<div class="col-md-6">
 										<div class="form-group py-xl-10">
 											<label for="city_id">*City</label>
 											<select class="form-control rounded-pill" name="city_id">
@@ -147,7 +147,7 @@
 											</select>
 										</div>
 									</div>
-									<div class="col-6">
+									<div class="col-md-6">
 										<div class="form-group py-xl-10">
 											<label for="MaritalStatusID">*Marital Status</label>
 											<select onchange="checkAvailability(this)" class="form-control rounded-pill" name="MaritalStatusID">
@@ -170,7 +170,7 @@
 											<input type="number" name="childrenQuantity" class="form-control rounded-pill">
 										</div>
 									</div>
-									<div class="col-6">
+									<div class="col-md-6">
 										<div class="form-group py-xl-10">
 											<label for="RegistrationsReasonsID">*Reason for Registering</label>
 											<select class="form-control rounded-pill" name="RegistrationsReasonsID">
@@ -181,19 +181,19 @@
 											</select>
 										</div>
 									</div>
-									<div class="col-6">
+									<div class="col-md-6">
 										<div class="form-group py-xl-10">
 											<label for="mobile">*Mobile #</label>
 											<input onchange="checkIfExists(this)" type="text" name="mobile" class="form-control rounded-pill">
 										</div>
 									</div>
-									<div class="col-6">
+									<div class="col-md-6">
 										<div class="form-group py-xl-10">
 											<label for="email">*Email</label>
 											<input onchange="checkIfExists(this)" type="email" name="email" class="form-control rounded-pill">
 										</div>
 									</div>
-									<div class="col-6">
+									<div class="col-md-6">
 										<div class="form-group py-xl-10">
 											<label for="password">*Password</label>
 											<input type="password" name="password" class="form-control rounded-pill">

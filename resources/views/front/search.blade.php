@@ -20,7 +20,7 @@
 		if ($slug=='elite-proposals') {
 			$myIncome = 833;
 		}
-		if ($slug=='usa-proposals') {
+		/*if ($slug=='usa-proposals') {
 			$country = 226;
 		}
 		if ($slug=='canada-proposals') {
@@ -43,7 +43,7 @@
 		}
 		if ($slug=='oman-qatar-bahrain-kuwait-malaysia-proposals') {
 			$country = 161;
-		}
+		}*/
 		if (in_array($slug,[
 			'females-Ready-for-second-marriage',
 			'males-Looking-for-second-Wife'
@@ -69,36 +69,36 @@
 		])) {
 			$gender = 2;
 		}
-		if (in_array($slug,[
+		/*if (in_array($slug,[
 			'female-proposals-karachi',
 			'male-proposals-karachi',
 		])) {
 			$city = 551;
-		}
-		if (in_array($slug,[
+		}*/
+		/*if (in_array($slug,[
 			'female-proposals-Lahore',
 			'male-proposals-Lahore',
 		])) {
 			$city = 1;
-		}
-		if (in_array($slug,[
+		}*/
+		/*if (in_array($slug,[
 			'female-proposals-faisalabad',
 			'male-proposals-faisalabad',
 		])) {
 			$city = 591;
-		}
+		}*/
 
-		if (in_array($slug,[
+		/*if (in_array($slug,[
 			'female-proposals-islamabad-Rawalpindi',
 			'male-proposals-islamabad-Rawalpindi',
 		])) {
 			$city = 592;
-		}
+		}*/
 
-		if (!empty($city)) {
+		/*if (!empty($city)) {
 			$country = 162;
 			$cities = getRelatedCities($city);
-		}
+		}*/
 
 		if ($slug=='my-matches' && !empty($customerSearch)) {
 			$gender = $customerSearch->gender;
@@ -112,7 +112,7 @@
 	}
 	$pageTitle = (!empty($slug)) ? makeSlugToTitle($slug) : 'Search';
 	if (empty($gender) && auth()->guard('customer')->check() && isset(auth()->guard('customer')->user()->gender_name)) {
-		$gender = (auth()->guard('customer')->user()->gender_name=='Male') ? 2 : 1;
+		$gender = (auth()->guard('customer')->user()->gender_name=='male') ? 2 : 1;
 	}
 @endphp
 
@@ -453,7 +453,7 @@
 							</div>
 							<div class="align-center">
 								<button onclick="searchMembers(this)" type="button" class="button-theme-dark search--btn mb-2 full-width">Search</button>
-								<a type="button" href="{{route('customer.search')}}" class="button-theme-dark full-width">Reset</a>
+								<a type="button" href="{{route('customer.search')}}" class="button-theme-dark full-width full-width">Reset</a>
 							</div>
 						</div>
 					</div>

@@ -220,7 +220,7 @@
 
         .animated-button1::before {
             content: '';
-            position: absolute;
+            /*position: absolute;*/
             top: 0px;
             left: 0px;
             width: 100%;
@@ -727,7 +727,7 @@
                                                 <div class="col-6">
                                                     <h5 class="edit-profile-side-heading font-size14 text-theme">
                                                         {{genericQuery($customer->customerCareerInfo->Qualification,'Education')}}
-                                                        ({{genericQuery($customer->customerCareerInfo->major_course_id,'MajorCourse')}})
+                                                        {{--({{genericQuery($customer->customerCareerInfo->major_course_id,'MajorCourse')}})--}}
                                                     </h5>
                                                 </div>
                                             </div>
@@ -1334,7 +1334,7 @@
                         @if (!empty($customer->agent_mobile))
                             <div class="row">
                                 <div class="col-md-12">
-                                    {{--style="border: 3px solid #040F2E"--}}
+                                    {{--style="border: 3px solid #9d2b48"--}}
                                     <div class="card animated-button1">
                                         <span></span>
                                         <span></span>
@@ -1344,7 +1344,7 @@
                                             <p class="bottomInfoMessage">This profile user is taking <strong class="text-theme">Personalized Matchmaking Service.</strong> If you are interested then contact her <strong class="text-theme">Matchmaker</strong></p>
                                             <p class="bottomInfoMessage">یہ پروفائل صارف پرسنلائزڈ <strong class="text-theme"> میچ میکنگ سروس</strong>  لے رہا ہے۔ اگر آپ دلچسپی رکھتے ہیں تو اس کے <strong class="text-theme">میچ میکر</strong> سے رابطہ کریں۔</p>
                                             <div class="text-center pt-2">
-                                                <a href="https://api.whatsapp.com/send?phone={{$customer->agent_mobile}}&text=Hi%20DoosriBiwi.com%2C%20I%20need%20more%20information." class="messengerBottomIconBtn LoginToView" title="Let's Chat"><i class="fa fa-whatsapp"></i> Contact Her </a>
+                                                <a href="https://api.whatsapp.com/send?phone={{$customer->agent_mobile}}&text=Hi%20Shaadi.org.pk%2C%20I%20need%20more%20information." class="messengerBottomIconBtn" title="Let's Chat"><i class="fa fa-whatsapp"></i> Contact Her </a>
                                             </div>
                                         </div>
                                     </div>
@@ -1355,10 +1355,10 @@
                                 <div class="col-md-12">
                                     <div class="card" style="border: 3px solid #0c476e">
                                         <div class="card-body">
-                                            <p class="bottomInfoMessage">If you are interested in this profile, let's chat <a href="{{route('messenger',[$customer->name])}}" class="text-theme font-weight-600 LoginToView"> <i class="fa fa-comments"></i> </a></p>
-                                            <p class="bottomInfoMessage"><a href="{{route('messenger',[$customer->name])}}" class="text-theme font-weight-600 LoginToView"> <i class="fa fa-comments"></i> </a>اگر آپ اس پروفائل میں دلچسپی رکھتے ہیں تو آئیے چیٹ کریں </p>
+                                            <p class="bottomInfoMessage">If you are interested in this profile, let's chat <a href="{{route('messenger',[$customer->faker_id])}}" class="text-theme font-weight-600 LoginToView"> <i class="fa fa-comments"></i> </a></p>
+                                            <p class="bottomInfoMessage"><a href="{{route('messenger',[$customer->faker_id])}}" class="text-theme font-weight-600 LoginToView"> <i class="fa fa-comments"></i> </a>اگر آپ اس پروفائل میں دلچسپی رکھتے ہیں تو آئیے چیٹ کریں </p>
                                             <div class="text-center pt-2">
-                                                <a href="{{route('messenger',[$customer->name])}}" class="messengerBottomIconBtn LoginToView" title="Let's Chat"><i class="fa fa-comments"></i> Let's Chat</a>
+                                                <a href="{{route('messenger',[$customer->faker_id])}}" class="messengerBottomIconBtn LoginToView" title="Let's Chat"><i class="fa fa-comments"></i> Let's Chat</a>
                                             </div>
                                         </div>
                                     </div>

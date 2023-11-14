@@ -223,7 +223,7 @@
                         icon: 'warning',
                         title: response.data.msg,
                         type: 'info',
-                        html:'<a target="_blank" href="{{route('packages')}}"><img src="'+PaidPng+'" alt="Smiley face" ></a><br>&nbsp;',
+                        html:'<a target="_blank" href="{{route('packages')}}"><img src="'+PaidPng+'" alt="Smiley face" width="100%"></a><br>&nbsp;',
                         showCloseButton: false,
                         showCancelButton: true,
                         focusConfirm: false,

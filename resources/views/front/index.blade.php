@@ -717,7 +717,7 @@
         <!--About Section End-->
 
         @if(!empty($oppositeGender))
-            @if($oppositeGender=='Female')
+            @if($oppositeGender=='female')
                 <!-- Benefits of Becoming a Second Wife Section Start -->
                     <div class="p-tb-50 bg-img ladu">
                         <div class="container">

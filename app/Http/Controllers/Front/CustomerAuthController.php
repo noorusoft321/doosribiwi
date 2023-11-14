@@ -1915,7 +1915,7 @@ class CustomerAuthController extends Controller
         $currentUser = null;
         if (auth()->guard('customer')->check()) {
             $currentUser = auth()->guard('customer')->user();
-            $currentUserGenderExp = ($currentUser->gender_name=='Male') ? 2 : 1;
+            $currentUserGenderExp = ($currentUser->gender_name=='male') ? 2 : 1;
         }
 
         $customers = Customer::with([

@@ -7,7 +7,7 @@
                     <div class="form-group">
                         <div class="row">
                             <div class="col-md-4">
-                                <label class="fieldlabels"> Gender </label>
+                                <label class="fieldlabels">* Gender </label>
                             </div>
                             <div class="col-md-8">
                                 <fieldset>
@@ -38,7 +38,7 @@
             <div class="form-group">
                 <div class="row">
                     <div class="col-md-4">
-                        <label class="fieldlabels"> Age From </label>
+                        <label class="fieldlabels">* Age From </label>
                     </div>
                     <div class="col-md-8">
                         <select class="form-select select-icon icon-mark form-control from-tab rounded-pill" name="ageFrom" >
@@ -56,7 +56,7 @@
             <div class="form-group">
                 <div class="row">
                     <div class="col-md-4">
-                        <label class="fieldlabels"> Age To </label>
+                        <label class="fieldlabels">* Age To </label>
                     </div>
                     <div class="col-md-8">
                         <select class="form-select select-icon icon-mark form-control from-tab rounded-pill" name="ageTo" >
@@ -74,7 +74,7 @@
             <div class="form-group">
                 <div class="row">
                     <div class="col-md-4">
-                        <label class="fieldlabels"> Country </label>
+                        <label class="fieldlabels">* Country </label>
                     </div>
                     <div class="col-md-8">
                         <select onchange="getStates(this,'state_id','Any')" class="form-select select-icon icon-mark form-control from-tab rounded-pill" name="country_id" >
@@ -92,7 +92,7 @@
             <div class="form-group">
                 <div class="row">
                     <div class="col-md-4">
-                        <label class="fieldlabels"> State </label>
+                        <label class="fieldlabels">* State </label>
                     </div>
                     <div class="col-md-8">
                         <select onchange="getCities(this,'city_id','Any')" class="form-select select-icon icon-mark form-control from-tab rounded-pill" name="state_id" >
@@ -110,7 +110,7 @@
             <div class="form-group">
                 <div class="row">
                     <div class="col-md-4">
-                        <label class="fieldlabels"> City </label>
+                        <label class="fieldlabels">* City </label>
                     </div>
                     <div class="col-md-8">
                         <select class="form-select select-icon icon-mark form-control from-tab rounded-pill" name="city_id" >
@@ -128,7 +128,7 @@
             <div class="form-group">
                 <div class="row">
                     <div class="col-md-4">
-                        <label class="fieldlabels"> Tongue</label>
+                        <label class="fieldlabels">* Tongue</label>
                     </div>
                     <div class="col-md-8">
                         <select name="Tongue" class="form-select select-icon icon-mark form-control from-tab rounded-pill" >
@@ -146,7 +146,7 @@
             <div class="form-group">
                 <div class="row">
                     <div class="col-md-4">
-                        <label class="fieldlabels"> Religiousness </label>
+                        <label class="fieldlabels">* Religiousness </label>
                     </div>
                     <div class="col-md-8">
                         <select onchange="getSects(this,'Sects','Any')" class="form-select select-icon icon-mark form-control from-tab rounded-pill" name="Religions" >
@@ -164,7 +164,7 @@
             <div class="form-group">
                 <div class="row">
                     <div class="col-md-4">
-                        <label class="fieldlabels"> Sect </label>
+                        <label class="fieldlabels">* Sect </label>
                     </div>
                     <div class="col-md-8">
                         <select class="form-select select-icon icon-mark form-control from-tab rounded-pill" name="Sects" >
@@ -182,7 +182,7 @@
             <div class="form-group">
                 <div class="row">
                     <div class="col-md-4">
-                        <label class="fieldlabels"> Qualification </label>
+                        <label class="fieldlabels">* Qualification </label>
                     </div>
                     <div class="col-md-8">
                         <select class="form-select select-icon icon-mark form-control from-tab rounded-pill" name="EducationID" >
@@ -200,7 +200,7 @@
             <div class="form-group">
                 <div class="row">
                     <div class="col-md-4">
-                        <label class="fieldlabels"> Profession</label>
+                        <label class="fieldlabels">* Profession</label>
                     </div>
                     <div class="col-md-8">
                         <select name="OccupationID" class="form-select select-icon icon-mark form-control from-tab rounded-pill" >
@@ -218,7 +218,7 @@
             {{--<div class="form-group">--}}
                 {{--<div class="row">--}}
                     {{--<div class="col-md-4">--}}
-                        {{--<label class="fieldlabels"> Willing To Relocate</label>--}}
+                        {{--<label class="fieldlabels">* Willing To Relocate</label>--}}
                     {{--</div>--}}
                     {{--<div class="col-md-8">--}}
                         {{--<select name="WillingToRelocate" class="form-select select-icon icon-mark form-control from-tab rounded-pill" >--}}
@@ -236,7 +236,7 @@
             <div class="form-group">
                 <div class="row">
                     <div class="col-md-4">
-                        <label class="fieldlabels"> Income</label>
+                        <label class="fieldlabels">* Income</label>
                     </div>
                     <div class="col-md-8">
                         <select name="MyIncome" class="form-select select-icon icon-mark form-control from-tab rounded-pill" >
@@ -254,7 +254,7 @@
             <div class="form-group">
                 <div class="row">
                     <div class="col-md-4">
-                        <label class="fieldlabels"> Marital Status</label>
+                        <label class="fieldlabels">* Marital Status</label>
                     </div>
                     <div class="col-md-8">
                         <select name="MaritalStatus" class="form-select select-icon icon-mark form-control from-tab rounded-pill" >
@@ -272,7 +272,7 @@
             <div class="form-group">
                 <div class="row">
                     <div class="col-md-4">
-                        <label class="fieldlabels"> Living Arrangements</label>
+                        <label class="fieldlabels">* Living Arrangements</label>
                     </div>
                     <div class="col-md-8">
                         <select name="MyLivingArrangements" class="form-select select-icon icon-mark form-control from-tab rounded-pill" >
@@ -290,7 +290,7 @@
             <div class="form-group">
                 <div class="row">
                     <div class="col-md-4">
-                        <label class="fieldlabels"> Heights</label>
+                        <label class="fieldlabels">* Heights</label>
                     </div>
                     <div class="col-md-8">
                         <select name="Heights" class="form-select select-icon icon-mark form-control from-tab rounded-pill" >
@@ -308,7 +308,7 @@
             {{--<div class="form-group">--}}
                 {{--<div class="row">--}}
                     {{--<div class="col-md-4">--}}
-                        {{--<label class="fieldlabels"> Builds</label>--}}
+                        {{--<label class="fieldlabels">* Builds</label>--}}
                     {{--</div>--}}
                     {{--<div class="col-md-8">--}}
                         {{--<select name="MyBuilds" class="form-select select-icon icon-mark form-control from-tab rounded-pill" >--}}
@@ -326,7 +326,7 @@
             <div class="form-group">
                 <div class="row">
                     <div class="col-md-4">
-                        <label class="fieldlabels"> Disabilities</label>
+                        <label class="fieldlabels">* Disabilities</label>
                     </div>
                     <div class="col-md-8">
                         <select name="Disabilities" class="form-select select-icon icon-mark form-control from-tab rounded-pill" >
@@ -344,7 +344,7 @@
             <div class="form-group">
                 <div class="row">
                     <div class="col-md-4">
-                        <label class="fieldlabels"> Caste</label>
+                        <label class="fieldlabels">* Caste</label>
                     </div>
                     <div class="col-md-8">
                         <select name="Castes" class="form-select select-icon icon-mark form-control from-tab rounded-pill" >
@@ -366,7 +366,7 @@
                     <div class="form-group">
                         <div class="row">
                             <div class="col-md-4">
-                                <label class="fieldlabels"> Gender </label>
+                                <label class="fieldlabels">* Gender </label>
                             </div>
                             <div class="col-md-8">
                                 <fieldset>
@@ -395,7 +395,7 @@
             <div class="form-group">
                 <div class="row">
                     <div class="col-md-4">
-                        <label class="fieldlabels"> Age From </label>
+                        <label class="fieldlabels">* Age From </label>
                     </div>
                     <div class="col-md-8">
                         <select class="form-select select-icon icon-mark form-control from-tab rounded-pill" name="ageFrom" >
@@ -413,7 +413,7 @@
             <div class="form-group">
                 <div class="row">
                     <div class="col-md-4">
-                        <label class="fieldlabels"> Age To </label>
+                        <label class="fieldlabels">* Age To </label>
                     </div>
                     <div class="col-md-8">
                         <select class="form-select select-icon icon-mark form-control from-tab rounded-pill" name="ageTo" >
@@ -431,7 +431,7 @@
             <div class="form-group">
                 <div class="row">
                     <div class="col-md-4">
-                        <label class="fieldlabels"> Country </label>
+                        <label class="fieldlabels">* Country </label>
                     </div>
                     <div class="col-md-8">
                         <select onchange="getStates(this,'state_id')" class="form-select select-icon icon-mark form-control from-tab rounded-pill" name="country_id" >
@@ -449,7 +449,7 @@
             <div class="form-group">
                 <div class="row">
                     <div class="col-md-4">
-                        <label class="fieldlabels"> State </label>
+                        <label class="fieldlabels">* State </label>
                     </div>
                     <div class="col-md-8">
                         <select onchange="getCities(this,'city_id')" class="form-select select-icon icon-mark form-control from-tab rounded-pill" name="state_id" >
@@ -467,7 +467,7 @@
             <div class="form-group">
                 <div class="row">
                     <div class="col-md-4">
-                        <label class="fieldlabels"> City </label>
+                        <label class="fieldlabels">* City </label>
                     </div>
                     <div class="col-md-8">
                         <select class="form-select select-icon icon-mark form-control from-tab rounded-pill" name="city_id" >
@@ -485,7 +485,7 @@
             <div class="form-group">
                 <div class="row">
                     <div class="col-md-4">
-                        <label class="fieldlabels"> Tongue</label>
+                        <label class="fieldlabels">* Tongue</label>
                     </div>
                     <div class="col-md-8">
                         <select name="Tongue" class="form-select select-icon icon-mark form-control from-tab rounded-pill" >
@@ -503,7 +503,7 @@
             <div class="form-group">
                 <div class="row">
                     <div class="col-md-4">
-                        <label class="fieldlabels"> Religiousness </label>
+                        <label class="fieldlabels">* Religiousness </label>
                     </div>
                     <div class="col-md-8">
                         <select onchange="getSects(this,'Sects','Any')" class="form-select select-icon icon-mark form-control from-tab rounded-pill" name="Religions" >
@@ -521,7 +521,7 @@
             <div class="form-group">
                 <div class="row">
                     <div class="col-md-4">
-                        <label class="fieldlabels"> Sect </label>
+                        <label class="fieldlabels">* Sect </label>
                     </div>
                     <div class="col-md-8">
                         <select class="form-select select-icon icon-mark form-control from-tab rounded-pill" name="Sects" >
@@ -539,7 +539,7 @@
             <div class="form-group">
                 <div class="row">
                     <div class="col-md-4">
-                        <label class="fieldlabels"> Qualification </label>
+                        <label class="fieldlabels">* Qualification </label>
                     </div>
                     <div class="col-md-8">
                         <select class="form-select select-icon icon-mark form-control from-tab rounded-pill" name="EducationID" >
@@ -557,7 +557,7 @@
             <div class="form-group">
                 <div class="row">
                     <div class="col-md-4">
-                        <label class="fieldlabels"> Profession</label>
+                        <label class="fieldlabels">* Profession</label>
                     </div>
                     <div class="col-md-8">
                         <select name="OccupationID" class="form-select select-icon icon-mark form-control from-tab rounded-pill" >
@@ -575,7 +575,7 @@
             {{--<div class="form-group">--}}
                 {{--<div class="row">--}}
                     {{--<div class="col-md-4">--}}
-                        {{--<label class="fieldlabels"> Willing To Relocate</label>--}}
+                        {{--<label class="fieldlabels">* Willing To Relocate</label>--}}
                     {{--</div>--}}
                     {{--<div class="col-md-8">--}}
                         {{--<select name="WillingToRelocate" class="form-select select-icon icon-mark form-control from-tab rounded-pill" >--}}
@@ -593,7 +593,7 @@
             <div class="form-group">
                 <div class="row">
                     <div class="col-md-4">
-                        <label class="fieldlabels"> Income</label>
+                        <label class="fieldlabels">* Income</label>
                     </div>
                     <div class="col-md-8">
                         <select name="MyIncome" class="form-select select-icon icon-mark form-control from-tab rounded-pill" >
@@ -611,7 +611,7 @@
             <div class="form-group">
                 <div class="row">
                     <div class="col-md-4">
-                        <label class="fieldlabels"> Marital Status</label>
+                        <label class="fieldlabels">* Marital Status</label>
                     </div>
                     <div class="col-md-8">
                         <select name="MaritalStatus" class="form-select select-icon icon-mark form-control from-tab rounded-pill" >
@@ -629,7 +629,7 @@
             <div class="form-group">
                 <div class="row">
                     <div class="col-md-4">
-                        <label class="fieldlabels"> Living Arrangements</label>
+                        <label class="fieldlabels">* Living Arrangements</label>
                     </div>
                     <div class="col-md-8">
                         <select name="MyLivingArrangements" class="form-select select-icon icon-mark form-control from-tab rounded-pill" >
@@ -647,7 +647,7 @@
             <div class="form-group">
                 <div class="row">
                     <div class="col-md-4">
-                        <label class="fieldlabels"> Heights</label>
+                        <label class="fieldlabels">* Heights</label>
                     </div>
                     <div class="col-md-8">
                         <select name="Heights" class="form-select select-icon icon-mark form-control from-tab rounded-pill" >
@@ -665,7 +665,7 @@
             {{--<div class="form-group">--}}
                 {{--<div class="row">--}}
                     {{--<div class="col-md-4">--}}
-                        {{--<label class="fieldlabels"> Builds</label>--}}
+                        {{--<label class="fieldlabels">* Builds</label>--}}
                     {{--</div>--}}
                     {{--<div class="col-md-8">--}}
                         {{--<select name="MyBuilds" class="form-select select-icon icon-mark form-control from-tab rounded-pill" >--}}
@@ -683,7 +683,7 @@
             <div class="form-group">
                 <div class="row">
                     <div class="col-md-4">
-                        <label class="fieldlabels"> Disabilities</label>
+                        <label class="fieldlabels">* Disabilities</label>
                     </div>
                     <div class="col-md-8">
                         <select name="Disabilities" class="form-select select-icon icon-mark form-control from-tab rounded-pill" >
@@ -701,7 +701,7 @@
             <div class="form-group">
                 <div class="row">
                     <div class="col-md-4">
-                        <label class="fieldlabels"> Caste</label>
+                        <label class="fieldlabels">* Caste</label>
                     </div>
                     <div class="col-md-8">
                         <select name="Castes" class="form-select select-icon icon-mark form-control from-tab rounded-pill" >
