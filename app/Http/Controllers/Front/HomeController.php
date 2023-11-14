@@ -148,7 +148,7 @@ class HomeController extends Controller
     public function searchBySlug($slug)
     {
         $slugArr = explode("-",$slug);
-        if (in_array($slugArr[0],["male","female","NA"]) && $slugArr[1]=="proposal") {
+        if (in_array($slugArr[0],["male","female","na"]) && $slugArr[1]=="proposal") {
             $customerFakerId = end($slugArr);
             $customer = Customer::with([
                 'customerOtherInfo',
@@ -157,7 +157,7 @@ class HomeController extends Controller
                 'customerReligionInfo',
                 'customerCareerInfo'
             ])->where('id',$customerFakerId)->first();
-            if (!empty($customer)) {
+            if (!empty($customer) && $customer->gender_name==$slugArr[0]) {
 
                 $customerBlockByMe = false;
                 $customerLikedByMe = false;

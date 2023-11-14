@@ -10,7 +10,7 @@
     @php $ifCustomerAuth = auth()->guard('customer')->check(); @endphp
 @endif
 @foreach($customers as $customer)
-    @php $uniqueProfileSlug = $customer->gender_name.'-proposal-'.(!empty($customer->getCitySlug)?$customer->getCitySlug->slug:'NA').'-'.(!empty($customer->getCountrySlug)?$customer->getCountrySlug->slug:'NA').'-'.$customer->faker_id; @endphp
+    @php $uniqueProfileSlug = $customer->gender_name.'-proposal-'.(!empty($customer->getCitySlug)?$customer->getCitySlug->slug:'na').'-'.(!empty($customer->getCountrySlug)?$customer->getCountrySlug->slug:'na').'-'.$customer->id; @endphp
 
     <strong class="search-box bg-blast">
         @php
