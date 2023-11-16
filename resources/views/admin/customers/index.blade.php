@@ -92,7 +92,7 @@
                                 <th data-sortable="false">Action</th>
                                 <th data-sortable="false">Image</th>
                                 <th data-sortable="false">Fullname</th>
-                                <th data-sortable="false">Username</th>
+                                {{--<th data-sortable="false">Username</th>--}}
                                 <th data-sortable="false">Email Verified</th>
                                 <th data-sortable="false">PF Status</th>
                                 <th data-sortable="false">PF Pic Status</th>
@@ -164,9 +164,9 @@
                 {
                     data: 'full_name'
                 },
-                {
-                    data: 'name'
-                },
+                // {
+                //     data: 'name'
+                // },
                 {
                     data: 'faker_id',
                     render: function (data, type, full, meta) {

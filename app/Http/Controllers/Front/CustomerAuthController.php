@@ -32,12 +32,10 @@ use App\Models\DoYouPreferHijab;
 use App\Models\Education;
 use App\Models\EyeColor;
 use App\Models\FamilyValue;
-use App\Models\FuturePlan;
 use App\Models\HairColor;
 use App\Models\Height;
 use App\Models\HobbiesAndInterest;
 use App\Models\IAmLookingToMarry;
-use App\Models\JobPost;
 use App\Models\MajorCourse;
 use App\Models\MaritalStatus;
 use App\Models\MotherTongue;
@@ -51,11 +49,9 @@ use App\Models\ResidenceStatus;
 use App\Models\Sect;
 use App\Models\Smoke;
 use App\Models\State;
-use App\Models\University;
 use App\Models\Weight;
-use App\Models\WillingToRelocate;
 use App\Rules\Adult;
-//use App\Rules\ReCaptcha;
+use App\Rules\ReCaptcha;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Session;
@@ -105,7 +101,7 @@ class CustomerAuthController extends Controller
 
                 $customerCareerInfo = CustomerCareerInfo::where('CustomerID',$customer->id)->count();
                 if ($customerCareerInfo==0) {
-                    session::flash('error_message', "Please add education info first thanks...!");
+                    session::flash('error_message', "Please add career info first thanks...!");
                     $redirectUrl = route('education.form');
                     return response()->json([
                         'status'      => 'success',
@@ -218,7 +214,8 @@ class CustomerAuthController extends Controller
             'password'               => 'required|min:6',
             'RegistrationsReasonsID' => 'required|numeric|exists:shaadi_registrations_reasons,id',
             'MaritalStatusID'        => 'required|numeric|exists:shaadi_marital_statuses,id',
-            'read_policy'            => 'required'
+            'read_policy'            => 'required',
+            'g-recaptcha-response'   => ['required', new ReCaptcha]
         ],$messages);
 
         if ($validator->fails()) {
@@ -1333,7 +1330,7 @@ class CustomerAuthController extends Controller
 
         $customerCareerInfo = CustomerCareerInfo::where('CustomerID',$customer->id)->count();
         if ($customerCareerInfo==0) {
-            session::flash('error_message', "Please add education info first thanks...!");
+            session::flash('error_message', "Please add career info first thanks...!");
             return redirect()->route('education.form');
         }
 
@@ -1427,7 +1424,7 @@ class CustomerAuthController extends Controller
 
         $customerCareerInfo = CustomerCareerInfo::where('CustomerID',$customer->id)->count();
         if ($customerCareerInfo==0) {
-            session::flash('error_message', "Please add education info first thanks...!");
+            session::flash('error_message', "Please add career info first thanks...!");
             return redirect()->route('education.form');
         }
 
@@ -1593,7 +1590,7 @@ class CustomerAuthController extends Controller
 
         $customerCareerInfo = CustomerCareerInfo::where('CustomerID',$customer->id)->count();
         if ($customerCareerInfo==0) {
-            session::flash('error_message', "Please add education info first thanks...!");
+            session::flash('error_message', "Please add career info first thanks...!");
             return redirect()->route('education.form');
         }
 
@@ -1815,7 +1812,7 @@ class CustomerAuthController extends Controller
 
         $customerCareerInfo = CustomerCareerInfo::where('CustomerID',$customer->id)->count();
         if ($customerCareerInfo==0) {
-            session::flash('error_message', "Please add education info first thanks...!");
+            session::flash('error_message', "Please add career info first thanks...!");
             return redirect()->route('education.form');
         }
 

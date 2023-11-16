@@ -35,7 +35,7 @@ class CustomerProfileCompleteDecider
 
             $customerCareerInfo = CustomerCareerInfo::where('CustomerID',$currentCustomer->id)->count();
             if ($customerCareerInfo==0) {
-                session::flash('error_message', "Please add education info first thanks...!");
+                session::flash('error_message', "Please add career info first thanks...!");
                 return redirect()->route('education.form');
             }
 

@@ -46,7 +46,7 @@
                         <table style="width: 650px; margin: 0 auto; margin-bottom: 30px">
                             <tbody>
                             <tr>
-                                <td><img src="{{asset('images/doosri-biwi-logo.png')}}" alt="Doosri Biwi Logo"></td>
+                                <td><img src="{{asset('images/doosri-biwi-dark-logo.png')}}" alt="Doosri Biwi Logo"></td>
                             </tr>
                             </tbody>
                         </table>
@@ -58,7 +58,7 @@
                 <tbody>
                 <tr>
                     <td style="padding: 30px">
-                        <h4 style="font-weight: 600">Confirm Account - DoosriBiwi.com</h4>
+                        <h4 style="font-weight: 600">Confirm Account</h4>
                         <p><strong>Dear customer </strong> your account has been created successfully.</p>
                         <p>To ensure safety & privacy on DoosriBiwi.com, we mandate email ID verification for all users.</p>
                         <p>Please click verify to activate and access your account. Thank you!</p>

@@ -32,11 +32,6 @@
             }
         $profileComplete = checkProfileCompletePercent($customer);
         @endphp
-        {{--@if($customer->featuredProfile==1)--}}
-            {{--<a class="badge-corner1 badge-corner-yellow">--}}
-                {{--<span>Featured</span>--}}
-            {{--</a>--}}
-        {{--@endif--}}
 
         @if($customer->featuredProfile==1)
             <a class="badge-corner1 badge-corner-blue">
@@ -44,9 +39,9 @@
             </a>
         @endif
 
-        {{--<a class="badge-corner2 badge-corner-yellow">--}}
-            {{--<span>Premium</span>--}}
-        {{--</a>--}}
+        <a class="badge-corner3" style="z-index:99;background: {{$verificationStatusColor}};">
+            <span>{{$verificationStatus}}</span>
+        </a>
 
         <div class="block block--style-3 list z-depth-1-top bg-blast" id="block_393" style="margin-bottom: 2rem;">
             <div class="block-image">
@@ -62,12 +57,6 @@
                 @endif
             </div>
             <div class="block-title-wrapper">
-                {{-- Profile Match % --}}
-                {{--@if(!empty($ifCustomerAuth) && $customerMatchesPercentage > 0)--}}
-                    {{--<span class="matchprofile">{{$customerMatchesPercentage}}% <br> <strong> Match </strong></span>--}}
-                {{--@endif--}}
-                {{-- Profile Complete % --}}
-                {{--<span class="completeprofile">{{checkProfileCompletePercent($customer)}}%<br><strong>Complete</strong></span>--}}
                 <strong>
                     <h3 class="heading heading-5 strong-500 mt-1">
                         <a class="LoginToView" href="{{route('search.by.slug',[$uniqueProfileSlug])}}" class="c-base-1 text-white" style="cursor:pointer;font-weight: 600;color: #fff;">{{$customer->full_name}}</a>
@@ -123,9 +112,9 @@
                                 {{(!empty($customer->getCitiesName)) ? $customer->getCitiesName->name : 'N/A'}},
                                 {{(!empty($customer->getCountryName)) ? $customer->getCountryName->name : 'N/A'}}
                             </td>
-                            <td width="120" height="30" style="padding-left: 5px;"><b>Verification Status</b></td>
+                            <td width="120" height="30" style="padding-left: 5px;"><b>Profession</b></td>
                             <td width="120" height="30" style="padding-left: 5px;" class="text-white">
-                                <strong style="color:{{$verificationStatusColor}};font-weight: 600;font-size: 1rem;">{{$verificationStatus}}</strong>
+                                {{(!empty($customer->getOccupationName)) ? $customer->getOccupationName->name : 'N/A'}}
                             </td>
                         </tr>
                         </tbody>

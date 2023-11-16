@@ -51,7 +51,7 @@
                         <table style="width: 650px; margin: 0 auto; margin-bottom: 30px">
                             <tbody>
                             <tr>
-                                <td><img src="{{asset('images/doosri-biwi-logo.png')}}" alt="Doosri Biwi Logo"></td>
+                                <td><img src="{{asset('images/doosri-biwi-dark-logo.png')}}" alt="Doosri Biwi Logo"></td>
                             </tr>
                             </tbody>
                         </table>

@@ -47,7 +47,7 @@
                         <table style="width: 650px; margin: 0 auto; margin-bottom: 30px">
                             <tbody>
                             <tr>
-                                <td><img src="{{asset('images/doosri-biwi-logo.png')}}" alt="Doosri Biwi Logo"></td>
+                                <td><img src="{{asset('images/doosri-biwi-dark-logo.png')}}" alt="Doosri Biwi Logo"></td>
                             </tr>
                             </tbody>
                         </table>
@@ -59,7 +59,7 @@
                 <tbody>
                 <tr>
                     <td style="padding: 30px">
-                        <h4 style="font-weight: 600">Confirm Account - DoosriBiwi.com</h4>
+                        <h4 style="font-weight: 600">Confirm Account</h4>
                         <p><strong>{{$customer->full_name}}</strong> your account created successfully.</p>
                         <p style="text-align: center"><a href="{{route('confirm.customer.account',[$code])}}" style="padding: 10px; background-color: #0c476e; color: #fff; display: inline-block; border-radius: 4px">Confirm Account</a></p>
                         <p>Click confirm to active you account for access it thanks.</p>

@@ -36,7 +36,7 @@
             <div class="form-group m-tb-20">
                 <div class="row">
                     <div class="col-md-4">
-                        <label class="form-label">*Occupation</label>
+                        <label class="form-label">*Profession</label>
                     </div>
                     <div class="col-md-8">
                         <select name="OccupationID" class="form-select select-icon icon-mark form-select select-icon icon-mark form-control rounded-pill" >
@@ -103,7 +103,7 @@
             <div class="form-group m-tb-20">
                 <div class="row">
                     <div class="col-md-4">
-                        <label class="form-label">*Occupation</label>
+                        <label class="form-label">*Profession</label>
                     </div>
                     <div class="col-md-8">
                         <select name="OccupationID" class="form-select select-icon icon-mark form-select select-icon icon-mark form-control rounded-pill" >

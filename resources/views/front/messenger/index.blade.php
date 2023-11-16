@@ -104,7 +104,7 @@
 
                 <div class="col-12 col-lg-7 col-xl-9 conversation" id="conversation">
                     <div class="waiting-screen text-center">
-                        <img src="{{asset('assets/img/chat-waiting.png')}}" alt="Start Chatting" width="60%">
+                        <img src="{{asset('images/chat-waiting.png')}}" alt="Start Chatting" width="60%">
                     </div>
                 </div>
             </div>

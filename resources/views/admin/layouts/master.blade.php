@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>@yield('title') - Shaadi Admin Portal</title>
+	<title>@yield('title') - Doosri Biwi Admin Portal</title>
 	{{--All Styles--}}
 	<link rel="icon" href="{{asset('shaadi-admin/images/favicon-32x32.png')}}" type="image/png" />
 	<link href="{{asset('shaadi-admin/plugins/simplebar/css/simplebar.css')}}" rel="stylesheet"/>

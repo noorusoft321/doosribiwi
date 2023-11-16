@@ -141,10 +141,10 @@
                                         <td>Last Name</td>
                                         <td>{{$customer->last_name}}</td>
                                     </tr>
-                                    <tr>
-                                        <td>User Name</td>
-                                        <td>{{$customer->name}}</td>
-                                    </tr>
+                                    {{--<tr>--}}
+                                        {{--<td>User Name</td>--}}
+                                        {{--<td>{{$customer->name}}</td>--}}
+                                    {{--</tr>--}}
                                     <tr>
                                         <td>Email</td>
                                         <td>{{$customer->email}}</td>
@@ -295,41 +295,41 @@
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <td>Education  Verification</td>
+                                                    <td>Education Verification</td>
                                                     <td>
-                                                        <div class="form-check form-switch" title="Education  Verification">
+                                                        <div class="form-check form-switch" title="Education Verification">
                                                             <input class="form-check-input" type="checkbox" name="education_verification" id="education_verification" {{($customer->education_verification==1) ? 'checked' : ''}} >
                                                         </div>
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <td>Location  Verification</td>
+                                                    <td>Location Verification</td>
                                                     <td>
-                                                        <div class="form-check form-switch" title="Location  Verification">
+                                                        <div class="form-check form-switch" title="Location Verification">
                                                             <input class="form-check-input" type="checkbox" name="location_verification" id="location_verification" {{($customer->location_verification==1) ? 'checked' : ''}} >
                                                         </div>
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <td>Meeting  Verification</td>
+                                                    <td>Meeting Verification</td>
                                                     <td>
-                                                        <div class="form-check form-switch" title="Meeting  Verification">
+                                                        <div class="form-check form-switch" title="Meeting Verification">
                                                             <input class="form-check-input" type="checkbox" name="meeting_verification" id="meeting_verification" {{($customer->meeting_verification==1) ? 'checked' : ''}} >
                                                         </div>
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <td>Nationality  Verification</td>
+                                                    <td>Nationality Verification</td>
                                                     <td>
-                                                        <div class="form-check form-switch" title="Nationality  Verification">
+                                                        <div class="form-check form-switch" title="Nationality Verification">
                                                             <input class="form-check-input" type="checkbox" name="nationality_verification" id="nationality_verification" {{($customer->nationality_verification==1) ? 'checked' : ''}} >
                                                         </div>
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <td>Salary  Verification</td>
+                                                    <td>Salary Verification</td>
                                                     <td>
-                                                        <div class="form-check form-switch" title="Salary  Verification">
+                                                        <div class="form-check form-switch" title="Salary Verification">
                                                             <input class="form-check-input" type="checkbox" name="salary_verification" id="salary_verification" {{($customer->salary_verification==1) ? 'checked' : ''}} >
                                                         </div>
                                                     </td>
@@ -725,7 +725,7 @@
                                 </div>
                                 <div class="row">
                                     <div class="col-6">
-                                        <h5 class="edit-profile-side-heading font-size14"> Occupation </h5>
+                                        <h5 class="edit-profile-side-heading font-size14"> Profession </h5>
                                     </div>
                                     <div class="col-6">
                                         <h5 class="edit-profile-side-heading font-size14">
@@ -733,16 +733,16 @@
                                         </h5>
                                     </div>
                                 </div>
-                                <div class="row">
-                                    <div class="col-6">
-                                        <h5 class="edit-profile-side-heading font-size14"> Job Post </h5>
-                                    </div>
-                                    <div class="col-6">
-                                        <h5 class="edit-profile-side-heading font-size14">
-                                            {{genericQuery($customer->customerCareerInfo->JobPost,'JobPost')}}
-                                        </h5>
-                                    </div>
-                                </div>
+                                {{--<div class="row">--}}
+                                    {{--<div class="col-6">--}}
+                                        {{--<h5 class="edit-profile-side-heading font-size14"> Job Post </h5>--}}
+                                    {{--</div>--}}
+                                    {{--<div class="col-6">--}}
+                                        {{--<h5 class="edit-profile-side-heading font-size14">--}}
+                                            {{--{{genericQuery($customer->customerCareerInfo->JobPost,'JobPost')}}--}}
+                                        {{--</h5>--}}
+                                    {{--</div>--}}
+                                {{--</div>--}}
                                 <div class="row">
                                     <div class="col-6">
                                         <h5 class="edit-profile-side-heading font-size14"> Monthly Income </h5>
@@ -792,7 +792,7 @@
                                     </div>
                                     <div class="row">
                                         <div class="col-6">
-                                            <h5 class="edit-profile-side-heading font-size14"> Occupation </h5>
+                                            <h5 class="edit-profile-side-heading font-size14"> Profession </h5>
                                         </div>
                                         <div class="col-6">
                                             <h5 class="edit-profile-side-heading font-size14">
@@ -800,16 +800,16 @@
                                             </h5>
                                         </div>
                                     </div>
-                                    <div class="row">
-                                        <div class="col-6">
-                                            <h5 class="edit-profile-side-heading font-size14"> Job Post </h5>
-                                        </div>
-                                        <div class="col-6">
-                                            <h5 class="edit-profile-side-heading font-size14">
-                                                N/A
-                                            </h5>
-                                        </div>
-                                    </div>
+                                    {{--<div class="row">--}}
+                                        {{--<div class="col-6">--}}
+                                            {{--<h5 class="edit-profile-side-heading font-size14"> Job Post </h5>--}}
+                                        {{--</div>--}}
+                                        {{--<div class="col-6">--}}
+                                            {{--<h5 class="edit-profile-side-heading font-size14">--}}
+                                                {{--N/A--}}
+                                            {{--</h5>--}}
+                                        {{--</div>--}}
+                                    {{--</div>--}}
                                     <div class="row">
                                         <div class="col-6">
                                             <h5 class="edit-profile-side-heading font-size14"> Monthly Income </h5>

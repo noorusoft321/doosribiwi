@@ -120,7 +120,7 @@
                                 <th data-sortable="false">Action</th>
                                 <th data-sortable="false">Image</th>
                                 <th data-sortable="false">Fullname</th>
-                                <th data-sortable="false">Username</th>
+                                {{--<th data-sortable="false">Username</th>--}}
                                 <th data-sortable="false">Email</th>
                                 <th data-sortable="false">Created At</th>
                             </tr>
@@ -190,9 +190,9 @@
                 {
                     data: 'full_name'
                 },
-                {
-                    data: 'name'
-                },
+                // {
+                //     data: 'name'
+                // },
                 {
                     data: 'email'
                 },

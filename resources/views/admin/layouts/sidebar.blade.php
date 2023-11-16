@@ -4,7 +4,7 @@
 			<img src="{{asset('shaadi-admin/images/favicon-32x32.png')}}" class="logo-icon" alt="logo icon">
 		</div>
 		<div>
-			<h4 class="logo-text">Shaadi CMS</h4>
+			<h4 class="logo-text">DOOSRI BIWI CMS</h4>
 		</div>
 		<div class="toggle-icon ms-auto"><i class='bx bx-arrow-to-left'></i>
 		</div>
@@ -103,7 +103,7 @@
 						<li><a href="{{route('admin.get.educations')}}"><i class="bx bx-right-arrow-alt"></i>Educations</a></li>
 					@endif
 					@if($hasPermissions=='all' || in_array('admin.get.occupations', $hasPermissions))
-						<li><a href="{{route('admin.get.occupations')}}"><i class="bx bx-right-arrow-alt"></i>Occupations</a></li>
+						<li><a href="{{route('admin.get.occupations')}}"><i class="bx bx-right-arrow-alt"></i>Profession</a></li>
 					@endif
 					@if($hasPermissions=='all' || in_array('admin.get.monthlyInComes', $hasPermissions))
 						<li><a href="{{route('admin.get.monthlyInComes')}}"><i class="bx bx-right-arrow-alt"></i>Monthly InComes</a></li>

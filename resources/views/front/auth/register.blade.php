@@ -43,6 +43,9 @@
 			border-bottom: 2px solid #082f49;
 			margin: 0 auto !important;
 		}
+		iframe {
+			height: 78px !important;
+		}
 		@media only screen and (max-width: 600px) {
 			.section-card-heading {
 				font-size: 16px !important;
@@ -158,13 +161,13 @@
 											</select>
 										</div>
 									</div>
-									<div class="col-6 divorceReasonDiv" style="display: none;">
+									<div class="col-md-6 divorceReasonDiv" style="display: none;">
 										<div class="form-group py-xl-10">
 											<label for="divorceReason">*Reason</label>
 											<input type="text" name="divorceReason" class="form-control rounded-pill">
 										</div>
 									</div>
-									<div class="col-6 childrenQuantityDiv" style="display: none;">
+									<div class="col-md-6 childrenQuantityDiv" style="display: none;">
 										<div class="form-group py-xl-10">
 											<label for="childrenQuantity">*Children</label>
 											<input type="number" name="childrenQuantity" class="form-control rounded-pill">
@@ -213,7 +216,17 @@
 										</div>
 									</div>
 
-									<div class="col-12 text-end">
+									<div class="col-12">
+										<div class="form-group my-3">
+											<strong>*ReCaptcha</strong>
+											<div class="g-recaptcha" data-sitekey="{{ env('GOOGLE_RECAPTCHA_KEY') }}"></div>
+											@if ($errors->has('g-recaptcha-response'))
+												<span class="text-danger">{{ $errors->first('g-recaptcha-response') }}</span>
+											@endif
+										</div>
+									</div>
+
+									<div class="col-12 mt-2 text-end">
 										<button type="button" onclick="authAct(this)" class="btn btn-outline-primary font-weight-600">Register</button>
 									</div>
 								</div>
@@ -293,4 +306,6 @@
             }
         }
 	</script>
+
+	<script src='https://www.google.com/recaptcha/api.js'></script>
 @endpush

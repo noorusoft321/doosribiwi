@@ -365,7 +365,7 @@
 											</div>
 											<div class="row">
 												<div class="col-6">
-													<h5 class="edit-profile-side-heading font-size14"> Occupation </h5>
+													<h5 class="edit-profile-side-heading font-size14"> Profession </h5>
 												</div>
 												<div class="col-6">
 													<h5 class="edit-profile-side-heading font-size14 text-theme">
@@ -432,7 +432,7 @@
 												</div>
 												<div class="row">
 													<div class="col-6">
-														<h5 class="edit-profile-side-heading font-size14"> Occupation </h5>
+														<h5 class="edit-profile-side-heading font-size14"> Profession </h5>
 													</div>
 													<div class="col-6">
 														<h5 class="edit-profile-side-heading font-size14 text-theme">

@@ -89,7 +89,7 @@
                         </span>
                     </div>
                     <div class="col-8 mx-auto my-auto p-1 fs-card-text">
-                        {{(!empty($val->getOccupationName)) ? $val->getOccupationName->name : 'Profession'}}
+                        {{(!empty($val->getOccupationName)) ? $val->getOccupationName->name : 'N/A'}}
                     </div>
                 </div>
                 <div class="row">

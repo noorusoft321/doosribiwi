@@ -193,6 +193,21 @@
 			margin-left: -14px;
 			font-weight: 600;
 		}
+		.badge-corner3 {
+			--f: 10px;
+			--r: 15px;
+			--t: 10px;
+			position: absolute;
+			inset: var(--t) calc(-1*var(--f)) auto auto;
+			padding: 0 10px var(--f) calc(10px + var(--r));
+			clip-path: polygon(0 0,100% 0,100% calc(100% - var(--f)),calc(100% - var(--f)) 100%, calc(100% - var(--f)) calc(100% - var(--f)),0 calc(100% - var(--f)), var(--r) calc(50% - var(--f)/2));
+			box-shadow: 0 calc(-1*var(--f)) 0 inset #0005;
+		}
+		.badge-corner3 span {
+			color: #fff;
+			font-size: 12px;
+			font-weight: 500;
+		}
 </style>
 @endpush
 

@@ -46,7 +46,7 @@
                         <table style="width: 650px; margin: 0 auto; margin-bottom: 30px">
                             <tbody>
                             <tr>
-                                <td><img src="{{asset('images/doosri-biwi-logo.png')}}" alt="Doosri Biwi Logo"></td>
+                                <td><img src="{{asset('images/doosri-biwi-dark-logo.png')}}" alt="Doosri Biwi Logo"></td>
                             </tr>
                             </tbody>
                         </table>
@@ -58,7 +58,7 @@
                 <tbody>
                 <tr>
                     <td style="padding: 30px">
-                        <h4 style="font-weight: 600">Elite Matrimony Consultant - LEAD - DoosriBiwi.com</h4>
+                        <h4 style="font-weight: 600">Elite Matrimony Consultant</h4>
                         <p><strong>Name:</strong> {{$your_name}}</p>
                         <p><strong>Number:</strong> {{$your_number}}</p>
                         <p><strong>Email:</strong> {{$your_email}}</p>
