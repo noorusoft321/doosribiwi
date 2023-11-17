@@ -44,7 +44,7 @@
 			margin: 0 auto !important;
 		}
 		iframe {
-			height: 78px !important;
+			height: 100% !important;
 		}
 		@media only screen and (max-width: 600px) {
 			.section-card-heading {
@@ -55,6 +55,12 @@
 			.gender-icon img {
 				width: 80px;
 			}
+			iframe {
+				height: 100% !important;
+			}
+		}
+		.g-recaptcha iframe {
+			height: 78px !important;
 		}
 	</style>
 @endpush
