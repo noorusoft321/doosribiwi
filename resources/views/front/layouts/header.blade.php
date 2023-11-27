@@ -28,6 +28,9 @@
 					<li class="nav-item">
 						<a class="nav-link" href="{{route('free.rishta.services')}}"> SERVICES </a>
 					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="{{route('blog')}}"> BLOGS </a>
+					</li>
 					{{--<li class="nav-item">--}}
 					{{--<a class="nav-link" href="{{route('elite.matrimonial.service')}}"> ELITE PROPOSAL </a>--}}
 					{{--</li>--}}

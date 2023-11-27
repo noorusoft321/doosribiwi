@@ -460,6 +460,12 @@ class HomeController extends Controller
         return view('front.blog.index',compact('title'));
     }
 
+    public function whatLikeBeingSecondWife()
+    {
+        $title = 'secrets to a happy married life';
+        return view('front.blog.what-is-it-like-being-a-second-wife-in-islam',compact('title'));
+    }
+
     public function secretstoahappymarriedlife()
     {
         $title = 'secrets to a happy married life';
