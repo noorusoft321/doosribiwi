@@ -73,6 +73,7 @@ return [
         'islamic-second-marriage-website',
         'looking-for-second-marriage-muslim',
         'marrying-a-second-wife-in-islam',
-    ]
+    ],
+    'app_name' => env('APP_NAME'),
 
 ];

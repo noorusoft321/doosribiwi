@@ -5,7 +5,34 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="@yield('description')">
-	<title>@yield('title') | Doosri Biwi</title>
+	<title>@yield('title') | {{config('services.app_name')}}</title>
+
+	@if(Route::current()->getName()=="landing.page")
+		<link rel="canonical" href="https://doosribiwi.com/" />
+	@endif
+
+	<meta property="og:locale" content="en_US" />
+	<meta property="og:type" content="website" />
+	<meta property="og:title" content="@yield('title') | {{config('services.app_name')}}" />
+	<meta property="og:description" content="@yield('description')" />
+	<meta property="og:url" content="{{url()->full()}}" />
+	<meta property="og:site_name" content="{{config('services.app_name')}}" />
+	<meta property="og:image" content="{{asset('images/rishta-pakistan-doosri-biwi.jpg')}}" />
+	<meta property="og:image:secure_url" content="{{asset('images/rishta-pakistan-doosri-biwi.jpg')}}" />
+	<meta property="og:image:width" content="640" />
+	<meta property="og:image:height" content="640" />
+
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:description" content="@yield('description')" />
+	<meta name="twitter:title" content="@yield('title') | {{config('services.app_name')}}" />
+	<meta name="twitter:site" content="@ShaadiOrgPk" />
+	<meta name="twitter:image" content="{{asset('images/rishta-pakistan-doosri-biwi.jpg')}}" />
+	<meta name="twitter:creator" content="@ShaadiOrgPk" />
+
+	<link rel='dns-prefetch' href='//platform.twitter.com' />
+	<link rel='dns-prefetch' href='//fonts.googleapis.com' />
+	<link rel='dns-prefetch' href='//s.w.org' />
+
 	<link rel="icon" href="{{asset('shaadi-admin/images/favicon-32x32.png')}}" type="image/png" />
 	<link rel="stylesheet" type="text/css" href="{{asset('assets/css/bootstrap.min.css')}}">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">

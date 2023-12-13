@@ -209,6 +209,10 @@ class HomeController extends Controller
                 ])->get();
 
                 $title = $slug;
+                $title = explode("-",$title);
+                array_pop($title);
+                $title = implode(" ",$title);
+                $title = ucwords($title);
                 $noCanonicalTitle = true;
 
                 return view('front.customer.view_profile',compact(

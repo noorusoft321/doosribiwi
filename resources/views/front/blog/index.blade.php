@@ -1,7 +1,7 @@
 @extends('front.layouts.master')
 
-@section('title','Shaadi - Tips and Articles')
-@section('description', 'Browse through our informative blogs and articles to get enlightened with valuable and supportive tips related to online marriage in Pakistan.')
+@section('title','Insightful Blogs on Second Marriages')
+@section('description', 'Dive into insightful articles on Islamic second marriages. Our blogs offer guidance and perspectives on the journey of being a second wife in Islam.')
 
 @push('style')
 	<style>

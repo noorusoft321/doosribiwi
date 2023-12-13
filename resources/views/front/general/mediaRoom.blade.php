@@ -1,6 +1,6 @@
 @extends('front.layouts.master')
-@section('title','Media Room - Free Pakistani Rishta | Matrimonial Website | Matrimony Services | Marriage Bureau')
-@section('description', 'Join DoosriBiwi.com government registered marriage Bureau best matchmaking service in pakistan')
+@section('title','Media Room - Updates on Second Marriages')
+@section('description', 'Stay updated on our endeavors promoting Islamic second marriages. Explore media coverage and resources in our dedicated media room.')
 
 @push('style')
 	{{--Style--}}

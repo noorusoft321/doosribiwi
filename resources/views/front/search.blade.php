@@ -118,8 +118,8 @@
 
 @extends('front.layouts.master')
 
-@section('title',$pageTitle)
-@section('description', 'Search Doosri Biwi')
+@section('title','Proposals for Second Marriages')
+@section('description', 'Find your ideal match through our search feature. Discover the beauty of Islamic second marriages on our proposal page.')
 
 @push('style')
 	<style>

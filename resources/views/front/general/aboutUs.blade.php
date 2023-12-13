@@ -1,6 +1,6 @@
 @extends('front.layouts.master')
-@section('title','Pakistans Most Trusted Matchmaking Service')
-@section('description', 'Pakistani One Stop Destination for Perfect Matchmaking - DoosriBiwi.com - Let us help you find the Love of your Life and the Soulmate you Desire.')
+@section('title','About Our Pioneer Seond Marrige Services')
+@section('description', 'Explore our journey and commitment to Islamic values. Learn about us as a platform embracing second marriages in Islam.')
 
 @push('style')
 	<style>

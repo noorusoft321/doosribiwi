@@ -1,6 +1,6 @@
 @extends('front.layouts.master')
-@section('title',$title)
-@section('description', $title)
+@section('title','Contact Us for Islamic 2nd Marriage Assistance')
+@section('description', 'Connect with us for guidance on Islamic second marriages. Reach out to us for any inquiries or assistance regarding our platform.')
 
 @push('style')
 @endpush

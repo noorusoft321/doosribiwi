@@ -1,6 +1,6 @@
 @extends('front.layouts.master')
-@section('title',$title)
-@section('description', $title)
+@section('title','Islamic Rishta Services for Second Marriages')
+@section('description', 'Elevate your quest for love. Our Islamic rishta services pave the way for fulfilling second marriages in accordance with Islam.')
 
 @push('style')
 	<style>
