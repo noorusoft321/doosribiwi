@@ -248,6 +248,7 @@
 @endsection
 
 @push('script')
+	<script src='https://www.google.com/recaptcha/api.js'></script>
 	<script>
 		$(function () {
             $('input[name="gender"]').change(function() {
@@ -285,6 +286,7 @@
                     $(input).attr('disabled',false);
                 },2000);
             }).catch(function (error) {
+                grecaptcha.reset();
                 $(input).attr('disabled',false);
                 if (error.response.status==422) {
                     $.each(error.response.data.errors, function (k, v) {
@@ -312,6 +314,4 @@
             }
         }
 	</script>
-
-	<script src='https://www.google.com/recaptcha/api.js'></script>
 @endpush
