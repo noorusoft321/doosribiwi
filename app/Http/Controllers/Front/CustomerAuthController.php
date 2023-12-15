@@ -448,7 +448,7 @@ class CustomerAuthController extends Controller
                 $cities = City::where('state_id',$customer->customerOtherInfo->state_id)->where('deleted',0)->orderBy('order_at','asc')->get();
             }
         }
-        if ($customer->gender_name=='Male') {
+        if ($customer->gender_name=='male') {
             $maritalStatuses = MaritalStatus::where('deleted',0)->whereNotIn('id',[1,17])->orderBy('order_at','asc')->get();
         } else {
             $maritalStatuses = MaritalStatus::where('deleted',0)->whereNotIn('id',[16,7])->orderBy('order_at','asc')->get();
@@ -586,7 +586,7 @@ class CustomerAuthController extends Controller
         $familyValues = FamilyValue::where('deleted',0)->orderBy('order_at','asc')->get();
 
         /*Expectations*/
-        if ($customer->gender_name=='Male') {
+        if ($customer->gender_name=='male') {
             $maritalStatuses = MaritalStatus::where('deleted',0)->whereNotIn('id',[16,7])->orderBy('order_at','asc')->get();
         } else {
             $maritalStatuses = MaritalStatus::where('deleted',0)->whereNotIn('id',[1,17])->orderBy('order_at','asc')->get();
@@ -1479,7 +1479,7 @@ class CustomerAuthController extends Controller
         $beards = DoYouHaveBeard::where('deleted',0)->orderBy('order_at','asc')->get();
         $educations = Education::where('deleted',0)->orderBy('order_at','asc')->get();
         $counties = Country::where('deleted',0)->orderBy('order_at','asc')->get();
-        if ($customer->gender_name=='Male') {
+        if ($customer->gender_name=='male') {
             $maritalStatues = MaritalStatus::where('deleted',0)->whereNotIn('id',[16,7])->orderBy('order_at','asc')->get();
         } else {
             $maritalStatues = MaritalStatus::where('deleted',0)->whereNotIn('id',[1,17])->orderBy('order_at','asc')->get();

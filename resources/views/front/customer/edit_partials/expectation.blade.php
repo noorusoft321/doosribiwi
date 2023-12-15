@@ -13,7 +13,7 @@
                                 <fieldset>
                                     <input id="male" class="radio-inline__input" type="radio" name="gender" value="1"
                                             {{(isset($customerSearch->gender) && $customerSearch->gender==1) ? 'checked' : ''}}
-                                            {{($customer->gender_name=='Male') ? 'disabled' : ''}}
+                                            {{($customer->gender_name=='male') ? 'disabled' : ''}}
                                     >
                                     <label class="radio-inline__label" for="male">
                                         Male
@@ -21,7 +21,7 @@
 
                                     <input id="female" class="radio-inline__input" type="radio" name="gender" value="2"
                                             {{(isset($customerSearch->gender) && $customerSearch->gender==2) ? 'checked' : ''}}
-                                            {{($customer->gender_name=='Female') ? 'disabled' : ''}}
+                                            {{($customer->gender_name=='female') ? 'disabled' : ''}}
                                     >
                                     <label class="radio-inline__label" for="female">
                                         Female
@@ -371,14 +371,14 @@
                             <div class="col-md-8">
                                 <fieldset>
                                     <input id="male" class="radio-inline__input" type="radio" name="gender" value="1"
-                                            {{($customer->gender_name=='Male') ? 'disabled' : ''}}
+                                            {{($customer->gender_name=='male') ? 'disabled' : ''}}
                                     >
                                     <label class="radio-inline__label" for="male">
                                         Male
                                     </label>
 
                                     <input id="female" class="radio-inline__input" type="radio" name="gender" value="2"
-                                            {{($customer->gender_name=='Female') ? 'disabled' : ''}}
+                                            {{($customer->gender_name=='female') ? 'disabled' : ''}}
                                     >
                                     <label class="radio-inline__label" for="female">
                                         Female

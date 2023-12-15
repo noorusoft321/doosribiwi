@@ -56,11 +56,11 @@
 																	<option value="">Select</option>
 																	<option value="1"
 																		{{isset($customerSearch->gender) && $customerSearch->gender==1 ? 'selected' : ''}}
-																		{{($customer->gender_name=='Male') ? 'disabled' : ''}}
+																		{{($customer->gender_name=='male') ? 'disabled' : ''}}
 																	>Male</option>
 																	<option value="2"
 																		{{isset($customerSearch->gender) && $customerSearch->gender==2 ? 'selected' : ''}}
-																		{{($customer->gender_name=='Female') ? 'disabled' : ''}}
+																		{{($customer->gender_name=='female') ? 'disabled' : ''}}
 																	>Female</option>
 																</select>
 															</div>
@@ -261,10 +261,10 @@
 																<select class="form-control rounded-pill" name="gender">
 																	<option value="">Select</option>
 																	<option value="1"
-																			{{($customer->gender_name=='Male') ? 'disabled' : ''}}
+																			{{($customer->gender_name=='male') ? 'disabled' : ''}}
 																	>Male</option>
 																	<option value="2"
-																			{{($customer->gender_name=='Female') ? 'disabled' : ''}}
+																			{{($customer->gender_name=='female') ? 'disabled' : ''}}
 																	>Female</option>
 																</select>
 															</div>
