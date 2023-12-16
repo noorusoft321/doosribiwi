@@ -295,7 +295,7 @@
 															<div class="form-group py-xl-10">
 																<label class="fieldlabels">Country</label>
 																<select onchange="getStates(this,'state_id','Any')" class="form-control rounded-pill" name="country_id">
-																	<option value="0">Any</option>
+																	<option value="">Select</option>
 																	@foreach($counties as $val)
 																		<option value="{{$val->id}}">{{$val->name}}</option>
 																	@endforeach
