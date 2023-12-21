@@ -39,7 +39,7 @@
             </a>
         @endif
 
-        <a class="badge-corner3" style="z-index:99;background: {{$verificationStatusColor}};">
+        <a class="badge-corner3" style="z-index:1;background: {{$verificationStatusColor}};">
             <span>{{$verificationStatus}}</span>
         </a>
 

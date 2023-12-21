@@ -119,7 +119,7 @@
 									</div>
 									<div class="col-md-6">
 										<div class="form-group py-xl-10">
-											<label for="last_name">*Last Name</label>
+											<label for="last_name">Last Name</label>
 											<input type="text" name="last_name" class="form-control rounded-pill">
 										</div>
 									</div>
@@ -169,13 +169,13 @@
 									</div>
 									<div class="col-md-6 divorceReasonDiv" style="display: none;">
 										<div class="form-group py-xl-10">
-											<label for="divorceReason">*Reason</label>
+											<label for="divorceReason">Reason</label>
 											<input type="text" name="divorceReason" class="form-control rounded-pill">
 										</div>
 									</div>
 									<div class="col-md-6 childrenQuantityDiv" style="display: none;">
 										<div class="form-group py-xl-10">
-											<label for="childrenQuantity">*Children</label>
+											<label for="childrenQuantity">Children</label>
 											<input type="number" name="childrenQuantity" class="form-control rounded-pill">
 										</div>
 									</div>

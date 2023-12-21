@@ -205,7 +205,7 @@ class CustomerAuthController extends Controller
         $validator = Validator::make($request, [
             'gender'                 => 'required|numeric|in:1,2',
             'first_name'             => 'required|regex:/^[a-zA-Z]+$/u|max:255|min:3',
-            'mobile'                 => 'required|max:255|unique:shaadi_customers,mobile',
+            'mobile'                 => 'required|unique:shaadi_customers,mobile|regex:/^([0-9\s\-\+\(\)]*)$/|min:10',
             'country_id'             => 'required|numeric|exists:shaadi_countries,id',
             'state_id'               => 'required|numeric|exists:shaadi_states,id',
             'city_id'                => 'required|numeric|exists:shaadi_cities,id',
