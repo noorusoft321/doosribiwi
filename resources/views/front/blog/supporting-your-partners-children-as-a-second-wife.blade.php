@@ -73,7 +73,6 @@
 							<div class="col-md-7 my-auto">
 								<div class="blog-card">
 									<h1>{{ $title }}</h1>
-									<h5>Second-Wife Role Challenges</h5>
 									<p>Have you found yourself uniquely positioned to be a <strong>second wife</strong> in a blended family? It's a role filled with challenges and rewards. Let's explore what it means to be a second wife and how to handle the complexities of blended families.</p>
 								</div>
 							</div>

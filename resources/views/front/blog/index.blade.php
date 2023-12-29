@@ -63,7 +63,6 @@
 					<div class="blog-card">
 						<img src="{{asset('blogs-images/what-is-it-like-being-a-second-wife-in-islam.jpg')}}" alt="What's it Like Being a Second Wife in Islam?" class="full-width">
 						<h4>What's it Like Being a Second Wife in Islam?</h4>
-						<h5>Exploring the Joys and Trails</h5>
 						<p>Have you ever found yourself in the middle of a lively debate about what it's like to be a second wife in Islam?</p>
 						<div class="row">
 							<div class="col-auto my-auto">
@@ -99,8 +98,7 @@
 					<div class="blog-card">
 						<img src="{{asset('blogs-images/supporting-your-partners-children-as-a-second-wife.jpg')}}" alt="Supporting Your Partner's Children as a Second Wife" class="full-width">
 						<h4>Supporting Your Partner's Children as a Second Wife</h4>
-						<h5>Second-Wife Role Challenges</h5>
-						<p>Have you found yourself uniquely positioned to be a second wife in a blended family? It's a role filled with challenges and rewards. Let's explore...</p>
+						<p>Have you found yourself uniquely positioned to be a second wife in a blended family? It's a role filled with challenges and rewards...</p>
 						<div class="row">
 							<div class="col-auto my-auto">
 								<a target="_blank" class="btn btn-outline-primary font-weight-600 p-lr-30" href="{{route('supporting.your.partners.children.as.wife')}}">Read More</a>
