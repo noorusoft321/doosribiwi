@@ -82,6 +82,7 @@ Route::get( '/payment', [HomeController::class, 'paymentOption'])->name('payment
 /*Blogs*/
 Route::get( '/blog', [HomeController::class, 'blog'])->name('blog');
 Route::get( '/what-is-it-like-being-a-second-wife-in-islam', [HomeController::class, 'whatLikeBeingSecondWife'])->name('what.like.being.second.wife');
+Route::get( '/supporting-your-partners-children-as-a-second-wife', [HomeController::class, 'supportingYourPartnersChildrenAsWife'])->name('supporting.your.partners.children.as.wife');
 //Route::get( '/6-secrets-to-a-happy-married-life', [HomeController::class, 'secretstoahappymarriedlife'])->name('secretstoahappymarriedlife');
 //Route::get( '/best-honeymoon-destinations-in-pakistan', [HomeController::class, 'besthoneymoondestinationsinpakistan'])->name('besthoneymoondestinationsinpakistan');
 //Route::get( '/best-marriage-bureau-in-karachi-shaadi-organization-pakistan', [HomeController::class, 'bestmarriagebureauinkarachishaadiorganizationpakistan'])->name('bestmarriagebureauinkarachishaadiorganizationpakistan');

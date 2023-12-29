@@ -470,6 +470,12 @@ class HomeController extends Controller
         return view('front.blog.what-is-it-like-being-a-second-wife-in-islam',compact('title'));
     }
 
+    public function supportingYourPartnersChildrenAsWife()
+    {
+        $title = "Supporting Your Partner's Children as a Second Wife";
+        return view('front.blog.supporting-your-partners-children-as-a-second-wife',compact('title'));
+    }
+
     public function secretstoahappymarriedlife()
     {
         $title = 'secrets to a happy married life';

@@ -57,6 +57,7 @@
 		<br>
 
 		<div class="row">
+			<div class="col-md-2"></div>
 			<div class="col-md-4 mx-auto d-flex align-items-stretch">
 				<div class="card">
 					<div class="blog-card">
@@ -92,6 +93,43 @@
 					</div>
 				</div>
 			</div>
+
+			<div class="col-md-4 mx-auto d-flex align-items-stretch">
+				<div class="card">
+					<div class="blog-card">
+						<img src="{{asset('blogs-images/supporting-your-partners-children-as-a-second-wife.jpg')}}" alt="Supporting Your Partner's Children as a Second Wife" class="full-width">
+						<h4>Supporting Your Partner's Children as a Second Wife</h4>
+						<h5>Second-Wife Role Challenges</h5>
+						<p>Have you found yourself uniquely positioned to be a second wife in a blended family? It's a role filled with challenges and rewards. Let's explore...</p>
+						<div class="row">
+							<div class="col-auto my-auto">
+								<a target="_blank" class="btn btn-outline-primary font-weight-600 p-lr-30" href="{{route('supporting.your.partners.children.as.wife')}}">Read More</a>
+							</div>
+							<div class="col my-auto text-end">
+								<div class="row justify-content-end">
+									<div class="col-auto">
+										<a target="_blank" class="blog-social-link" href="https://www.facebook.com/DoosriBiwi">
+											<i class="fab fa-facebook" aria-hidden="true"></i>
+										</a>
+									</div>
+									<div class="col-auto">
+										<a target="_blank" class="blog-social-link" href="https://instagram.com/shaadipakistan?igshid=MzRlODBiNWFlZA==">
+											<i class="fab fa-instagram" aria-hidden="true"></i>
+										</a>
+									</div>
+									<div class="col-auto">
+										<a target="_blank" class="blog-social-link" href="https://www.youtube.com/channel/UC55neowM_i2A_tZQLKh0NMw">
+											<i class="fab fa-youtube-play" aria-hidden="true"></i>
+										</a>
+									</div>
+									<div class="col-auto"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-2"></div>
 		</div>
 	</div>
 @endsection
