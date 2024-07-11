@@ -115,7 +115,7 @@
 						<h6 class="footer-title">Get in Touch with Us</h6>
 						<ul class="footer-link-list">
 							<li class="link-item">
-								<a class="link" href="https://goo.gl/maps/1vzidvqZH1x7yTkX7" target="_blank"><i class="fa-sharp fa-solid fa-location-dot" aria-hidden="true"></i> B-83, Block 10, Gulshan-e-Iqbal, Karachi, Pakistan</a>
+								<a class="link" href="https://goo.gl/maps/1vzidvqZH1x7yTkX7" target="_blank"><i class="fa-sharp fa-solid fa-location-dot" aria-hidden="true"></i>2nd Floor, FL 4/20, Malik Chambers, Main Rashid Minhas Road, Below NIPA Flyover, Block 5, Gulshan-e-Iqbal, Karachi.</a>
 							</li>
 							<li class="link-item">
 								<a class="link" href="https://goo.gl/maps/EYhZ2yywC6X9WYxo9" target="_blank"><i class="fa-sharp fa-solid fa-location-dot" aria-hidden="true"></i> Office A, 1st Floor, JF Business Bay, Block D, North Nazimabad, Karachi, Sindh, Pakistan.</a>

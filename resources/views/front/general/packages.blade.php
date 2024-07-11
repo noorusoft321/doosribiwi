@@ -556,7 +556,7 @@
 					<div class="card">
 						<h5 class="card-header">Cash Deposit at Office </h5>
 						<div class="card-body">
-							<p>B-83, Block 10, Gulshan e Iqbal, Karachi, Sindh, Pakistan </p>
+							<p>2nd Floor, FL 4/20, Malik Chambers, Main Rashid Minhas Road, Below NIPA Flyover, Block 5, Gulshan-e-Iqbal, Karachi.</p>
 							<p>Office A, 1st Floor, JF Business Bay, Block D, Five Star Chowrangi, North Nazimabad, Karachi. </p>
 						</div>
 					</div>
@@ -643,7 +643,7 @@
 					{{--<div class="card">--}}
 						{{--<h5 class="card-header">Cash Deposit at Office </h5>--}}
 						{{--<div class="card-body">--}}
-							{{--<p>  B-83, Block 10, Gulshan e Iqbal, Karachi, Sindh, Pakistan </p>--}}
+							{{--<p> 2nd Floor, FL 4/20, Malik Chambers, Main Rashid Minhas Road, Below NIPA Flyover, Block 5, Gulshan-e-Iqbal, Karachi. </p>--}}
 							{{--<p> Office A, 1st Floor, JF Business Bay, Block D, Five Star Chowrangi, North Nazimabad, Karachi. </p>--}}
 
 						{{--</div>--}}
