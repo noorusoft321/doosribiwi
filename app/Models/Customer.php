@@ -72,7 +72,10 @@ class Customer extends Authenticatable
         'client_status',
         'data_entry_user_id',
         'ip_address',
-        'changes_approval'
+        'changes_approval',
+        'rejected_reason',
+        'blocked_reason',
+        'last_activity'
     ];
 
     protected $hidden = [
@@ -99,7 +102,7 @@ class Customer extends Authenticatable
     public function getImageFullPathAttribute()
     {
         if ($this->profile_pic_client_status==0) {
-            return env('APP_URL').'/customer-images/only-me.jpg';
+            return env('APP_URL').'/assets/img/only-me.jpg';
         }
         if ($this->profile_pic_client_status==1 && $this->profile_pic_status==1 && !empty($this->image)) {
             if (file_exists(public_path('customer-images/'.$this->image))) {

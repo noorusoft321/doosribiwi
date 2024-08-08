@@ -228,7 +228,7 @@
 														<div class="drop-zone">
 															@if(!empty($customer->image))
 																<span class="drop-zone__prompt">
-                                                            		<img class="full-width" src="{{asset('customer_images')}}/{{$customer->image}}" id="main_image_view">
+                                                            		<img class="full-width" src="{{asset('customer-images')}}/{{$customer->image}}" id="main_image_view">
                                                         		</span>
 															@else
 																<span class="drop-zone__prompt"><img class="full-width" src="{{asset('customer-images/default-user.png')}}" id="main_image_view"></span>

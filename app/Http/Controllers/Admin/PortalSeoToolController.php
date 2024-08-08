@@ -53,7 +53,7 @@ class PortalSeoToolController extends Controller
         $request = request()->all();
         if ($request['type']=='Profile' && !empty($request['customer_id'])) {
             $customer = Customer::with('customerImages')->findOrFail($request['customer_id']);
-            return view('admin.seo_tools.customer_images',compact('customer'))->render();
+            return view('admin.seo_tools.customer-images',compact('customer'))->render();
         }
         if ($request['type']=='Page') {
             $files = File::allFiles(public_path('gallery'));

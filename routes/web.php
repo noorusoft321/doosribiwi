@@ -14,7 +14,6 @@ use App\Http\Controllers\Front\GeneralController;
 use App\Http\Controllers\Front\HomeController;
 use App\Http\Controllers\Front\MessengerController;
 use App\Http\Controllers\Front\SocialLoginController;
-use App\Models\Customer;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Route;
 
@@ -31,12 +30,12 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/testing-with-db', function () {
     $res = null;
-    $messageData = array(
-        'code'  => base64_encode('smmwp321@gmail.com'),
-        'email' => 'smmwp321@gmail.com'
-    );
-
-    $res = sendNewEmail('emails.password_reset',$messageData,'Password Reset - DoosriBiwi.com');
+//    $messageData = array(
+//        'code'  => base64_encode('smmwp321@gmail.com'),
+//        'email' => 'smmwp321@gmail.com'
+//    );
+//
+//    $res = sendNewEmail('emails.password_reset',$messageData,'Password Reset - DoosriBiwi.com');
     dd('Doosri Biwi',$res);
 })->name('testing.with.db');
 
@@ -242,7 +241,7 @@ Route::group([ 'middleware' => 'customer.shaadi.auth'], function () {
 });
 
 /* Start Admin here */
-Route::prefix('shaadi-admin')->group(function () {
+Route::prefix('shaadi-portal')->group(function () {
 
     Route::view('/auth-login', 'admin.login')->name('admin.view.login');
     Route::post('/login-process', [AdminController::class, 'loginProcess'])->name('admin.login.process');
@@ -575,6 +574,65 @@ Route::prefix('shaadi-admin')->group(function () {
     Route::get('/view-user-profile', [AdminController::class, 'viewProfile'])->name('admin.view.profile');
     Route::post('/admin-save-new-password', [AdminController::class, 'adminSaveNewPassword'])->name('admin.save.new.password');
 
+});
+
+/* Call center / BDO middleware */
+Route::get('/bdo-portal', [CallCenterController::class, 'index'])->name('bdo.decider');
+Route::prefix('bdo-portal')->group(function () {
+
+    Route::get('/auth-login', [CallCenterController::class, 'loginView'])->name('bdo.view.login');
+    Route::post('/login-process', [CallCenterController::class, 'loginProcess'])->name('bdo.login.process');
+
+    Route::group([ 'middleware' => 'call.center.shaadi.auth'], function () {
+        Route::get('/customers-center', [CallCenterController::class, 'getCustomers'])->name('bdo.get.customers.center');
+        Route::get('/customers-manage', [CallCenterController::class, 'getCustomersManage'])->name('bdo.get.customers.manage');
+        Route::get('/get-customer-center-detail/{customerId?}', [CallCenterController::class, 'getCustomerDetail'])->name('bdo.get.customer.center.detail');
+        Route::post('/customers-assign', [CallCenterController::class, 'customersAssign'])->name('bdo.customers.assign');
+        Route::post('/customers-request', [CallCenterController::class, 'customersRequest'])->name('bdo.customers.request');
+        Route::post('/save-call-history', [CallCenterController::class, 'saveCallHistory'])->name('bdo.save.call.history');
+        Route::post('/save-customer-other-status', [CallCenterController::class, 'saveCustomerOtherStatus'])->name('bdo.save.customer.other.status');
+
+        Route::post('/bdo-customer-profile-image-save', [CallCenterController::class, 'profileImageSave'])->name('bdo.profile.image.save');
+        Route::post('/bdo-customer-gallery-photos-save', [CallCenterController::class, 'galleryPhotosSave'])->name('bdo.gallery.photos.save');
+        Route::post('/bdo-customer-delete-photo', [CustomerAuthController::class, 'deletePhoto'])->name('bdo.gallery.delete.photo');
+
+        /* Support */
+        Route::get('/get-support', [CallCenterController::class, 'getSupport'])->name('bdo.get.support');
+        Route::get('/get-support-detail/{id?}', [CallCenterController::class, 'getSupportDetail'])->name('bdo.get.support.detail');
+        Route::post('/support-status', [CallCenterController::class, 'supportStatus'])->name('bdo.support.status');
+        Route::post('/save-support-history', [CallCenterController::class, 'saveSupportHistory'])->name('bdo.save.support.history');
+
+        /* Support */
+        Route::get('/get-package-request', [CallCenterController::class, 'getPackageRequest'])->name('bdo.get.package.request');
+        Route::get('/package-request-delete/{id?}', [CallCenterController::class, 'packageRequestDelete'])->name('bdo.package.request.delete');
+        Route::get('/add-new-package-request', [CallCenterController::class, 'newPackageRequest'])->name('bdo.new.package.request');
+        Route::post('/fetch-customer', [CallCenterController::class, 'fetchCustomer'])->name('bdo.fetch.customer');
+        Route::post('/save-package-request', [CallCenterController::class, 'savePackageRequest'])->name('bdo.save.package.request');
+
+        Route::post('/save-customer-badges/{customerId?}', [CallCenterController::class, 'saveCustomerBadges'])->name('bdo.save.customer.badges');
+
+    });
+    Route::get('/logout-process', [CallCenterController::class, 'logoutProcess'])->name('bdo.logout.process');
+});
+
+Route::post('/get-media-package-request', [CallCenterController::class, 'getMediaPackageRequest'])->name('get.media.package.request');
+Route::post('/save-media-package-request', [CallCenterController::class, 'saveMediaPackageRequest'])->name('save.media.package.request');
+Route::post('/delete-media-package-request', [CallCenterController::class, 'deleteMediaPackageRequest'])->name('delete.media.package.request');
+
+/* Match Maker / Match Maker middleware */
+Route::get('/match-portal', [MatchCenterController::class, 'index'])->name('match.decider');
+Route::prefix('match-portal')->group(function () {
+    Route::get('/auth-login', [MatchCenterController::class, 'loginView'])->name('match.view.login');
+    Route::post('/login-process', [MatchCenterController::class, 'loginProcess'])->name('match.login.process');
+
+    Route::group([ 'middleware' => 'match.center.shaadi.auth'], function () {
+        Route::get('/all-customers', [MatchCenterController::class, 'allCustomers'])->name('match.get.all.customers');
+        Route::get('/customers-center', [MatchCenterController::class, 'getCustomers'])->name('match.get.customers.center');
+        Route::get('/get-customer-center-detail/{customerId?}', [MatchCenterController::class, 'getCustomerDetail'])->name('match.get.customer.center.detail');
+        Route::post('/customers-assign', [MatchCenterController::class, 'customersAssign'])->name('match.customers.assign');
+        Route::post('/save-call-history', [MatchCenterController::class, 'saveCallHistory'])->name('match.save.call.history');
+    });
+    Route::get('/logout-process', [MatchCenterController::class, 'logoutProcess'])->name('match.logout.process');
 });
 
 Route::get('/{slug}', [HomeController::class, 'searchBySlug'])->name('search.by.slug')->middleware('customer.profile.complete.decider');
