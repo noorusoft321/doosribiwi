@@ -116,10 +116,10 @@
                             <p class="mb-0">Her vision is to build a world in which women are respected, empowered, uplifted and equal partners in society.</p>
                             <p style="visibility: hidden;">society.</p>
                             <div class="matchProfileIcons">
-                                <a href="https://api.whatsapp.com/send?phone=923452444262&text=Hi%20DoosriBiwi.com%2C%20I%20need%20more%20information." style="background: #25D366;">
+                                <a href="https://api.whatsapp.com/send?phone=923410895555&text=Hi%20DoosriBiwi.com%2C%20I%20need%20more%20information." style="background: #25D366;">
                                     <i class="fa fa-whatsapp" aria-hidden="true"></i>
                                 </a>
-                                <a href="tel:+923452444262" style="background: #e0aa3e;">
+                                <a href="tel:+923410895555" style="background: #e0aa3e;">
                                     <i class="fa fa-phone" aria-hidden="true"></i>
                                 </a>
                             </div>

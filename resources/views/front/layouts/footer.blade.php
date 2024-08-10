@@ -121,6 +121,9 @@
 								<a class="link" href="https://goo.gl/maps/EYhZ2yywC6X9WYxo9" target="_blank"><i class="fa-sharp fa-solid fa-location-dot" aria-hidden="true"></i> Office A, 1st Floor, JF Business Bay, Block D, North Nazimabad, Karachi, Sindh, Pakistan.</a>
 							</li>
 							<li class="link-item">
+								<a class="link" href="https://maps.app.goo.gl/u4ReMXyDZEzGyEKMA" target="_blank"><i class="fa-sharp fa-solid fa-location-dot" aria-hidden="true"></i> Suite # 202, 2nd Floor, Platinum Avenue, Plot # 41/C, Street # 9, Bukhari Commercial, Phase VI, DHA, Karachi.</a>
+							</li>
+							<li class="link-item">
 								{{--<a class="link" href="https://api.whatsapp.com/send?phone=923452444262&amp;text=Hi%20Doosri.biwi.com%2C%20I%20need%20more%20information."><i class="fa fa-phone" aria-hidden="true"></i> WhatsApp: +92-345-2444262</a>--}}
 								<a class="link" href="https://api.whatsapp.com/send?phone=923410895555&amp;text=Hi%20Doosri.biwi.com%2C%20I%20need%20more%20information."><i class="fa fa-phone" aria-hidden="true"></i> WhatsApp: +92-341-0895555</a>
 							</li>

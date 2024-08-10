@@ -64,6 +64,75 @@
 		text-align: center;
 	}
 
+	.card {
+		border-radius: 10px;
+		box-shadow: 5px 5px 5px #0000003d;
+		border: none;
+	}
+
+	.our-offices {
+		text-align: center;
+		padding: 15px;
+	}
+	.our-offices iframe {
+		width: 100%;
+		border-radius: 20px;
+		/*filter: drop-shadow(0px 0px 5px #ECC440);
+        -webkit-filter: drop-shadow(0px 0px 5px #ECC440);*/
+		margin-bottom: 20px;
+		-webkit-box-shadow:0px 0px 10px 8px rgba(7, 83, 133, 0.5);
+		-moz-box-shadow: 0px 0px 10px 8px rgba(7, 83, 133, 0.5);
+		box-shadow: 0px 0px 10px 8px rgba(7, 83, 133, 0.5);
+	}
+	.our-offices p {
+		font-size: 20px;
+		font-weight: 600;
+	}
+
+	.our-offices i {
+		color: white;
+		font-weight: 700;
+		font-size: 18px;
+	}
+	.messengerBottomIconBtn {
+		-webkit-border-radius: 60px;
+		border-radius: 20px;
+		color: #eeeeee;
+		cursor: pointer;
+		display: inline-block;
+		font-family: sans-serif;
+		font-size: 20px;
+		padding: 10px 20px;
+		text-align: center;
+		text-decoration: none;
+		transition: all .5s ease-in-out;
+		margin-bottom: 20px;
+	}
+	a.messengerBottomIconBtn:hover {
+		/*font-size: 23px;*/
+		font-weight: 600;
+		color: #fff;
+	}
+	.messengerBottomIconBtn i {
+		color: #ffffff;
+	}
+	@keyframes glowinged {
+		0% {
+			background-color: #11823b;
+			box-shadow: 0 0 5px #004d25;
+		}
+		50% {
+			background-color: #48bf53;
+			box-shadow: 0 0 20px #48bf53;
+		}
+		100% {
+			background-color: #008416;
+			box-shadow: 0 0 5px #004d25;
+		}
+	}
+	.messengerIconBtn, .messengerBottomIconBtn {
+		animation: glowinged 1300ms infinite;
+	}
 	@media only screen and (max-width: 600px) {
 		.section-card-heading {
 			font-size: 1.3rem !important;
@@ -143,7 +212,6 @@
 			</div>
 
 			<div class="align-center p-tb-30">
-				{{--<a target="_blank" href="https://api.whatsapp.com/send?phone=923452444262&text=Hi%20Doosri.biwi.com%2C%20I%20need%20more%20information." class="button-theme-light"> Contact Us </a>--}}
 				<a target="_blank" href="https://api.whatsapp.com/send?phone=923410895555&text=Hi%20Doosri.biwi.com%2C%20I%20need%20more%20information." class="button-theme-light"> Contact Us </a>
 			</div>
 
@@ -152,9 +220,52 @@
 	<!-- Legal Protection Section End -->
 
 	<br>
+
 	<div class="container">
-		<div class="iframe-main">
-			<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3618.5567091644552!2d67.09543801136503!3d24.913098043056248!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3eb338caa499dcc7%3A0x620468db22f4cf7f!2sDoosriBiwi.com%2C%20Marriage%20Bureau%2C%20Rishta%20Pakistan%2C%20Matrimony%2C%20Karachi%20Lahore%20Islamabad!5e0!3m2!1sen!2s!4v1683993914205!5m2!1sen!2s" width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" style="border:0"></iframe>
+		<h2 class="align-center section-card-heading-new font-weight-700"> Our Offices </h2>
+		<img class="img-align-center heading-border" src="{{asset('images/doosri-biwi-thin-border.png')}}">
+		<br>
+		<div class="row">
+			<div class="col-md-4 mx-auto d-flex align-items-stretch">
+				<div class="card">
+					<div class="our-offices">
+						<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3618.338394939367!2d67.09442!3d24.9205395!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3eb338caa499dcc7%3A0x620468db22f4cf7f!2sShaadi.org.pk%2C%20Marriage%20Bureau%2C%20Rishta%20Pakistan%2C%20Matrimony%2C%20Karachi%20Lahore%20Islamabad!5e0!3m2!1sen!2s!4v1723289145172!5m2!1sen!2s" width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+						<p>Gulshan-e-Iqbal</p>
+						<a href="https://goo.gl/maps/1vzidvqZH1x7yTkX7" target="_blank">
+							<p class="text-theme"><i class="text-theme fa-sharp fa-solid fa-location-dot"></i> 2nd Floor, FL 4/20, Malik Chambers, Main Rashid Minhas Road, Below NIPA Flyover, Block 5, Gulshan-e-Iqbal, Karachi.</p>
+						</a>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4 mx-auto d-flex align-items-stretch">
+				<div class="card">
+					<div class="our-offices">
+						<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d904.4274395349411!2d67.0463856!3d24.9419556!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3eb34115fb6c8485%3A0x3ac62152718ab130!2sShaadi%20Organization%20Marriage%20Bureau%20(Shaadi.org.pk%2C%20Rishta%20Pakistan%2C%20Matrimony%2C%20Karachi%2C%20Lahore%2C%20Islamabad)!5e0!3m2!1sen!2s!4v1723289250657!5m2!1sen!2s" width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+						<p>North Nazimabad</p>
+						<a href="https://goo.gl/maps/EYhZ2yywC6X9WYxo9" target="_blank">
+							<p class="text-theme"><i class="text-theme fa-sharp fa-solid fa-location-dot"></i> Office A, 1st Floor, JF Business Bay, Block D, North Nazimabad, Karachi, Sindh, Pakistan.</p>
+						</a>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4 mx-auto d-flex align-items-stretch">
+				<div class="card">
+					<div class="our-offices">
+						<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14486.968051701568!2d67.0472749!3d24.8042861!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3eb33da5a13fda89%3A0xfc0b26bb001986de!2sPlatinum%20Avenue%20Building!5e0!3m2!1sen!2s!4v1723289298046!5m2!1sen!2s" width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+						<p>DHA, Karachi</p>
+						<a href="https://maps.app.goo.gl/u4ReMXyDZEzGyEKMA" target="_blank">
+							<p class="text-theme"><i class="text-theme fa-sharp fa-solid fa-location-dot"></i> Suite # 202, 2nd Floor, Platinum Avenue, Plot # 41/C, Street # 9, Bukhari Commercial, Phase VI, DHA, Karachi.</p>
+						</a>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-12">
+				<div class="text-center pt-2">
+					<a href="https://api.whatsapp.com/send?phone=923410895555&text=Hi%20Doosri.biwi.com%2C%20I%20need%20more%20information." class="messengerBottomIconBtn" title="Let's Chat">
+						<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-whatsapp" width="26" height="26" viewBox="0 0 24 24" stroke-width="3" stroke="#fff" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M3 21l1.65 -3.8a9 9 0 1 1 3.4 2.9l-5.05 .9"></path><path d="M9 10a.5 .5 0 0 0 1 0v-1a.5 .5 0 0 0 -1 0v1a5 5 0 0 0 5 5h1a.5 .5 0 0 0 0 -1h-1a.5 .5 0 0 0 0 1"></path></svg>
+						+92-341-0895555</a>
+				</div>
+			</div>
 		</div>
 	</div>
 
