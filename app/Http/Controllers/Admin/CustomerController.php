@@ -297,6 +297,7 @@ class CustomerController extends Controller
             $request['meeting_verification'] = (isset($request['meeting_verification'])) ? 1 : 0;
             $request['nationality_verification'] = (isset($request['nationality_verification'])) ? 1 : 0;
             $request['salary_verification'] = (isset($request['salary_verification'])) ? 1 : 0;
+            $request['is_highlight'] = (isset($request['is_highlight'])) ? 1 : 0;
 
             if (isset($request['profile_pic_status']) || isset($request['profile_gallery_status'])) {
                 $request['changes_approval'] = 0;
@@ -539,6 +540,7 @@ class CustomerController extends Controller
         $sects = [];
         $states = [];
         $cities = [];
+        $areas = [];
 
 //        $statesOfOrigin = [];
 //        $citiesOfOrigin = [];
@@ -615,6 +617,7 @@ class CustomerController extends Controller
             'halals',
             'states',
             'cities',
+            'areas',
 //            'statesOfOrigin',
 //            'citiesOfOrigin',
             'statesExpectation',

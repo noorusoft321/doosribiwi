@@ -25,6 +25,9 @@
 					<li class="nav-item">
 						<a class="nav-link" href="{{route('customer.search')}}"> PROPOSALS </a>
 					</li>
+{{--					<li class="nav-item">--}}
+{{--						<a class="nav-link" href="{{route('featured.proposals')}}"> BEST PROPOSALS </a>--}}
+{{--					</li>--}}
 					<li class="nav-item">
 						<a class="nav-link" href="{{route('free.rishta.services')}}"> SERVICES </a>
 					</li>

@@ -156,7 +156,9 @@
                                     <tr>
                                         <td>Mobile # <a onclick="showDivContact(this)" href="javascript:void(0);"><i class="fa fa-eye"></i></a></td>
                                         <td>
-                                            <strong style="display: none;">{{($customer->mobile_country_code > 0) ? "(+".$customer->mobile_country_code.") - " : ''}} {{$customer->mobile}}</strong>
+                                            <strong style="display: none;">
+                                                {{($customer->mobile_country_code > 0) ? "(+".$customer->mobile_country_code.") - " : ''}} {{$customer->mobile}}
+                                            </strong>
                                         </td>
                                     </tr>
                                     <tr>
@@ -397,6 +399,14 @@
                                             <td>
                                                 <div class="form-check form-switch" title="Profile Gallery Status">
                                                     <input class="form-check-input" type="checkbox" name="profile_gallery_status" id="profile_gallery_status" {{($customer->profile_gallery_status==1) ? 'checked' : ''}} >
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Highlight List</td>
+                                            <td>
+                                                <div class="form-check form-switch" title="Show on Highlight List">
+                                                    <input class="form-check-input" type="checkbox" name="is_highlight" id="is_highlight" {{($customer->is_highlight==1) ? 'checked' : ''}} >
                                                 </div>
                                             </td>
                                         </tr>

@@ -75,6 +75,7 @@ class Customer extends Authenticatable
         'changes_approval',
         'rejected_reason',
         'blocked_reason',
+        'is_highlight',
         'last_activity'
     ];
 
@@ -87,7 +88,7 @@ class Customer extends Authenticatable
     ];
 
 //'lastMessage',
-    protected $appends = ['faker_id','full_name','imageFullPath','un_seen_messages_count','age','gender_name','assign_user_name','assign_lead_user_name','match_assign_user_name','match_assign_lead_user_name'];
+    protected $appends = ['faker_id','full_name','verification_status','imageFullPath','un_seen_messages_count','age','gender_name','assign_user_name','assign_lead_user_name','match_assign_user_name','match_assign_lead_user_name'];
 
     public function getFakerIdAttribute()
     {
@@ -97,6 +98,32 @@ class Customer extends Authenticatable
     public function getFullNameAttribute()
     {
         return $this->first_name.' '.$this->last_name;
+    }
+
+    public function getVerificationStatusAttribute()
+    {
+        if (
+            $this->email_verified==1 &&
+            $this->mobile_verified==1 &&
+            $this->profile_pic_status==1 &&
+            $this->meeting_verification==1 &&
+            $this->age_verification==1 &&
+            $this->education_verification==1 &&
+            $this->location_verification==1 &&
+            $this->nationality_verification==1
+        ) {
+            // return 'Verified';
+            return '1';
+        } elseif ($this->email_verified==1 &&
+            $this->mobile_verified==1 &&
+            $this->profile_pic_status==1 &&
+            $this->meeting_verification==1) {
+            // return 'Semi Verified';
+            return '3';
+        } else {
+            // return 'Not Verified';
+            return '2';
+        }
     }
 
     public function getImageFullPathAttribute()

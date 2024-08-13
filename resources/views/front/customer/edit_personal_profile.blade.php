@@ -130,10 +130,28 @@
                                                     <label class="fieldlabels" for="city_id">* City</label>
                                                 </div>
                                                 <div class="col-md-8">
-                                                    <select name="city_id" id="city_id" class="form-select form-control rounded-pill" >
+                                                    <select onchange="getAreas(this,'area_id')" name="city_id" id="city_id" class="form-select form-control rounded-pill" >
                                                         <option value="">Select</option>
                                                         @foreach($cities as $val)
                                                             <option value="{{$val->id}}" {{(!empty($customer->customerOtherInfo) && $customer->customerOtherInfo->city_id==$val->id) ? 'selected' : ''}}>{{$val->title}}</option>
+                                                        @endforeach
+                                                    </select>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 m-tb-20">
+                                        <div class="form-group">
+                                            <div class="row mx-auto">
+                                                <div class="col-md-4">
+                                                    <label class="fieldlabels" for="area_id">Area</label>
+                                                </div>
+                                                <div class="col-md-8">
+                                                    <select name="area_id" id="area_id" class="form-select form-control rounded-pill" >
+                                                        <option value="">Select</option>
+                                                        @foreach($areas as $val)
+                                                            <option value="{{$val->id}}" {{(!empty($customer->customerOtherInfo) && $customer->customerOtherInfo->area_id==$val->id) ? 'selected' : ''}}>{{$val->title}}</option>
                                                         @endforeach
                                                     </select>
 

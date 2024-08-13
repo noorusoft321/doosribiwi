@@ -13,6 +13,7 @@ public/customer_verification
 public/customPages
 public/gallery
 public/career_image
+public/assets/img/bank
 /storage/*.key
 /vendor
 .env

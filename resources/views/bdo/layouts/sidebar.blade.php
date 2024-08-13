@@ -28,13 +28,13 @@
 			</a>
 		</li>
 
-{{--		--}}{{-- Customer Support --}}
-{{--		<li>--}}
-{{--			<a href="{{route('bdo.get.support')}}">--}}
-{{--				<div class="parent-icon"><i class='bx bx-support'></i></div>--}}
-{{--				<div class="menu-title">Customer Support</div>--}}
-{{--			</a>--}}
-{{--		</li>--}}
+{{--		 Customer Support--}}
+		<li>
+			<a href="{{route('bdo.get.support')}}">
+				<div class="parent-icon"><i class='bx bx-support'></i></div>
+				<div class="menu-title">Customer Support</div>
+			</a>
+		</li>
 
 {{--		--}}{{-- Package Request --}}
 {{--		<li>--}}

@@ -112,5 +112,9 @@ return [
         'Dr. Anum' => '+923301239098',
         'Mrs. Khan (Australia 🇦🇺) WhatsApp' => '+61480009047'
     ],
-
+    'verification_status' => [
+        '1' => 'Verified',
+        '2' => 'Not Verified',
+        '3' => 'Semi Verified'
+    ]
 ];

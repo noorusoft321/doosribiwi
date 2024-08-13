@@ -3,6 +3,7 @@ namespace App\Http\Controllers\Front;
 use App\helpers\FakerURL;
 use App\Http\Controllers\Controller;
 use App\Models\AnnualInCome;
+use App\Models\Area;
 use App\Models\AreYouRevert;
 use App\Models\Caste;
 use App\Models\City;
@@ -198,14 +199,17 @@ class CustomerAuthController extends Controller
         $request = request()->all();
         $messages['DOB'] = 'The date of birth field is required and must be 18 plus.';
         $messages['country_id'] = 'The country field is required.';
-        $messages['city_id'] = 'The city field is required.';
         $messages['state_id'] = 'The state field is required.';
+        $messages['city_id'] = 'The city field is required.';
+        $messages['area_id'] = 'The area field is required.';
         $messages['RegistrationsReasonsID'] = 'The registration reason field is required.';
         $messages['MaritalStatusID'] = 'The marital status field is required.';
-        $validator = Validator::make($request, [
+
+        $rules = [
             'gender'                 => 'required|numeric|in:1,2',
             'first_name'             => 'required|regex:/^[a-zA-Z]+$/u|max:255|min:3',
-            'mobile'                 => 'required|unique:shaadi_customers,mobile|regex:/^([0-9\s\-\+\(\)]*)$/|min:10',
+//            'mobile'                 => 'required|unique:shaadi_customers,mobile|regex:/^([0-9\s\-\+\(\)]*)$/|min:10',
+            'mobile'                 => 'required|regex:/^([0-9\s\-\+\(\)]*)$/|min:10',
             'country_id'             => 'required|numeric|exists:shaadi_countries,id',
             'state_id'               => 'required|numeric|exists:shaadi_states,id',
             'city_id'                => 'required|numeric|exists:shaadi_cities,id',
@@ -216,7 +220,17 @@ class CustomerAuthController extends Controller
             'MaritalStatusID'        => 'required|numeric|exists:shaadi_marital_statuses,id',
             'read_policy'            => 'required',
             'g-recaptcha-response'   => ['required', new ReCaptcha]
-        ],$messages);
+        ];
+
+        if (!empty($request['last_name'])) {
+            $rules['last_name'] = 'required|regex:/^[a-zA-Z]+$/u|max:255|min:3';
+        }
+
+        if (!empty($request['city_id']) && in_array($request['city_id'], [551,748,1,592,591,594,552])) {
+            $rules['area_id'] = 'required|numeric|exists:shaadi_areas,id';
+        }
+
+        $validator = Validator::make($request, $rules, $messages);
 
         if ($validator->fails()) {
             return response()->json(['errors'=>$validator->errors(), 'status'=>'error'],422);
@@ -469,9 +483,16 @@ class CustomerAuthController extends Controller
             'DOB'             => ['required','date_format:Y-m-d', new Adult],
             'address'         => 'required'
         ];
+        if (!empty($request['last_name'])) {
+            $rules['last_name'] = 'required|regex:/^[a-zA-Z]+$/u|max:255|min:3';
+        }
+        if (!empty($request['city_id']) && in_array($request['city_id'], [551,748,1,592,591,594,552])) {
+            $rules['area_id'] = 'required|numeric|exists:shaadi_areas,id';
+        }
         $messages['state_id'] = 'The state field is required.';
         $messages['country_id'] = 'The country field is required.';
         $messages['city_id'] = 'The city field is required.';
+        $messages['area_id'] = 'The area field is required.';
         $messages['DOB'] = 'The date of birth field is required and must be 18 plus';
         $messages['MaritalStatusID'] = 'The marital status field is required.';
         $validator = Validator::make($request, $rules, $messages);
@@ -1872,6 +1893,23 @@ class CustomerAuthController extends Controller
         ], 200);
     }
 
+    public function getAreas($cityId)
+    {
+        $data = [];
+        if (!empty($cityId)) {
+            $data = Area::select('id','title')->where([
+                'city_id' => $cityId,
+                'deleted'  => 0
+            ])->orderBy('title','asc')->get();
+        }
+        return response()->json([
+            'status'  => 'success',
+            'message' => 'Fetched successfully.',
+            'data'    => $data,
+            'code'    => 200
+        ], 200);
+    }
+
     public function getSects($religionId)
     {
         $data = [];
@@ -2008,6 +2046,160 @@ class CustomerAuthController extends Controller
             'disabilities',
             'castes',
             'slug'
+        ));
+    }
+
+    public function featuredProposals()
+    {
+        $request = request()->all();
+        $data = [
+            "marital_status" => (isset($request['marital_status'])) ? $request['marital_status'] : '',
+            "gender"         => (isset($request['gender'])) ? $request['gender'] : '',
+            "country"        => (isset($request['country'])) ? $request['country'] : '',
+            "state"          => (isset($request['state'])) ? $request['state'] : '',
+            "city"           => (isset($request['city'])) ? $request['city'] : '',
+            "religion"       => (isset($request['religion'])) ? $request['religion'] : '',
+            "caste"          => (isset($request['caste'])) ? $request['caste'] : '',
+            "age_from"       => (isset($request['age_from'])) ? $request['age_from'] : '',
+            "age_to"         => (isset($request['age_to'])) ? $request['age_to'] : '',
+            "page"           => (isset($request['page'])) ? $request['page'] : ''
+        ];
+
+        $customers = Customer::where('deleted',0)->with([
+            'getCountryName',
+            'getCitiesName',
+            'getReligionName',
+            'getSectName',
+            'getCasteName',
+            'getMaritalStatusName',
+            'getCountrySlug',
+            'getCitySlug',
+            'customerOtherInfo' => function($q) use($request) {
+                if (isset($request['marital_status']) && !empty($request['marital_status'])) {
+                    $q->where('MaritalStatusID', $request['marital_status']);
+                }
+                if (isset($request['gender']) && !empty($request['gender'])) {
+                    $q->where('gender', $request['gender']);
+                }
+                if (!empty($request['age_from']) && !empty($request['age_to'])) {
+                    $q->whereBetween('age', [$request['age_from'], $request['age_to']]);
+                } elseif (!empty($request['age_from'])) {
+                    $q->where('age', '>=', $request['age_from']);
+                } elseif (!empty($request['age_to'])) {
+                    $q->where('age', '<=', $request['age_to']);
+                }
+                if (isset($request['country']) && !empty($request['country'])) {
+                    $q->where('country_id', $request['country']);
+                }
+                if (isset($request['country']) && $request['state'] > 0) {
+                    $q-> where('state_id', $request['state']);
+                }
+                if (isset($request['city']) && $request['city'] > 0) {
+                    $q->where('city_id', $request['city']);
+                }
+            }, 'customerReligionInfo' => function($q) use ($request) {
+                if (isset($request['religion']) && !empty($request['religion'])) {
+                    $q->where('Religions', $request['religion']);
+                }
+            }, 'customerPersonalInfo' => function($q) use ($request) {
+                if (isset($request['caste']) && $request['caste'] > 0) {
+                    $q->where('Caste', $request['caste']);
+                }
+            }
+        ]);
+
+        if (
+            isset($request['marital_status']) ||
+            isset($request['gender']) ||
+            isset($request['age_from']) ||
+            isset($request['age_to']) ||
+            isset($request['country']) ||
+            isset($request['state']) ||
+            isset($request['city'])
+        ) {
+            $customers = $customers->whereHas('customerOtherInfo', function($q) use($request){
+                if (!empty($request['marital_status'])) {
+                    $q->where('MaritalStatusID', $request['marital_status']);
+                }
+                if (!empty($request['gender'])) {
+                    $q->where('gender', $request['gender']);
+                }
+                if (!empty($request['age_from']) && !empty($request['age_to'])) {
+                    $q->whereBetween('age', [$request['age_from'], $request['age_to']]);
+                } elseif (!empty($request['age_from'])) {
+                    $q->where('age', '>=', $request['age_from']);
+                } elseif (!empty($request['age_to'])) {
+                    $q->where('age', '<=', $request['age_to']);
+                }
+                if (!empty($request['country'])) {
+                    $q->where('country_id', $request['country']);
+                }
+                if ($request['state'] > 0) {
+                    $q-> where('state_id', $request['state']);
+                }
+                if ($request['city'] > 0) {
+                    $q->where('city_id', $request['city']);
+                }
+            });
+        }
+
+        if (isset($request['religion'])) {
+            $customers = $customers->whereHas('customerReligionInfo', function($q) use ($request) {
+                if (!empty($request['religion'])) {
+                    $q->where('Religions', $request['religion']);
+                }
+            });
+        }
+
+        if (isset($request['caste'])) {
+            $customers = $customers->whereHas('customerPersonalInfo', function($q) use ($request) {
+                if (!empty($request['caste'])) {
+                    $q->where('Caste', $request['caste']);
+                }
+            });
+        }
+
+        $customers = $customers->where('deleted',0)
+            ->where('profile_status', 1)
+            ->where('email_verified', 1)
+            ->where('profile_pic_status', 1)
+            ->where('profile_pic_client_status', 1)
+            ->where('is_highlight', 1)
+            ->whereNotIn('image', ['default-female.jpg','default-male.jpg','default-user.png'])
+            ->orderBy('blur_percent', 'asc')
+            ->orderBy('id', 'desc')
+//            ->orderBy('featuredProfile','desc')
+//            ->orderBy('age_verification','desc')
+//            ->orderBy('education_verification','desc')
+//            ->orderBy('location_verification','desc')
+//            ->orderBy('meeting_verification','desc')
+//            ->orderBy('nationality_verification','desc')
+//            ->orderBy('salary_verification','desc')
+            ->paginate(9);
+
+        $countries = Country::where('deleted',0)->orderBy('order_at','asc')->get();
+        $states = [];
+        $cities = [];
+        if (isset($request['country']) && !empty($request['country'])) {
+            $states = State::where('country_id',$request['country'])->where('deleted',0)->orderBy('order_at','asc')->get();
+        }
+        if (isset($request['state']) && !empty($request['state'])) {
+            $cities = City::where('state_id',$request['state'])->where('deleted',0)->orderBy('order_at','asc')->get();
+        }
+        $religions = Religion::where('deleted',0)->orderBy('order_at','asc')->get();
+        $maritalStatuses = MaritalStatus::where('deleted',0)->orderBy('order_at','asc')->get();
+        $castes = Caste::where('deleted',0)->orderBy('order_at','asc')->get();
+        $title = 'Best Pakistani & Abroad Proposals (Rishtay)';
+        return view('front.featured_proposals',compact(
+            'title',
+            'customers',
+            'data',
+            'countries',
+            'states',
+            'cities',
+            'religions',
+            'maritalStatuses',
+            'castes'
         ));
     }
 

@@ -67,16 +67,21 @@ Route::group([ 'middleware' => 'customer.shaadi.no.auth'], function () {
 Route::get('/search/{slug?}', [CustomerAuthController::class, 'search'])->name('customer.search')->middleware('customer.profile.complete.decider');
 Route::post('/search-process', [CustomerAuthController::class, 'searchProcess'])->name('customer.search.process');
 
+/* Featured Proposals */
+Route::get('/rishta-pakistan-proposals', [CustomerAuthController::class, 'featuredProposals'])->name('featured.proposals');
+
 /* View Profile */
 //Route::get('/view-profile/{userName}', [CustomerAuthController::class, 'viewProfile'])->name('view.profile');
 
 Route::get('/get-states/{countryId?}', [CustomerAuthController::class, 'getStates'])->name('get.states');
 Route::get('/get-cities/{stateId?}', [CustomerAuthController::class, 'getCities'])->name('get.cities');
+Route::get('/get-areas/{cityId?}', [CustomerAuthController::class, 'getAreas'])->name('get.areas');
 Route::get('/get-sects/{religionId?}', [CustomerAuthController::class, 'getSects'])->name('get.sects');
 Route::get('/get-major-courses/{educationId?}', [CustomerAuthController::class, 'getMajorCourses'])->name('get.major.courses');
 
 /*Payment Options*/
 Route::get( '/payment', [HomeController::class, 'paymentOption'])->name('payment.options');
+Route::post('/send-support-message', [HomeController::class, 'sendSupportMessage'])->name('send.support.message');
 
 /*Blogs*/
 Route::get( '/blog', [HomeController::class, 'blog'])->name('blog');

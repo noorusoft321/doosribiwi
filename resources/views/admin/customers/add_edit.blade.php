@@ -127,10 +127,21 @@
                                     <div class="col-6">
                                         <div class="form-group">
                                             <label for="city_id">*City</label>
-                                            <select class="multiple-select form-control" name="city_id">
+                                            <select onchange="getAreas(this,'area_id')" class="multiple-select form-control" name="city_id">
                                                 <option value="">Select</option>
                                                 @foreach($cities as $val)
                                                     <option value="{{$val->id}}" {{($customer->customerOtherInfo->city_id==$val->id) ? 'selected' : ''}}>{{$val->title}}</option>
+                                                @endforeach
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="form-group">
+                                            <label for="area_id">Area</label>
+                                            <select class="multiple-select form-control" name="area_id">
+                                                <option value="">Select</option>
+                                                @foreach($areas as $val)
+                                                    <option value="{{$val->id}}" {{($customer->customerOtherInfo->area_id==$val->id) ? 'selected' : ''}}>{{$val->title}}</option>
                                                 @endforeach
                                             </select>
                                         </div>
@@ -212,9 +223,20 @@
                                     <div class="col-6">
                                         <div class="form-group">
                                             <label for="city_id">*City</label>
-                                            <select class="multiple-select form-control" name="city_id">
+                                            <select onchange="getAreas(this,'area_id')" class="multiple-select form-control" name="city_id">
                                                 <option value="">Select</option>
                                                 @foreach($cities as $val)
+                                                    <option value="{{$val->id}}">{{$val->title}}</option>
+                                                @endforeach
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="form-group">
+                                            <label for="area_id">Area</label>
+                                            <select class="multiple-select form-control" name="area_id">
+                                                <option value="">Select</option>
+                                                @foreach($areas as $val)
                                                     <option value="{{$val->id}}">{{$val->title}}</option>
                                                 @endforeach
                                             </select>
@@ -1521,9 +1543,20 @@
                                 <div class="col-6">
                                     <div class="form-group">
                                         <label for="city_id">*City</label>
-                                        <select class="multiple-select form-control" name="city_id">
+                                        <select onchange="getAreas(this,'area_id')" class="multiple-select form-control" name="city_id">
                                             <option value="">Select</option>
                                             @foreach($cities as $val)
+                                                <option value="{{$val->id}}">{{$val->title}}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <label for="area_id">Area</label>
+                                        <select class="multiple-select form-control" name="area_id">
+                                            <option value="">Select</option>
+                                            @foreach($areas as $val)
                                                 <option value="{{$val->id}}">{{$val->title}}</option>
                                             @endforeach
                                         </select>
@@ -2343,6 +2376,31 @@
             let fieldShortCode = $(`select[name="${putInField}"]`);
             if (refrenceId) {
                 axios.get(`{{route('get.cities')}}/${refrenceId}`).then(function (res) {
+                    if (res.data.data.length > 0) {
+                        fieldShortCode.empty();
+                        fieldShortCode.append(new Option(selectName, selectValue));
+                        $.each(res.data.data, function (k, v) {
+                            fieldShortCode.append(new Option(v.title, v.id));
+                        });
+                        return;
+                    }
+                }).catch(function (error) {
+                    fieldShortCode.empty();
+                    fieldShortCode.html(`<option value="${selectValue}">${selectName}</option>`);
+                    return;
+                });
+            }
+            fieldShortCode.empty();
+            fieldShortCode.html(`<option value="${selectValue}">${selectName}</option>`);
+            return;
+        }
+
+        function getAreas(input,putInField,selectName='Select') {
+            let selectValue = selectName=='Select' ? '' : '0';
+            let refrenceId = $(input).val();
+            let fieldShortCode = $(`select[name="${putInField}"]`);
+            if (refrenceId) {
+                axios.get(`{{route('get.areas')}}/${refrenceId}`).then(function (res) {
                     if (res.data.data.length > 0) {
                         fieldShortCode.empty();
                         fieldShortCode.append(new Option(selectName, selectValue));

@@ -10,6 +10,7 @@ use App\Models\Customer;
 use App\Models\CustomerImage;
 use App\Models\CustomerNotificationPreference;
 use App\Models\Package;
+use App\Models\SupportMessage;
 use App\Models\User;
 use App\Services\TwoFactor\Authy;
 use Illuminate\Support\Facades\DB;
@@ -1079,6 +1080,7 @@ class CallCenterController extends Controller
             $request['profile_pic_status'] = (isset($request['profile_pic_status'])) ? $request['profile_pic_status'] : 0;
             $request['profile_gallery_status'] = (isset($request['profile_gallery_status'])) ? 1 : 0;
             $request['profile_home_page_status'] = (isset($request['profile_home_page_status'])) ? 1 : 0;
+            $request['is_highlight'] = (isset($request['is_highlight'])) ? 1 : 0;
 
             $customer->update($request);
 

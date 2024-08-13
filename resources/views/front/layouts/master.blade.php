@@ -106,8 +106,8 @@
 			text-align: center;
 			border-radius: 4px;
 			position: fixed;
-			bottom: 30px;
-			right: 30px;
+			bottom: 10px;
+			right: 70px;
 			transition: background-color .3s,
 			opacity .5s, visibility .5s;
 			opacity: 0;
@@ -174,6 +174,13 @@
             color: #fff;
             overflow: hidden;
         }
+		.btn-view-call {
+			border: none;
+			background: green;
+			background: linear-gradient(0deg, green 0%, #13B955 100%);
+			color: #fff;
+			overflow: hidden;
+		}
 		.custom-btn:hover {
 			text-decoration: none;
 			color: #fff;
@@ -272,6 +279,67 @@
 			font-weight: 500;
 			color: #ccc;
 		}
+
+		/* Button used to open the chat form - fixed at the bottom of the page */
+		.open-button {
+			display: inline-block;
+			background-color: #13B955;
+			width: 50px;
+			height: 50px;
+			border-radius: 25px;
+			text-align: center;
+			position: fixed;
+			bottom: 10px;
+			right: 10px;
+			z-index: 1000;
+		}
+
+		/* The popup chat - hidden by default */
+		.chat-popup {
+			display: none;
+			/*display: block;*/
+			position: fixed;
+			bottom: 10px;
+			right: 10px;
+			border-radius: 10px;
+			box-shadow: -10px -5px 20px #0000003d;
+			border: none;
+			z-index: 1000;
+			width: 350px;
+			max-width: 100%;
+			padding: 10px;
+			background: #ffffff;
+			height: max-content;
+			/*max-height: max-content;*/
+			text-align: center;
+		}
+		.chat-popup p {
+			font-size: .9rem;
+			color: #767676;
+			padding-bottom: 5px;
+			/*border-top: 2px solid #9B2C47;*/
+			/*border-bottom: 2px solid #9B2C47;*/
+		}
+		.chat-popup p b {
+			font-size: 1rem;
+			color: #767676;
+			font-weight: 600;
+		}
+		.support-buttons button {
+			margin-top: 10px;
+			padding: 10px 25px;
+			border: none;
+			border-radius: 20px;
+			margin-left: 10px;
+			color: #fff;
+			font-weight: 600;
+		}
+		.support-buttons button:nth-child(1) {
+			background: #13B955;
+		}
+		.support-buttons button:nth-child(2) {
+			background: #9B2C47;
+		}
 		@media only screen and (max-width: 600px) {
 			html, body {
 				width: 100% !important;
@@ -302,8 +370,37 @@
 
 <body>
 
-<a id="goTopButton"></a>
-
+<a id="goTopButton" title="Go to top"></a>
+<button class="open-button" title="Website Support" onclick="openSupportBox()">
+	<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-hipchat" width="28" height="28" viewBox="0 0 24 24" stroke-width="2" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M17.802 17.292s.077 -.055 .2 -.149c1.843 -1.425 3 -3.49 3 -5.789c0 -4.286 -4.03 -7.764 -9 -7.764c-4.97 0 -9 3.478 -9 7.764c0 4.288 4.03 7.646 9 7.646c.424 0 1.12 -.028 2.088 -.084c1.262 .82 3.104 1.493 4.716 1.493c.499 0 .734 -.41 .414 -.828c-.486 -.596 -1.156 -1.551 -1.416 -2.29z" /><path d="M7.5 13.5c2.5 2.5 6.5 2.5 9 0" /></svg>
+</button>
+<div class="chat-popup">
+	<form id="chatSupportForm">
+		<h5 class="text-theme font-weight-600">Website Support</h5>
+		<p>
+			If you have any query regarding the website, please ask.
+			<br>
+			<b>اگر آپ کو ویب سائٹ کے بارے میں کوئی سوال ہے، تو براہ کرم پوچھیں۔</b>
+		</p>
+		<hr>
+		<div class="form-group my-3">
+			<label class="float-start" for="full_name">Full Name*</label>
+			<input type="text" name="full_name" id="full_name" class="form-control">
+		</div>
+		<div class="form-group my-3">
+			<label class="float-start" for="mobile_number">Mobile Number* <sub>(Use country code)</sub> </label>
+			<input type="text" name="mobile_number" id="mobile_number" class="form-control">
+		</div>
+		<div class="form-group my-3">
+			<label class="float-start" for="discussion">Message*</label>
+			<textarea name="discussion" id="discussion" class="form-control" rows="2"></textarea>
+		</div>
+		<div class="support-buttons">
+			<button type="button" onclick="sendSupportMessage(this)">Send</button>
+			<button type="button" onclick="closeSupportBox()">Close</button>
+		</div>
+	</form>
+</div>
 {{-- Start Header --}}
 @include('front.layouts.header')
 {{-- End Header --}}
@@ -501,6 +598,31 @@ $packageExpiryDate = (auth()->guard('customer')->check()) ? auth()->guard('custo
         return;
     }
 
+	function getAreas(input,putInField,selectName='Select') {
+		let selectValue = selectName=='Select' ? '' : '0';
+		let refrenceId = $(input).val();
+		let fieldShortCode = $(`select[name="${putInField}"]`);
+		if (refrenceId) {
+			axios.get(`{{route('get.areas')}}/${refrenceId}`).then(function (res) {
+				if (res.data.data.length > 0) {
+					fieldShortCode.empty();
+					fieldShortCode.append(new Option(selectName, selectValue));
+					$.each(res.data.data, function (k, v) {
+						fieldShortCode.append(new Option(v.title, v.id));
+					});
+					return;
+				}
+			}).catch(function (error) {
+				fieldShortCode.empty();
+				fieldShortCode.html(`<option value="${selectValue}">${selectName}</option>`);
+				return;
+			});
+		}
+		fieldShortCode.empty();
+		fieldShortCode.html(`<option value="${selectValue}">${selectName}</option>`);
+		return;
+	}
+
     function getSects(input,putInField,selectName='Select') {
         let selectValue = selectName=='Select' ? '' : '0';
         let refrenceId = $(input).val();
@@ -637,6 +759,42 @@ $packageExpiryDate = (auth()->guard('customer')->check()) ? auth()->guard('custo
     function closeFeaturedModal(input) {
         $('#staticBackdrop').modal('hide');
     }
+
+	function openSupportBox() {
+		$(':input').removeClass('has-error');
+		$('span.text-danger').remove();
+		$('.chat-popup :input').val('');
+		$('.chat-popup').show();
+	}
+
+	function closeSupportBox() {
+		$('.chat-popup').hide();
+	}
+
+	function sendSupportMessage(input) {
+		$(':input').removeClass('has-error');
+		$('span.text-danger').remove();
+		$(input).attr('disabled',true);
+		axios.post("{{route('send.support.message')}}", $('#chatSupportForm').serialize()).then(function (res) {
+			if (res.data.status=='success') {
+				alertyFy(res.data.msg,res.data.status,10000);
+				closeSupportBox();
+			} else {
+				alertyFy(res.data.msg,res.data.status,3000);
+			}
+			$(input).attr('disabled',false);
+		}).catch(function (error) {
+			$(input).attr('disabled',false);
+			if (error.response.status==422) {
+				$.each(error.response.data.errors, function (k, v) {
+					$(`#chatSupportForm :input[name="${k}"]`).addClass("has-error");
+					$(`#chatSupportForm :input[name="${k}"]`).after(`<span class="text-danger float-start">${v[0]}</span>`);
+				});
+			} else {
+				alertyFy('There is something wrong','warning',3000);
+			}
+		});
+	}
 
 </script>
 @stack('script')

@@ -41,6 +41,7 @@ use App\Models\Occupation;
 use App\Models\Religion;
 //use App\Models\SpecialGuest;
 use App\Models\State;
+use App\Models\SupportMessage;
 use App\Models\WillingToRelocate;
 //use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Validator;
@@ -788,5 +789,39 @@ class HomeController extends Controller
                 break;
         }
         return view("front.matchmaker.$slug",compact('title'));
+    }
+
+    public function sendSupportMessage()
+    {
+        $request = request()->all();
+        $messages['mobile_number'] = 'Mobile number must be filled / valid.';
+        $messages['full_name'] = 'Full name field must be filled.';
+        $messages['discussion'] = 'Message field must be filled & up to 1000 characters.';
+        $validator = Validator::make($request, [
+            'mobile_number' => 'required|digits_between:10,15',
+            'full_name'     => 'required|max:100|min:3',
+            'discussion'    => 'required|max:1000'
+        ],$messages);
+
+        if ($validator->fails()) {
+            return response()->json(['errors'=>$validator->errors(), 'status'=>'error'],422);
+        }
+
+        if (auth()->guard('customer')->check()) {
+            $request['customer_id'] = auth()->guard('customer')->id();
+        }
+        $request['ip_address'] = $_SERVER['REMOTE_ADDR'];
+
+        $supportMessage = SupportMessage::create($request);
+        if (!empty($supportMessage)) {
+            return response()->json([
+                'status' => 'success',
+                'msg'    => 'Thanks for message, our consultant will contact you soon.<br>پیغام کے لیے شکریہ، ہمارا نمائندہ جلد ہی آپ سے رابطہ کرے گا۔'
+            ]);
+        }
+        return response()->json([
+            'status' => 'warning',
+            'msg'    => 'Message has not been send.'
+        ]);
     }
 }

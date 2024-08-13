@@ -3,6 +3,7 @@
 @section('title',$title)
 
 @push('style')
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.13/css/intlTelInput.css">
 	<style>
 		label.gender {
 			width: 100%;
@@ -46,6 +47,17 @@
 		iframe {
 			height: 100% !important;
 		}
+
+		.g-recaptcha iframe {
+			height: 78px !important;
+		}
+
+		.iti--allow-dropdown input, .iti--allow-dropdown input[type=text], .iti--allow-dropdown input[type=tel], .iti--separate-dial-code input, .iti--separate-dial-code input[type=text], .iti--separate-dial-code input[type=tel] {
+			padding-right: 160px;
+		}
+		.iti.iti--allow-dropdown.iti--separate-dial-code {
+			width: 100%;
+		}
 		@media only screen and (max-width: 600px) {
 			.section-card-heading {
 				font-size: 16px !important;
@@ -58,9 +70,6 @@
 			iframe {
 				height: 100% !important;
 			}
-		}
-		.g-recaptcha iframe {
-			height: 78px !important;
 		}
 	</style>
 @endpush
@@ -114,28 +123,28 @@
 									<div class="col-md-6">
 										<div class="form-group py-xl-10">
 											<label for="first_name">*First Name</label>
-											<input type="text" name="first_name" class="form-control rounded-pill">
+											<input type="text" name="first_name" class="form-control ">
 										</div>
 									</div>
 									<div class="col-md-6">
 										<div class="form-group py-xl-10">
 											<label for="last_name">Last Name</label>
-											<input type="text" name="last_name" class="form-control rounded-pill">
+											<input type="text" name="last_name" class="form-control ">
 										</div>
 									</div>
 									<div class="col-md-6">
 										<div class="form-group py-xl-10">
 											<label for="DOB">*Date of Birth</label>
-											<input type="date" name="DOB" class="form-control rounded-pill">
+											<input type="date" name="DOB" class="form-control ">
 										</div>
 									</div>
 									<div class="col-md-6">
 										<div class="form-group py-xl-10">
 											<label for="country_id">*Country</label>
-											<select onchange="getStates(this,'state_id')" class="form-control rounded-pill" name="country_id">
+											<select onchange="getStates(this,'state_id')" class="form-control " name="country_id">
 												<option value="">Select</option>
 												@foreach($countries as $val)
-													<option value="{{$val->id}}">{{$val->name}}</option>
+													<option value="{{$val->id}}" data--iso="{{$val->iso}}">{{$val->name}}</option>
 												@endforeach
 											</select>
 										</div>
@@ -143,7 +152,7 @@
 									<div class="col-md-6">
 										<div class="form-group py-xl-10">
 											<label for="state_id">*State</label>
-											<select onchange="getCities(this,'city_id')" class="form-control rounded-pill" name="state_id">
+											<select onchange="getCities(this,'city_id')" class="form-control " name="state_id">
 												<option value="">Select</option>
 											</select>
 										</div>
@@ -151,7 +160,15 @@
 									<div class="col-md-6">
 										<div class="form-group py-xl-10">
 											<label for="city_id">*City</label>
-											<select class="form-control rounded-pill" name="city_id">
+											<select onchange="getAreas(this,'area_id')" class="form-control " name="city_id">
+												<option value="">Select</option>
+											</select>
+										</div>
+									</div>
+									<div class="col-md-6">
+										<div class="form-group py-xl-10">
+											<label for="area_id">Area</label>
+											<select class="multiple-select form-control" name="area_id">
 												<option value="">Select</option>
 											</select>
 										</div>
@@ -159,7 +176,7 @@
 									<div class="col-md-6">
 										<div class="form-group py-xl-10">
 											<label for="MaritalStatusID">*Marital Status</label>
-											<select onchange="checkAvailability(this)" class="form-control rounded-pill" name="MaritalStatusID">
+											<select onchange="checkAvailability(this)" class="form-control " name="MaritalStatusID">
 												<option value="">Select</option>
 												@foreach($maritalStatues as $val)
 													<option value="{{$val->id}}">{{$val->title}}</option>
@@ -170,19 +187,19 @@
 									<div class="col-md-6 divorceReasonDiv" style="display: none;">
 										<div class="form-group py-xl-10">
 											<label for="divorceReason">Reason</label>
-											<input type="text" name="divorceReason" class="form-control rounded-pill">
+											<input type="text" name="divorceReason" class="form-control ">
 										</div>
 									</div>
 									<div class="col-md-6 childrenQuantityDiv" style="display: none;">
 										<div class="form-group py-xl-10">
 											<label for="childrenQuantity">Children</label>
-											<input type="number" name="childrenQuantity" class="form-control rounded-pill">
+											<input type="number" name="childrenQuantity" class="form-control ">
 										</div>
 									</div>
 									<div class="col-md-6">
 										<div class="form-group py-xl-10">
 											<label for="RegistrationsReasonsID">*Reason for Registering</label>
-											<select class="form-control rounded-pill" name="RegistrationsReasonsID">
+											<select class="form-control " name="RegistrationsReasonsID">
 												<option value="">Select</option>
 												@foreach($registrationReasons as $val)
 													<option value="{{$val->id}}">{{$val->title}}</option>
@@ -191,21 +208,25 @@
 										</div>
 									</div>
 									<div class="col-md-6">
-										<div class="form-group py-xl-10">
+										<div class="form-group">
+											<input type="hidden" name="mobile_country_code" id="mobile_country_code">
 											<label for="mobile">*Mobile #</label>
-											<input onchange="checkIfExists(this)" type="text" name="mobile" class="form-control rounded-pill">
+											<div class="form-group mobile-parent-input py-xl-10">
+												<input id="mobile_code" type="text" name="mobile" class="form-control">
+											</div>
+{{--											<input onchange="checkIfExists(this)" type="text" name="mobile" class="form-control ">--}}
 										</div>
 									</div>
 									<div class="col-md-6">
 										<div class="form-group py-xl-10">
 											<label for="email">*Email</label>
-											<input onchange="checkIfExists(this)" type="email" name="email" class="form-control rounded-pill">
+											<input onchange="checkIfExists(this)" type="email" name="email" class="form-control ">
 										</div>
 									</div>
 									<div class="col-md-6">
 										<div class="form-group py-xl-10">
 											<label for="password">*Password</label>
-											<input type="password" name="password" class="form-control rounded-pill">
+											<input type="password" name="password" class="form-control ">
 											<i class="fa fa-eye" id="togglePassword"></i>
 										</div>
 									</div>
@@ -249,6 +270,7 @@
 
 @push('script')
 	<script src='https://www.google.com/recaptcha/api.js'></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.13/js/intlTelInput-jquery.min.js"></script>
 	<script>
 		$(function () {
             $('input[name="gender"]').change(function() {
@@ -272,6 +294,16 @@
                     $('.registerOtherPart').show('slow');
 				}
             });
+
+			$('select[name="country_id"]').on('change', function(){
+				let countryIso = $('select[name="country_id"] option:selected').attr('data--iso');
+				$('.mobile-parent-input').html('<input id="mobile_code" type="text" name="mobile" class="form-control">');
+				$("#mobile_code").intlTelInput({
+					initialCountry: countryIso,
+					separateDialCode: true,
+					utilsScript:"https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js"
+				});
+			});
         });
         function authAct(input) {
             $(input).attr('disabled',true);

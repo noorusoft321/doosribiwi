@@ -140,7 +140,9 @@
                                     <tr>
                                         <td>Mobile # <a onclick="showDivContact(this)" href="javascript:void(0);"><i class="fa fa-eye"></i></a></td>
                                         <td>
-                                            <strong style="display: none;">{{($customer->mobile_country_code > 0) ? "(+".$customer->mobile_country_code.") - " : ''}} {{$customer->mobile}}</strong>
+                                            <strong style="display: none;">
+                                                {{($customer->mobile_country_code > 0) ? "(+".$customer->mobile_country_code.") - " : ''}} {{$customer->mobile}}
+                                            </strong>
                                         </td>
                                     </tr>
                                     <tr>
