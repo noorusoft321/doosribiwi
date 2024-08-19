@@ -306,6 +306,7 @@
 			});
         });
         function authAct(input) {
+			$('input[name="mobile_country_code"]').val($('.iti__selected-dial-code').text());
             $(input).attr('disabled',true);
             $(':input').removeClass('has-error');
             $('.text-danger').remove();
