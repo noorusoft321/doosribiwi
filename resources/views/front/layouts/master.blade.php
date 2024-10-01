@@ -340,6 +340,120 @@
 		.support-buttons button:nth-child(2) {
 			background: #9B2C47;
 		}
+		/* General GDPR Banner Styling */
+		.gdpr-banner {
+			position: fixed;
+			bottom: 0;
+			width: 100%;
+			background-color: #fff;
+			color: #000;
+			padding: 20px;
+			z-index: 9999;
+			box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.2);
+		}
+
+		.gdpr-banner-content {
+			align-items: center;
+			justify-content: center;
+			margin: auto;
+		}
+
+		.gdpr-logo {
+			text-align: center;
+		}
+
+		.gdpr-logo-img {
+			width: 60%;
+			height: auto;
+			text-align: center;
+		}
+
+		.gdpr-text-section {
+			flex: 1;
+		}
+
+		/* Text Styling */
+		.gdpr-banner-text {
+			font-size: 16px;
+			line-height: 1.5;
+			margin-bottom: 20px;
+		}
+
+		.gdpr-link {
+			color: #085282;
+			text-decoration: underline;
+			font-weight: 500;
+		}
+		.gdpr-link:hover {
+			font-weight: 600;
+		}
+
+		/* GDPR Categories Styling */
+		.gdpr-categories {
+			display: flex;
+			gap: 20px;
+			margin-bottom: 20px;
+		}
+
+		.gdpr-category {
+			display: flex;
+			align-items: center;
+			font-size: 14px;
+		}
+
+		.gdpr-category span {
+			margin-right: 10px;
+			font-weight: 500;
+		}
+
+		/* Toggle Switch Styling */
+		.toggle-switch {
+			position: relative;
+			display: inline-block;
+			width: 50px;
+			height: 20px;
+		}
+
+		.toggle-switch input {
+			opacity: 0;
+			width: 0;
+			height: 0;
+		}
+
+		.slider-gdpr {
+			position: absolute;
+			cursor: pointer;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			background-color: #ccc;
+			border-radius: 34px;
+			transition: 0.4s;
+		}
+
+		.slider-gdpr:before {
+			position: absolute;
+			content: "";
+			height: 14px;
+			width: 14px;
+			border-radius: 50%;
+			left: 4px;
+			bottom: 3px;
+			background-color: white;
+			transition: 0.4s;
+		}
+
+		input:checked + .slider-gdpr {
+			background-color: #085282;
+		}
+
+		input:checked + .slider-gdpr:before {
+			transform: translateX(18px);
+		}
+		.hidden {
+			display: none;
+		}
 		@media only screen and (max-width: 600px) {
 			html, body {
 				width: 100% !important;
@@ -364,11 +478,74 @@
 			.toggle-main {
 				display: flex !important;
 			}
+			/* GDPR Categories Styling */
+			.gdpr-categories {
+				display: grid;
+			}
+			.gdpr-banner-text {
+				font-size: 14px;
+			}
 		}
 	</style>
 </head>
 
 <body>
+
+<div id="gdpr-consent-banner" class="gdpr-banner hidden">
+	<div class="gdpr-banner-content row">
+		<div class="col-auto">
+			<div class="gdpr-logo">
+				<img src="{{ asset('images/doosri-biwi-dark-logo.png') }}" alt="DoosriBiwi.Com" class="gdpr-logo-img">
+			</div>
+		</div>
+		<div class="col">
+			<div class="gdpr-text-section">
+				<h4 class="font-weight-600">This website uses cookies</h4>
+				<p class="gdpr-banner-text">
+					We use cookies to personalize content and ads, provide social media features, and analyze our traffic. We also share information about your use of our site with our social media, advertising, and analytics partners, who may combine it with other information that you have provided to them or that they have collected from your use of their services.
+					<a target="_blank" href="{{ route('privacy.policy') }}" class="gdpr-link">Learn more</a>
+				</p>
+
+				<div class="gdpr-categories">
+					<div class="gdpr-category">
+						<span>Necessary</span>
+						<label class="toggle-switch">
+							<input type="checkbox" id="necessary-cookies" checked disabled>
+							<span class="slider-gdpr"></span>
+						</label>
+					</div>
+					<div class="gdpr-category">
+						<span>Preferences</span>
+						<label class="toggle-switch">
+							<input type="checkbox" id="preferences-cookies">
+							<span class="slider-gdpr"></span>
+						</label>
+					</div>
+					<div class="gdpr-category">
+						<span>Statistics</span>
+						<label class="toggle-switch">
+							<input type="checkbox" id="statistics-cookies">
+							<span class="slider-gdpr"></span>
+						</label>
+					</div>
+					<div class="gdpr-category">
+						<span>Marketing</span>
+						<label class="toggle-switch">
+							<input type="checkbox" id="marketing-cookies">
+							<span class="slider-gdpr"></span>
+						</label>
+					</div>
+				</div>
+
+				<div class="gdpr-buttons">
+					<button id="accept-all-gdpr" class="btn btn-outline-primary font-weight-600 p-lr-30 mb-2">Allow All</button>
+					<button id="save-gdpr" class="btn btn-outline-primary font-weight-600 p-lr-30 mb-2">Allow Selection</button>
+					<button id="deny-gdpr" class="btn btn-outline-primary font-weight-600 p-lr-30 mb-2">Deny</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
 
 <a id="goTopButton" title="Go to top"></a>
 <button class="open-button" title="Website Support" onclick="openSupportBox()">
@@ -466,13 +643,65 @@ $packageExpiryDate = (auth()->guard('customer')->check()) ? auth()->guard('custo
 <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.js"></script>
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
-    baguetteBox.run('.tz-gallery');
-</script>
-<script>
-    AOS.init();
     let authCheckGlobally = '{{auth()->guard('customer')->check()}}';
 
     var btn = $('#goTopButton');
+
+    baguetteBox.run('.tz-gallery');
+
+    AOS.init();
+
+    document.addEventListener('DOMContentLoaded', function () {
+        const banner = document.getElementById('gdpr-consent-banner');
+        const acceptAllBtn = document.getElementById('accept-all-gdpr');
+        const denyBtn = document.getElementById('deny-gdpr');
+        const savePreferencesBtn = document.getElementById('save-gdpr');
+
+        const preferencesCheckbox = document.getElementById('preferences-cookies');
+        const statisticsCheckbox = document.getElementById('statistics-cookies');
+        const marketingCheckbox = document.getElementById('marketing-cookies');
+
+        // Check if user already accepted cookies
+        if (localStorage.getItem('gdprPreferences')) {
+            banner.classList.add('hidden');
+        } else {
+            banner.classList.remove('hidden');
+        }
+
+        // Accept all cookies
+        acceptAllBtn.addEventListener('click', function () {
+            localStorage.setItem('gdprPreferences', JSON.stringify({
+                necessary: true,
+                preferences: true,
+                statistics: true,
+                marketing: true
+            }));
+            banner.classList.add('hidden');
+        });
+
+        // Deny all cookies except necessary
+        denyBtn.addEventListener('click', function () {
+            localStorage.setItem('gdprPreferences', JSON.stringify({
+                necessary: true,
+                preferences: false,
+                statistics: false,
+                marketing: false
+            }));
+            banner.classList.add('hidden');
+        });
+
+        // Save preferences
+        savePreferencesBtn.addEventListener('click', function () {
+            localStorage.setItem('gdprPreferences', JSON.stringify({
+                necessary: true,
+                preferences: preferencesCheckbox.checked,
+                statistics: statisticsCheckbox.checked,
+                marketing: marketingCheckbox.checked
+            }));
+            banner.classList.add('hidden');
+        });
+    });
+
     $(window).scroll(function() {
         if ($(window).scrollTop() > 300) {
             btn.addClass('show');
