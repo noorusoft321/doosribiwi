@@ -15,6 +15,14 @@ class SupportMessage extends CoreModel
         'ip_address'
     ];
 
+    protected $appends = ['faker_id','last_message'];
+
+    public function getLastMessageAttribute()
+    {
+        $discussionsArray = explode("|||",$this->discussion);
+        return end($discussionsArray);
+    }
+
     public function getCustomer()
     {
         return $this->belongsTo(Customer::class, 'customer_id','id');

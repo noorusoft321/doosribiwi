@@ -137,7 +137,7 @@
                     }
                 },
                 {
-                    data: 'discussion',
+                    data: 'last_message',
                     render: function (data, type, full, meta) {
                         return data.length > 70 ? data.substr(0, data.lastIndexOf(' ', 67)) + '...' : data;
                     }

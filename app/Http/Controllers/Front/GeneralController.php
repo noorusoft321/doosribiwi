@@ -295,6 +295,7 @@ class GeneralController extends Controller
     {
         $title = 'Media Room';
         $mediaVideos = [
+            '<iframe width="100%" height="270px" src="https://www.youtube.com/embed/E1XjibRb_rs" title="Chupp kar shaadi karne waaley log..😳🤔" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>',
             '<iframe width="100%" height="270px" src="https://www.youtube.com/embed/g6NFNC51cqw" title="@9T9newsChannel Coverage at Shaadi Ka Laddu Season-2 | Family Rishta Meeting Event | Marriage Bureau" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>',
             '<iframe width="100%" height="270px" src="https://www.youtube.com/embed/AXcHAIsb4dY" title="Mrs. Ali - Director of @ShaadiOrgPk  at @PTVNationalOfficial | Discussion on Rishta Services" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>',
             '<iframe width="100%" height="270px" src="https://www.youtube.com/embed/G_A_uOchyJc" title="Mrs.Ali | Shadi Organization Pakistan | Muskurati Subha | 24 5 23" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>',

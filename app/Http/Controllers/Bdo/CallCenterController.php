@@ -647,8 +647,9 @@ class CallCenterController extends Controller
         $request = request();
         if ($request->ajax()) {
             $search = $request->input('search.value', '');
-            $orderArray = ['id'];
-            $orderByColumn = $orderArray[$request->input('order.0.column', 0)];
+//            $orderArray = ['id'];
+//            $orderByColumn = $orderArray[$request->input('order.0.column', 0)];
+            $orderByColumn = 'updated_at';
             $orderBy = $request->input('order.0.dir', 'asc');
             $issueType = (!empty($request->fType)) ? $request->fType : 'Pending';
             $agencies = SupportMessage::where('issue', $issueType);

@@ -812,8 +812,18 @@ class HomeController extends Controller
         }
         $request['ip_address'] = $_SERVER['REMOTE_ADDR'];
 
-        $supportMessage = SupportMessage::create($request);
+        $supportMessage = SupportMessage::where('mobile_number',$request['mobile_number'])->first();
         if (!empty($supportMessage)) {
+            $discussionArray = explode("|||",$supportMessage->discussion);
+            array_push($discussionArray, $request['discussion']);
+            $res = $supportMessage->update([
+                'discussion' => implode("|||",$discussionArray),
+                'issue'      => 'Pending'
+            ]);
+        } else {
+            $res = SupportMessage::create($request);
+        }
+        if (!empty($res)) {
             return response()->json([
                 'status' => 'success',
                 'msg'    => 'Thanks for message, our consultant will contact you soon.<br>پیغام کے لیے شکریہ، ہمارا نمائندہ جلد ہی آپ سے رابطہ کرے گا۔'

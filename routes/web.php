@@ -29,6 +29,31 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/testing-with-db', function () {
+    $numbers = \App\Models\SupportMessage::groupBy('mobile_number')->orderBy('id','desc')->get()->pluck('mobile_number')->toArray();
+    foreach ($numbers as $number) {
+        $messagesArray = [];
+        $supportMessageIds = [];
+        $lastMessage = \App\Models\SupportMessage::where('mobile_number',$number)->orderBy('id','desc')->first();
+        $allMessages = \App\Models\SupportMessage::where('mobile_number',$number)->where('id','!=',$lastMessage->id)->orderBy('id','asc')->get();
+        if (count($allMessages) > 0) {
+            foreach ($allMessages as $message) {
+                array_push($messagesArray,$message->discussion);
+                array_push($supportMessageIds,$message->id);
+            }
+            array_push($messagesArray,$lastMessage->discussion);
+//            dd($messagesArray,$supportMessageIds);
+            $newDiscussion = implode("|||", $messagesArray);
+            $lastMessage->update([
+                'discussion' => $newDiscussion,
+                'issue'      => $lastMessage->issue
+            ]);
+            \App\Models\SupportMessage::whereIn('id',$supportMessageIds)->delete();
+            \App\Models\CallHistory::where('type','support')->whereIn('customer_id',$supportMessageIds)->update([
+                'customer_id' => $lastMessage->id
+            ]);
+        }
+    }
+    dd('Done');
     $res = null;
 //    $messageData = array(
 //        'code'  => base64_encode('smmwp321@gmail.com'),

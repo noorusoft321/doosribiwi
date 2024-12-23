@@ -79,7 +79,9 @@
         }
     </style>
 @endpush
-
+@php
+    $discussions = explode("|||",$support->discussion);
+@endphp
 @section('content')
     <div class="page-wrapper">
         <div class="page-content">
@@ -118,7 +120,13 @@
                                 </tr>
                                 <tr>
                                     <td>Message</td>
-                                    <td>{{$support->discussion}}</td>
+                                    <td>
+                                        <ul>
+                                            @foreach($discussions as $val)
+                                                <li>{{$val}}</li>
+                                            @endforeach
+                                        </ul>
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td>Status</td>
