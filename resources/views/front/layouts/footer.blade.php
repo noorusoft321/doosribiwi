@@ -1,19 +1,19 @@
 <footer class="footer bg-red p-tb-50 mb-0">
 	<div class="container">
-		{{--<div class="row m-tb-40">--}}
-			{{--<div class="col-md-6">--}}
-				{{--<h3 class="white-color font-weight-600">--}}
-					{{--Where Love Finds Its Second Chapter.--}}
-				{{--</h3>--}}
-				{{--<!-- /.newsletter-heading -->--}}
-			{{--</div>--}}
-			{{--<!-- /.col -->--}}
-			{{--<div class="col-md-6">--}}
-				{{--<!-- /.newsletter-form -->--}}
-			{{--</div>--}}
-			{{--<!-- /.col -->--}}
-		{{--</div>--}}
-		<!-- /.row -->
+	{{--<div class="row m-tb-40">--}}
+	{{--<div class="col-md-6">--}}
+	{{--<h3 class="white-color font-weight-600">--}}
+	{{--Where Love Finds Its Second Chapter.--}}
+	{{--</h3>--}}
+	{{--<!-- /.newsletter-heading -->--}}
+	{{--</div>--}}
+	{{--<!-- /.col -->--}}
+	{{--<div class="col-md-6">--}}
+	{{--<!-- /.newsletter-form -->--}}
+	{{--</div>--}}
+	{{--<!-- /.col -->--}}
+	{{--</div>--}}
+	<!-- /.row -->
 		<div class="row">
 			<div class="col-md-4">
 				<h3 class="white-color font-weight-600">
@@ -38,9 +38,9 @@
 						</a>
 					</li>
 					{{--<li class="social-item">--}}
-						{{--<a target="_blank" class="social-link" href="https://twitter.com/ShaadiOrgPk">--}}
-							{{--<i class="fab fa-twitter" aria-hidden="true"></i>--}}
-						{{--</a>--}}
+					{{--<a target="_blank" class="social-link" href="https://twitter.com/ShaadiOrgPk">--}}
+					{{--<i class="fab fa-twitter" aria-hidden="true"></i>--}}
+					{{--</a>--}}
 					{{--</li>--}}
 					<li class="social-item">
 						<a target="_blank" class="social-link" href="https://www.youtube.com/channel/UC55neowM_i2A_tZQLKh0NMw">
@@ -48,15 +48,15 @@
 						</a>
 					</li>
 					{{--<li class="social-item">--}}
-						{{--<a target="_blank" class="social-link" href="https://www.linkedin.com/company/DoosriBiwi.com">--}}
-							{{--<i class="fab fa-linkedin-square" aria-hidden="true"></i>--}}
-						{{--</a>--}}
+					{{--<a target="_blank" class="social-link" href="https://www.linkedin.com/company/DoosriBiwi.com">--}}
+					{{--<i class="fab fa-linkedin-square" aria-hidden="true"></i>--}}
+					{{--</a>--}}
 					{{--</li>--}}
 
 					{{--<li class="social-item">--}}
-						{{--<a target="_blank" class="social-link" href="https://www.pinterest.com/Shaadiorgpk">--}}
-							{{--<i class="fab fa-pinterest" aria-hidden="true"></i>--}}
-						{{--</a>--}}
+					{{--<a target="_blank" class="social-link" href="https://www.pinterest.com/Shaadiorgpk">--}}
+					{{--<i class="fab fa-pinterest" aria-hidden="true"></i>--}}
+					{{--</a>--}}
 					{{--</li>--}}
 				</ul>
 				<!-- /.social-btn-component -->
@@ -100,7 +100,7 @@
 							</li>
 
 							{{--<li class="link-item">--}}
-								{{--<a class="link" href="{{route('disclaimer')}}">Disclaimer</a>--}}
+							{{--<a class="link" href="{{route('disclaimer')}}">Disclaimer</a>--}}
 							{{--</li>--}}
 							<li class="link-item">
 								<a class="link" href="{{route('safety.tips')}}">Safety Tips</a>
@@ -121,7 +121,7 @@
 								<a class="link" href="https://goo.gl/maps/EYhZ2yywC6X9WYxo9" target="_blank"><i class="fa-sharp fa-solid fa-location-dot" aria-hidden="true"></i> Office A, 1st Floor, JF Business Bay, Block D, North Nazimabad, Karachi, Sindh, Pakistan.</a>
 							</li>
 							<li class="link-item">
-								<a class="link" href="https://maps.app.goo.gl/u4ReMXyDZEzGyEKMA" target="_blank"><i class="fa-sharp fa-solid fa-location-dot" aria-hidden="true"></i> Suite # 202, 2nd Floor, Platinum Avenue, Plot # 41/C, Street # 9, Bukhari Commercial, Phase VI, DHA, Karachi.</a>
+								<a class="link" href="https://g.page/r/CUVdv0dSTAYyEAI" target="_blank"><i class="fa-sharp fa-solid fa-location-dot" aria-hidden="true"></i> Office 3 & 4, 2nd Floor, Above KFC, Plot 21-C, 26th Street, Badar Commercial Area, Defence V, Karachi.</a>
 							</li>
 							<li class="link-item">
 								{{--<a class="link" href="https://api.whatsapp.com/send?phone=923452444262&amp;text=Hi%20Doosri.biwi.com%2C%20I%20need%20more%20information."><i class="fa fa-phone" aria-hidden="true"></i> WhatsApp: +92-345-2444262</a>--}}
