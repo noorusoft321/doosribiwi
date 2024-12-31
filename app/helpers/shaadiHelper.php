@@ -348,6 +348,22 @@ if (!function_exists('getHobbiesAndInterest')){
     }
 }
 
+if (!function_exists('getHobbiesAndInterestArray')){
+    function getHobbiesAndInterestArray($value){
+        $realHobby = [];
+        if (!empty($value)) {
+            $value = explode(",",$value);
+            $hobbies = HobbiesAndInterest::where('deleted',0)->whereIn('id',$value)->get();
+            if (count($hobbies) > 0) {
+                foreach ($hobbies as $val) {
+                    array_push($realHobby,[$val->title,$val->icon]);
+                }
+            }
+        }
+        return $realHobby;
+    }
+}
+
 if (!function_exists('checkProfileCompletePercent')) {
     function checkProfileCompletePercent($customer) {
         $completeProfiles = 0;

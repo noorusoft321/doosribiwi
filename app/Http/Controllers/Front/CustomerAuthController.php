@@ -453,6 +453,7 @@ class CustomerAuthController extends Controller
         $title = 'Edit Personal Profile';
         $states = [];
         $cities = [];
+        $areas = [];
         $countries = Country::where('deleted',0)->orderBy('order_at','asc')->get();
         if (!empty($customer->customerOtherInfo)) {
             if (!empty($customer->customerOtherInfo->country_id)) {
@@ -461,13 +462,16 @@ class CustomerAuthController extends Controller
             if (!empty($customer->customerOtherInfo->state_id)) {
                 $cities = City::where('state_id',$customer->customerOtherInfo->state_id)->where('deleted',0)->orderBy('order_at','asc')->get();
             }
+            if (!empty($customer->customerOtherInfo->city_id)) {
+                $areas = Area::where('city_id',$customer->customerOtherInfo->city_id)->where('deleted',0)->orderBy('order_at','asc')->get();
+            }
         }
         if ($customer->gender_name=='male') {
             $maritalStatuses = MaritalStatus::where('deleted',0)->whereNotIn('id',[1,17])->orderBy('order_at','asc')->get();
         } else {
             $maritalStatuses = MaritalStatus::where('deleted',0)->whereNotIn('id',[16,7])->orderBy('order_at','asc')->get();
         }
-        return view('front.customer.edit_personal_profile',compact('title','customer','countries','states','cities','maritalStatuses'));
+        return view('front.customer.edit_personal_profile',compact('title','customer','countries','states','cities','areas','maritalStatuses'));
     }
 
     public function savePersonalInfo()
@@ -2259,43 +2263,43 @@ class CustomerAuthController extends Controller
                         if (isset($request['slug']) && $request['slug']=='foreign-proposals') {
                             $q->where('country_id','!=',162);
                         }
-                }, 'customerReligionInfo' => function($q) use ($request) {
-                    if (!empty($request['Religions'])) {
-                        $q->where('Religions', $request['Religions']);
-                    }
-                    if (!empty($request['Sects'])) {
-                        $q->where('Sects', $request['Sects']);
-                    }
-                }, 'customerPersonalInfo' => function($q) use ($request) {
-                    if (!empty($request['Castes'])) {
-                        $q->where('Caste', $request['Castes']);
-                    }
+                    }, 'customerReligionInfo' => function($q) use ($request) {
+                        if (!empty($request['Religions'])) {
+                            $q->where('Religions', $request['Religions']);
+                        }
+                        if (!empty($request['Sects'])) {
+                            $q->where('Sects', $request['Sects']);
+                        }
+                    }, 'customerPersonalInfo' => function($q) use ($request) {
+                        if (!empty($request['Castes'])) {
+                            $q->where('Caste', $request['Castes']);
+                        }
 //                    if (!empty($request['WillingToRelocate'])) {
 //                        $q->where('WillingToRelocate', $request['WillingToRelocate']);
 //                    }
 //                    if (!empty($request['MyBuilds'])) {
 //                        $q->where('MyBuilds', $request['MyBuilds']);
 //                    }
-                    if (!empty($request['MyLivingArrangements'])) {
-                        $q->where('MyLivingArrangements', $request['MyLivingArrangements']);
+                        if (!empty($request['MyLivingArrangements'])) {
+                            $q->where('MyLivingArrangements', $request['MyLivingArrangements']);
+                        }
+                        if (!empty($request['Heights'])) {
+                            $q->where('Heights', $request['Heights']);
+                        }
+                        if (!empty($request['Disabilities'])) {
+                            $q->where('Disabilities', $request['Disabilities']);
+                        }
+                    }, 'customerCareerInfo' => function($q) use ($request) {
+                        if (!empty($request['EducationID'])) {
+                            $q->where('Qualification', $request['EducationID']);
+                        }
+                        if (!empty($request['OccupationID'])) {
+                            $q->where('Profession', $request['OccupationID']);
+                        }
+                        if (!empty($request['MyIncome'])) {
+                            $q->where('MonthlyIncome', $request['MyIncome']);
+                        }
                     }
-                    if (!empty($request['Heights'])) {
-                        $q->where('Heights', $request['Heights']);
-                    }
-                    if (!empty($request['Disabilities'])) {
-                        $q->where('Disabilities', $request['Disabilities']);
-                    }
-                }, 'customerCareerInfo' => function($q) use ($request) {
-                    if (!empty($request['EducationID'])) {
-                        $q->where('Qualification', $request['EducationID']);
-                    }
-                    if (!empty($request['OccupationID'])) {
-                        $q->where('Profession', $request['OccupationID']);
-                    }
-                    if (!empty($request['MyIncome'])) {
-                        $q->where('MonthlyIncome', $request['MyIncome']);
-                    }
-                }
                 ]);
                 if (!empty($request['gender']) ||
                     isset($request['secondMarraige']) ||

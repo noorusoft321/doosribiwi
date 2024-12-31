@@ -23,9 +23,9 @@
                                 {{--<div class="col-lg-3 col-md-3 col-sm-6 py-xl-10">--}}
                                     {{--<label class="fieldlabels">UserName</label>--}}
                                 {{--</div>--}}
-                                <div class="col-lg-9 col-md-9 col-sm-6 py-xl-10">
-                                    <label class="fieldlabels">{{$customer->name}}</label>
-                                </div>
+                                {{--<div class="col-lg-9 col-md-9 col-sm-6 py-xl-10">--}}
+                                    {{--<label class="fieldlabels">{{$customer->name}}</label>--}}
+                                {{--</div>--}}
                                 <hr class="edit-profile-hr">
                                 <div class="col-lg-3 col-md-3 col-sm-6 py-xl-10">
                                     <label class="fieldlabels">Email</label>

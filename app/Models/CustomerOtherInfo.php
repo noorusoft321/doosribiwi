@@ -12,6 +12,7 @@ class CustomerOtherInfo extends CoreModel
         'country_id',
         'state_id',
         'city_id',
+        'area_id',
         'ResidenceAreaID',
         'ReligionsID',
         'SectID',

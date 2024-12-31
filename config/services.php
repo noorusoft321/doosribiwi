@@ -45,17 +45,6 @@ return [
         'key' => env('AUTHY_KEY'),
         'id'  => env('AUTHY_ID')
     ],
-    'matchmakers' => [
-        'Ms. Saba'      => '923491007312',
-        'Mrs. Pirzada'  => '923488800021',
-        'Ms. Asma'      => '923462141786',
-        'Mrs. Brohi'    => '923488800889',
-        'Ms. Maryum'    => '923458205861',
-        'Mrs. Ahmed'    => '923468217988',
-        'Mrs. Motiwala' => '923420005556',
-        'Ms. Farah'     => '923491007313',
-        'Mrs. Farooqui' => '923344444962',
-    ],
     'keywords' => [
         'islamic-second-marriage',
         '2nd-marriage-in-islam',
@@ -75,6 +64,7 @@ return [
         'marrying-a-second-wife-in-islam',
     ],
     'app_name' => env('APP_NAME'),
+    'app_url' => env('APP_URL'),
     'matchmakers' => [
         'Ms. Saba'      => '923491007312',
         'Mrs. Pirzada'  => '923488800021',

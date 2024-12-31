@@ -237,6 +237,14 @@ class Customer extends Authenticatable
         return $this->hasOne(CustomerOtherInfo::class, 'RegistrationID');
     }
 
+    public function customerLikeByMe()
+    {
+        return $this->hasOne(CustomerLike::class, 'like_to')->select('like_by','like_to')->where([
+            'like_by' => auth()->id(),
+            'deleted' => 0
+        ]);
+    }
+
     public function customerPersonalInfo()
     {
         return $this->hasOne(CustomerPersonalInfo::class, 'CustomerID');
