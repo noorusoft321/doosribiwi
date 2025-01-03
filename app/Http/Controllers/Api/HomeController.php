@@ -36,9 +36,7 @@ use App\Models\MaritalStatus;
 use App\Models\MotherTongue;
 use App\Models\MyBuild;
 use App\Models\MyLivingArrangement;
-use App\Models\NotificationAll;
 use App\Models\Occupation;
-use App\Models\Order;
 use App\Models\Package;
 use App\Models\RegistrationsReason;
 use App\Models\Religion;
@@ -94,7 +92,7 @@ class HomeController extends Controller
                 'customerReligionInfo'
             ])
             ->findOrFail(auth()->id());
-        $uniqueProfileSlug = $customer->gender_name.'-proposal-'.(!empty($customer->getCitySlug)?$customer->getCitySlug->slug:'NA').'-'.(!empty($customer->getCountrySlug)?$customer->getCountrySlug->slug:'NA').'-'.$customer->faker_id;
+        $uniqueProfileSlug = $customer->gender_name.'-proposal-'.(!empty($customer->getCitySlug)?$customer->getCitySlug->slug:'na').'-'.(!empty($customer->getCountrySlug)?$customer->getCountrySlug->slug:'na').'-'.$customer->id;
         $baseUrl = env('APP_URL');
         $customer->profile_link = $baseUrl.'/'.$uniqueProfileSlug;
         $customer->packageType = (!empty($customer->package_id) && $customer->package_id > 0) ? $customer->user_package : 'Free';

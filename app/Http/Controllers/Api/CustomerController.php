@@ -474,7 +474,7 @@ class CustomerController extends Controller
         }
         $customer->gallery = $gallery;
 
-        $uniqueProfileSlug = $customer->gender_name.'-proposal-'.(!empty($customer->getCitySlug)?$customer->getCitySlug->slug:'NA').'-'.(!empty($customer->getCountrySlug)?$customer->getCountrySlug->slug:'NA').'-'.$customer->faker_id;
+        $uniqueProfileSlug = $customer->gender_name.'-proposal-'.(!empty($customer->getCitySlug)?$customer->getCitySlug->slug:'na').'-'.(!empty($customer->getCountrySlug)?$customer->getCountrySlug->slug:'na').'-'.$customer->id;
         $baseUrl = env('APP_URL');
         $customer->profile_link = $baseUrl.'/'.$uniqueProfileSlug;
         if (empty($customer->user_package)) {
@@ -1142,12 +1142,12 @@ class CustomerController extends Controller
         $request = request()->all();
         $rules = [
             'qualification'   => 'required|numeric',
-            'majorCourseId'   => 'required|numeric',
+//            'majorCourseId'   => 'required|numeric',
             'profession'      => 'required|numeric',
             'monthlyIncome'   => 'required|numeric',
-            'university'      => 'required|numeric',
-            'jobPost'         => 'required|numeric',
-            'futurePlans'     => 'required|numeric'
+//            'university'      => 'required|numeric',
+//            'jobPost'         => 'required|numeric',
+//            'futurePlans'     => 'required|numeric'
         ];
         $validator = Validator::make($request, $rules);
         if ($validator->fails()){
@@ -1168,12 +1168,12 @@ class CustomerController extends Controller
             ],[
                 'CustomerID' => $currentAuthId,
                 'Qualification' => $request['qualification'],
-                'major_course_id' => $request['majorCourseId'],
+//                'major_course_id' => $request['majorCourseId'],
                 'Profession' => $request['profession'],
                 'MonthlyIncome' => $request['monthlyIncome'],
-                'University' => $request['university'],
-                'JobPost' => $request['jobPost'],
-                'FuturePlans' => $request['futurePlans']
+//                'University' => $request['university'],
+//                'JobPost' => $request['jobPost'],
+//                'FuturePlans' => $request['futurePlans']
             ]);
 
             CustomerOtherInfo::updateOrCreate([
@@ -1205,7 +1205,7 @@ class CustomerController extends Controller
                 'getStateName',
                 'getCitiesName'
             ])->findOrFail($currentAuthId);
-            $uniqueProfileSlug = $customer->gender_name.'-proposal-'.(!empty($customer->getCitySlug)?$customer->getCitySlug->slug:'NA').'-'.(!empty($customer->getCountrySlug)?$customer->getCountrySlug->slug:'NA').'-'.$customer->faker_id;
+            $uniqueProfileSlug = $customer->gender_name.'-proposal-'.(!empty($customer->getCitySlug)?$customer->getCitySlug->slug:'na').'-'.(!empty($customer->getCountrySlug)?$customer->getCountrySlug->slug:'na').'-'.$customer->id;
             $baseUrl = env('APP_URL');
             $customer->profile_link = $baseUrl.'/'.$uniqueProfileSlug;
             $customer->profileComplete = checkProfileComplete($customer->id);
@@ -1250,16 +1250,16 @@ class CustomerController extends Controller
     {
         $request = request()->all();
         $rules = [
-            'countryOfOrigin'                => 'required|numeric',
-            'stateOfOrigin'                  => 'required|numeric',
-            'cityOfOrigin'                   => 'required|numeric',
-            'willingToRelocate'              => 'required|numeric',
+//            'countryOfOrigin'                => 'required|numeric',
+//            'stateOfOrigin'                  => 'required|numeric',
+//            'cityOfOrigin'                   => 'required|numeric',
+//            'willingToRelocate'              => 'required|numeric',
             'iAmLookingToMarry'              => 'required|numeric',
             'myLivingArrangements'           => 'required|numeric',
             'heights'                        => 'required|numeric',
             'weights'                        => 'required|numeric',
             'complexions'                    => 'required|numeric',
-            'myBuilds'                       => 'required|numeric',
+//            'myBuilds'                       => 'required|numeric',
             'hairColors'                     => 'required|numeric',
             'eyeColors'                      => 'required|numeric',
             'smokes'                         => 'required|numeric',
@@ -1284,14 +1284,14 @@ class CustomerController extends Controller
                 'CustomerID' => $currentAuthId
             ],[
                 'CustomerID' => $currentAuthId,
-                'CountryOfOrigin' => $request['countryOfOrigin'],
-                'StateOfOrigin' => $request['stateOfOrigin'],
-                'CityOfOrigin' => $request['cityOfOrigin'],
-                'WillingToRelocate' => $request['willingToRelocate'],
+//                'CountryOfOrigin' => $request['countryOfOrigin'],
+//                'StateOfOrigin' => $request['stateOfOrigin'],
+//                'CityOfOrigin' => $request['cityOfOrigin'],
+//                'WillingToRelocate' => $request['willingToRelocate'],
                 'IAmLookingToMarry' => $request['iAmLookingToMarry'],
                 'MyLivingArrangements' => $request['myLivingArrangements'],
                 'Heights' => $request['heights'],
-                'MyBuilds' => $request['myBuilds'],
+//                'MyBuilds' => $request['myBuilds'],
                 'HairColors' => $request['hairColors'],
                 'EyeColors' => $request['eyeColors'],
                 'Smokes' => $request['smokes'],
@@ -1330,7 +1330,7 @@ class CustomerController extends Controller
                 'getStateName',
                 'getCitiesName'
             ])->findOrFail($currentAuthId);
-            $uniqueProfileSlug = $customer->gender_name.'-proposal-'.(!empty($customer->getCitySlug)?$customer->getCitySlug->slug:'NA').'-'.(!empty($customer->getCountrySlug)?$customer->getCountrySlug->slug:'NA').'-'.$customer->faker_id;
+            $uniqueProfileSlug = $customer->gender_name.'-proposal-'.(!empty($customer->getCitySlug)?$customer->getCitySlug->slug:'na').'-'.(!empty($customer->getCountrySlug)?$customer->getCountrySlug->slug:'na').'-'.$customer->id;
             $baseUrl = env('APP_URL');
             $customer->profile_link = $baseUrl.'/'.$uniqueProfileSlug;
             $customer->profileComplete = checkProfileComplete($customer->id);
@@ -1381,7 +1381,7 @@ class CustomerController extends Controller
             'doYouHaveBeards'    => 'required|numeric',
             'areYouReverts'      => 'required|numeric',
             'doYouKeepHalal'     => 'required|numeric',
-            'doYouPerformSalaah' => 'required|numeric'
+//            'doYouPerformSalaah' => 'required|numeric'
         ];
         $validator = Validator::make($request, $rules);
         if ($validator->fails()){
@@ -1407,7 +1407,7 @@ class CustomerController extends Controller
                 'DoYouHaveBeards' => $request['doYouHaveBeards'],
                 'AreYouReverts' => $request['areYouReverts'],
                 'DoYouKeepHalal' => $request['doYouKeepHalal'],
-                'DoYouPerformSalaah' => $request['doYouPerformSalaah']
+//                'DoYouPerformSalaah' => $request['doYouPerformSalaah']
             ]);
             DB::commit();
 
@@ -1430,7 +1430,7 @@ class CustomerController extends Controller
                 'getStateName',
                 'getCitiesName'
             ])->findOrFail($currentAuthId);
-            $uniqueProfileSlug = $customer->gender_name.'-proposal-'.(!empty($customer->getCitySlug)?$customer->getCitySlug->slug:'NA').'-'.(!empty($customer->getCountrySlug)?$customer->getCountrySlug->slug:'NA').'-'.$customer->faker_id;
+            $uniqueProfileSlug = $customer->gender_name.'-proposal-'.(!empty($customer->getCitySlug)?$customer->getCitySlug->slug:'na').'-'.(!empty($customer->getCountrySlug)?$customer->getCountrySlug->slug:'na').'-'.$customer->id;
             $baseUrl = env('APP_URL');
             $customer->profile_link = $baseUrl.'/'.$uniqueProfileSlug;
             $customer->profileComplete = checkProfileComplete($customer->id);
@@ -1487,8 +1487,8 @@ class CustomerController extends Controller
             'EducationID'                     => 'required|numeric',
             'OccupationID'                    => 'required|numeric',
             'MyIncome'                        => 'required|numeric',
-            'WillingToRelocate'               => 'required|numeric',
-            'MyBuilds'                        => 'required|numeric',
+//            'WillingToRelocate'               => 'required|numeric',
+//            'MyBuilds'                        => 'required|numeric',
             'MaritalStatus'                   => 'required|numeric',
             'MyLivingArrangements'            => 'required|numeric',
             'Heights'                         => 'required|numeric',
@@ -1534,7 +1534,7 @@ class CustomerController extends Controller
                 'getStateName',
                 'getCitiesName'
             ])->findOrFail($currentAuthId);
-            $uniqueProfileSlug = $customer->gender_name.'-proposal-'.(!empty($customer->getCitySlug)?$customer->getCitySlug->slug:'NA').'-'.(!empty($customer->getCountrySlug)?$customer->getCountrySlug->slug:'NA').'-'.$customer->faker_id;
+            $uniqueProfileSlug = $customer->gender_name.'-proposal-'.(!empty($customer->getCitySlug)?$customer->getCitySlug->slug:'na').'-'.(!empty($customer->getCountrySlug)?$customer->getCountrySlug->slug:'na').'-'.$customer->id;
             $baseUrl = env('APP_URL');
             $customer->profile_link = $baseUrl.'/'.$uniqueProfileSlug;
             $customer->profileComplete = checkProfileComplete($customer->id);
@@ -1872,20 +1872,20 @@ class CustomerController extends Controller
         $data = [
             'customerData' => [
                 'qualification' => '',
-                'majorCourseId' => '',
+//                'majorCourseId' => '',
                 'profession'    => '',
                 'monthlyIncome' => '',
-                'university'    => '',
-                'jobPost'       => '',
-                'futurePlans'   => '',
+//                'university'    => '',
+//                'jobPost'       => '',
+//                'futurePlans'   => '',
             ],
             'formData' => [
                 'educations'    => Education::select('id','title as name')->where('deleted', 0)->orderBy('order_at','asc')->get(),
-                'universities'  => University::select('id','title as name')->where('deleted', 0)->orderBy('order_at','asc')->get(),
+//                'universities'  => University::select('id','title as name')->where('deleted', 0)->orderBy('order_at','asc')->get(),
                 'occupations'   => Occupation::select('id','title as name')->where('deleted', 0)->orderBy('order_at','asc')->get(),
-                'jobPosts'      => JobPost::select('id','title as name')->where('deleted', 0)->orderBy('order_at','asc')->get(),
+//                'jobPosts'      => JobPost::select('id','title as name')->where('deleted', 0)->orderBy('order_at','asc')->get(),
                 'incomes'       => AnnualInCome::select('id','title as name')->where('deleted', 0)->orderBy('order_at','asc')->get(),
-                'futurePlans'   => FuturePlan::select('id','title as name')->where('deleted', 0)->orderBy('order_at','asc')->get()
+//                'futurePlans'   => FuturePlan::select('id','title as name')->where('deleted', 0)->orderBy('order_at','asc')->get()
             ]
         ];
 
@@ -1894,12 +1894,12 @@ class CustomerController extends Controller
         $customerCareerInfo = CustomerCareerInfo::where('CustomerID', $currentAuthId)->first();
         if (!empty($customerCareerInfo)) {
             $data['customerData']['qualification'] = (int) $customerCareerInfo->Qualification;
-            $data['customerData']['majorCourseId'] = (int) $customerCareerInfo->major_course_id;
+//            $data['customerData']['majorCourseId'] = (int) $customerCareerInfo->major_course_id;
             $data['customerData']['profession']    = (int) $customerCareerInfo->Profession;
             $data['customerData']['monthlyIncome'] = (int) $customerCareerInfo->MonthlyIncome;
-            $data['customerData']['university']    = (int) $customerCareerInfo->University;
-            $data['customerData']['jobPost']       = (int) $customerCareerInfo->JobPost;
-            $data['customerData']['futurePlans']   = (int) $customerCareerInfo->FuturePlans;
+//            $data['customerData']['university']    = (int) $customerCareerInfo->University;
+//            $data['customerData']['jobPost']       = (int) $customerCareerInfo->JobPost;
+//            $data['customerData']['futurePlans']   = (int) $customerCareerInfo->FuturePlans;
         }
         return response()->json([
             'success' => true,
@@ -1914,16 +1914,16 @@ class CustomerController extends Controller
     {
         $data = [
             'customerData' => [
-                'countryOfOrigin'                => '',
-                'stateOfOrigin'                  => '',
-                'cityOfOrigin'                   => '',
-                'willingToRelocate'              => '',
+//                'countryOfOrigin'                => '',
+//                'stateOfOrigin'                  => '',
+//                'cityOfOrigin'                   => '',
+//                'willingToRelocate'              => '',
                 'iAmLookingToMarry'              => '',
                 'myLivingArrangements'           => '',
                 'heights'                        => '',
                 'weights'                        => '',
                 'complexions'                    => '',
-                'myBuilds'                       => '',
+//                'myBuilds'                       => '',
                 'hairColors'                     => '',
                 'eyeColors'                      => '',
                 'smokes'                         => '',
@@ -1932,14 +1932,14 @@ class CustomerController extends Controller
                 'myFirstLanguageMotherTonguesId' => '',
             ],
             'formData' => [
-                'countries'          => Country::select('id','name')->where('deleted', 0)->orderBy('order_at','asc')->get(),
-                'WillingToRelocates' => WillingToRelocate::select('id','title as name')->where('deleted', 0)->orderBy('order_at','asc')->get(),
+//                'countries'          => Country::select('id','name')->where('deleted', 0)->orderBy('order_at','asc')->get(),
+//                'WillingToRelocates' => WillingToRelocate::select('id','title as name')->where('deleted', 0)->orderBy('order_at','asc')->get(),
                 'IAmLookingToMarry'  => IAmLookingToMarry::select('id','title as name')->where('deleted', 0)->orderBy('order_at','asc')->get(),
                 'livingArrangement'  => MyLivingArrangement::select('id','title as name')->where('deleted', 0)->orderBy('order_at','asc')->get(),
                 'heights'            => Height::select('id','title as name')->where('deleted', 0)->orderBy('order_at','asc')->get(),
                 'weights'            => Weight::select('id','title as name')->where('deleted', 0)->orderBy('order_at','asc')->get(),
                 'complexions'        => Complexion::select('id','title as name')->where('deleted', 0)->orderBy('order_at','asc')->get(),
-                'myBuilds'           => MyBuild::select('id','title as name')->where('deleted', 0)->orderBy('order_at','asc')->get(),
+//                'myBuilds'           => MyBuild::select('id','title as name')->where('deleted', 0)->orderBy('order_at','asc')->get(),
                 'hairColor'          => HairColor::select('id','title as name')->where('deleted', 0)->orderBy('order_at','asc')->get(),
                 'eyeColor'           => EyeColor::select('id','title as name')->where('deleted', 0)->orderBy('order_at','asc')->get(),
                 'smokes'             => Smoke::select('id','title as name')->where('deleted', 0)->orderBy('order_at','asc')->get(),
@@ -1953,16 +1953,16 @@ class CustomerController extends Controller
 
         $customerPersonalInfo = CustomerPersonalInfo::where('CustomerID', $currentAuthId)->first();
         if (!empty($customerPersonalInfo)) {
-            $data['customerData']['countryOfOrigin'] = (int) $customerPersonalInfo->CountryOfOrigin;
-            $data['customerData']['stateOfOrigin'] = (int) $customerPersonalInfo->StateOfOrigin;
-            $data['customerData']['cityOfOrigin'] = (int) $customerPersonalInfo->CityOfOrigin;
-            $data['customerData']['willingToRelocate'] = (int) $customerPersonalInfo->WillingToRelocate;
+//            $data['customerData']['countryOfOrigin'] = (int) $customerPersonalInfo->CountryOfOrigin;
+//            $data['customerData']['stateOfOrigin'] = (int) $customerPersonalInfo->StateOfOrigin;
+//            $data['customerData']['cityOfOrigin'] = (int) $customerPersonalInfo->CityOfOrigin;
+//            $data['customerData']['willingToRelocate'] = (int) $customerPersonalInfo->WillingToRelocate;
             $data['customerData']['iAmLookingToMarry'] = (int) $customerPersonalInfo->IAmLookingToMarry;
             $data['customerData']['myLivingArrangements'] = (int) $customerPersonalInfo->MyLivingArrangements;
             $data['customerData']['heights'] = (int) $customerPersonalInfo->Heights;
             $data['customerData']['weights'] = (int) $customerPersonalInfo->Weights;
             $data['customerData']['complexions'] = (int) $customerPersonalInfo->Complexions;
-            $data['customerData']['myBuilds'] = (int) $customerPersonalInfo->MyBuilds;
+//            $data['customerData']['myBuilds'] = (int) $customerPersonalInfo->MyBuilds;
             $data['customerData']['hairColors'] = (int) $customerPersonalInfo->HairColors;
             $data['customerData']['eyeColors'] = (int) $customerPersonalInfo->EyeColors;
             $data['customerData']['smokes'] = (int) $customerPersonalInfo->Smokes;
@@ -1993,7 +1993,7 @@ class CustomerController extends Controller
                 'doYouHaveBeards'    => '',
                 'areYouReverts'      => '',
                 'doYouKeepHalal'     => '',
-                'doYouPerformSalaah' => ''
+//                'doYouPerformSalaah' => ''
             ],
             'formData' => [
                 'religions'          => Religion::select('id','title as name')->where('deleted', 0)->orderBy('order_at','asc')->get(),
@@ -2001,7 +2001,7 @@ class CustomerController extends Controller
                 'doYouHaveBeard'     => DoYouHaveBeard::select('id','title as name')->where('deleted', 0)->orderBy('order_at','asc')->get(),
                 'areYouRevert'       => AreYouRevert::select('id','title as name')->where('deleted', 0)->orderBy('order_at','asc')->get(),
                 'doYouKeepHalal'     => DoYouKeepHalal::select('id','title as name')->where('deleted', 0)->orderBy('order_at','asc')->get(),
-                'doYouPerformSalaah' => DoYouPerformSalaah::select('id','title as name')->where('deleted', 0)->orderBy('order_at','asc')->get(),
+//                'doYouPerformSalaah' => DoYouPerformSalaah::select('id','title as name')->where('deleted', 0)->orderBy('order_at','asc')->get(),
             ]
         ];
         $currentAuthId = auth()->id();
@@ -2013,7 +2013,7 @@ class CustomerController extends Controller
             $data['customerData']['doYouHaveBeards'] = (int) $customerReligionInfo->DoYouHaveBeards;
             $data['customerData']['areYouReverts'] = (int) $customerReligionInfo->AreYouReverts;
             $data['customerData']['doYouKeepHalal'] = (int) $customerReligionInfo->DoYouKeepHalal;
-            $data['customerData']['doYouPerformSalaah'] = (int) $customerReligionInfo->DoYouPerformSalaah;
+//            $data['customerData']['doYouPerformSalaah'] = (int) $customerReligionInfo->DoYouPerformSalaah;
         }
         return response()->json([
             'success' => true,
@@ -2040,8 +2040,8 @@ class CustomerController extends Controller
                 'EducationID'          => '',
                 'OccupationID'         => '',
                 'MyIncome'             => '',
-                'WillingToRelocate'    => '',
-                'MyBuilds'             => '',
+//                'WillingToRelocate'    => '',
+//                'MyBuilds'             => '',
                 'MaritalStatus'        => '',
                 'MyLivingArrangements' => '',
                 'Heights'              => '',
@@ -2064,12 +2064,12 @@ class CustomerController extends Controller
                 'religions'          => Religion::select('id','title as name')->where('deleted', 0)->orderBy('order_at','asc')->get(),
                 'educations'         => Education::select('id','title as name')->where('deleted', 0)->orderBy('order_at','asc')->get(),
                 'occupations'        => Occupation::select('id','title as name')->where('deleted', 0)->orderBy('order_at','asc')->get(),
-                'WillingToRelocates' => WillingToRelocate::select('id','title as name')->where('deleted', 0)->orderBy('order_at','asc')->get(),
+//                'WillingToRelocates' => WillingToRelocate::select('id','title as name')->where('deleted', 0)->orderBy('order_at','asc')->get(),
                 'incomes'            => AnnualInCome::select('id','title as name')->where('deleted', 0)->orderBy('order_at','asc')->get(),
                 'maritalStatus'      => MaritalStatus::select('id','title as name')->where('deleted', 0)->orderBy('order_at','asc')->get(),
                 'livingArrangement'  => MyLivingArrangement::select('id','title as name')->where('deleted', 0)->orderBy('order_at','asc')->get(),
                 'heights'            => Height::select('id','title as name')->where('deleted', 0)->orderBy('order_at','asc')->get(),
-                'myBuilds'           => MyBuild::select('id','title as name')->where('deleted', 0)->orderBy('order_at','asc')->get(),
+//                'myBuilds'           => MyBuild::select('id','title as name')->where('deleted', 0)->orderBy('order_at','asc')->get(),
                 'disability'         => Disability::select('id','title as name')->where('deleted', 0)->orderBy('order_at','asc')->get(),
                 'castes'             => Caste::select('id','title as name')->where('deleted', 0)->orderBy('order_at','asc')->get()
             ]
@@ -2090,8 +2090,8 @@ class CustomerController extends Controller
             $data['customerData']['EducationID'] = (isset($customerSearch->EducationID)) ? (int) $customerSearch->EducationID : '';
             $data['customerData']['OccupationID'] = (isset($customerSearch->OccupationID)) ? (int) $customerSearch->OccupationID : '';
             $data['customerData']['MyIncome'] = (isset($customerSearch->MyIncome)) ? (int) $customerSearch->MyIncome : '';
-            $data['customerData']['WillingToRelocate'] = (isset($customerSearch->WillingToRelocate)) ? (int) $customerSearch->WillingToRelocate : '';
-            $data['customerData']['MyBuilds'] = (isset($customerSearch->MyBuilds)) ? (int) $customerSearch->MyBuilds : '';
+//            $data['customerData']['WillingToRelocate'] = (isset($customerSearch->WillingToRelocate)) ? (int) $customerSearch->WillingToRelocate : '';
+//            $data['customerData']['MyBuilds'] = (isset($customerSearch->MyBuilds)) ? (int) $customerSearch->MyBuilds : '';
             $data['customerData']['MaritalStatus'] = (isset($customerSearch->MaritalStatus)) ? (int) $customerSearch->MaritalStatus : '';
             $data['customerData']['MyLivingArrangements'] = (isset($customerSearch->MyLivingArrangements)) ? (int) $customerSearch->MyLivingArrangements : '';
             $data['customerData']['Heights'] = (isset($customerSearch->Heights)) ? (int) $customerSearch->Heights : '';

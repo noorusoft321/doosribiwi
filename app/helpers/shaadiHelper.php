@@ -7,6 +7,7 @@ use App\Models\CustomerFamilyInfo;
 use App\Models\CustomerImage;
 use App\Models\CustomerNotificationPreference;
 use App\Models\Customer;
+use App\Models\CustomerOtherInfo;
 use App\Models\CustomerPersonalInfo;
 use App\Models\CustomerReligionInfo;
 use App\Models\CustomerResidentialInfo;
@@ -250,32 +251,40 @@ if (!function_exists('sendAndroidNotification')){
 
 if (!function_exists('checkProfileComplete')) {
     function checkProfileComplete($customerId='') {
-        if (empty($customerId)) {
-            $customerId = auth()->id();
+
+        if (empty($customerId)) { $customerId = auth()->id(); }
+
+        $customer = Customer::findOrFail($customerId);
+        if ($customer->email_verified==0) { return 'EmailVerifyScreen'; }
+
+        $customerOtherInfo = CustomerOtherInfo::where('deleted', 0)->where('RegistrationID', $customerId)->first();
+        if(empty($customerOtherInfo) || empty($customerOtherInfo->gender) || $customerOtherInfo->gender==0){
+            return 'GoogleSignup';
         }
-        $profileComplete = false;
-        $customerCareerInfo = CustomerCareerInfo::where('deleted', 0)
-            ->where('CustomerID', $customerId)
-            ->count();
-        if ($customerCareerInfo > 0) {
-            $CustomerPersonalInfoCount = CustomerPersonalInfo::where('deleted', 0)
-                ->where('CustomerID', $customerId)
-                ->count();
-            if ($CustomerPersonalInfoCount > 0) {
-                $CustomerReligionInfoCount = CustomerReligionInfo::where('deleted', 0)
-                    ->where('CustomerID', $customerId)
-                    ->count();
-                if ($CustomerReligionInfoCount > 0) {
-                    $customerSearchCount = CustomerSearch::where('deleted', 0)
-                        ->where('customerID',$customerId)
-                        ->count();
-                    if ($customerSearchCount > 0) {
-                        return true;
-                    }
-                }
+
+        $customerCareerInfo = CustomerCareerInfo::where('deleted', 0)->where('CustomerID', $customerId)->count();
+        if ($customerCareerInfo==0) { return 'EducationForm'; }
+
+        $customerPersonalInfo = CustomerPersonalInfo::where('deleted', 0)->where('CustomerID', $customerId)->first();
+        if (!empty($customerPersonalInfo)) {
+            if ($customerPersonalInfo->WillingToRelocate == 0) {
+                return 'PersonalForm';
             }
+        } else {
+            return 'PersonalForm';
         }
-        return $profileComplete;
+
+        $customerReligionInfoCount = CustomerReligionInfo::where('deleted', 0)->where('CustomerID', $customerId)->count();
+        if ($customerReligionInfoCount==0) { return 'ReligionForm'; }
+
+        $customerSearchCount = CustomerSearch::where('deleted', 0)->where('customerID',$customerId)->count();
+        if ($customerSearchCount==0) { return 'ExpectedForm'; }
+
+        if (empty($customer->image) || in_array($customer->image, ['default-user.png','default-male.jpg','default-female.jpg'])) {
+            return 'UploadImages';
+        }
+
+        return 'BottomTab';
     }
 }
 
