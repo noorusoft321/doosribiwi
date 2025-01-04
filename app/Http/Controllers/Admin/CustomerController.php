@@ -240,7 +240,14 @@ class CustomerController extends Controller
         if ($customerId) {
             $customer = Customer::where('id',FakerURL::id_d($customerId))->first();
             if (!empty($customer)) {
-                $customer->update(['deleted' => 1]);
+                $customer->update([
+                    'deleted'        => 1,
+                    'profile_status' => 2,
+                    'email'          => $customer->email.$customer->id,
+                    'mobile'         => $customer->mobile.$customer->id,
+                    'name'           => $customer->name.$customer->id
+                ]);
+//                $customer->update(['deleted' => 1,'profile_status' => 2]);
                 CustomerCareerInfo::where(['deleted' => 0, 'CustomerID' => $customer->id])->update(['deleted' => 1]);
                 CustomerOtherInfo::where(['deleted' => 0, 'RegistrationID' => $customer->id])->update(['deleted' => 1]);
                 CustomerPersonalInfo::where(['deleted' => 0, 'CustomerID' => $customer->id])->update(['deleted' => 1]);
