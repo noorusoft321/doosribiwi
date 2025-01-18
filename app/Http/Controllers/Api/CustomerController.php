@@ -2151,40 +2151,65 @@ class CustomerController extends Controller
     }
 
     public function saveGalleryImageForm() {
-        $image = request()->file;
-//        $profile_gallery_client_status = request()->profile_gallery_client_status;
-        if (isset($image) && !empty($image)) {
-            $image_base64 = base64_decode($image);
-            $thumbnailImgNameOne = uniqid() . Str::random(25) . '.jpg';
-            $file = public_path().'/customer-images/'.$thumbnailImgNameOne;
-            file_put_contents($file, $image_base64);
+        $request = request();
+        $rules = [
+            'images*' => 'required|image|mimes:jpeg,png,jpg|max:4096'
+        ];
 
-            $res = CustomerImage::create([
-                'CustomerID' => auth()->id(),
-                'image' => $thumbnailImgNameOne
-            ]);
-            Customer::where('id',auth()->id())->update([
-                'profile_gallery_status' => 0,
-//                'profile_gallery_client_status' => $profile_gallery_client_status
-            ]);
-
-            if (!empty($res)) {
-                return response()->json([
-                    'success' => true,
-                    'message' => 'Gallery image has saved successfully.',
-                    'data'    => $res->id,
-                    'code'    => 200,
-                    'errors'  => []
-                ], 200);
-            }
+        $validator = Validator::make($request->all(), $rules);
+        if ($validator->fails()) {
+            return response()->json([
+                'errors'=>$validator->errors(),
+                'status'=>'error'
+            ],422);
         }
-        return response()->json([
-            'success'  => false,
-            'message' => 'Gallery image has not saved.',
-            'data'    => [],
-            'code'    => 200,
-            'errors'  => []
-        ], 200);
+        try {
+            $customerId = auth()->id();
+            if ($request->hasFile('images')) {
+                $images = $request->file('images');
+                foreach ($images as $image) {
+                    if ($image->isValid()) {
+                        $extension = $image->getClientOriginalExtension();
+                        $imageName = rand(111, 99999) . time() . '.' . $extension;
+                        $main_image = public_path('customer-images/' . $imageName);
+                        Image::make($image)->resize(500, 500, function ($constraint) {
+                            $constraint->aspectRatio();
+                        })->save($main_image, 60);
+
+                        CustomerImage::create([
+                            'CustomerID' => $customerId,
+                            'image' => $imageName
+                        ]);
+                    }
+                }
+            }
+
+            $gallery = CustomerImage::select('id','image','deleted','CustomerID as customerId')->where([
+                'CustomerID' => $customerId,
+                'deleted'    => 0
+            ])->get();
+
+            $gallery->makeHidden([
+                "deleted",
+                "image",
+                "faker_id"
+            ]);
+            return response()->json([
+                'success' => true,
+                'message' => 'Gallery image has saved successfully.',
+                'data'    => $gallery,
+                'code'    => 200,
+                'errors'  => []
+            ], 200);
+        } catch (\Exception $e) {
+            return response()->json([
+                'success'  => false,
+                'message' => 'Gallery image has not saved.',
+                'data'    => [],
+                'code'    => 200,
+                'errors'  => $e
+            ], 200);
+        }
     }
 
     public function deleteGalleryImage($galleryImageId)
