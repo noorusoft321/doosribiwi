@@ -18,6 +18,8 @@ class State extends CoreModel
         'updated_by',
     ];
 
+    protected $hidden = ['laravel_through_key'];
+
     public function getCities()
     {
         return $this->hasMany(City::class, 'state_id');

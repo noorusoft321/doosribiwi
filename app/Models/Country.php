@@ -22,6 +22,8 @@ class Country extends CoreModel
         'deleted_by',
     ];
 
+    protected $hidden = ['laravel_through_key'];
+
     public function getStates()
     {
         return $this->hasMany(State::class, 'country_id');

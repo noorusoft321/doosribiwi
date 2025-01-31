@@ -17,4 +17,6 @@ class SpecialGuest extends CoreModel
         'deleted',
         'deleted_by',
     ];
+
+    protected $hidden = ['laravel_through_key'];
 }

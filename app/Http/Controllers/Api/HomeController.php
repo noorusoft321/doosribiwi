@@ -237,10 +237,16 @@ class HomeController extends Controller
                     ]
                 ],
                 'countries'           => Country::select('id','name')->where('deleted', 0)->orderBy('order_at','asc')->get(),
+                'qualifications'      => Education::select('id','title as name')->where('deleted', 0)->orderBy('order_at','asc')->get(),
+                'professions'         => Occupation::select('id','title as name')->where('deleted', 0)->orderBy('order_at','asc')->get(),
+                'monthlyIncomes'      => AnnualInCome::select('id','title as name')->where('deleted', 0)->orderBy('order_at','asc')->get(),
                 'religions'           => Religion::select('id','title as name')->where('deleted', 0)->orderBy('order_at','asc')->get(),
                 'castes'              => Caste::select('id','title as name')->where('deleted', 0)->orderBy('order_at','asc')->get(),
                 'tongues'             => MotherTongue::select('id','title as name')->where('deleted', 0)->orderBy('order_at','asc')->get(),
                 'maritalStatus'       => MaritalStatus::select('id','title as name')->where('deleted', 0)->orderBy('order_at','asc')->get(),
+                'livingArrangements'  => MyLivingArrangement::select('id','title as name')->where('deleted', 0)->orderBy('order_at','asc')->get(),
+                'heights'             => Height::select('id','title as name')->where('deleted', 0)->orderBy('order_at','asc')->get(),
+                'disabilities'        => Disability::select('id','title as name')->where('deleted', 0)->orderBy('order_at','asc')->get(),
                 'registrationReasons' => RegistrationsReason::select('id','title as name')->where('deleted',0)->orderBy('order_at','asc')->get()
             ]
         ], 200);

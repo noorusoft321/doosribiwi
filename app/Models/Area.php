@@ -15,7 +15,5 @@ class Area extends CoreModel
         'city_id'
     ];
 
-    protected $hidden = [
-        'laravel_through_key'
-    ];
+    protected $hidden = ['laravel_through_key'];
 }

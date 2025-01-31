@@ -54,10 +54,15 @@ class CustomerController extends Controller
     {
         $request = request()->all();
         $skipProposals = (isset($request['page']) && $request['page'] > 0) ? ($request['page']-1) * 5 : 0;
+        $currentUserGenderExp = '';
+        $currentAuthId = '';
         if (isset($request['gender']) && !empty($request['gender'])) {
             $currentUserGenderExp = $request['gender'];
         } else {
-            $currentUserGenderExp = (auth()->user()->gender_name=='Female') ? '1' : '2';
+            if (auth()->check()) {
+                $currentUserGenderExp = (auth()->user()->gender_name=='Female') ? '1' : '2';
+                $currentAuthId = auth()->id();
+            }
         }
 
         $customers = Customer::select(
@@ -90,9 +95,6 @@ class CustomerController extends Controller
             'getMaritalStatusName',
             'getHeightName',
             'customerOtherInfo' => function($q) use($request, $currentUserGenderExp){
-                if (!empty($request['maritalStatusId'])) {
-                    $q->where('MaritalStatusID', $request['maritalStatusId']);
-                }
                 if (!empty($currentUserGenderExp)) {
                     $q->where('gender', $currentUserGenderExp);
                 }
@@ -112,7 +114,7 @@ class CustomerController extends Controller
                 if (!empty($request['cityId'])) {
                     $q->where('city_id', $request['cityId']);
                 }
-                if ($request['tongueId'] > 0) {
+                if (!empty($request['tongueId'])) {
                     $q->where('MyFirstLanguageMotherTonguesID', $request['tongueId']);
                 }
             },
@@ -120,23 +122,45 @@ class CustomerController extends Controller
                 if (!empty($request['religionId'])) {
                     $q->where('Religions', $request['religionId']);
                 }
+                if (!empty($request['sectId'])) {
+                    $q->where('Sects', $request['sectId']);
+                }
+            },
+            'customerCareerInfo' => function($q) use ($request) {
+                if (!empty($request['qualificationId'])) {
+                    $q->where('Qualification', $request['qualificationId']);
+                }
+                if (!empty($request['professionId'])) {
+                    $q->where('Profession', $request['professionId']);
+                }
+                if (!empty($request['incomeId'])) {
+                    $q->where('MonthlyIncome', $request['incomeId']);
+                }
             },
             'customerPersonalInfo' => function($q) use ($request) {
                 if (!empty($request['casteId'])) {
                     $q->where('Caste', $request['casteId']);
                 }
+                if (!empty($request['livingArrangementId'])) {
+                    $q->where('MyLivingArrangements', $request['livingArrangementId']);
+                }
+                if (!empty($request['heightId'])) {
+                    $q->where('Heights', $request['heightId']);
+                }
+                if (!empty($request['disabilityId'])) {
+                    $q->where('Disabilities', $request['disabilityId']);
+                }
             }
         ]);
 
-        if (!empty($currentUserGenderExp) ||
-            !empty($request['ageFrom']) ||
-            !empty($request['ageTo']) ||
-            !empty($request['maritalStatusId']) ||
-            !empty($request['isAbroad']) ||
-            !empty($request['countryId']) ||
-            !empty($request['stateId']) ||
-            !empty($request['cityId']) ||
-            !empty($request['tongueId'])) {
+        if (isset($currentUserGenderExp) ||
+            isset($request['ageFrom']) ||
+            isset($request['ageTo']) ||
+            isset($request['maritalStatusId']) ||
+            isset($request['countryId']) ||
+            isset($request['stateId']) ||
+            isset($request['cityId']) ||
+            isset($request['tongueId'])) {
             $customers = $customers->whereHas('customerOtherInfo', function($q) use($request, $currentUserGenderExp){
                 if (!empty($request['maritalStatusId'])) {
                     $q->where('MaritalStatusID',$request['maritalStatusId']);
@@ -151,9 +175,6 @@ class CustomerController extends Controller
                 } elseif (!empty($request['ageTo'])) {
                     $q->where('age', '<=', $request['ageTo']);
                 }
-                if (!empty($request['isAbroad'])) {
-                    $q->where('country_id','!=',162);
-                }
                 if (!empty($request['countryId'])) {
                     $q->where('country_id', $request['countryId']);
                 }
@@ -163,49 +184,88 @@ class CustomerController extends Controller
                 if (!empty($request['cityId'])) {
                     $q->where('city_id', $request['cityId']);
                 }
-                if ($request['tongueId'] > 0) {
+                if (!empty($request['tongueId'])) {
                     $q->where('MyFirstLanguageMotherTonguesID', $request['tongueId']);
                 }
             });
         }
 
-        if (!empty($request['religionId'])) {
+        if (isset($request['religionId']) || isset($request['sectId'])) {
             $customers = $customers->whereHas('customerReligionInfo', function($q) use ($request) {
-                $q->where('Religions', $request['religionId']);
+                if (!empty($request['religionId'])) {
+                    $q->where('Religions', $request['religionId']);
+                }
+                if (!empty($request['sectId'])) {
+                    $q->where('Sects', $request['sectId']);
+                }
             });
         }
 
-        if (!empty($request['casteId'])) {
+        if (isset($request['qualificationId']) || isset($request['professionId']) || isset($request['incomeId'])) {
+            $customers = $customers->whereHas('customerCareerInfo', function($q) use ($request) {
+                if (!empty($request['qualificationId'])) {
+                    $q->where('Qualification', $request['qualificationId']);
+                }
+                if (!empty($request['professionId'])) {
+                    $q->where('Profession', $request['professionId']);
+                }
+                if (!empty($request['incomeId'])) {
+                    $q->where('MonthlyIncome', $request['incomeId']);
+                }
+            });
+        }
+
+        if (isset($request['casteId']) || isset($request['livingArrangementId']) || isset($request['heightId']) || isset($request['disabilityId'])) {
             $customers = $customers->whereHas('customerPersonalInfo', function($q) use ($request) {
-                $q->where('Caste', $request['casteId']);
+                if (!empty($request['casteId'])) {
+                    $q->where('Caste', $request['casteId']);
+                }
+                if (!empty($request['livingArrangementId'])) {
+                    $q->where('MyLivingArrangements', $request['livingArrangementId']);
+                }
+                if (!empty($request['heightId'])) {
+                    $q->where('Heights', $request['heightId']);
+                }
+                if (!empty($request['disabilityId'])) {
+                    $q->where('Disabilities', $request['disabilityId']);
+                }
             });
         }
 
-        $customers = $customers->where('id','!=',auth()->id())
-            ->where('deleted','=',0)
-            ->where('profile_status','=',1)
-            ->where('email_verified','=',1);
-
-        if (isset($request['isHighlight']) && !empty($request['isHighlight'])) {
-            $customers = $customers->where('is_highlight','=',1)
-                ->where('profile_pic_client_status','=',1)
-                ->where('profile_pic_status','=',1)
-                ->whereNotIn('image', ['default-female.jpg','default-male.jpg','default-user.png'])
-                ->orderBy('blur_percent', 'asc')
-                ->orderBy('id', 'desc');
-        } else {
-            $customers = $customers->where('profile_pic_status','!=',2)
-                ->orderBy('blur_percent', 'asc')
-                ->orderBy('is_highlight','desc')
-                ->orderBy('profile_pic_client_status', 'desc')
-                ->orderBy('profile_pic_status', 'desc')
-                ->orderBy('id', 'desc');
+        if (!empty($request['featuredProfile'])) {
+            $customers = $customers->where('featuredProfile', 1);
         }
-//        ->orderByRaw("profile_pic_status DESC, profile_pic_client_status DESC")
+
+        if (!empty($request['verifiedProfile'])) {
+            $customers = $customers
+                ->where('mobile_verified',1)
+//                ->where('email_verified',1)
+                ->where('profile_pic_status',1)
+                ->where('age_verification',1)
+                ->where('education_verification',1)
+                ->where('location_verification',1)
+                ->where('meeting_verification',1)
+                ->where('nationality_verification',1);
+        }
+
+        if (!empty($currentAuthId)) {
+            $customers = $customers->where('id','!=',$currentAuthId);
+        }
+
+        $customers = $customers->where('deleted','=',0)
+            ->where('profile_status','=',1)
+            ->where('email_verified','=',1)
+            ->orderBy('blur_percent', 'asc')
+            ->orderBy('profile_pic_client_status', 'desc')
+            ->orderBy('profile_pic_status', 'desc')
+            ->orderBy('id', 'desc');
+        $totalCustomersCount = $customers->count();
         $customers = $customers
             ->without([
                 'customerOtherInfo',
-                'customerReligionInfo'
+                'customerReligionInfo',
+                'customerCareerInfo',
+                'customerPersonalInfo'
             ])
             ->skip($skipProposals)
             ->take(5)
@@ -239,7 +299,10 @@ class CustomerController extends Controller
         return response()->json([
             'success'  => true,
             'message' => 'Customers has been fetched successfully.',
-            'data'    => $customers,
+            'data'    => [
+                'customersList'       => $customers,
+                'totalCustomersCount' => $totalCustomersCount
+            ],
             'code'    => 200
         ], 200);
     }

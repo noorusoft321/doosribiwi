@@ -16,4 +16,6 @@ class Religion extends CoreModel
         'created_by',
         'updated_by',
     ];
+
+    protected $hidden = ['laravel_through_key'];
 }
