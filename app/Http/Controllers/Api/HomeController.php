@@ -14,9 +14,11 @@ use App\Models\Country;
 use App\Models\Customer;
 use App\Models\CustomerChatting;
 use App\Models\CustomerFamilyInfo;
+use App\Models\CustomerLike;
 use App\Models\CustomerNotificationPreference;
 use App\Models\CustomerOtherInfo;
 use App\Models\CustomerResidentialInfo;
+use App\Models\CustomerSaved;
 use App\Models\Disability;
 use App\Models\DoYouHaveBeard;
 use App\Models\DoYouKeepHalal;
@@ -117,6 +119,15 @@ class HomeController extends Controller
         $customerArr['imageFullPath'] = $imageFullPath;
 
         $customerArr['customerFormProgress'] = checkProfileCompletePercent($customer);
+        $customerArr['profileLikesCount'] = CustomerLike::where([
+            'like_to' => $customer->id,
+            'deleted' => 0
+        ])->count();
+
+        $customerArr['profileSavesCount'] = CustomerSaved::where([
+            'save_to' => $customer->id,
+            'deleted' => 0
+        ])->count();
         unset(
             $customerArr['customer_other_info'],
             $customerArr['customer_personal_info'],
@@ -386,16 +397,18 @@ class HomeController extends Controller
     {
         $data = [
             'customerData' => [
-                "first_name"      => "",
-                "last_name"       => "",
-                "country_id"      => "",
-                "state_id"        => "",
-                "city_id"         => "",
-                "area_id"         => "",
-                "post_zip_code"   => "",
-                "DOB"             => "",
-                "MaritalStatusID" => "",
-                "address"         => ""
+                "first_name"       => "",
+                "last_name"        => "",
+                "country_id"       => "",
+                "state_id"         => "",
+                "city_id"          => "",
+                "area_id"          => "",
+                "post_zip_code"    => "",
+                "DOB"              => "",
+                "MaritalStatusID"  => "",
+                "childrenQuantity" => "",
+                "divorceReason"    => "",
+                "address"          => ""
             ],
             'formData' => [
                 'countries'     => Country::select('id','name')->where('deleted', 0)->orderBy('order_at','asc')->get(),
@@ -416,6 +429,8 @@ class HomeController extends Controller
                 $data['customerData']['post_zip_code'] = $customer->customerOtherInfo->post_zip_code;
                 $data['customerData']['DOB'] = $customer->customerOtherInfo->DOB;
                 $data['customerData']['MaritalStatusID'] = (int) $customer->customerOtherInfo->MaritalStatusID;
+                $data['customerData']['childrenQuantity'] = (int) $customer->customerOtherInfo->childrenQuantity;
+                $data['customerData']['divorceReason'] = $customer->customerOtherInfo->divorceReason;
                 $data['customerData']['address'] = $customer->customerOtherInfo->address;
             }
         }
@@ -717,7 +732,7 @@ class HomeController extends Controller
                 "hobbiesAndInterest" => [],
             ],
             'formData' => [
-                'hobbiesAndInterest' => HobbiesAndInterest::select('id','title as name')->where('deleted', 0)->orderBy('order_at','asc')->get()
+                'hobbiesAndInterest' => HobbiesAndInterest::select('id','title as name','icon')->where('deleted', 0)->orderBy('order_at','asc')->get()->makeHidden(['faker_id'])
             ]
         ];
 

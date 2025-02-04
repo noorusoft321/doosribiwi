@@ -30,6 +30,7 @@ use App\Models\EyeColor;
 use App\Models\FuturePlan;
 use App\Models\HairColor;
 use App\Models\Height;
+use App\Models\HobbiesAndInterest;
 use App\Models\IAmLookingToMarry;
 use App\Models\JobPost;
 use App\Models\MaritalStatus;
@@ -53,7 +54,7 @@ class CustomerController extends Controller
     public function index()
     {
         $request = request()->all();
-        $skipProposals = (isset($request['page']) && $request['page'] > 0) ? ($request['page']-1) * 5 : 0;
+        $skipProposals = (isset($request['page']) && $request['page'] > 0) ? ($request['page']-1) * 6 : 0;
         $currentUserGenderExp = '';
         $currentAuthId = '';
         if (isset($request['gender']) && !empty($request['gender'])) {
@@ -268,7 +269,7 @@ class CustomerController extends Controller
                 'customerPersonalInfo'
             ])
             ->skip($skipProposals)
-            ->take(5)
+            ->take(6)
             ->get();
         $customers->makeHidden([
             'match_assign_lead_user_name',
@@ -406,7 +407,8 @@ class CustomerController extends Controller
             $personalInfo['motherTongue'] = genericQuery($customer->customerOtherInfo->MyFirstLanguageMotherTonguesID,'MotherTongue');
             $personalInfo['registrationReason'] = genericQuery($customer->customerOtherInfo->RegistrationsReasonsID,'RegistrationsReason');
             if ($customer->customerOtherInfo->hobbiesAndInterest) {
-                $hobbies = getHobbiesAndInterestArray($customer->customerOtherInfo->hobbiesAndInterest);
+                $hobbiesIds = explode(",",$customer->customerOtherInfo->hobbiesAndInterest);
+                $hobbies = HobbiesAndInterest::select('id','title as name','icon')->whereIn('id', $hobbiesIds)->orderBy('order_at','asc')->get()->makeHidden(['faker_id']);
             }
             if (!empty($customer->customerOtherInfo->persona_note) && $customer->customerOtherInfo->personal_note_approve==1) {
                 $about = $customer->customerOtherInfo->persona_note;
@@ -536,6 +538,16 @@ class CustomerController extends Controller
             });
         }
         $customer->gallery = $gallery;
+
+        $customer->profileLikesCount = CustomerLike::where([
+            'like_to' => $customer->id,
+            'deleted' => 0
+        ])->count();
+
+        $customer->profileSavesCount = CustomerSaved::where([
+            'save_to' => $customer->id,
+            'deleted' => 0
+        ])->count();
 
         $uniqueProfileSlug = $customer->gender_name.'-proposal-'.(!empty($customer->getCitySlug)?$customer->getCitySlug->slug:'na').'-'.(!empty($customer->getCountrySlug)?$customer->getCountrySlug->slug:'na').'-'.$customer->id;
         $baseUrl = env('APP_URL');
@@ -825,6 +837,8 @@ class CustomerController extends Controller
 
     public function whoLikedByMe()
     {
+        $request = request()->all();
+        $skipProposals = (isset($request['page']) && $request['page'] > 0) ? ($request['page']-1) * 6 : 0;
         $customerIds = CustomerLike::select('like_to')->where([
             'like_by' => auth()->id()
         ])->pluck('like_to')->toArray();
@@ -845,6 +859,8 @@ class CustomerController extends Controller
             )
                 ->where('deleted', 0)
                 ->whereIn('id',$customerIds)
+                ->skip($skipProposals)
+                ->take(6)
                 ->get();
 
             $customers->makeHidden([
@@ -877,6 +893,8 @@ class CustomerController extends Controller
 
     public function whoLikedMyProfile()
     {
+        $request = request()->all();
+        $skipProposals = (isset($request['page']) && $request['page'] > 0) ? ($request['page']-1) * 6 : 0;
         $customerIds = CustomerLike::select('like_by')->where([
             'like_to' => auth()->id()
         ])->pluck('like_by')->toArray();
@@ -897,6 +915,8 @@ class CustomerController extends Controller
             )
                 ->where('deleted', 0)
                 ->whereIn('id',$customerIds)
+                ->skip($skipProposals)
+                ->take(6)
                 ->get();
 
             $customers->makeHidden([
@@ -961,6 +981,8 @@ class CustomerController extends Controller
 
     public function whoSavedByMe()
     {
+        $request = request()->all();
+        $skipProposals = (isset($request['page']) && $request['page'] > 0) ? ($request['page']-1) * 6 : 0;
         $customerIds = CustomerSaved::select('save_to')->where([
             'save_by' => auth()->id()
         ])->pluck('save_to')->toArray();
@@ -981,6 +1003,8 @@ class CustomerController extends Controller
             )
                 ->where('deleted', 0)
                 ->whereIn('id',$customerIds)
+                ->skip($skipProposals)
+                ->take(6)
                 ->get();
 
             $customers->makeHidden([
@@ -1013,6 +1037,8 @@ class CustomerController extends Controller
 
     public function whoSavedMyProfile()
     {
+        $request = request()->all();
+        $skipProposals = (isset($request['page']) && $request['page'] > 0) ? ($request['page']-1) * 6 : 0;
         $customerIds = CustomerSaved::select('save_by')->where([
             'save_to' => auth()->id()
         ])->pluck('save_by')->toArray();
@@ -1033,6 +1059,8 @@ class CustomerController extends Controller
             )
                 ->where('deleted', 0)
                 ->whereIn('id',$customerIds)
+                ->skip($skipProposals)
+                ->take(6)
                 ->get();
 
             $customers->makeHidden([

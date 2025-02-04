@@ -8,6 +8,7 @@ class HobbiesAndInterest extends CoreModel
 
     protected $fillable =[
         'title',
+        'icon',
         'slug',
         'order_at',
         'status',
