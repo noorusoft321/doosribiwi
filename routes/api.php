@@ -44,6 +44,10 @@ Route::group(['namespace' => 'Api'], function () {
     Route::post('/customer-check-exists', [HomeController::class, 'customerCheckExists']);
     Route::post('/customer-support-message', [HomeController::class, 'customerSupportMessage']);
 
+    Route::post('/get-all-customers', [CustomerController::class,'index']);
+    Route::get('/get-customer-detail/{customerId}', [CustomerController::class,'customerDetail']);
+    Route::get('/get-packages', [HomeController::class,'getPackages']);
+
     Route::middleware('auth:sanctum')->group(function () {
         Route::get('/me', [HomeController::class,'profile']);
         Route::get('/send-confirmation-email', [HomeController::class, 'sendConfirmationEmail']);
@@ -65,8 +69,7 @@ Route::group(['namespace' => 'Api'], function () {
         Route::post('/save-hobbies-interest', [HomeController::class,'saveHobbiesInterest']);
 
         Route::post('/update-device-token', [HomeController::class,'updateDeviceToken']);
-        Route::post('/get-all-customers', [CustomerController::class,'index']);
-        Route::get('/get-customer-detail/{customerId}', [CustomerController::class,'customerDetail']);
+
         Route::get('/customer-like-unlike/{customerId}', [CustomerController::class,'customerLikeUnlike']);
         Route::get('/who-liked-by-me', [CustomerController::class,'whoLikedByMe']);
         Route::get('/who-liked-my-profile', [CustomerController::class,'whoLikedMyProfile']);
@@ -75,7 +78,7 @@ Route::group(['namespace' => 'Api'], function () {
         Route::get('/who-saved-my-profile', [CustomerController::class,'whoSavedMyProfile']);
 
         /*Messenger*/
-        Route::get('/get-messenger-friends', [MessengerController::class, 'index']);
+        Route::get('/get-messenger-friends/{newCustomerId?}', [MessengerController::class, 'index']);
         Route::get('/get-chat-messages/{receiverId}', [MessengerController::class, 'getMessage']);
         Route::post('/send-message', [MessengerController::class, 'sendMessage']);
 
@@ -108,8 +111,6 @@ Route::group(['namespace' => 'Api'], function () {
         Route::get('/get-notifications', [HomeController::class,'getNotifications']);
 
         Route::post('/save-general-info', [AuthController::class,'saveGeneralInfo']);
-
-        Route::get('/get-packages', [HomeController::class,'getPackages']);
 
         Route::post('/save-new-email', [HomeController::class, 'saveNewEmail']);
         Route::post('/save-new-password', [HomeController::class, 'saveNewPassword']);

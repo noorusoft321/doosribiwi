@@ -43,6 +43,8 @@ use App\Models\Smoke;
 use App\Models\University;
 use App\Models\Weight;
 use App\Models\WillingToRelocate;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Str;
@@ -51,19 +53,20 @@ use Image;
 class CustomerController extends Controller
 {
 
-    public function index()
+    public function index(Request $request)
     {
+        // Manually authenticate user from the token
+        $currentCustomer = $request->bearerToken() ? Customer::where('id', optional(\Laravel\Sanctum\PersonalAccessToken::findToken($request->bearerToken()))->tokenable_id)->first() : null;
+        $currentUserGenderExp = '';
+        $currentAuthId = 0;
+        if (!empty($currentCustomer)) {
+            $currentUserGenderExp = ($currentCustomer->gender_name=='Female') ? '1' : '2';
+            $currentAuthId = $currentCustomer->id;
+        }
         $request = request()->all();
         $skipProposals = (isset($request['page']) && $request['page'] > 0) ? ($request['page']-1) * 6 : 0;
-        $currentUserGenderExp = '';
-        $currentAuthId = '';
         if (isset($request['gender']) && !empty($request['gender'])) {
             $currentUserGenderExp = $request['gender'];
-        } else {
-            if (auth()->check()) {
-                $currentUserGenderExp = (auth()->user()->gender_name=='Female') ? '1' : '2';
-                $currentAuthId = auth()->id();
-            }
         }
 
         $customers = Customer::select(
@@ -257,9 +260,10 @@ class CustomerController extends Controller
             ->where('profile_status','=',1)
             ->where('email_verified','=',1)
             ->orderBy('blur_percent', 'asc')
+            ->where('profile_pic_status','!=',2)
             ->orderBy('profile_pic_client_status', 'desc')
-            ->orderBy('profile_pic_status', 'desc')
-            ->orderBy('id', 'desc');
+            ->orderBy('profile_pic_status', 'desc');
+//            ->orderBy('id', 'desc');
         $totalCustomersCount = $customers->count();
         $customers = $customers
             ->without([
@@ -308,9 +312,14 @@ class CustomerController extends Controller
         ], 200);
     }
 
-    public function customerDetail($customerId)
+    public function customerDetail(Request $request,$customerId)
     {
-        $currentCustomerId = auth()->id();
+        // Manually authenticate user from the token
+        $currentCustomer = $request->bearerToken() ? Customer::select('id')->where('id', optional(\Laravel\Sanctum\PersonalAccessToken::findToken($request->bearerToken()))->tokenable_id)->first() : null;
+        $currentCustomerId = 0;
+        if (!empty($currentCustomer)) {
+            $currentCustomerId = $currentCustomer->id;
+        }
         $customer = Customer::select(
             'id',
             'first_name',
@@ -838,7 +847,7 @@ class CustomerController extends Controller
     public function whoLikedByMe()
     {
         $request = request()->all();
-        $skipProposals = (isset($request['page']) && $request['page'] > 0) ? ($request['page']-1) * 6 : 0;
+//        $skipProposals = (isset($request['page']) && $request['page'] > 0) ? ($request['page']-1) * 6 : 0;
         $customerIds = CustomerLike::select('like_to')->where([
             'like_by' => auth()->id()
         ])->pluck('like_to')->toArray();
@@ -859,8 +868,8 @@ class CustomerController extends Controller
             )
                 ->where('deleted', 0)
                 ->whereIn('id',$customerIds)
-                ->skip($skipProposals)
-                ->take(6)
+//                ->skip($skipProposals)
+//                ->take(6)
                 ->get();
 
             $customers->makeHidden([
@@ -894,7 +903,7 @@ class CustomerController extends Controller
     public function whoLikedMyProfile()
     {
         $request = request()->all();
-        $skipProposals = (isset($request['page']) && $request['page'] > 0) ? ($request['page']-1) * 6 : 0;
+//        $skipProposals = (isset($request['page']) && $request['page'] > 0) ? ($request['page']-1) * 6 : 0;
         $customerIds = CustomerLike::select('like_by')->where([
             'like_to' => auth()->id()
         ])->pluck('like_by')->toArray();
@@ -915,8 +924,8 @@ class CustomerController extends Controller
             )
                 ->where('deleted', 0)
                 ->whereIn('id',$customerIds)
-                ->skip($skipProposals)
-                ->take(6)
+//                ->skip($skipProposals)
+//                ->take(6)
                 ->get();
 
             $customers->makeHidden([
@@ -982,7 +991,7 @@ class CustomerController extends Controller
     public function whoSavedByMe()
     {
         $request = request()->all();
-        $skipProposals = (isset($request['page']) && $request['page'] > 0) ? ($request['page']-1) * 6 : 0;
+//        $skipProposals = (isset($request['page']) && $request['page'] > 0) ? ($request['page']-1) * 6 : 0;
         $customerIds = CustomerSaved::select('save_to')->where([
             'save_by' => auth()->id()
         ])->pluck('save_to')->toArray();
@@ -1003,8 +1012,8 @@ class CustomerController extends Controller
             )
                 ->where('deleted', 0)
                 ->whereIn('id',$customerIds)
-                ->skip($skipProposals)
-                ->take(6)
+//                ->skip($skipProposals)
+//                ->take(6)
                 ->get();
 
             $customers->makeHidden([
@@ -1038,7 +1047,7 @@ class CustomerController extends Controller
     public function whoSavedMyProfile()
     {
         $request = request()->all();
-        $skipProposals = (isset($request['page']) && $request['page'] > 0) ? ($request['page']-1) * 6 : 0;
+//        $skipProposals = (isset($request['page']) && $request['page'] > 0) ? ($request['page']-1) * 6 : 0;
         $customerIds = CustomerSaved::select('save_by')->where([
             'save_to' => auth()->id()
         ])->pluck('save_by')->toArray();
@@ -1059,8 +1068,8 @@ class CustomerController extends Controller
             )
                 ->where('deleted', 0)
                 ->whereIn('id',$customerIds)
-                ->skip($skipProposals)
-                ->take(6)
+//                ->skip($skipProposals)
+//                ->take(6)
                 ->get();
 
             $customers->makeHidden([
@@ -2488,7 +2497,7 @@ class CustomerController extends Controller
     public function myMatches()
     {
         $request = request()->all();
-        $skipProposals = (isset($request['page']) && $request['page'] > 0) ? ($request['page']-1) * 5 : 0;
+        $skipProposals = (isset($request['page']) && $request['page'] > 0) ? ($request['page']-1) * 6 : 0;
         $currentCustomerId = auth()->id();
         $customerSearch = null;
         $customerSearchRow = CustomerSearch::where('customerID',$currentCustomerId)->first();
@@ -2595,7 +2604,7 @@ class CustomerController extends Controller
         $customers = $customers->where('id','!=',$currentCustomerId)
 //            ->orderByRaw("profile_pic_status DESC, profile_pic_client_status DESC")
             ->skip($skipProposals)
-            ->take(5)
+            ->take(6)
             ->without([
                 'customerOtherInfo',
                 'customerReligionInfo'

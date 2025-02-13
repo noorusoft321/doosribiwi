@@ -60,6 +60,7 @@ if (!function_exists('testingWithDb')) {
 
 if (!function_exists('fireDoctorMessage')){
     function fireDoctorMessage($message){
+        $receiverId = $message['receiver_id'];
         $options = array(
             'cluster' => config('broadcasting.connections.pusher.options.cluster'),
             'useTLS' => true
@@ -71,7 +72,7 @@ if (!function_exists('fireDoctorMessage')){
             $options
         );
         $message['only_time'] = date('h:i A');
-        $pusher->trigger('receiver-channel', 'receiver-event', json_encode($message));
+        $pusher->trigger("receiver-channel", "receiver-event-$receiverId", json_encode($message));
     }
 }
 
@@ -267,7 +268,7 @@ if (!function_exists('checkProfileComplete')) {
 
         $customerPersonalInfo = CustomerPersonalInfo::where('deleted', 0)->where('CustomerID', $customerId)->first();
         if (!empty($customerPersonalInfo)) {
-            if ($customerPersonalInfo->WillingToRelocate == 0) {
+            if ($customerPersonalInfo->IAmLookingToMarry == 0) {
                 return 'PersonalForm';
             }
         } else {

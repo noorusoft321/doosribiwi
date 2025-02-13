@@ -10,61 +10,82 @@ use App\Models\CustomerChattingFriend;
 
 class MessengerController extends Controller {
 
-    public function index() {
-        $request = request()->all();
-        $skipProposals = (isset($request['page']) && $request['page'] > 0) ? ($request['page']-1) * 10 : 0;
-
+    public function index($newCustomerId = '') {
         $currentCustomerId = auth()->id();
-        $customerListCollection = CustomerChattingFriend::select(
-            'id',
-            'sender_id',
-            'receiver_id',
-            'message',
-            'updated_at'
-        )
-            ->where('sender_id',$currentCustomerId)
-            ->orWhere('receiver_id',$currentCustomerId)
-            ->orderBy('updated_at', 'desc');
-        $totalRecord = $customerListCollection->count();
-        $customerList = $customerListCollection->skip($skipProposals)->take(10)->get();
 
-        $customerList->map(function ($item) use($currentCustomerId) {
+        // Fetch customer chat list
+        $customerListCollection = CustomerChattingFriend::select(
+            'id', 'sender_id', 'receiver_id', 'message', 'updated_at'
+        )
+            ->where('sender_id', $currentCustomerId)
+            ->orWhere('receiver_id', $currentCustomerId)
+            ->orderBy('updated_at', 'desc');
+
+        $totalRecord = $customerListCollection->count();
+        $customerList = $customerListCollection->get();
+
+        // Map the customer data
+        $customerList->map(function ($item) use ($currentCustomerId) {
             $otherCustomerId = ($currentCustomerId == $item->sender_id) ? $item->receiver_id : $item->sender_id;
-            $item->customer = Customer::select('id','first_name','last_name','image','profile_pic_client_status','profile_pic_status')->where('id',$otherCustomerId)->first();
+            $item->customer = Customer::select('id', 'first_name', 'last_name', 'image', 'profile_pic_client_status', 'profile_pic_status')
+                ->where('id', $otherCustomerId)
+                ->first();
+
             $item->customer->makeHidden([
-                'first_name',
-                'last_name',
-                'image',
-                'profile_pic_client_status',
-                'profile_pic_status',
-                'faker_id',
-                'verification_status',
-                'age',
-                'gender_name',
-                'assign_user_name',
-                'assign_lead_user_name',
-                'match_assign_user_name',
-                'match_assign_lead_user_name'
+                'first_name', 'last_name', 'image', 'profile_pic_client_status', 'profile_pic_status',
+                'faker_id', 'verification_status', 'age', 'gender_name', 'assign_user_name',
+                'assign_lead_user_name', 'match_assign_user_name', 'match_assign_lead_user_name'
             ]);
+
             return $item;
         });
 
-        $customerList->makeHidden([
-            'id',
-            'faker_id',
-            'sender_id',
-            'receiver_id'
-        ]);
+        $customerList->makeHidden(['id', 'faker_id', 'sender_id', 'receiver_id']);
 
-        $unreadMessageCount = CustomerChatting::where('receiver_id', $currentCustomerId)->where('message_status',1)->where('deleted',0)->count();
+        // ✅ Check if $newCustomerId is provided and does not already exist in collection
+        if (!empty($newCustomerId)) {
+            $customerExists = $customerList->contains(function ($item) use ($newCustomerId) {
+                return $item->customer->id == $newCustomerId;
+            });
+
+            if (!$customerExists) {
+                $newCustomer = Customer::select('id', 'first_name', 'last_name', 'image', 'profile_pic_client_status', 'profile_pic_status')
+                    ->where('id', $newCustomerId)
+                    ->first();
+
+                if ($newCustomer) {
+                    $newCustomerItem = (object) [
+                        'message' => null,
+                        'updated_at' => now(),
+                        'customer' => $newCustomer
+                    ];
+
+                    // Hide unnecessary fields
+                    $newCustomerItem->customer->makeHidden([
+                        'first_name', 'last_name', 'image', 'profile_pic_client_status', 'profile_pic_status',
+                        'faker_id', 'verification_status', 'age', 'gender_name', 'assign_user_name',
+                        'assign_lead_user_name', 'match_assign_user_name', 'match_assign_lead_user_name'
+                    ]);
+
+                    $customerList->prepend($newCustomerItem);
+                    $totalRecord++; // Increase count only if new customer was added
+                }
+            }
+        }
+
+        // Unread messages count
+        $unreadMessageCount = CustomerChatting::where('receiver_id', $currentCustomerId)
+            ->where('message_status', 1)
+            ->where('deleted', 0)
+            ->count();
 
         return response()->json([
-            'success'  => true,
-            'message' => 'Messenger friends has been fetched successfully.',
-            'data'    => [
-                'customerChatList'      => $customerList,
+            'success' => true,
+            'message' => 'Messenger friends have been fetched successfully.',
+            'data' => [
+                'customerChatList' => $customerList,
                 'totalCustomerChatList' => $totalRecord,
-                'unreadMessageCount'    => $unreadMessageCount
+                'unreadMessageCount' => $unreadMessageCount
             ]
         ], 200);
     }

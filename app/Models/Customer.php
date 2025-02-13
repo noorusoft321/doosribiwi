@@ -144,7 +144,11 @@ class Customer extends Authenticatable
 
     public function getUnSeenMessagesCountAttribute()
     {
-        return CustomerChatting::where('sender_id', $this->id)->where('receiver_id', auth()->guard('customer')->id())->where('message_status',1)->count();
+        if (auth()->guard('customer')->check()) {
+            return CustomerChatting::where('sender_id', $this->id)->where('receiver_id', auth()->guard('customer')->id())->where('message_status',1)->count();
+        } else {
+            return CustomerChatting::where('sender_id', $this->id)->where('receiver_id', auth()->id())->where('message_status',1)->count();
+        }
     }
 
 //    public function getLastMessageAttribute()
