@@ -16,11 +16,11 @@
 		<script async src="https://www.googletagmanager.com/gtag/js?id=AW-969297351">
 		</script>
 		<script>
-			window.dataLayer = window.dataLayer || [];
-			function gtag(){dataLayer.push(arguments);}
-			gtag('js', new Date());
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
 
-			gtag('config', 'AW-969297351');
+            gtag('config', 'AW-969297351');
 		</script>
 	@endif
 
@@ -167,13 +167,13 @@
 			color: #fff;
 			overflow: hidden;
 		}
-        .btn-view-profile {
-            border: none;
-            background: rgb(64, 168, 230);
-            background: linear-gradient(0deg, rgb(64, 168, 230) 0%, rgb(54, 184, 230) 100%);
-            color: #fff;
-            overflow: hidden;
-        }
+		.btn-view-profile {
+			border: none;
+			background: rgb(64, 168, 230);
+			background: linear-gradient(0deg, rgb(64, 168, 230) 0%, rgb(54, 184, 230) 100%);
+			color: #fff;
+			overflow: hidden;
+		}
 		.btn-view-call {
 			border: none;
 			background: green;
@@ -592,7 +592,7 @@
 
 <!-- Featured Modal -->
 @php
-$packageExpiryDate = (auth()->guard('customer')->check()) ? auth()->guard('customer')->user()->package_expiry_date : null;
+	$packageExpiryDate = (auth()->guard('customer')->check()) ? auth()->guard('customer')->user()->package_expiry_date : null;
 @endphp
 <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
 	<div class="modal-dialog">
@@ -651,6 +651,7 @@ $packageExpiryDate = (auth()->guard('customer')->check()) ? auth()->guard('custo
 
     AOS.init();
 
+    /* Start GDPR script */
     document.addEventListener('DOMContentLoaded', function () {
         const banner = document.getElementById('gdpr-consent-banner');
         const acceptAllBtn = document.getElementById('accept-all-gdpr');
@@ -663,10 +664,27 @@ $packageExpiryDate = (auth()->guard('customer')->check()) ? auth()->guard('custo
 
         // Check if user already accepted cookies
         if (localStorage.getItem('gdprPreferences')) {
-            banner.classList.add('hidden');
-        } else {
-            banner.classList.remove('hidden');
+            return; // Do nothing if cookies are already accepted
         }
+        // Fetch user location using an IP Geolocation API
+        fetch('https://ipinfo.io/json') // You can also use 'https://ipinfo.io/json' or 'https://api.country.is'
+            .then(response => response.json())
+            .then(data => {
+                const userCountry = data.country;
+
+                // If user is from Pakistan (PK), do not show the GDPR banner
+                if (userCountry === 'PK') {
+                    return;
+                }
+
+                // Show GDPR banner for all other countries
+                banner.classList.remove('hidden');
+            })
+            .catch(error => {
+                console.error('Error fetching location:', error);
+                // If location API fails, show GDPR banner by default
+                banner.classList.remove('hidden');
+            });
 
         // Accept all cookies
         acceptAllBtn.addEventListener('click', function () {
@@ -700,7 +718,60 @@ $packageExpiryDate = (auth()->guard('customer')->check()) ? auth()->guard('custo
             }));
             banner.classList.add('hidden');
         });
+
     });
+    /* Close GDPR script */
+	
+    // document.addEventListener('DOMContentLoaded', function () {
+    //     const banner = document.getElementById('gdpr-consent-banner');
+    //     const acceptAllBtn = document.getElementById('accept-all-gdpr');
+    //     const denyBtn = document.getElementById('deny-gdpr');
+    //     const savePreferencesBtn = document.getElementById('save-gdpr');
+	//
+    //     const preferencesCheckbox = document.getElementById('preferences-cookies');
+    //     const statisticsCheckbox = document.getElementById('statistics-cookies');
+    //     const marketingCheckbox = document.getElementById('marketing-cookies');
+	//
+    //     // Check if user already accepted cookies
+    //     if (localStorage.getItem('gdprPreferences')) {
+    //         banner.classList.add('hidden');
+    //     } else {
+    //         banner.classList.remove('hidden');
+    //     }
+	//
+    //     // Accept all cookies
+    //     acceptAllBtn.addEventListener('click', function () {
+    //         localStorage.setItem('gdprPreferences', JSON.stringify({
+    //             necessary: true,
+    //             preferences: true,
+    //             statistics: true,
+    //             marketing: true
+    //         }));
+    //         banner.classList.add('hidden');
+    //     });
+	//
+    //     // Deny all cookies except necessary
+    //     denyBtn.addEventListener('click', function () {
+    //         localStorage.setItem('gdprPreferences', JSON.stringify({
+    //             necessary: true,
+    //             preferences: false,
+    //             statistics: false,
+    //             marketing: false
+    //         }));
+    //         banner.classList.add('hidden');
+    //     });
+	//
+    //     // Save preferences
+    //     savePreferencesBtn.addEventListener('click', function () {
+    //         localStorage.setItem('gdprPreferences', JSON.stringify({
+    //             necessary: true,
+    //             preferences: preferencesCheckbox.checked,
+    //             statistics: statisticsCheckbox.checked,
+    //             marketing: marketingCheckbox.checked
+    //         }));
+    //         banner.classList.add('hidden');
+    //     });
+    // });
 
     $(window).scroll(function() {
         if ($(window).scrollTop() > 300) {
@@ -827,30 +898,30 @@ $packageExpiryDate = (auth()->guard('customer')->check()) ? auth()->guard('custo
         return;
     }
 
-	function getAreas(input,putInField,selectName='Select') {
-		let selectValue = selectName=='Select' ? '' : '0';
-		let refrenceId = $(input).val();
-		let fieldShortCode = $(`select[name="${putInField}"]`);
-		if (refrenceId) {
-			axios.get(`{{route('get.areas')}}/${refrenceId}`).then(function (res) {
-				if (res.data.data.length > 0) {
-					fieldShortCode.empty();
-					fieldShortCode.append(new Option(selectName, selectValue));
-					$.each(res.data.data, function (k, v) {
-						fieldShortCode.append(new Option(v.title, v.id));
-					});
-					return;
-				}
-			}).catch(function (error) {
-				fieldShortCode.empty();
-				fieldShortCode.html(`<option value="${selectValue}">${selectName}</option>`);
-				return;
-			});
-		}
-		fieldShortCode.empty();
-		fieldShortCode.html(`<option value="${selectValue}">${selectName}</option>`);
-		return;
-	}
+    function getAreas(input,putInField,selectName='Select') {
+        let selectValue = selectName=='Select' ? '' : '0';
+        let refrenceId = $(input).val();
+        let fieldShortCode = $(`select[name="${putInField}"]`);
+        if (refrenceId) {
+            axios.get(`{{route('get.areas')}}/${refrenceId}`).then(function (res) {
+                if (res.data.data.length > 0) {
+                    fieldShortCode.empty();
+                    fieldShortCode.append(new Option(selectName, selectValue));
+                    $.each(res.data.data, function (k, v) {
+                        fieldShortCode.append(new Option(v.title, v.id));
+                    });
+                    return;
+                }
+            }).catch(function (error) {
+                fieldShortCode.empty();
+                fieldShortCode.html(`<option value="${selectValue}">${selectName}</option>`);
+                return;
+            });
+        }
+        fieldShortCode.empty();
+        fieldShortCode.html(`<option value="${selectValue}">${selectName}</option>`);
+        return;
+    }
 
     function getSects(input,putInField,selectName='Select') {
         let selectValue = selectName=='Select' ? '' : '0';
@@ -877,29 +948,29 @@ $packageExpiryDate = (auth()->guard('customer')->check()) ? auth()->guard('custo
         return;
     }
 
-    {{--function getMajorCourses(input,putInField) {--}}
-        {{--let refrenceId = $(input).val();--}}
-        {{--let fieldShortCode = $(`select[name="${putInField}"]`);--}}
-        {{--if (refrenceId) {--}}
-            {{--axios.get(`{{route('get.major.courses')}}/${refrenceId}`).then(function (res) {--}}
-                {{--if (res.data.data.length > 0) {--}}
-                    {{--fieldShortCode.empty();--}}
-                    {{--fieldShortCode.append(new Option('Select', ''));--}}
-                    {{--$.each(res.data.data, function (k, v) {--}}
-                        {{--fieldShortCode.append(new Option(v.title, v.id));--}}
-                    {{--});--}}
-                    {{--return;--}}
-                {{--}--}}
-            {{--}).catch(function (error) {--}}
-                {{--fieldShortCode.empty();--}}
-                {{--fieldShortCode.html('<option value="">Select</option>');--}}
-                {{--return;--}}
-            {{--});--}}
-        {{--}--}}
-        {{--fieldShortCode.empty();--}}
-        {{--fieldShortCode.html('<option value="">Select</option>');--}}
-        {{--return;--}}
-    {{--}--}}
+	{{--function getMajorCourses(input,putInField) {--}}
+	{{--let refrenceId = $(input).val();--}}
+	{{--let fieldShortCode = $(`select[name="${putInField}"]`);--}}
+	{{--if (refrenceId) {--}}
+	{{--axios.get(`{{route('get.major.courses')}}/${refrenceId}`).then(function (res) {--}}
+	{{--if (res.data.data.length > 0) {--}}
+	{{--fieldShortCode.empty();--}}
+	{{--fieldShortCode.append(new Option('Select', ''));--}}
+	{{--$.each(res.data.data, function (k, v) {--}}
+	{{--fieldShortCode.append(new Option(v.title, v.id));--}}
+	{{--});--}}
+	{{--return;--}}
+	{{--}--}}
+	{{--}).catch(function (error) {--}}
+	{{--fieldShortCode.empty();--}}
+	{{--fieldShortCode.html('<option value="">Select</option>');--}}
+	{{--return;--}}
+	{{--});--}}
+	{{--}--}}
+	{{--fieldShortCode.empty();--}}
+	{{--fieldShortCode.html('<option value="">Select</option>');--}}
+	{{--return;--}}
+	{{--}--}}
 
     function copyToClipBoard(input) {
         $(input).attr('disabled',false);
@@ -970,7 +1041,7 @@ $packageExpiryDate = (auth()->guard('customer')->check()) ? auth()->guard('custo
                 alertyFy(res.msg, res.status, 2000);
                 if (res.status == 'success') {
                     setTimeout(function () {
-						window.location.href = '{{route('landing.page')}}';
+                        window.location.href = '{{route('landing.page')}}';
                     },3000);
                     $(input).attr('disabled', false);
                 } else {
@@ -982,48 +1053,48 @@ $packageExpiryDate = (auth()->guard('customer')->check()) ? auth()->guard('custo
     }
 
     function getFeaturedModal(input) {
-		$('#staticBackdrop').modal('show');
+        $('#staticBackdrop').modal('show');
     }
-    
+
     function closeFeaturedModal(input) {
         $('#staticBackdrop').modal('hide');
     }
 
-	function openSupportBox() {
-		$(':input').removeClass('has-error');
-		$('span.text-danger').remove();
-		$('.chat-popup :input').val('');
-		$('.chat-popup').show();
-	}
+    function openSupportBox() {
+        $(':input').removeClass('has-error');
+        $('span.text-danger').remove();
+        $('.chat-popup :input').val('');
+        $('.chat-popup').show();
+    }
 
-	function closeSupportBox() {
-		$('.chat-popup').hide();
-	}
+    function closeSupportBox() {
+        $('.chat-popup').hide();
+    }
 
-	function sendSupportMessage(input) {
-		$(':input').removeClass('has-error');
-		$('span.text-danger').remove();
-		$(input).attr('disabled',true);
-		axios.post("{{route('send.support.message')}}", $('#chatSupportForm').serialize()).then(function (res) {
-			if (res.data.status=='success') {
-				alertyFy(res.data.msg,res.data.status,10000);
-				closeSupportBox();
-			} else {
-				alertyFy(res.data.msg,res.data.status,3000);
-			}
-			$(input).attr('disabled',false);
-		}).catch(function (error) {
-			$(input).attr('disabled',false);
-			if (error.response.status==422) {
-				$.each(error.response.data.errors, function (k, v) {
-					$(`#chatSupportForm :input[name="${k}"]`).addClass("has-error");
-					$(`#chatSupportForm :input[name="${k}"]`).after(`<span class="text-danger float-start">${v[0]}</span>`);
-				});
-			} else {
-				alertyFy('There is something wrong','warning',3000);
-			}
-		});
-	}
+    function sendSupportMessage(input) {
+        $(':input').removeClass('has-error');
+        $('span.text-danger').remove();
+        $(input).attr('disabled',true);
+        axios.post("{{route('send.support.message')}}", $('#chatSupportForm').serialize()).then(function (res) {
+            if (res.data.status=='success') {
+                alertyFy(res.data.msg,res.data.status,10000);
+                closeSupportBox();
+            } else {
+                alertyFy(res.data.msg,res.data.status,3000);
+            }
+            $(input).attr('disabled',false);
+        }).catch(function (error) {
+            $(input).attr('disabled',false);
+            if (error.response.status==422) {
+                $.each(error.response.data.errors, function (k, v) {
+                    $(`#chatSupportForm :input[name="${k}"]`).addClass("has-error");
+                    $(`#chatSupportForm :input[name="${k}"]`).after(`<span class="text-danger float-start">${v[0]}</span>`);
+                });
+            } else {
+                alertyFy('There is something wrong','warning',3000);
+            }
+        });
+    }
 
 </script>
 @stack('script')
