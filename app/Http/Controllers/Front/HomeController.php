@@ -160,6 +160,10 @@ class HomeController extends Controller
             ])->where('id',$customerFakerId)->first();
             if (!empty($customer) && $customer->gender_name==$slugArr[0]) {
 
+                if ($customer->profile_status == 2 || $customer->deleted == 1) {
+                    abort(404);
+                }
+
                 $customerBlockByMe = false;
                 $customerLikedByMe = false;
                 $customerSaveByMe = false;

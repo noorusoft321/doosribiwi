@@ -129,7 +129,7 @@ class MessengerController extends Controller {
             'match_assign_lead_user_name',
             'verification_status',
             'age',
-            'gender_name'
+//            'gender_name'
         ]);
 
         $messages = CustomerChatting::select('id','sender_id','receiver_id','message','message_status','created_at')->where([

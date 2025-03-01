@@ -721,7 +721,7 @@
 
     });
     /* Close GDPR script */
-	
+
     // document.addEventListener('DOMContentLoaded', function () {
     //     const banner = document.getElementById('gdpr-consent-banner');
     //     const acceptAllBtn = document.getElementById('accept-all-gdpr');
