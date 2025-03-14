@@ -559,7 +559,7 @@ class CustomerController extends Controller
         ])->count();
 
         $uniqueProfileSlug = $customer->gender_name.'-proposal-'.(!empty($customer->getCitySlug)?$customer->getCitySlug->slug:'na').'-'.(!empty($customer->getCountrySlug)?$customer->getCountrySlug->slug:'na').'-'.$customer->id;
-        $baseUrl = env('APP_URL');
+        $baseUrl = "https://doosribiwi.com";
         $customer->profile_link = $baseUrl.'/'.$uniqueProfileSlug;
         if (empty($customer->user_package)) {
             $customer->user_package = 'Free';
@@ -1306,7 +1306,7 @@ class CustomerController extends Controller
                 'getCitiesName'
             ])->findOrFail($currentAuthId);
             $uniqueProfileSlug = $customer->gender_name.'-proposal-'.(!empty($customer->getCitySlug)?$customer->getCitySlug->slug:'na').'-'.(!empty($customer->getCountrySlug)?$customer->getCountrySlug->slug:'na').'-'.$customer->id;
-            $baseUrl = env('APP_URL');
+            $baseUrl = "https://doosribiwi.com";
             $customer->profile_link = $baseUrl.'/'.$uniqueProfileSlug;
             $customer->profileComplete = checkProfileComplete($customer->id);
             $customer->makeHidden([
@@ -1431,7 +1431,7 @@ class CustomerController extends Controller
                 'getCitiesName'
             ])->findOrFail($currentAuthId);
             $uniqueProfileSlug = $customer->gender_name.'-proposal-'.(!empty($customer->getCitySlug)?$customer->getCitySlug->slug:'na').'-'.(!empty($customer->getCountrySlug)?$customer->getCountrySlug->slug:'na').'-'.$customer->id;
-            $baseUrl = env('APP_URL');
+            $baseUrl = "https://doosribiwi.com";
             $customer->profile_link = $baseUrl.'/'.$uniqueProfileSlug;
             $customer->profileComplete = checkProfileComplete($customer->id);
             $customer->makeHidden([
@@ -1531,7 +1531,7 @@ class CustomerController extends Controller
                 'getCitiesName'
             ])->findOrFail($currentAuthId);
             $uniqueProfileSlug = $customer->gender_name.'-proposal-'.(!empty($customer->getCitySlug)?$customer->getCitySlug->slug:'na').'-'.(!empty($customer->getCountrySlug)?$customer->getCountrySlug->slug:'na').'-'.$customer->id;
-            $baseUrl = env('APP_URL');
+            $baseUrl = "https://doosribiwi.com";
             $customer->profile_link = $baseUrl.'/'.$uniqueProfileSlug;
             $customer->profileComplete = checkProfileComplete($customer->id);
             $customer->makeHidden([
@@ -1635,7 +1635,7 @@ class CustomerController extends Controller
                 'getCitiesName'
             ])->findOrFail($currentAuthId);
             $uniqueProfileSlug = $customer->gender_name.'-proposal-'.(!empty($customer->getCitySlug)?$customer->getCitySlug->slug:'na').'-'.(!empty($customer->getCountrySlug)?$customer->getCountrySlug->slug:'na').'-'.$customer->id;
-            $baseUrl = env('APP_URL');
+            $baseUrl = "https://doosribiwi.com";
             $customer->profile_link = $baseUrl.'/'.$uniqueProfileSlug;
             $customer->profileComplete = checkProfileComplete($customer->id);
             $customer->makeHidden([
@@ -1709,7 +1709,7 @@ class CustomerController extends Controller
                     'profile_pic_status',
                     'email_verified'
                 )->with(['getCountryName','getStateName','getCitiesName'])->findOrFail($customer->id);
-                $currentCustomer->imageFullPath = env('APP_URL').'/customer-images/'.$currentCustomer->image;
+                $currentCustomer->imageFullPath = "https://doosribiwi.com".'/customer-images/'.$currentCustomer->image;
 
                 $countryName = (!empty($currentCustomer->getCountryName)?$currentCustomer->getCountryName->name:'NA');
                 $countrySlug = strtolower($countryName);
@@ -1828,7 +1828,7 @@ class CustomerController extends Controller
                         'getCitiesName'
                     ])->findOrFail($customer->id);
                     $uniqueProfileSlug = $currentCustomer->gender_name.'-proposal-'.(!empty($currentCustomer->getCitySlug)?$currentCustomer->getCitySlug->slug:'NA').'-'.(!empty($currentCustomer->getCountrySlug)?$currentCustomer->getCountrySlug->slug:'NA').'-'.$currentCustomer->faker_id;
-                    $baseUrl = env('APP_URL');
+                    $baseUrl = "https://doosribiwi.com";
                     $currentCustomer->profile_link = $baseUrl.'/'.$uniqueProfileSlug;
                     $currentCustomer->profileComplete = checkProfileComplete($currentCustomer->id);
                     $currentCustomer->makeHidden([

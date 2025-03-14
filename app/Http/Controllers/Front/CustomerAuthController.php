@@ -1178,15 +1178,17 @@ class CustomerAuthController extends Controller
             ];
 
             sendNewEmail('emails.welcome',$data,'Welcome - DoosriBiwi.com');
-            if (auth()->guard('customer')->check()) {
-                $message = "Your email has been verified successfully";
-                session::flash('success_message', $message);
-                return redirect()->route('auth.verify');
-            }
+            return redirect()->to('https://doosribiwi.com/auth-verify');
+//            if (auth()->guard('customer')->check()) {
+//                $message = "Your email has been verified successfully";
+//                session::flash('success_message', $message);
+////                return redirect()->route('auth.verify');
+//                return redirect()->to('https://doosribiwi.com/auth-verify');
+//            }
 
-            $message = "Your email has been verified successfully please login here.";
-            session::flash('success_message', $message);
-            return redirect()->route('view.login');
+//            $message = "Your email has been verified successfully please login here.";
+//            session::flash('success_message', $message);
+//            return redirect()->route('view.login');
         } else {
             abort(404);
         }

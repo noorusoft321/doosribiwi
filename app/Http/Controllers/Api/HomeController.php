@@ -95,7 +95,7 @@ class HomeController extends Controller
             ])
             ->findOrFail(auth()->id());
         $uniqueProfileSlug = $customer->gender_name.'-proposal-'.(!empty($customer->getCitySlug)?$customer->getCitySlug->slug:'na').'-'.(!empty($customer->getCountrySlug)?$customer->getCountrySlug->slug:'na').'-'.$customer->id;
-        $baseUrl = env('APP_URL');
+        $baseUrl = "https://doosribiwi.com";
         $customer->profile_link = $baseUrl.'/'.$uniqueProfileSlug;
         $customer->packageType = (!empty($customer->package_id) && $customer->package_id > 0) ? $customer->user_package : 'Free';
         $messagesLimit = checkMessageLimit($customer->id,true);
