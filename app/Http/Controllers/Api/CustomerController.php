@@ -559,7 +559,7 @@ class CustomerController extends Controller
         ])->count();
 
         $uniqueProfileSlug = $customer->gender_name.'-proposal-'.(!empty($customer->getCitySlug)?$customer->getCitySlug->slug:'na').'-'.(!empty($customer->getCountrySlug)?$customer->getCountrySlug->slug:'na').'-'.$customer->id;
-        $baseUrl = "https://doosribiwi.com";
+        $baseUrl = config('services.app_main_url');
         $customer->profile_link = $baseUrl.'/'.$uniqueProfileSlug;
         if (empty($customer->user_package)) {
             $customer->user_package = 'Free';
@@ -653,7 +653,7 @@ class CustomerController extends Controller
             'email_verified' => 1
         ])->without([
             'customerOtherInfo'
-        ])->limit(6)->get();
+        ])->limit(4)->get();
 
         $relatedProposals->makeHidden([
             'match_assign_lead_user_name',
@@ -775,7 +775,7 @@ class CustomerController extends Controller
             'email_verified' => 1
         ])->without([
             'customerOtherInfo'
-        ])->limit(6)->get();
+        ])->limit(4)->get();
 
         $relatedProposals->makeHidden([
             'match_assign_lead_user_name',
@@ -1306,8 +1306,7 @@ class CustomerController extends Controller
                 'getCitiesName'
             ])->findOrFail($currentAuthId);
             $uniqueProfileSlug = $customer->gender_name.'-proposal-'.(!empty($customer->getCitySlug)?$customer->getCitySlug->slug:'na').'-'.(!empty($customer->getCountrySlug)?$customer->getCountrySlug->slug:'na').'-'.$customer->id;
-            $baseUrl = "https://doosribiwi.com";
-            $customer->profile_link = $baseUrl.'/'.$uniqueProfileSlug;
+            $customer->profile_link = config('services.app_main_url').'/'.$uniqueProfileSlug;
             $customer->profileComplete = checkProfileComplete($customer->id);
             $customer->makeHidden([
                 'getCitySlug',
@@ -1323,7 +1322,7 @@ class CustomerController extends Controller
                 'un_seen_messages_count',
                 'image'
             ]);
-            $imageFullPath = $baseUrl.'/customer-images/'.$customer->image;
+            $imageFullPath = config('services.app_url').'/customer-images/'.$customer->image;
             $customer = $customer->toArray();
             $customer['imageFullPath'] = $imageFullPath;
 
@@ -1431,8 +1430,7 @@ class CustomerController extends Controller
                 'getCitiesName'
             ])->findOrFail($currentAuthId);
             $uniqueProfileSlug = $customer->gender_name.'-proposal-'.(!empty($customer->getCitySlug)?$customer->getCitySlug->slug:'na').'-'.(!empty($customer->getCountrySlug)?$customer->getCountrySlug->slug:'na').'-'.$customer->id;
-            $baseUrl = "https://doosribiwi.com";
-            $customer->profile_link = $baseUrl.'/'.$uniqueProfileSlug;
+            $customer->profile_link = config('services.app_main_url').'/'.$uniqueProfileSlug;
             $customer->profileComplete = checkProfileComplete($customer->id);
             $customer->makeHidden([
                 'getCitySlug',
@@ -1448,7 +1446,7 @@ class CustomerController extends Controller
                 'un_seen_messages_count',
                 'image'
             ]);
-            $imageFullPath = $baseUrl.'/customer-images/'.$customer->image;
+            $imageFullPath = config('services.app_url').'/customer-images/'.$customer->image;
             $customer = $customer->toArray();
             $customer['imageFullPath'] = $imageFullPath;
 
@@ -1531,8 +1529,7 @@ class CustomerController extends Controller
                 'getCitiesName'
             ])->findOrFail($currentAuthId);
             $uniqueProfileSlug = $customer->gender_name.'-proposal-'.(!empty($customer->getCitySlug)?$customer->getCitySlug->slug:'na').'-'.(!empty($customer->getCountrySlug)?$customer->getCountrySlug->slug:'na').'-'.$customer->id;
-            $baseUrl = "https://doosribiwi.com";
-            $customer->profile_link = $baseUrl.'/'.$uniqueProfileSlug;
+            $customer->profile_link = config('services.app_main_url').'/'.$uniqueProfileSlug;
             $customer->profileComplete = checkProfileComplete($customer->id);
             $customer->makeHidden([
                 'getCitySlug',
@@ -1548,7 +1545,7 @@ class CustomerController extends Controller
                 'un_seen_messages_count',
                 'image'
             ]);
-            $imageFullPath = $baseUrl.'/customer-images/'.$customer->image;
+            $imageFullPath = config('services.app_url').'/customer-images/'.$customer->image;
             $customer = $customer->toArray();
             $customer['imageFullPath'] = $imageFullPath;
 
@@ -1635,8 +1632,7 @@ class CustomerController extends Controller
                 'getCitiesName'
             ])->findOrFail($currentAuthId);
             $uniqueProfileSlug = $customer->gender_name.'-proposal-'.(!empty($customer->getCitySlug)?$customer->getCitySlug->slug:'na').'-'.(!empty($customer->getCountrySlug)?$customer->getCountrySlug->slug:'na').'-'.$customer->id;
-            $baseUrl = "https://doosribiwi.com";
-            $customer->profile_link = $baseUrl.'/'.$uniqueProfileSlug;
+            $customer->profile_link = config('services.app_main_url').'/'.$uniqueProfileSlug;
             $customer->profileComplete = checkProfileComplete($customer->id);
             $customer->makeHidden([
                 'getCitySlug',
@@ -1652,7 +1648,7 @@ class CustomerController extends Controller
                 'un_seen_messages_count',
                 'image'
             ]);
-            $imageFullPath = $baseUrl.'/customer-images/'.$customer->image;
+            $imageFullPath = config('services.app_url').'/customer-images/'.$customer->image;
             $customer = $customer->toArray();
             $customer['imageFullPath'] = $imageFullPath;
 
@@ -1709,7 +1705,7 @@ class CustomerController extends Controller
                     'profile_pic_status',
                     'email_verified'
                 )->with(['getCountryName','getStateName','getCitiesName'])->findOrFail($customer->id);
-                $currentCustomer->imageFullPath = "https://doosribiwi.com".'/customer-images/'.$currentCustomer->image;
+                $currentCustomer->imageFullPath = config('services.app_url').'/customer-images/'.$currentCustomer->image;
 
                 $countryName = (!empty($currentCustomer->getCountryName)?$currentCustomer->getCountryName->name:'NA');
                 $countrySlug = strtolower($countryName);
@@ -1828,8 +1824,7 @@ class CustomerController extends Controller
                         'getCitiesName'
                     ])->findOrFail($customer->id);
                     $uniqueProfileSlug = $currentCustomer->gender_name.'-proposal-'.(!empty($currentCustomer->getCitySlug)?$currentCustomer->getCitySlug->slug:'NA').'-'.(!empty($currentCustomer->getCountrySlug)?$currentCustomer->getCountrySlug->slug:'NA').'-'.$currentCustomer->faker_id;
-                    $baseUrl = "https://doosribiwi.com";
-                    $currentCustomer->profile_link = $baseUrl.'/'.$uniqueProfileSlug;
+                    $currentCustomer->profile_link = config('services.app_main_url').'/'.$uniqueProfileSlug;
                     $currentCustomer->profileComplete = checkProfileComplete($currentCustomer->id);
                     $currentCustomer->makeHidden([
                         'getCitySlug',
@@ -1845,7 +1840,7 @@ class CustomerController extends Controller
                         'un_seen_messages_count',
                         'image'
                     ]);
-                    $imageFullPath = $baseUrl.'/customer-images/'.$currentCustomer->image;
+                    $imageFullPath = config('services.app_url').'/customer-images/'.$currentCustomer->image;
                     $currentCustomer = $currentCustomer->toArray();
                     $currentCustomer['imageFullPath'] = $imageFullPath;
 

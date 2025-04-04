@@ -1165,7 +1165,8 @@ class CustomerAuthController extends Controller
             if ($customer->status == 1 && $customer->email_verified == 1) {
                 $message = "Your email verified already please login...!";
                 session::flash('success_message', $message);
-                return redirect()->route('landing.page');
+//                return redirect()->route('landing.page');
+                return redirect()->to('https://doosribiwi.com/auth-verify');
             }
             $customer->update([
                 'status' => 1,

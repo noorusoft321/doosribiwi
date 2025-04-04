@@ -4,11 +4,14 @@ namespace App\Http\Controllers\Bdo;
 
 use App\helpers\FakerURL;
 use App\Http\Controllers\Controller;
+use App\Models\AnnualInCome;
 use App\Models\CallHistory;
 use App\Models\Country;
 use App\Models\Customer;
 use App\Models\CustomerImage;
 use App\Models\CustomerNotificationPreference;
+use App\Models\Education;
+use App\Models\MaritalStatus;
 use App\Models\Package;
 use App\Models\SupportMessage;
 use App\Models\User;
@@ -978,6 +981,19 @@ class CallCenterController extends Controller
                 if (!empty($request->fCityId)) {
                     $q->where('city_id', $request->fCityId);
                 }
+                if (!empty($request->fMaritalStatusId)) {
+                    $q->where('MaritalStatusID', $request->fMaritalStatusId);
+                }
+            }, 'customerCareerInfo' => function($q) use($request) {
+                if (!empty($request->fQualificationId)) {
+                    $q->where('Qualification', $request->fQualificationId);
+                }
+                if (!empty($request->fMajorCourseId)) {
+                    $q->where('major_course_id', $request->fMajorCourseId);
+                }
+                if (!empty($request->fIncomeId)) {
+                    $q->where('MonthlyIncome', $request->fIncomeId);
+                }
             }])->where([
                 ['deleted', '=', 0],
                 ['created_by', '=', 0],
@@ -988,7 +1004,8 @@ class CallCenterController extends Controller
                 !empty($request->fGender) ||
                 !empty($request->fCountryId) ||
                 !empty($request->fStateId) ||
-                !empty($request->fCityId)
+                !empty($request->fCityId) ||
+                !empty($request->fMaritalStatusId)
             ){
                 $customers = $customers->whereHas('customerOtherInfo', function($q) use($request) {
                     if (!empty($request->fGender)) {
@@ -1002,6 +1019,27 @@ class CallCenterController extends Controller
                     }
                     if (!empty($request->fCityId)) {
                         $q->where('city_id', $request->fCityId);
+                    }
+                    if (!empty($request->fMaritalStatusId)) {
+                        $q->where('MaritalStatusID', $request->fMaritalStatusId);
+                    }
+                });
+            }
+
+            if (
+                !empty($request->fQualificationId) ||
+                !empty($request->fMajorCourseId) ||
+                !empty($request->fIncomeId)
+            ){
+                $customers = $customers->whereHas('customerCareerInfo', function($q) use($request) {
+                    if (!empty($request->fQualificationId)) {
+                        $q->where('Qualification', $request->fQualificationId);
+                    }
+                    if (!empty($request->fMajorCourseId)) {
+                        $q->where('major_course_id', $request->fMajorCourseId);
+                    }
+                    if (!empty($request->fIncomeId)) {
+                        $q->where('MonthlyIncome', $request->fIncomeId);
                     }
                 });
             }
@@ -1068,7 +1106,10 @@ class CallCenterController extends Controller
 
 
         $countries = Country::where('deleted',0)->orderBy('order_at','asc')->get();
-        return view('bdo.call_center.customers-manage',compact('title','users','countries'));
+        $educations = Education::where('deleted',0)->orderBy('order_at','asc')->get();
+        $income = AnnualInCome::where('deleted',0)->orderBy('order_at','asc')->get();
+        $maritalStatus = MaritalStatus::where('deleted',0)->orderBy('order_at','asc')->get();
+        return view('bdo.call_center.customers-manage',compact('title','users','countries','educations','income','maritalStatus'));
     }
 
     public function saveCustomerBadges($customerId)

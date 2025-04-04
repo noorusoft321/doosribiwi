@@ -95,8 +95,7 @@ class HomeController extends Controller
             ])
             ->findOrFail(auth()->id());
         $uniqueProfileSlug = $customer->gender_name.'-proposal-'.(!empty($customer->getCitySlug)?$customer->getCitySlug->slug:'na').'-'.(!empty($customer->getCountrySlug)?$customer->getCountrySlug->slug:'na').'-'.$customer->id;
-        $baseUrl = "https://doosribiwi.com";
-        $customer->profile_link = $baseUrl.'/'.$uniqueProfileSlug;
+        $customer->profile_link = config('services.app_main_url').'/'.$uniqueProfileSlug;
         $customer->packageType = (!empty($customer->package_id) && $customer->package_id > 0) ? $customer->user_package : 'Free';
         $messagesLimit = checkMessageLimit($customer->id,true);
         $customer->directMessages = $messagesLimit[0];
@@ -114,7 +113,7 @@ class HomeController extends Controller
             'faker_id',
             'image'
         ]);
-        $imageFullPath = $baseUrl.'/customer-images/'.$customer->image;
+        $imageFullPath = config('services.app_url').'/customer-images/'.$customer->image;
         $customerArr = $customer->toArray();
         $customerArr['imageFullPath'] = $imageFullPath;
 

@@ -59,7 +59,8 @@
                         <h4 style="font-weight: 400;">Dear <strong>Customer</strong>,</h4>
                         <p style="margin-bottom: 0;"> Your account has been successfully created..</p>
                         <p>To activate your account and gain access, please click the "Confirm Account".</p>
-                        <p><a target="_blank" href="{{route('confirm.customer.account',[$code])}}" style="padding: 10px; background-color: #0c476e; color: #fff; display: inline-block; border-radius: 4px">Confirm Account</a></p>
+                        {{--<p><a target="_blank" href="{{route('confirm.customer.account',[$code])}}" style="padding: 10px; background-color: #0c476e; color: #fff; display: inline-block; border-radius: 4px">Confirm Account</a></p>--}}
+                        <p><a target="_blank" href="https://doosribiwi.com/auth-verify?v_code={{$code}}" style="padding: 10px; background-color: #0c476e; color: #fff; display: inline-block; border-radius: 4px">Confirm Account</a></p>
                         <br>
                         <p style="margin-bottom: 0">Regards,<br><a style="color:#0c476e;font-weight: bold;" href="{{env('APP_URL')}}">DoosriBiwi.com</a></p>
                     </td>

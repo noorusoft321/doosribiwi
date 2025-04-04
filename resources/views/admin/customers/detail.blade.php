@@ -197,7 +197,7 @@
                                         </td>
                                         <td>
                                             @php $uniqueProfileSlug = $customer->gender_name.'-proposal-'.(!empty($customer->getCitySlug)?$customer->getCitySlug->slug:'na').'-'.(!empty($customer->getCountrySlug)?$customer->getCountrySlug->slug:'na').'-'.$customer->id; @endphp
-                                            <input type="text" name="user__name"  value="{{route('search.by.slug',[$uniqueProfileSlug])}}" class="form-control">
+                                            <input type="text" name="user__name"  value="{{config('services.app_main_url').'/'.$uniqueProfileSlug}}" class="form-control">
                                         </td>
                                     </tr>
                                     </tbody>

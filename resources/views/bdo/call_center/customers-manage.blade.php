@@ -135,6 +135,47 @@
                             </div>
                             <div class="col-3 pb-2">
                                 <div class="form-group">
+                                    <label for="f_income_id">Monthly Income</label>
+                                    <select name="f_income_id" id="f_income_id" class="form-control">
+                                        <option value=""> -- All -- </option>
+                                        @foreach($income as $val)
+                                            <option value="{{$val->id}}">{{$val->title}}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-3 pb-2">
+                                <div class="form-group">
+                                    <label for="f_marital_status_id">Marital Status</label>
+                                    <select name="f_marital_status_id" id="f_marital_status_id" class="form-control">
+                                        <option value=""> -- All -- </option>
+                                        @foreach($maritalStatus as $val)
+                                            <option value="{{$val->id}}">{{$val->title}}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-3 pb-2">
+                                <div class="form-group">
+                                    <label for="f_qualification_id">Qualification</label>
+                                    <select onchange="getMajorCourses(this,'f_major_course_id')" name="f_qualification_id" id="f_qualification_id" class="form-control">
+                                        <option value=""> -- All -- </option>
+                                        @foreach($educations as $val)
+                                            <option value="{{$val->id}}">{{$val->title}}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-3 pb-2">
+                                <div class="form-group">
+                                    <label for="f_major_course_id">Major Course</label>
+                                    <select name="f_major_course_id" id="f_major_course_id" class="form-control">
+                                        <option value=""> -- All -- </option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-3 pb-2">
+                                <div class="form-group">
                                     <label for="f_start_act_date">Activity From</label>
                                     <input type="date" name="f_start_act_date" id="f_start_act_date" class="form-control">
                                 </div>
@@ -236,6 +277,10 @@
                         fCountryId: $('select[name="f_country_id"] option:selected').val(),
                         fStateId: $('select[name="f_state_id"] option:selected').val(),
                         fCityId: $('select[name="f_city_id"] option:selected').val(),
+                        fIncomeId: $('select[name="f_income_id"] option:selected').val(),
+                        fMaritalStatusId: $('select[name="f_marital_status_id"] option:selected').val(),
+                        fQualificationId: $('select[name="f_qualification_id"] option:selected').val(),
+                        fMajorCourseId: $('select[name="f_major_course_id"] option:selected').val(),
                         fStart_act_date: $('input[name="f_start_act_date"]').val(),
                         fEnd_act_date: $('input[name="f_end_act_date"]').val()
                     });
@@ -404,6 +449,30 @@
             }
             fieldShortCode.empty();
             fieldShortCode.html(`<option value="${selectValue}">${selectName}</option>`);
+            return;
+        }
+
+        function getMajorCourses(input,putInField) {
+            let refrenceId = $(input).val();
+            let fieldShortCode = $(`select[name="${putInField}"]`);
+            if (refrenceId) {
+                axios.get(`{{route('get.major.courses')}}/${refrenceId}`).then(function (res) {
+                    if (res.data.data.length > 0) {
+                        fieldShortCode.empty();
+                        fieldShortCode.append(new Option('Select', ''));
+                        $.each(res.data.data, function (k, v) {
+                            fieldShortCode.append(new Option(v.title, v.id));
+                        });
+                        return;
+                    }
+                }).catch(function (error) {
+                    fieldShortCode.empty();
+                    fieldShortCode.html('<option value="">Select</option>');
+                    return;
+                });
+            }
+            fieldShortCode.empty();
+            fieldShortCode.html('<option value="">Select</option>');
             return;
         }
 

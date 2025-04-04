@@ -65,6 +65,7 @@ return [
     ],
     'app_name' => env('APP_NAME'),
     'app_url' => env('APP_URL'),
+    'app_main_url' => env('APP_MAIN_URL'),
     'matchmakers' => [
         'Ms. Saba'      => '923491007312',
         'Mrs. Pirzada'  => '923488800021',
