@@ -94,7 +94,7 @@ class AuthController extends Controller
             'gender'                 => 'required|numeric|in:1,2',
             'first_name'             => 'required|max:255',
             'last_name'              => 'required|max:255',
-            'mobile'                 => 'required|regex:/^([0-9\s\-\+\(\)]*)$/|min:7',
+            'mobile'                 => 'required',
             'mobile_country_code'    => 'required|min:1',
             'country_id'             => 'required|numeric|exists:shaadi_countries,id',
             'state_id'               => 'required|numeric|exists:shaadi_states,id',
@@ -106,7 +106,7 @@ class AuthController extends Controller
             'marital_status'         => 'required|numeric|exists:shaadi_marital_statuses,id'
         ];
         if (!empty($request['last_name'])) {
-            $rules['last_name'] = 'required|regex:/^[a-zA-Z]+$/u|max:255|min:3';
+            $rules['last_name'] = 'required|max:255';
         }
         if (isset($request['city_id']) && !empty($request['city_id']) && in_array($request['city_id'], [551,748,1,592,591,594,552])) {
             $rules['area_id'] = 'required|numeric|exists:shaadi_areas,id';

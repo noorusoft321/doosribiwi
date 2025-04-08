@@ -444,8 +444,9 @@ class HomeController extends Controller
     public function updateProfile()
     {
         $request = request()->all();
+//        'required|regex:/^[a-zA-Z]+$/u|max:255|min:3'
         $rules = [
-            'first_name'      => 'required|regex:/^[a-zA-Z]+$/u|max:255|min:3',
+            'first_name'      => 'required|max:255',
             'country_id'      => 'required|numeric|exists:shaadi_countries,id',
             'state_id'        => 'required|numeric|exists:shaadi_states,id',
             'city_id'         => 'required|numeric|exists:shaadi_cities,id',
@@ -453,7 +454,7 @@ class HomeController extends Controller
             'DOB'             => ['required','date_format:Y-m-d', new Adult],
         ];
         if (!empty($request['last_name'])) {
-            $rules['last_name'] = 'required|regex:/^[a-zA-Z]+$/u|max:255|min:3';
+            $rules['last_name'] = 'required|max:255';
         }
         $messages['state_id'] = 'The state field is required.';
         $messages['country_id'] = 'The country field is required.';
