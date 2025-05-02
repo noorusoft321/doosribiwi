@@ -23,8 +23,11 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+// Route::get('/', function () {
+//     return redirect()->route('admin.dashboard');
+// });
 Route::get('/', function () {
-    return redirect()->route('admin.dashboard');
+    return redirect()->away('https://doosribiwi.com');
 });
 
 Route::get('/confirm-customer-account/{email}', [CustomerAuthController::class, 'confirmCustomerAccount'])->name('confirm.customer.account');
@@ -353,15 +356,8 @@ Route::prefix('shaadi-portal')->group(function () {
 
         /*Optimize clear*/
         Route::get('/optimize-clear-all', function () {
-            Artisan::call('config:cache');
-            Artisan::call('cache:clear');
-            Artisan::call('config:clear');
-            Artisan::call('route:clear');
-            Artisan::call('view:clear');
             Artisan::call('optimize:clear');
-            Artisan::call('event:clear');
-            Artisan::call('event:cache');
-            return redirect()->route('admin.dashboard');
+            return redirect()->back();
         })->name('optimize.clear.all');
 
     });
