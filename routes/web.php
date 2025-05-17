@@ -26,9 +26,31 @@ use Illuminate\Support\Facades\Route;
 // Route::get('/', function () {
 //     return redirect()->route('admin.dashboard');
 // });
-Route::get('/', function () {
-    return redirect()->away('https://doosribiwi.com');
+Route::get('/testing-with-db/{genderName?}', function ($genderName = null) {
+    $gender = ($genderName=='male') ? 1 : 2;
+    $customersCollection = \App\Models\Customer::select(
+        'id',
+        'first_name',
+        'last_name',
+        'email',
+        'mobile',
+        'mobile_country_code',
+        'email_verified',
+        'deleted',
+    )->with(['customerOtherInfo' => function($q) use($gender){
+        $q->where('gender', $gender);
+        $q->where('city_id', 551);
+    },])->whereHas('customerOtherInfo', function($q) use($gender){
+        $q->where('gender', $gender);
+        $q->where('city_id', 551);
+    })->where('deleted','=',0)->where('email_verified','=',1)->orderBy('id','desc')->get()->toArray();
+    $customers = array_chunk($customersCollection,count($customersCollection)/2);
+    return view('customer_list', compact('customers'));
 });
+
+//Route::get('/', function () {
+//    return redirect()->away('https://doosribiwi.com');
+//});
 
 Route::get('/confirm-customer-account/{email}', [CustomerAuthController::class, 'confirmCustomerAccount'])->name('confirm.customer.account');
 
