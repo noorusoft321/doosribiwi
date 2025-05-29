@@ -23,28 +23,21 @@ use App\Models\CustomerSearch;
 use App\Models\Disability;
 use App\Models\DoYouHaveBeard;
 use App\Models\DoYouKeepHalal;
-use App\Models\DoYouPerformSalaah;
 use App\Models\DoYouPreferHijab;
 use App\Models\Education;
 use App\Models\EyeColor;
-use App\Models\FuturePlan;
 use App\Models\HairColor;
 use App\Models\Height;
 use App\Models\HobbiesAndInterest;
 use App\Models\IAmLookingToMarry;
-use App\Models\JobPost;
 use App\Models\MaritalStatus;
 use App\Models\MotherTongue;
-use App\Models\MyBuild;
 use App\Models\MyLivingArrangement;
 use App\Models\Occupation;
 use App\Models\Religion;
 use App\Models\Smoke;
-use App\Models\University;
 use App\Models\Weight;
-use App\Models\WillingToRelocate;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Str;
@@ -343,7 +336,8 @@ class CustomerController extends Controller
             'salary_verification',
             'user_package',
             'user_package_color',
-            'agent_mobile'
+            'agent_mobile',
+            'deleted'
         )->with([
             'getCitySlug',
             'getCountrySlug',
@@ -353,6 +347,14 @@ class CustomerController extends Controller
             'customerReligionInfo',
             'customerSearch'
         ])->findOrFail($customerId);
+        if ($customer->deleted==1) {
+            return response()->json([
+                'success'  => true,
+                'message' => 'Customer detail has been fetched successfully.',
+                'data'    => [],
+                'code'    => 200
+            ], 200);
+        }
         $viewRequest = [
             'view_to' => $customer->id,
             'view_by' => $currentCustomerId

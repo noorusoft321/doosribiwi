@@ -62,6 +62,7 @@ Route::get('/get-cities/{stateId?}', [CustomerAuthController::class, 'getCities'
 Route::get('/get-areas/{cityId?}', [CustomerAuthController::class, 'getAreas'])->name('get.areas');
 Route::get('/get-sects/{religionId?}', [CustomerAuthController::class, 'getSects'])->name('get.sects');
 Route::get('/get-major-courses/{educationId?}', [CustomerAuthController::class, 'getMajorCourses'])->name('get.major.courses');
+Route::post('/customer-check-exists', [CustomerAuthController::class, 'customerCheckExists'])->name('customer.check.exists');
 
 /* Start Admin here */
 Route::prefix('shaadi-portal')->group(function () {
